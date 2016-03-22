@@ -6,4 +6,16 @@
 - Quelques questions intéressantes (exemple : « Pourquoi met-on un costume pour un entretien ? »).
 - Analyses de ce qu’est une équipe ?
 
-##Definition d'une équipe
+##Définition d'une équipe
+###Definition d'une équipe par @GR1 @GR2
+- Régles
+- Travailler ensemble
+- Organisé
+- Objectifs communs
+- Ensemble de personnes
+- Communiquer
+- Compétences variées
+- Des cadres de travail
+- 
+###Définition d'une équipe par @ABO
+![Image of teamWorking](C:\Users\florian\Pictures\images\travail-equipe.PNG)
