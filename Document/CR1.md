@@ -18,4 +18,4 @@
 - Des cadres de travail
 - 
 ###Définition d'une équipe par @ABO
-![Image of teamWorking](C:\Users\florian\Pictures\images\travail-equipe.PNG)
+![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/travail-equipe.PNG)
