@@ -46,3 +46,14 @@
 ![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR2/CR-2_typescript.png)
 
 -----
+
+#### IV - Les outils recommandés
+
+- [x] Gitflow
+- [x] Prefix
+- [x] GitHub for VS
+- [x] GitKraken ou Sourcetree
+
+lesscss.org
+Markdown GitHub (sur Google)
+Plugin bootstrap overlay (pour voir les grilles sur les sites web Bootstrap).
