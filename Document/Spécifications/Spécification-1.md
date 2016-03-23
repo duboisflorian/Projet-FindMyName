@@ -1,5 +1,4 @@
-# Projet tutoré Find My Name
-## Spécification n°1
+# Spécification n°1
 
 -----
 
@@ -24,13 +23,13 @@ Une confirmation sera envoyée sur son adresse e-mail pour activer le compte.
 
 ###Trois types de partie
 
--Solo
+- Solo
 
 Le mode Solo consiste dans un temps imparti à trouver le maximum de joueurs d’une équipe si l’on choisit le thème sport. 
 Plusieurs thèmes seront proposés à l’utilisateur tel que le sport, les séries (personnages d’une série), etc….
 Le nombre de “mot” trouvé sur une partie sera sauvegarder et s’affichera comme un classement personnel à la fin de la partie.
 
--En ligne
+- En ligne
 
 
 La première page de cette fonctionnalité affiche l’ensemble des personnes qui ont défié le joueur en question. 
@@ -38,7 +37,7 @@ Le mode consiste à affronter un joueur qui a été au préalable recherche aléatoir
 Chaque joueur a donc un temps défini pour trouver le plus de mots possible. Celui qui trouve le plus de mots remporte la partie.
 Ce nombre de mot trouvés par chacun des joueurs sera enregistré respectivement sur chaque compte de ces joueurs. Un système de record pourra donc être enregistré dans le compte du joueur.
 
--Avec un ami
+- Avec un ami
 
 De même que pour le mode en ligne, la première page de cette fonctionnalité affiche l’ensemble des amis qui ont défié le joueur en question. 
 Le mode consiste à affronter un joueur figurant dans la liste d’amis du joueur en question. 
@@ -67,12 +66,12 @@ Chaque utilisateur possède une page de statistique montrant le nombre de mots tr
 
 ##Fonctions futur
 
--Possibilité de jouer en même temps chacun à son tour donne un nom de joueur, le premier qui se trompe à perdu.
--Système de niveau (en fonction des victoires le niveau du joueur augmentera progressivement)
--Défi asynchrone sur différent thème comme Duel Quiz
--Possibilité de chatter avec un ami
--Classement global avec tous les joueurs du monde
--Ajout d’une personne inconnu, en mode online, dans sa liste d’amis
+- Possibilité de jouer en même temps chacun à son tour donne un nom de joueur, le premier qui se trompe à perdu.
+- Système de niveau (en fonction des victoires le niveau du joueur augmentera progressivement)
+- Défi asynchrone sur différent thème comme Duel Quiz
+- Possibilité de chatter avec un ami
+- Classement global avec tous les joueurs du monde
+- Ajout d’une personne inconnu, en mode online, dans sa liste d’amis
 
 
 ##Concurrence/Inspiration
