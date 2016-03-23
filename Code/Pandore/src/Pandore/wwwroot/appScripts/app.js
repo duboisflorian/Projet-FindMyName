@@ -7,14 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('angular2/core');
+var core_1 = require("angular2/core");
+var shopping_list_component_1 = require("./shopping-list.component");
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: 'My First Angular 2 App'
+            selector: "my-app",
+            template: "\n        test\n        <shopping-list></shopping-list>\n", directives: [shopping_list_component_1.ShoppingListComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

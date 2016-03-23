@@ -1,6 +1,6 @@
-﻿import {Component} from 'angular2/core';
+﻿import {Component} from "angular2/core";
 @Component({
-    selector: 'shopping-list',
+    selector: "shopping-list",
     template: `
     <ul>
         <li *ngFor="#shoppingListItem of shoppingListItems" (click)=onItemClicked(shoppingListItem)">{{shoppingListItem.name}}
@@ -12,7 +12,7 @@
 <button (click)="onAddItem(shoppingListItem">Add</button>
 `
 })
-export class ShoppingListConponent {
+export class ShoppingListComponent {
 
     public shoppingListItems = [
         { name: "Milk" },
