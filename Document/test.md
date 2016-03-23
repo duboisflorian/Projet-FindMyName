@@ -6,11 +6,13 @@
 - bullet 2
 - bullet 3
 
+1.
+1.
+1.
+
 -----
 
-> Ayez le courage de suivre votre et votre intuition. 
-L'un et l'autre savent ce que vous voulez réellement devenir. 
-Le reste est secondaire. Steve Jobs
+> Toute difficulté offre une chance de se surpasser. Duke Ellington
 
 ```csharp
 var i = 0;
