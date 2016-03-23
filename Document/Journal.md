@@ -42,6 +42,7 @@
 
 - Maxime 
 	- Ecriture en md de la spécification de la première maquette
+	- Ecriture du CR2
 
 - Diego 
 	- Création de la nouvelle Maquette
