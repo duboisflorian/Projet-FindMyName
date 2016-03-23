@@ -5,7 +5,7 @@
 ![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR-2_markdown.jpg)
 
 ##### II - Conventions à mettre en place :
-[x] feat:
-[x] fix:
-[x] chore:
-[x] doc:
+- [x] feat:
+- [x] fix:
+- [x] chore:
+- [x] doc:
