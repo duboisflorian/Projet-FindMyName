@@ -7,21 +7,45 @@
 
 ##Lundi 21/01 (travail de groupe)
 
-- Mise en place du groupe discord
-- Initiation GitHub
-- Mise en place du dossier partagé
-- Premier ajout des documents sur GitHub
+- Groupe
+	- Mise en place du groupe discord
+	- Initiation GitHub
+	- Mise en place du dossier partagé
+	- Premier ajout des documents sur GitHub
 
-##Mardi 22/03 (travail de groupe)
+##Mardi 22/03
 
-- Présentation des différents documents
-- Modification maquette et CR
-- Création du deuxième CR
-- Définition des nouveaux objectifs pour la scéance de Vendredi
+- Groupe
+	- Présentation des différents documents
+	- Modification maquette et CR
+	- Création du deuxième CR
+	- Définition des nouveaux objectifs pour la scéance de Vendredi
+		- Archi - Démarrage
+		- Wireframe (incarner l'utilisateur)
+		- Carto nav
+		- Priorités
+		- Fonctionnalités
+
+##Mercredi 23/03 
+
+- Groupe
+	- Mise en place d'un nouveau Git
+	- Mise en place GitKraken
+
+- Yani 
 	- Archi - Démarrage
-	- Wireframe (incarner l'utilisateur)
-	- Carto nav
-	- Priorités
-	- Fonctionnalités
 
-	
+- Florian
+	- Modification Maquette
+	- Trello
+	- Spécification de la nouvelles maquettes
+
+- Maxime 
+	- Ecriture en md de la spécification de la première maquette
+
+- Diego 
+	- Création de la nouvelle Maquette
+	- Modification des anciens documents en md
+
+- Lionnel 
+	- Archi - Démarrage
