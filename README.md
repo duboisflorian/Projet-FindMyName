@@ -1,6 +1,7 @@
 # Projet tutoré - Find My Name
+<center>
 ![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/Logo FMN.png)
-
+</center>
 Projet de fin d'année Licence Informatique
 ## Description :
  
