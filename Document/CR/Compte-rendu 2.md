@@ -55,5 +55,7 @@
 - [x] GitKraken ou Sourcetree
 
 lesscss.org
+
 Markdown GitHub (sur Google)
+
 Plugin bootstrap overlay (pour voir les grilles sur les sites web Bootstrap).
