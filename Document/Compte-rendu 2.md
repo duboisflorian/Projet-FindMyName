@@ -5,11 +5,11 @@
 ##### a) Astuces Markdown :
 ![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR-2_markdown.jpg)
 
-##### b) - Conventions à mettre en place :
+##### b) Conventions à mettre en place :
 - [x] feat:
 - [x] fix:
 - [x] chore:
 - [x] doc:
 
-##### c) - Mise à jour des règles (ajout) :
+##### c) Mise à jour des règles (ajout) :
 - Sur GitHub, les documents doivent être rédigés en Markdown.
