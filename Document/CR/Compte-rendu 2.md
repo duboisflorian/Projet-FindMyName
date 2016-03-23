@@ -3,7 +3,7 @@
 
 -----
 
-#### I - Quelques explications au sujet de GitHub :
+#### I - Quelques explications au sujet de GitHub
 ##### a) Astuces Markdown :
 ![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR2/CR-2_markdown.jpg)
 
@@ -15,3 +15,8 @@
 
 ##### c) Mise à jour des règles (ajout) :
 - Sur GitHub, les documents doivent être rédigés en Markdown.
+
+#### II - Les branches sur GitHub
+
+
+#### III - Les technologies utilisées
