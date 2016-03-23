@@ -1,10 +1,10 @@
-# Spécification n°1
+# Spécification n°2
 
 -----
 
 ##Description
 
-Ce jeu consiste à trouver un maximum de mots ou mons suivant un thème précis. 
+Ce jeu consiste à trouver un maximum de mots ou noms suivant un thème précis. 
 Le temps est fixé par les fondateurs de l'application (indéterminé pour le moment). 
 Il englobe 3 modes de jeu. Le mode SOLO, AMIS ou bien ONLINE. 
 En effet, on peut jouer seul, avec un ami ou bien un utilisateur aléatoire de l'application. 
@@ -91,11 +91,11 @@ Lorsqu'un utilisateur clique sur une personne online si il y a une partie en cou
 
 ###Afficher les paramètres d'un utilisateur
 
-Lorsque l'utilisateur clique sur son nom, une page affiche ses données tels que sa lanque, son adresse e-mail, sa photo, son password en ******  ou encore son ID.
+Lorsque l'utilisateur clique sur son nom, une page affiche ses données tels que sa langue, son adresse e-mail, sa photo, son password en ******  ou encore son ID.
 
 ###Modifier les paramètres d'un utilisateur
 
-Lorsque l'utilisateur clique sur son nom, une page affiche ses données tels que sa lanque, son adresse e-mail ou encore son ID.Il  pourra donc modifier son password, sa langue,sa photo.
+Lorsque l'utilisateur clique sur son nom, une page affiche ses données tels que sa langue, son adresse e-mail ou encore son ID.Il  pourra donc modifier son password, sa langue,sa photo.
 
 ###Statistique
 
