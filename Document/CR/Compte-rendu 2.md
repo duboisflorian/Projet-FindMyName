@@ -32,7 +32,6 @@
 - Less
 
 ![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR2/CR-2_less.png)
-
 ![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR2/CR-2_sass.png)
 
 
@@ -40,4 +39,4 @@
 
 - Angular JS 2
 
-![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR2/CR-2_angularjs2.png)
+          ![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR2/CR-2_angularjs2.png)
