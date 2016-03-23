@@ -21,7 +21,7 @@
 - Des cadres de travail
 
 ###Définition d'une équipe par @ABO
-![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/travail-equipe.PNG)
+![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR1/travail-equipe.PNG)
 
 ##Règles
 - [x] Tout le monde est en copie des mails qui concerne le projet.
@@ -36,7 +36,7 @@
 - [x] Un compte-rendu de toutes les réunions avec le tuteur sera réalisé par deux secrétaires élus au début de la séance.
 
 ##Technologies
-![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/techno.PNG)
+![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR1/techno.PNG)
 
 ##Outils
-![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/outils.PNG)
+![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR1/outils.PNG)
