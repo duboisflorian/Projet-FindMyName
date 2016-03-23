@@ -17,6 +17,9 @@
 - Sur GitHub, les documents doivent être rédigés en Markdown.
 
 #### II - Les branches sur GitHub
-
+![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR2/CR-2_branchegithub.png)
 
 #### III - Les technologies utilisées
+![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR2/CR-2_bootstrap.png)
+![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR2/CR-2_bootstrapgrid.jpg)
+
