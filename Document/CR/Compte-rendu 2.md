@@ -5,9 +5,8 @@
 
 #### I - Quelques explications au sujet de GitHub
 ##### a) Astuces Markdown :
-<img style="float: right;" src="CR-2_markdown.jpg"></img>
 
-
+![Image of teamWorking](https://github.com/duboisflorian/Projet-FindMyName/blob/master/images/CR/CR2/CR-2_markdown.jpg)
 
 ##### b) Conventions à mettre en place :
 - [x] feat:
