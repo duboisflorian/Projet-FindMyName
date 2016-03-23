@@ -60,3 +60,11 @@
 **Markdown GitHub** (sur Google)
 
 Plugin **bootstrap overlay** (pour voir les grilles sur les sites web Bootstrap).
+
+#### V - Pour la prochaine fois
+
+- Architecture de démarrage
+- Wireframes (incarner l’utilisateur)
+- Cartographie de navigation
+- Priorisations
+- Fonctionnalités
