@@ -1,4 +1,7 @@
-#Projet Tutoré CR-1 14 Mars 2016
+# Projet tutoré Find My Name
+## Compte-rendu n°1 - 14 Mars 2016
+
+-----
 
 @ABO 
 - Recherches, propositions et explications des sujets. Application (jeu) de « Quiz » @GR1 et coffre aux mots de passe @GR2 retenus.
