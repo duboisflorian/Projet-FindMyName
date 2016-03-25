@@ -6,7 +6,7 @@ import {TodoForm} from './todo_form';
 @Component({
   selector: 'todo-app',
   template: `
-    <h2>Todo</h2>
+    <h2>Todo list</h2>
     <span>{{remaining}} of {{todos.length}} remaining</span>
     [ <a (click)="archive()">archive</a> ]
 
