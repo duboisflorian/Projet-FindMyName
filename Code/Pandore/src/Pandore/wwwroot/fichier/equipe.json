@@ -1,0 +1,68 @@
+﻿{
+  "1": {
+    "nom_theme": "PSG",
+    "reponses": [
+      {
+        "nom": "Zlatan"
+      },
+      {
+        "nom": "Trapp"
+      },
+      {
+        "nom": "Cavani"
+      }
+    ]
+  },
+  "2": {
+    "nom_theme": "OL",
+    "reponses": [
+      {
+        "nom": "Grenier"
+      },
+      {
+        "nom": "Fekir"
+      },
+      {
+        "nom": "Valbuena"
+      }
+    ]
+  }
+}
+
+/*
+
+{
+  "themes": [
+    {
+      "nom_theme": "PSG",
+      "id_theme": "1",
+      "reponses": [
+        {
+          "nom": "Zlatan"
+        },
+        {
+          "nom": "Trapp"
+        },
+        {
+          "nom": "Cavani"
+        }
+      ]
+    },
+    {
+      "nom_theme": "OL",
+      "id_theme": "2",
+      "reponses": [
+        {
+          "nom": "Grenier"
+        },
+        {
+          "nom": "Fekir"
+        },
+        {
+          "nom": "Valbuena"
+        }
+      ]
+    }
+  ]
+}
+*/
