@@ -56,4 +56,5 @@
 Début du Sprint1
 
 - Florian
-	- Réalisation de la fonctionnalité jouer sans BD sans serveur avec fichier json
+	- Réalisation de la fonctionnalité jouer sans BD sans serveur sans fichier
+	- Début ajout ami et affichage ami sans BD sans serveur sans fichier
