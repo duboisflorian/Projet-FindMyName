@@ -7,7 +7,8 @@ import {AmiList} from './ami_list';
     selector: 'ami-app',
     template: `
         <div style="background-color:red" >
-    <h2>Liste des Amis</h2>
+    <ul class="list-unstyled"> <li><img src="fichier/logo.jpg" alt="0" style="width:50px;height:50px;"><span>TingTing (moi)</span></li></ul>
+    <h3>Liste des Amis</h3>
     <ami-list [amis]="amis"></ami-list>
     <ami-form (newFriend)="addFriend($event)"></ami-form>
 </div>

@@ -12,13 +12,17 @@ import {Ami} from './ami';
     template: `
     <ul class="list-unstyled">
       <li *ngFor="#ami of amis">
-        <img src="{{ami.photo}}" alt="{{ami.id}}" style="width:50px;height:50px;">
+        <img src="{{ami.photo}}" alt="{{ami.id}}" (click)="Detail(ami.id)" style="width:50px;height:50px;">
         <span >{{ami.text}}</span>
       </li>
     </ul>`
 })
 export class AmiList {
     @Input() amis: Ami[];
+
+    Detail(id) {
+        alert(id);
+    }
 }
 
 
