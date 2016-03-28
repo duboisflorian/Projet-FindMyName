@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	
+	function affichage_ami()
+	{
+	alert("OK");
+	 $.getJSON("ami.json", function(result){
+            $.each(result, function(i, field){
+                $("div").append(field + " <br/>");
+            });
+        });
+	}
+	
+	function ajout_amis()
+	{
+		alert(prompt("Entrez l'id de l'ami",""))
+	}
+</script>
+
+</head>
+
+
+<body onload="affichage_ami()">
+	<div>
+		
+	</div>
+	<input type="button" value="Ajouter un ami" onclick="ajout_amis()"/>
+</body>
+
+</html>
