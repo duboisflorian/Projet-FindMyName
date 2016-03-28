@@ -15,12 +15,18 @@ import {AmiList} from './ami_list';
 })
 export class AmiApp {
     amis: Ami[] = [
-        {text: 'florian', id:'10', photo:'fichier/logo.jpg'}
+        {text: 'florian', id:'1', photo:'fichier/logo.jpg'}
     ];
 
 
     addFriend(friend: Ami) {
-        this.amis.push(friend);
+        var t = 0;
+        for (var i = 0; i < this.amis.length; i++) {
+            if (this.amis[i].text == friend.text && this.amis[i].id == friend.id) {
+                t = 1;
+            }
+        }
+        if (t == 0) this.amis.push(friend); else alert('Vous avez déjà cette personne en ami');
     }
 }
 

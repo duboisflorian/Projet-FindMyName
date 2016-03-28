@@ -23,9 +23,16 @@ export class AmiForm {
     ];
 
     addAmi() {
+        var c = '0';
         if (this.friend) {
-            this.newFriend.next({ text: this.friend, id: '2', photo: 'fichier/logo.jpg' });
+            for (var i = 0; i < this.liste_personnes.length; i++) {
+                if (this.liste_personnes[i].id == this.friend) {
+                    this.newFriend.next({ text: this.liste_personnes[i].text, id: this.friend, photo: this.liste_personnes[i].photo });
+                    c = '1';
                 }
+            }
+        }
+        if (c =='0') alert('Cette id n\'existe pas');
             
             this.friend = '';
         }
