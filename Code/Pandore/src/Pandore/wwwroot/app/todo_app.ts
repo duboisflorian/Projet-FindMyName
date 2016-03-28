@@ -6,9 +6,8 @@ import {TodoForm} from './todo_form';
 @Component({
   selector: 'todo-app',
   template: `
-    <h2>Todo list</h2>
-    <span>{{remaining}} of {{todos.length}} remaining</span>
-    [ <a (click)="archive()">archive</a> ]
+    <h2>Liste des joueurs</h2>
+    <span>{{remaining}} of {{joueurs.length}} remaining</span>
 
     <todo-list [todos]="todos"></todo-list>
     <todo-form (newTask)="addTask($event)"></todo-form>`,
@@ -17,20 +16,17 @@ import {TodoForm} from './todo_form';
 })
 export class TodoApp {
   todos: Todo[] = [
-      {text:'learn angular', done:true},
-      {text:'build an angular app', done:false}
+  ];
+  
+    joueurs: Joueurs[] = [
+      {text: "Rabiot"},
+      {text: "Zlatan"},
+      {text: "Cavani"},
+      {text: "Trapp"},
   ];
 
   get remaining() {
     return this.todos.reduce((count: number, todo: Todo) => count + +!todo.done, 0);
-  }
-
-  archive(): void {
-    var oldTodos = this.todos;
-    this.todos = [];
-    oldTodos.forEach((todo: Todo) => {
-      if (!todo.done) this.todos.push(todo);
-    });
   }
 
   addTask(task: Todo) {
