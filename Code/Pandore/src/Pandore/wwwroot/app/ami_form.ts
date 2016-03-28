@@ -5,8 +5,8 @@ import {Ami} from './ami';
     selector: 'ami-form',
     template: `
     <form (ngSubmit)="addAmi()">
-      <input type="text" [(ngModel)]="firend" size="30"
-             placeholder="entrer le nom d'une personne">
+      <input type="text" [(ngModel)]="friend" size="30"
+             placeholder="entrer l'id de la personne">
       <input class="btn-primary" type="submit" value="ajouter">
     </form>`
 })
@@ -14,9 +14,17 @@ export class AmiForm {
     @Output() newFriend = new EventEmitter<Ami>();
     friend: string = '';
 
+    liste_personnes: Ami[] = [
+        { text: 'florian', id: '1', photo:'fichier/logo.jpg' },
+        { text: 'Yani', id: '2', photo: 'fichier/logo.jpg'},
+        { text: 'Maxime', id: '3', photo: 'fichier/logo.jpg' },
+        { text: 'Lionel', id: '4', photo: 'fichier/logo.jpg' },
+        { text: 'Diego', id: '5', photo: 'fichier/logo.jpg' },
+    ];
+
     addAmi() {
         if (this.friend) {
-                    this.newFriend.next({ text: this.friend, id: '1', photo : 'test' });
+            this.newFriend.next({ text: this.friend, id: '2', photo: 'fichier/logo.jpg' });
                 }
             
             this.friend = '';
