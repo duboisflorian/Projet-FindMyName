@@ -50,3 +50,10 @@
 
 - Lionnel 
 	- Archi - Démarrage
+
+##Lundi 28/03 
+
+Début du Sprint1
+
+- Florian
+	- Réalisation de la fonctionnalité jouer sans BD sans serveur avec fichier json
