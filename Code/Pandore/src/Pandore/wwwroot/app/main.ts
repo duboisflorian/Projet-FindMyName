@@ -1,7 +1,8 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {TodoApp}   from './todo_app';
+import {JouerApp}   from './jouer_app';
 
-bootstrap(TodoApp);
+
+bootstrap(JouerApp);
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

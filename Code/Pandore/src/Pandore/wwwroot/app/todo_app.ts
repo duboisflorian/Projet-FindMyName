@@ -6,11 +6,12 @@ import {TodoForm} from './todo_form';
 @Component({
   selector: 'todo-app',
   template: `
+<div style="background-color:blue" >
     <h2>Liste des joueurs</h2>
     <span>{{remaining}} of {{joueurs.length}} remaining</span>
 
     <todo-list [todos]="todos"></todo-list>
-    <todo-form (newTask)="addTask($event)"></todo-form>`,
+    <todo-form (newTask)="addTask($event)"></todo-form></div>`,
   styles:['a { cursor: pointer; cursor: hand; }'],
   directives: [TodoList, TodoForm]
 })
