@@ -1,8 +1,8 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {JouerApp}   from './jouer_app';
+import {AccApp}   from './Acc_app';
 
+bootstrap(AccApp);
 
-bootstrap(JouerApp);
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

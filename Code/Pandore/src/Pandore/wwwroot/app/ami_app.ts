@@ -6,12 +6,32 @@ import {AmiList} from './ami_list';
 @Component({
     selector: 'ami-app',
     template: `
-        <div style="background-color:red" >
-    <ul class="list-unstyled"> <li><img src="fichier/logo.jpg" alt="0" style="width:50px;height:50px;"><span>TingTing (moi)</span></li></ul>
-    <h3>Liste des Amis</h3>
-    <ami-list [amis]="amis"></ami-list>
-    <ami-form (newFriend)="addFriend($event)"></ami-form>
-</div>
+    <div class="container core">
+        <div class="row">
+            <ul class="nav nav-button col-sm-2 col-md-2">
+                <li class="active"><a href="#">Ami</a></li>
+                <li><a href="#">Online</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active">
+                        <a href="#">
+                            <img class="portrait" src="fichier/Portrait.png" /><span class="nom"> Florian</span>
+                        </a>
+                    </li>
+                 <ami-list [amis]="amis"></ami-list>
+               </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="nav nav-ajouter col-sm-2 col-md-2">
+                    <ami-form (newFriend)="addFriend($event)"></ami-form>
+            </div>
+        </div>
+    </div>
+
 `, directives: [AmiForm, AmiList]
 })
 export class AmiApp {

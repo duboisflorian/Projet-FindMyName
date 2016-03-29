@@ -3,19 +3,10 @@ import {Ami} from './ami';
 
 @Component({
     selector: 'ami-list',
-    styles: [`
-    .done-true {
-      text-decoration: line-through;
-      color: grey;
-    }`
-    ],
     template: `
-    <ul class="list-unstyled">
-      <li *ngFor="#ami of amis">
-        <img src="{{ami.photo}}" alt="{{ami.id}}" (click)="Detail(ami.id)" style="width:50px;height:50px;">
-        <span >{{ami.text}}</span>
-      </li>
-    </ul>`
+    <li><form class="form"><input id="recherche" class="form-control form-recherche" placeholder="Rechercher un ami" required="" type="text"></form></li>
+    <li *ngFor="#ami of amis"><a href="{{ami.id}}"><img class="portrait" src="{{ami.photo}}" (click)="Detail(ami.id)" /><span class="nom"> {{ami.text}} </span></a></li>
+`
 })
 export class AmiList {
     @Input() amis: Ami[];
