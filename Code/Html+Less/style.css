@@ -1,8 +1,6 @@
 body {
-  background-image: url("fond.png");
+  background-image: url("file:///C:/Users/Tinorus/Desktop/Html+Less/fond.jpg");
   background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 }
 .logo {
   width: 40px ;
@@ -31,10 +29,11 @@ body {
 }
 .nom {
   color: black;
-  margin-left: 3em;
+  margin-left: 1em;
+  font-size: 20px;
 }
 .menu {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
 }
 .nav-button {
   padding: 0;
@@ -53,33 +52,39 @@ body {
   display: block;
   float: left;
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.5);
   color: #DCDCDC;
   text-decoration: none;
   text-align: center;
+}
+.nav-button li a span {
+  font-size: 24px;
+  color: black;
 }
 .nav-ajouter {
   padding: 0;
   margin: 0;
   list-style-type: none;
+  margin-top: 1px;
 }
 .nav-ajouter a {
   display: block;
   float: left;
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.5);
   color: #DCDCDC;
   text-decoration: none;
   text-align: center;
 }
 .nav-ajouter a span {
   font-size: 24px;
+  color: black;
 }
 .core {
   background-color: rgba(0, 0, 0, 0.7);
-  margin: auto;
-  width: 98%;
-  height: 750px;
+  margin: 80px auto 65px auto;
+  width: 100%;
+  height: 800px;
 }
 .nav > li > a:focus,
 .nav > li > a:hover {
@@ -89,11 +94,10 @@ body {
 .sidebar {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 20px;
-  height: 675px;
+  height: 710px;
   display: block;
   overflow-x: hidden;
   overflow-y: auto;
-  /* Scrollable contents if viewport is shorter than content. */
 }
 .nav-sidebar {
   margin-right: -20px;
@@ -107,16 +111,17 @@ body {
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: lightgray;
 }
 footer {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   padding-left: 20px;
   color: white;
   font-family: "Proxima Nova Semibold";
   font-size: 13px;
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  right: 0;
+  text-align: center;
+  position: relative;
+  clear: both;
+  margin-top: -40px;
+  height: 40px;
 }

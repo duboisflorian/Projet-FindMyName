@@ -1,7 +1,8 @@
 /* Déclaration */
 @fond: url("fond.jpg");
 @noir: fadeout(black, 30%);
-
+@noir_fonce: fadeout(black, 10%);
+@white: fadeout(white, 50%);
 
 /* Utilisation */
 body { 	
@@ -39,14 +40,13 @@ body {
 
 .nom{
      color: black;
-     margin-left: 3em;
+     margin-left: 1em;
+     font-size:20px;
 }
 
 .menu {
-    background: @noir;
+    background: @noir_fonce;
 }
-
-
 
 
 .nav-button {
@@ -65,10 +65,14 @@ body {
             display:block;
             float:left;  
             width:100%; 
-            background: @noir;
+            background: @white;
             color:#DCDCDC;
             text-decoration:none;
             text-align:center;
+            span{
+                font-size:24px;
+                color: black;
+            }
         }
     }
  }
@@ -77,17 +81,18 @@ body {
      padding:0;
      margin:0;
      list-style-type:none;
-  
+    margin-top: 1px;
      a {
         display:block;
         float:left;  
         width:100%; 
-        background: @noir;
+        background: @white;
         color:#DCDCDC;
         text-decoration:none;
         text-align:center;
             span{
                 font-size:24px;
+                color: black;
             }
         }
     
@@ -96,9 +101,9 @@ body {
 
 .core {
     background-color: @noir ;
-    margin: auto;
-    width: 98%;
-    height: 750px;
+    margin: 80px auto 65px auto;
+    width: 100%;
+    height: 800px;
 }
 
 .nav > li > a:focus, .nav > li > a:hover {
@@ -107,12 +112,12 @@ body {
 }
 
 .sidebar {
-    background-color: fadeout(white, 50%) ;
+    background-color: @white ;
     padding: 20px;
-    height: 675px;
+    height: 710px;
     display: block;
     overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    overflow-y: auto;
   }
 
 
@@ -128,18 +133,19 @@ body {
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  background-color: @noir;
+  background-color: lightgray;
 }
 
 footer {
-    background: @noir;
+    background: @noir_fonce;
     padding-left: 20px;
     color: white;
     font-family: "Proxima Nova Semibold";
     font-size: 13px;
-    position:absolute;
-    bottom:0px;
-    left:0;
-    right:0;
+    text-align: center;
+    position: relative;
+    clear:both;
+    margin-top: -40px;
+    height: 40px
 }
 
