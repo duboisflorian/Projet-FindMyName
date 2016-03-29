@@ -35,7 +35,8 @@ export class AmiForm {
         if (c =='0') alert('Cette id n\'existe pas');
             
             this.friend = '';
-        }
+    }
+
     }
 
 
