@@ -1,10 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Angular 2 Todos</title>
+    <title>FindMyName</title>
+    <link rel="icon" type="image/png" href="/fichier/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="libs/css/bootstrap.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- IE required polyfills, in this exact order -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
@@ -30,7 +35,79 @@
 
 <!-- 3. Display the application -->
 <body>
-    <!--   <jouer-app class="container" style="display: block"> Loading...</jouer-app>   -->
+
+
+    <div class="scrollmagic-pin-spacer" data-scrollmagic-pin-spacer="" style="top: auto; left: auto; bottom: auto; right: auto; margin: 25px 0px; display: block; position: relative; box-sizing: content-box; min-height: 51px; height: auto; padding-top: 0px; padding-bottom: 0px;">
+        <nav style="position: relative; margin: auto; top: 0px; left: 0px; bottom: auto; right: auto; box-sizing: border-box; width: 100%;" class="menu navbar navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html" style="padding-top:0; padding-bottom:0;"> <img class="logo" style="display:inline;" src="fichier/logo.png" /> <span style="display:inline;" class="text-logo">Find My Name</span></a>
+                        </div>
+                        <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li style="padding: 10px;"><img class="incone_menu" src="/fichier/Portrait.png" /><span style="color:white;"> Bonjour Florain</span> </li>
+                                <li><a href="#"><span class="glyphicon glyphicon glyphicon-off"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="container core">
+        <div class="row">
+            <ul class="nav nav-button col-sm-2 col-md-2">
+                <li class="active"><a href="#">Ami</a></li>
+                <li><a href="#">Online</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 col-md-2 sidebar">
+
+                <ul class="nav nav-sidebar">
+                    <li class="active">
+                        <a href="#">
+                            <img class="portrait" src="fichier/Portrait.png" /><span class="nom"> Florian</span>
+                        </a>
+                    </li>
+                    <li><form class="form"><input id="recherche" class="form-control form-recherche" placeholder="Rachercher un ami" required="" type="text"></form></li>
+                    <li><a href="#"><img class="portrait" src="/fichier/Portrait.png" /><span class="nom"> Diego </span></a></li>
+                    <li><a href="#"><img class="portrait" src="/fichier/Portrait.png" /><span class="nom"> Diego </span></a></li>
+                    <li><a href="#"><img class="portrait" src="/fichier/Portrait.png" /><span class="nom"> Diego </span></a></li>
+                    <li><a href="#"><img class="portrait" src="/fichier/Portrait.png" /><span class="nom"> Diego </span></a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="nav nav-ajouter col-sm-2 col-md-2">
+                <a href="#"><span>Ajouter un ami</span></a>
+            </div>
+        </div>
+    </div>
+    <footer class="hidden-xs">
+        <div>
+            <div>
+                 2016 © Find My Name Game. All right reserved. <br /> All trademarks referenced herein are the properties of their respective owners
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="libs/jquery.js"></script>
+    <script src="libs/bootstrap.min.js"></script>
+    <!-- <jouer-app class="container" style="display: block"> Loading...</jouer-app>   -->
 </body>
 
 </html>
