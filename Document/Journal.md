@@ -58,3 +58,21 @@ Début du Sprint1
 - Florian
 	- Réalisation de la fonctionnalité jouer sans BD sans serveur sans fichier
 	- Début ajout ami et affichage ami sans BD sans serveur sans fichier
+
+##Mardi 29/03 
+
+- Yani 
+	- Fonctionnalité jouer avec Json ( chargement des réponses )
+
+- Florian
+	- Modification de l'architecture du site (création de page)
+	- Découpage du css ( footer et top )
+	- Application du css/less de Maxime v_1
+	- Création de la partie affichage de la partie avec un ami
+
+- Maxime 
+	- Ecriture du css en lss
+	- Application du css/less v_2
+
+- Lionnel 
+	- AFonctionnalité affichage ami et ajout ami avec fichier Json
