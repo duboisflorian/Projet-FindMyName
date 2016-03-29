@@ -1,5 +1,6 @@
 /* Déclaration */
 @fond: url("fond.jpg");
+@noir: fadeout(black, 30%);
 
 
 /* Utilisation */
@@ -12,23 +13,128 @@ body {
     width:40px ;
     height: 50px;
 }
+.portrait {
+    width:60px ;
+    height: 60px;
+}
+
+.incone_menu{
+    width:30px ;
+    height: 30px;
+
+}
+
+.form-recherche {   
+    margin: 10px auto 10px auto;
+    width: 90%;
+}
 
 .text-logo,  .text-logo:hover, .text-logo:active{
-     color: #fff;
+    color: #fff;
     text-decoration: none;
     display: inline-block;
     font-family: Verdana;
     font-weight: bold;
 }
 
+.nom{
+     color: black;
+     margin-left: 3em;
+}
+
 .menu {
-    background: #000;
+    background: @noir;
+}
+
+
+
+
+.nav-button {
+       .active{
+         background: fadeout(white, 50%);
+    }
+
+     padding:0;
+     margin:0;
+     list-style-type:none;
+     li {
+        float:left;
+        width:50%;
+        border-left:1px solid black;
+        a {
+            display:block;
+            float:left;  
+            width:100%; 
+            background: @noir;
+            color:#DCDCDC;
+            text-decoration:none;
+            text-align:center;
+        }
+    }
+ }
+
+.nav-ajouter {
+     padding:0;
+     margin:0;
+     list-style-type:none;
+  
+     a {
+        display:block;
+        float:left;  
+        width:100%; 
+        background: @noir;
+        color:#DCDCDC;
+        text-decoration:none;
+        text-align:center;
+            span{
+                font-size:24px;
+            }
+        }
+    
+ }
+
+
+.core {
+    background-color: @noir ;
+    margin: auto;
+    width: 98%;
+    height: 750px;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+	text-decoration: none;
+	background-color: #595757;
+}
+
+.sidebar {
+    background-color: fadeout(white, 50%) ;
+    padding: 20px;
+    height: 675px;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+
+
+.nav-sidebar {
+  margin-right: -20px; 
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  background-color: @noir;
 }
 
 footer {
-    background: #000;
+    background: @noir;
     padding-left: 20px;
-    color: #fff;
+    color: white;
     font-family: "Proxima Nova Semibold";
     font-size: 13px;
     position:absolute;
