@@ -33,7 +33,7 @@ export class ChoixApp {
         { text: "OL", id: "2", photo:"./fichier/ol.jpg" },
         { text: "REAL", id: "3", photo:"./fichier/real.jpg" },
         { text: "Barca", id: "4", photo: "./fichier/barca.jpg" },
-        { text: "arsenal", id: "5", photo: "./fichier/arsenal.png" },
+        { text: "arsenal", id: "5", photo: "./fichier/arsenal.jpg" },
         { text: "city", id: "6", photo: "./fichier/city.jpg" },
     ];
 
