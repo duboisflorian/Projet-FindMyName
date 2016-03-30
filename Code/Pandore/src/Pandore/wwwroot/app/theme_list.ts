@@ -5,7 +5,7 @@ import {Theme} from './theme';
     selector: 'theme-list',
     template: `
     <ul class="list-unstyled">
-    <li *ngFor="#themes of theme"><img class="portrait" src="{{themes.photo}}" (click)="Detail(themes.text)" /></li>
+    <li *ngFor="#themes of theme"><a href="jouer.html"><img class="portrait" src="{{themes.photo}}" (click)="Detail(themes.text)" /></a></li>
     </ul>`
 })
 export class ThemeList {
