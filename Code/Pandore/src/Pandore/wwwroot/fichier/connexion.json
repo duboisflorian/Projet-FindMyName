@@ -1,0 +1,25 @@
+﻿{
+  "utilisateur1": {
+    "login": "Lionel",
+    "mdp": "1234"
+  },
+  "utilisateur2": {
+    "login": "Florian",
+    "mdp": "1234"
+  },
+  "utilisateur3": {
+
+    "login": "Yani",
+    "mdp": "1234"
+
+  },
+  "utilisateur4": {
+    "login": "Maxime",
+    "mdp": "1234"
+  },
+  "utilisateur5": {
+    "login": "Diego",
+    "mdp": "1234"
+  }
+
+}
