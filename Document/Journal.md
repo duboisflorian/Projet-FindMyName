@@ -81,10 +81,14 @@ Début du Sprint1
 
 - Florian
 	- Modification css v_2
+	- Début de la fonctionnalité theme avec affichage des thèmes en dur sans random 
+	- Début passage de paramètre
 
 - Lionnel 
-	- Fonctionnalité affichage ami et ajout ami avec fichier Json (ecriture)
+	- Fonctionnalité affichage ami et ajout ami avec fichier Json (chargement) fin
+	- Fonctionnalité affichage ami et ajout ami avec fichier Json (ecriture) debut
 
 - Yani 
-	- Fonctionnalité jouer avec Json ( ecriture resultat de la partie  )
-	- Timer
+	- Fonctionnalité jouer avec Json ( chargement des réponses ) fin 
+	- Fonctionnalité jouer avec Json ( ecriture resultat de la partie  )debut
+
