@@ -1,0 +1,30 @@
+﻿{
+  "menu": "File",
+  "pers": [
+    {
+      "text": "florian",
+      "id": "1",
+      "photo": "fichier/logo.jpg"
+    },
+    {
+      "text": "yani",
+      "id": "2",
+      "photo": "fichier/logo.jpg"
+    },
+    {
+      "text": "maxime",
+      "id": "3",
+      "photo": "fichier/logo.jpg"
+    },
+    {
+      "text": "lionel",
+      "id": "4",
+      "photo": "fichier/logo.jpg"
+    },
+    {
+      "text": "diego",
+      "id": "5",
+      "photo": "fichier/logo.jpg"
+    }
+  ]
+}

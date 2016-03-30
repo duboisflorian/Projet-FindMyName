@@ -2,7 +2,8 @@
 export interface Ami {
     text: string,
     id: string,
-    photo:string
+    photo: string
+
 }
 
 

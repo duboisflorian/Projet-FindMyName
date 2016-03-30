@@ -10,36 +10,67 @@ import {Ami} from './ami';
       <input class="btn-primary" type="submit" value="ajouter">
     </form>`
 })
-export class AmiForm {
+export class AmiForm{
     @Output() newFriend = new EventEmitter<Ami>();
     friend: string = '';
 
-    // liste de tous les personnes qui ont un compte
-    // avec une base il faudra simplement regarder si l'id existe
-    // de meme avec un fichier Json
-    liste_personnes: Ami[] = [
-        { text: 'florian', id: '1', photo:'fichier/logo.jpg' },
-        { text: 'Yani', id: '2', photo: 'fichier/logo.jpg'},
-        { text: 'Maxime', id: '3', photo: 'fichier/logo.jpg' },
-        { text: 'Lionel', id: '4', photo: 'fichier/logo.jpg' },
-        { text: 'Diego', id: '5', photo: 'fichier/logo.jpg' },
-    ];
+    static ami: string;
+    static c: string;
+    static a: EventEmitter<Ami>;
+    static text: string;
+    static photo: string;
+ 
+
 
     addAmi() {
-        var c = '0';
-        if (this.friend) {
-            for (var i = 0; i < this.liste_personnes.length; i++) {
-                if (this.liste_personnes[i].id == this.friend) {
-                    this.newFriend.next({ text: this.liste_personnes[i].text, id: this.friend, photo: this.liste_personnes[i].photo });
-                    c = '1';
-                }
-            }
-        }
-        if (c =='0') alert('Cette id n\'existe pas');
-            
-            this.friend = '';
-    }
+        var xobj = new XMLHttpRequest();
 
+        xobj.overrideMimeType("application/json");
+
+        xobj.open('GET', './fichier/personnes.json', true); // Replace 'my_data' with the path to your file
+
+        AmiForm.ami = this.friend;
+        AmiForm.a = this.newFriend;
+
+        xobj.onreadystatechange = function () {
+
+            if (xobj.readyState == 4 && xobj.status == 200) {
+
+                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                //alert(xobj.responseText);
+                var data = eval("(" + xobj.responseText + ")");
+
+                AmiForm.c = '0';
+
+                if (AmiForm.ami) {
+ 
+                    for (var i = 0; i < data.pers.length; i++) {
+
+                        if (data.pers[i].id == AmiForm.ami) {
+
+                            AmiForm.text = data.pers[i].text;
+                            AmiForm.photo = data.pers[i].photo;
+                            AmiForm.a.next({ text: data.pers[i].text, id: data.pers[i].id, photo: data.pers[i].photo });
+                            AmiForm.c = '1';
+                        }
+                    }
+                }
+
+                /*this.Tem = { text: data.commands[0].text, id: data.commands[0].id, photo: data.commands[0].photo };
+                this.liste_personnes.push(this.Tem);*/
+                /*for (var i = 0; i < data.commands.length; i++) {
+                    this.liste_personnes.push({ text: data.commands[i].text, id: data.commands[i].id, photo: data.commands[i].photo });*/
+            }
+        };
+
+
+        if (AmiForm.c == '0')
+             alert('Cette id n\'existe pas');
+
+        this.friend = '';
+
+        xobj.send(null);
+    }
     }
 
 
