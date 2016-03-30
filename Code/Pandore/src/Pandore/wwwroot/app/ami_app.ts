@@ -2,6 +2,7 @@
 import {Ami} from './ami';
 import {AmiForm} from './ami_form';
 import {AmiList} from './ami_list';
+import {UiTabs, UiPane} from './ui_tabs';
 
 @Component({
     selector: 'ami-app',

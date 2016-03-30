@@ -6,7 +6,7 @@ import {TodoForm} from './todo_form';
 @Component({
   selector: 'todo-app',
   template: `
-<div style="background-color:blue" >
+<div >
     <h2>Liste des joueurs</h2>
     <span>{{remaining}} of {{joueurs.length}} remaining</span>
 
