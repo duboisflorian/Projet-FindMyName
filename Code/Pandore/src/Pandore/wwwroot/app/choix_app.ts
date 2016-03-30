@@ -2,6 +2,8 @@
 import {Footer} from './footer';
 import {Top} from './top';
 import {Todo} from './todo';
+import {Theme} from './theme';
+import {ThemeList} from './theme_list';
 
 
 
@@ -14,14 +16,25 @@ import {Todo} from './todo';
     <span style="text-align: center;">{{remaining}} of {{remaining}} remaining</span>
     <h2>Liste des joueurs</h2>
 </div>
-<div id="droite" style="width:80%;text-align: center;"><h2>Choisir un thème</h2><\br><a href="jouer.html">jouer</a></div>
+<div id="droite" style="width:80%;text-align: center;"><h2>Choisir un thème</h2>
+<theme-list [theme]="theme"></theme-list>
+</div>
 
 </div>
 
-`, directives: [Top, Footer]
+`, directives: [Top, Footer, ThemeList]
 })
 export class ChoixApp {
     todos: Todo[] = [
+    ];
+
+    theme: Theme[] = [
+        { text: "PSG",id:"1",photo:"./fichier/psg.jpg" },
+        { text: "OL", id: "2", photo:"./fichier/ol.jpg" },
+        { text: "REAL", id: "3", photo:"./fichier/real.jpg" },
+        { text: "Barca", id: "4", photo: "./fichier/barca.jpg" },
+        { text: "arsenal", id: "5", photo: "./fichier/arsenal.png" },
+        { text: "city", id: "6", photo: "./fichier/city.jpg" },
     ];
 
     get remaining() {
