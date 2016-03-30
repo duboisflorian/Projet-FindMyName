@@ -3,13 +3,9 @@
 @Component({
         selector: 'footer',
         template: `
-<footer class="hidden-xs" >
-    <div>
-    <div>
-    2016 © Find My Name Game.All right reserved. <br /> All trademarks referenced herein are the properties of their respective owners
-        < /div>
-        < /div>
-        < /footer>
+              <footer class="hidden-xs">            
+                    2016 © Find My Name Game. All right reserved. <br /> All trademarks referenced herein are the properties of their respective owners     
+              </footer>
 `
     })
 export class Footer {

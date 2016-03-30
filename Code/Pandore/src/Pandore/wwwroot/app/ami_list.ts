@@ -4,7 +4,7 @@ import {Ami} from './ami';
 @Component({
     selector: 'ami-list',
     template: `
-    <li><form class="form"><input id="recherche" class="form-control form-recherche" placeholder="Rechercher un ami" required="" type="text"></form></li>
+    <li><form class="form"><input id="recherche" class="form-control form-recherche" placeholder="Rachercher un ami" required="" type="text"></form></li>
     <li *ngFor="#ami of amis"><a href="{{ami.id}}"><img class="portrait" src="{{ami.photo}}" (click)="Detail(ami.id)" /><span class="nom"> {{ami.text}} </span></a></li>
 `
 })

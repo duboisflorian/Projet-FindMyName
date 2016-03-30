@@ -14,6 +14,9 @@ export class AmiForm {
     @Output() newFriend = new EventEmitter<Ami>();
     friend: string = '';
 
+    // liste de tous les personnes qui ont un compte
+    // avec une base il faudra simplement regarder si l'id existe
+    // de meme avec un fichier Json
     liste_personnes: Ami[] = [
         { text: 'florian', id: '1', photo:'fichier/logo.jpg' },
         { text: 'Yani', id: '2', photo: 'fichier/logo.jpg'},
