@@ -75,4 +75,16 @@ Début du Sprint1
 	- Application du css/less v_2
 
 - Lionnel 
-	- AFonctionnalité affichage ami et ajout ami avec fichier Json
+	- Fonctionnalité affichage ami et ajout ami avec fichier Json (chargement)
+
+##Mercredi 30/03 
+
+- Florian
+	- Modification css v_2
+
+- Lionnel 
+	- Fonctionnalité affichage ami et ajout ami avec fichier Json (ecriture)
+
+- Yani 
+	- Fonctionnalité jouer avec Json ( ecriture resultat de la partie  )
+	- Timer
