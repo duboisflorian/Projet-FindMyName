@@ -1,68 +1,89 @@
 ﻿{
-  "1": {
-    "nom_theme": "PSG",
-    "reponses": [
-      {
-        "nom": "Zlatan"
-      },
-      {
-        "nom": "Trapp"
-      },
-      {
-        "nom": "Cavani"
-      }
-    ]
-  },
-  "2": {
-    "nom_theme": "OL",
-    "reponses": [
-      {
-        "nom": "Grenier"
-      },
-      {
-        "nom": "Fekir"
-      },
-      {
-        "nom": "Valbuena"
-      }
-    ]
-  }
-}
-
-/*
-
-{
-  "themes": [
+  "nb": "21",
+  "joueurs": [
     {
-      "nom_theme": "PSG",
-      "id_theme": "1",
-      "reponses": [
-        {
-          "nom": "Zlatan"
-        },
-        {
-          "nom": "Trapp"
-        },
-        {
-          "nom": "Cavani"
-        }
-      ]
+      "text": "zlatan",
+      "done": false
     },
     {
-      "nom_theme": "OL",
-      "id_theme": "2",
-      "reponses": [
-        {
-          "nom": "Grenier"
-        },
-        {
-          "nom": "Fekir"
-        },
-        {
-          "nom": "Valbuena"
-        }
-      ]
+      "text": "lucas",
+      "done": false
+    },
+    {
+      "text": "trapp",
+      "done": false
+    },
+    {
+      "text": "aurier",
+      "done": false
+    },
+    {
+      "text": "luiz",
+      "done": false
+    },
+    {
+      "text": "marquinhos",
+      "done": false
+    },
+    {
+      "text": "kurzawa",
+      "done": false
+    },
+    {
+      "text": "maxwell",
+      "done": false
+    },
+    {
+      "text": "silva",
+      "done": false
+    },
+    {
+      "text": "matuidi",
+      "done": false
+    },
+    {
+      "text": "rabiot",
+      "done": false
+    },
+    {
+      "text": "motta",
+      "done": false
+    },
+    {
+      "text": "verratti",
+      "done": false
+    },
+    {
+      "text": "stambouli",
+      "done": false
+    },
+    {
+      "text": "pastore",
+      "done": false
+    },
+    {
+      "text": "cavani",
+      "done": false
+    },
+    {
+      "text": "di maria",
+      "done": false
+    },
+    {
+      "text": "ongenda",
+      "done": false
+    },
+    {
+      "text": "sirigu",
+      "done": false
+    },
+    {
+      "text": "douchez",
+      "done": false
+    },
+    {
+      "text": "van der wiel",
+      "done": false
     }
   ]
 }
-*/
