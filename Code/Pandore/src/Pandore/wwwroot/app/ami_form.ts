@@ -54,8 +54,10 @@ export class AmiForm{
                             AmiForm.c = '1';
                         }
                     }
+                   
                 }
-
+                if (AmiForm.c == '0')
+                    alert('Cette id n\'existe pas');
                 /*this.Tem = { text: data.commands[0].text, id: data.commands[0].id, photo: data.commands[0].photo };
                 this.liste_personnes.push(this.Tem);*/
                 /*for (var i = 0; i < data.commands.length; i++) {
@@ -63,9 +65,6 @@ export class AmiForm{
             }
         };
 
-
-        if (AmiForm.c == '0')
-             alert('Cette id n\'existe pas');
 
         this.friend = '';
 
