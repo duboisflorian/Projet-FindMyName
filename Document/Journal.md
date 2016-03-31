@@ -100,7 +100,7 @@ Début du Sprint1
 	
 ##Mercredi 31/03 
 
-###Objectif : Ecrire dans un fichier json
+###Objectif : Ecrire dans un fichier json / timer / passage de paramètre / popup
 
 - Maxime
 	- CSS
