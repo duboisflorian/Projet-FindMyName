@@ -1,0 +1,35 @@
+<html>
+<head>
+
+<script>
+	function ecriture()
+	{
+		var login = document.getElementById("login").value;
+		var mdp = document.getElementById("mdp").value;
+		
+		var fileSystem=new ActiveXObject("Scripting.FileSystemObject");
+		var monfichier=fileSystem.OpenTextFile("connexion.json", 2 ,true);
+		monfichier.WriteLine("{");
+		monfichier.WriteLine('"utilisateur1":');
+		monfichier.WriteLine("{");
+		monfichier.WriteLine('"login": "' +login +'",' );
+		monfichier.WriteLine('"mdp": "' +mdp +'"');
+		monfichier.WriteLine("}");
+		monfichier.WriteLine("}");
+		//monfichier=fileSystem.OpenTextFile("tutorielsenfolie.txt", 1 ,true);
+		//alert(monfichier.ReadAll()); 
+		alert("OK");
+		//monFichier.Close();
+	}
+</script>
+	
+</head>
+
+
+<body>
+	<input type="text" id="login" />
+	<input type="text" id="mdp" />	
+	<input type="button" value="Ajouter" onclick="ecriture()"/>
+</body>
+
+</html>
