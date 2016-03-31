@@ -10,7 +10,7 @@
 
     <link href="libs/css/bootstrap.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="app/countdown.js" type="text/javascript"></script>
     <!-- IE required polyfills, in this exact order -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
@@ -21,6 +21,7 @@
     <script src="https://npmcdn.com/typescript@1.8.9/lib/typescript.js"></script>
     <script src="https://code.angularjs.org/2.0.0-beta.12/Rx.js"></script>
     <script src="https://code.angularjs.org/2.0.0-beta.12/angular2.dev.js"></script>
+
     <script>
       System.config({
         transpiler: 'typescript',
@@ -37,6 +38,17 @@
 <body>
 
     <jouer-app> Loading...</jouer-app>
+    <p>Example 2 (show only min and sec)</p>
+    <!-- =========================================================== -->
+    <script type="application/javascript">
+        var myCountdown2 = new Countdown({
+                                            time: 120,
+                                            width:150,
+                                            height:80,
+                                            rangeHi:"minute"
+                                            });
+
+    </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

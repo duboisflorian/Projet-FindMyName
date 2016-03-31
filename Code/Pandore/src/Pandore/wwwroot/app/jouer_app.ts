@@ -40,6 +40,14 @@ export class JouerApp {
     nbjoueurs: string;
     constructor() {
 
+            var txt;
+        var r = confirm("Êtes-vous Prêt a jouer pendant 2m");
+        if (r == true) {
+            setTimeout(function () { window.location.href = "acc.html"; }, 120000);
+        } else {
+            window.location.href = "acc.html";
+        }
+
         var xobj = new XMLHttpRequest();
 
         xobj.overrideMimeType("application/json");
