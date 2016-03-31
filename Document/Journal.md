@@ -89,7 +89,7 @@ Début du Sprint1
 	- Fonctionnalité jouer avec Json ( chargement des réponses ) fin 
 
 - Lionnel 
-	- Fonctionnalité affichage ami et ajout ami avec fichier Json (chargement) fin
+	- Fonctionnalité ajout ami avec fichier Json (chargement) fin
 	- Page de connexion javascript
 
 - Yani 
@@ -101,4 +101,10 @@ Début du Sprint1
 ##Mercredi 31/03 
 
 ###Objectif : Ecrire dans un fichier json
+
+- Maxime
+	- CSS
+
+- Florian
+	- Fonctionnalité affichage ami avec fichier Json (chargement) fin
 
