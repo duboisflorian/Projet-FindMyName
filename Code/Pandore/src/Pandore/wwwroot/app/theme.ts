@@ -2,7 +2,8 @@
 export interface Theme {
     text: string,
     id: string,
-    photo: string
+    photo: string,
+    done: boolean
 }
 
 

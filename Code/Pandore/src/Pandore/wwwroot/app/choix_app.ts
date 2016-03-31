@@ -29,13 +29,41 @@ export class ChoixApp {
     ];
 
     theme: Theme[] = [
-        { text: "PSG",id:"1",photo:"./fichier/psg.jpg" },
-        { text: "OL", id: "2", photo:"./fichier/ol.jpg" },
-        { text: "REAL", id: "3", photo:"./fichier/real.jpg" },
-        { text: "Barca", id: "4", photo: "./fichier/barca.jpg" },
-        { text: "arsenal", id: "5", photo: "./fichier/arsenal.jpg" },
-        { text: "city", id: "6", photo: "./fichier/city.jpg" },
+        { text: "PSG",id:"1",photo:"./fichier/psg.jpg", done: false},
+        { text: "OL", id: "2", photo: "./fichier/ol.jpg", done: false},
+        { text: "REAL", id: "3", photo: "./fichier/real.jpg", done: false },
+        { text: "Barca", id: "4", photo: "./fichier/barca.jpg", done: false },
+        { text: "arsenal", id: "5", photo: "./fichier/arsenal.jpg", done: false },
+        { text: "city", id: "6", photo: "./fichier/city.jpg", done: false },
     ];
+
+    static themes: Theme[] = [
+    ];
+    constructor() {
+
+        var xobj = new XMLHttpRequest();
+
+        xobj.overrideMimeType("application/json");
+
+        xobj.open('GET', './fichier/equipe.json', true); // Replace 'my_data' with the path to your file
+
+        xobj.onreadystatechange = function () {
+
+            if (xobj.readyState == 4 && xobj.status == 200) {
+
+                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                //alert(xobj.responseText);
+                var data = eval("(" + xobj.responseText + ")");
+
+                for (var i = 0; i < data.joueurs.length; i++) {
+
+                    TodoForm.joueurs.push({ text: data.joueurs[i].text, done: data.joueurs[i].done });
+                }
+
+            }
+        };
+        xobj.send(null);
+    }
 
     get remaining() {
         return this.todos.reduce((count: number, todo: Todo) => count + +!todo.done, 0);
