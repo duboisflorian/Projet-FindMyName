@@ -107,4 +107,7 @@ Début du Sprint1
 
 - Florian
 	- Fonctionnalité affichage ami avec fichier Json (chargement) fin
+	
+- Yani 
+	- Fonctionnalité jouer terminée
 
