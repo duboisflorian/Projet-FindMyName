@@ -77,7 +77,7 @@ Début du Sprint1
 	- Application du css/less v_2
 
 - Lionnel 
-	- Fonctionnalité affichage ami et ajout ami avec fichier Json (chargement)
+	- Fonctionnalité affichage ami et ajout ami avec fichier Json
 
 ##Mercredi 30/03 
 
@@ -89,16 +89,16 @@ Début du Sprint1
 	- Fonctionnalité jouer avec Json ( chargement des réponses ) fin 
 
 - Lionnel 
-	- Fonctionnalité ajout ami avec fichier Json (chargement) fin
+	- Fonctionnalité ajout ami avec fichier Json (verification que la personne existe) fin
 	- Page de connexion javascript
 
 - Yani 
-	- Fonctionnalité jouer avec Json ( chargement des réponses ) fin 
+	- Fonctionnalité jouer avec Json ( chargement des réponses )
 
 -Diego
 	-Début passage de paramètre
 	
-##Mercredi 31/03 
+##Jeudi 31/03 
 
 ###Objectif : Ecrire dans un fichier json / timer / passage de paramètre / popup
 
@@ -106,8 +106,16 @@ Début du Sprint1
 	- CSS
 
 - Florian
-	- Fonctionnalité affichage ami avec fichier Json (chargement) fin
+	- Fonctionnalité affichage ami avec fichier Json (chargement de la liste d'ami dans un tableau) fin
+	- Fonctionnalité jouer ajout du timer prend en compte le temps
 	
 - Yani 
-	- Fonctionnalité jouer terminée
+	- Fonctionnalité jouer (chargement des réponses) terminée
+	- Fonctionnalité choix equpe (chargement des themes avec json - random 4 themes) terminée-Diego
+	
+-Diego
+	-passage de paramètre
+
+- Lionnel 
+	- Fonctionnalité ajout ami avec fichier Json (ecriture dans le fichier)
 
