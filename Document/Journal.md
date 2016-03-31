@@ -61,6 +61,8 @@ Début du Sprint1
 
 ##Mardi 29/03 
 
+###Objectif : Finir la structure de base et débute le css
+
 - Yani 
 	- Fonctionnalité jouer avec Json ( chargement des réponses )
 
@@ -79,16 +81,24 @@ Début du Sprint1
 
 ##Mercredi 30/03 
 
+###Objectif : Lire dans un fichier json
+
 - Florian
 	- Modification css v_2
 	- Début de la fonctionnalité theme avec affichage des thèmes en dur sans random 
-	- Début passage de paramètre
+	- Fonctionnalité jouer avec Json ( chargement des réponses ) fin 
 
 - Lionnel 
 	- Fonctionnalité affichage ami et ajout ami avec fichier Json (chargement) fin
-	- Fonctionnalité affichage ami et ajout ami avec fichier Json (ecriture) debut
+	- Page de connexion javascript
 
 - Yani 
 	- Fonctionnalité jouer avec Json ( chargement des réponses ) fin 
-	- Fonctionnalité jouer avec Json ( ecriture resultat de la partie  )debut
+
+-Diego
+	-Début passage de paramètre
+	
+##Mercredi 31/03 
+
+###Objectif : Ecrire dans un fichier json
 
