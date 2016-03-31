@@ -2,7 +2,7 @@
 import {Ami} from './ami';
 import {AmiForm} from './ami_form';
 import {AmiList} from './ami_list';
-import {UiTabs, UiPane} from './ui_tabs';
+
 
 @Component({
     selector: 'ami-app',
@@ -37,23 +37,51 @@ import {UiTabs, UiPane} from './ui_tabs';
 `, directives: [AmiForm, AmiList]
 })
 export class AmiApp {
-    amis: Ami[] = [
-        {text: 'florian', id:'1', photo:'fichier/logo.jpg'}
+   static  lamis: Ami[] = [
     ];
+   amis: Ami[] = [
+   ];
     /*
     si joueur 2
     joueur = "eldi";
     */
     joueur = "florian";
 
+    constructor() {
+
+        var xobj = new XMLHttpRequest();
+
+        xobj.overrideMimeType("application/json");
+
+        xobj.open('GET', './fichier/amis_list.json', true); // Replace 'my_data' with the path to your file
+
+        xobj.onreadystatechange = function () {
+
+            if (xobj.readyState == 4 && xobj.status == 200) {
+
+                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                //alert(xobj.responseText);
+                var data = eval("(" + xobj.responseText + ")");
+
+                for (var i = 0; i < data.amis.length; i++) {
+
+                    AmiApp.lamis.push({ text: data.amis[i].text, id: data.amis[i].id, photo: data.amis[i].photo }); 
+                    }
+
+            }
+        };
+        xobj.send(null);
+        this.amis = AmiApp.lamis;
+    }
+
     addFriend(friend: Ami) {
         var t = 0;
-        for (var i = 0; i < this.amis.length; i++) {
-            if (this.amis[i].text == friend.text && this.amis[i].id == friend.id) {
+        for (var i = 0; i < AmiApp.lamis.length; i++) {
+            if (AmiApp.lamis[i].text == friend.text && AmiApp.lamis[i].id == friend.id) {
                 t = 1;
             }
         }
-        if (t == 0) this.amis.push(friend); else alert('Vous avez déjà cette personne en ami');
+        if (t == 0) AmiApp.lamis.push(friend); else alert('Vous avez déjà cette personne en ami');
     }
 }
 
