@@ -12,7 +12,7 @@ import {Todo} from './todo';
   template: `
     <ul class="list-unstyled">
       <li *ngFor="#todo of todos">
-        <span class="done-{{todo.done}}">{{todo.text}}</span>
+        <span class="nom done-{{todo.done}}">{{todo.text}}</span>
       </li>
     </ul>`
 })

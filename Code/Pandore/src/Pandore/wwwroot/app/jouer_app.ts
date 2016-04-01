@@ -11,19 +11,30 @@ import {TodoForm} from './todo_form';
     selector: 'jouer-app',
     template: `
 <top> Loading...</top>
-<div class="container core" style="color:white;">
-    <div id="gauche" style="width:20%;float:left;">
-    <span style="text-align: center;">{{remaining}} of {{nbjoueurs}} remaining</span>
-    <h2>Liste des joueurs</h2>
-    <todo-list [todos]="todos"></todo-list>
-</div>
-<div id="droite" style="width:80%;text-align: center;"><h2>A vous de jouer</h2>
-    <todo-form (newTask)="addTask($event)"></todo-form>
-</div>
+<div class="core" >
+ <div class="row" style=" margin-right:0px;">
+    <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
+                  <h1>Liste des noms trouvé</h1>
 
-</div>
+                  <div class="sidebar">
+                      <ul class="nav nav-sidebar nav-list-nom">
+                          <todo-list [todos]="todos"></todo-list>
+                      </ul>
+                  </div>
 
-`, directives: [Top, TodoList,TodoForm]
+
+                  <div class="nav nav-conteur">
+                      <span>{{remaining}} / {{nbjoueurs}}</span>
+                  </div>
+     </div>
+      <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
+           <h1>A vous de jouer :</h1>
+          <todo-form (newTask)="addTask($event)"></todo-form>           
+     </div>
+</div>
+</div>
+<footer> Loading...</footer>
+`, directives: [Top, TodoList, TodoForm, Footer]
 })
 export class JouerApp {
     todos: Todo[] = [
