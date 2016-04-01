@@ -114,9 +114,12 @@ Début du Sprint1
 	- Fonctionnalité jouer (chargement des réponses) terminée
 	- Fonctionnalité choix equpe (chargement des themes avec json - random 4 themes) terminée-Diego
 	
--Diego
+- Diego
 	-passage de paramètre
 
 - Lionnel 
 	- Fonctionnalité ajout ami avec fichier Json (ecriture dans le fichier)
 
+##Vendredi 01/04 
+
+###Objectif : Ecrire dans un fichier json / passage de paramètre / popup
