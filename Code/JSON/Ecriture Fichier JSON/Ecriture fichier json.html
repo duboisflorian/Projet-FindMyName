@@ -4,20 +4,44 @@
 <script>
 	function ecriture()
 	{
-		var login = document.getElementById("login").value;
-		var mdp = document.getElementById("mdp").value;
+		var loginArr=["Lionel","Florian","Yani","Maxime","Diego"];
+		var mdpArr=["1234","1234","1234","1234","1234"];
+		
+		console.log(loginArr[2]);
+		console.log(loginArr.length);
+		
+		//var login = document.getElementById("login").value;
+		//var mdp = document.getElementById("mdp").value;
 		
 		var fileSystem=new ActiveXObject("Scripting.FileSystemObject");
 		var monfichier=fileSystem.OpenTextFile("connexion.json", 2 ,true);
 		monfichier.WriteLine("{");
-		monfichier.WriteLine('"utilisateur1":');
-		monfichier.WriteLine("{");
-		monfichier.WriteLine('"login": "' +login +'",' );
-		monfichier.WriteLine('"mdp": "' +mdp +'"');
+		for (var i=0; i < loginArr.length;i++)
+		{
+			if (i<loginArr.length-1)
+			{
+				monfichier.WriteLine('"utilisateur'+i+'":');
+				monfichier.WriteLine("{");
+				monfichier.WriteLine('"login": "' +loginArr[i] +'",' );
+				monfichier.WriteLine('"mdp": "' +mdpArr[i] +'"');
+				monfichier.WriteLine("},");
+			}
+			else
+			{
+				monfichier.WriteLine('"utilisateur'+i+'":');
+				monfichier.WriteLine("{");
+				monfichier.WriteLine('"login": "' +loginArr[i] +'",' );
+				monfichier.WriteLine('"mdp": "' +mdpArr[i] +'"');
+				monfichier.WriteLine("}");
+			}
+			
+			
+		}
+		
 		monfichier.WriteLine("}");
-		monfichier.WriteLine("}");
+		
 		//monfichier=fileSystem.OpenTextFile("tutorielsenfolie.txt", 1 ,true);
-		//alert(monfichier.ReadAll()); 
+		//alert(monfichier.ReadAll()); // imprime: "tutoriels en folie\n"
 		alert("OK");
 		//monFichier.Close();
 	}
