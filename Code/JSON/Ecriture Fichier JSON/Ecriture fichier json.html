@@ -4,15 +4,15 @@
 <script>
 	function ecriture()
 	{
-		var loginArr=["Lionel","Florian","Yani","Maxime","Diego"];
-		var mdpArr=["1234","1234","1234","1234","1234"];
+		var login = document.getElementById("login").value;
+		var mdp = document.getElementById("mdp").value;
+		
+		var loginArr=["Lionel","Florian","Yani","Maxime","Diego",login];
+		var mdpArr=["1234","1234","1234","1234","1234",mdp];
 		
 		console.log(loginArr[2]);
 		console.log(loginArr.length);
-		
-		//var login = document.getElementById("login").value;
-		//var mdp = document.getElementById("mdp").value;
-		
+					
 		var fileSystem=new ActiveXObject("Scripting.FileSystemObject");
 		var monfichier=fileSystem.OpenTextFile("connexion.json", 2 ,true);
 		monfichier.WriteLine("{");
