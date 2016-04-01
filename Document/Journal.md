@@ -104,7 +104,7 @@ Début du Sprint1
 
 - Maxime
 	- Création des pages pour le choix des themes et la page du jeu en LESS et CSS
-	- Recherche des inforamtions pour passager le site en architecture MVC
+	- Recherche des inforamtions pour le passage du site en architecture MVC
 
 - Florian
 	- Fonctionnalité affichage ami avec fichier Json (chargement de la liste d'ami dans un tableau) fin
