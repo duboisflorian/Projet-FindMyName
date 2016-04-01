@@ -104,6 +104,7 @@ Début du Sprint1
 
 - Maxime
 	- CSS
+	- Passage en MVC du site
 
 - Florian
 	- Fonctionnalité affichage ami avec fichier Json (chargement de la liste d'ami dans un tableau) fin
