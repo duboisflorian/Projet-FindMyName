@@ -103,8 +103,8 @@ Début du Sprint1
 ###Objectif : Ecrire dans un fichier json / timer / passage de paramètre / popup
 
 - Maxime
-	- CSS
-	- Passage en MVC du site
+	- Création des pages pour le choix des themes et la page du jeu en LESS et CSS
+	- Recherche des inforamtions pour passager le site en architecture MVC
 
 - Florian
 	- Fonctionnalité affichage ami avec fichier Json (chargement de la liste d'ami dans un tableau) fin
