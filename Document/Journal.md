@@ -96,7 +96,7 @@ Début du Sprint1
 	- Fonctionnalité jouer avec Json ( chargement des réponses )
 
 -Diego
-	-Début passage de paramètre
+	- Début passage de paramètre
 	
 ##Jeudi 31/03 
 
@@ -112,10 +112,10 @@ Début du Sprint1
 	
 - Yani 
 	- Fonctionnalité jouer (chargement des réponses) terminée
-	- Fonctionnalité choix equpe (chargement des themes avec json - random 4 themes) terminée-Diego
+	- Fonctionnalité choix equpe (chargement des themes avec json - random 4 themes) chargement termini
 	
 - Diego
-	-passage de paramètre
+	- passage de paramètre
 
 - Lionnel 
 	- Fonctionnalité ajout ami avec fichier Json (ecriture dans le fichier)
