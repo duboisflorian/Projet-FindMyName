@@ -4,15 +4,15 @@
 <script>
 	function ecriture()
 	{
-		var login = document.getElementById("login").value;
-		var mdp = document.getElementById("mdp").value;
-		
-		var loginArr=["Lionel","Florian","Yani","Maxime","Diego",login];
-		var mdpArr=["1234","1234","1234","1234","1234",mdp];
+		var loginArr=["Lionel","Florian","Yani","Maxime","Diego"];
+		var mdpArr=["1234","1234","1234","1234","1234"];
 		
 		console.log(loginArr[2]);
 		console.log(loginArr.length);
-					
+		
+		//var login = document.getElementById("login").value;
+		//var mdp = document.getElementById("mdp").value;
+		
 		var fileSystem=new ActiveXObject("Scripting.FileSystemObject");
 		var monfichier=fileSystem.OpenTextFile("connexion.json", 2 ,true);
 		monfichier.WriteLine("{");
@@ -40,9 +40,29 @@
 		
 		monfichier.WriteLine("}");
 		
-		//monfichier=fileSystem.OpenTextFile("tutorielsenfolie.txt", 1 ,true);
-		//alert(monfichier.ReadAll()); // imprime: "tutoriels en folie\n"
-		alert("OK");
+		//Creation du tableau qui va recevoir toutes les lignes du fichier JSON
+		
+		var Tab = new Array();
+		
+		monfichier=fileSystem.OpenTextFile("tutorielsenfolie.txt", 1 ,true);
+		while (!monfichier.AtEndOfStream)
+		{	
+			var ligne = monfichier.ReadLine();
+			// Agrandissement du tableau
+			Tab.push(ligne);
+			alert(ligne);
+			
+		}
+		
+		// Lecture du tableau Tab 
+		
+		for (var i = 0; i < Tab.length; i++)
+		{
+			document.write(Tab[i]);
+		}
+		
+		//var affiche = monfichier.Read(10);
+		//alert(affiche); // imprime: "tutoriels en folie\n"
 		//monFichier.Close();
 	}
 </script>
