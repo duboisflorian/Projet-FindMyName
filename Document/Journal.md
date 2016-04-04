@@ -144,3 +144,8 @@ Début du Sprint1
 	- Mise au point du projet
 	- Définition des taches
 	- Recherche
+- Florian 
+	- Test application en MVC
+
+- Yani 
+	- Modification du random pour choix equipe
