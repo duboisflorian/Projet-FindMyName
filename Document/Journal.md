@@ -122,4 +122,25 @@ Début du Sprint1
 
 ##Vendredi 01/04 
 
-###Objectif : Ecrire dans un fichier json / passage de paramètre / popup
+###Objectif : Ecrire dans un fichier json / passage de paramètre
+
+- Florian 
+	- Recherche écrire dans un fichier Json
+	- Modification du random pour choix equipe
+	- Modification timer
+
+- Yani 
+	- Modification du random pour choix equipe
+
+- Maxime
+	- Architecture MVC
+	- Passage de paramètre 
+
+##Lundi 04/04
+
+###Objectif :
+
+- Groupe
+	- Mise au point du projet
+	- Définition des taches
+	- Recherche
