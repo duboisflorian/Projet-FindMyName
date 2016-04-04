@@ -48,7 +48,7 @@
 	- Création de la nouvelle Maquette
 	- Modification des anciens documents en md
 
-- Lionnel 
+- Lionel 
 	- Archi - Démarrage
 
 ##Lundi 28/03 
@@ -76,7 +76,7 @@ Début du Sprint1
 	- Ecriture du css en lss
 	- Application du css/less v_2
 
-- Lionnel 
+- Lionel 
 	- Fonctionnalité affichage ami et ajout ami avec fichier Json
 
 ##Mercredi 30/03 
@@ -88,7 +88,7 @@ Début du Sprint1
 	- Début de la fonctionnalité theme avec affichage des thèmes en dur sans random 
 	- Fonctionnalité jouer avec Json ( chargement des réponses ) fin 
 
-- Lionnel 
+- Lionel 
 	- Fonctionnalité ajout ami avec fichier Json (verification que la personne existe) fin
 	- Page de connexion javascript
 
@@ -117,7 +117,7 @@ Début du Sprint1
 - Diego
 	- passage de paramètre
 
-- Lionnel 
+- Lionel 
 	- Fonctionnalité ajout ami avec fichier Json (ecriture dans le fichier)
 
 ##Vendredi 01/04 
@@ -136,6 +136,8 @@ Début du Sprint1
 	- Architecture MVC
 	- Passage de paramètre 
 
+-Lionel
+		-Documentation sur JSON
 ##Lundi 04/04
 
 ###Objectif :
@@ -149,3 +151,6 @@ Début du Sprint1
 
 - Yani 
 	- Modification du random pour choix equipe
+	
+- Lionel
+	-Finalisation de du traitement de l'écriture dans un fichier JSON
