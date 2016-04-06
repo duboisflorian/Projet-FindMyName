@@ -1,0 +1,151 @@
+/* Déclaration */
+@fond: url("fond.jpg");
+@noir: fadeout(black, 30%);
+@noir_fonce: fadeout(black, 10%);
+@white: fadeout(white, 50%);
+
+/* Utilisation */
+body { 	
+   background-image: @fond; 
+   background-attachment:fixed;
+}
+
+.logo {
+    width:40px ;
+    height: 50px;
+}
+.portrait {
+    width:60px ;
+    height: 60px;
+}
+
+.incone_menu{
+    width:30px ;
+    height: 30px;
+
+}
+
+.form-recherche {   
+    margin: 10px auto 10px auto;
+    width: 90%;
+}
+
+.text-logo,  .text-logo:hover, .text-logo:active{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.nom{
+     color: black;
+     margin-left: 1em;
+     font-size:20px;
+}
+
+.menu {
+    background: @noir_fonce;
+}
+
+
+.nav-button {
+       .active{
+         background: fadeout(white, 50%);
+    }
+
+     padding:0;
+     margin:0;
+     list-style-type:none;
+     li {
+        float:left;
+        width:50%;
+        border-left:1px solid black;
+        a {
+            display:block;
+            float:left;  
+            width:100%; 
+            background: @white;
+            color:#DCDCDC;
+            text-decoration:none;
+            text-align:center;
+            span{
+                font-size:24px;
+                color: black;
+            }
+        }
+    }
+ }
+
+.nav-ajouter {
+     padding:0;
+     margin:0;
+     list-style-type:none;
+    margin-top: 1px;
+     a {
+        display:block;
+        float:left;  
+        width:100%; 
+        background: @white;
+        color:#DCDCDC;
+        text-decoration:none;
+        text-align:center;
+            span{
+                font-size:24px;
+                color: black;
+            }
+        }
+    
+ }
+
+
+.core {
+    background-color: @noir ;
+    margin: 80px auto 65px auto;
+    width: 100%;
+    height: 800px;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+	text-decoration: none;
+	background-color: #595757;
+}
+
+.sidebar {
+    background-color: @white ;
+    padding: 20px;
+    height: 710px;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+
+.nav-sidebar {
+  margin-right: -20px; 
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  background-color: lightgray;
+}
+
+footer {
+    background: @noir_fonce;
+    padding-left: 20px;
+    color: white;
+    font-family: "Proxima Nova Semibold";
+    font-size: 13px;
+    text-align: center;
+    position: relative;
+    clear:both;
+    margin-top: -40px;
+    height: 40px
+}
+

@@ -1,5 +1,9 @@
 ﻿#Journal
 
+-----------------------------
+Project : Find My Name v_1
+-----------------------------
+
 ##Mercredi 16/03 (travail de groupe)
 
 - Réalisation des spécifications de l'application Find my name
@@ -138,6 +142,7 @@ Début du Sprint1
 
 -Lionel
 		-Documentation sur JSON
+
 ##Lundi 04/04
 
 ###Objectif :
@@ -146,6 +151,7 @@ Début du Sprint1
 	- Mise au point du projet
 	- Définition des taches
 	- Recherche
+
 - Florian 
 	- Test application en MVC
 
@@ -153,4 +159,22 @@ Début du Sprint1
 	- Modification du random pour choix equipe
 	
 - Lionel
-	-Finalisation de du traitement de l'écriture dans un fichier JSON
+	- Finalisation de du traitement de l'écriture dans un fichier JSON
+
+-----------------------------
+Project : Find My Name v_2
+-----------------------------
+
+##Mardi 05/04
+
+- Groupe
+	- Mise au point du projet
+	- Tutoriel envoyer par AB
+	- Début réecriture en vrai Angular2
+
+##Mercredi 06/04
+
+- Florian 
+	- Affichage liste d'amis (tableau var chargé de base)
+	- Affichage choix theme sans random (tableau var chargé de base)
+	- 

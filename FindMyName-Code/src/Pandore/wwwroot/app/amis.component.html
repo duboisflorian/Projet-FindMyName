@@ -1,0 +1,37 @@
+﻿
+    <div class="row" style=" margin-right:0px;">
+        <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
+            <ul class="nav nav-button">
+                <li class="active"><a>Amis</a></li>
+                <li><a>Online</a></li>
+            </ul>
+            <div class="sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><img class="portrait" src="fichier/Portrait.png" /><span class="nom"> Florian</span></li>
+                    <li><form class="form"><input id="recherche" class="form-recherche" placeholder="Rachercher un ami" required="" type="text"></form></li>
+                    <li *ngFor="#ami of amis" [class.selected]="ami === selectedAmi" (click)="onSelect(ami)"><img class="portrait" src="{{ami.photo}}" /><span>{{ami.name}}</span></li>
+                </ul>
+            </div>
+            <div class="nav nav-ajouter">
+                <a href="" onclick=""><span class="text">Ajouter un ami</span></a>
+            </div>
+        </div>
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedAmi">
+            <h2>
+                {{selectedAmi.name | uppercase}}
+            </h2>
+            <button (click)="gotoJouer()">Jouer</button>
+        </div>
+        <div *ng-else>
+            ...
+        </div>
+    </div>
+
+
+
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
