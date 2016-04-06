@@ -47,7 +47,8 @@ import { JouerComponent } from './jouer.component';
         ROUTER_PROVIDERS,
         AmiService,
         ThemeService,
-        UtilisateurService
+        UtilisateurService,
+        JouerService
     ]
 })
 @RouteConfig([

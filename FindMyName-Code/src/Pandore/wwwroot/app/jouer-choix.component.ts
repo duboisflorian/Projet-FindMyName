@@ -6,16 +6,19 @@ import { Ami } from './ami';
 import { Theme } from './theme';
 import { AmiService } from './ami.service';
 import { ThemeService } from './theme.service';
+import { JouerComponent } from './jouer.component';
 
 @Component({
     selector: 'my-jouer-choix',
-    templateUrl: 'app/jouer-choix.component.html'
+    templateUrl: 'app/jouer-choix.component.html',
+    directives: [JouerComponent]
 })
 export class JouerChoixComponent implements OnInit {
     @Input() ami: Ami;
 
     themes: Theme[] = [];
     selectedTheme: Theme;
+    directives: [JouerComponent];
 
     constructor(
         private _amiService: AmiService,
