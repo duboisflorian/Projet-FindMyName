@@ -4,7 +4,9 @@ import { AmisComponent } from './amis.component';
 import { AmiService } from './ami.service';
 import { ThemeService } from './theme.service';
 import { UtilisateurService } from './utilisateur.service';
+import { JouerService } from './jouer.service';
 import { JouerChoixComponent } from './jouer-choix.component';
+import { JouerComponent } from './jouer.component';
 
 
 @Component({
@@ -59,6 +61,11 @@ import { JouerChoixComponent } from './jouer-choix.component';
         path: '/choix/:id',
         name: 'JouerChoix',
         component: JouerChoixComponent
+    },
+     {
+         path: '/parti/:id',
+         name: 'Jouer',
+         component: JouerComponent
      }
 ])
 export class AppComponent {

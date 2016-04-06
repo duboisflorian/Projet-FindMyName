@@ -1,13 +1,10 @@
 ﻿
-
-<div class="row" style=" margin-right:0px;">
+<div class="row" style="margin-right:0px;">
     <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
         <h1>Liste des noms trouvé</h1>
-
         <div class="sidebar">
             <ul class="nav nav-sidebar nav-list-nom"></ul>
         </div>
-
 
         <div class="nav nav-conteur">
             <span>0 / 0</span>
@@ -18,9 +15,15 @@
             <h2>Vous jouer contre : {{ami.name}}</h2>
         </div>
         <h1>Choisez un thème :</h1>
-                <ul class="list-unstyled">
-                    <li class="theme" *ngFor="#theme of themes"><img class="image-theme" src="{{theme.photo}}" /></li>
-                </ul>
+        <ul class="list-unstyled">
+            <li class="theme" *ngFor="#theme of themes" [class.selected]="theme === selectedTheme" (click)="onSelect(theme)"><img class="image-theme" src="{{theme.photo}}" /></li>
+        </ul>
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedTheme">
+            <h2>
+                {{selectedTheme.text}}
+            </h2>
+            <button (click)="gotoJouer()">Jouer</button>
+        </div>
         <button (click)="goBack()">Back</button>
     </div>
 </div>

@@ -1,5 +1,6 @@
 ﻿import { Component, Input, OnInit } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
+import { Router } from 'angular2/router';
 
 import { Ami } from './ami';
 import { Theme } from './theme';
@@ -14,9 +15,11 @@ export class JouerChoixComponent implements OnInit {
     @Input() ami: Ami;
 
     themes: Theme[] = [];
+    selectedTheme: Theme;
 
     constructor(
         private _amiService: AmiService,
+        private _router: Router,
         private _themeService: ThemeService,
         private _routeParams: RouteParams) {
     }
@@ -31,6 +34,14 @@ export class JouerChoixComponent implements OnInit {
 
     goBack() {
         window.history.back();
+    }
+
+    onSelect(theme: Theme) { this.selectedTheme = theme; }
+
+    gotoJouer() {
+        let link = ['Jouer', { id: this.selectedTheme.id }];
+        this._router.navigate(link);
+        //this._router.navigate(['Jouer', { id: this.selectedTheme.id }]);
     }
 }
 
