@@ -1,0 +1,57 @@
+{
+"utilisateur0":
+{
+"login": "Lionel",
+"mdp": "1234"
+},
+"utilisateur1":
+{
+"login": "Florian",
+"mdp": "1234"
+},
+"utilisateur2":
+{
+"login": "Yani",
+"mdp": "1234"
+},
+"utilisateur3":
+{
+"login": "Maxime",
+"mdp": "1234"
+},
+"utilisateur4":
+{
+"login": "Diego",
+"mdp": "1234"
+},
+"utilisateur5":
+{
+"login": "Nouveau",
+"mdp": "NewMDP"
+},
+"utilisateur6":
+{
+"login": "Nouveau",
+"mdp": "NewMDP"
+},
+"utilisateur7":
+{
+"login": "Nouveau",
+"mdp": "NewMDP"
+},
+"utilisateur8":
+{
+"login": "Nouveau",
+"mdp": "NewMDP"
+},
+"utilisateur9":
+{
+"login": "Essai",
+"mdp": "Essai"
+},
+"utilisateur10":
+{
+"login": "Domingo",
+"mdp": "Dodo"
+}
+}
