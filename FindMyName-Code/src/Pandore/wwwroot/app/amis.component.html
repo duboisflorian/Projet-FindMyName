@@ -13,7 +13,7 @@
                 </ul>
             </div>
             <div class="nav nav-ajouter">
-                <a href="" onclick=""><span class="text">Ajouter un ami</span></a>
+                <a (click)="doAjouterAmi()"><span class="text">Ajouter un ami</span></a>
             </div>
         </div>
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedAmi">
@@ -21,9 +21,6 @@
                 {{selectedAmi.name | uppercase}}
             </h2>
             <button (click)="gotoJouer()">Jouer</button>
-        </div>
-        <div *ng-else>
-            ...
         </div>
     </div>
 
