@@ -3,6 +3,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 import { AmisComponent } from './amis.component';
 import { AmiService } from './ami.service';
 import { ThemeService } from './theme.service';
+import { UtilisateurService } from './utilisateur.service';
 import { JouerChoixComponent } from './jouer-choix.component';
 
 
@@ -43,7 +44,8 @@ import { JouerChoixComponent } from './jouer-choix.component';
     providers: [
         ROUTER_PROVIDERS,
         AmiService,
-        ThemeService
+        ThemeService,
+        UtilisateurService
     ]
 })
 @RouteConfig([

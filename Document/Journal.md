@@ -177,4 +177,4 @@ Project : Find My Name v_2
 - Florian 
 	- Affichage liste d'amis (tableau var chargé de base)
 	- Affichage choix theme sans random (tableau var chargé de base)
-	- 
+	- Ajout d'un ami (tableau var chargé de base)

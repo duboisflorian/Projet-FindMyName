@@ -7,13 +7,18 @@
             </ul>
             <div class="sidebar">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><img class="portrait" src="fichier/Portrait.png" /><span class="nom"> Florian</span></li>
+                    <li class="active"><img class="portrait" src="fichier/Portrait.png" /><span class="nom"> TingTing</span></li>
                     <li><form class="form"><input id="recherche" class="form-recherche" placeholder="Rachercher un ami" required="" type="text"></form></li>
                     <li *ngFor="#ami of amis" [class.selected]="ami === selectedAmi" (click)="onSelect(ami)"><img class="portrait" src="{{ami.photo}}" /><span>{{ami.name}}</span></li>
                 </ul>
             </div>
             <div class="nav nav-ajouter">
-                <a (click)="doAjouterAmi()"><span class="text">Ajouter un ami</span></a>
+                <a><span class="text">Ajouter un ami</span></a>
+                <form (ngSubmit)="addAmi()">
+                    <input type="text" [(ngModel)]="amiadd" size="30"
+                           placeholder="entrer l'id de la personne">
+                    <input class="btn-primary" type="submit" value="ajouter">
+                </form>`
             </div>
         </div>
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedAmi">

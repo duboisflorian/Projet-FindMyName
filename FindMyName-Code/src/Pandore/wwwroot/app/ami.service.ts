@@ -1,9 +1,12 @@
 ﻿import { Ami } from './ami';
+import { Utilisateur } from './utilisateur';
 import { AMIS } from './mock-amis';
 import { Injectable } from 'angular2/core';
 
+
 @Injectable()
 export class AmiService {
+    i: number;
     getAmis() {
         return Promise.resolve(AMIS);
     }
@@ -16,9 +19,21 @@ export class AmiService {
     }
 
     getAmi(id: number) {
-        return Promise.resolve(AMIS).then(
+       return Promise.resolve(AMIS).then(
             amis => amis.filter(ami => ami.id === id)[0]
         );
+    }
+
+
+    getAmiExiste(id: number) {
+
+        for (this.i = 0; this.i < AMIS.length; this.i++) {
+            if (AMIS[this.i].id == id)
+                return AMIS[this.i];
+        }
+    }
+    add(user: Utilisateur) {
+        AMIS.push({ "id": user.id, "name": user.name, "photo": user.photo })
     }
 }
 
