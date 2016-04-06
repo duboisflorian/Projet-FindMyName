@@ -26,13 +26,20 @@
 		var login = document.getElementById("login").value;
 		//var mdp = document.getElementById("mdp").value;
 		
+		
 		// Boucle qui permet de supprimmer le caractère voulu
 		for (var  i = 0; i<Tab.length; i++)
 		{
 			if (Tab[i]==login)
 			{
-				Tab.splice(i,1,"");
-			}
+				Tab.splice(i,1,Tab[i+1]);
+				for (var g=i; g<Tab.length; g++)
+				{
+					Tab[g]=Tab[g+1];
+				}
+				break;
+			}		
+			
 		}
 		
 				
