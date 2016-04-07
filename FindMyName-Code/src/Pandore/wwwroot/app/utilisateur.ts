@@ -5,4 +5,6 @@
     mdp: string;
     email: string;
     pays: string;
+    theme: string;
+    meilleurScore: number;
 }
