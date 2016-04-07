@@ -2,9 +2,9 @@
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 import { UTILISATEURS } from './mock-utilisateurs';
-
 import { UtilisateurService } from './utilisateur.service';
 import { Utilisateur } from './utilisateur';
+
 
 @Component({
     selector: 'my-userdetail',
@@ -14,6 +14,7 @@ export class UserdetailComponent implements OnInit {
 
     utilisateurs: Utilisateur;
     u: Utilisateur;
+    mdp: string;
 
     constructor(
         private _router: Router,
@@ -36,7 +37,7 @@ export class UserdetailComponent implements OnInit {
     gotoDetail() {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
     }
-
+    
 }
 
 /*

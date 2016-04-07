@@ -5,6 +5,7 @@ import { Injectable } from 'angular2/core';
 @Injectable()
 export class UtilisateurService {
     i: number;
+
     getUtilisateurs() {
         return Promise.resolve(UTILISATEURS);
     }
@@ -25,6 +26,15 @@ export class UtilisateurService {
                 return UTILISATEURS[this.i];
         }
     }
+
+    modifmdp(mdp: string, id : number) {
+        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].id == id) {
+                UTILISATEURS[this.i].mdp = mdp;
+            }
+        }
+    }
+
 
 }
 
