@@ -1,3 +1,26 @@
-﻿<h1>Page de presentation bonne chance</h1>
-<button (click)="gotoIn()">Page d'inscription</button>
-<button (click)="gotoCo()">Page de co</button><br /><br /><br />
+﻿<nav class="menu navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" (click)="gotoAmis()" style="padding-top:0; padding-bottom:0;"> <img class="logo" style="display:inline;" src="fichier/logo.png" /> <span style="display:inline;" class="text-logo">Find My Name</span></a>
+                </div>
+                <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><span (click)="gotoIn()" style="color:white;">Inscription</span></li>
+                        <li><span (click)="gotoCo()" style="color:white;">Connexion</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="core">
+    <h1>Page de presentation bonne chance</h1>
+</div>
