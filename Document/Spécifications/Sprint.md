@@ -1,38 +1,36 @@
 #Sprint
 
-##Sprint 1
+##Sprint 1 -- Client
 
-- Ajouter un ami
-- Afficher les amis
-- Choix entre 4 thèmes
-- Jouer une partie
+- Florian
+  - Ajouter un ami
+  - Afficher les amis
+  - Voir les amis qui nous défie
+  - Afficher l'historique des défies avec un ami
+  - Afficher le résumé d'un défie en cours
+  - Afficher les détails d'un défie de l'historique
 
-##Sprint 2
+- Maxime
+  - Présentation du jeu
+  - Connexion
+  - Inscription
 
-- Voir les amis qui nous défie
-- Afficher l'historique des défies avec un ami
-- Afficher le résumé d'un défie en cours
-- Afficher les détails d'un défie de l'historique
+- Lionel
+  - Afficher les paramètres
+  - Modifier les paramètres
+  - Statistique
 
-##Sprint 3
+- Yani  
+  - Choix entre 4 thèmes
+  - Jouer une partie
 
-- Présentation du jeu
-- Connexion
-- Inscription
+##Autres
+
 - Se déconnecter
 - Authentification
-
-##Sprint 4
-
 - Trouver un personne online
 - Afficher les personnes online avec qui on joue
 - Voir les personnes online qui nous défie
 - Afficher l'historique des défies avec une personne online
 - Afficher le résumé d'un défie en cours
 - Afficher les détails d'un défie de l'historique
-
-##Sprint 5
-
-- Afficher les paramètres
-- Modifier les paramètres
-- Statistique
