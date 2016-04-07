@@ -174,7 +174,24 @@ Project : Find My Name v_2
 
 ##Mercredi 06/04
 
+- Groupe
+	- Mise au point du projet
+	- Réunion avec AB
+	- Répartition des taches pour la v2
+
 - Florian 
 	- Affichage liste d'amis (tableau var chargé de base)
 	- Affichage choix theme sans random (tableau var chargé de base)
 	- Ajout d'un ami (tableau var chargé de base)
+
+- Yani 
+	- Choix theme (tableau var chargé de base)
+	- Début jouer 
+
+- Maxime 
+	- Css -> Less
+
+##Jeudi 07/04
+
+- Florian 
+	- Architecture du site (route et component)
