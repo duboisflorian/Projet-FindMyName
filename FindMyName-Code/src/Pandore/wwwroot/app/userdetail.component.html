@@ -21,38 +21,39 @@
         </div>
     </div>
 </nav>
-<div class="core">
-    <table width="100%">
-        <tr>
-            <center><td colspan="2"><img class="portrait" src="{{u.photo}}" />changer de photo</td></center>          
-        </tr>
-        <tr>
-            <center><td colspan="2">{{u.name}} - #{{u.id}}</td></center>
-        </tr>
-       <tr>
-           <th>
-               modifications personelles : <br/> <br />
-           </th>
-           <th>
-               Références : <br /> <br />
-           </th>
-       </tr>
-        <tr>
-            <td><input type="text" placeholder="entrer votre email ici" value="{{u.email}}" /><br /> <br /></td>
-            <td>Thème favoris : {{u.theme}}</td>
-        </tr>
-        <tr>
-            <td><input type="password" placeholder="entrer votre mot de passe ici" value="{{u.mdp}}" /> modifier <br /> <br /></td>
-            <td>Meilleur Score : {{u.meilleurScore}}</td>
-        </tr>
-        <tr>
-            <td>Pays : {{u.pays}}</td>
-            <td></td>
-        </tr>
-    </table>
-</div>
 
-
+<font color="white">
+    <div class="core">
+        <table width="100%">
+            <tr>
+                <center><td colspan="2"><img class="portrait" src="{{u.photo}}" /> Changer de photo</td></center>
+            </tr>
+            <tr>
+                <center><td colspan="2">{{u.name}} - #{{u.id}}</td></center> <br /> <br /> 
+            </tr>
+            <tr>
+                <th>
+                    <u>modifications personnelles :</u> <br /> <br />
+                </th>
+                <th>
+                    <u>Références :</u> <br /> <br />
+                </th>
+            </tr>
+            <tr>
+                <td><font color="black"><input type="text" placeholder="entrer votre email ici" value="{{u.email}}" /></font><br /> <br /></td>
+                <td>Thème favoris : {{u.theme}}</td>
+            </tr>
+            <tr>
+                <td><font color="black"><input type="password" placeholder="entrer votre mot de passe ici" value="{{u.mdp}}" /></font> modifier <br /> <br /></td>
+                <td>Meilleur Score : {{u.meilleurScore}}</td>
+            </tr>
+            <tr>
+                <td>Pays : {{u.pays}}</td>
+                <td></td>
+            </tr>
+        </table>
+   </div>
+</font>
 
 <!--
 Copyright 2016 Google Inc. All Rights Reserved.
