@@ -1,5 +1,6 @@
-﻿<div class="core">
-    <form (ngSubmit)="inscription()" style="max-width: 330px; margin:30px;">
+﻿<div class="core_co_in">
+    <a class="navbar-brand menu" (click)="gotoHome()" style="padding-top:0; padding-bottom:0;"> <img class="logo" style="display:inline;" src="fichier/logo.png" /> <span style="display:inline;" class="text-logo">Find My Name</span></a>
+    <form (ngSubmit)="inscription()">
         <h2 style="color:antiquewhite;" class="form-signin-heading">Inscrivez-vous :</h2>
         <label for="inputEmail" class="sr-only">Pseudo</label>
         <input id="inputEmail" [(ngModel)]="name" class="form-control" placeholder="Pseudo" required="" type="text">
@@ -11,7 +12,8 @@
         <input id="inputPassword" [(ngModel)]="confirmPasword" class="form-control" placeholder="Confirme Password" required="" type="password">
         <br />
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-    </form>   
+    </form>
+    <p (click)="gotoCo()">Vous avez déjà un compte ? Connectez-vous ici</p>
 </div>
 
 

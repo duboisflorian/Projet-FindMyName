@@ -23,6 +23,10 @@ export class InComponent implements OnInit {
         this._router.navigate(['Home']);
     }
 
+    gotoCo() {
+        this._router.navigate(['Co']);
+    }
+
     inscription() {
         if (this.password == this.confirmPasword) {
             if (this._uService.verificationMailExist(this.mail)) {
