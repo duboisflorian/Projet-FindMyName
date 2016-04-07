@@ -21,7 +21,7 @@
         </div> 
     </div>
 </nav>
-<div class="core">
+<div class="core" >
     <div class="row" style="margin-right:0px;">
         <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
             <ul class="nav nav-button">
@@ -35,7 +35,7 @@
                     <li *ngFor="#ami of amis" [class.selected]="ami === selectedAmi" (click)="onSelect(ami)"><img class="portrait" src="{{ami.photo}}" /><span>{{ami.name}}</span></li>
                 </ul>
             </div>
-            <div class="nav nav-ajouter">
+            <div class="nav nav-ajouter" style="color:white;">
                 <a><span class="text">Ajouter un ami</span></a>
                 <form (ngSubmit)="addAmi()">
                     <input type="text" [(ngModel)]="amiadd" size="30"
@@ -44,17 +44,24 @@
                 </form>
             </div>
         </div>
-        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedAmi">
+
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedAmi" >
             <h2>
                 {{selectedAmi.name | uppercase}}
             </h2>
             <button (click)="gotoJouer()">Jouer</button>
         </div>
-        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedAmi">
-            <h2>
-               florian
-            </h2>
+
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedAmi" style="color:aquamarine;">
+            <h2>Vos Parties</h2>
+            <ul class="nav nav-sidebar">
+                <li *ngFor="#p of partie_en_cours" >
+                    <span *ngIf="p.player!=u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) En attente</span>
+                    <span *ngIf="p.player==u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) <button [class.selected]="p === selectedparti_en_cours" (click)="gotoJouer(p)">Jouer</button></span>
+                </li>
+            </ul>
         </div>
+
     </div>
 </div>
 

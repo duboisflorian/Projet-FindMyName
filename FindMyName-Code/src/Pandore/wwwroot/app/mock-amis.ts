@@ -4,7 +4,9 @@ import { Lami } from './lami';
 export var AMIS: Lami[] = [{
     "id": 6, "amis": [
         { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg" },
-        { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg" }
+        { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg" },
+        { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg" },
+        { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg" }
     ]
 },
     {
