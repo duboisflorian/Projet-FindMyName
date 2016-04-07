@@ -33,6 +33,22 @@ export class UtilisateurService {
         }
     }
 
+    verificationMailExist(mail: string) {
+        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].mail == mail)
+                return true;
+        }
+
+        return false;
+    }
+
+    getlastid() {
+        return UTILISATEURS[UTILISATEURS.length - 1].id;
+    }
+
+    ajouterUtilisateur(name:string, mail: string, password: string ) {
+        UTILISATEURS.push({ "id": this.getlastid()+1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password })
+    }
 }
 
 /*

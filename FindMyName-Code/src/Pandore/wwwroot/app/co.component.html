@@ -1,38 +1,10 @@
-﻿<nav class="menu navbar">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" (click)="gotoAmis()" style="padding-top:0; padding-bottom:0;"> <img class="logo" style="display:inline;" src="fichier/logo.png" /> <span style="display:inline;" class="text-logo">Find My Name</span></a>
-                </div>
-                <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li style="margin:8px;"><button type="button" (click)="gotoIn()" class="btn btn-default">Inscription</button></li>
-                        <li style="margin:8px;"><button (click)="gotoCo()" type="button" class="btn btn-primary">Connexion</button></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-<div class="core">
+﻿<div class="core">
     <form (ngSubmit)="connexion()" style="max-width: 330px; margin:30px;">
         <h2 style="color:antiquewhite;" class="form-signin-heading">Connectez-vous :</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input id="inputEmail"  [(ngModel)]="mail" class="form-control" placeholder="Email address" required="" autofocus="" type="email">
         <label for="inputPassword" class="sr-only">Password</label>
         <input id="inputPassword"  [(ngModel)]="password" class="form-control" placeholder="Password" required="" type="password">
-        <div class="checkbox">
-            <label>
-                <input value="remember-me" type="checkbox"> Remember me
-            </label>
-        </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
 </div>

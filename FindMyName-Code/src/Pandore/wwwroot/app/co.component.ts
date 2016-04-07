@@ -22,11 +22,9 @@ export class CoComponent implements OnInit {
     gotoIn() {
         this._router.navigate(['In']);
     }
+
     gotoHome() {
         this._router.navigate(['Home']);
-    }
-    gotoAmi() {
-        this._router.navigate(['Amis', { us: 6 }]);
     }
 
     connexion() {
