@@ -26,14 +26,7 @@ export class JouerComponent implements OnInit {
         private _router: Router,
         private _jouerService: JouerService,
         private _uService: UtilisateurService,
-        private _routeParams: RouteParams) {
-        var r = confirm("Êtes-vous Prêt a jouer pendant 2m");
-        if (r == true) {
-            setTimeout(function () { window.location.href = "index.html"; }, 120000);
-        } else {
-            window.location.href = "index.html";
-        }
-    }
+        private _routeParams: RouteParams) { }
     gotoDeco() {
         alert("Vous avez été déconnecté");
         this._router.navigate(['Co']);
@@ -49,6 +42,7 @@ export class JouerComponent implements OnInit {
         this.tabreponses = this._jouerService.getReponses(th);
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        this.starttimer();
     }
     getReponse() {
         return this.reponse;
@@ -72,6 +66,35 @@ export class JouerComponent implements OnInit {
             }
             this.task = '';
         }
+    }
+    starttimer() {
+        this.countdown(0, 10, this._router, this.u.id);
+    }
+
+    countdown(minutes, seconds, _router, id) {
+        var element, endTime, hours, mins, msLeft, time;
+
+        function twoDigits(n) {
+            return (n <= 9 ? "0" + n : n);
+        }
+
+        function updateTimer() {
+            msLeft = endTime - (+new Date);
+            if (msLeft < 1000) {
+                alert("gg");
+                _router.navigate(['Amis', { us: id }]);
+            } else {
+                time = new Date(msLeft);
+                hours = time.getUTCHours();
+                mins = time.getUTCMinutes();
+                element.innerHTML = (hours ? hours + ':' + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
+                setTimeout(updateTimer, time.getUTCMilliseconds() + 500);
+            }
+        }
+
+        element = document.getElementById("countdown");
+        endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
+        updateTimer();
     }
 }
 
