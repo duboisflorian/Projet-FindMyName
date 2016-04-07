@@ -2,4 +2,7 @@
     id: number;
     name: string;
     photo: string;
+    mdp: string;
+    email: string;
+    pays: string;
 }
