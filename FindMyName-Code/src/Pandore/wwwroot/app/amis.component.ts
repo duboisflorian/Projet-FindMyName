@@ -19,6 +19,7 @@ export class AmisComponent implements OnInit {
     amiadd: number;
     utilisateurs: Utilisateur;
     t: Ami;
+    u: Utilisateur;
 
     constructor(
         private _router: Router,
@@ -27,15 +28,16 @@ export class AmisComponent implements OnInit {
         private _uService: UtilisateurService) { }
 
     getAmis() {
-        this._amiService.getAmis().then(amis => this.amis = amis);
+        this.amis=this._amiService.getAmis(this.u.id);
     }
     gotoDetail() {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
     }
     ngOnInit() {
-        this.getAmis();
+
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        this.getAmis();
     }
 
     onSelect(ami: Ami) { this.selectedAmi = ami; }
@@ -56,11 +58,11 @@ export class AmisComponent implements OnInit {
     }
     addAmi() {
         if (this.utilisateurs = this._uService.getUtilisateur(this.amiadd)) {
-            if (this.t = this._amiService.getAmiExiste(this.amiadd)) {
+            if (this.t = this._amiService.getAmiExiste(this.amiadd, this.u.id)) {
                 alert("cette personne est déjà dans tes amis");
                 this.amiadd = null;
             } else {
-                this._amiService.add(this.utilisateurs);
+                this._amiService.add(this.utilisateurs, this.u.id);
                 this.amiadd = null;
             }
         } else {
