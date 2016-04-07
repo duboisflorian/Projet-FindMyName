@@ -22,19 +22,17 @@
     </div>
 </nav>
 <div class="core">
-
-    <form (ngSubmit)="connexion()">
-        <input type="text" [(ngModel)]="mail" size="30" placeholder="E-mail">
-        <input type="text" [(ngModel)]="password" size="30" placeholder="Mot de passe">
-        <input class="btn-primary" type="submit" value="ajouter">
+    <form (ngSubmit)="connexion()" style="max-width: 330px; margin:30px;">
+        <h2 style="color:antiquewhite;" class="form-signin-heading">Connectez-vous :</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input id="inputEmail"  [(ngModel)]="mail" class="form-control" placeholder="Email address" required="" autofocus="" type="email">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input id="inputPassword"  [(ngModel)]="password" class="form-control" placeholder="Password" required="" type="password">
+        <div class="checkbox">
+            <label>
+                <input value="remember-me" type="checkbox"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
-
-
-    <h1>Page de co bonne chance</h1>
-    <button (click)="gotoIn()">Page d'inscription</button>
-    <button (click)="gotoHome()">Page de présentation</button>
-    <button (click)="gotoAmi()">connexion tingting</button>
-    <br />
-    <br />
-    <br />
 </div>
