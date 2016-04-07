@@ -1,7 +1,40 @@
-﻿<h1>Page de co bonne chance</h1>
-<button (click)="gotoIn()">Page d'inscription</button>
-<button (click)="gotoHome()">Page de présentation</button>
-<button (click)="gotoAmi()">connexion tingting</button>
-<br />
-<br />
-<br />
+﻿<nav class="menu navbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" (click)="gotoAmis()" style="padding-top:0; padding-bottom:0;"> <img class="logo" style="display:inline;" src="fichier/logo.png" /> <span style="display:inline;" class="text-logo">Find My Name</span></a>
+                </div>
+                <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="margin:8px;"><button type="button" (click)="gotoIn()" class="btn btn-default">Inscription</button></li>
+                        <li style="margin:8px;"><button (click)="gotoCo()" type="button" class="btn btn-primary">Connexion</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="core">
+
+    <form (ngSubmit)="connexion()">
+        <input type="text" [(ngModel)]="mail" size="30" placeholder="E-mail">
+        <input type="text" [(ngModel)]="password" size="30" placeholder="Mot de passe">
+        <input class="btn-primary" type="submit" value="ajouter">
+    </form>
+
+
+    <h1>Page de co bonne chance</h1>
+    <button (click)="gotoIn()">Page d'inscription</button>
+    <button (click)="gotoHome()">Page de présentation</button>
+    <button (click)="gotoAmi()">connexion tingting</button>
+    <br />
+    <br />
+    <br />
+</div>

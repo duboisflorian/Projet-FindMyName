@@ -25,6 +25,13 @@ export class UtilisateurService {
                 return UTILISATEURS[this.i];
         }
     }
+    
+    verificationConnexion(mail: string, password: string) {
+        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].mail == mail && UTILISATEURS[this.i].password == password)
+                return UTILISATEURS[this.i];
+        }
+    }
 
 }
 
