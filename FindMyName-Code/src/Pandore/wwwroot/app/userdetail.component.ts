@@ -15,6 +15,7 @@ export class UserdetailComponent implements OnInit {
     utilisateurs: Utilisateur;
     u: Utilisateur;
     mdp: string;
+    id: number;
 
     constructor(
         private _router: Router,
@@ -37,7 +38,9 @@ export class UserdetailComponent implements OnInit {
     gotoDetail() {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
     }
-    
+    modifmdp() {
+        this._uService.modification_mdp(this.mdp);
+    }
 }
 
 /*

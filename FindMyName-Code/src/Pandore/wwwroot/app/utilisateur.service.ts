@@ -27,10 +27,19 @@ export class UtilisateurService {
         }
     }
 
-    modifmdp(mdp: string, id : number) {
+    modification_mdp(mdp: string) {
         for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == id) {
-                UTILISATEURS[this.i].mdp = mdp;
+            if (UTILISATEURS[this.i].id == 6) {
+                if (UTILISATEURS[this.i].mdp == mdp) {
+                    alert("le mot de passe est identique");
+                    alert(mdp);
+                }
+                else {
+                    UTILISATEURS[this.i].mdp = mdp;
+                    alert("Le mot de passe a bien été changé");
+                    alert(mdp);
+                }
+                
             }
         }
     }
