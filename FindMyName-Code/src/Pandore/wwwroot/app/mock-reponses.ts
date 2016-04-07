@@ -3,38 +3,38 @@
 export var Reponses: Jouer[] = [
     {
         "id": 1, "reponses": [
-            { "text": "Zlatan", "done": true },
-            { "text": "Lucas", "done": true }
+            { "text": "Zlatan", "done": false },
+            { "text": "Lucas", "done": false }
         ]
     },
     {
         "id": 2, "reponses": [
-            { "text": "Lacazette", "done": true },
-            { "text": "Gonalons", "done": true }
+            { "text": "Lacazette", "done": false },
+            { "text": "Gonalons", "done": false }
         ]
     },
     {
         "id": 3, "reponses": [
-            { "text": "Ronaldo", "done": true },
-            { "text": "Benzema", "done": true }
+            { "text": "Ronaldo", "done": false },
+            { "text": "Benzema", "done": false }
         ]
     },
     {
         "id": 4, "reponses": [
-            { "text": "Messi", "done": true },
-            { "text": "Neymar", "done": true }
+            { "text": "Messi", "done": false },
+            { "text": "Neymar", "done": false }
         ]
     },
     {
         "id": 5, "reponses": [
-            { "text": "Ozil", "done": true },
-            { "text": "Alexis", "done": true }
+            { "text": "Ozil", "done": false },
+            { "text": "Alexis", "done": false }
         ]
     },
     {
         "id": 6, "reponses": [
-            { "text": "Nasri", "done": true },
-            { "text": "Aguero", "done": true }
+            { "text": "Nasri", "done": false },
+            { "text": "Aguero", "done": false }
         ]
     },
 ];

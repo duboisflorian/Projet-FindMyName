@@ -1,4 +1,4 @@
-﻿import { Component, Input, OnInit, EventEmitter } from 'angular2/core';
+﻿import { Component, Input, OnInit, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Router } from 'angular2/router';
 import { Reponse } from './reponses';
@@ -7,53 +7,32 @@ import { JouerService } from './jouer.service';
 import { ThemeService } from './theme.service';
 import { UtilisateurService } from './utilisateur.service';
 import { Utilisateur } from './utilisateur';
-import { Todo } from './todo';
 
 @Component({
     selector: 'my-jouer',
     templateUrl: 'app/jouer.component.html'
 })
 export class JouerComponent implements OnInit {
-    newTask = new EventEmitter<Todo>();
     task: string = '';
-    todos: Todo[] = [
+    reponse: Reponse[] = [
     ];
+    remaining: number=0;
 
-   joueurs: Todo[] = [
-      {text: 'Rabiot',done:false},
-      {text: 'Zlatan',done:false},
-      {text: 'Cavani',done:false},
-      {text: 'Trapp',done:false},
-  ];
-
-    reponses: Jouer;
+    tabreponses: Jouer;
     u: Utilisateur;
-
-    addTodo() {
-        if (this.task) {
-            for (var i = 0; i < this.joueurs.length; i++) {
-                if (this.joueurs[i].text == this.task.toLowerCase() && this.joueurs[i].done == false) {
-                    this.newTask.next({ text: this.task.toLowerCase(), done: false });
-                    this.joueurs[i].done = true;
-                }
-            }
-            this.task = '';
-        }
-    }
+    bon: boolean;
 
     constructor(
         private _router: Router,
         private _jouerService: JouerService,
         private _uService: UtilisateurService,
         private _routeParams: RouteParams) {
-    }
-    get remaining() {
-        var nbjoueurs = this.joueurs.length;
-        return this.todos.reduce((count: number, todo: Todo) => count + +!todo.done, 0);
-    }
-
-    addTask(task: Todo) {
-        this.todos.push(task);
+        var r = confirm("Êtes-vous Prêt a jouer pendant 2m");
+        if (r == true) {
+            setTimeout(function () { window.location.href = "index.html"; }, 120000);
+        } else {
+            window.location.href = "index.html";
+        }
     }
     gotoDeco() {
         alert("Vous avez été déconnecté");
@@ -67,9 +46,32 @@ export class JouerComponent implements OnInit {
     }
     ngOnInit() {
         let th = +this._routeParams.get('th');
-        this.reponses = this._jouerService.getReponses(th);
+        this.tabreponses = this._jouerService.getReponses(th);
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+    }
+    getReponse() {
+        return this.reponse;
+    }
+    getRemaining() {
+        return this.remaining;
+    }
+    addTodo() {
+        this.bon = false;
+        if (this.task) {
+            for (var i = 0; i < this.tabreponses.reponses.length; i++) {
+                if (this.tabreponses.reponses[i].text.toLowerCase() == this.task.toLowerCase() && this.tabreponses.reponses[i].done == false) {
+                    this.reponse.push({ "text": this.task, "done": true });
+                    this.remaining++;
+                    this.tabreponses.reponses[i].done = true;
+                    this.bon = true;
+                }
+            }
+            if (this.bon != true) {
+                this.bon = false;
+            }
+            this.task = '';
+        }
     }
 }
 

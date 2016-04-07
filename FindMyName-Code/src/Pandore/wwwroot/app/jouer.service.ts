@@ -30,11 +30,26 @@ export class JouerService {
         );
     }
 
+    getReponse(i: number) {
+        return Reponses[0].reponses[i].text;
+    }
+
+    getDone(i: number) {
+        return Reponses[0].reponses[i].done;
+    }
+
+    setDone(i: number, bool: boolean) {
+        Reponses[0].reponses[i].done == bool;
+    }
+
     getReponses(id: number) {
         for (this.i = 0; this.i < Reponses.length; this.i++) {
             if (Reponses[this.i].id == id)
                 return Reponses[this.i];
         }
+    }
+    getTaille(i : number) {
+        return Reponses[i].reponses.length;
     }
 }
 

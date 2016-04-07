@@ -27,17 +27,26 @@
             <h1>Liste des noms trouvé</h1>
             <div class="sidebar">
                 <ul class="nav nav-sidebar nav-list-nom">
-                    <todo-list [todos]="todos"></todo-list>
+                    <li *ngFor="#r of reponse" >
+                    <span>{{r.text}}</span>
+                    </li>
                 </ul>
             </div>
 
             <div class="nav nav-conteur">
-                <span>{{remaining}} / {{nbjoueurs}}</span>
+                <span>{{remaining}} / {{tabreponses.reponses.length}}</span>
+            </div>
+        </div>
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
+            <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="bon==true">
+                <img src="./fichier/images/vert.png" />
+            </div>
+            <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="bon==false">
+                <img src="./fichier/images/rouge.png" />
             </div>
         </div>
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
             <h1>A vous de jouer :</h1>
-            {{reponses.reponses[0].text}}
             <form (ngSubmit)="addTodo()">
                 <input type="text" [(ngModel)]="task" size="30"
                        placeholder="entre le nom d'un joueur" style="color: black;">
@@ -46,3 +55,14 @@
         </div>
     </div>
 </div>
+<p>Example 2 (show only min and sec)</p>
+<!-- =========================================================== -->
+<script type="application/javascript">
+    var myCountdown2 = new Countdown({
+                                        time: 120,
+                                        width:150,
+                                        height:80,
+                                        rangeHi:"minute"
+                                        });
+
+</script>
