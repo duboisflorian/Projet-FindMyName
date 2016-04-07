@@ -104,6 +104,11 @@ body {
   font-size: 34px;
   color: black;
 }
+.presentation {
+  color: antiquewhite;
+  text-align: center;
+  margin-top: 200px;
+}
 .nav-list-nom {
   text-align: center;
 }
