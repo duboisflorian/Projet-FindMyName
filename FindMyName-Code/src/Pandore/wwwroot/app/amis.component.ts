@@ -15,10 +15,10 @@ import { Utilisateur } from './utilisateur';
 export class AmisComponent implements OnInit {
     amis: Ami[];
     selectedAmi: Ami;
+    selectedUser: Utilisateur;
     amiadd: number;
     utilisateurs: Utilisateur;
     t: Ami;
-    u: Utilisateur;
 
     constructor(
         private _router: Router,
@@ -39,6 +39,7 @@ export class AmisComponent implements OnInit {
     }
 
     onSelect(ami: Ami) { this.selectedAmi = ami; }
+    onSelectU() {this.selectedAmi = null;}
 
     gotoJouer() {
         this._router.navigate(['JouerChoix', { us: this.u.id,id: this.selectedAmi.id }]);
