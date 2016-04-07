@@ -1,28 +1,40 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-    <div class="core">
-        <div class="row" style="margin-right:0px;">
-            <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
-                <h1>Liste des noms trouvé</h1>
-                <div class="sidebar">
-                    <ul class="nav nav-sidebar nav-list-nom"></ul>
+﻿<nav class="menu navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" (click)="gotoAmis()" style="padding-top:0; padding-bottom:0;"> <img class="logo" style="display:inline;" src="fichier/logo.png" /> <span style="display:inline;" class="text-logo">Find My Name</span></a>
                 </div>
-                <div class="nav nav-conteur">
-                    <span>0 / 0</span>
+                <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="padding: 10px;"><img class="incone_menu" (click)="gotoDetail()" src="{{u.photo}}" /><span style="color:white;"> Bonjour, {{u.name}}</span> </li>
+                        <li (click)="gotoDeco()"><span class="glyphicon glyphicon glyphicon-off"></span></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
-                <h1>A vous de jouer :</h1>
-                {{reponses.reponses[0].text}}
             </div>
         </div>
     </div>
-
-</body>
-</html>
+</nav>
+<div class="core">
+    <div class="row" style="margin-right:0px;">
+        <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
+            <h1>Liste des noms trouvé</h1>
+            <div class="sidebar">
+                <ul class="nav nav-sidebar nav-list-nom"></ul>
+            </div>
+            <div class="nav nav-conteur">
+                <span>0 / 0</span>
+            </div>
+        </div>
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
+            <h1>A vous de jouer :</h1>
+            {{reponses.reponses[0].text}}
+        </div>
+    </div>
+</div>

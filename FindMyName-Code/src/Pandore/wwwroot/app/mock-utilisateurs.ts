@@ -6,6 +6,7 @@ export var UTILISATEURS: Utilisateur[] = [
     { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg" },
     { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg" },
     { "id": 5, "name": "diego", "photo": "fichier/logo.jpg" },
+    { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg" },
 ];
 
 /*
