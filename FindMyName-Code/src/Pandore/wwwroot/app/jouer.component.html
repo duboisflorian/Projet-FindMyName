@@ -22,19 +22,27 @@
     </div>
 </nav>
 <div class="core">
-    <div class="row" style="margin-right:0px;">
+    <div class="row" style=" margin-right:0px;">
         <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
             <h1>Liste des noms trouvé</h1>
             <div class="sidebar">
-                <ul class="nav nav-sidebar nav-list-nom"></ul>
+                <ul class="nav nav-sidebar nav-list-nom">
+                    <todo-list [todos]="todos"></todo-list>
+                </ul>
             </div>
+
             <div class="nav nav-conteur">
-                <span>0 / 0</span>
+                <span>{{remaining}} / {{nbjoueurs}}</span>
             </div>
         </div>
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
             <h1>A vous de jouer :</h1>
             {{reponses.reponses[0].text}}
+            <form (ngSubmit)="addTodo()">
+                <input type="text" [(ngModel)]="task" size="30"
+                       placeholder="entre le nom d'un joueur" style="color: black;">
+                <input class="btn-primary" type="submit" value="ajouter">
+            </form>
         </div>
     </div>
 </div>
