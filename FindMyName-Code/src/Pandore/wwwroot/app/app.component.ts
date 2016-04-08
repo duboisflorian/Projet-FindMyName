@@ -12,6 +12,7 @@ import { InComponent } from './in.component';
 import { HomeComponent } from './home.component';
 import { UserdetailComponent } from './userdetail.component';
 import { OnlineComponent } from './online.component';
+import { PartieService } from './partie.service';
 
 @Component({
     selector: 'my-app',
@@ -27,7 +28,8 @@ import { OnlineComponent } from './online.component';
         AmiService,
         ThemeService,
         UtilisateurService,
-        JouerService
+        JouerService,
+        PartieService
     ]
 })
 @RouteConfig([
