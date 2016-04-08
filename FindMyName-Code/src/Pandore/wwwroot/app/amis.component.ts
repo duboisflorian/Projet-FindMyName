@@ -57,6 +57,10 @@ export class AmisComponent implements OnInit {
         this.selectedAmi = null;
     }
 
+    showDetails(h: Partie) {
+        alert(h.id_partie);
+    }
+
     onSelect(ami: Ami) {
         this.selectedAmi = ami;
         this.en_cours = this._pService.getEn_Cours(this.u.id, ami.id);
