@@ -14,7 +14,7 @@ export class UserdetailComponent implements OnInit {
 
     utilisateurs: Utilisateur;
     u: Utilisateur;
-    mdp: string;
+    password: string;
     id: number;
     i: number;
     selectPhoto: string;
@@ -41,7 +41,7 @@ export class UserdetailComponent implements OnInit {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
     }
     modifmdp() {
-        if (this._uService.Same_mdp(this.mdp)) {
+        if (this._uService.Same_mdp(this.password)) {
             alert("le mot de passe est identique");
             
 
