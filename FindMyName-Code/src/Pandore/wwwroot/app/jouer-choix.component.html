@@ -1,4 +1,4 @@
-﻿<nav class="menu navbar navbar-inverse navbar-fixed-top">
+﻿<nav class="menu navbar">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -14,7 +14,7 @@
                 <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li style="padding: 10px;"><img class="incone_menu" (click)="gotoDetail()" src="{{u.photo}}" /><span style="color:white;"> Bonjour, {{u.name}}</span> </li>
-                        <li (click)="gotoDeco()"><span class="glyphicon glyphicon glyphicon-off"></span></li>
+                        <li><button (click)="gotoDeco()" style="margin-top: 8px;" type="button" class="btn btn-primary">Déconnexion</button></li>
                     </ul>
                 </div>
             </div>
