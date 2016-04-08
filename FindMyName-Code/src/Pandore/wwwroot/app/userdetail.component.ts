@@ -4,7 +4,7 @@ import { RouteParams } from 'angular2/router';
 import { UTILISATEURS } from './mock-utilisateurs';
 import { UtilisateurService } from './utilisateur.service';
 import { Utilisateur } from './utilisateur';
-
+import { PHOTOS } from './mock-photo';
 
 @Component({
     selector: 'my-userdetail',
@@ -16,6 +16,8 @@ export class UserdetailComponent implements OnInit {
     u: Utilisateur;
     mdp: string;
     id: number;
+    i: number;
+    selectPhoto: string;
 
     constructor(
         private _router: Router,
@@ -48,6 +50,16 @@ export class UserdetailComponent implements OnInit {
             alert("Le mot de passe a bien été changé");
             
         }
+    }
+
+    loadListPhoto() {
+        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].id == 6) {
+                UTILISATEURS[this.i].photo = 'fichier/' + this.selectPhoto + '.jpg';
+            }
+        }
+        alert("Photo changée");
+
     }
 }
 

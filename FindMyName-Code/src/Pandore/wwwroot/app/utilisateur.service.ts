@@ -1,7 +1,7 @@
 ﻿import { Utilisateur } from './utilisateur';
 import { UTILISATEURS } from './mock-utilisateurs';
 import { Injectable } from 'angular2/core';
-
+import { PHOTOS } from './mock-photo';
 @Injectable()
 export class UtilisateurService {
     i: number;
@@ -44,7 +44,7 @@ export class UtilisateurService {
         }
     }
 
-
+   
 }
 
 /*
