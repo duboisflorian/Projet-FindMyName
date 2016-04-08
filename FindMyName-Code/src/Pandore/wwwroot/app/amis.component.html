@@ -30,7 +30,7 @@
             </ul>
             <div class="sidebar">
                 <ul class="nav nav-sidebar">
-                    <li  (click)="onSelectU()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
+                    <li  (click)="gotoDetail()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
                     <li><form class="form"><input id="recherche" class="form-recherche" placeholder="Rachercher un ami" required="" type="text"></form></li>
                     <li *ngFor="#ami of amis" [class.selected]="ami === selectedAmi" (click)="onSelect(ami)"><img class="portrait" src="{{ami.photo}}" /><span>{{ami.name}}</span></li>
                 </ul>

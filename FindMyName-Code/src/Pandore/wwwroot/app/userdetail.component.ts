@@ -2,9 +2,9 @@
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 import { UTILISATEURS } from './mock-utilisateurs';
-
 import { UtilisateurService } from './utilisateur.service';
 import { Utilisateur } from './utilisateur';
+import { PHOTOS } from './mock-photo';
 
 @Component({
     selector: 'my-userdetail',
@@ -14,6 +14,10 @@ export class UserdetailComponent implements OnInit {
 
     utilisateurs: Utilisateur;
     u: Utilisateur;
+    mdp: string;
+    id: number;
+    i: number;
+    selectPhoto: string;
 
     constructor(
         private _router: Router,
@@ -36,7 +40,27 @@ export class UserdetailComponent implements OnInit {
     gotoDetail() {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
     }
+    modifmdp() {
+        if (this._uService.Same_mdp(this.mdp)) {
+            alert("le mot de passe est identique");
+            
 
+        }
+        else {
+            alert("Le mot de passe a bien été changé");
+            
+        }
+    }
+
+    loadListPhoto() {
+        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].id == 6) {
+                UTILISATEURS[this.i].photo = 'fichier/' + this.selectPhoto + '.jpg';
+            }
+        }
+        alert("Photo changée");
+
+    }
 }
 
 /*

@@ -2,6 +2,11 @@
     id: number;
     name: string;
     photo: string;
-	mail: string;
 	password: string;
+	mail: string;
+    pays: string;
+    theme: string;
+    meilleurScore: number;
+
+
 }
