@@ -23,7 +23,13 @@ export class AmisComponent implements OnInit {
     utilisateurs: Utilisateur;
     t: Ami;
     u: Utilisateur;
-    partie_en_cours: Partie[];
+    parties_en_cours: Partie[];
+    en_cours: boolean;
+    partie_en_cours: Partie;
+    victoire: number = 0;
+    defaite: number = 0;
+    historique: Partie[];
+
 
     constructor(
         private _router: Router,
@@ -40,7 +46,7 @@ export class AmisComponent implements OnInit {
     }
 
     UserD(id: number) {
-        this.partie_en_cours = this._pService.getPartieEnCours(id);
+        this.parties_en_cours = this._pService.getPartiesEnCours(id);
     }
 
     ngOnInit() {
@@ -51,27 +57,38 @@ export class AmisComponent implements OnInit {
         this.selectedAmi = null;
     }
 
-    onSelect(ami: Ami) { this.selectedAmi = ami; }
+    onSelect(ami: Ami) {
+        this.selectedAmi = ami;
+        this.en_cours = this._pService.getEn_Cours(this.u.id, ami.id);
+        if (this.en_cours == true) {
+            this.partie_en_cours = this._pService.getPartieEnCours(this.u.id, ami.id);
+        } else {
+            this.historique = this._pService.getHistorique(this.u.id, ami.id);
+        }
+    }
+
     onSelectU() {this.selectedAmi = null;}
 
     gotoJouer(p: Partie) {
         if (this.selectedAmi == null) {
-            for (var i = 0; i < this.partie_en_cours.length; i++) {
-                if (this.partie_en_cours[i].id_partie == p.id_partie) {
-                    if (this.partie_en_cours[i].manche[this.partie_en_cours[i].manche.length - 1].s1 == null || this.partie_en_cours[i].manche[this.partie_en_cours[i].manche.length - 1].s2 == null) {
-                        if (this.partie_en_cours[i].id_j1 == this.u.id)
-                            this._router.navigate(['Jouer', { us: this.u.id, id: this.partie_en_cours[i].id_j2, th: this.partie_en_cours[i].manche[this.partie_en_cours[i].manche.length - 1].id_theme }]);
+            for (var i = 0; i < this.parties_en_cours.length; i++) {
+                if (this.parties_en_cours[i].id_partie == p.id_partie) {
+                    if (this.parties_en_cours[i].manche[this.parties_en_cours[i].manche.length - 1].s1 == null || this.parties_en_cours[i].manche[this.parties_en_cours[i].manche.length - 1].s2 == null) {
+                        if (this.parties_en_cours[i].id_j1 == this.u.id)
+                            this._router.navigate(['Jouer', { us: this.u.id, id: this.parties_en_cours[i].id_j2, th: this.parties_en_cours[i].manche[this.parties_en_cours[i].manche.length - 1].id_theme }]);
                         else
-                            this._router.navigate(['Jouer', { us: this.u.id, id: this.partie_en_cours[i].id_j1, th: this.partie_en_cours[i].manche[this.partie_en_cours[i].manche.length - 1].id_theme }]);
+                            this._router.navigate(['Jouer', { us: this.u.id, id: this.parties_en_cours[i].id_j1, th: this.parties_en_cours[i].manche[this.parties_en_cours[i].manche.length - 1].id_theme }]);
                     } else {
-                        if (this.partie_en_cours[i].id_j1 == this.u.id)
-                            this._router.navigate(['JouerChoix', { us: this.u.id, id: this.partie_en_cours[i].id_j2}]);
+                        if (this.parties_en_cours[i].id_j1 == this.u.id)
+                            this._router.navigate(['JouerChoix', { us: this.u.id, id: this.parties_en_cours[i].id_j2}]);
                         else
-                            this._router.navigate(['JouerChoix', { us: this.u.id, id: this.partie_en_cours[i].id_j1}]);
+                            this._router.navigate(['JouerChoix', { us: this.u.id, id: this.parties_en_cours[i].id_j1}]);
                     }
                 }
             }
         }
+        if (this.en_cours == false)
+            this._router.navigate(['JouerChoix', { us: this.u.id, id: this.selectedAmi.id }]);
     }
 
     gotoDeco() {

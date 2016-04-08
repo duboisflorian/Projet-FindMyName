@@ -45,22 +45,42 @@
             </div>
         </div>
 
+
+
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedAmi" >
-            <h2>
-                {{selectedAmi.name | uppercase}}
-            </h2>
-            <button (click)="gotoJouer()">Jouer</button>
+            <div *ngIf="en_cours==true">
+                ({{partie_en_cours.j1}}) {{partie_en_cours.s1}} - {{partie_en_cours.s2}} ({{partie_en_cours.j2}})
+                <br />
+                <ul class="nav nav-sidebar">
+                    <li *ngFor="#m of partie_en_cours.manche"><span>{{m.s1}} - {{m.s2}}</span></li>
+                </ul>
+            </div>
+            <div *ngIf="en_cours==false">
+                <h1>{{u.name | uppercase}} VS {{selectedAmi.name | uppercase}}</h1>
+                <h3>Victoire = {{victoire}}</h3>
+                <h3>Defaite = {{defaite}}</h3>
+                <ul class="nav nav-sidebar">
+                    <li *ngFor="#h of historique">
+                        <span>({{h.j1}}) {{h.s1}} - {{h.s2}} ({{h.j2}})</span>
+                    </li>
+                </ul>
+                <button (click)="gotoJouer()">Jouer</button>
+            </div>
         </div>
+
+
 
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedAmi" style="color:aquamarine;">
             <h2>Vos Parties</h2>
             <ul class="nav nav-sidebar">
-                <li *ngFor="#p of partie_en_cours" >
+                <li *ngFor="#p of parties_en_cours" >
                     <span *ngIf="p.player!=u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) En attente</span>
                     <span *ngIf="p.player==u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) <button [class.selected]="p === selectedparti_en_cours" (click)="gotoJouer(p)">Jouer</button></span>
                 </li>
             </ul>
         </div>
+
+
 
     </div>
 </div>

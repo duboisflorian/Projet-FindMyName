@@ -33,6 +33,7 @@ export class AmiService {
                 AMIS[this.i].amis.push({ "id": user.id, "name": user.name, "photo": user.photo })
         }
     }
+
 }
 
 /*
