@@ -38,11 +38,37 @@ export class JouerChoixComponent implements OnInit {
     }
     ngOnInit() {
         let id = +this._routeParams.get('id');
-        this._themeService.getThemes()
-            .then(themes => this.themes = themes.slice(1, 5));
+        this.themes = this._themeService.getThemes();
+        /*this._themeService.getThemes()
+            .then(themes => this.themes = themes.slice(0, 4));*/
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
     }
+   /* melanger() {
+        var aleatoire: number[] = [];
+        alert("1");
+        var nb = Math.floor(Math.random() * 6) + 1;
+        alert("2");
+        this._themeService.getThemes().then(themes => this.themescharge.filter(theme => theme.id === nb)[0]);
+        alert("3");
+        aleatoire.push(nb);
+        alert("4");
+        for (var i = 0; i < 3; i++) {
+            alert("5");
+            do {
+                alert("6");
+                var nb = Math.floor(Math.random() * 6) + 1;
+            } while (this.isvalid(nb, aleatoire));
+            this._themeService.getThemes().then(themes => this.themescharge.filter(theme => theme.id === nb)[0]);
+            aleatoire.push(nb);
+        }
+    }
+    isvalid(nombre, aleatoire) {
+        for (var i = 0; i < aleatoire.length; i++)
+            if (aleatoire[i] == nombre)
+                return true;
+        return false;
+    }*/
     gotoAmis() {
         this._router.navigate(['Amis', { us: this.u.id }]);
     }
@@ -51,13 +77,13 @@ export class JouerChoixComponent implements OnInit {
     }
 
     onSelect(theme: Theme) {
-        this.selectedTheme = theme;  
+        this.selectedTheme = theme;
     }
 
     gotoJouer(theme: Theme) {
-        this.selectedTheme = theme;  
+        this.selectedTheme = theme;
         let id = +this._routeParams.get('id');
-        let link = ['Jouer', { us: this.u.id, id: id ,th: this.selectedTheme.id }];
+        let link = ['Jouer', { us: this.u.id, id: id, th: this.selectedTheme.id }];
         this._router.navigate(link);
         //this._router.navigate(['Jouer', { id: this.selectedTheme.id }]);
     }

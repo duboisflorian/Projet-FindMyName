@@ -46,12 +46,12 @@ export class UtilisateurService {
     Same_mdp(mdp: string) {
         for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
             if (UTILISATEURS[this.i].id == 6) {
-                if (UTILISATEURS[this.i].mdp == mdp) {
+                if (UTILISATEURS[this.i].password == mdp) {
                     alert(mdp);
                     return true;
                 }
                 else {
-                    UTILISATEURS[this.i].mdp = mdp;
+                    UTILISATEURS[this.i].password = mdp;
                     alert(mdp);
                     return false;
                 }
