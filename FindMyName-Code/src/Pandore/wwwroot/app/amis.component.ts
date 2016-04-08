@@ -71,6 +71,10 @@ export class AmisComponent implements OnInit {
 
     onSelectU() {this.selectedAmi = null;}
 
+    showDetails(h: Partie) {
+        alert(h.id_partie);
+    }
+
     gotoJouer(p: Partie) {
         if (this.selectedAmi == null) {
             for (var i = 0; i < this.parties_en_cours.length; i++) {
