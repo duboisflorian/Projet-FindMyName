@@ -195,3 +195,18 @@ Project : Find My Name v_2
 
 - Florian 
 	- Architecture du site (route et component)
+	- affichage parties en cours d'un user
+	- creation service partie
+	- creation classe et données partie
+	
+##Vendredi 07/04
+
+- Groupe
+	- merge florian
+	- merge yani
+	- merge maxime
+
+- Florian 
+	- affichage historique
+	- affichage partie en cours avec un ami
+	- modification service partie
