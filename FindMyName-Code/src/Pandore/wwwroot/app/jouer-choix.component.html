@@ -34,9 +34,6 @@
             </div>
         </div>
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
-            <div *ngIf="ami">
-                <h2>Vous jouer contre : {{ami.name}}</h2>
-            </div>
             <h1>Choisez un thème :</h1>
             <ul class="list-unstyled">
                 <li class="theme" *ngFor="#theme of themes" [class.selected]="theme === selectedTheme" (click)="gotoJouer(theme)"><img class="image-theme" src="{{theme.photo}}" /></li>
