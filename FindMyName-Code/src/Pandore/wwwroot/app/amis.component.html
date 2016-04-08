@@ -63,7 +63,7 @@
                 <h3>Defaite = {{defaite}}</h3>
                 <ul class="nav nav-sidebar">
                     <li *ngFor="#h of historique">
-                        <span>({{h.j1}}) {{h.s1}} - {{h.s2}} ({{h.j2}})</span>
+                        <span>({{h.j1}}) {{h.s1}} - {{h.s2}} ({{h.j2}})</span> <button (click)="showDetails(h)">Détails</button>
                     </li>
                 </ul>
                 <button (click)="gotoJouer()">Jouer</button>
