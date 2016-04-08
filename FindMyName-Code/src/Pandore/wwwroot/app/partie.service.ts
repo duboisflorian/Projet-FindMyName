@@ -55,6 +55,16 @@ export class PartieService {
         }
         return nb;
     }
+
+    getNbDefaite(us: number, ami: number) {
+        var nb = 0;
+        for (this.i = 0; this.i < PARTIES.length; this.i++) {
+            if ((PARTIES[this.i].id_j1 == us && PARTIES[this.i].id_j2 == ami) || (PARTIES[this.i].id_j1 == ami && PARTIES[this.i].id_j2 == us))
+                if ((PARTIES[this.i].id_j1 == us && PARTIES[this.i].s1 < PARTIES[this.i].s2) || (PARTIES[this.i].s1 > PARTIES[this.i].s2 && PARTIES[this.i].id_j2 == us))
+                    nb++;
+        }
+        return nb;
+    }
 }
 
 /*

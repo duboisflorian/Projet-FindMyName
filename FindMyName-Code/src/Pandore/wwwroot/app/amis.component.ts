@@ -65,6 +65,7 @@ export class AmisComponent implements OnInit {
         } else {
             this.historique = this._pService.getHistorique(this.u.id, ami.id);
             this.victoire = this._pService.getNbVictoire(this.u.id, ami.id);
+            this.defaite = this._pService.getNbDefaite(this.u.id, ami.id);
         }
     }
 
