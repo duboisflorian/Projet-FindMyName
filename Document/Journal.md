@@ -191,6 +191,10 @@ Project : Find My Name v_2
 - Maxime 
 	- Css -> Less
 
+- Lionel
+	- Début mise en page profil
+	- Supression d'une ligne dans un fichier JSON
+
 ##Jeudi 07/04
 
 - Florian 
@@ -198,15 +202,24 @@ Project : Find My Name v_2
 	- affichage parties en cours d'un user
 	- creation service partie
 	- creation classe et données partie
+
+- Lionel
+	- Finalisation mise en page profil 
+	- Debut traitement pour changer de mot de passe 
 	
-##Vendredi 07/04
+##Vendredi 08/04
 
 - Groupe
 	- merge florian
 	- merge yani
 	- merge maxime
+	- merge lionel
 
 - Florian 
 	- affichage historique
 	- affichage partie en cours avec un ami
 	- modification service partie
+
+- Lionel
+	- Finalisation traitement changement de mot de passe 
+	- Finalisation traitement changement de photo de profil 
