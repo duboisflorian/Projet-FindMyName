@@ -68,7 +68,7 @@ export class JouerComponent implements OnInit {
         }
     }
     starttimer() {
-        this.countdown(0, 10, this._router, this.u.id);
+        this.countdown(1, 0, this._router, this.u.id);
     }
 
     countdown(minutes, seconds, _router, id) {
