@@ -4,8 +4,30 @@ import { Injectable } from 'angular2/core';
 
 @Injectable()
 export class ThemeService {
+ t: Theme[]=[];
     getThemes() {
-        return Promise.resolve(THEMES);
+        this.melanger();
+        return this.t;
+    }
+
+    melanger() {
+        var aleatoire: number[] = [];
+        var nb = Math.floor(Math.random() * 6) ;
+        this.t.push(THEMES[nb]);
+        aleatoire.push(nb);
+        for (var i = 0; i < 3; i++) {
+            do {
+                var nb = Math.floor(Math.random() * 6);
+            } while (this.isvalid(nb, aleatoire));
+            this.t.push(THEMES[nb]);
+            aleatoire.push(nb);
+        }
+    }
+    isvalid(nombre, aleatoire) {
+        for (var i = 0; i < aleatoire.length; i++)
+            if (aleatoire[i] == nombre)
+                return true;
+        return false;
     }
 
     // See the "Take it slow" appendix
