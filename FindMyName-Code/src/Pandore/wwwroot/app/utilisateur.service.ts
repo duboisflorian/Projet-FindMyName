@@ -65,7 +65,8 @@ export class UtilisateurService {
     }
 
     ajouterUtilisateur(name:string, mail: string, password: string ) {
-        UTILISATEURS.push({ "id": this.getlastid()+1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password })
+        UTILISATEURS.push({ "id": this.getlastid() + 1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password, "pays": "France", "theme": "sport", "meilleurScore": 15 })
+        return this.getlastid();
     }
 
 }

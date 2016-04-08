@@ -3,12 +3,15 @@ import { Utilisateur } from './utilisateur';
 import { AMIS } from './mock-amis';
 import { Injectable } from 'angular2/core';
 import { Lami } from './lami';
+import { Online } from './online';
 
 
 @Injectable()
 export class AmiService {
     i: number;
     n: number;
+    o: Online[] = [];
+    a: Ami[] = [];
 
     getAmis(id: number) {
         for (this.i = 0; this.i < AMIS.length; this.i++) {
@@ -34,6 +37,9 @@ export class AmiService {
         }
     }
 
+    création(id: number) {
+        AMIS.push({ "id": id, "amis": this.a, "online": this.o });
+    }
 }
 
 /*

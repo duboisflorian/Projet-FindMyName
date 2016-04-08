@@ -3,6 +3,7 @@ import { Router } from 'angular2/router';
 import { CoComponent } from './co.component';
 import { HomeComponent } from './home.component';
 import { UtilisateurService } from './utilisateur.service';
+import { AmiService } from './ami.service';
 import { Utilisateur } from './utilisateur';
 
 @Component({
@@ -17,7 +18,8 @@ export class InComponent implements OnInit {
 
     constructor(
         private _router: Router,
-        private _uService: UtilisateurService) { }
+        private _uService: UtilisateurService,
+        private _aService: AmiService) { }
 
     gotoHome() {
         this._router.navigate(['Home']);
@@ -32,8 +34,8 @@ export class InComponent implements OnInit {
             if (this._uService.verificationMailExist(this.mail)) {
                 alert("L'adresse mail existe déjà");
             }
-            else {  
-                this._uService.ajouterUtilisateur(this.name, this.mail, this.password);
+            else {
+                this._aService.création(this._uService.ajouterUtilisateur(this.name, this.mail, this.password));
                 this._router.navigate(['Co']);
             }
         } else {
@@ -41,6 +43,7 @@ export class InComponent implements OnInit {
         }
     }
 }
+
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

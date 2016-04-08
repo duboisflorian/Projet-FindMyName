@@ -2,8 +2,8 @@
     id: number;
     name: string;
     photo: string;
-	password: string;
-	mail: string;
+    mail: string;
+    password: string;
     pays: string;
     theme: string;
     meilleurScore: number;

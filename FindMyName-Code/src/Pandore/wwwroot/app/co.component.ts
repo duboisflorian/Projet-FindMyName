@@ -27,6 +27,10 @@ export class CoComponent implements OnInit {
         this._router.navigate(['Home']);
     }
 
+    gotocheat() {
+        this._router.navigate(['Amis', { us: 6 }]);
+    }
+
     connexion() {
         if (this.utilisateur = this._uService.verificationConnexion(this.mail, this.password)) {
             this._router.navigate(['Amis', { us: this.utilisateur.id }]);
