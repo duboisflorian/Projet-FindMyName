@@ -2,39 +2,38 @@
 import { Utilisateur } from './utilisateur';
 import { AMIS } from './mock-amis';
 import { Injectable } from 'angular2/core';
+import { Lami } from './lami';
 
 
 @Injectable()
 export class AmiService {
     i: number;
-    getAmis() {
-        return Promise.resolve(AMIS);
-    }
+    n: number;
 
-    // See the "Take it slow" appendix
-    getAmisSlowly() {
-        return new Promise<Ami[]>(resolve =>
-            setTimeout(() => resolve(AMIS), 2000) // 2 seconds
-        );
-    }
-
-    getAmi(id: number) {
-       return Promise.resolve(AMIS).then(
-            amis => amis.filter(ami => ami.id === id)[0]
-        );
-    }
-
-
-    getAmiExiste(id: number) {
-
+    getAmis(id: number) {
         for (this.i = 0; this.i < AMIS.length; this.i++) {
             if (AMIS[this.i].id == id)
-                return AMIS[this.i];
+                return AMIS[this.i].amis;
         }
     }
-    add(user: Utilisateur) {
-        AMIS.push({ "id": user.id, "name": user.name, "photo": user.photo })
+
+    getAmiExiste(id: number,u:number) {
+
+        for (this.i = 0; this.i < AMIS.length; this.i++) {
+            if (AMIS[this.i].id == u)
+                for (this.n = 0; this.n < AMIS[this.i].amis.length; this.n++) {
+                    if (AMIS[this.i].amis[this.n].id==id)
+                        return AMIS[this.i].amis[this.n];
+                }
+        }
     }
+    add(user: Utilisateur, u: number) {
+        for (this.i = 0; this.i < AMIS.length; this.i++) {
+            if (AMIS[this.i].id == u)
+                AMIS[this.i].amis.push({ "id": user.id, "name": user.name, "photo": user.photo })
+        }
+    }
+
 }
 
 /*

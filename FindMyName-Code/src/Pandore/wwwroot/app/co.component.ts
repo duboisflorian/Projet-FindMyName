@@ -2,6 +2,8 @@
 import { Router } from 'angular2/router';
 import { HomeComponent } from './home.component';
 import { InComponent } from './in.component';
+import { UtilisateurService } from './utilisateur.service';
+import { Utilisateur } from './utilisateur';
 
 
 @Component({
@@ -9,18 +11,28 @@ import { InComponent } from './in.component';
     templateUrl: 'app/co.component.html'
 })
 export class CoComponent implements OnInit {
+    utilisateur: Utilisateur;
+    mail: string;
+    password: string;
 
     constructor(
-        private _router: Router) { }
+        private _router: Router,
+        private _uService: UtilisateurService) { }
 
     gotoIn() {
         this._router.navigate(['In']);
     }
+
     gotoHome() {
         this._router.navigate(['Home']);
     }
-    gotoAmi() {
-        this._router.navigate(['Amis', { us: 6 }]);
+
+    connexion() {
+        if (this.utilisateur = this._uService.verificationConnexion(this.mail, this.password)) {
+            this._router.navigate(['Amis', { us: this.utilisateur.id }]);
+        } else {
+            alert("Le mot de passe ou l'e-mail n'existe pas.");
+        }
     }
 }
 

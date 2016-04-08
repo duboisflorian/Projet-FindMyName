@@ -38,8 +38,6 @@ export class JouerChoixComponent implements OnInit {
     }
     ngOnInit() {
         let id = +this._routeParams.get('id');
-        this._amiService.getAmi(id)
-            .then(ami => this.ami = ami);
         this._themeService.getThemes()
             .then(themes => this.themes = themes.slice(1, 5));
         let us = +this._routeParams.get('us');
@@ -52,9 +50,12 @@ export class JouerChoixComponent implements OnInit {
         window.history.back();
     }
 
-    onSelect(theme: Theme) { this.selectedTheme = theme; }
+    onSelect(theme: Theme) {
+        this.selectedTheme = theme;  
+    }
 
-    gotoJouer() {
+    gotoJouer(theme: Theme) {
+        this.selectedTheme = theme;  
         let id = +this._routeParams.get('id');
         let link = ['Jouer', { us: this.u.id, id: id ,th: this.selectedTheme.id }];
         this._router.navigate(link);

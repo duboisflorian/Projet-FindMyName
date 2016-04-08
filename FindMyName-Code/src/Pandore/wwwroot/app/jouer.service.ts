@@ -1,3 +1,4 @@
+
 ﻿import { Jouer } from './jouer';
 import { Reponse } from './reponses';
 import { Reponses } from './mock-reponses';
@@ -30,16 +31,25 @@ export class JouerService {
         );
     }
 
+    getReponse(i: number) {
+        return Reponses[0].reponses[i].text;
+    }
+
+    getDone(i: number) {
+        return Reponses[0].reponses[i].done;
+    }
+
+    setDone(i: number, bool: boolean) {
+        Reponses[0].reponses[i].done == bool;
+    }
+
     getReponses(id: number) {
         for (this.i = 0; this.i < Reponses.length; this.i++) {
             if (Reponses[this.i].id == id)
                 return Reponses[this.i];
         }
     }
+    getTaille(i : number) {
+        return Reponses[i].reponses.length;
+    }
 }
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
