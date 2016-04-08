@@ -51,7 +51,7 @@
                 <td>Thème favoris : {{u.theme}}</td>
             </tr>
             <tr>
-                <td><form (ngSubmit)="modifmdp()"><font color="black"><input type="password" placeholder="entrer votre mot de passe ici" [(ngModel)]="password" value="{{u.password}}" /></font><input class="btn-primary" type="submit" value="Modifier"><br /> <br /></form></td>
+                <td><form (ngSubmit)="modifmdp()"><font color="black"><input type="hidden" /><input type="password" placeholder="entrer votre mot de passe ici" [(ngModel)]="password" value="{{u.password}}" /></font><input class="btn-primary" type="submit" value="Modifier"><br /> <br /></form></td>
                 <td>Meilleur Score : {{u.meilleurScore}}</td>
             </tr>
             <tr>

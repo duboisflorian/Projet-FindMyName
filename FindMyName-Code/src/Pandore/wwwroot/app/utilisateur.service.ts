@@ -43,7 +43,7 @@ export class UtilisateurService {
         return false;
     }
 
-    Same_mdp(password: string) {
+    Same_mdp(id:number,password: string) {
         for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
             if (UTILISATEURS[this.i].id == 6) {
                 if (UTILISATEURS[this.i].password == password) {
