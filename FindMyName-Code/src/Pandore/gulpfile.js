@@ -1,5 +1,4 @@
-﻿/// <binding BeforeBuild='css' AfterBuild='default' />
-
+﻿/// <binding BeforeBuild='css' />
 var gulp = require('gulp');
 
 var plugins = require('gulp-load-plugins')();
