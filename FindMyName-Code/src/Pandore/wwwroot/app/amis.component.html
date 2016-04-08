@@ -54,6 +54,8 @@
                 <ul class="nav nav-sidebar">
                     <li *ngFor="#m of partie_en_cours.manche"><span>{{m.s1}} - {{m.s2}}</span></li>
                 </ul>
+                <button  *ngIf="partie_en_cours.player==u.id"  (click)="gotoJouer(partie_en_cours)">Jouer</button>
+                <span *ngIf="partie_en_cours.player!=u.id" >En attente</span>
             </div>
             <div *ngIf="en_cours==false">
                 <h1>{{u.name | uppercase}} VS {{selectedAmi.name | uppercase}}</h1>
@@ -75,7 +77,7 @@
             <ul class="nav nav-sidebar">
                 <li *ngFor="#p of parties_en_cours" >
                     <span *ngIf="p.player!=u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) En attente</span>
-                    <span *ngIf="p.player==u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) <button [class.selected]="p === selectedparti_en_cours" (click)="gotoJouer(p)">Jouer</button></span>
+                    <span *ngIf="p.player==u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) <button (click)="gotoJouer(p)">Jouer</button></span>
                 </li>
             </ul>
         </div>

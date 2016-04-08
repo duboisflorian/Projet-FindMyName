@@ -45,6 +45,9 @@ export class PartieService {
         }
         return p;
     }
+
+    getNbVictoire(us: number, ami: number) {
+    }
 }
 
 /*

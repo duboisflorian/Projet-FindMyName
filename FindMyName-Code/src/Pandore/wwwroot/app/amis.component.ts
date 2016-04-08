@@ -64,6 +64,7 @@ export class AmisComponent implements OnInit {
             this.partie_en_cours = this._pService.getPartieEnCours(this.u.id, ami.id);
         } else {
             this.historique = this._pService.getHistorique(this.u.id, ami.id);
+            this.victoire = this._pService.getNbVictoire(this.u.id, ami.id);
         }
     }
 
@@ -89,6 +90,20 @@ export class AmisComponent implements OnInit {
         }
         if (this.en_cours == false)
             this._router.navigate(['JouerChoix', { us: this.u.id, id: this.selectedAmi.id }]);
+
+        if (this.en_cours == true) {
+            if (p.manche[p.manche.length - 1].s1 == null ||p.manche[p.manche.length - 1].s2 == null) {
+                if (p.id_j1 == this.u.id)
+                    this._router.navigate(['Jouer', { us: this.u.id, id: p.id_j2, th: p.manche[p.manche.length - 1].id_theme }]);
+                else
+                    this._router.navigate(['Jouer', { us: this.u.id, id: p.id_j1, th: p.manche[p.manche.length - 1].id_theme }]);
+            } else {
+                if (p.id_j1 == this.u.id)
+                    this._router.navigate(['JouerChoix', { us: this.u.id, id: p.id_j2 }]);
+                else
+                    this._router.navigate(['JouerChoix', { us: this.u.id, id: p.id_j1 }]);
+            }
+        }
     }
 
     gotoDeco() {
