@@ -1,4 +1,4 @@
-﻿import { Component, Input, OnInit } from 'angular2/core';
+﻿import { Component, Input, OnInit, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Router } from 'angular2/router';
 import { Reponse } from './reponses';
@@ -13,17 +13,20 @@ import { Utilisateur } from './utilisateur';
     templateUrl: 'app/jouer.component.html'
 })
 export class JouerComponent implements OnInit {
+    task: string = '';
+    reponse: Reponse[] = [
+    ];
+    remaining: number=0;
 
-
-    reponses: Jouer;
+    tabreponses: Jouer;
     u: Utilisateur;
+    bon: boolean;
 
     constructor(
         private _router: Router,
         private _jouerService: JouerService,
         private _uService: UtilisateurService,
-        private _routeParams: RouteParams) {
-    }
+        private _routeParams: RouteParams) { }
     gotoDeco() {
         alert("Vous avez été déconnecté");
         this._router.navigate(['Co']);
@@ -36,9 +39,62 @@ export class JouerComponent implements OnInit {
     }
     ngOnInit() {
         let th = +this._routeParams.get('th');
-        this.reponses = this._jouerService.getReponses(th);
+        this.tabreponses = this._jouerService.getReponses(th);
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        this.starttimer();
+    }
+    getReponse() {
+        return this.reponse;
+    }
+    getRemaining() {
+        return this.remaining;
+    }
+    addTodo() {
+        this.bon = false;
+        if (this.task) {
+            for (var i = 0; i < this.tabreponses.reponses.length; i++) {
+                if (this.tabreponses.reponses[i].text.toLowerCase() == this.task.toLowerCase() && this.tabreponses.reponses[i].done == false) {
+                    this.reponse.push({ "text": this.task, "done": true });
+                    this.remaining++;
+                    this.tabreponses.reponses[i].done = true;
+                    this.bon = true;
+                }
+            }
+            if (this.bon != true) {
+                this.bon = false;
+            }
+            this.task = '';
+        }
+    }
+    starttimer() {
+        this.countdown(1, 0, this._router, this.u.id);
+    }
+
+    countdown(minutes, seconds, _router, id) {
+        var element, endTime, hours, mins, msLeft, time;
+
+        function twoDigits(n) {
+            return (n <= 9 ? "0" + n : n);
+        }
+
+        function updateTimer() {
+            msLeft = endTime - (+new Date);
+            if (msLeft < 1000) {
+                alert("gg");
+                _router.navigate(['Amis', { us: id }]);
+            } else {
+                time = new Date(msLeft);
+                hours = time.getUTCHours();
+                mins = time.getUTCMinutes();
+                element.innerHTML = (hours ? hours + ':' + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
+                setTimeout(updateTimer, time.getUTCMilliseconds() + 500);
+            }
+        }
+
+        element = document.getElementById("countdown");
+        endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
+        updateTimer();
     }
 }
 

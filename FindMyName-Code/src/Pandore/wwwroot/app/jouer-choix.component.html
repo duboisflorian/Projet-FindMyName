@@ -39,15 +39,8 @@
             </div>
             <h1>Choisez un thème :</h1>
             <ul class="list-unstyled">
-                <li class="theme" *ngFor="#theme of themes" [class.selected]="theme === selectedTheme" (click)="onSelect(theme)"><img class="image-theme" src="{{theme.photo}}" /></li>
+                <li class="theme" *ngFor="#theme of themes" [class.selected]="theme === selectedTheme" (click)="gotoJouer(theme)"><img class="image-theme" src="{{theme.photo}}" /></li>
             </ul>
-            <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedTheme">
-                <h2>
-                    {{selectedTheme.text}}
-                </h2>
-                <button (click)="gotoJouer()">Jouer</button>
-            </div>
-            <button (click)="goBack()">Back</button>
         </div>
     </div>
 </div>
