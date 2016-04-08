@@ -38,8 +38,6 @@ export class JouerChoixComponent implements OnInit {
     }
     ngOnInit() {
         let id = +this._routeParams.get('id');
-        this._amiService.getAmi(id)
-            .then(ami => this.ami = ami);
         this._themeService.getThemes()
             .then(themes => this.themes = themes.slice(1, 5));
         let us = +this._routeParams.get('us');

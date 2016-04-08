@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     gotoIn() {
         this._router.navigate(['In']);
     }
+
 }
 
 /*

@@ -1,4 +1,4 @@
-﻿<nav class="menu navbar navbar-inverse navbar-fixed-top">
+﻿<nav class="menu navbar">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -14,14 +14,14 @@
                 <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li style="padding: 10px;"><img class="incone_menu" (click)="gotoDetail()" src="{{u.photo}}" /><span style="color:white;"> Bonjour, {{u.name}}</span> </li>
-                        <li (click)="gotoDeco()"><span class="glyphicon glyphicon glyphicon-off"></span></li>
+                        <li><button (click)="gotoDeco()" sstyle="margin-top: 8px;" type="button" class="btn btn-primary">Déconnexion</button></li>
                     </ul>
                 </div>
             </div>
         </div> 
     </div>
 </nav>
-<div class="core">
+<div class="core" >
     <div class="row" style="margin-right:0px;">
         <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
             <ul class="nav nav-button">
@@ -30,26 +30,60 @@
             </ul>
             <div class="sidebar">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
+                    <li  (click)="onSelectU()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
                     <li><form class="form"><input id="recherche" class="form-recherche" placeholder="Rachercher un ami" required="" type="text"></form></li>
                     <li *ngFor="#ami of amis" [class.selected]="ami === selectedAmi" (click)="onSelect(ami)"><img class="portrait" src="{{ami.photo}}" /><span>{{ami.name}}</span></li>
                 </ul>
             </div>
-            <div class="nav nav-ajouter">
+            <div class="nav nav-ajouter" style="color:white;">
                 <a><span class="text">Ajouter un ami</span></a>
                 <form (ngSubmit)="addAmi()">
                     <input type="text" [(ngModel)]="amiadd" size="30"
                            placeholder="entrer l'id de la personne">
                     <input class="btn-primary" type="submit" value="ajouter">
-                </form>`
+                </form>
             </div>
         </div>
-        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedAmi">
-            <h2>
-                {{selectedAmi.name | uppercase}}
-            </h2>
-            <button (click)="gotoJouer()">Jouer</button>
+
+
+
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedAmi" >
+            <div *ngIf="en_cours==true">
+                ({{partie_en_cours.j1}}) {{partie_en_cours.s1}} - {{partie_en_cours.s2}} ({{partie_en_cours.j2}})
+                <br />
+                <ul class="nav nav-sidebar">
+                    <li *ngFor="#m of partie_en_cours.manche"><span>{{m.s1}} - {{m.s2}}</span></li>
+                </ul>
+                <button  *ngIf="partie_en_cours.player==u.id"  (click)="gotoJouer(partie_en_cours)">Jouer</button>
+                <span *ngIf="partie_en_cours.player!=u.id" >En attente</span>
+            </div>
+            <div *ngIf="en_cours==false">
+                <h1>{{u.name | uppercase}} VS {{selectedAmi.name | uppercase}}</h1>
+                <h3>Victoire = {{victoire}}</h3>
+                <h3>Defaite = {{defaite}}</h3>
+                <ul class="nav nav-sidebar">
+                    <li *ngFor="#h of historique">
+                        <span>({{h.j1}}) {{h.s1}} - {{h.s2}} ({{h.j2}})</span>
+                    </li>
+                </ul>
+                <button (click)="gotoJouer()">Jouer</button>
+            </div>
         </div>
+
+
+
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedAmi" style="color:aquamarine;">
+            <h2>Vos Parties</h2>
+            <ul class="nav nav-sidebar">
+                <li *ngFor="#p of parties_en_cours" >
+                    <span *ngIf="p.player!=u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) En attente</span>
+                    <span *ngIf="p.player==u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) <button (click)="gotoJouer(p)">Jouer</button></span>
+                </li>
+            </ul>
+        </div>
+
+
+
     </div>
 </div>
 
