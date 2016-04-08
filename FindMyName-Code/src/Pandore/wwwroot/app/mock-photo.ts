@@ -1,1 +1,15 @@
-﻿
+﻿import { Photo } from './photo';
+
+export var PHOTOS: Photo[] = [
+    { "id": 1, "photo": "fichier/logo.jpg" },
+    { "id": 2, "photo": "fichier/arsenal.jpg" },
+    { "id": 3, "photo": "fichier/barca.jpg" },
+    { "id": 4, "photo": "fichier/psg.jpg" },
+    { "id": 5, "photo": "fichier/ol.jpg" },
+];
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
