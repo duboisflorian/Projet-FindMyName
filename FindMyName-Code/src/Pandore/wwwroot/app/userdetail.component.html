@@ -26,7 +26,7 @@
     <div class="core">
         <table width="100%">
             <tr>
-                <center><td colspan="2"><img class="portrait" src="{{u.photo}}" /> Changer de photo</td></center>
+                <center><td colspan="2"><form (ngSubmit)="modifmdp()"><img class="portrait" src="{{u.photo}}" /><input class="btn-primary" type="button" value="Changer de photo" /></form></td></center>
             </tr>
             <tr>
                 <center><td colspan="2">{{u.name}} - #{{u.id}}</td></center>
