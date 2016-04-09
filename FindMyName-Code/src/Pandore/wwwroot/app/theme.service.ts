@@ -4,8 +4,9 @@ import { Injectable } from 'angular2/core';
 
 @Injectable()
 export class ThemeService {
- t: Theme[]=[];
+ t: Theme[];
     getThemes() {
+     this.t =[];
         this.melanger();
         return this.t;
     }
