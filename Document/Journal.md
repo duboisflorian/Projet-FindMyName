@@ -223,3 +223,4 @@ Project : Find My Name v_2
 - Lionel
 	- Finalisation traitement changement de mot de passe 
 	- Finalisation traitement changement de photo de profil 
+	- Recherche pour recuperer la valeur de l'id dans le profil
