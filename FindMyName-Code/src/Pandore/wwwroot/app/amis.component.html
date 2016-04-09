@@ -1,4 +1,4 @@
-﻿<nav class="menu navbar">
+<nav class="menu navbar">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -13,7 +13,7 @@
                 </div>
                 <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li style="padding: 10px;"><img class="incone_menu" (click)="gotoDetail()" src="{{u.photo}}" /><span style="color:white;"> Bonjour, {{u.name}}</span> </li>
+                        <li style="padding: 10px;"><img class="incone_menu"  (click)="gotoDetail()" src="{{u.photo}}" /><span style="color:white;"> Bonjour, {{u.name}}</span> </li>
                         <li><button (click)="gotoDeco()" style="margin-top: 8px;" type="button" class="btn btn-primary">Déconnexion</button></li>
                     </ul>
                 </div>
@@ -30,7 +30,7 @@
             </ul>
             <div class="sidebar">
                 <ul class="nav nav-sidebar">
-                    <li  (click)="gotoDetail()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
+                    <li  (click)="onSelectU()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
                     <li><form class="form"><input id="recherche" class="form-recherche" placeholder="Rachercher un ami" required="" type="text"></form></li>
                     <li *ngFor="#ami of amis" [class.selected]="ami === selectedAmi" (click)="onSelect(ami)"><img class="portrait" src="{{ami.photo}}" /><span>{{ami.name}}</span></li>
                 </ul>
@@ -52,7 +52,7 @@
                 ({{partie_en_cours.j1}}) {{partie_en_cours.s1}} - {{partie_en_cours.s2}} ({{partie_en_cours.j2}})
                 <br />
                 <ul class="nav nav-sidebar">
-                    <li *ngFor="#m of partie_en_cours.manche"><span>{{m.s1}} - {{m.s2}}</span></li>
+                    <li *ngFor="#m of partie_en_cours.manche"><span>{{m.theme}}   {{m.s1}} - {{m.s2}}</span></li>
                 </ul>
                 <button  *ngIf="partie_en_cours.player==u.id"  (click)="gotoJouer(partie_en_cours)">Jouer</button>
                 <span *ngIf="partie_en_cours.player!=u.id" >En attente</span>
@@ -72,7 +72,7 @@
 
 
 
-        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedAmi" style="color:aquamarine;">
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedAmi && !selectedDetails" style="color:aquamarine;">
             <h2>Vos Parties</h2>
             <ul class="nav nav-sidebar">
                 <li *ngFor="#p of parties_en_cours" >
@@ -82,13 +82,16 @@
             </ul>
         </div>
 
-
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedDetails" style="color:aquamarine;">
+            ({{selectedDetails.j1}}) {{selectedDetails.s1}} - {{selectedDetails.s2}} ({{selectedDetails.j2}})
+            <br />
+            <ul class="nav nav-sidebar">
+                <li *ngFor="#m of selectedDetails.manche"><span>{{m.theme}}   {{m.s1}} - {{m.s2}}</span></li>
+            </ul>
+        </div>
 
     </div>
 </div>
-
-
-
     <!--
     Copyright 2016 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
