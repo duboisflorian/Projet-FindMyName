@@ -14,6 +14,15 @@ export var THEMES: Theme[] = [
         "text": "arsenal", "id": 5, "photo": "./fichier/arsenal.jpg", "done": false },
     {
         "text": "city", "id": 6, "photo": "./fichier/city.jpg", "done": false
+    },
+    {
+        "text": "heat", "id": 7, "photo": "./fichier/heat.jpg", "done": false
+    },
+    {
+        "text": "om", "id": 8, "photo": "./fichier/om.jpg", "done": false
+    },
+    {
+        "text": "bayern", "id": 9, "photo": "./fichier/bayern.jpg", "done": false
     }
 ];
 
