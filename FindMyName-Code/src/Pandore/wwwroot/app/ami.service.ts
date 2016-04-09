@@ -80,7 +80,7 @@ export class AmiService {
             if (AMIS[this.i].id == u)
                 AMIS[this.i].online.push({ "id": user.id, "name": user.name, "photo": user.photo })
             if (AMIS[this.i].id == user.id)
-                AMIS[this.i].amis.push({ "id": u, "name": this._uService.getName(u), "photo": this._uService.getPhoto(u) })
+                AMIS[this.i].online.push({ "id": u, "name": this._uService.getName(u), "photo": this._uService.getPhoto(u) })
         }
     }
 
