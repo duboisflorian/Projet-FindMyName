@@ -69,6 +69,12 @@ export class UtilisateurService {
         return this.getlastid();
     }
 
+
+    getOnlineutilisateur() {
+        return Math.floor(Math.random() * (UTILISATEURS.length - 1) + 1);
+    }
+
+
 }
 
 /*

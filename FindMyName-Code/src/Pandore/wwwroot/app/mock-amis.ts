@@ -9,6 +9,7 @@ export var AMIS: Lami[] = [{
         { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg" },
         { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg" }
     ], "online": [
+        { "id": 8, "name": "Luffy", "photo": "fichier/logo.jpg" }
     ]
     },
     {

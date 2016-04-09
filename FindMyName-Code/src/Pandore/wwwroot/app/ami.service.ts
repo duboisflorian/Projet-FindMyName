@@ -20,20 +20,61 @@ export class AmiService {
         }
     }
 
-    getAmiExiste(id: number,u:number) {
+    getOnline(id: number) {
+        for (this.i = 0; this.i < AMIS.length; this.i++) {
+            if (AMIS[this.i].id == id)
+                return AMIS[this.i].online;
+        }
+    }
+
+
+    getAmiExiste(id: number, u: number) {
 
         for (this.i = 0; this.i < AMIS.length; this.i++) {
             if (AMIS[this.i].id == u)
                 for (this.n = 0; this.n < AMIS[this.i].amis.length; this.n++) {
-                    if (AMIS[this.i].amis[this.n].id==id)
+                    if (AMIS[this.i].amis[this.n].id == id)
                         return AMIS[this.i].amis[this.n];
                 }
         }
     }
+
+    getOnlineExiste(id: number, u: number) {
+
+        for (this.i = 0; this.i < AMIS.length; this.i++) {
+            if (AMIS[this.i].id == u)
+                for (this.n = 0; this.n < AMIS[this.i].amis.length; this.n++) {
+                    if (AMIS[this.i].amis[this.n].id == id)
+                        return false;
+                }
+        }
+
+        for (this.i = 0; this.i < AMIS.length; this.i++) {
+            if (AMIS[this.i].id == u)
+                for (this.n = 0; this.n < AMIS[this.i].online.length; this.n++) {
+                    if (AMIS[this.i].online[this.n].id == id)
+                        return false;
+                }
+        }
+
+        if (id == u) {
+            return false;
+        }
+
+        return true;
+    }
+
     add(user: Utilisateur, u: number) {
         for (this.i = 0; this.i < AMIS.length; this.i++) {
             if (AMIS[this.i].id == u)
                 AMIS[this.i].amis.push({ "id": user.id, "name": user.name, "photo": user.photo })
+        }
+    }
+
+    addOnline(user: Utilisateur, u: number) {
+        for (this.i = 0; this.i < AMIS.length; this.i++) {
+            if (AMIS[this.i].id == u)
+                AMIS[this.i].online.push({ "id": user.id, "name": user.name, "photo": user.photo })
         }
     }
 

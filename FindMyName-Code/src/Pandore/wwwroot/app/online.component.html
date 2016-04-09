@@ -14,7 +14,7 @@
                 <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li style="padding: 10px;"><img class="incone_menu" (click)="gotoDetail()" src="{{u.photo}}" /><span style="color:white;"> Bonjour, {{u.name}}</span> </li>
-+                        <li><button (click)="gotoDeco()" style="margin-top: 8px;" type="button" class="btn btn-primary">Déconnexion</button></li>
+                        <li><button (click)="gotoDeco()" style="margin-top: 8px;" type="button" class="btn btn-primary">Déconnexion</button></li>
                     </ul>
                 </div>
             </div>
@@ -25,15 +25,62 @@
     <div class="row" style="margin-right:0px;">
         <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
             <ul class="nav nav-button">
-                <li (click)="gotoAmis()"><a>Amis</a></li>
-                <li (click)="gotoOnline()" class="active"><a>Online</a></li>
+                <li (click)="gotoAmis()" class="active"><a>Amis</a></li>
+                <li (click)="gotoOnline()"><a>Online</a></li>
             </ul>
-
-
+            <div class="sidebar">
+                <ul class="nav nav-sidebar">
+                    <li (click)="gotoDetail()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
+                    <li><form class="form"><input id="recherche" class="form-recherche" placeholder="Rachercher un joueur" required="" type="text"></form></li>
+                    <li *ngFor="#online of onlines" [class.selected]="online === selectedOnline" (click)="onSelect(online)"><img class="portrait" src="{{online.photo}}" /><span>{{online.name}}</span></li>
+                </ul>
+            </div>
+            <div class="nav nav-ajouter" style="color:white;">
+                <a><span (click)="jouerOnline()" class="text">Jouer une partie</span></a>
+            </div>
         </div>
+
+
+
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedOnline">
+            <div *ngIf="en_cours==true">
+                ({{partie_en_cours.j1}}) {{partie_en_cours.s1}} - {{partie_en_cours.s2}} ({{partie_en_cours.j2}})
+                <br />
+                <ul class="nav nav-sidebar">
+                    <li *ngFor="#m of partie_en_cours.manche"><span>{{m.s1}} - {{m.s2}}</span></li>
+                </ul>
+                <button *ngIf="partie_en_cours.player==u.id" (click)="gotoJouer(partie_en_cours)">Jouer</button>
+                <span *ngIf="partie_en_cours.player!=u.id">En attente</span>
+            </div>
+            <div *ngIf="en_cours==false">
+                <h1>{{u.name | uppercase}} VS {{selectedOnline.name | uppercase}}</h1>
+                <h3>Victoire = {{victoire}}</h3>
+                <h3>Defaite = {{defaite}}</h3>
+                <ul class="nav nav-sidebar">
+                    <li *ngFor="#h of historique">
+                        <span>({{h.j1}}) {{h.s1}} - {{h.s2}} ({{h.j2}})</span> <button (click)="showDetails(h)">Détails</button>
+                    </li>
+                </ul>
+                <button (click)="gotoJouer()">Jouer</button>
+            </div>
+        </div>
+
+
+
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedOnline" style="color:aquamarine;">
+            <h2>Vos Parties</h2>
+            <ul class="nav nav-sidebar">
+                <li *ngFor="#p of parties_en_cours">
+                    <span *ngIf="p.player!=u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) En attente</span>
+                    <span *ngIf="p.player==u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) <button (click)="gotoJouer(p)">Jouer</button></span>
+                </li>
+            </ul>
+        </div>
+
+
+
     </div>
 </div>
-
 
 
 <!--
