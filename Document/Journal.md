@@ -224,3 +224,10 @@ Project : Find My Name v_2
 	- Finalisation traitement changement de mot de passe 
 	- Finalisation traitement changement de photo de profil 
 	- Recherche pour recuperer la valeur de l'id dans le profil
+
+##Samedi 09/04
+
+- Florian 
+	- affichage détails d'une partie d'un historique
+	- Modification bug sur choix themes
+	- ajout de data
