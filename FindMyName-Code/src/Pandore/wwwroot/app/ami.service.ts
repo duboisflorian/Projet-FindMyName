@@ -4,6 +4,7 @@ import { AMIS } from './mock-amis';
 import { Injectable } from 'angular2/core';
 import { Lami } from './lami';
 import { Online } from './online';
+import { UtilisateurService } from './utilisateur.service';
 
 
 @Injectable()
@@ -12,6 +13,7 @@ export class AmiService {
     n: number;
     o: Online[] = [];
     a: Ami[] = [];
+    private _uService: UtilisateurService;
 
     getAmis(id: number) {
         for (this.i = 0; this.i < AMIS.length; this.i++) {
@@ -68,6 +70,8 @@ export class AmiService {
         for (this.i = 0; this.i < AMIS.length; this.i++) {
             if (AMIS[this.i].id == u)
                 AMIS[this.i].amis.push({ "id": user.id, "name": user.name, "photo": user.photo })
+            if (AMIS[this.i].id == user.id)
+                AMIS[this.i].amis.push({ "id": u, "name": this._uService.getName(u), "photo":  this._uService.getPhoto(u) })
         }
     }
 
@@ -75,6 +79,8 @@ export class AmiService {
         for (this.i = 0; this.i < AMIS.length; this.i++) {
             if (AMIS[this.i].id == u)
                 AMIS[this.i].online.push({ "id": user.id, "name": user.name, "photo": user.photo })
+            if (AMIS[this.i].id == user.id)
+                AMIS[this.i].amis.push({ "id": u, "name": this._uService.getName(u), "photo": this._uService.getPhoto(u) })
         }
     }
 
