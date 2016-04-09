@@ -1,4 +1,4 @@
-﻿import { Partie } from './partie';
+import { Partie } from './partie';
 import { Manche } from './manche';
 
 export var PARTIES: Partie[] = [
@@ -12,9 +12,9 @@ export var PARTIES: Partie[] = [
         "s2": 2,
         "player":2,
         "manche": [
-            { "id_theme": 1, "s1": 10, "s2": 20},
-            { "id_theme": 2, "s1": 15, "s2": 7},
-            { "id_theme": 3, "s1": 10, "s2": 15}
+            { "id_theme": 1, "theme":"PSG","s1": 10, "s2": 20},
+            { "id_theme": 2, "theme": "OL","s1": 15, "s2": 7},
+            { "id_theme": 3, "theme": "PSG","s1": 10, "s2": 15}
         ]
     },
     {
@@ -27,10 +27,10 @@ export var PARTIES: Partie[] = [
         "s2": 3,
         "player": null,
         "manche": [
-            { "id_theme": 1, "s1": 10, "s2": 20 },
-            { "id_theme": 2, "s1": 15, "s2": 7 },
-            { "id_theme": 3, "s1": 10, "s2": 15 },
-            { "id_theme": 4, "s1": 10, "s2": 15 }
+            { "id_theme": 1, "theme": "PSG", "s1": 10, "s2": 20 },
+            { "id_theme": 2, "theme": "OL","s1": 15, "s2": 7 },
+            { "id_theme": 3, "theme": "REAL", "s1": 10, "s2": 15 },
+            { "id_theme": 4, "theme": "Barca","s1": 10, "s2": 15 }
         ]
     },
     {
@@ -43,11 +43,11 @@ export var PARTIES: Partie[] = [
         "s2": 2,
         "player": null,
         "manche": [
-            { "id_theme": 1, "s1": 10, "s2": 20 },
-            { "id_theme": 2, "s1": 15, "s2": 7 },
-            { "id_theme": 3, "s1": 10, "s2": 15 },
-            { "id_theme": 4, "s1": 20, "s2": 15 },
-            { "id_theme": 5, "s1": 20, "s2": 15 }
+            { "id_theme": 1, "theme": "PSG","s1": 10, "s2": 20 },
+            { "id_theme": 2, "theme": "OL","s1": 15, "s2": 7 },
+            { "id_theme": 3, "theme": "REAL","s1": 10, "s2": 15 },
+            { "id_theme": 4, "theme": "Barca", "s1": 20, "s2": 15 },
+            { "id_theme": 5, "theme": "arsenal","s1": 20, "s2": 15 }
         ]
     },
     {
@@ -60,9 +60,9 @@ export var PARTIES: Partie[] = [
         "s2": 1,
         "player": 6,
         "manche": [
-            { "id_theme": 1, "s1": 10, "s2": 20 },
-            { "id_theme": 2, "s1": 15, "s2": 7 },
-            { "id_theme": 3, "s1": null, "s2": 10 },
+            { "id_theme": 1, "theme": "PSG", "s1": 10, "s2": 20 },
+            { "id_theme": 2, "theme": "OL", "s1": 15, "s2": 7 },
+            { "id_theme": 3, "theme": "REAL", "s1": null, "s2": 10 },
         ]
     },
     {
@@ -75,9 +75,9 @@ export var PARTIES: Partie[] = [
         "s2": 2,
         "player": 1,
         "manche": [
-            { "id_theme": 1, "s1": 10, "s2": 20 },
-            { "id_theme": 2, "s1": 15, "s2": 7 },
-            { "id_theme": 3, "s1": 15, "s2": 10 }
+            { "id_theme": 1, "theme": "PSG", "s1": 10, "s2": 20 },
+            { "id_theme": 2, "theme": "OL", "s1": 15, "s2": 7 },
+            { "id_theme": 3, "theme": "REAL", "s1": 15, "s2": 10 }
         ]
     }
     ,
@@ -91,9 +91,9 @@ export var PARTIES: Partie[] = [
         "s2": 2,
         "player": 6,
         "manche": [
-            { "id_theme": 1, "s1": 10, "s2": 20 },
-            { "id_theme": 2, "s1": 15, "s2": 7 },
-            { "id_theme": 3, "s1": 15, "s2": 10 }
+            { "id_theme": 1, "theme": "PSG", "s1": 10, "s2": 20 },
+            { "id_theme": 2, "theme": "OL", "s1": 15, "s2": 7 },
+            { "id_theme": 3, "theme": "REAL","s1": 15, "s2": 10 }
         ]
     }
 ];
