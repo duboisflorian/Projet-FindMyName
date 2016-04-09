@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from 'angular2/core';
+import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 import { UTILISATEURS } from './mock-utilisateurs';
@@ -29,6 +29,7 @@ export class AmisComponent implements OnInit {
     victoire: number = 0;
     defaite: number = 0;
     historique: Partie[];
+    selectedDetails: Partie;
 
 
     constructor(
@@ -58,11 +59,14 @@ export class AmisComponent implements OnInit {
     }
 
     showDetails(h: Partie) {
+        this.selectedAmi = null;
+        this.selectedDetails = h;
         alert(h.id_partie);
     }
 
     onSelect(ami: Ami) {
         this.selectedAmi = ami;
+        this.selectedDetails = null;
         this.en_cours = this._pService.getEn_Cours(this.u.id, ami.id);
         if (this.en_cours == true) {
             this.partie_en_cours = this._pService.getPartieEnCours(this.u.id, ami.id);
@@ -73,7 +77,7 @@ export class AmisComponent implements OnInit {
         }
     }
 
-    onSelectU() {this.selectedAmi = null;}
+    onSelectU() { this.selectedAmi = null; this.selectedDetails = null;}
 
     gotoJouer(p: Partie) {
         if (this.selectedAmi == null) {
