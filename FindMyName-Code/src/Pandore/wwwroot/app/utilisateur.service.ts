@@ -74,7 +74,19 @@ export class UtilisateurService {
         return Math.floor(Math.random() * (UTILISATEURS.length - 1) + 1);
     }
 
-
+    getPhoto(u:number){
+        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].id == u)
+                return UTILISATEURS[this.i].photo;
+        }
+    }
+    
+        getName(u:number){
+        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].id == u)
+                return UTILISATEURS[this.i].name;
+        }
+    }
 }
 
 /*
