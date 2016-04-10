@@ -10,9 +10,11 @@ import { Utilisateur } from './utilisateur';
 import { Partie } from './partie';
 import { Manche } from './manche';
 import { PartieService } from './partie.service';
+import {RecherchePipe} from './recherche-pipe';
 
 @Component({
     selector: 'my-amis',
+    pipes: [RecherchePipe],
     templateUrl: 'app/amis.component.html'
 })
 export class AmisComponent implements OnInit {
@@ -30,6 +32,7 @@ export class AmisComponent implements OnInit {
     defaite: number = 0;
     historique: Partie[];
     selectedDetails: Partie;
+    searchFriend: string = '';
 
 
     constructor(
