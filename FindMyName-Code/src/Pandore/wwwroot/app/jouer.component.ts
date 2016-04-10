@@ -40,6 +40,9 @@ export class JouerComponent implements OnInit {
     ngOnInit() {
         let th = +this._routeParams.get('th');
         this.tabreponses = this._jouerService.getReponses(th);
+        for (var i = 0; i < this.tabreponses.reponses.length; i++) {
+                this.tabreponses.reponses[i].done = false;
+        }
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.starttimer();
