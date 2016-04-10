@@ -13,7 +13,7 @@ export class ThemeService {
 
     melanger() {
         var aleatoire: number[] = [];
-        var nb = Math.floor(Math.random() * 6) ;
+        var nb = Math.floor(Math.random() * THEMES.length) ;
         this.t.push(THEMES[nb]);
         aleatoire.push(nb);
         for (var i = 0; i < 3; i++) {
