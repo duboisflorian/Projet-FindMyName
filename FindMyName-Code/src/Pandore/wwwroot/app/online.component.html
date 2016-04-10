@@ -31,8 +31,8 @@
             <div class="sidebar">
                 <ul class="nav nav-sidebar">
                     <li (click)="gotoDetail()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
-                    <li><form class="form"><input id="recherche" class="form-recherche" placeholder="Rachercher un joueur" required="" type="text"></form></li>
-                    <li *ngFor="#online of onlines" [class.selected]="online === selectedOnline" (click)="onSelect(online)"><img class="portrait" src="{{online.photo}}" /><span>{{online.name}}</span></li>
+                    <li><form class="form"><input id="recherche" class="form-recherche" placeholder="Rachercher un joueur" type="text" [value]="searchOnline"  (input)="searchOnline = $event.target.value"></form></li>
+                    <li *ngFor="#online of onlines  | RecherchePipeOnline:searchOnline" [class.selected]="online === selectedOnline" (click)="onSelect(online)"><img class="portrait" src="{{online.photo}}" /><span>{{online.name}}</span></li>
                 </ul>
             </div>
             <div class="nav nav-ajouter" style="color:white;">

@@ -11,9 +11,11 @@ import { Utilisateur } from './utilisateur';
 import { Partie } from './partie';
 import { Manche } from './manche';
 import { PartieService } from './partie.service';
+import {RecherchePipeOnline} from './recherche-pipe-Online';
 
 @Component({
     selector: 'my-online',
+    pipes: [RecherchePipeOnline],
     templateUrl: 'app/online.component.html'
 })
 export class OnlineComponent implements OnInit {
@@ -33,6 +35,7 @@ export class OnlineComponent implements OnInit {
     r: number;
     i: number;
     b: boolean;
+    searchOnline: string = '';
 
     constructor(
         private _router: Router,
