@@ -77,6 +77,13 @@
             </ul>
         </div>
 
+        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedDetails" style="color:aquamarine;">
+            ({{selectedDetails.j1}}) {{selectedDetails.s1}} - {{selectedDetails.s2}} ({{selectedDetails.j2}})
+            <br />
+            <ul class="nav nav-sidebar">
+                <li *ngFor="#m of selectedDetails.manche"><span>{{m.theme}}   {{m.s1}} - {{m.s2}}</span></li>
+            </ul>
+        </div>
 
 
     </div>

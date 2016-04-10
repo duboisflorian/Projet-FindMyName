@@ -32,6 +32,7 @@ export class OnlineComponent implements OnInit {
     victoire: number = 0;
     defaite: number = 0;
     historique: Partie[];
+    selectedDetails: Partie;
     r: number;
     i: number;
     b: boolean;
@@ -69,6 +70,7 @@ export class OnlineComponent implements OnInit {
 
     onSelect(online: Online) {
         this.selectedOnline = online;
+        this.selectedDetails = null;
         this.en_cours = this._pService.getEn_Cours(this.u.id, online.id);
         if (this.en_cours == true) {
             this.partie_en_cours = this._pService.getPartieEnCours(this.u.id, online.id);
@@ -79,7 +81,7 @@ export class OnlineComponent implements OnInit {
         }
     }
 
-    onSelectU() { this.selectedOnline = null; }
+    onSelectU() { this.selectedOnline = null; this.selectedDetails = null;}
 
     gotoJouer(p: Partie) {
         if (this.selectedOnline == null) {
