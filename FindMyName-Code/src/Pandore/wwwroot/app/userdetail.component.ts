@@ -40,7 +40,11 @@ export class UserdetailComponent implements OnInit {
     gotoDetail() {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
     }
-    modifmdp(id:number) {
+    modifmdp(id: number) {
+
+        if (id === undefined) {
+            id = this.u.id;
+        }
         
         if (this._uService.Same_mdp(this.id, this.password)) {
             alert("le mot de passe est identique");
