@@ -31,8 +31,9 @@
             <div class="sidebar">
                 <ul class="nav nav-sidebar">
                     <li  (click)="onSelectU()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
-                    <li><form class="form"><input id="recherche" class="form-recherche" placeholder="Rachercher un ami" required="" type="text"></form></li>
-                    <li *ngFor="#ami of amis" [class.selected]="ami === selectedAmi" (click)="onSelect(ami)"><img class="portrait" src="{{ami.photo}}" /><span>{{ami.name}}</span></li>
+                    <li><input placeholder="Rechercher un ami"  type="text"           [value]="searchFriend" 
+          (input)="searchFriend = $event.target.value"></li>
+                    <li *ngFor="#ami of amis | RecherchePipe:searchFriend" [class.selected]="ami === selectedAmi" (click)="onSelect(ami)"><img class="portrait" src="{{ami.photo}}" /><span>{{ami.name}}</span></li>
                 </ul>
             </div>
             <div class="nav nav-ajouter" style="color:white;">
@@ -92,6 +93,7 @@
 
     </div>
 </div>
+
     <!--
     Copyright 2016 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
