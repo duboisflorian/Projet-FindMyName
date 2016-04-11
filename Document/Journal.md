@@ -239,3 +239,7 @@ Project : Find My Name v_2
 	- Fusion de ami et online -> contact
 	- Prompt pour l'ajout d'une personne
 
+- Lionel 
+	- Modification des traitements du changement de mot de passe et de photo de profil grâce à la récupération de l'ID
+	- Rajout des listes déroulantes pour le thème et les pays + grisement de l'email
+	- Debut traitement pour changer le thème et les pays 
