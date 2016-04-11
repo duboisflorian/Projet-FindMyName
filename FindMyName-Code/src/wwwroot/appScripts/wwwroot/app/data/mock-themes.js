@@ -1,3 +1,4 @@
+"use strict";
 exports.THEMES = [
     {
         "text": "PSG", "id": 1, "photo": "./fichier/psg.jpg", "done": false
