@@ -231,3 +231,11 @@ Project : Find My Name v_2
 	- affichage détails d'une partie d'un historique
 	- Modification bug sur choix themes
 	- ajout de data
+
+##Lundi 11/04
+
+- Florian 
+	- Restructuration des fichier ( creation de dossier)
+	- Fusion de ami et online -> contact
+	- Prompt pour l'ajout d'une personne
+
