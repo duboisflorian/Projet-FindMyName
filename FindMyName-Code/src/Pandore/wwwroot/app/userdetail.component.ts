@@ -46,9 +46,9 @@ export class UserdetailComponent implements OnInit {
             id = this.u.id;
         }
         
-        if (this._uService.Same_mdp(this.id, this.password)) {
+        if (this._uService.Same_mdp(id, this.password)) {
             alert("le mot de passe est identique");
-            alert(id);
+            //alert(id);
 
         }
         else {
