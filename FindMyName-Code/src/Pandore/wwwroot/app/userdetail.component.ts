@@ -59,7 +59,7 @@ export class UserdetailComponent implements OnInit {
 
     loadListPhoto() {
         for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == 6) {
+            if (UTILISATEURS[this.i].id == this.u.id) {
                 UTILISATEURS[this.i].photo = 'fichier/' + this.selectPhoto + '.jpg';
             }
         }
