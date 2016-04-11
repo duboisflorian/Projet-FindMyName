@@ -28,7 +28,7 @@ export class CoComponent  {
     }
 
     gotocheat() {
-        this._router.navigate(['Contact', { us: 4 }]);
+        this._router.navigate(['Contact', { us: 6 }]);
     }
 
     connexion() {

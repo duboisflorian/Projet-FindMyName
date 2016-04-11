@@ -39,9 +39,10 @@ export class ThemeService {
     }
 
     getTheme(id: number) {
-        return Promise.resolve(THEMES).then(
-            themes => themes.filter(theme => theme.id === id)[0]
-        );
+        for (var i = 0; i < THEMES.length; i++) {
+            if (THEMES[i].id == id)
+                return THEMES[i];
+        }
     }
 }
 

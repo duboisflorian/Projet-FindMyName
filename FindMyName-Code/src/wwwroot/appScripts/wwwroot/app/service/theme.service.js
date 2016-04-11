@@ -45,7 +45,10 @@ var ThemeService = (function () {
         );
     };
     ThemeService.prototype.getTheme = function (id) {
-        return Promise.resolve(mock_themes_1.THEMES).then(function (themes) { return themes.filter(function (theme) { return theme.id === id; })[0]; });
+        for (var i = 0; i < mock_themes_1.THEMES.length; i++) {
+            if (mock_themes_1.THEMES[i].id == id)
+                return mock_themes_1.THEMES[i];
+        }
     };
     ThemeService = __decorate([
         core_1.Injectable(), 

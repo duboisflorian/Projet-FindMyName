@@ -11,11 +11,14 @@ var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var router_2 = require('angular2/router');
 var jouer_service_1 = require('./service/jouer.service');
+var theme_service_1 = require('./service/theme.service');
 var utilisateur_service_1 = require('./service/utilisateur.service');
+var Rx_1 = require('rxjs/Rx');
 var JouerComponent = (function () {
-    function JouerComponent(_router, _jouerService, _uService, _routeParams) {
+    function JouerComponent(_router, _jouerService, _themeService, _uService, _routeParams) {
         this._router = _router;
         this._jouerService = _jouerService;
+        this._themeService = _themeService;
         this._uService = _uService;
         this._routeParams = _routeParams;
         this.task = '';
@@ -40,6 +43,7 @@ var JouerComponent = (function () {
         }
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        this.theme = this._themeService.getTheme(th);
         this.starttimer();
     };
     JouerComponent.prototype.getReponse = function () {
@@ -49,6 +53,7 @@ var JouerComponent = (function () {
         return this.remaining;
     };
     JouerComponent.prototype.addTodo = function () {
+        var _this = this;
         this.bon = false;
         if (this.task) {
             for (var i = 0; i < this.tabreponses.reponses.length; i++) {
@@ -63,6 +68,10 @@ var JouerComponent = (function () {
                 this.bon = false;
             }
             this.task = '';
+            var timer = Rx_1.Observable.timer(0, 5000);
+            timer.subscribe(function (t) {
+                _this.bon = null;
+            });
         }
     };
     JouerComponent.prototype.starttimer = function () {
@@ -96,7 +105,7 @@ var JouerComponent = (function () {
             selector: 'my-jouer',
             templateUrl: 'app/jouer.component.html'
         }), 
-        __metadata('design:paramtypes', [router_2.Router, jouer_service_1.JouerService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
+        __metadata('design:paramtypes', [router_2.Router, jouer_service_1.JouerService, theme_service_1.ThemeService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
     ], JouerComponent);
     return JouerComponent;
 })();

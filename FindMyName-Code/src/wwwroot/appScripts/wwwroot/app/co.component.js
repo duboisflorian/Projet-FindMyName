@@ -22,7 +22,7 @@ var CoComponent = (function () {
         this._router.navigate(['Home']);
     };
     CoComponent.prototype.gotocheat = function () {
-        this._router.navigate(['Contact', { us: 4 }]);
+        this._router.navigate(['Contact', { us: 6 }]);
     };
     CoComponent.prototype.connexion = function () {
         if (this.utilisateur = this._uService.verificationConnexion(this.mail, this.password)) {

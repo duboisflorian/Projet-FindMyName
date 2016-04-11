@@ -28,7 +28,7 @@
             <div class="sidebar">
                 <ul class="nav nav-sidebar nav-list-nom">
                     <li *ngFor="#r of reponse" >
-                    <span>{{r.text}}</span>
+                    <span>{{r.text | lowercase }}</span>
                     </li>
                 </ul>
             </div>
@@ -37,17 +37,20 @@
                 <span>{{remaining}} / {{tabreponses.reponses.length}}</span>
             </div>
         </div>
+
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
-            <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="bon==true">
-                <img src="./fichier/images/vert.png" />
+            <h1>Theme sélectionné : {{theme.text}}</h1>
+               
+
+            <div id="countdown" style="font-size:30px;"></div>
+            <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
+                <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="bon==true">
+                    <img src="./fichier/images/vert.png" />
+                </div>
+                <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="bon==false">
+                    <img src="./fichier/images/rouge.png" />
+                </div>
             </div>
-            <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="bon==false">
-                <img src="./fichier/images/rouge.png" />
-            </div>
-        </div>
-        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
-            <h1>A vous de jouer :</h1>
-            <div id="countdown"></div>
             <form (ngSubmit)="addTodo()">
                 <input type="text" [(ngModel)]="task" size="30"
                        placeholder="entre le nom d'un joueur" style="color: black;">

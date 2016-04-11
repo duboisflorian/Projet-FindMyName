@@ -7,6 +7,8 @@ import { JouerService } from './service/jouer.service';
 import { ThemeService } from './service/theme.service';
 import { UtilisateurService } from './service/utilisateur.service';
 import { Utilisateur } from './classe/utilisateur';
+import { Theme } from './classe/theme';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
     selector: 'my-jouer',
@@ -21,10 +23,12 @@ export class JouerComponent implements OnInit {
     tabreponses: Jouer;
     u: Utilisateur;
     bon: boolean;
+    theme: Theme;
 
     constructor(
         private _router: Router,
         private _jouerService: JouerService,
+        private _themeService: ThemeService,
         private _uService: UtilisateurService,
         private _routeParams: RouteParams) { }
     gotoDeco() {
@@ -45,6 +49,7 @@ export class JouerComponent implements OnInit {
         }
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        this.theme = this._themeService.getTheme(th);
         this.starttimer();
     }
     getReponse() {
@@ -53,6 +58,7 @@ export class JouerComponent implements OnInit {
     getRemaining() {
         return this.remaining;
     }
+
     addTodo() {
         this.bon = false;
         if (this.task) {
@@ -68,6 +74,10 @@ export class JouerComponent implements OnInit {
                 this.bon = false;
             }
             this.task = '';
+            let timer = Observable.timer(0, 5000);
+            timer.subscribe(t=> {
+                this.bon = null;
+            });
         }
     }
     starttimer() {
