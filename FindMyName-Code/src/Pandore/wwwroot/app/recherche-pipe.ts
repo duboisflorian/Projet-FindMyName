@@ -10,8 +10,8 @@ export class RecherchePipe {
     transform(value, args?) {
         // ES6 array destructuring
         let [nom] = args;
-        return value.filter(ami => {
-            return ami.name.match(nom) ;
+        return value.filter(tutu => {
+            return tutu.name.match(nom) ;
         });
     }
 

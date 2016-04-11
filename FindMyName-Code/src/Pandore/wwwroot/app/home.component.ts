@@ -8,7 +8,7 @@ import { InComponent } from './in.component';
     selector: 'my-home',
     templateUrl: 'app/home.component.html'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  {
 
     constructor(
         private _router: Router) { }

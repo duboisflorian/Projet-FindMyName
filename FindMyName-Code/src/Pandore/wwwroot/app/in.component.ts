@@ -10,7 +10,7 @@ import { Utilisateur } from './utilisateur';
     selector: 'my-in',
     templateUrl: 'app/in.component.html'
 })
-export class InComponent implements OnInit {
+export class InComponent {
     name: string;
     mail: string;
     password: string;

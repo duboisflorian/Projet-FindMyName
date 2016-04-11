@@ -23,8 +23,10 @@ namespace Pandore
             app.UseIISPlatformHandler();
             app.UseDefaultFiles();
             app.UseStaticFiles();
+            
         }
 
+        
         // Entry point for the application.
         public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }

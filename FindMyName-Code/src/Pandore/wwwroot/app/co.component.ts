@@ -10,7 +10,7 @@ import { Utilisateur } from './utilisateur';
     selector: 'my-co',
     templateUrl: 'app/co.component.html'
 })
-export class CoComponent implements OnInit {
+export class CoComponent  {
     utilisateur: Utilisateur;
     mail: string;
     password: string;
