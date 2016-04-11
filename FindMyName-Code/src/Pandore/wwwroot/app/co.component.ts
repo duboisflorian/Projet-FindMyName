@@ -2,8 +2,8 @@
 import { Router } from 'angular2/router';
 import { HomeComponent } from './home.component';
 import { InComponent } from './in.component';
-import { UtilisateurService } from './utilisateur.service';
-import { Utilisateur } from './utilisateur';
+import { UtilisateurService } from './service/utilisateur.service';
+import { Utilisateur } from './classe/utilisateur';
 
 
 @Component({
@@ -28,12 +28,12 @@ export class CoComponent  {
     }
 
     gotocheat() {
-        this._router.navigate(['Amis', { us: 6 }]);
+        this._router.navigate(['Contact', { us: 4 }]);
     }
 
     connexion() {
         if (this.utilisateur = this._uService.verificationConnexion(this.mail, this.password)) {
-            this._router.navigate(['Amis', { us: this.utilisateur.id }]);
+            this._router.navigate(['Contact', { us: this.utilisateur.id }]);
         } else {
             alert("Le mot de passe ou l'e-mail n'existe pas.");
         }

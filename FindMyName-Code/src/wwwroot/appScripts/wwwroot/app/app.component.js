@@ -9,19 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
-var amis_component_1 = require('./amis.component');
-var ami_service_1 = require('./ami.service');
-var theme_service_1 = require('./theme.service');
-var utilisateur_service_1 = require('./utilisateur.service');
-var jouer_service_1 = require('./jouer.service');
+var contact_service_1 = require('./service/contact.service');
+var theme_service_1 = require('./service/theme.service');
+var utilisateur_service_1 = require('./service/utilisateur.service');
+var jouer_service_1 = require('./service/jouer.service');
 var jouer_choix_component_1 = require('./jouer-choix.component');
 var jouer_component_1 = require('./jouer.component');
 var co_component_1 = require('./co.component');
 var in_component_1 = require('./in.component');
 var home_component_1 = require('./home.component');
 var userdetail_component_1 = require('./userdetail.component');
-var online_component_1 = require('./online.component');
-var partie_service_1 = require('./partie.service');
+var contact_component_1 = require('./contact.component');
+var partie_service_1 = require('./service/partie.service');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'florian';
@@ -33,7 +32,7 @@ var AppComponent = (function () {
             directives: [router_1.ROUTER_DIRECTIVES],
             providers: [
                 router_1.ROUTER_PROVIDERS,
-                ami_service_1.AmiService,
+                contact_service_1.ContactService,
                 theme_service_1.ThemeService,
                 utilisateur_service_1.UtilisateurService,
                 jouer_service_1.JouerService,
@@ -58,19 +57,14 @@ var AppComponent = (function () {
                 component: in_component_1.InComponent
             },
             {
-                path: '/amis/:us',
-                name: 'Amis',
-                component: amis_component_1.AmisComponent
+                path: '/contact/:us',
+                name: 'Contact',
+                component: contact_component_1.ContactComponent
             },
             {
                 path: '/ud/:us',
                 name: 'Userdetail',
                 component: userdetail_component_1.UserdetailComponent
-            },
-            {
-                path: '/online/:us',
-                name: 'Online',
-                component: online_component_1.OnlineComponent
             },
             {
                 path: '/choix/:us/:id',

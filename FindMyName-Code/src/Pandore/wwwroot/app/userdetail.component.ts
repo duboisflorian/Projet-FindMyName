@@ -1,10 +1,9 @@
 ﻿import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
-import { UTILISATEURS } from './mock-utilisateurs';
-import { UtilisateurService } from './utilisateur.service';
-import { Utilisateur } from './utilisateur';
-import { PHOTOS } from './mock-photo';
+import { UTILISATEURS } from './data/mock-utilisateurs';
+import { UtilisateurService } from './service/utilisateur.service';
+import { Utilisateur } from './classe/utilisateur';
 
 @Component({
     selector: 'my-userdetail',
@@ -34,8 +33,8 @@ export class UserdetailComponent implements OnInit {
         alert("Vous avez été déconnecté");
         this._router.navigate(['Co']);
     }
-    gotoAmis() {
-        this._router.navigate(['Amis', { us: this.u.id }]);
+    gotoContact() {
+        this._router.navigate(['Contact', { us: this.u.id }]);
     }
     gotoDetail() {
         this._router.navigate(['Userdetail', { us: this.u.id }]);

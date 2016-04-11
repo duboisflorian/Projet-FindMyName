@@ -1,21 +1,17 @@
 ﻿import { Component, Input, OnInit } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Router } from 'angular2/router';
-
-import { Ami } from './ami';
-import { Theme } from './theme';
-import { AmiService } from './ami.service';
-import { ThemeService } from './theme.service';
+import { Theme } from './classe/theme';
+import { ThemeService } from './service/theme.service';
 import { JouerComponent } from './jouer.component';
-import { UtilisateurService } from './utilisateur.service';
-import { Utilisateur } from './utilisateur';
+import { UtilisateurService } from './service/utilisateur.service';
+import { Utilisateur } from './classe/utilisateur';
 
 @Component({
     selector: 'my-jouer-choix',
     templateUrl: 'app/jouer-choix.component.html'
 })
 export class JouerChoixComponent implements OnInit {
-    @Input() ami: Ami;
 
     themes: Theme[] = [];
     selectedTheme: Theme;
@@ -23,7 +19,6 @@ export class JouerChoixComponent implements OnInit {
     u: Utilisateur;
 
     constructor(
-        private _amiService: AmiService,
         private _router: Router,
         private _themeService: ThemeService,
         private _uService: UtilisateurService,
@@ -44,8 +39,8 @@ export class JouerChoixComponent implements OnInit {
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
     }
-    gotoAmis() {
-        this._router.navigate(['Amis', { us: this.u.id }]);
+    gotoContact() {
+        this._router.navigate(['Contact', { us: this.u.id }]);
     }
     goBack() {
         window.history.back();

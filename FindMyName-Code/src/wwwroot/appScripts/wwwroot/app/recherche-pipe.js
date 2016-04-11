@@ -16,8 +16,8 @@ var RecherchePipe = (function () {
     RecherchePipe.prototype.transform = function (value, args) {
         // ES6 array destructuring
         var nom = args[0];
-        return value.filter(function (tutu) {
-            return tutu.name.match(nom);
+        return value.filter(function (contact) {
+            return contact.name.match(nom);
         });
     };
     RecherchePipe = __decorate([

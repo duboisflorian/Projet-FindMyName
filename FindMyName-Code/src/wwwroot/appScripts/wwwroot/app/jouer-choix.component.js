@@ -10,13 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var router_2 = require('angular2/router');
-var ami_1 = require('./ami');
-var ami_service_1 = require('./ami.service');
-var theme_service_1 = require('./theme.service');
-var utilisateur_service_1 = require('./utilisateur.service');
+var theme_service_1 = require('./service/theme.service');
+var utilisateur_service_1 = require('./service/utilisateur.service');
 var JouerChoixComponent = (function () {
-    function JouerChoixComponent(_amiService, _router, _themeService, _uService, _routeParams) {
-        this._amiService = _amiService;
+    function JouerChoixComponent(_router, _themeService, _uService, _routeParams) {
         this._router = _router;
         this._themeService = _themeService;
         this._uService = _uService;
@@ -38,8 +35,8 @@ var JouerChoixComponent = (function () {
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
     };
-    JouerChoixComponent.prototype.gotoAmis = function () {
-        this._router.navigate(['Amis', { us: this.u.id }]);
+    JouerChoixComponent.prototype.gotoContact = function () {
+        this._router.navigate(['Contact', { us: this.u.id }]);
     };
     JouerChoixComponent.prototype.goBack = function () {
         window.history.back();
@@ -54,16 +51,12 @@ var JouerChoixComponent = (function () {
         this._router.navigate(link);
         //this._router.navigate(['Jouer', { id: this.selectedTheme.id }]);
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', ami_1.Ami)
-    ], JouerChoixComponent.prototype, "ami", void 0);
     JouerChoixComponent = __decorate([
         core_1.Component({
             selector: 'my-jouer-choix',
             templateUrl: 'app/jouer-choix.component.html'
         }), 
-        __metadata('design:paramtypes', [ami_service_1.AmiService, router_2.Router, theme_service_1.ThemeService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
+        __metadata('design:paramtypes', [router_2.Router, theme_service_1.ThemeService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
     ], JouerChoixComponent);
     return JouerChoixComponent;
 })();

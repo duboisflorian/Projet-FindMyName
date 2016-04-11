@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var router_2 = require('angular2/router');
-var jouer_service_1 = require('./jouer.service');
-var utilisateur_service_1 = require('./utilisateur.service');
+var jouer_service_1 = require('./service/jouer.service');
+var utilisateur_service_1 = require('./service/utilisateur.service');
 var JouerComponent = (function () {
     function JouerComponent(_router, _jouerService, _uService, _routeParams) {
         this._router = _router;
@@ -26,8 +26,8 @@ var JouerComponent = (function () {
         alert("Vous avez été déconnecté");
         this._router.navigate(['Co']);
     };
-    JouerComponent.prototype.gotoAmis = function () {
-        this._router.navigate(['Amis', { us: this.u.id }]);
+    JouerComponent.prototype.gotoContact = function () {
+        this._router.navigate(['Contact', { us: this.u.id }]);
     };
     JouerComponent.prototype.gotoDetail = function () {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
@@ -77,7 +77,7 @@ var JouerComponent = (function () {
             msLeft = endTime - (+new Date);
             if (msLeft < 1000) {
                 alert("gg");
-                _router.navigate(['Amis', { us: id }]);
+                _router.navigate(['Contact', { us: id }]);
             }
             else {
                 time = new Date(msLeft);

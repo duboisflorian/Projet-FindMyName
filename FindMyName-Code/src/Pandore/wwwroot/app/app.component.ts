@@ -1,18 +1,17 @@
 ﻿import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-import { AmisComponent } from './amis.component';
-import { AmiService } from './ami.service';
-import { ThemeService } from './theme.service';
-import { UtilisateurService } from './utilisateur.service';
-import { JouerService } from './jouer.service';
+import { ContactService } from './service/contact.service';
+import { ThemeService } from './service/theme.service';
+import { UtilisateurService } from './service/utilisateur.service';
+import { JouerService } from './service/jouer.service';
 import { JouerChoixComponent } from './jouer-choix.component';
 import { JouerComponent } from './jouer.component';
 import { CoComponent } from './co.component';
 import { InComponent } from './in.component';
 import { HomeComponent } from './home.component';
 import { UserdetailComponent } from './userdetail.component';
-import { OnlineComponent } from './online.component';
-import { PartieService } from './partie.service';
+import { ContactComponent } from './contact.component';
+import { PartieService } from './service/partie.service';
 
 @Component({
     selector: 'my-app',
@@ -25,7 +24,7 @@ import { PartieService } from './partie.service';
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
-        AmiService,
+        ContactService,
         ThemeService,
         UtilisateurService,
         JouerService,
@@ -50,19 +49,14 @@ import { PartieService } from './partie.service';
         component: InComponent
     },
     {
-        path: '/amis/:us',
-        name: 'Amis',
-        component: AmisComponent
+        path: '/contact/:us',
+        name: 'Contact',
+        component: ContactComponent
     },
     {
         path: '/ud/:us',
         name: 'Userdetail',
         component: UserdetailComponent
-    },
-    {
-        path: '/online/:us',
-        name: 'Online',
-        component: OnlineComponent
     },
      {
          path: '/choix/:us/:id',

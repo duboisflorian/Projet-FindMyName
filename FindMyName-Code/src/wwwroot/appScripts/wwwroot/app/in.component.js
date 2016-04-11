@@ -9,13 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
-var utilisateur_service_1 = require('./utilisateur.service');
-var ami_service_1 = require('./ami.service');
+var utilisateur_service_1 = require('./service/utilisateur.service');
+var contact_service_1 = require('./service/contact.service');
 var InComponent = (function () {
-    function InComponent(_router, _uService, _aService) {
+    function InComponent(_router, _uService, _cService) {
         this._router = _router;
         this._uService = _uService;
-        this._aService = _aService;
+        this._cService = _cService;
     }
     InComponent.prototype.gotoHome = function () {
         this._router.navigate(['Home']);
@@ -29,7 +29,7 @@ var InComponent = (function () {
                 alert("L'adresse mail existe déjà");
             }
             else {
-                this._aService.création(this._uService.ajouterUtilisateur(this.name, this.mail, this.password));
+                this._cService.création(this._uService.ajouterUtilisateur(this.name, this.mail, this.password));
                 this._router.navigate(['Co']);
             }
         }
@@ -42,7 +42,7 @@ var InComponent = (function () {
             selector: 'my-in',
             templateUrl: 'app/in.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.Router, utilisateur_service_1.UtilisateurService, ami_service_1.AmiService])
+        __metadata('design:paramtypes', [router_1.Router, utilisateur_service_1.UtilisateurService, contact_service_1.ContactService])
     ], InComponent);
     return InComponent;
 })();

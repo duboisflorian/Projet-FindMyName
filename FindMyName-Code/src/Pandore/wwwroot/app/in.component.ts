@@ -2,9 +2,9 @@
 import { Router } from 'angular2/router';
 import { CoComponent } from './co.component';
 import { HomeComponent } from './home.component';
-import { UtilisateurService } from './utilisateur.service';
-import { AmiService } from './ami.service';
-import { Utilisateur } from './utilisateur';
+import { UtilisateurService } from './service/utilisateur.service';
+import { ContactService } from './service/contact.service';
+import { Utilisateur } from './classe/utilisateur';
 
 @Component({
     selector: 'my-in',
@@ -19,7 +19,7 @@ export class InComponent {
     constructor(
         private _router: Router,
         private _uService: UtilisateurService,
-        private _aService: AmiService) { }
+        private _cService: ContactService) { }
 
     gotoHome() {
         this._router.navigate(['Home']);
@@ -35,7 +35,7 @@ export class InComponent {
                 alert("L'adresse mail existe déjà");
             }
             else {
-                this._aService.création(this._uService.ajouterUtilisateur(this.name, this.mail, this.password));
+                this._cService.création(this._uService.ajouterUtilisateur(this.name, this.mail, this.password));
                 this._router.navigate(['Co']);
             }
         } else {

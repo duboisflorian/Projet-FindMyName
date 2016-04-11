@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var router_2 = require('angular2/router');
-var mock_utilisateurs_1 = require('./mock-utilisateurs');
-var utilisateur_service_1 = require('./utilisateur.service');
+var mock_utilisateurs_1 = require('./data/mock-utilisateurs');
+var utilisateur_service_1 = require('./service/utilisateur.service');
 var UserdetailComponent = (function () {
     function UserdetailComponent(_router, _routeParams, _uService) {
         this._router = _router;
@@ -26,8 +26,8 @@ var UserdetailComponent = (function () {
         alert("Vous avez été déconnecté");
         this._router.navigate(['Co']);
     };
-    UserdetailComponent.prototype.gotoAmis = function () {
-        this._router.navigate(['Amis', { us: this.u.id }]);
+    UserdetailComponent.prototype.gotoContact = function () {
+        this._router.navigate(['Contact', { us: this.u.id }]);
     };
     UserdetailComponent.prototype.gotoDetail = function () {
         this._router.navigate(['Userdetail', { us: this.u.id }]);

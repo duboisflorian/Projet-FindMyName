@@ -1,12 +1,12 @@
 ﻿import { Component, Input, OnInit, Output, EventEmitter } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Router } from 'angular2/router';
-import { Reponse } from './reponses';
-import { Jouer } from './jouer';
-import { JouerService } from './jouer.service';
-import { ThemeService } from './theme.service';
-import { UtilisateurService } from './utilisateur.service';
-import { Utilisateur } from './utilisateur';
+import { Reponse } from './classe/reponses';
+import { Jouer } from './classe/jouer';
+import { JouerService } from './service/jouer.service';
+import { ThemeService } from './service/theme.service';
+import { UtilisateurService } from './service/utilisateur.service';
+import { Utilisateur } from './classe/utilisateur';
 
 @Component({
     selector: 'my-jouer',
@@ -31,8 +31,8 @@ export class JouerComponent implements OnInit {
         alert("Vous avez été déconnecté");
         this._router.navigate(['Co']);
     }
-    gotoAmis() {
-        this._router.navigate(['Amis', { us: this.u.id }]);
+    gotoContact() {
+        this._router.navigate(['Contact', { us: this.u.id }]);
     }
     gotoDetail() {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
@@ -85,7 +85,7 @@ export class JouerComponent implements OnInit {
             msLeft = endTime - (+new Date);
             if (msLeft < 1000) {
                 alert("gg");
-                _router.navigate(['Amis', { us: id }]);
+                _router.navigate(['Contact', { us: id }]);
             } else {
                 time = new Date(msLeft);
                 hours = time.getUTCHours();

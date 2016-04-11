@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
-var utilisateur_service_1 = require('./utilisateur.service');
+var utilisateur_service_1 = require('./service/utilisateur.service');
 var CoComponent = (function () {
     function CoComponent(_router, _uService) {
         this._router = _router;
@@ -22,11 +22,11 @@ var CoComponent = (function () {
         this._router.navigate(['Home']);
     };
     CoComponent.prototype.gotocheat = function () {
-        this._router.navigate(['Amis', { us: 6 }]);
+        this._router.navigate(['Contact', { us: 4 }]);
     };
     CoComponent.prototype.connexion = function () {
         if (this.utilisateur = this._uService.verificationConnexion(this.mail, this.password)) {
-            this._router.navigate(['Amis', { us: this.utilisateur.id }]);
+            this._router.navigate(['Contact', { us: this.utilisateur.id }]);
         }
         else {
             alert("Le mot de passe ou l'e-mail n'existe pas.");
