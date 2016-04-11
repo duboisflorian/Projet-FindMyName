@@ -37,7 +37,7 @@
                 </ul>
             </div>
             <div class="nav nav-ajouter" style="color:white;">
-                <a><span class="text">Ajouter un ami</span></a>
+                <a><span class="text" (click)="test()">Ajouter un ami</span></a>
                 <form (ngSubmit)="addAmi()">
                     <input type="text" [(ngModel)]="amiadd" size="30"
                            placeholder="entrer l'id de la personne">

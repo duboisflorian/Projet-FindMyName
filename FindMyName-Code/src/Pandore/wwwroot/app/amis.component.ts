@@ -53,6 +53,14 @@ export class AmisComponent implements OnInit {
         this.parties_en_cours = this._pService.getPartiesEnCours(id);
     }
 
+    test() {
+        var val;
+        val = prompt('Entrer un id', '');
+        this.amiadd = parseInt(val);
+        alert(this.amiadd);
+        this.addAmi();
+    }
+
     ngOnInit() {
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
