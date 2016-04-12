@@ -16,9 +16,9 @@ export class UserdetailComponent implements OnInit {
     password: string;
     id: number;
     i: number;
-    selectPhoto: string;
+    selectPhoto: string ="logo";
     selectTheme: string;
-    selectPays: string;
+    selectPays: string="France";
 
     constructor(
         private _router: Router,
@@ -59,6 +59,7 @@ export class UserdetailComponent implements OnInit {
     }
 
     loadListPhoto() {
+        //alert(this.u.photo);
         for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
             if (UTILISATEURS[this.i].id == this.u.id) {
                 UTILISATEURS[this.i].photo = 'fichier/' + this.selectPhoto + '.jpg';

@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -17,6 +18,8 @@ var UserdetailComponent = (function () {
         this._router = _router;
         this._routeParams = _routeParams;
         this._uService = _uService;
+        this.selectPhoto = "logo";
+        this.selectPays = "France";
     }
     UserdetailComponent.prototype.ngOnInit = function () {
         var us = +this._routeParams.get('us');
@@ -44,6 +47,7 @@ var UserdetailComponent = (function () {
         }
     };
     UserdetailComponent.prototype.loadListPhoto = function () {
+        //alert(this.u.photo);
         for (this.i = 0; this.i < mock_utilisateurs_1.UTILISATEURS.length; this.i++) {
             if (mock_utilisateurs_1.UTILISATEURS[this.i].id == this.u.id) {
                 mock_utilisateurs_1.UTILISATEURS[this.i].photo = 'fichier/' + this.selectPhoto + '.jpg';
@@ -75,7 +79,7 @@ var UserdetailComponent = (function () {
         __metadata('design:paramtypes', [router_1.Router, router_2.RouteParams, utilisateur_service_1.UtilisateurService])
     ], UserdetailComponent);
     return UserdetailComponent;
-})();
+}());
 exports.UserdetailComponent = UserdetailComponent;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

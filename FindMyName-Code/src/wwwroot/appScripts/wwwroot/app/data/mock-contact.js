@@ -1,3 +1,4 @@
+"use strict";
 exports.CONTACTS = [{
         "id": 6, "contact": [
             { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg", "type": "ami" },

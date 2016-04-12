@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -45,7 +46,7 @@ var InComponent = (function () {
         __metadata('design:paramtypes', [router_1.Router, utilisateur_service_1.UtilisateurService, contact_service_1.ContactService])
     ], InComponent);
     return InComponent;
-})();
+}());
 exports.InComponent = InComponent;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
