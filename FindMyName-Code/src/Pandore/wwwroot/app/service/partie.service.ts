@@ -5,22 +5,21 @@ import { Injectable } from 'angular2/core';
 
 @Injectable()
 export class PartieService {
-    i: number;
     //toutes les parties d'un utilisateur en cours
     getPartiesEnCours(us: number) {
         var p: Partie[] = [];
-        for (this.i = 0; this.i < PARTIES.length; this.i++) {
-            if ((PARTIES[this.i].id_j1 == us || PARTIES[this.i].id_j2 == us) && PARTIES[this.i].s1 < 3 && PARTIES[this.i].s2 < 3)
-                p.push(PARTIES[this.i]);
+        for (var i = 0; i < PARTIES.length; i++) {
+            if ((PARTIES[i].id_j1 == us || PARTIES[i].id_j2 == us) && PARTIES[i].s1 < 3 && PARTIES[i].s2 < 3)
+                p.push(PARTIES[i]);
         }
         return p;
     }
 
     //savoir si il y a une partie en cours entre deux personnes
     getEn_Cours(us: number, ami: number) {
-        for (this.i = 0; this.i < PARTIES.length; this.i++) {
-            if ((PARTIES[this.i].id_j1 == us && PARTIES[this.i].id_j2 == ami) || (PARTIES[this.i].id_j1 == ami && PARTIES[this.i].id_j2 == us)) {
-                if (PARTIES[this.i].player == null) {
+        for (var i = 0; i < PARTIES.length; i++) {
+            if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us)) {
+                if (PARTIES[i].player == null) {
                     return false;
                 } else {
                     return true;
@@ -31,26 +30,26 @@ export class PartieService {
     }
 
     getPartieEnCours(us: number, ami: number) {
-        for (this.i = 0; this.i < PARTIES.length; this.i++) {
-            if ((PARTIES[this.i].id_j1 == us && PARTIES[this.i].id_j2 == ami) || (PARTIES[this.i].id_j1 == ami && PARTIES[this.i].id_j2 == us))
-                return PARTIES[this.i];
+        for (var i = 0; i < PARTIES.length; i++) {
+            if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
+                return PARTIES[i];
         }
     }
 
     getHistorique(us: number, ami: number) {
         var p: Partie[] = [];
-        for (this.i = 0; this.i < PARTIES.length; this.i++) {
-            if ((PARTIES[this.i].id_j1 == us && PARTIES[this.i].id_j2 == ami) || (PARTIES[this.i].id_j1 == ami && PARTIES[this.i].id_j2 == us))
-                p.push(PARTIES[this.i]);
+        for (var i = 0; i < PARTIES.length; i++) {
+            if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
+                p.push(PARTIES[i]);
         }
         return p;
     }
 
     getNbVictoire(us: number, ami: number) {
         var nb =0;
-        for (this.i = 0; this.i < PARTIES.length; this.i++) {
-            if ((PARTIES[this.i].id_j1 == us && PARTIES[this.i].id_j2 == ami) || (PARTIES[this.i].id_j1 == ami && PARTIES[this.i].id_j2 == us))
-                if ((PARTIES[this.i].id_j1 == us && PARTIES[this.i].s1 > PARTIES[this.i].s2) || (PARTIES[this.i].s1 < PARTIES[this.i].s2 && PARTIES[this.i].id_j2 == us))
+        for (var i = 0; i < PARTIES.length; i++) {
+            if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
+                if ((PARTIES[i].id_j1 == us && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == us))
                     nb++;
         }
         return nb;
@@ -58,9 +57,9 @@ export class PartieService {
 
     getNbDefaite(us: number, ami: number) {
         var nb = 0;
-        for (this.i = 0; this.i < PARTIES.length; this.i++) {
-            if ((PARTIES[this.i].id_j1 == us && PARTIES[this.i].id_j2 == ami) || (PARTIES[this.i].id_j1 == ami && PARTIES[this.i].id_j2 == us))
-                if ((PARTIES[this.i].id_j1 == us && PARTIES[this.i].s1 < PARTIES[this.i].s2) || (PARTIES[this.i].s1 > PARTIES[this.i].s2 && PARTIES[this.i].id_j2 == us))
+        for (var i = 0; i < PARTIES.length; i++) {
+            if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
+                if ((PARTIES[i].id_j1 == us && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == us))
                     nb++;
         }
         return nb;

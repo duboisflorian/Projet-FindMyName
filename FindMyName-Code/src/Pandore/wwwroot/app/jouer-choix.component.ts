@@ -17,6 +17,7 @@ export class JouerChoixComponent implements OnInit {
     selectedTheme: Theme;
     directives: [JouerComponent];
     u: Utilisateur;
+    sTimeout: number;
 
     constructor(
         private _router: Router,
@@ -38,12 +39,18 @@ export class JouerChoixComponent implements OnInit {
             .then(themes => this.themes = themes.slice(0, 4));*/
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        this.sTimeout = setTimeout(() => this.endTimer(), 3000);
+        //setTimeout(this.endTimer, 3000);
     }
     gotoContact() {
         this._router.navigate(['Contact', { us: this.u.id }]);
     }
     goBack() {
         window.history.back();
+    }
+    endTimer() {
+        var selectedTheme = this.themes[1];
+        this.gotoJouer(selectedTheme);
     }
 
     onSelect(theme: Theme) {

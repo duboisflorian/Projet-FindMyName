@@ -4,6 +4,7 @@ import { Router } from 'angular2/router';
 import { Reponse } from './classe/reponses';
 import { Jouer } from './classe/jouer';
 import { JouerService } from './service/jouer.service';
+import { PartieService } from './service/partie.service';
 import { ThemeService } from './service/theme.service';
 import { UtilisateurService } from './service/utilisateur.service';
 import { Utilisateur } from './classe/utilisateur';
@@ -29,6 +30,7 @@ export class JouerComponent implements OnInit {
         private _router: Router,
         private _jouerService: JouerService,
         private _themeService: ThemeService,
+        private _partieService: PartieService,
         private _uService: UtilisateurService,
         private _routeParams: RouteParams) { }
     gotoDeco() {
@@ -48,9 +50,13 @@ export class JouerComponent implements OnInit {
                 this.tabreponses.reponses[i].done = false;
         }
         let us = +this._routeParams.get('us');
+        let id = +this._routeParams.get('id');
         this.u = this._uService.getUtilisateur(us);
         this.theme = this._themeService.getTheme(th);
         this.starttimer();
+    }
+    ngOnDestroy() {
+        
     }
     getReponse() {
         return this.reponse;
@@ -84,6 +90,11 @@ export class JouerComponent implements OnInit {
         this.countdown(1, 0, this._router, this.u.id);
     }
 
+    endPartie() {
+        alert("gg");
+        this._router.navigate(['Contact', { us: this.u.id }]);
+    }
+
     countdown(minutes, seconds, _router, id) {
         var element, endTime, hours, mins, msLeft, time;
 
@@ -94,7 +105,6 @@ export class JouerComponent implements OnInit {
         function updateTimer() {
             msLeft = endTime - (+new Date);
             if (msLeft < 1000) {
-                alert("gg");
                 _router.navigate(['Contact', { us: id }]);
             } else {
                 time = new Date(msLeft);

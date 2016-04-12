@@ -34,12 +34,23 @@ var JouerChoixComponent = (function () {
             .then(themes => this.themes = themes.slice(0, 4));*/
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        setTimeout(endTimer, 3000);
+        function endTimer() {
+            var selectedTheme = this.themes[1];
+            var id = +this._routeParams.get('id');
+            var link = ['Jouer', { us: this.u.id, id: id, th: this.selectedTheme.id }];
+            this._router.navigate(link);
+        }
     };
     JouerChoixComponent.prototype.gotoContact = function () {
         this._router.navigate(['Contact', { us: this.u.id }]);
     };
     JouerChoixComponent.prototype.goBack = function () {
         window.history.back();
+    };
+    JouerChoixComponent.prototype.endTimer = function () {
+        var selectedTheme = this.themes[1];
+        this.gotoJouer(selectedTheme);
     };
     JouerChoixComponent.prototype.onSelect = function (theme) {
         this.selectedTheme = theme;

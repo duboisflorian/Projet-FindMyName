@@ -15,17 +15,17 @@ var PartieService = (function () {
     //toutes les parties d'un utilisateur en cours
     PartieService.prototype.getPartiesEnCours = function (us) {
         var p = [];
-        for (this.i = 0; this.i < mock_parti_1.PARTIES.length; this.i++) {
-            if ((mock_parti_1.PARTIES[this.i].id_j1 == us || mock_parti_1.PARTIES[this.i].id_j2 == us) && mock_parti_1.PARTIES[this.i].s1 < 3 && mock_parti_1.PARTIES[this.i].s2 < 3)
-                p.push(mock_parti_1.PARTIES[this.i]);
+        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+            if ((mock_parti_1.PARTIES[i].id_j1 == us || mock_parti_1.PARTIES[i].id_j2 == us) && mock_parti_1.PARTIES[i].s1 < 3 && mock_parti_1.PARTIES[i].s2 < 3)
+                p.push(mock_parti_1.PARTIES[i]);
         }
         return p;
     };
     //savoir si il y a une partie en cours entre deux personnes
     PartieService.prototype.getEn_Cours = function (us, ami) {
-        for (this.i = 0; this.i < mock_parti_1.PARTIES.length; this.i++) {
-            if ((mock_parti_1.PARTIES[this.i].id_j1 == us && mock_parti_1.PARTIES[this.i].id_j2 == ami) || (mock_parti_1.PARTIES[this.i].id_j1 == ami && mock_parti_1.PARTIES[this.i].id_j2 == us)) {
-                if (mock_parti_1.PARTIES[this.i].player == null) {
+        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+            if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us)) {
+                if (mock_parti_1.PARTIES[i].player == null) {
                     return false;
                 }
                 else {
@@ -36,33 +36,33 @@ var PartieService = (function () {
         return false;
     };
     PartieService.prototype.getPartieEnCours = function (us, ami) {
-        for (this.i = 0; this.i < mock_parti_1.PARTIES.length; this.i++) {
-            if ((mock_parti_1.PARTIES[this.i].id_j1 == us && mock_parti_1.PARTIES[this.i].id_j2 == ami) || (mock_parti_1.PARTIES[this.i].id_j1 == ami && mock_parti_1.PARTIES[this.i].id_j2 == us))
-                return mock_parti_1.PARTIES[this.i];
+        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+            if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us))
+                return mock_parti_1.PARTIES[i];
         }
     };
     PartieService.prototype.getHistorique = function (us, ami) {
         var p = [];
-        for (this.i = 0; this.i < mock_parti_1.PARTIES.length; this.i++) {
-            if ((mock_parti_1.PARTIES[this.i].id_j1 == us && mock_parti_1.PARTIES[this.i].id_j2 == ami) || (mock_parti_1.PARTIES[this.i].id_j1 == ami && mock_parti_1.PARTIES[this.i].id_j2 == us))
-                p.push(mock_parti_1.PARTIES[this.i]);
+        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+            if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us))
+                p.push(mock_parti_1.PARTIES[i]);
         }
         return p;
     };
     PartieService.prototype.getNbVictoire = function (us, ami) {
         var nb = 0;
-        for (this.i = 0; this.i < mock_parti_1.PARTIES.length; this.i++) {
-            if ((mock_parti_1.PARTIES[this.i].id_j1 == us && mock_parti_1.PARTIES[this.i].id_j2 == ami) || (mock_parti_1.PARTIES[this.i].id_j1 == ami && mock_parti_1.PARTIES[this.i].id_j2 == us))
-                if ((mock_parti_1.PARTIES[this.i].id_j1 == us && mock_parti_1.PARTIES[this.i].s1 > mock_parti_1.PARTIES[this.i].s2) || (mock_parti_1.PARTIES[this.i].s1 < mock_parti_1.PARTIES[this.i].s2 && mock_parti_1.PARTIES[this.i].id_j2 == us))
+        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+            if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us))
+                if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].s1 > mock_parti_1.PARTIES[i].s2) || (mock_parti_1.PARTIES[i].s1 < mock_parti_1.PARTIES[i].s2 && mock_parti_1.PARTIES[i].id_j2 == us))
                     nb++;
         }
         return nb;
     };
     PartieService.prototype.getNbDefaite = function (us, ami) {
         var nb = 0;
-        for (this.i = 0; this.i < mock_parti_1.PARTIES.length; this.i++) {
-            if ((mock_parti_1.PARTIES[this.i].id_j1 == us && mock_parti_1.PARTIES[this.i].id_j2 == ami) || (mock_parti_1.PARTIES[this.i].id_j1 == ami && mock_parti_1.PARTIES[this.i].id_j2 == us))
-                if ((mock_parti_1.PARTIES[this.i].id_j1 == us && mock_parti_1.PARTIES[this.i].s1 < mock_parti_1.PARTIES[this.i].s2) || (mock_parti_1.PARTIES[this.i].s1 > mock_parti_1.PARTIES[this.i].s2 && mock_parti_1.PARTIES[this.i].id_j2 == us))
+        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+            if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us))
+                if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].s1 < mock_parti_1.PARTIES[i].s2) || (mock_parti_1.PARTIES[i].s1 > mock_parti_1.PARTIES[i].s2 && mock_parti_1.PARTIES[i].id_j2 == us))
                     nb++;
         }
         return nb;

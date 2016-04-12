@@ -11,14 +11,16 @@ var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var router_2 = require('angular2/router');
 var jouer_service_1 = require('./service/jouer.service');
+var partie_service_1 = require('./service/partie.service');
 var theme_service_1 = require('./service/theme.service');
 var utilisateur_service_1 = require('./service/utilisateur.service');
 var Rx_1 = require('rxjs/Rx');
 var JouerComponent = (function () {
-    function JouerComponent(_router, _jouerService, _themeService, _uService, _routeParams) {
+    function JouerComponent(_router, _jouerService, _themeService, _partieService, _uService, _routeParams) {
         this._router = _router;
         this._jouerService = _jouerService;
         this._themeService = _themeService;
+        this._partieService = _partieService;
         this._uService = _uService;
         this._routeParams = _routeParams;
         this.task = '';
@@ -42,9 +44,12 @@ var JouerComponent = (function () {
             this.tabreponses.reponses[i].done = false;
         }
         var us = +this._routeParams.get('us');
+        var id = +this._routeParams.get('id');
         this.u = this._uService.getUtilisateur(us);
         this.theme = this._themeService.getTheme(th);
         this.starttimer();
+    };
+    JouerComponent.prototype.ngOnDestroy = function () {
     };
     JouerComponent.prototype.getReponse = function () {
         return this.reponse;
@@ -77,6 +82,10 @@ var JouerComponent = (function () {
     JouerComponent.prototype.starttimer = function () {
         this.countdown(1, 0, this._router, this.u.id);
     };
+    JouerComponent.prototype.endPartie = function () {
+        alert("gg");
+        this._router.navigate(['Contact', { us: this.u.id }]);
+    };
     JouerComponent.prototype.countdown = function (minutes, seconds, _router, id) {
         var element, endTime, hours, mins, msLeft, time;
         function twoDigits(n) {
@@ -85,7 +94,6 @@ var JouerComponent = (function () {
         function updateTimer() {
             msLeft = endTime - (+new Date);
             if (msLeft < 1000) {
-                alert("gg");
                 _router.navigate(['Contact', { us: id }]);
             }
             else {
@@ -105,7 +113,7 @@ var JouerComponent = (function () {
             selector: 'my-jouer',
             templateUrl: 'app/jouer.component.html'
         }), 
-        __metadata('design:paramtypes', [router_2.Router, jouer_service_1.JouerService, theme_service_1.ThemeService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
+        __metadata('design:paramtypes', [router_2.Router, jouer_service_1.JouerService, theme_service_1.ThemeService, partie_service_1.PartieService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
     ], JouerComponent);
     return JouerComponent;
 })();
