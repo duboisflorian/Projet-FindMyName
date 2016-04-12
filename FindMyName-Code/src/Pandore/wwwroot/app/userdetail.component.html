@@ -31,7 +31,6 @@
                         <form (ngSubmit)="loadListPhoto()">
                             <img class="portrait" src="{{u.photo}}" /><font color="black">
                                 <select [(ngModel)]="selectPhoto">
-                                    <option selected>-- Selectionner une photo de profil --</option>
                                     <option>logo</option>
                                     <option>arsenal</option>
                                     <option>barca</option>
@@ -59,30 +58,23 @@
             </tr>
             <tr>
                 <td><font color="black"><input type="text" placeholder="entrer votre email ici" value="{{u.mail}}" disabled="disabled"/></font><br /> <br /></td>
-                <td>Thème favoris : {{u.theme}} <font color="black">
-                    <select [(ngModel)]="selectTheme" (ngModelChange)="changeTheme()">
-                        <option selected>-- Selectionner un thème --</option>
-                        <option>Sport</option>
-                        <option>Alimentation</option>
-                        <option>Musique</option>
-                        <option>Film</option>
-                        <option>Automobile</option>
-                    </select>
-                </font></td>
+                <td>Thème favoris : {{u.theme}} </td>
             </tr>
             <tr>
                 <td><font color="black"><input type="hidden" [(ngModel)]="id" /><input type="password" [(ngModel)]="password" placeholder="entrer votre mot de passe ici"  value="{{u.password}}" /></font><input class="btn-primary" type="button" (click)="modifmdp()" value="Modifier"><br /> <br /></td>
             <td>Meilleur Score : {{u.meilleurScore}}</td>
             </tr>
             <tr>
-                <td>Pays : {{u.pays}}<font color="black">
+                <td>Pays :<font color="black">
                         <select [(ngModel)]="selectPays" (ngModelChange)="changePays()">
-                            <option selected>-- Selectionner un pays --</option>
+                            <option>-- Selectionner un pays --</option>
                             <option>France</option>
                             <option>Allemagne</option>
-                            <option>Espagne</option>
-                            <option>Italie</option>
-                            <option>Suède</option>
+                            <option>Chine</option>
+                            <option>Etats-Unis</option>
+                            <option>Japon</option>
+                            <option>Royaume-Uni</option>
+                            <option>Canada</option>
                         </select>
                     </font></td>
                 <td></td>
