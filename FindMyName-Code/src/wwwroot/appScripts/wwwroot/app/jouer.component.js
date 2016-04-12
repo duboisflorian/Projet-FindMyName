@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,39 +64,46 @@ var JouerComponent = (function () {
                     this.remaining++;
                     this.tabreponses.reponses[i].done = true;
                     this.bon = true;
-                    var timer = Rx_1.Observable.timer(0, 5000);
-                    timer.subscribe(function (t) {
+                    var timer_1 = Rx_1.Observable.timer(0, 5000);
+                    timer_1.subscribe(function (t) {
                         _this.bon = null;
                     });
                 }
             }
             if (this.bon != true) {
                 this.bon = false;
-                var timer = Rx_1.Observable.timer(0, 5000);
-                timer.subscribe(function (t) {
+                var timer_2 = Rx_1.Observable.timer(0, 5000);
+                timer_2.subscribe(function (t) {
                     _this.bon = null;
                 });
             }
             this.task = '';
+            var timer = Rx_1.Observable.timer(0, 5000);
+            timer.subscribe(function (t) {
+                _this.bon = null;
+            });
         }
     };
     JouerComponent.prototype.starttimer = function () {
         var _this = this;
         this.countdown(0, 30, this._router, this.u.id);
-        this.sTimeout = setTimeout(function () { return _this.gotoContact(); }, 120000);
+        this.sTimeout = setTimeout(function () { return _this.gotoContact(); }, 30000);
     };
     JouerComponent.prototype.ngOnDestroy = function () {
         clearTimeout(this.sTimeout);
         var id = +this._routeParams.get('id');
         var us = +this._routeParams.get('us');
         var th = +this._routeParams.get('th');
-        this.p = this._pService.getPartieExiste(us, id);
-        if (this.p == null || this.p.player == null) {
-            this._pService.AjouterPartie(us, id, th, this.remaining);
+        if (!this._pService.getPartieExiste(id, us)) {
+            this.j1 = this._uService.getName(us);
+            this.j2 = this._uService.getName(id);
+            this._pService.AjouterPartie(us, id, th, this.remaining, this.j1, this.j2);
         }
-        if (this.p.player != null) {
+        else {
+            this.p = this._pService.getPartieEnCours(id, us);
             this._pService.ModifierPartie(us, id, th, this.remaining, this.p);
         }
+        this._uService.ChangerMeilleurScore(us, this.remaining);
         clearTimeout(this.sTimeout);
         this.gotoContact();
     };
@@ -130,7 +136,7 @@ var JouerComponent = (function () {
         __metadata('design:paramtypes', [router_2.Router, jouer_service_1.JouerService, theme_service_1.ThemeService, partie_service_1.PartieService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
     ], JouerComponent);
     return JouerComponent;
-}());
+})();
 exports.JouerComponent = JouerComponent;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

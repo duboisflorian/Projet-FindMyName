@@ -58,7 +58,7 @@
             </tr>
             <tr>
                 <td><font color="black"><input type="text" placeholder="entrer votre email ici" value="{{u.mail}}" disabled="disabled"/></font><br /> <br /></td>
-                <td>Thème favoris : {{u.theme}} </td>
+                <td>Thème favoris : {{theme_favori}} </td>
             </tr>
             <tr>
                 <td><font color="black"><input type="hidden" [(ngModel)]="id" /><input type="password" [(ngModel)]="password" placeholder="entrer votre mot de passe ici"  value="{{u.password}}" /></font><input class="btn-primary" type="button" (click)="modifmdp()" value="Modifier"><br /> <br /></td>
@@ -67,14 +67,13 @@
             <tr>
                 <td>Pays :<font color="black">
                         <select [(ngModel)]="selectPays" (ngModelChange)="changePays()">
-                            <option>-- Selectionner un pays --</option>
-                            <option>France</option>
-                            <option>Allemagne</option>
-                            <option>Chine</option>
-                            <option>Etats-Unis</option>
-                            <option>Japon</option>
-                            <option>Royaume-Uni</option>
-                            <option>Canada</option>
+                            <option value=""> value="France"France</option>
+                            <option value="Allemagne">Allemagne</option>
+                            <option value="Chine">Chine</option>
+                            <option value="Etats-Unis">Etats-Unis</option>
+                            <option value="Japon">Japon</option>
+                            <option value="Royaume-Uni">Royaume-Uni</option>
+                            <option value="Canada">Canada</option>
                         </select>
                     </font></td>
                 <td></td>
@@ -87,7 +86,7 @@
                 <th><u>Statistiques</u></th>
             </tr>
             <tr>
-                <td>Nombre de parties jouées :{{u.nbparties}} </td>
+                <td>Nombre de parties jouées :{{nbparties}} </td>
             </tr>
             <tr>
                 <td>Nombre de victoires: </td>

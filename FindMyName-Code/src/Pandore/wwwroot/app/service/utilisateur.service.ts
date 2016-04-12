@@ -65,20 +65,13 @@ export class UtilisateurService {
     }
 
     ajouterUtilisateur(name: string, mail: string, password: string) {
-        UTILISATEURS.push({ "id": this.getlastid() + 1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password, "pays": "France", "theme": "", "meilleurScore": 0,"nbparties":0 })
+        UTILISATEURS.push({ "id": this.getlastid() + 1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password, "pays": "France","meilleurScore":0 })
         return this.getlastid();
     }
 
 
     getOnlineutilisateur() {
         return Math.floor(Math.random() * (UTILISATEURS.length - 1) + 1);
-    }
-
-    getPhoto(u: number) {
-        for (var i = 0; i < UTILISATEURS.length; i++) {
-            if (UTILISATEURS[i].id == u)
-                return UTILISATEURS[i].photo;
-        }
     }
 
     getName(u: number) {
@@ -103,17 +96,6 @@ export class UtilisateurService {
         }
     }
 
-    ChangerTheme(u: number, theme: number) {
-        for (var i = 0; i < UTILISATEURS.length; i++) {
-            if (UTILISATEURS[i].id == u) {
-                var id = this._tService.getId(UTILISATEURS[i].theme);
-                if (this._pService.nbusetheme(id, u) < this._pService.nbusetheme(theme, u)) {
-                    var name = this._tService.getName(theme);
-                    UTILISATEURS[i].theme = name;
-                }
-            }
-        }
-    }
 }
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

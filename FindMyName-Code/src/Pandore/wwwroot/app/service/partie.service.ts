@@ -72,7 +72,7 @@ export class PartieService {
 
     getPartieExiste(us: number, ami: number) {
         for (var i = PARTIES.length - 1; i >= 0; i--) {
-            if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
+            if (((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us)) && (PARTIES[i].player == us || PARTIES[i].player == ami ))
                 return PARTIES[i];
         }
         return null;
@@ -123,17 +123,20 @@ export class PartieService {
         }
     }
 
-    nbusetheme(id: number, u: number) {
+    getnbParties( u: number) {
         var nb = 0;
         for (var i = 0; i < PARTIES.length; i++) {
-            if (PARTIES[i].id_j1 == u || PARTIES[i].id_j2 == u) {
-                for (var n = 0; n < PARTIES[i].manche.length; n++) {
-                    if (PARTIES[i].manche[n].id_theme == id)
-                        nb++;
-                }
-            }
-            return nb;
+            if (PARTIES[i].id_j1 == u || PARTIES[i].id_j2 == u) 
+                        nb++;    
         }
+        return nb;
+    }
+    getThemeFavori(u: number) {
+        for (var i = 0; i < PARTIES.length; i++) {
+            if (PARTIES[i].id_j1 == u || PARTIES[i].id_j2 == u) {
+                return "PSG";
+            }
+        } return "acun pour le moment";
     }
 }
 /*

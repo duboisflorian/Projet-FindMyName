@@ -1,4 +1,4 @@
-﻿import { Component, Input, OnInit } from 'angular2/core';
+﻿import { Component, Input, OnInit, OnDestroy } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Router } from 'angular2/router';
 import { Theme } from './classe/theme';
@@ -11,7 +11,7 @@ import { Utilisateur } from './classe/utilisateur';
     selector: 'my-jouer-choix',
     templateUrl: 'app/jouer-choix.component.html'
 })
-export class JouerChoixComponent implements OnInit {
+export class JouerChoixComponent implements OnInit{
 
     themes: Theme[] = [];
     selectedTheme: Theme;
@@ -58,8 +58,12 @@ export class JouerChoixComponent implements OnInit {
         this.selectedTheme = theme;  
     }
 
-    gotoJouer(theme: Theme) {
+    ngOnDestroy() {
         clearTimeout(this.sTimeout);
+
+    }
+
+    gotoJouer(theme: Theme) {
         this.selectedTheme = theme;  
         let id = +this._routeParams.get('id');
         let link = ['Jouer', { us: this.u.id, id: id ,th: this.selectedTheme.id }];

@@ -1,27 +1,25 @@
 ﻿import { Utilisateur } from '../classe/utilisateur';
 
 export var UTILISATEURS: Utilisateur[] = [
-    { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg", "mail": "Florian@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 5 },
-    { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg", "mail": "Yani@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
-    { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg", "mail": "maxime@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
-    { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg", "mail": "lionel@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
-    { "id": 5, "name": "diego", "photo": "fichier/logo.jpg", "mail": "diego@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
-    { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg", "mail": "tingting@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
-    { "id": 7, "name": "Marco", "photo": "fichier/logo.jpg", "mail": "Marco@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
-    { "id": 8, "name": "Luffy", "photo": "fichier/logo.jpg", "mail": "Luffy@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
-    { "id": 9, "name": "Mingo", "photo": "fichier/logo.jpg", "mail": "Mingo@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
-    { "id": 10, "name": "Zoro", "photo": "fichier/logo.jpg", "mail": "Zoro@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
-    { "id": 11, "name": "Papucue", "photo": "fichier/logo.jpg", "mail": "Papucue@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
+    { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg", "mail": "Florian@gmail.com", "password": "1234", "pays": "Allemagne",  "meilleurScore": 15},
+    { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg", "mail": "Yani@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15},
+    { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg", "mail": "maxime@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0},
+    { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg", "mail": "lionel@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
+    { "id": 5, "name": "diego", "photo": "fichier/logo.jpg", "mail": "diego@gmail.com", "password": "1234", "pays": "France",  "meilleurScore": 15 },
+    { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg", "mail": "tingting@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15},
+    { "id": 7, "name": "Marco", "photo": "fichier/logo.jpg", "mail": "Marco@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
+    { "id": 8, "name": "Luffy", "photo": "fichier/logo.jpg", "mail": "Luffy@gmail.com", "password": "1234", "pays": "France",  "meilleurScore": 15 },
+    { "id": 9, "name": "Mingo", "photo": "fichier/logo.jpg", "mail": "Mingo@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
+    { "id": 10, "name": "Zoro", "photo": "fichier/logo.jpg", "mail": "Zoro@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
+    { "id": 11, "name": "Papucue", "photo": "fichier/logo.jpg", "mail": "Papucue@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
     {
         "id": 12,
         "name": "Chandler",
         "photo": "fichier/logo.jpg",
         "mail": "ante.Vivamus.non@arcu.co.uk",
         "password": "ROW-2",
-        "pays": "Iceland",
-        "theme": "sport",
+        "pays": "France",
         "meilleurScore": 23,
-        "nbparties": 3
     },
     {
         "id": 13,
@@ -29,10 +27,8 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Nunc.ullamcorper@luctusCurabituregestas.com",
         "password": "ROW-3",
-        "pays": "Lebanon",
-        "theme": "sport",
+        "pays": "France",
         "meilleurScore": 4,
-        "nbparties": 3
     },
     {
         "id": 14,
@@ -40,10 +36,8 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "est.ac.facilisis@Nullasemper.net",
         "password": "ROW-4",
-        "pays": "Barbados",
-        "theme": "sport",
+        "pays": "France",
         "meilleurScore": 23,
-        "nbparties": 3
     },
     {
         "id": 15,
@@ -51,10 +45,8 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "accumsan.laoreet@gravida.edu",
         "password": "ROW-5",
-        "pays": "Libya",
-        "theme": "sport",
+        "pays": "France",
         "meilleurScore": 10,
-        "nbparties": 3
     },
     {
         "id": 16,
@@ -62,10 +54,8 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "nec.urna.et@ipsum.co.uk",
         "password": "ROW-6",
-        "pays": "Pakistan",
-        "theme": "sport",
+        "pays": "France",
         "meilleurScore": 8,
-        "nbparties": 3
     },
     {
         "id": 17,
@@ -73,10 +63,8 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "sagittis.placerat.Cras@mi.ca",
         "password": "ROW-7",
-        "pays": "Micronesia",
-        "theme": "sport",
+        "pays": "France",
         "meilleurScore": 10,
-        "nbparties": 3
     },
     {
         "id": 18,
@@ -84,10 +72,8 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "sit.amet.risus@rutrumjustoPraesent.org",
         "password": "ROW-8",
-        "pays": "Viet Nam",
-        "theme": "sport",
+        "pays": "France",
         "meilleurScore": 9,
-        "nbparties": 3
     },
     {
         "id": 19,
@@ -95,10 +81,8 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "rhoncus@orci.com",
         "password": "ROW-9",
-        "pays": "Wallis and Futuna",
-        "theme": "sport",
+        "pays": "France",
         "meilleurScore": 25,
-        "nbparties": 3
     },
     {
         "id": 20,
@@ -106,10 +90,8 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "ut.molestie.in@Donec.net",
         "password": "ROW-10",
-        "pays": "Heard Island and Mcdonald Islands",
-        "theme": "sport",
+        "pays": "France",
         "meilleurScore": 23,
-        "nbparties": 3
     },
     {
         "id": 21,
@@ -117,10 +99,8 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "non.enim.Mauris@eleifendvitae.ca",
         "password": "ROW-11",
-        "pays": "Ukraine",
-        "theme": "sport",
+        "pays": "France",
         "meilleurScore": 9,
-        "nbparties": 3
     },
     {
         "id": 22,
@@ -128,10 +108,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Etiam.bibendum@nec.co.uk",
         "password": "ROW-12",
-        "pays": "Turkmenistan",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 13,
-        "nbparties": 3
+ 
     },
     {
         "id": 23,
@@ -139,10 +119,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "tellus.imperdiet.non@antedictum.co.uk",
         "password": "ROW-13",
-        "pays": "Lithuania",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 16,
-        "nbparties": 3
+ 
     },
     {
         "id": 24,
@@ -150,10 +130,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "ac.mattis@famesac.co.uk",
         "password": "ROW-14",
-        "pays": "Angola",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 27,
-        "nbparties": 3
+ 
     },
     {
         "id": 25,
@@ -161,10 +141,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "interdum.Curabitur.dictum@risus.co.uk",
         "password": "ROW-15",
-        "pays": "Singapore",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 27,
-        "nbparties": 3
+ 
     },
     {
         "id": 26,
@@ -172,10 +152,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "et.malesuada.fames@urnaNullamlobortis.org",
         "password": "ROW-16",
-        "pays": "San Marino",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 1,
-        "nbparties": 3
+ 
     },
     {
         "id": 27,
@@ -183,10 +163,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "lectus.pede@rutrumjustoPraesent.edu",
         "password": "ROW-17",
-        "pays": "New Caledonia",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 18,
-        "nbparties": 3
+ 
     },
     {
         "id": 28,
@@ -194,10 +174,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "placerat.Cras.dictum@ac.ca",
         "password": "ROW-18",
-        "pays": "Cocos (Keeling) Islands",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 5,
-        "nbparties": 3
+ 
     },
     {
         "id": 29,
@@ -205,10 +185,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "vulputate@Aeneanmassa.com",
         "password": "ROW-19",
-        "pays": "Azerbaijan",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 9,
-        "nbparties": 3
+ 
     },
     {
         "id": 30,
@@ -216,10 +196,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "aptent.taciti.sociosqu@loremDonecelementum.ca",
         "password": "ROW-20",
-        "pays": "Monaco",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 8,
-        "nbparties": 3
+ 
     },
     {
         "id": 31,
@@ -227,10 +207,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Mauris.non@Proinvelarcu.com",
         "password": "ROW-21",
-        "pays": "Falkland Islands",
-        "theme": "sport",
+        "pays": "",
+ 
         "meilleurScore": 5,
-        "nbparties": 3
+ 
     },
     {
         "id": 32,
@@ -238,10 +218,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "ipsum@consectetuer.org",
         "password": "ROW-22",
-        "pays": "South Sudan",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 6,
-        "nbparties": 3
+ 
     },
     {
         "id": 33,
@@ -249,10 +229,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "eget@nectellus.edu",
         "password": "ROW-23",
-        "pays": "French Southern Territories",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 19,
-        "nbparties": 3
+ 
     },
     {
         "id": 34,
@@ -260,10 +240,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "faucibus.orci.luctus@Maecenasmifelis.co.uk",
         "password": "ROW-24",
-        "pays": "French Guiana",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 13,
-        "nbparties": 3
+ 
     },
     {
         "id": 35,
@@ -271,10 +251,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "taciti.sociosqu@tellus.com",
         "password": "ROW-25",
-        "pays": "Gibraltar",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 10,
-        "nbparties": 3
+ 
     },
     {
         "id": 36,
@@ -282,10 +262,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "mi@ligula.com",
         "password": "ROW-26",
-        "pays": "Swaziland",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 21,
-        "nbparties": 3
+ 
     },
     {
         "id": 37,
@@ -293,10 +273,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "et.commodo.at@inhendrerit.ca",
         "password": "ROW-27",
-        "pays": "Svalbard and Jan Mayen Islands",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 2,
-        "nbparties": 3
+ 
     },
     {
         "id": 38,
@@ -304,10 +284,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Sed@tristiqueac.com",
         "password": "ROW-28",
-        "pays": "Antigua and Barbuda",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 13,
-        "nbparties": 3
+ 
     },
     {
         "id": 39,
@@ -315,10 +295,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "sagittis.semper@ametdiam.com",
         "password": "ROW-29",
-        "pays": "Cambodia",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 14,
-        "nbparties": 3
+ 
     },
     {
         "id": 40,
@@ -326,10 +306,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "nisi@euodiotristique.com",
         "password": "ROW-30",
-        "pays": "Kenya",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 3,
-        "nbparties": 3
+ 
     },
     {
         "id": 41,
@@ -337,10 +317,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "dolor.vitae.dolor@Etiam.co.uk",
         "password": "ROW-31",
-        "pays": "Micronesia",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 15,
-        "nbparties": 3
+ 
     },
     {
         "id": 42,
@@ -348,10 +328,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "vitae.aliquet.nec@inceptos.com",
         "password": "ROW-32",
-        "pays": "Brunei",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 18,
-        "nbparties": 3
+ 
     },
     {
         "id": 43,
@@ -359,10 +339,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "non.egestas@enimcondimentumeget.edu",
         "password": "ROW-33",
-        "pays": "Chile",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 4,
-        "nbparties": 3
+ 
     },
     {
         "id": 44,
@@ -370,10 +350,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "dui.augue.eu@Nullam.edu",
         "password": "ROW-34",
-        "pays": "Gibraltar",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 18,
-        "nbparties": 3
+ 
     },
     {
         "id": 45,
@@ -381,10 +361,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "turpis.Aliquam@lacus.co.uk",
         "password": "ROW-35",
-        "pays": "Netherlands",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 7,
-        "nbparties": 3
+ 
     },
     {
         "id": 46,
@@ -392,10 +372,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "non.sollicitudin@nisi.org",
         "password": "ROW-36",
-        "pays": "Jersey",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 6,
-        "nbparties": 3
+ 
     },
     {
         "id": 47,
@@ -403,10 +383,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "ut.ipsum.ac@anteNunc.com",
         "password": "ROW-37",
-        "pays": "Åland Islands",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 6,
-        "nbparties": 3
+ 
     },
     {
         "id": 48,
@@ -414,10 +394,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Phasellus@luctusut.edu",
         "password": "ROW-38",
-        "pays": "Azerbaijan",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 7,
-        "nbparties": 3
+ 
     },
     {
         "id": 49,
@@ -425,10 +405,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "hendrerit@dictumeu.co.uk",
         "password": "ROW-39",
-        "pays": "Marshall Islands",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 15,
-        "nbparties": 3
+ 
     },
     {
         "id": 50,
@@ -436,10 +416,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "mauris@Sedpharetrafelis.edu",
         "password": "ROW-40",
-        "pays": "Eritrea",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 16,
-        "nbparties": 3
+ 
     },
     {
         "id": 51,
@@ -447,10 +427,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "adipiscing@Suspendissedui.ca",
         "password": "ROW-41",
-        "pays": "Gambia",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 10,
-        "nbparties": 3
+ 
     },
     {
         "id": 52,
@@ -458,10 +438,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Phasellus.dapibus@eteuismod.edu",
         "password": "ROW-42",
-        "pays": "Côte D'Ivoire (Ivory Coast)",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 4,
-        "nbparties": 3
+ 
     },
     {
         "id": 53,
@@ -469,10 +449,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "eu.turpis@Vivamus.co.uk",
         "password": "ROW-43",
-        "pays": "Libya",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 6,
-        "nbparties": 3
+ 
     },
     {
         "id": 54,
@@ -480,10 +460,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "varius@morbitristique.net",
         "password": "ROW-44",
-        "pays": "Cyprus",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 7,
-        "nbparties": 3
+ 
     },
     {
         "id": 55,
@@ -491,10 +471,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "ornare.facilisis.eget@Cras.net",
         "password": "ROW-45",
-        "pays": "United States",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 4,
-        "nbparties": 3
+ 
     },
     {
         "id": 56,
@@ -502,10 +482,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "eu.dolor@loremutaliquam.com",
         "password": "ROW-46",
-        "pays": "Czech Republic",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 19,
-        "nbparties": 3
+ 
     },
     {
         "id": 57,
@@ -513,10 +493,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "nunc.ac@euismod.com",
         "password": "ROW-47",
-        "pays": "Mali",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 23,
-        "nbparties": 3
+ 
     },
     {
         "id": 58,
@@ -524,10 +504,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "in@bibendumullamcorper.net",
         "password": "ROW-48",
-        "pays": "Iran",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 5,
-        "nbparties": 3
+ 
     },
     {
         "id": 59,
@@ -535,10 +515,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "ut@netusetmalesuada.edu",
         "password": "ROW-49",
-        "pays": "Italy",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 19,
-        "nbparties": 3
+ 
     },
     {
         "id": 60,
@@ -546,10 +526,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "auctor.quis.tristique@Nullaaliquet.co.uk",
         "password": "ROW-50",
-        "pays": "Bosnia and Herzegovina",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 10,
-        "nbparties": 3
+ 
     },
     {
         "id": 61,
@@ -557,10 +537,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "convallis.est@tellusSuspendissesed.ca",
         "password": "ROW-51",
-        "pays": "Bosnia and Herzegovina",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 12,
-        "nbparties": 3
+ 
     },
     {
         "id": 62,
@@ -568,10 +548,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "lacinia@anuncIn.ca",
         "password": "ROW-52",
-        "pays": "Mauritius",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 9,
-        "nbparties": 3
+ 
     },
     {
         "id": 63,
@@ -579,10 +559,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Etiam.bibendum@nuncsed.ca",
         "password": "ROW-53",
-        "pays": "Cayman Islands",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 23,
-        "nbparties": 3
+ 
     },
     {
         "id": 64,
@@ -590,10 +570,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Phasellus.at@nonummyultriciesornare.co.uk",
         "password": "ROW-54",
-        "pays": "Trinidad and Tobago",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 2,
-        "nbparties": 3
+ 
     },
     {
         "id": 65,
@@ -601,10 +581,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "lectus.quis@natoquepenatibus.org",
         "password": "ROW-55",
-        "pays": "Swaziland",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 1,
-        "nbparties": 3
+ 
     },
     {
         "id": 66,
@@ -612,10 +592,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "eget.metus@telluseu.net",
         "password": "ROW-56",
-        "pays": "Lithuania",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 17,
-        "nbparties": 3
+ 
     },
     {
         "id": 67,
@@ -623,10 +603,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "odio.Etiam@odio.co.uk",
         "password": "ROW-57",
-        "pays": "Ireland",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 5,
-        "nbparties": 3
+ 
     },
     {
         "id": 68,
@@ -634,10 +614,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "sit@sapien.edu",
         "password": "ROW-58",
-        "pays": "Cambodia",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 16,
-        "nbparties": 3
+ 
     },
     {
         "id": 69,
@@ -645,10 +625,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "natoque.penatibus.et@ligulaconsectetuerrhoncus.edu",
         "password": "ROW-59",
-        "pays": "Macedonia",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 11,
-        "nbparties": 3
+ 
     },
     {
         "id": 70,
@@ -656,10 +636,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "vel.turpis.Aliquam@eleifendvitae.org",
         "password": "ROW-60",
-        "pays": "Jersey",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 1,
-        "nbparties": 3
+ 
     },
     {
         "id": 71,
@@ -667,10 +647,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "urna@tristique.com",
         "password": "ROW-61",
-        "pays": "Cuba",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 25,
-        "nbparties": 3
+ 
     },
     {
         "id": 72,
@@ -678,10 +658,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Donec.non@aauctor.org",
         "password": "ROW-62",
-        "pays": "Djibouti",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 5,
-        "nbparties": 3
+ 
     },
     {
         "id": 73,
@@ -689,10 +669,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "neque@NullafacilisisSuspendisse.edu",
         "password": "ROW-63",
-        "pays": "Liberia",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 5,
-        "nbparties": 3
+ 
     },
     {
         "id": 74,
@@ -700,10 +680,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "semper.egestas.urna@Nullamlobortis.edu",
         "password": "ROW-64",
-        "pays": "Wallis and Futuna",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 26,
-        "nbparties": 3
+ 
     },
     {
         "id": 75,
@@ -711,10 +691,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "enim@consectetueripsumnunc.net",
         "password": "ROW-65",
-        "pays": "Greenland",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 16,
-        "nbparties": 3
+ 
     },
     {
         "id": 76,
@@ -722,10 +702,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Aliquam.tincidunt@sed.co.uk",
         "password": "ROW-66",
-        "pays": "Timor-Leste",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 11,
-        "nbparties": 3
+ 
     },
     {
         "id": 77,
@@ -733,10 +713,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "augue.eu@uterosnon.org",
         "password": "ROW-67",
-        "pays": "Pakistan",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 26,
-        "nbparties": 3
+ 
     },
     {
         "id": 78,
@@ -744,10 +724,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "ac.fermentum.vel@telluslorem.co.uk",
         "password": "ROW-68",
-        "pays": "Cameroon",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 13,
-        "nbparties": 3
+ 
     },
     {
         "id": 79,
@@ -755,10 +735,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "sem.Pellentesque@habitant.org",
         "password": "ROW-69",
-        "pays": "Ghana",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 15,
-        "nbparties": 3
+ 
     },
     {
         "id": 80,
@@ -766,10 +746,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Duis.elementum@tinciduntadipiscingMauris.co.uk",
         "password": "ROW-70",
-        "pays": "Paraguay",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 14,
-        "nbparties": 3
+ 
     },
     {
         "id": 81,
@@ -777,10 +757,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "hendrerit@diamluctuslobortis.org",
         "password": "ROW-71",
-        "pays": "Kenya",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 8,
-        "nbparties": 3
+ 
     },
     {
         "id": 82,
@@ -788,10 +768,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "malesuada.id@vitae.co.uk",
         "password": "ROW-72",
-        "pays": "Guam",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 13,
-        "nbparties": 3
+ 
     },
     {
         "id": 83,
@@ -799,10 +779,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "et.euismod.et@metus.edu",
         "password": "ROW-73",
-        "pays": "Ecuador",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 16,
-        "nbparties": 3
+ 
     },
     {
         "id": 84,
@@ -810,10 +790,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "elementum@non.co.uk",
         "password": "ROW-74",
-        "pays": "Sweden",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 25,
-        "nbparties": 3
+ 
     },
     {
         "id": 85,
@@ -821,10 +801,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "hendrerit.consectetuer@atauctorullamcorper.ca",
         "password": "ROW-75",
-        "pays": "Rwanda",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 27,
-        "nbparties": 3
+ 
     },
     {
         "id": 86,
@@ -832,10 +812,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "amet@at.net",
         "password": "ROW-76",
-        "pays": "Mongolia",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 20,
-        "nbparties": 3
+ 
     },
     {
         "id": 87,
@@ -843,10 +823,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "nibh@ac.com",
         "password": "ROW-77",
-        "pays": "Czech Republic",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 27,
-        "nbparties": 3
+ 
     },
     {
         "id": 88,
@@ -854,10 +834,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "risus.In@nislQuisquefringilla.ca",
         "password": "ROW-78",
-        "pays": "Romania",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 6,
-        "nbparties": 3
+ 
     },
     {
         "id": 89,
@@ -865,10 +845,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "accumsan.convallis@purusmauris.com",
         "password": "ROW-79",
-        "pays": "Russian Federation",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 1,
-        "nbparties": 3
+ 
     },
     {
         "id": 90,
@@ -876,10 +856,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "pede.Praesent@Aliquamauctor.co.uk",
         "password": "ROW-80",
-        "pays": "Mayotte",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 1,
-        "nbparties": 3
+ 
     },
     {
         "id": 91,
@@ -887,10 +867,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "fermentum.risus.at@luctus.co.uk",
         "password": "ROW-81",
-        "pays": "Costa Rica",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 20,
-        "nbparties": 3
+ 
     },
     {
         "id": 92,
@@ -898,10 +878,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Nunc.ut@laoreet.net",
         "password": "ROW-82",
-        "pays": "Guernsey",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 18,
-        "nbparties": 3
+ 
     },
     {
         "id": 93,
@@ -909,10 +889,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "rhoncus.Nullam.velit@ac.org",
         "password": "ROW-83",
-        "pays": "American Samoa",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 20,
-        "nbparties": 3
+ 
     },
     {
         "id": 94,
@@ -920,10 +900,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "magna@a.net",
         "password": "ROW-84",
-        "pays": "San Marino",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 3,
-        "nbparties": 3
+ 
     },
     {
         "id": 95,
@@ -931,10 +911,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Proin.nisl@pretiumnequeMorbi.edu",
         "password": "ROW-85",
-        "pays": "Bermuda",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 8,
-        "nbparties": 3
+ 
     },
     {
         "id": 96,
@@ -942,10 +922,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Curae.Phasellus.ornare@Pellentesquehabitantmorbi.co.uk",
         "password": "ROW-86",
-        "pays": "Tunisia",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 24,
-        "nbparties": 3
+ 
     },
     {
         "id": 97,
@@ -953,10 +933,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "egestas.lacinia.Sed@tincidunt.co.uk",
         "password": "ROW-87",
-        "pays": "Iran",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 27,
-        "nbparties": 3
+ 
     },
     {
         "id": 98,
@@ -965,9 +945,9 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "arcu@faucibusorciluctus.co.uk",
         "password": "ROW-88",
         "pays": "France",
-        "theme": "sport",
+ 
         "meilleurScore": 15,
-        "nbparties": 3
+ 
     },
     {
         "id": 99,
@@ -975,10 +955,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "et@laoreetposuere.org",
         "password": "ROW-89",
-        "pays": "Sudan",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 30,
-        "nbparties": 3
+ 
     },
     {
         "id": 100,
@@ -986,10 +966,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "commodo@metus.net",
         "password": "ROW-90",
-        "pays": "Kyrgyzstan",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 19,
-        "nbparties": 3
+ 
     },
     {
         "id": 101,
@@ -997,10 +977,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "dolor@neque.edu",
         "password": "ROW-91",
-        "pays": "Thailand",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 28,
-        "nbparties": 3
+ 
     },
     {
         "id": 102,
@@ -1008,10 +988,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Donec.est@euodio.com",
         "password": "ROW-92",
-        "pays": "Belize",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 9,
-        "nbparties": 3
+ 
     },
     {
         "id": 103,
@@ -1019,10 +999,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "ad@luctuset.com",
         "password": "ROW-93",
-        "pays": "Holy See (Vatican City State)",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 26,
-        "nbparties": 3
+ 
     },
     {
         "id": 104,
@@ -1030,10 +1010,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "nibh@Integeridmagna.ca",
         "password": "ROW-94",
-        "pays": "Tokelau",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 21,
-        "nbparties": 3
+ 
     },
     {
         "id": 105,
@@ -1041,10 +1021,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "accumsan.convallis.ante@nequeIn.net",
         "password": "ROW-95",
-        "pays": "Taiwan",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 4,
-        "nbparties": 3
+ 
     },
     {
         "id": 106,
@@ -1052,10 +1032,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "eget.varius@Sedmalesuadaaugue.net",
         "password": "ROW-96",
-        "pays": "Moldova",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 14,
-        "nbparties": 3
+ 
     },
     {
         "id": 107,
@@ -1063,10 +1043,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "a.enim@egestasAliquamfringilla.co.uk",
         "password": "ROW-97",
-        "pays": "Timor-Leste",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 10,
-        "nbparties": 3
+ 
     },
     {
         "id": 108,
@@ -1074,10 +1054,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Donec@interdumCurabitur.edu",
         "password": "ROW-98",
-        "pays": "Greece",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 12,
-        "nbparties": 3
+ 
     },
     {
         "id": 109,
@@ -1085,10 +1065,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Quisque.purus@disparturientmontes.ca",
         "password": "ROW-99",
-        "pays": "Benin",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 6,
-        "nbparties": 3
+ 
     },
     {
         "id": 110,
@@ -1096,10 +1076,10 @@ export var UTILISATEURS: Utilisateur[] = [
         "photo": "fichier/logo.jpg",
         "mail": "Morbi@malesuadaIntegerid.co.uk",
         "password": "ROW-100",
-        "pays": "Tuvalu",
-        "theme": "sport",
+        "pays": "France",
+ 
         "meilleurScore": 2,
-        "nbparties": 3
+ 
     }
 ];
 

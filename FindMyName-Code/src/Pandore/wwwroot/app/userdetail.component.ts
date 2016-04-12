@@ -4,6 +4,7 @@ import { RouteParams } from 'angular2/router';
 import { UTILISATEURS } from './data/mock-utilisateurs';
 import { UtilisateurService } from './service/utilisateur.service';
 import { Utilisateur } from './classe/utilisateur';
+import { PartieService } from './service/partie.service';
 
 @Component({
     selector: 'my-userdetail',
@@ -18,17 +19,22 @@ export class UserdetailComponent implements OnInit {
     i: number;
     selectPhoto: string ="logo";
     selectTheme: string;
-    selectPays: string="France";
+    selectPays: string = "France";
+    nbparties: number;
+    theme_favori: string;
 
     constructor(
         private _router: Router,
         private _routeParams: RouteParams,
+        private _pService: PartieService,
         private _uService: UtilisateurService) { }
 
 
     ngOnInit() {
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        this.nbparties = this._pService.getnbParties(us);
+        this.theme_favori = this._pService.getThemeFavori(us);
     }
 
     gotoDeco() {
@@ -69,17 +75,7 @@ export class UserdetailComponent implements OnInit {
 
     }
 
-    changeTheme() {
-        //alert("Thème selectionner "+ this.selectTheme);
-        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == this.u.id) {
-                UTILISATEURS[this.i].theme = this.selectTheme;
-            }
-        }
-    }
-
     changePays() {
-        //alert("Pays " + this.selectPays);
         for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
             if (UTILISATEURS[this.i].id == this.u.id) {
                 UTILISATEURS[this.i].pays = this.selectPays;

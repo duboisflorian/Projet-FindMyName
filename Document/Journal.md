@@ -273,3 +273,8 @@ Project : Find My Name v_2
 - Lionel
 	- Finalisation traitement pour changer thème favoris + pays
 	- Début mise en page statistiques 
+
+- Florian 
+	- Correction bug
+	- Modification user_detail
+	- aide enregistrement score

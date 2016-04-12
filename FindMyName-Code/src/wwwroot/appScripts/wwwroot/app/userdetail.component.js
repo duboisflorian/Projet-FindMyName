@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -13,10 +12,12 @@ var router_1 = require('angular2/router');
 var router_2 = require('angular2/router');
 var mock_utilisateurs_1 = require('./data/mock-utilisateurs');
 var utilisateur_service_1 = require('./service/utilisateur.service');
+var partie_service_1 = require('./service/partie.service');
 var UserdetailComponent = (function () {
-    function UserdetailComponent(_router, _routeParams, _uService) {
+    function UserdetailComponent(_router, _routeParams, _pService, _uService) {
         this._router = _router;
         this._routeParams = _routeParams;
+        this._pService = _pService;
         this._uService = _uService;
         this.selectPhoto = "logo";
         this.selectPays = "France";
@@ -24,6 +25,8 @@ var UserdetailComponent = (function () {
     UserdetailComponent.prototype.ngOnInit = function () {
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        this.nbparties = this._pService.getnbParties(us);
+        this.theme_favori = this._pService.getThemeFavori(us);
     };
     UserdetailComponent.prototype.gotoDeco = function () {
         alert("Vous avez été déconnecté");
@@ -55,16 +58,7 @@ var UserdetailComponent = (function () {
         }
         alert("Photo changée");
     };
-    UserdetailComponent.prototype.changeTheme = function () {
-        //alert("Thème selectionner "+ this.selectTheme);
-        for (this.i = 0; this.i < mock_utilisateurs_1.UTILISATEURS.length; this.i++) {
-            if (mock_utilisateurs_1.UTILISATEURS[this.i].id == this.u.id) {
-                mock_utilisateurs_1.UTILISATEURS[this.i].theme = this.selectTheme;
-            }
-        }
-    };
     UserdetailComponent.prototype.changePays = function () {
-        //alert("Pays " + this.selectPays);
         for (this.i = 0; this.i < mock_utilisateurs_1.UTILISATEURS.length; this.i++) {
             if (mock_utilisateurs_1.UTILISATEURS[this.i].id == this.u.id) {
                 mock_utilisateurs_1.UTILISATEURS[this.i].pays = this.selectPays;
@@ -76,10 +70,10 @@ var UserdetailComponent = (function () {
             selector: 'my-userdetail',
             templateUrl: 'app/userdetail.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.Router, router_2.RouteParams, utilisateur_service_1.UtilisateurService])
+        __metadata('design:paramtypes', [router_1.Router, router_2.RouteParams, partie_service_1.PartieService, utilisateur_service_1.UtilisateurService])
     ], UserdetailComponent);
     return UserdetailComponent;
-}());
+})();
 exports.UserdetailComponent = UserdetailComponent;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

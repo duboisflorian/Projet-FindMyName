@@ -1,4 +1,4 @@
-﻿import { Component, Input, OnInit, Output, EventEmitter } from 'angular2/core';
+﻿import { Component, Input, OnInit, Output, EventEmitter, OnDestroy } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Router } from 'angular2/router';
 import { Reponse } from './classe/reponses';
@@ -16,7 +16,7 @@ import {Observable} from 'rxjs/Rx';
     selector: 'my-jouer',
     templateUrl: 'app/jouer.component.html'
 })
-export class JouerComponent implements OnInit {
+export class JouerComponent implements OnInit{
     task: string = '';
     reponse: Reponse[] = [
     ];
@@ -78,17 +78,17 @@ export class JouerComponent implements OnInit {
                     this.tabreponses.reponses[i].done = true;
                     this.bon = true;
                      let timer = Observable.timer(0, 5000);
- +                    timer.subscribe(t=> {
- +                        this.bon = null;
- +                    });
+                   timer.subscribe(t=> {
+                      this.bon = null;
+                   });
                 }
             }
             if (this.bon != true) {
                 this.bon = false;
                  let timer = Observable.timer(0, 5000);
- +                    timer.subscribe(t=> {
- +                        this.bon = null;
- +                    });
+                    timer.subscribe(t=> {
+                        this.bon = null;
+                    });
             }
             this.task = '';
             let timer = Observable.timer(0, 5000);
@@ -98,8 +98,8 @@ export class JouerComponent implements OnInit {
         }
     }
     starttimer() {
-        this.countdown(2, 0, this._router, this.u.id);
-        this.sTimeout = setTimeout(() => this.gotoContact(), 120000);
+        this.countdown(0, 30, this._router, this.u.id);
+        this.sTimeout = setTimeout(() => this.gotoContact(), 30000);
     }
     ngOnDestroy() {
         clearTimeout(this.sTimeout);
@@ -107,7 +107,7 @@ export class JouerComponent implements OnInit {
         let us = +this._routeParams.get('us');
         let th = +this._routeParams.get('th');
 
-        if (!this._pService.getPartieEnCours(id, us)) {
+        if (!this._pService.getPartieExiste(id, us)) {
             this.j1 = this._uService.getName(us);
             this.j2 = this._uService.getName(id);
             this._pService.AjouterPartie(us, id, th, this.remaining, this.j1, this.j2);
@@ -117,7 +117,6 @@ export class JouerComponent implements OnInit {
             this._pService.ModifierPartie(us, id, th, this.remaining, this.p);
         }
         this._uService.ChangerMeilleurScore(us, this.remaining);
-        this._uService.ChangerTheme(us, th);
         clearTimeout(this.sTimeout);
         this.gotoContact()
     }
