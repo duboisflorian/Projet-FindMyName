@@ -254,3 +254,9 @@ Project : Find My Name v_2
 	- Modification des traitements du changement de mot de passe et de photo de profil grâce à la récupération de l'ID
 	- Rajout des listes déroulantes pour le thème et les pays + grisement de l'email
 	- Debut traitement pour changer le thème et les pays 
+	
+##Mardi 12/04
+
+- Maxime
+	- Mise en place d'un retour à l'acceuil si l'utilisateur refresh la page. (Pour le moment)
+	
