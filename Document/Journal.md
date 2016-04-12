@@ -227,6 +227,10 @@ Project : Find My Name v_2
 	- affichage historique
 	- affichage partie en cours avec un ami
 	- modification service partie
+	
+- Yani
+	- Fonctionnalité jouer avec timer terminée
+	- Ajout des thèmes aléatoires
 
 - Lionel
 	- Finalisation traitement changement de mot de passe 
@@ -242,6 +246,9 @@ Project : Find My Name v_2
 	
 - Maxime
 	- Création du composent online sur le même principe que le composent Ami
+	
+- Yani
+	- Modification de quelques bugs sur le component jouer
 
 ##Lundi 11/04
 
@@ -259,4 +266,7 @@ Project : Find My Name v_2
 
 - Maxime
 	- Mise en place d'un retour à l'acceuil si l'utilisateur refresh la page. (Pour le moment)
+
+- Yani
+	- Mise en place d'un enregistrement des scores d'une partie
 	
