@@ -207,6 +207,14 @@ Project : Find My Name v_2
 	- Finalisation mise en page profil 
 	- Debut traitement pour changer de mot de passe 
 	
+- Maxime
+	- Mise en place d'une convertion de fichiers Less en fichiers Css grâce à Glup
+	- Création des composent 
+		-Home (page d'accueil)
+		-co (page de connexion)
+		-in( page d'inscription)
+	- Modification de la mise en forme Less
+	
 ##Vendredi 08/04
 
 - Groupe
@@ -231,6 +239,9 @@ Project : Find My Name v_2
 	- affichage détails d'une partie d'un historique
 	- Modification bug sur choix themes
 	- ajout de data
+	
+- Maxime
+	- Création de la composent online sur même principe que la composent Ami
 
 ##Lundi 11/04
 
