@@ -7,4 +7,5 @@
     pays: string;
     theme: string;
     meilleurScore: number;
+    nbparties: number;
 }

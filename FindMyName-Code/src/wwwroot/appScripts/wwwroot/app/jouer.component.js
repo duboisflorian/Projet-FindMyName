@@ -65,16 +65,20 @@ var JouerComponent = (function () {
                     this.remaining++;
                     this.tabreponses.reponses[i].done = true;
                     this.bon = true;
+                    var timer = Rx_1.Observable.timer(0, 5000);
+                    timer.subscribe(function (t) {
+                        _this.bon = null;
+                    });
                 }
             }
             if (this.bon != true) {
                 this.bon = false;
+                var timer = Rx_1.Observable.timer(0, 5000);
+                timer.subscribe(function (t) {
+                    _this.bon = null;
+                });
             }
             this.task = '';
-            var timer = Rx_1.Observable.timer(0, 5000);
-            timer.subscribe(function (t) {
-                _this.bon = null;
-            });
         }
     };
     JouerComponent.prototype.starttimer = function () {

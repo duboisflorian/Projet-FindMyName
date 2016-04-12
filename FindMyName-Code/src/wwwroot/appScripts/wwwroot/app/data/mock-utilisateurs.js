@@ -1,16 +1,16 @@
 "use strict";
 exports.UTILISATEURS = [
-    { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg", "mail": "Florian@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
-    { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg", "mail": "Yani@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
-    { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg", "mail": "maxime@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
-    { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg", "mail": "lionel@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
-    { "id": 5, "name": "diego", "photo": "fichier/logo.jpg", "mail": "diego@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
-    { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg", "mail": "tingting@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
-    { "id": 7, "name": "Marco", "photo": "fichier/logo.jpg", "mail": "Marco@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
-    { "id": 8, "name": "Luffy", "photo": "fichier/logo.jpg", "mail": "Luffy@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
-    { "id": 9, "name": "Mingo", "photo": "fichier/logo.jpg", "mail": "Mingo@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
-    { "id": 10, "name": "Zoro", "photo": "fichier/logo.jpg", "mail": "Zoro@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
-    { "id": 11, "name": "Papucue", "photo": "fichier/logo.jpg", "mail": "Papucue@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15 },
+    { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg", "mail": "Florian@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 5 },
+    { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg", "mail": "Yani@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
+    { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg", "mail": "maxime@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
+    { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg", "mail": "lionel@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
+    { "id": 5, "name": "diego", "photo": "fichier/logo.jpg", "mail": "diego@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
+    { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg", "mail": "tingting@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
+    { "id": 7, "name": "Marco", "photo": "fichier/logo.jpg", "mail": "Marco@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
+    { "id": 8, "name": "Luffy", "photo": "fichier/logo.jpg", "mail": "Luffy@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
+    { "id": 9, "name": "Mingo", "photo": "fichier/logo.jpg", "mail": "Mingo@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
+    { "id": 10, "name": "Zoro", "photo": "fichier/logo.jpg", "mail": "Zoro@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
+    { "id": 11, "name": "Papucue", "photo": "fichier/logo.jpg", "mail": "Papucue@gmail.com", "password": "1234", "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 3 },
     {
         "id": 12,
         "name": "Chandler",
@@ -19,7 +19,8 @@ exports.UTILISATEURS = [
         "password": "ROW-2",
         "pays": "Iceland",
         "theme": "sport",
-        "meilleurScore": 23
+        "meilleurScore": 23,
+        "nbparties": 3
     },
     {
         "id": 13,
@@ -29,7 +30,8 @@ exports.UTILISATEURS = [
         "password": "ROW-3",
         "pays": "Lebanon",
         "theme": "sport",
-        "meilleurScore": 4
+        "meilleurScore": 4,
+        "nbparties": 3
     },
     {
         "id": 14,
@@ -39,7 +41,8 @@ exports.UTILISATEURS = [
         "password": "ROW-4",
         "pays": "Barbados",
         "theme": "sport",
-        "meilleurScore": 23
+        "meilleurScore": 23,
+        "nbparties": 3
     },
     {
         "id": 15,
@@ -49,7 +52,8 @@ exports.UTILISATEURS = [
         "password": "ROW-5",
         "pays": "Libya",
         "theme": "sport",
-        "meilleurScore": 10
+        "meilleurScore": 10,
+        "nbparties": 3
     },
     {
         "id": 16,
@@ -59,7 +63,8 @@ exports.UTILISATEURS = [
         "password": "ROW-6",
         "pays": "Pakistan",
         "theme": "sport",
-        "meilleurScore": 8
+        "meilleurScore": 8,
+        "nbparties": 3
     },
     {
         "id": 17,
@@ -69,7 +74,8 @@ exports.UTILISATEURS = [
         "password": "ROW-7",
         "pays": "Micronesia",
         "theme": "sport",
-        "meilleurScore": 10
+        "meilleurScore": 10,
+        "nbparties": 3
     },
     {
         "id": 18,
@@ -79,7 +85,8 @@ exports.UTILISATEURS = [
         "password": "ROW-8",
         "pays": "Viet Nam",
         "theme": "sport",
-        "meilleurScore": 9
+        "meilleurScore": 9,
+        "nbparties": 3
     },
     {
         "id": 19,
@@ -89,7 +96,8 @@ exports.UTILISATEURS = [
         "password": "ROW-9",
         "pays": "Wallis and Futuna",
         "theme": "sport",
-        "meilleurScore": 25
+        "meilleurScore": 25,
+        "nbparties": 3
     },
     {
         "id": 20,
@@ -99,7 +107,8 @@ exports.UTILISATEURS = [
         "password": "ROW-10",
         "pays": "Heard Island and Mcdonald Islands",
         "theme": "sport",
-        "meilleurScore": 23
+        "meilleurScore": 23,
+        "nbparties": 3
     },
     {
         "id": 21,
@@ -109,7 +118,8 @@ exports.UTILISATEURS = [
         "password": "ROW-11",
         "pays": "Ukraine",
         "theme": "sport",
-        "meilleurScore": 9
+        "meilleurScore": 9,
+        "nbparties": 3
     },
     {
         "id": 22,
@@ -119,7 +129,8 @@ exports.UTILISATEURS = [
         "password": "ROW-12",
         "pays": "Turkmenistan",
         "theme": "sport",
-        "meilleurScore": 13
+        "meilleurScore": 13,
+        "nbparties": 3
     },
     {
         "id": 23,
@@ -129,7 +140,8 @@ exports.UTILISATEURS = [
         "password": "ROW-13",
         "pays": "Lithuania",
         "theme": "sport",
-        "meilleurScore": 16
+        "meilleurScore": 16,
+        "nbparties": 3
     },
     {
         "id": 24,
@@ -139,7 +151,8 @@ exports.UTILISATEURS = [
         "password": "ROW-14",
         "pays": "Angola",
         "theme": "sport",
-        "meilleurScore": 27
+        "meilleurScore": 27,
+        "nbparties": 3
     },
     {
         "id": 25,
@@ -149,7 +162,8 @@ exports.UTILISATEURS = [
         "password": "ROW-15",
         "pays": "Singapore",
         "theme": "sport",
-        "meilleurScore": 27
+        "meilleurScore": 27,
+        "nbparties": 3
     },
     {
         "id": 26,
@@ -159,7 +173,8 @@ exports.UTILISATEURS = [
         "password": "ROW-16",
         "pays": "San Marino",
         "theme": "sport",
-        "meilleurScore": 1
+        "meilleurScore": 1,
+        "nbparties": 3
     },
     {
         "id": 27,
@@ -169,7 +184,8 @@ exports.UTILISATEURS = [
         "password": "ROW-17",
         "pays": "New Caledonia",
         "theme": "sport",
-        "meilleurScore": 18
+        "meilleurScore": 18,
+        "nbparties": 3
     },
     {
         "id": 28,
@@ -179,7 +195,8 @@ exports.UTILISATEURS = [
         "password": "ROW-18",
         "pays": "Cocos (Keeling) Islands",
         "theme": "sport",
-        "meilleurScore": 5
+        "meilleurScore": 5,
+        "nbparties": 3
     },
     {
         "id": 29,
@@ -189,7 +206,8 @@ exports.UTILISATEURS = [
         "password": "ROW-19",
         "pays": "Azerbaijan",
         "theme": "sport",
-        "meilleurScore": 9
+        "meilleurScore": 9,
+        "nbparties": 3
     },
     {
         "id": 30,
@@ -199,7 +217,8 @@ exports.UTILISATEURS = [
         "password": "ROW-20",
         "pays": "Monaco",
         "theme": "sport",
-        "meilleurScore": 8
+        "meilleurScore": 8,
+        "nbparties": 3
     },
     {
         "id": 31,
@@ -209,7 +228,8 @@ exports.UTILISATEURS = [
         "password": "ROW-21",
         "pays": "Falkland Islands",
         "theme": "sport",
-        "meilleurScore": 5
+        "meilleurScore": 5,
+        "nbparties": 3
     },
     {
         "id": 32,
@@ -219,7 +239,8 @@ exports.UTILISATEURS = [
         "password": "ROW-22",
         "pays": "South Sudan",
         "theme": "sport",
-        "meilleurScore": 6
+        "meilleurScore": 6,
+        "nbparties": 3
     },
     {
         "id": 33,
@@ -229,7 +250,8 @@ exports.UTILISATEURS = [
         "password": "ROW-23",
         "pays": "French Southern Territories",
         "theme": "sport",
-        "meilleurScore": 19
+        "meilleurScore": 19,
+        "nbparties": 3
     },
     {
         "id": 34,
@@ -239,7 +261,8 @@ exports.UTILISATEURS = [
         "password": "ROW-24",
         "pays": "French Guiana",
         "theme": "sport",
-        "meilleurScore": 13
+        "meilleurScore": 13,
+        "nbparties": 3
     },
     {
         "id": 35,
@@ -249,7 +272,8 @@ exports.UTILISATEURS = [
         "password": "ROW-25",
         "pays": "Gibraltar",
         "theme": "sport",
-        "meilleurScore": 10
+        "meilleurScore": 10,
+        "nbparties": 3
     },
     {
         "id": 36,
@@ -259,7 +283,8 @@ exports.UTILISATEURS = [
         "password": "ROW-26",
         "pays": "Swaziland",
         "theme": "sport",
-        "meilleurScore": 21
+        "meilleurScore": 21,
+        "nbparties": 3
     },
     {
         "id": 37,
@@ -269,7 +294,8 @@ exports.UTILISATEURS = [
         "password": "ROW-27",
         "pays": "Svalbard and Jan Mayen Islands",
         "theme": "sport",
-        "meilleurScore": 2
+        "meilleurScore": 2,
+        "nbparties": 3
     },
     {
         "id": 38,
@@ -279,7 +305,8 @@ exports.UTILISATEURS = [
         "password": "ROW-28",
         "pays": "Antigua and Barbuda",
         "theme": "sport",
-        "meilleurScore": 13
+        "meilleurScore": 13,
+        "nbparties": 3
     },
     {
         "id": 39,
@@ -289,7 +316,8 @@ exports.UTILISATEURS = [
         "password": "ROW-29",
         "pays": "Cambodia",
         "theme": "sport",
-        "meilleurScore": 14
+        "meilleurScore": 14,
+        "nbparties": 3
     },
     {
         "id": 40,
@@ -299,7 +327,8 @@ exports.UTILISATEURS = [
         "password": "ROW-30",
         "pays": "Kenya",
         "theme": "sport",
-        "meilleurScore": 3
+        "meilleurScore": 3,
+        "nbparties": 3
     },
     {
         "id": 41,
@@ -309,7 +338,8 @@ exports.UTILISATEURS = [
         "password": "ROW-31",
         "pays": "Micronesia",
         "theme": "sport",
-        "meilleurScore": 15
+        "meilleurScore": 15,
+        "nbparties": 3
     },
     {
         "id": 42,
@@ -319,7 +349,8 @@ exports.UTILISATEURS = [
         "password": "ROW-32",
         "pays": "Brunei",
         "theme": "sport",
-        "meilleurScore": 18
+        "meilleurScore": 18,
+        "nbparties": 3
     },
     {
         "id": 43,
@@ -329,7 +360,8 @@ exports.UTILISATEURS = [
         "password": "ROW-33",
         "pays": "Chile",
         "theme": "sport",
-        "meilleurScore": 4
+        "meilleurScore": 4,
+        "nbparties": 3
     },
     {
         "id": 44,
@@ -339,7 +371,8 @@ exports.UTILISATEURS = [
         "password": "ROW-34",
         "pays": "Gibraltar",
         "theme": "sport",
-        "meilleurScore": 18
+        "meilleurScore": 18,
+        "nbparties": 3
     },
     {
         "id": 45,
@@ -349,7 +382,8 @@ exports.UTILISATEURS = [
         "password": "ROW-35",
         "pays": "Netherlands",
         "theme": "sport",
-        "meilleurScore": 7
+        "meilleurScore": 7,
+        "nbparties": 3
     },
     {
         "id": 46,
@@ -359,7 +393,8 @@ exports.UTILISATEURS = [
         "password": "ROW-36",
         "pays": "Jersey",
         "theme": "sport",
-        "meilleurScore": 6
+        "meilleurScore": 6,
+        "nbparties": 3
     },
     {
         "id": 47,
@@ -369,7 +404,8 @@ exports.UTILISATEURS = [
         "password": "ROW-37",
         "pays": "Åland Islands",
         "theme": "sport",
-        "meilleurScore": 6
+        "meilleurScore": 6,
+        "nbparties": 3
     },
     {
         "id": 48,
@@ -379,7 +415,8 @@ exports.UTILISATEURS = [
         "password": "ROW-38",
         "pays": "Azerbaijan",
         "theme": "sport",
-        "meilleurScore": 7
+        "meilleurScore": 7,
+        "nbparties": 3
     },
     {
         "id": 49,
@@ -389,7 +426,8 @@ exports.UTILISATEURS = [
         "password": "ROW-39",
         "pays": "Marshall Islands",
         "theme": "sport",
-        "meilleurScore": 15
+        "meilleurScore": 15,
+        "nbparties": 3
     },
     {
         "id": 50,
@@ -399,7 +437,8 @@ exports.UTILISATEURS = [
         "password": "ROW-40",
         "pays": "Eritrea",
         "theme": "sport",
-        "meilleurScore": 16
+        "meilleurScore": 16,
+        "nbparties": 3
     },
     {
         "id": 51,
@@ -409,7 +448,8 @@ exports.UTILISATEURS = [
         "password": "ROW-41",
         "pays": "Gambia",
         "theme": "sport",
-        "meilleurScore": 10
+        "meilleurScore": 10,
+        "nbparties": 3
     },
     {
         "id": 52,
@@ -419,7 +459,8 @@ exports.UTILISATEURS = [
         "password": "ROW-42",
         "pays": "Côte D'Ivoire (Ivory Coast)",
         "theme": "sport",
-        "meilleurScore": 4
+        "meilleurScore": 4,
+        "nbparties": 3
     },
     {
         "id": 53,
@@ -429,7 +470,8 @@ exports.UTILISATEURS = [
         "password": "ROW-43",
         "pays": "Libya",
         "theme": "sport",
-        "meilleurScore": 6
+        "meilleurScore": 6,
+        "nbparties": 3
     },
     {
         "id": 54,
@@ -439,7 +481,8 @@ exports.UTILISATEURS = [
         "password": "ROW-44",
         "pays": "Cyprus",
         "theme": "sport",
-        "meilleurScore": 7
+        "meilleurScore": 7,
+        "nbparties": 3
     },
     {
         "id": 55,
@@ -449,7 +492,8 @@ exports.UTILISATEURS = [
         "password": "ROW-45",
         "pays": "United States",
         "theme": "sport",
-        "meilleurScore": 4
+        "meilleurScore": 4,
+        "nbparties": 3
     },
     {
         "id": 56,
@@ -459,7 +503,8 @@ exports.UTILISATEURS = [
         "password": "ROW-46",
         "pays": "Czech Republic",
         "theme": "sport",
-        "meilleurScore": 19
+        "meilleurScore": 19,
+        "nbparties": 3
     },
     {
         "id": 57,
@@ -469,7 +514,8 @@ exports.UTILISATEURS = [
         "password": "ROW-47",
         "pays": "Mali",
         "theme": "sport",
-        "meilleurScore": 23
+        "meilleurScore": 23,
+        "nbparties": 3
     },
     {
         "id": 58,
@@ -479,7 +525,8 @@ exports.UTILISATEURS = [
         "password": "ROW-48",
         "pays": "Iran",
         "theme": "sport",
-        "meilleurScore": 5
+        "meilleurScore": 5,
+        "nbparties": 3
     },
     {
         "id": 59,
@@ -489,7 +536,8 @@ exports.UTILISATEURS = [
         "password": "ROW-49",
         "pays": "Italy",
         "theme": "sport",
-        "meilleurScore": 19
+        "meilleurScore": 19,
+        "nbparties": 3
     },
     {
         "id": 60,
@@ -499,7 +547,8 @@ exports.UTILISATEURS = [
         "password": "ROW-50",
         "pays": "Bosnia and Herzegovina",
         "theme": "sport",
-        "meilleurScore": 10
+        "meilleurScore": 10,
+        "nbparties": 3
     },
     {
         "id": 61,
@@ -509,7 +558,8 @@ exports.UTILISATEURS = [
         "password": "ROW-51",
         "pays": "Bosnia and Herzegovina",
         "theme": "sport",
-        "meilleurScore": 12
+        "meilleurScore": 12,
+        "nbparties": 3
     },
     {
         "id": 62,
@@ -519,7 +569,8 @@ exports.UTILISATEURS = [
         "password": "ROW-52",
         "pays": "Mauritius",
         "theme": "sport",
-        "meilleurScore": 9
+        "meilleurScore": 9,
+        "nbparties": 3
     },
     {
         "id": 63,
@@ -529,7 +580,8 @@ exports.UTILISATEURS = [
         "password": "ROW-53",
         "pays": "Cayman Islands",
         "theme": "sport",
-        "meilleurScore": 23
+        "meilleurScore": 23,
+        "nbparties": 3
     },
     {
         "id": 64,
@@ -539,7 +591,8 @@ exports.UTILISATEURS = [
         "password": "ROW-54",
         "pays": "Trinidad and Tobago",
         "theme": "sport",
-        "meilleurScore": 2
+        "meilleurScore": 2,
+        "nbparties": 3
     },
     {
         "id": 65,
@@ -549,7 +602,8 @@ exports.UTILISATEURS = [
         "password": "ROW-55",
         "pays": "Swaziland",
         "theme": "sport",
-        "meilleurScore": 1
+        "meilleurScore": 1,
+        "nbparties": 3
     },
     {
         "id": 66,
@@ -559,7 +613,8 @@ exports.UTILISATEURS = [
         "password": "ROW-56",
         "pays": "Lithuania",
         "theme": "sport",
-        "meilleurScore": 17
+        "meilleurScore": 17,
+        "nbparties": 3
     },
     {
         "id": 67,
@@ -569,7 +624,8 @@ exports.UTILISATEURS = [
         "password": "ROW-57",
         "pays": "Ireland",
         "theme": "sport",
-        "meilleurScore": 5
+        "meilleurScore": 5,
+        "nbparties": 3
     },
     {
         "id": 68,
@@ -579,7 +635,8 @@ exports.UTILISATEURS = [
         "password": "ROW-58",
         "pays": "Cambodia",
         "theme": "sport",
-        "meilleurScore": 16
+        "meilleurScore": 16,
+        "nbparties": 3
     },
     {
         "id": 69,
@@ -589,7 +646,8 @@ exports.UTILISATEURS = [
         "password": "ROW-59",
         "pays": "Macedonia",
         "theme": "sport",
-        "meilleurScore": 11
+        "meilleurScore": 11,
+        "nbparties": 3
     },
     {
         "id": 70,
@@ -599,7 +657,8 @@ exports.UTILISATEURS = [
         "password": "ROW-60",
         "pays": "Jersey",
         "theme": "sport",
-        "meilleurScore": 1
+        "meilleurScore": 1,
+        "nbparties": 3
     },
     {
         "id": 71,
@@ -609,7 +668,8 @@ exports.UTILISATEURS = [
         "password": "ROW-61",
         "pays": "Cuba",
         "theme": "sport",
-        "meilleurScore": 25
+        "meilleurScore": 25,
+        "nbparties": 3
     },
     {
         "id": 72,
@@ -619,7 +679,8 @@ exports.UTILISATEURS = [
         "password": "ROW-62",
         "pays": "Djibouti",
         "theme": "sport",
-        "meilleurScore": 5
+        "meilleurScore": 5,
+        "nbparties": 3
     },
     {
         "id": 73,
@@ -629,7 +690,8 @@ exports.UTILISATEURS = [
         "password": "ROW-63",
         "pays": "Liberia",
         "theme": "sport",
-        "meilleurScore": 5
+        "meilleurScore": 5,
+        "nbparties": 3
     },
     {
         "id": 74,
@@ -639,7 +701,8 @@ exports.UTILISATEURS = [
         "password": "ROW-64",
         "pays": "Wallis and Futuna",
         "theme": "sport",
-        "meilleurScore": 26
+        "meilleurScore": 26,
+        "nbparties": 3
     },
     {
         "id": 75,
@@ -649,7 +712,8 @@ exports.UTILISATEURS = [
         "password": "ROW-65",
         "pays": "Greenland",
         "theme": "sport",
-        "meilleurScore": 16
+        "meilleurScore": 16,
+        "nbparties": 3
     },
     {
         "id": 76,
@@ -659,7 +723,8 @@ exports.UTILISATEURS = [
         "password": "ROW-66",
         "pays": "Timor-Leste",
         "theme": "sport",
-        "meilleurScore": 11
+        "meilleurScore": 11,
+        "nbparties": 3
     },
     {
         "id": 77,
@@ -669,7 +734,8 @@ exports.UTILISATEURS = [
         "password": "ROW-67",
         "pays": "Pakistan",
         "theme": "sport",
-        "meilleurScore": 26
+        "meilleurScore": 26,
+        "nbparties": 3
     },
     {
         "id": 78,
@@ -679,7 +745,8 @@ exports.UTILISATEURS = [
         "password": "ROW-68",
         "pays": "Cameroon",
         "theme": "sport",
-        "meilleurScore": 13
+        "meilleurScore": 13,
+        "nbparties": 3
     },
     {
         "id": 79,
@@ -689,7 +756,8 @@ exports.UTILISATEURS = [
         "password": "ROW-69",
         "pays": "Ghana",
         "theme": "sport",
-        "meilleurScore": 15
+        "meilleurScore": 15,
+        "nbparties": 3
     },
     {
         "id": 80,
@@ -699,7 +767,8 @@ exports.UTILISATEURS = [
         "password": "ROW-70",
         "pays": "Paraguay",
         "theme": "sport",
-        "meilleurScore": 14
+        "meilleurScore": 14,
+        "nbparties": 3
     },
     {
         "id": 81,
@@ -709,7 +778,8 @@ exports.UTILISATEURS = [
         "password": "ROW-71",
         "pays": "Kenya",
         "theme": "sport",
-        "meilleurScore": 8
+        "meilleurScore": 8,
+        "nbparties": 3
     },
     {
         "id": 82,
@@ -719,7 +789,8 @@ exports.UTILISATEURS = [
         "password": "ROW-72",
         "pays": "Guam",
         "theme": "sport",
-        "meilleurScore": 13
+        "meilleurScore": 13,
+        "nbparties": 3
     },
     {
         "id": 83,
@@ -729,7 +800,8 @@ exports.UTILISATEURS = [
         "password": "ROW-73",
         "pays": "Ecuador",
         "theme": "sport",
-        "meilleurScore": 16
+        "meilleurScore": 16,
+        "nbparties": 3
     },
     {
         "id": 84,
@@ -739,7 +811,8 @@ exports.UTILISATEURS = [
         "password": "ROW-74",
         "pays": "Sweden",
         "theme": "sport",
-        "meilleurScore": 25
+        "meilleurScore": 25,
+        "nbparties": 3
     },
     {
         "id": 85,
@@ -749,7 +822,8 @@ exports.UTILISATEURS = [
         "password": "ROW-75",
         "pays": "Rwanda",
         "theme": "sport",
-        "meilleurScore": 27
+        "meilleurScore": 27,
+        "nbparties": 3
     },
     {
         "id": 86,
@@ -759,7 +833,8 @@ exports.UTILISATEURS = [
         "password": "ROW-76",
         "pays": "Mongolia",
         "theme": "sport",
-        "meilleurScore": 20
+        "meilleurScore": 20,
+        "nbparties": 3
     },
     {
         "id": 87,
@@ -769,7 +844,8 @@ exports.UTILISATEURS = [
         "password": "ROW-77",
         "pays": "Czech Republic",
         "theme": "sport",
-        "meilleurScore": 27
+        "meilleurScore": 27,
+        "nbparties": 3
     },
     {
         "id": 88,
@@ -779,7 +855,8 @@ exports.UTILISATEURS = [
         "password": "ROW-78",
         "pays": "Romania",
         "theme": "sport",
-        "meilleurScore": 6
+        "meilleurScore": 6,
+        "nbparties": 3
     },
     {
         "id": 89,
@@ -789,7 +866,8 @@ exports.UTILISATEURS = [
         "password": "ROW-79",
         "pays": "Russian Federation",
         "theme": "sport",
-        "meilleurScore": 1
+        "meilleurScore": 1,
+        "nbparties": 3
     },
     {
         "id": 90,
@@ -799,7 +877,8 @@ exports.UTILISATEURS = [
         "password": "ROW-80",
         "pays": "Mayotte",
         "theme": "sport",
-        "meilleurScore": 1
+        "meilleurScore": 1,
+        "nbparties": 3
     },
     {
         "id": 91,
@@ -809,7 +888,8 @@ exports.UTILISATEURS = [
         "password": "ROW-81",
         "pays": "Costa Rica",
         "theme": "sport",
-        "meilleurScore": 20
+        "meilleurScore": 20,
+        "nbparties": 3
     },
     {
         "id": 92,
@@ -819,7 +899,8 @@ exports.UTILISATEURS = [
         "password": "ROW-82",
         "pays": "Guernsey",
         "theme": "sport",
-        "meilleurScore": 18
+        "meilleurScore": 18,
+        "nbparties": 3
     },
     {
         "id": 93,
@@ -829,7 +910,8 @@ exports.UTILISATEURS = [
         "password": "ROW-83",
         "pays": "American Samoa",
         "theme": "sport",
-        "meilleurScore": 20
+        "meilleurScore": 20,
+        "nbparties": 3
     },
     {
         "id": 94,
@@ -839,7 +921,8 @@ exports.UTILISATEURS = [
         "password": "ROW-84",
         "pays": "San Marino",
         "theme": "sport",
-        "meilleurScore": 3
+        "meilleurScore": 3,
+        "nbparties": 3
     },
     {
         "id": 95,
@@ -849,7 +932,8 @@ exports.UTILISATEURS = [
         "password": "ROW-85",
         "pays": "Bermuda",
         "theme": "sport",
-        "meilleurScore": 8
+        "meilleurScore": 8,
+        "nbparties": 3
     },
     {
         "id": 96,
@@ -859,7 +943,8 @@ exports.UTILISATEURS = [
         "password": "ROW-86",
         "pays": "Tunisia",
         "theme": "sport",
-        "meilleurScore": 24
+        "meilleurScore": 24,
+        "nbparties": 3
     },
     {
         "id": 97,
@@ -869,7 +954,8 @@ exports.UTILISATEURS = [
         "password": "ROW-87",
         "pays": "Iran",
         "theme": "sport",
-        "meilleurScore": 27
+        "meilleurScore": 27,
+        "nbparties": 3
     },
     {
         "id": 98,
@@ -879,7 +965,8 @@ exports.UTILISATEURS = [
         "password": "ROW-88",
         "pays": "France",
         "theme": "sport",
-        "meilleurScore": 15
+        "meilleurScore": 15,
+        "nbparties": 3
     },
     {
         "id": 99,
@@ -889,7 +976,8 @@ exports.UTILISATEURS = [
         "password": "ROW-89",
         "pays": "Sudan",
         "theme": "sport",
-        "meilleurScore": 30
+        "meilleurScore": 30,
+        "nbparties": 3
     },
     {
         "id": 100,
@@ -899,7 +987,8 @@ exports.UTILISATEURS = [
         "password": "ROW-90",
         "pays": "Kyrgyzstan",
         "theme": "sport",
-        "meilleurScore": 19
+        "meilleurScore": 19,
+        "nbparties": 3
     },
     {
         "id": 101,
@@ -909,7 +998,8 @@ exports.UTILISATEURS = [
         "password": "ROW-91",
         "pays": "Thailand",
         "theme": "sport",
-        "meilleurScore": 28
+        "meilleurScore": 28,
+        "nbparties": 3
     },
     {
         "id": 102,
@@ -919,7 +1009,8 @@ exports.UTILISATEURS = [
         "password": "ROW-92",
         "pays": "Belize",
         "theme": "sport",
-        "meilleurScore": 9
+        "meilleurScore": 9,
+        "nbparties": 3
     },
     {
         "id": 103,
@@ -929,7 +1020,8 @@ exports.UTILISATEURS = [
         "password": "ROW-93",
         "pays": "Holy See (Vatican City State)",
         "theme": "sport",
-        "meilleurScore": 26
+        "meilleurScore": 26,
+        "nbparties": 3
     },
     {
         "id": 104,
@@ -939,7 +1031,8 @@ exports.UTILISATEURS = [
         "password": "ROW-94",
         "pays": "Tokelau",
         "theme": "sport",
-        "meilleurScore": 21
+        "meilleurScore": 21,
+        "nbparties": 3
     },
     {
         "id": 105,
@@ -949,7 +1042,8 @@ exports.UTILISATEURS = [
         "password": "ROW-95",
         "pays": "Taiwan",
         "theme": "sport",
-        "meilleurScore": 4
+        "meilleurScore": 4,
+        "nbparties": 3
     },
     {
         "id": 106,
@@ -959,7 +1053,8 @@ exports.UTILISATEURS = [
         "password": "ROW-96",
         "pays": "Moldova",
         "theme": "sport",
-        "meilleurScore": 14
+        "meilleurScore": 14,
+        "nbparties": 3
     },
     {
         "id": 107,
@@ -969,7 +1064,8 @@ exports.UTILISATEURS = [
         "password": "ROW-97",
         "pays": "Timor-Leste",
         "theme": "sport",
-        "meilleurScore": 10
+        "meilleurScore": 10,
+        "nbparties": 3
     },
     {
         "id": 108,
@@ -979,7 +1075,8 @@ exports.UTILISATEURS = [
         "password": "ROW-98",
         "pays": "Greece",
         "theme": "sport",
-        "meilleurScore": 12
+        "meilleurScore": 12,
+        "nbparties": 3
     },
     {
         "id": 109,
@@ -989,7 +1086,8 @@ exports.UTILISATEURS = [
         "password": "ROW-99",
         "pays": "Benin",
         "theme": "sport",
-        "meilleurScore": 6
+        "meilleurScore": 6,
+        "nbparties": 3
     },
     {
         "id": 110,
@@ -999,7 +1097,8 @@ exports.UTILISATEURS = [
         "password": "ROW-100",
         "pays": "Tuvalu",
         "theme": "sport",
-        "meilleurScore": 2
+        "meilleurScore": 2,
+        "nbparties": 3
     }
 ];
 /*

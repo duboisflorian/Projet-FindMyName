@@ -22,6 +22,9 @@ exports.THEMES = [
     },
     {
         "text": "bayern", "id": 9, "photo": "./fichier/bayern.jpg", "done": false
+    },
+    {
+        "text": "Marques de voiture", "id": 10, "photo": "./fichier/marque-voiture.jpg", "done": false
     }
 ];
 /*

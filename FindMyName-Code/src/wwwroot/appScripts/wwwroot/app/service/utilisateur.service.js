@@ -66,7 +66,7 @@ var UtilisateurService = (function () {
         return mock_utilisateurs_1.UTILISATEURS[mock_utilisateurs_1.UTILISATEURS.length - 1].id;
     };
     UtilisateurService.prototype.ajouterUtilisateur = function (name, mail, password) {
-        mock_utilisateurs_1.UTILISATEURS.push({ "id": this.getlastid() + 1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password, "pays": "France", "theme": "sport", "meilleurScore": 15 });
+        mock_utilisateurs_1.UTILISATEURS.push({ "id": this.getlastid() + 1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password, "pays": "France", "theme": "sport", "meilleurScore": 15, "nbparties": 0 });
         return this.getlastid();
     };
     UtilisateurService.prototype.getOnlineutilisateur = function () {
