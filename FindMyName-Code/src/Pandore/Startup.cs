@@ -6,6 +6,7 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO;
 
 namespace Pandore
 {
@@ -21,9 +22,20 @@ namespace Pandore
         public void Configure(IApplicationBuilder app)
         {
             app.UseIISPlatformHandler();
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-            
+
+            app.Use(async (context, next) =>
+            {
+                await next();
+
+                if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value))
+                {
+                    context.Request.Path = "";
+                    await next();
+                }
+            });
+
+            app.UseFileServer();
+
         }
 
         
