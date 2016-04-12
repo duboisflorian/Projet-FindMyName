@@ -269,4 +269,7 @@ Project : Find My Name v_2
 
 - Yani
 	- Mise en place d'un enregistrement des scores d'une partie
-	
+
+- Lionel
+	- Finalisation traitement pour changer thème favoris + pays
+	- Début mise en page statistiques 
