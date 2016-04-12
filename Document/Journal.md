@@ -241,7 +241,7 @@ Project : Find My Name v_2
 	- ajout de data
 	
 - Maxime
-	- Création de la composent online sur même principe que la composent Ami
+	- Création du composent online sur le même principe que le composent Ami
 
 ##Lundi 11/04
 
