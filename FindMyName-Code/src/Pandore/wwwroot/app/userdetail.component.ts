@@ -17,6 +17,8 @@ export class UserdetailComponent implements OnInit {
     id: number;
     i: number;
     selectPhoto: string;
+    selectTheme: string;
+    selectPays: string;
 
     constructor(
         private _router: Router,
@@ -64,6 +66,24 @@ export class UserdetailComponent implements OnInit {
         }
         alert("Photo changée");
 
+    }
+
+    changeTheme() {
+        //alert("Thème selectionner "+ this.selectTheme);
+        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].id == this.u.id) {
+                UTILISATEURS[this.i].theme = this.selectTheme;
+            }
+        }
+    }
+
+    changePays() {
+        //alert("Pays " + this.selectPays);
+        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].id == this.u.id) {
+                UTILISATEURS[this.i].pays = this.selectPays;
+            }
+        }
     }
 }
 

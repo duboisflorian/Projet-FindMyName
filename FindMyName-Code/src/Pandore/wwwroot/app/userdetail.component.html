@@ -29,7 +29,7 @@
                 <center>
                     <td colspan="2">
                         <form (ngSubmit)="loadListPhoto()">
-                            <img class="portrait" src="{{u.photo}}" /><input class="btn-primary" type="submit" value="Changer de photo" /><font color="black">
+                            <img class="portrait" src="{{u.photo}}" /><font color="black">
                                 <select [(ngModel)]="selectPhoto">
                                     <option selected>-- Selectionner une photo de profil --</option>
                                     <option>logo</option>
@@ -39,6 +39,7 @@
                                     <option>ol</option>
                                 </select>
                             </font>
+                            <input class="btn-primary" type="submit" value="Changer de photo" />
                         </form>
                     </td>
                 </center>
@@ -59,7 +60,7 @@
             <tr>
                 <td><font color="black"><input type="text" placeholder="entrer votre email ici" value="{{u.mail}}" disabled="disabled"/></font><br /> <br /></td>
                 <td>Thème favoris : {{u.theme}} <font color="black">
-                    <select [(ngModel)]="selectTheme">
+                    <select [(ngModel)]="selectTheme" (ngModelChange)="changeTheme()">
                         <option selected>-- Selectionner un thème --</option>
                         <option>Sport</option>
                         <option>Alimentation</option>
@@ -75,7 +76,7 @@
     </tr>
     <tr>
         <td>Pays : {{u.pays}}<font color="black">
-    <select [(ngModel)]="selectPays">
+    <select [(ngModel)]="selectPays" (ngModelChange)="changePays()">
         <option selected>-- Selectionner un pays --</option>
         <option>France</option>
         <option>Allemagne</option>
