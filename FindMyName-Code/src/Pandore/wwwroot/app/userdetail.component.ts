@@ -11,17 +11,19 @@ import { PartieService } from './service/partie.service';
     templateUrl: 'app/userdetail.component.html'
 })
 export class UserdetailComponent implements OnInit {
-
+    
     utilisateurs: Utilisateur;
     u: Utilisateur;
     password: string;
     id: number;
     i: number;
-    selectPhoto: string ="logo";
+    selectPhoto: string;
     selectTheme: string;
     selectPays: string = "France";
     nbparties: number;
     theme_favori: string;
+
+    pays = ['France','Allemagne','Chine','Japon','Etats-Unis','Royaume-Uni','Canada'];
 
     constructor(
         private _router: Router,
@@ -35,6 +37,23 @@ export class UserdetailComponent implements OnInit {
         this.u = this._uService.getUtilisateur(us);
         this.nbparties = this._pService.getnbParties(us);
         this.theme_favori = this._pService.getThemeFavori(us);
+        this.selectPhoto = this._uService.getPhoto(us);
+        if (this.selectPhoto == "fichier/logo.jpg") {
+            this.selectPhoto = "logo";
+        }
+        else if (this.selectPhoto == "fichier/arsenal.jpg") {
+            this.selectPhoto = "arsenal";
+        }
+        else if (this.selectPhoto == "fichier/barca.jpg") {
+            this.selectPhoto = "barca";
+        }
+        else if (this.selectPhoto == "fichier/psg.jpg") {
+            this.selectPhoto = "psg";
+        }
+        else if (this.selectPhoto == "fichier/ol.jpg") {
+            this.selectPhoto = "ol";
+        }
+        //alert("Photo :" + this.selectPhoto);
     }
 
     gotoDeco() {

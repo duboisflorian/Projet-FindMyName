@@ -67,13 +67,7 @@
             <tr>
                 <td>Pays :<font color="black">
                         <select [(ngModel)]="selectPays" (ngModelChange)="changePays()">
-                            <option value=""> value="France"France</option>
-                            <option value="Allemagne">Allemagne</option>
-                            <option value="Chine">Chine</option>
-                            <option value="Etats-Unis">Etats-Unis</option>
-                            <option value="Japon">Japon</option>
-                            <option value="Royaume-Uni">Royaume-Uni</option>
-                            <option value="Canada">Canada</option>
+                            <option *ngFor="#p of pays" [value]="p">{{p}}</option>                        
                         </select>
                     </font></td>
                 <td></td>

@@ -1,3 +1,4 @@
+"use strict";
 exports.Reponses = [
     {
         "id": 1, "reponses": [

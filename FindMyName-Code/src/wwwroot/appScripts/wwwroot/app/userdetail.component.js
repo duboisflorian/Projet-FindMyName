@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,14 +20,31 @@ var UserdetailComponent = (function () {
         this._routeParams = _routeParams;
         this._pService = _pService;
         this._uService = _uService;
-        this.selectPhoto = "logo";
         this.selectPays = "France";
+        this.pays = ['France', 'Allemagne', 'Chine', 'Japon', 'Etats-Unis', 'Royaume-Uni', 'Canada'];
     }
     UserdetailComponent.prototype.ngOnInit = function () {
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.nbparties = this._pService.getnbParties(us);
         this.theme_favori = this._pService.getThemeFavori(us);
+        this.selectPhoto = this._uService.getPhoto(us);
+        if (this.selectPhoto == "fichier/logo.jpg") {
+            this.selectPhoto = "logo";
+        }
+        else if (this.selectPhoto == "fichier/arsenal.jpg") {
+            this.selectPhoto = "arsenal";
+        }
+        else if (this.selectPhoto == "fichier/barca.jpg") {
+            this.selectPhoto = "barca";
+        }
+        else if (this.selectPhoto == "fichier/psg.jpg") {
+            this.selectPhoto = "psg";
+        }
+        else if (this.selectPhoto == "fichier/ol.jpg") {
+            this.selectPhoto = "ol";
+        }
+        //alert("Photo :" + this.selectPhoto);
     };
     UserdetailComponent.prototype.gotoDeco = function () {
         alert("Vous avez été déconnecté");
@@ -73,7 +91,7 @@ var UserdetailComponent = (function () {
         __metadata('design:paramtypes', [router_1.Router, router_2.RouteParams, partie_service_1.PartieService, utilisateur_service_1.UtilisateurService])
     ], UserdetailComponent);
     return UserdetailComponent;
-})();
+}());
 exports.UserdetailComponent = UserdetailComponent;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
