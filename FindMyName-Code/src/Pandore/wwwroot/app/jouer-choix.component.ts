@@ -39,7 +39,7 @@ export class JouerChoixComponent implements OnInit {
             .then(themes => this.themes = themes.slice(0, 4));*/
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
-        this.sTimeout = setTimeout(() => this.endTimer(), 3000);
+        this.sTimeout = setTimeout(() => this.endTimer(), 6000);
         //setTimeout(this.endTimer, 3000);
     }
     gotoContact() {
@@ -49,8 +49,9 @@ export class JouerChoixComponent implements OnInit {
         window.history.back();
     }
     endTimer() {
-        var selectedTheme = this.themes[1];
-        this.gotoJouer(selectedTheme);
+        let id = +this._routeParams.get('id');
+        let link = ['Jouer', { us: this.u.id, id: id, th: this.themes[1].id }];
+        this._router.navigate(link);
     }
 
     onSelect(theme: Theme) {
@@ -58,6 +59,7 @@ export class JouerChoixComponent implements OnInit {
     }
 
     gotoJouer(theme: Theme) {
+        clearTimeout(this.sTimeout);
         this.selectedTheme = theme;  
         let id = +this._routeParams.get('id');
         let link = ['Jouer', { us: this.u.id, id: id ,th: this.selectedTheme.id }];

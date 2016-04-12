@@ -4,16 +4,16 @@ import { Injectable } from 'angular2/core';
 
 @Injectable()
 export class ThemeService {
- t: Theme[];
+    t: Theme[];
     getThemes() {
-     this.t =[];
+        this.t = [];
         this.melanger();
         return this.t;
     }
 
     melanger() {
         var aleatoire: number[] = [];
-        var nb = Math.floor(Math.random() * THEMES.length) ;
+        var nb = Math.floor(Math.random() * THEMES.length);
         this.t.push(THEMES[nb]);
         aleatoire.push(nb);
         for (var i = 0; i < 3; i++) {
@@ -42,6 +42,12 @@ export class ThemeService {
         for (var i = 0; i < THEMES.length; i++) {
             if (THEMES[i].id == id)
                 return THEMES[i];
+        }
+    }
+    getName(u: number) {
+        for (var i = 0; i < THEMES.length; i++) {
+            if (THEMES[i].id == u)
+                return THEMES[i].text;
         }
     }
 }

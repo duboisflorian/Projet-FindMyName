@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,8 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var mock_parti_1 = require('../data/mock-parti');
 var core_1 = require('angular2/core');
+var utilisateur_service_1 = require('../service/utilisateur.service');
+var theme_service_1 = require('../service/theme.service');
 var PartieService = (function () {
-    function PartieService() {
+    function PartieService(_uService, _tService) {
+        this._uService = _uService;
+        this._tService = _tService;
     }
     //toutes les parties d'un utilisateur en cours
     PartieService.prototype.getPartiesEnCours = function (us) {
@@ -24,7 +27,7 @@ var PartieService = (function () {
     };
     //savoir si il y a une partie en cours entre deux personnes
     PartieService.prototype.getEn_Cours = function (us, ami) {
-        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+        for (var i = mock_parti_1.PARTIES.length - 1; i >= 0; i--) {
             if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us)) {
                 if (mock_parti_1.PARTIES[i].player == null) {
                     return false;
@@ -37,7 +40,7 @@ var PartieService = (function () {
         return false;
     };
     PartieService.prototype.getPartieEnCours = function (us, ami) {
-        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+        for (var i = mock_parti_1.PARTIES.length - 1; i >= 0; i--) {
             if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us))
                 return mock_parti_1.PARTIES[i];
         }
@@ -68,12 +71,68 @@ var PartieService = (function () {
         }
         return nb;
     };
+    PartieService.prototype.getPartieExiste = function (us, ami) {
+        for (var i = mock_parti_1.PARTIES.length - 1; i >= 0; i--) {
+            if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us))
+                return mock_parti_1.PARTIES[i];
+        }
+        return null;
+    };
+    PartieService.prototype.AjouterPartie = function (us, ami, th, score) {
+        var j1 = this._uService.getName(us);
+        var j2 = this._uService.getName(ami);
+        var id_partie = mock_parti_1.PARTIES.length + 1;
+        var theme = this._tService.getName(th);
+        alert(ami);
+        mock_parti_1.PARTIES.push({ "id_partie": id_partie, "id_j1": us, "id_j2": ami, "j1": j1, "j2": j2, "s1": 0, "s2": 0, "player": ami, "manche": [{ "id_theme": th, "theme": theme, "s1": score, "s2": null },] });
+    };
+    PartieService.prototype.ModifierPartie = function (us, ami, th, score, partie) {
+        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+            if (mock_parti_1.PARTIES[i].id_partie == partie.id_partie) {
+                var n = mock_parti_1.PARTIES[i].manche.length - 1;
+                if (mock_parti_1.PARTIES[i].manche[n].s1 == null) {
+                    mock_parti_1.PARTIES[i].manche[n].s1 = score;
+                    if (mock_parti_1.PARTIES[i].manche[n].s1 > mock_parti_1.PARTIES[i].manche[n].s2) {
+                        mock_parti_1.PARTIES[i].s1 = mock_parti_1.PARTIES[i].s1 + 1;
+                    }
+                    if (mock_parti_1.PARTIES[i].manche[n].s1 < mock_parti_1.PARTIES[i].manche[n].s2) {
+                        mock_parti_1.PARTIES[i].s2 = mock_parti_1.PARTIES[i].s2 + 1;
+                    }
+                    if (mock_parti_1.PARTIES[i].s2 == 3 || mock_parti_1.PARTIES[i].s1 == 3) {
+                        alert("partie fini");
+                        mock_parti_1.PARTIES[i].player = null;
+                    }
+                }
+                else if (mock_parti_1.PARTIES[i].manche[n].s2 == null) {
+                    mock_parti_1.PARTIES[i].manche[n].s2 = score;
+                    if (mock_parti_1.PARTIES[i].manche[n].s1 > mock_parti_1.PARTIES[i].manche[n].s2) {
+                        mock_parti_1.PARTIES[i].s1 = mock_parti_1.PARTIES[i].s1 + 1;
+                    }
+                    if (mock_parti_1.PARTIES[i].manche[n].s1 < mock_parti_1.PARTIES[i].manche[n].s2) {
+                        mock_parti_1.PARTIES[i].s2 = mock_parti_1.PARTIES[i].s2 + 1;
+                    }
+                    if (mock_parti_1.PARTIES[i].s2 == 3 || mock_parti_1.PARTIES[i].s1 == 3) {
+                        mock_parti_1.PARTIES[i].player = null;
+                        alert("partie fini");
+                    }
+                }
+                else {
+                    var theme = this._tService.getName(th);
+                    if (us == mock_parti_1.PARTIES[i].id_j1)
+                        mock_parti_1.PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": score, "s2": null });
+                    else
+                        mock_parti_1.PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": null, "s2": score });
+                    mock_parti_1.PARTIES[i].player = ami;
+                }
+            }
+        }
+    };
     PartieService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [utilisateur_service_1.UtilisateurService, theme_service_1.ThemeService])
     ], PartieService);
     return PartieService;
-}());
+})();
 exports.PartieService = PartieService;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

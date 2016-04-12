@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -12,16 +11,16 @@ var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var router_2 = require('angular2/router');
 var jouer_service_1 = require('./service/jouer.service');
-var partie_service_1 = require('./service/partie.service');
 var theme_service_1 = require('./service/theme.service');
+var partie_service_1 = require('./service/partie.service');
 var utilisateur_service_1 = require('./service/utilisateur.service');
 var Rx_1 = require('rxjs/Rx');
 var JouerComponent = (function () {
-    function JouerComponent(_router, _jouerService, _themeService, _partieService, _uService, _routeParams) {
+    function JouerComponent(_router, _jouerService, _themeService, _pService, _uService, _routeParams) {
         this._router = _router;
         this._jouerService = _jouerService;
         this._themeService = _themeService;
-        this._partieService = _partieService;
+        this._pService = _pService;
         this._uService = _uService;
         this._routeParams = _routeParams;
         this.task = '';
@@ -45,12 +44,9 @@ var JouerComponent = (function () {
             this.tabreponses.reponses[i].done = false;
         }
         var us = +this._routeParams.get('us');
-        var id = +this._routeParams.get('id');
         this.u = this._uService.getUtilisateur(us);
         this.theme = this._themeService.getTheme(th);
         this.starttimer();
-    };
-    JouerComponent.prototype.ngOnDestroy = function () {
     };
     JouerComponent.prototype.getReponse = function () {
         return this.reponse;
@@ -81,21 +77,33 @@ var JouerComponent = (function () {
         }
     };
     JouerComponent.prototype.starttimer = function () {
-        this.countdown(1, 0, this._router, this.u.id);
+        var _this = this;
+        this.countdown(0, 30, this._router, this.u.id);
+        this.sTimeout = setTimeout(function () { return _this.gotoContact(); }, 120000);
     };
-    JouerComponent.prototype.endPartie = function () {
-        alert("gg");
-        this._router.navigate(['Contact', { us: this.u.id }]);
+    JouerComponent.prototype.ngOnDestroy = function () {
+        clearTimeout(this.sTimeout);
+        var id = +this._routeParams.get('id');
+        var us = +this._routeParams.get('us');
+        var th = +this._routeParams.get('th');
+        this.p = this._pService.getPartieExiste(us, id);
+        if (this.p == null || this.p.player == null) {
+            this._pService.AjouterPartie(us, id, th, this.remaining);
+        }
+        if (this.p.player != null) {
+            this._pService.ModifierPartie(us, id, th, this.remaining, this.p);
+        }
+        clearTimeout(this.sTimeout);
+        this.gotoContact();
     };
     JouerComponent.prototype.countdown = function (minutes, seconds, _router, id) {
-        var element, endTime, hours, mins, msLeft, time;
+        var element, endTime, hours, msLeft, mins, time;
         function twoDigits(n) {
             return (n <= 9 ? "0" + n : n);
         }
         function updateTimer() {
             msLeft = endTime - (+new Date);
             if (msLeft < 1000) {
-                _router.navigate(['Contact', { us: id }]);
             }
             else {
                 time = new Date(msLeft);
@@ -117,7 +125,7 @@ var JouerComponent = (function () {
         __metadata('design:paramtypes', [router_2.Router, jouer_service_1.JouerService, theme_service_1.ThemeService, partie_service_1.PartieService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
     ], JouerComponent);
     return JouerComponent;
-}());
+})();
 exports.JouerComponent = JouerComponent;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

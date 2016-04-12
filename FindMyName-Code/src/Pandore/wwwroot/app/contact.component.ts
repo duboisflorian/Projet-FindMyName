@@ -142,16 +142,16 @@ export class ContactComponent implements OnInit {
     addAmi() {
         if (this.utilisateurs = this._uService.getUtilisateur(this.contactadd)) {
             if ((this.t = this._contactService.getAmiExiste(this.contactadd, this.u.id)) || this.contactadd == this.u.id) {
-                    alert("cette personne est déjà dans tes amis");
-                    this.contactadd = null;
-                } else {
-                    this._contactService.addAmi(this.utilisateurs, this.u.id);
-                    this.contactadd = null;
-                }
+                alert("cette personne est déjà dans tes amis");
+                this.contactadd = null;
             } else {
-                alert("cette personne n'existe pas");
+                this._contactService.addAmi(this.utilisateurs, this.u.id);
                 this.contactadd = null;
             }
+        } else {
+            alert("cette personne n'existe pas");
+            this.contactadd = null;
+        }
     }
 
     jouer() {
