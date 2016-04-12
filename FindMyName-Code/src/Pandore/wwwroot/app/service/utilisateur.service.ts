@@ -1,42 +1,41 @@
 ﻿import { Utilisateur } from '../classe/utilisateur';
 import { UTILISATEURS } from '../data/mock-utilisateurs';
 import { Injectable } from 'angular2/core';
+import { ThemeService } from '../service/theme.service';
+import { PartieService } from '../service/partie.service';
 
 @Injectable()
 export class UtilisateurService {
-    i: number;
+
+    constructor(
+        private _pService: PartieService,
+        private _tService: ThemeService) { }
 
     getUtilisateurs() {
         return Promise.resolve(UTILISATEURS);
     }
 
-    // See the "Take it slow" appendix
-    getUtilisateursSlowly() {
-        return new Promise<Utilisateur[]>(resolve =>
-            setTimeout(() => resolve(UTILISATEURS), 2000) // 2 seconds
-        );
-    }
 
     getUtilisateur(id: number) {
-       /* return Promise.resolve(UTILISATEURS).then(
-            utilisateurs => utilisateurs.filter(utilisateur => utilisateur.id === id)[0]
-        );*/
-        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == id)
-                return UTILISATEURS[this.i];
+        /* return Promise.resolve(UTILISATEURS).then(
+             utilisateurs => utilisateurs.filter(utilisateur => utilisateur.id === id)[0]
+         );*/
+        for (var i = 0; i < UTILISATEURS.length; i++) {
+            if (UTILISATEURS[i].id == id)
+                return UTILISATEURS[i];
         }
     }
-    
+
     verificationConnexion(mail: string, password: string) {
-        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].mail == mail && UTILISATEURS[this.i].password == password)
-                return UTILISATEURS[this.i];
+        for (var i = 0; i < UTILISATEURS.length; i++) {
+            if (UTILISATEURS[i].mail == mail && UTILISATEURS[i].password == password)
+                return UTILISATEURS[i];
         }
     }
 
     verificationMailExist(mail: string) {
-        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].mail == mail)
+        for (var i = 0; i < UTILISATEURS.length; i++) {
+            if (UTILISATEURS[i].mail == mail)
                 return true;
         }
 
@@ -45,18 +44,18 @@ export class UtilisateurService {
 
     Same_mdp(id: number, password: string) {
         alert("id " + id);
-        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == id) {
-                if (UTILISATEURS[this.i].password == password) {
-                    alert("password "+password);
+        for (var i = 0; i < UTILISATEURS.length; i++) {
+            if (UTILISATEURS[i].id == id) {
+                if (UTILISATEURS[i].password == password) {
+                    alert("password " + password);
                     return true;
                 }
                 else {
-                    UTILISATEURS[this.i].password = password;
+                    UTILISATEURS[i].password = password;
                     alert("password " + password);
                     return false;
                 }
-                
+
             }
         }
     }
@@ -65,8 +64,8 @@ export class UtilisateurService {
         return UTILISATEURS[UTILISATEURS.length - 1].id;
     }
 
-    ajouterUtilisateur(name:string, mail: string, password: string ) {
-        UTILISATEURS.push({ "id": this.getlastid() + 1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password, "pays": "France", "theme": "sport", "meilleurScore": 15,"nbparties":0 })
+    ajouterUtilisateur(name: string, mail: string, password: string) {
+        UTILISATEURS.push({ "id": this.getlastid() + 1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password, "pays": "France", "theme": "", "meilleurScore": 0,"nbparties":0 })
         return this.getlastid();
     }
 
@@ -75,21 +74,47 @@ export class UtilisateurService {
         return Math.floor(Math.random() * (UTILISATEURS.length - 1) + 1);
     }
 
-    getPhoto(u:number){
-        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == u)
-                return UTILISATEURS[this.i].photo;
+    getPhoto(u: number) {
+        for (var i = 0; i < UTILISATEURS.length; i++) {
+            if (UTILISATEURS[i].id == u)
+                return UTILISATEURS[i].photo;
         }
     }
-    
-        getName(u:number){
-        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == u)
-                return UTILISATEURS[this.i].name;
+
+    getName(u: number) {
+        for (var i = 0; i < UTILISATEURS.length; i++) {
+            if (UTILISATEURS[i].id == u)
+                return UTILISATEURS[i].name;
+        }
+    }
+
+    ChangerMeilleurScore(u: number, score: number) {
+        for (var i = 0; i < UTILISATEURS.length; i++) {
+            if (UTILISATEURS[i].id == u)
+                if (UTILISATEURS[i].meilleurScore < score)
+                    UTILISATEURS[i].meilleurScore = score;
+        }
+    }
+
+        getPhoto(u:number){
+        for (var i = 0; i < UTILISATEURS.length; i++) {
+            if (UTILISATEURS[i].id == u)
+                return UTILISATEURS[i].photo;
+        }
+    }
+
+    ChangerTheme(u: number, theme: number) {
+        for (var i = 0; i < UTILISATEURS.length; i++) {
+            if (UTILISATEURS[i].id == u) {
+                var id = this._tService.getId(UTILISATEURS[i].theme);
+                if (this._pService.nbusetheme(id, u) < this._pService.nbusetheme(theme, u)) {
+                    var name = this._tService.getName(theme);
+                    UTILISATEURS[i].theme = name;
+                }
+            }
         }
     }
 }
-
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

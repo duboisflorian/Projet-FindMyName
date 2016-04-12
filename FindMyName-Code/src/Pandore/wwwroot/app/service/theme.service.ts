@@ -50,6 +50,13 @@ export class ThemeService {
                 return THEMES[i].text;
         }
     }
+
+    getId(n: string) {
+        for (var i = 0; i < THEMES.length; i++) {
+            if (THEMES[i].text == n)
+                return THEMES[i].id;
+        }
+    }
 }
 
 /*

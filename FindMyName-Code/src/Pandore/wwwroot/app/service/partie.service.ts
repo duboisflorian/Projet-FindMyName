@@ -7,10 +7,7 @@ import { ThemeService } from '../service/theme.service';
 
 @Injectable()
 export class PartieService {
-
-
     constructor(
-        private _uService: UtilisateurService,
         private _tService: ThemeService) { }
 
     //toutes les parties d'un utilisateur en cours
@@ -81,12 +78,9 @@ export class PartieService {
         return null;
     }
 
-    AjouterPartie(us: number, ami: number, th: number, score: number) {
-        var j1 = this._uService.getName(us);
-        var j2 = this._uService.getName(ami);
+    AjouterPartie(us: number, ami: number, th: number, score: number, j1: string, j2: string) {
         var id_partie = PARTIES.length + 1;
         var theme = this._tService.getName(th);
-        alert(ami);
         PARTIES.push({ "id_partie": id_partie, "id_j1": us, "id_j2": ami, "j1": j1, "j2": j2, "s1": 0, "s2": 0, "player": ami, "manche": [{ "id_theme": th, "theme": theme, "s1": score, "s2": null }, ] })
     }
 
@@ -103,7 +97,6 @@ export class PartieService {
                         PARTIES[i].s2 = PARTIES[i].s2 + 1;
                     }
                     if (PARTIES[i].s2 == 3 || PARTIES[i].s1 == 3) {
-                        alert("partie fini");
                         PARTIES[i].player = null;
                     }
                 } else if (PARTIES[i].manche[n].s2 == null) {
@@ -116,7 +109,6 @@ export class PartieService {
                     }
                     if (PARTIES[i].s2 == 3 || PARTIES[i].s1 == 3) {
                         PARTIES[i].player = null;
-                        alert("partie fini");
                     }
                 } else {
                     var theme = this._tService.getName(th);
@@ -130,8 +122,20 @@ export class PartieService {
             }
         }
     }
-}
 
+    nbusetheme(id: number, u: number) {
+        var nb = 0;
+        for (var i = 0; i < PARTIES.length; i++) {
+            if (PARTIES[i].id_j1 == u || PARTIES[i].id_j2 == u) {
+                for (var n = 0; n < PARTIES[i].manche.length; n++) {
+                    if (PARTIES[i].manche[n].id_theme == id)
+                        nb++;
+                }
+            }
+            return nb;
+        }
+    }
+}
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

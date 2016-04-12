@@ -29,6 +29,9 @@ export class JouerComponent implements OnInit {
     p: Partie;
     sTimeout: number;
 
+    j1: string;
+    j2: string;
+
     constructor(
         private _router: Router,
         private _jouerService: JouerService,
@@ -74,24 +77,28 @@ export class JouerComponent implements OnInit {
                     this.remaining++;
                     this.tabreponses.reponses[i].done = true;
                     this.bon = true;
-                    let timer = Observable.timer(0, 5000);
-                    timer.subscribe(t=> {
-                        this.bon = null;
-                    });
+                     let timer = Observable.timer(0, 5000);
+ +                    timer.subscribe(t=> {
+ +                        this.bon = null;
+ +                    });
                 }
             }
             if (this.bon != true) {
                 this.bon = false;
-                let timer = Observable.timer(0, 5000);
-                timer.subscribe(t=> {
-                    this.bon = null;
-                });
+                 let timer = Observable.timer(0, 5000);
+ +                    timer.subscribe(t=> {
+ +                        this.bon = null;
+ +                    });
             }
             this.task = '';
+            let timer = Observable.timer(0, 5000);
+            timer.subscribe(t=> {
+                this.bon = null;
+            });
         }
     }
     starttimer() {
-        this.countdown(0, 30, this._router, this.u.id);
+        this.countdown(2, 0, this._router, this.u.id);
         this.sTimeout = setTimeout(() => this.gotoContact(), 120000);
     }
     ngOnDestroy() {
@@ -99,13 +106,18 @@ export class JouerComponent implements OnInit {
         let id = +this._routeParams.get('id');
         let us = +this._routeParams.get('us');
         let th = +this._routeParams.get('th');
-        this.p = this._pService.getPartieExiste(us, id)
-        if (this.p == null || this.p.player == null) {
-            this._pService.AjouterPartie(us, id, th, this.remaining);
+
+        if (!this._pService.getPartieEnCours(id, us)) {
+            this.j1 = this._uService.getName(us);
+            this.j2 = this._uService.getName(id);
+            this._pService.AjouterPartie(us, id, th, this.remaining, this.j1, this.j2);
         }
-        if (this.p.player != null) {
+        else {
+            this.p = this._pService.getPartieEnCours(id, us)
             this._pService.ModifierPartie(us, id, th, this.remaining, this.p);
         }
+        this._uService.ChangerMeilleurScore(us, this.remaining);
+        this._uService.ChangerTheme(us, th);
         clearTimeout(this.sTimeout);
         this.gotoContact()
     }
