@@ -74,16 +74,20 @@ export class JouerComponent implements OnInit {
                     this.remaining++;
                     this.tabreponses.reponses[i].done = true;
                     this.bon = true;
+                    let timer = Observable.timer(0, 5000);
+                    timer.subscribe(t=> {
+                        this.bon = null;
+                    });
                 }
             }
             if (this.bon != true) {
                 this.bon = false;
+                let timer = Observable.timer(0, 5000);
+                timer.subscribe(t=> {
+                    this.bon = null;
+                });
             }
             this.task = '';
-            let timer = Observable.timer(0, 5000);
-            timer.subscribe(t=> {
-                this.bon = null;
-            });
         }
     }
     starttimer() {
