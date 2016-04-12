@@ -45,6 +45,8 @@ var UserdetailComponent = (function () {
             this.selectPhoto = "ol";
         }
         //alert("Photo :" + this.selectPhoto);
+        this.selectPays = this._uService.getPays(us);
+        //alert("Pays :" + this.selectPays);
     };
     UserdetailComponent.prototype.gotoDeco = function () {
         alert("Vous avez été déconnecté");

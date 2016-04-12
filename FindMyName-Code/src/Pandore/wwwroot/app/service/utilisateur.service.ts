@@ -96,7 +96,12 @@ export class UtilisateurService {
         }
     }
 
-
+        getPays(u: number) {
+            for (var i = 0; i < UTILISATEURS.length; i++) {
+                if (UTILISATEURS[i].id == u)
+                    return UTILISATEURS[i].pays;
+            }
+        }
 
 }
 /*

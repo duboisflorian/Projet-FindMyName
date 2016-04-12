@@ -87,6 +87,12 @@ var UtilisateurService = (function () {
                 return mock_utilisateurs_1.UTILISATEURS[i].photo;
         }
     };
+    UtilisateurService.prototype.getPays = function (u) {
+        for (var i = 0; i < mock_utilisateurs_1.UTILISATEURS.length; i++) {
+            if (mock_utilisateurs_1.UTILISATEURS[i].id == u)
+                return mock_utilisateurs_1.UTILISATEURS[i].pays;
+        }
+    };
     UtilisateurService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [partie_service_1.PartieService, theme_service_1.ThemeService])
