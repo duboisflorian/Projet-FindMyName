@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -28,19 +29,15 @@ var JouerChoixComponent = (function () {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
     };
     JouerChoixComponent.prototype.ngOnInit = function () {
+        var _this = this;
         var id = +this._routeParams.get('id');
         this.themes = this._themeService.getThemes();
         /*this._themeService.getThemes()
             .then(themes => this.themes = themes.slice(0, 4));*/
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
-        setTimeout(endTimer, 3000);
-        function endTimer() {
-            var selectedTheme = this.themes[1];
-            var id = +this._routeParams.get('id');
-            var link = ['Jouer', { us: this.u.id, id: id, th: this.selectedTheme.id }];
-            this._router.navigate(link);
-        }
+        this.sTimeout = setTimeout(function () { return _this.endTimer(); }, 3000);
+        //setTimeout(this.endTimer, 3000);
     };
     JouerChoixComponent.prototype.gotoContact = function () {
         this._router.navigate(['Contact', { us: this.u.id }]);
@@ -70,7 +67,7 @@ var JouerChoixComponent = (function () {
         __metadata('design:paramtypes', [router_2.Router, theme_service_1.ThemeService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
     ], JouerChoixComponent);
     return JouerChoixComponent;
-})();
+}());
 exports.JouerChoixComponent = JouerChoixComponent;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
