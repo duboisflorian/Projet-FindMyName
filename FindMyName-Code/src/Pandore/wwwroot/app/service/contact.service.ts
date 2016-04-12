@@ -9,7 +9,7 @@ import { UtilisateurService } from '../service/utilisateur.service';
 @Injectable()
 export class ContactService {
     c: Contact[];
-    vide: Contact[]=[];
+    vide: Contact[] = [];
 
     constructor(
         private _uService: UtilisateurService) { }
@@ -30,15 +30,15 @@ export class ContactService {
     }
 
     getAmiExiste(id: number, u: number) {
-            for (var i = 0; i < CONTACTS.length; i++) {
-                if (CONTACTS[i].id == u) {
-                    for (var n = 0; n < CONTACTS[i].contact.length; n++) {
-                        if (CONTACTS[i].contact[n].id == id && CONTACTS[i].contact[n].type == "ami")
-                            return CONTACTS[i].contact[n];
-                    }
+        for (var i = 0; i < CONTACTS.length; i++) {
+            if (CONTACTS[i].id == u) {
+                for (var n = 0; n < CONTACTS[i].contact.length; n++) {
+                    if (CONTACTS[i].contact[n].id == id && CONTACTS[i].contact[n].type == "ami")
+                        return CONTACTS[i].contact[n];
                 }
             }
         }
+    }
 
 
     getOnlineExiste(id: number, u: number) {
@@ -46,7 +46,7 @@ export class ContactService {
         for (var i = 0; i < CONTACTS.length; i++) {
             if (CONTACTS[i].id == u)
                 for (var n = 0; n < CONTACTS[i].contact.length; n++) {
-                    if (CONTACTS[i].contact[n].id == id )
+                    if (CONTACTS[i].contact[n].id == id)
                         return false;
                 }
         }
@@ -61,11 +61,11 @@ export class ContactService {
     addAmi(user: Utilisateur, u: number) {
         for (var i = 0; i < CONTACTS.length; i++) {
             if (CONTACTS[i].id == u)
-                CONTACTS[i].contact.push({ "id": user.id, "name": user.name, "photo": user.photo, "type": "ami"})
+                CONTACTS[i].contact.push({ "id": user.id, "name": user.name, "photo": user.photo, "type": "ami" })
             if (CONTACTS[i].id == user.id) {
                 var N = this._uService.getName(u);
                 var P = this._uService.getPhoto(u);
-                CONTACTS[i].contact.push({ "id": u, "name": N, "photo": P, "type": "ami"})
+                CONTACTS[i].contact.push({ "id": u, "name": N, "photo": P, "type": "ami" })
             }
         }
     }
@@ -83,8 +83,25 @@ export class ContactService {
     }
 
     création(id: number) {
-        CONTACTS.push({ "id": id, "contact": this.vide});
+        CONTACTS.push({ "id": id, "contact": this.vide });
     }
+
+    getNbContact(u: number) {
+        var nb=0;
+        //alert(CONTACTS.length);
+        for (var i = 0; i < CONTACTS.length; i++) {
+            if (CONTACTS[i].id == u) {
+                //alert(CONTACTS[i].contact.length);
+                for (var g = 0; g < CONTACTS[i].contact.length; g++) {
+                    if (CONTACTS[i].contact[g].type == "ami") {
+                        nb++;
+                    }
+                }
+            }
+        }
+        return nb;
+    }
+
 }
 
 /*

@@ -77,6 +77,21 @@ var ContactService = (function () {
     ContactService.prototype.création = function (id) {
         mock_contact_1.CONTACTS.push({ "id": id, "contact": this.vide });
     };
+    ContactService.prototype.getNbContact = function (u) {
+        var nb = 0;
+        //alert(CONTACTS.length);
+        for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
+            if (mock_contact_1.CONTACTS[i].id == u) {
+                //alert(CONTACTS[i].contact.length);
+                for (var g = 0; g < mock_contact_1.CONTACTS[i].contact.length; g++) {
+                    if (mock_contact_1.CONTACTS[i].contact[g].type == "ami") {
+                        nb++;
+                    }
+                }
+            }
+        }
+        return nb;
+    };
     ContactService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [utilisateur_service_1.UtilisateurService])

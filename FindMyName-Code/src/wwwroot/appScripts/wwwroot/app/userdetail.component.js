@@ -14,11 +14,13 @@ var router_2 = require('angular2/router');
 var mock_utilisateurs_1 = require('./data/mock-utilisateurs');
 var utilisateur_service_1 = require('./service/utilisateur.service');
 var partie_service_1 = require('./service/partie.service');
+var contact_service_1 = require('./service/contact.service');
 var UserdetailComponent = (function () {
-    function UserdetailComponent(_router, _routeParams, _pService, _uService) {
+    function UserdetailComponent(_router, _routeParams, _pService, _cService, _uService) {
         this._router = _router;
         this._routeParams = _routeParams;
         this._pService = _pService;
+        this._cService = _cService;
         this._uService = _uService;
         this.selectPays = "France";
         this.pays = ['France', 'Allemagne', 'Chine', 'Japon', 'Etats-Unis', 'Royaume-Uni', 'Canada'];
@@ -47,6 +49,8 @@ var UserdetailComponent = (function () {
         //alert("Photo :" + this.selectPhoto);
         this.selectPays = this._uService.getPays(us);
         //alert("Pays :" + this.selectPays);
+        this.nbAmi = this._cService.getNbContact(us);
+        //alert("nombre de contact : " + this.nbAmi);
     };
     UserdetailComponent.prototype.gotoDeco = function () {
         alert("Vous avez été déconnecté");
@@ -90,7 +94,7 @@ var UserdetailComponent = (function () {
             selector: 'my-userdetail',
             templateUrl: 'app/userdetail.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.Router, router_2.RouteParams, partie_service_1.PartieService, utilisateur_service_1.UtilisateurService])
+        __metadata('design:paramtypes', [router_1.Router, router_2.RouteParams, partie_service_1.PartieService, contact_service_1.ContactService, utilisateur_service_1.UtilisateurService])
     ], UserdetailComponent);
     return UserdetailComponent;
 }());

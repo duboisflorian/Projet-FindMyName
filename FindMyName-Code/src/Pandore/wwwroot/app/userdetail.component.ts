@@ -5,6 +5,7 @@ import { UTILISATEURS } from './data/mock-utilisateurs';
 import { UtilisateurService } from './service/utilisateur.service';
 import { Utilisateur } from './classe/utilisateur';
 import { PartieService } from './service/partie.service';
+import { ContactService } from './service/contact.service';
 
 @Component({
     selector: 'my-userdetail',
@@ -22,6 +23,7 @@ export class UserdetailComponent implements OnInit {
     selectPays: string = "France";
     nbparties: number;
     theme_favori: string;
+    nbAmi: number;
 
     pays = ['France','Allemagne','Chine','Japon','Etats-Unis','Royaume-Uni','Canada'];
 
@@ -29,7 +31,9 @@ export class UserdetailComponent implements OnInit {
         private _router: Router,
         private _routeParams: RouteParams,
         private _pService: PartieService,
+        private _cService: ContactService,
         private _uService: UtilisateurService) { }
+        
 
 
     ngOnInit() {
@@ -57,6 +61,9 @@ export class UserdetailComponent implements OnInit {
 
         this.selectPays = this._uService.getPays(us);
         //alert("Pays :" + this.selectPays);
+
+        this.nbAmi = this._cService.getNbContact(us);
+        //alert("nombre de contact : " + this.nbAmi);
     }
 
     gotoDeco() {
