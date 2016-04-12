@@ -271,10 +271,15 @@ Project : Find My Name v_2
 	- Mise en place d'un enregistrement des scores d'une partie
 
 - Lionel
-	- Finalisation traitement pour changer thème favoris + pays
-	- Début mise en page statistiques 
+	- Finalisation traitement pour changer thème favoris + pays (La liste déroulante sauvegarde le choix précédent)
+	- Début mise en page statistiques (Nombre de parties jouées, Nombre d'amis..)
 
 - Florian 
 	- Correction bug
 	- Modification user_detail
 	- aide enregistrement score
+
+## Mercredi 13/04
+
+- Lionel
+	- affichage du nombre d'amis dans le profil (Requetes getnbAmi)
