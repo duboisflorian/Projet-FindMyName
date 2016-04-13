@@ -14,7 +14,6 @@ var jouer_service_1 = require('./service/jouer.service');
 var theme_service_1 = require('./service/theme.service');
 var partie_service_1 = require('./service/partie.service');
 var utilisateur_service_1 = require('./service/utilisateur.service');
-var Rx_1 = require('rxjs/Rx');
 var JouerComponent = (function () {
     function JouerComponent(_router, _jouerService, _themeService, _pService, _uService, _routeParams) {
         this._router = _router;
@@ -64,30 +63,23 @@ var JouerComponent = (function () {
                     this.remaining++;
                     this.tabreponses.reponses[i].done = true;
                     this.bon = true;
-                    var timer_1 = Rx_1.Observable.timer(0, 5000);
-                    timer_1.subscribe(function (t) {
-                        _this.bon = null;
-                    });
+                    this.sTimeoutBon = setTimeout(function () { return _this.setBon(); }, 2000);
                 }
             }
             if (this.bon != true) {
                 this.bon = false;
-                var timer_2 = Rx_1.Observable.timer(0, 5000);
-                timer_2.subscribe(function (t) {
-                    _this.bon = null;
-                });
+                this.sTimeoutBon = setTimeout(function () { return _this.setBon(); }, 2000);
             }
             this.task = '';
-            var timer = Rx_1.Observable.timer(0, 5000);
-            timer.subscribe(function (t) {
-                _this.bon = null;
-            });
         }
     };
     JouerComponent.prototype.starttimer = function () {
         var _this = this;
         this.countdown(0, 30, this._router, this.u.id);
         this.sTimeout = setTimeout(function () { return _this.gotoContact(); }, 30000);
+    };
+    JouerComponent.prototype.setBon = function () {
+        this.bon = null;
     };
     JouerComponent.prototype.ngOnDestroy = function () {
         clearTimeout(this.sTimeout);

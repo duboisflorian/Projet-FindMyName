@@ -28,6 +28,7 @@ export class JouerComponent implements OnInit{
     theme: Theme;
     p: Partie;
     sTimeout: number;
+    sTimeoutBon: number;
 
     j1: string;
     j2: string;
@@ -77,29 +78,22 @@ export class JouerComponent implements OnInit{
                     this.remaining++;
                     this.tabreponses.reponses[i].done = true;
                     this.bon = true;
-                     let timer = Observable.timer(0, 5000);
-                   timer.subscribe(t=> {
-                      this.bon = null;
-                   });
+                    this.sTimeoutBon = setTimeout(() => this.setBon(), 2000);
                 }
             }
             if (this.bon != true) {
                 this.bon = false;
-                 let timer = Observable.timer(0, 5000);
-                    timer.subscribe(t=> {
-                        this.bon = null;
-                    });
+                this.sTimeoutBon = setTimeout(() => this.setBon(), 2000);
             }
             this.task = '';
-            let timer = Observable.timer(0, 5000);
-            timer.subscribe(t=> {
-                this.bon = null;
-            });
         }
     }
     starttimer() {
         this.countdown(0, 30, this._router, this.u.id);
         this.sTimeout = setTimeout(() => this.gotoContact(), 30000);
+    }
+    setBon() {
+        this.bon = null;
     }
     ngOnDestroy() {
         clearTimeout(this.sTimeout);
