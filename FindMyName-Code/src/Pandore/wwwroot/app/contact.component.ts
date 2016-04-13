@@ -166,7 +166,7 @@ export class ContactComponent implements OnInit {
         var r;
         for (var i = 0; i < 200; i++) {
             r = this._uService.getOnlineutilisateur();
-            if (this._contactService.getOnlineExiste(r, this.u.id)) {
+            if (!this._contactService.getOnlineExiste(r, this.u.id)) {
                 this._contactService.addOnline(this._uService.getUtilisateur(r), this.u.id);
                 this._router.navigate(['JouerChoix', { us: this.u.id, id: r }]);
                 b = true;
