@@ -5,32 +5,32 @@ exports.CONTACTS = [{
             { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg", "type": "ami" },
             { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg", "type": "ami" },
             { "id": 5, "name": "diego", "photo": "fichier/logo.jpg", "type": "ami" },
-            { "id": 8, "name": "Luffy", "photo": "fichier/logo.jpg", "type": "online" }
+            { "id": 8, "name": "Luffy", "photo": "fichier/psg.jpg", "type": "online" }
         ]
     },
     {
         "id": 4, "contact": [
-            { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg", "type": "ami" },
+            { "id": 6, "name": "tingting", "photo": "fichier/psg.jpg", "type": "ami" },
         ]
     },
     {
         "id": 1, "contact": [
-            { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg", "type": "ami" }
+            { "id": 6, "name": "tingting", "photo": "fichier/psg.jpg", "type": "ami" }
         ]
     },
     {
         "id": 2, "contact": [
-            { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg", "type": "ami" }
+            { "id": 6, "name": "tingting", "photo": "fichier/psg.jpg", "type": "ami" }
         ]
     },
     {
         "id": 3, "contact": [
-            { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg", "type": "ami" }
+            { "id": 6, "name": "tingting", "photo": "fichier/psg.jpg", "type": "ami" }
         ]
     },
     {
         "id": 5, "contact": [
-            { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg", "type": "ami" }
+            { "id": 6, "name": "tingting", "photo": "fichier/psg.jpg", "type": "ami" }
         ]
     },
     {
@@ -38,7 +38,7 @@ exports.CONTACTS = [{
     },
     {
         "id": 8, "contact": [
-            { "id": 6, "name": "tingting", "photo": "fichier/logo.jpg", "type": "online" }
+            { "id": 6, "name": "tingting", "photo": "fichier/psg.jpg", "type": "online" }
         ]
     },
     {

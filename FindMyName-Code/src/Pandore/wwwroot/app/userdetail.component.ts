@@ -20,7 +20,7 @@ export class UserdetailComponent implements OnInit {
     i: number;
     selectPhoto: string;
     selectTheme: string;
-    selectPays: string = "France";
+    selectPays: string = "";
     nbparties: number;
     theme_favori: string;
     nbAmi: number;
