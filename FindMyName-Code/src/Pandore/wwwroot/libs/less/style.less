@@ -25,7 +25,7 @@ body {
 
 }
 
-.form-recherche {   
+#form-recherche {   
     margin: 10px auto 10px auto;
     width: 90%;
 }
@@ -59,8 +59,8 @@ body {
 }
 
 .nav-button {
-       .active{
-         background: fadeout(white, 50%);
+       .selected{
+         background: @white;
     }
 
      padding:0;
@@ -70,18 +70,15 @@ body {
         float:left;
         width:50%;
         border-left:1px solid black;
-        a {
+        span {
             display:block;
             float:left;  
             width:100%; 
             background: @white;
             color:#DCDCDC;
-            text-decoration:none;
             text-align:center;
-            span{
-                font-size:24px;
-                color: black;
-            }
+            font-size:24px;
+            color: black;
         }
     }
  }
@@ -195,7 +192,7 @@ body {
 
 .sidebar {
     background-color: @white ;
-    padding: 20px;
+    padding: 10px;
     height: 710px;
     display: block;
     overflow-x: hidden;
@@ -207,14 +204,20 @@ body {
   margin-right: -20px; 
   margin-bottom: 20px;
   margin-left: -20px;
+    li{
+        padding: 5px 20px 5px 20px;
+        span{
+            font-size:20px;
+            color: black;
+            margin-left: 10px;
+        }
+    }
+    .active{
+        background-color: @white;
+    }
 }
-.nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px;
-}
-.nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
+
+.nav-sidebar > li:hover  {
   background-color: lightgray;
 }
 

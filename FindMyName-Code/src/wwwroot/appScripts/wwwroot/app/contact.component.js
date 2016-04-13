@@ -59,6 +59,11 @@ var ContactComponent = (function () {
     ContactComponent.prototype.onSelect = function (contact) {
         this.selectedContact = contact;
         this.selectedDetails = null;
+        var ListElem = document.getElementsByClassName("active");
+        for (var z = 0; z < ListElem.length; z++) {
+            ListElem[z].className = "";
+        }
+        document.getElementById(contact.id.toString()).className = "active";
         this.en_cours = this._pService.getEn_Cours(this.u.id, contact.id);
         if (this.en_cours == true) {
             this.partie_en_cours = this._pService.getPartieEnCours(this.u.id, contact.id);

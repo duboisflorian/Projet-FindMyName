@@ -25,17 +25,16 @@
     <div class="row" style="margin-right:0px;">
         <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
             <ul class="nav nav-button">
-                <li (click)="gotoContact()" class="active"><a>Amis</a></li>
-                <li (click)="gotoOnline()"><a>Online</a></li>
+                <li (click)="gotoContact()" class="selected"><span>Amis</span></li>
+                <li (click)="gotoOnline()"><span>Online</span></li>
             </ul>
             <div class="sidebar">
                 <ul class="nav nav-sidebar">
                     <li (click)="onSelectU()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
                     <li>
-                        <input placeholder="Rechercher un contact" type="text" [value]="searchFriend"
-                               (input)="searchFriend = $event.target.value">
+                        <input id="form-recherche" class="form-control" placeholder="Rechercher un contact" type="text" [value]="searchFriend" (input)="searchFriend = $event.target.value">
                     </li>
-                    <li *ngFor="#contact of contacts | RecherchePipe:searchFriend" [class.selected]="contact === selectedContact" (click)="onSelect(contact)"><img class="portrait" src="{{contact.photo}}" /><span>{{contact.name}}</span></li>
+                    <li id="{{contact.id}}" *ngFor="#contact of contacts | RecherchePipe:searchFriend" [class.selected]="contact === selectedContact" (click)="onSelect(contact)"><img class="portrait" src="{{contact.photo}}" /><span>{{contact.name}}</span></li>
                 </ul>
             </div>
 
@@ -53,7 +52,7 @@
             <div *ngIf="en_cours==true">
                 ({{partie_en_cours.j1}}) {{partie_en_cours.s1}} - {{partie_en_cours.s2}} ({{partie_en_cours.j2}})
                 <br />
-                <ul class="nav nav-sidebar">
+                <ul class="nav">
                     <li *ngFor="#m of partie_en_cours.manche"><span>{{m.theme}}   {{m.s1}} - {{m.s2}}</span></li>
                 </ul>
                 <button *ngIf="partie_en_cours.player==u.id" (click)="gotoJouer(partie_en_cours)">Jouer</button>
@@ -63,7 +62,7 @@
                 <h1>{{u.name | uppercase}} VS {{selectedContact.name | uppercase}}</h1>
                 <h3>Victoire = {{victoire}}</h3>
                 <h3>Defaite = {{defaite}}</h3>
-                <ul class="nav nav-sidebar">
+                <ul class="nav">
                     <li *ngFor="#h of historique">
                         <span>({{h.j1}}) {{h.s1}} - {{h.s2}} ({{h.j2}})</span> <button (click)="showDetails(h)">Détails</button>
                     </li>
@@ -76,7 +75,7 @@
 
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedContact && !selectedDetails" style="color:aquamarine;">
             <h2>Vos Parties</h2>
-            <ul class="nav nav-sidebar">
+            <ul class="nav ">
                 <li *ngFor="#p of parties_en_cours">
                     <span *ngIf="p.player!=u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) En attente</span>
                     <span *ngIf="p.player==u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) <button (click)="gotoJouer(p)">Jouer</button></span>
@@ -87,7 +86,7 @@
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedDetails" style="color:aquamarine;">
             ({{selectedDetails.j1}}) {{selectedDetails.s1}} - {{selectedDetails.s2}} ({{selectedDetails.j2}})
             <br />
-            <ul class="nav nav-sidebar">
+            <ul class="nav">
                 <li *ngFor="#m of selectedDetails.manche"><span>{{m.theme}}   {{m.s1}} - {{m.s2}}</span></li>
             </ul>
         </div>
