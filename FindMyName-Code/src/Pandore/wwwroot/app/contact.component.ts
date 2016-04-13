@@ -58,8 +58,10 @@ export class ContactComponent implements OnInit {
         var val;
         val = prompt('Entrer un id', '');
         this.contactadd = parseInt(val);
-        this.addAmi();
-        this.getContacts();
+        if (val != null) {
+            this.addAmi();
+            this.getContacts();
+        }
     }
 
     ngOnInit() {
@@ -145,8 +147,13 @@ export class ContactComponent implements OnInit {
                 alert("cette personne est déjà dans tes amis");
                 this.contactadd = null;
             } else {
-                this._contactService.addAmi(this.utilisateurs, this.u.id);
-                this.contactadd = null;
+                if (( this._contactService.getOnlineExiste(this.contactadd, this.u.id))) {
+                    this._contactService.addAmiOnline(this.utilisateurs, this.u.id);
+                    this.contactadd = null;
+                } else {
+                    this._contactService.addAmi(this.utilisateurs, this.u.id);
+                    this.contactadd = null;
+                }
             }
         } else {
             alert("cette personne n'existe pas");

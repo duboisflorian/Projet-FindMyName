@@ -46,16 +46,11 @@ export class ContactService {
         for (var i = 0; i < CONTACTS.length; i++) {
             if (CONTACTS[i].id == u)
                 for (var n = 0; n < CONTACTS[i].contact.length; n++) {
-                    if (CONTACTS[i].contact[n].id == id)
-                        return false;
+                    if (CONTACTS[i].contact[n].id == id && CONTACTS[i].contact[n].type == "online")
+                        return true;
                 }
         }
-
-        if (id == u) {
-            return false;
-        }
-
-        return true;
+        return false;
     }
 
     addAmi(user: Utilisateur, u: number) {
@@ -69,6 +64,18 @@ export class ContactService {
             }
         }
     }
+
+    addAmiOnline(user: Utilisateur, u: number) {
+        for (var i = 0; i < CONTACTS.length; i++) {
+            if (CONTACTS[i].id == u) {
+                for (var n = 0; n < CONTACTS[i].contact.length; n++) {
+                    if (CONTACTS[i].contact[n].id == user.id )
+                        CONTACTS[i].contact[n].type = "ami";
+                }
+            }
+        }
+    }
+
 
     addOnline(user: Utilisateur, u: number) {
         for (var i = 0; i < CONTACTS.length; i++) {

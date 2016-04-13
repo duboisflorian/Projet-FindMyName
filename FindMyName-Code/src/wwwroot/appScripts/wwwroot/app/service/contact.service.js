@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -43,14 +42,11 @@ var ContactService = (function () {
         for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
             if (mock_contact_1.CONTACTS[i].id == u)
                 for (var n = 0; n < mock_contact_1.CONTACTS[i].contact.length; n++) {
-                    if (mock_contact_1.CONTACTS[i].contact[n].id == id)
-                        return false;
+                    if (mock_contact_1.CONTACTS[i].contact[n].id == id && mock_contact_1.CONTACTS[i].contact[n].type == "online")
+                        return true;
                 }
         }
-        if (id == u) {
-            return false;
-        }
-        return true;
+        return false;
     };
     ContactService.prototype.addAmi = function (user, u) {
         for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
@@ -60,6 +56,16 @@ var ContactService = (function () {
                 var N = this._uService.getName(u);
                 var P = this._uService.getPhoto(u);
                 mock_contact_1.CONTACTS[i].contact.push({ "id": u, "name": N, "photo": P, "type": "ami" });
+            }
+        }
+    };
+    ContactService.prototype.addAmiOnline = function (user, u) {
+        for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
+            if (mock_contact_1.CONTACTS[i].id == u) {
+                for (var n = 0; n < mock_contact_1.CONTACTS[i].contact.length; n++) {
+                    if (mock_contact_1.CONTACTS[i].contact[n].id == user.id)
+                        mock_contact_1.CONTACTS[i].contact[n].type = "ami";
+                }
             }
         }
     };
@@ -97,7 +103,7 @@ var ContactService = (function () {
         __metadata('design:paramtypes', [utilisateur_service_1.UtilisateurService])
     ], ContactService);
     return ContactService;
-}());
+})();
 exports.ContactService = ContactService;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
