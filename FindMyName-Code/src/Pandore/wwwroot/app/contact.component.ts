@@ -100,7 +100,19 @@ export class ContactComponent implements OnInit {
         }
     }
 
-    onSelectU() { this.selectedContact = null; this.selectedDetails = null; }
+    onSelectU() {
+
+        // JS: Modifie le HTML pour montrer quel contact est afficher à l'utilisateur
+        var ListElem = document.getElementsByClassName("active");
+        for (var z = 0; z < ListElem.length; z++) {
+            ListElem[z].className = "";
+        }
+        document.getElementById("u").className = "active";
+        // Fin JS
+
+        this.selectedContact = null;
+        this.selectedDetails = null;
+    }
 
     gotoJouer(p: Partie) {
         if (this.selectedContact == null) {

@@ -25,12 +25,14 @@
     <div class="row" style="margin-right:0px;">
         <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
             <ul class="nav nav-button">
-                <li (click)="gotoContact()" class="selected"><span>Amis</span></li>
-                <li (click)="gotoOnline()"><span>Online</span></li>
+                <li (click)="gotoContact()" *ngIf="type == 'ami'" class="selected"><span>Amis</span></li>
+                <li (click)="gotoContact()"  *ngIf="type == 'online'"><span>Amis</span></li>
+                <li (click)="gotoOnline()" *ngIf="type == 'ami'"><span>Online</span></li>
+                <li (click)="gotoOnline()" *ngIf="type == 'online'" class="selected"><span>Online</span></li>
             </ul>
             <div class="sidebar">
                 <ul class="nav nav-sidebar">
-                    <li (click)="onSelectU()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
+                    <li id="u" class="active" (click)="onSelectU()"><img class="portrait" src="{{u.photo}}" /><span class="nom"> {{u.name}}</span></li>
                     <li>
                         <input id="form-recherche" class="form-control" placeholder="Rechercher un contact" type="text" [value]="searchFriend" (input)="searchFriend = $event.target.value">
                     </li>
@@ -48,7 +50,7 @@
 
 
 
-        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedContact">
+        <div class="col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedContact">
             <div *ngIf="en_cours==true">
                 ({{partie_en_cours.j1}}) {{partie_en_cours.s1}} - {{partie_en_cours.s2}} ({{partie_en_cours.j2}})
                 <br />
@@ -73,9 +75,9 @@
 
 
 
-        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedContact && !selectedDetails" style="color:aquamarine;">
+        <div class="col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedContact && !selectedDetails" style="color:aquamarine;">
             <h2>Vos Parties</h2>
-            <ul class="nav ">
+            <ul class="nav">
                 <li *ngFor="#p of parties_en_cours">
                     <span *ngIf="p.player!=u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) En attente</span>
                     <span *ngIf="p.player==u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) <button (click)="gotoJouer(p)">Jouer</button></span>
@@ -83,7 +85,7 @@
             </ul>
         </div>
 
-        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedDetails" style="color:aquamarine;">
+        <div class="col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedDetails" style="color:aquamarine;">
             ({{selectedDetails.j1}}) {{selectedDetails.s1}} - {{selectedDetails.s2}} ({{selectedDetails.j2}})
             <br />
             <ul class="nav">

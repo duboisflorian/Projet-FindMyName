@@ -76,7 +76,17 @@ var ContactComponent = (function () {
             this.defaite = this._pService.getNbDefaite(this.u.id, contact.id);
         }
     };
-    ContactComponent.prototype.onSelectU = function () { this.selectedContact = null; this.selectedDetails = null; };
+    ContactComponent.prototype.onSelectU = function () {
+        // JS: Modifie le HTML pour montrer quel contact est afficher à l'utilisateur
+        var ListElem = document.getElementsByClassName("active");
+        for (var z = 0; z < ListElem.length; z++) {
+            ListElem[z].className = "";
+        }
+        document.getElementById("u").className = "active";
+        // Fin JS
+        this.selectedContact = null;
+        this.selectedDetails = null;
+    };
     ContactComponent.prototype.gotoJouer = function (p) {
         if (this.selectedContact == null) {
             for (var i = 0; i < this.parties_en_cours.length; i++) {
