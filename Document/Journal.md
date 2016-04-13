@@ -283,3 +283,7 @@ Project : Find My Name v_2
 
 - Lionel
 	- affichage du nombre d'amis dans le profil (Requetes getnbAmi)
+- Maxime
+	- Correction d'un bug sur le prompt sur l'annulation
+	- Correction d'un bug sur le l'ajout d'un contact en ami alors qu'il était déjà un contact online
+	- Mise en forme du site (LESS)
