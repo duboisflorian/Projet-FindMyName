@@ -1,15 +1,15 @@
 exports.UTILISATEURS = [
-    { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg", "mail": "Florian@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg", "mail": "Yani@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg", "mail": "maxime@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0 },
-    { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg", "mail": "lionel@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 5, "name": "diego", "photo": "fichier/logo.jpg", "mail": "diego@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 6, "name": "tingting", "photo": "fichier/psg.jpg", "mail": "tingting@gmail.com", "password": "1234", "pays": "Allemagne", "meilleurScore": 15 },
-    { "id": 7, "name": "Marco", "photo": "fichier/logo.jpg", "mail": "Marco@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 8, "name": "Luffy", "photo": "fichier/psg.jpg", "mail": "Luffy@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 9, "name": "Mingo", "photo": "fichier/logo.jpg", "mail": "Mingo@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 10, "name": "Zoro", "photo": "fichier/logo.jpg", "mail": "Zoro@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 11, "name": "Papucue", "photo": "fichier/logo.jpg", "mail": "Papucue@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
+    { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg", "mail": "Florian@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 20 },
+    { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg", "mail": "Yani@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 20 },
+    { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg", "mail": "maxime@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 20 },
+    { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg", "mail": "lionel@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 20 },
+    { "id": 5, "name": "diego", "photo": "fichier/logo.jpg", "mail": "diego@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 20 },
+    { "id": 6, "name": "tingting", "photo": "fichier/psg.jpg", "mail": "tingting@gmail.com", "password": "1234", "pays": "Allemagne", "meilleurScore": 25 },
+    { "id": 7, "name": "Marco", "photo": "fichier/logo.jpg", "mail": "Marco@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0 },
+    { "id": 8, "name": "Luffy", "photo": "fichier/psg.jpg", "mail": "Luffy@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0 },
+    { "id": 9, "name": "Mingo", "photo": "fichier/logo.jpg", "mail": "Mingo@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0 },
+    { "id": 10, "name": "Zoro", "photo": "fichier/logo.jpg", "mail": "Zoro@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0 },
+    { "id": 11, "name": "Papucue", "photo": "fichier/logo.jpg", "mail": "Papucue@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0 },
     {
         "id": 12,
         "name": "Chandler",
@@ -17,7 +17,7 @@ exports.UTILISATEURS = [
         "mail": "ante.Vivamus.non@arcu.co.uk",
         "password": "ROW-2",
         "pays": "France",
-        "meilleurScore": 23,
+        "meilleurScore": 0,
     },
     {
         "id": 13,
@@ -26,7 +26,7 @@ exports.UTILISATEURS = [
         "mail": "Nunc.ullamcorper@luctusCurabituregestas.com",
         "password": "ROW-3",
         "pays": "France",
-        "meilleurScore": 4,
+        "meilleurScore": 0,
     },
     {
         "id": 14,
@@ -35,7 +35,7 @@ exports.UTILISATEURS = [
         "mail": "est.ac.facilisis@Nullasemper.net",
         "password": "ROW-4",
         "pays": "France",
-        "meilleurScore": 23,
+        "meilleurScore": 0,
     },
     {
         "id": 15,
@@ -44,7 +44,7 @@ exports.UTILISATEURS = [
         "mail": "accumsan.laoreet@gravida.edu",
         "password": "ROW-5",
         "pays": "France",
-        "meilleurScore": 10,
+        "meilleurScore": 0,
     },
     {
         "id": 16,
@@ -53,7 +53,7 @@ exports.UTILISATEURS = [
         "mail": "nec.urna.et@ipsum.co.uk",
         "password": "ROW-6",
         "pays": "France",
-        "meilleurScore": 8,
+        "meilleurScore": 0,
     },
     {
         "id": 17,
@@ -62,7 +62,7 @@ exports.UTILISATEURS = [
         "mail": "sagittis.placerat.Cras@mi.ca",
         "password": "ROW-7",
         "pays": "France",
-        "meilleurScore": 10,
+        "meilleurScore": 0,
     },
     {
         "id": 18,
@@ -71,7 +71,7 @@ exports.UTILISATEURS = [
         "mail": "sit.amet.risus@rutrumjustoPraesent.org",
         "password": "ROW-8",
         "pays": "France",
-        "meilleurScore": 9,
+        "meilleurScore": 0,
     },
     {
         "id": 19,
@@ -80,7 +80,7 @@ exports.UTILISATEURS = [
         "mail": "rhoncus@orci.com",
         "password": "ROW-9",
         "pays": "France",
-        "meilleurScore": 25,
+        "meilleurScore": 0,
     },
     {
         "id": 20,
@@ -89,7 +89,7 @@ exports.UTILISATEURS = [
         "mail": "ut.molestie.in@Donec.net",
         "password": "ROW-10",
         "pays": "France",
-        "meilleurScore": 23,
+        "meilleurScore": 0,
     },
     {
         "id": 21,
@@ -98,7 +98,7 @@ exports.UTILISATEURS = [
         "mail": "non.enim.Mauris@eleifendvitae.ca",
         "password": "ROW-11",
         "pays": "France",
-        "meilleurScore": 9,
+        "meilleurScore": 0,
     },
     {
         "id": 22,
@@ -107,7 +107,7 @@ exports.UTILISATEURS = [
         "mail": "Etiam.bibendum@nec.co.uk",
         "password": "ROW-12",
         "pays": "France",
-        "meilleurScore": 13,
+        "meilleurScore": 0,
     },
     {
         "id": 23,
@@ -116,7 +116,7 @@ exports.UTILISATEURS = [
         "mail": "tellus.imperdiet.non@antedictum.co.uk",
         "password": "ROW-13",
         "pays": "France",
-        "meilleurScore": 16,
+        "meilleurScore": 0,
     },
     {
         "id": 24,
@@ -125,7 +125,7 @@ exports.UTILISATEURS = [
         "mail": "ac.mattis@famesac.co.uk",
         "password": "ROW-14",
         "pays": "France",
-        "meilleurScore": 27,
+        "meilleurScore": 0,
     },
     {
         "id": 25,
@@ -134,7 +134,7 @@ exports.UTILISATEURS = [
         "mail": "interdum.Curabitur.dictum@risus.co.uk",
         "password": "ROW-15",
         "pays": "France",
-        "meilleurScore": 27,
+        "meilleurScore": 0,
     },
     {
         "id": 26,
@@ -143,7 +143,7 @@ exports.UTILISATEURS = [
         "mail": "et.malesuada.fames@urnaNullamlobortis.org",
         "password": "ROW-16",
         "pays": "France",
-        "meilleurScore": 1,
+        "meilleurScore": 0,
     },
     {
         "id": 27,
@@ -152,7 +152,7 @@ exports.UTILISATEURS = [
         "mail": "lectus.pede@rutrumjustoPraesent.edu",
         "password": "ROW-17",
         "pays": "France",
-        "meilleurScore": 18,
+        "meilleurScore": 0,
     },
     {
         "id": 28,
@@ -161,7 +161,7 @@ exports.UTILISATEURS = [
         "mail": "placerat.Cras.dictum@ac.ca",
         "password": "ROW-18",
         "pays": "France",
-        "meilleurScore": 5,
+        "meilleurScore": 0,
     },
     {
         "id": 29,
@@ -170,7 +170,7 @@ exports.UTILISATEURS = [
         "mail": "vulputate@Aeneanmassa.com",
         "password": "ROW-19",
         "pays": "France",
-        "meilleurScore": 9,
+        "meilleurScore": 0,
     },
     {
         "id": 30,
@@ -179,7 +179,7 @@ exports.UTILISATEURS = [
         "mail": "aptent.taciti.sociosqu@loremDonecelementum.ca",
         "password": "ROW-20",
         "pays": "France",
-        "meilleurScore": 8,
+        "meilleurScore": 0,
     },
     {
         "id": 31,
@@ -188,7 +188,7 @@ exports.UTILISATEURS = [
         "mail": "Mauris.non@Proinvelarcu.com",
         "password": "ROW-21",
         "pays": "",
-        "meilleurScore": 5,
+        "meilleurScore": 0,
     },
     {
         "id": 32,
@@ -197,7 +197,7 @@ exports.UTILISATEURS = [
         "mail": "ipsum@consectetuer.org",
         "password": "ROW-22",
         "pays": "France",
-        "meilleurScore": 6,
+        "meilleurScore": 0,
     },
     {
         "id": 33,
@@ -206,7 +206,7 @@ exports.UTILISATEURS = [
         "mail": "eget@nectellus.edu",
         "password": "ROW-23",
         "pays": "France",
-        "meilleurScore": 19,
+        "meilleurScore": 0,
     },
     {
         "id": 34,
@@ -215,7 +215,7 @@ exports.UTILISATEURS = [
         "mail": "faucibus.orci.luctus@Maecenasmifelis.co.uk",
         "password": "ROW-24",
         "pays": "France",
-        "meilleurScore": 13,
+        "meilleurScore": 0,
     },
     {
         "id": 35,
@@ -224,7 +224,7 @@ exports.UTILISATEURS = [
         "mail": "taciti.sociosqu@tellus.com",
         "password": "ROW-25",
         "pays": "France",
-        "meilleurScore": 10,
+        "meilleurScore": 0,
     },
     {
         "id": 36,
@@ -233,7 +233,7 @@ exports.UTILISATEURS = [
         "mail": "mi@ligula.com",
         "password": "ROW-26",
         "pays": "France",
-        "meilleurScore": 21,
+        "meilleurScore": 0,
     },
     {
         "id": 37,
@@ -242,7 +242,7 @@ exports.UTILISATEURS = [
         "mail": "et.commodo.at@inhendrerit.ca",
         "password": "ROW-27",
         "pays": "France",
-        "meilleurScore": 2,
+        "meilleurScore": 0,
     },
     {
         "id": 38,
@@ -251,7 +251,7 @@ exports.UTILISATEURS = [
         "mail": "Sed@tristiqueac.com",
         "password": "ROW-28",
         "pays": "France",
-        "meilleurScore": 13,
+        "meilleurScore": 0,
     },
     {
         "id": 39,
@@ -260,7 +260,7 @@ exports.UTILISATEURS = [
         "mail": "sagittis.semper@ametdiam.com",
         "password": "ROW-29",
         "pays": "France",
-        "meilleurScore": 14,
+        "meilleurScore": 0,
     },
     {
         "id": 40,
@@ -269,7 +269,7 @@ exports.UTILISATEURS = [
         "mail": "nisi@euodiotristique.com",
         "password": "ROW-30",
         "pays": "France",
-        "meilleurScore": 3,
+        "meilleurScore": 0,
     },
     {
         "id": 41,
@@ -278,7 +278,7 @@ exports.UTILISATEURS = [
         "mail": "dolor.vitae.dolor@Etiam.co.uk",
         "password": "ROW-31",
         "pays": "France",
-        "meilleurScore": 15,
+        "meilleurScore": 0,
     },
     {
         "id": 42,
@@ -287,7 +287,7 @@ exports.UTILISATEURS = [
         "mail": "vitae.aliquet.nec@inceptos.com",
         "password": "ROW-32",
         "pays": "France",
-        "meilleurScore": 18,
+        "meilleurScore": 0,
     },
     {
         "id": 43,
@@ -296,7 +296,7 @@ exports.UTILISATEURS = [
         "mail": "non.egestas@enimcondimentumeget.edu",
         "password": "ROW-33",
         "pays": "France",
-        "meilleurScore": 4,
+        "meilleurScore": 0,
     },
     {
         "id": 44,
@@ -305,7 +305,7 @@ exports.UTILISATEURS = [
         "mail": "dui.augue.eu@Nullam.edu",
         "password": "ROW-34",
         "pays": "France",
-        "meilleurScore": 18,
+        "meilleurScore": 0,
     },
     {
         "id": 45,
@@ -314,7 +314,7 @@ exports.UTILISATEURS = [
         "mail": "turpis.Aliquam@lacus.co.uk",
         "password": "ROW-35",
         "pays": "France",
-        "meilleurScore": 7,
+        "meilleurScore": 0,
     },
     {
         "id": 46,
@@ -323,7 +323,7 @@ exports.UTILISATEURS = [
         "mail": "non.sollicitudin@nisi.org",
         "password": "ROW-36",
         "pays": "France",
-        "meilleurScore": 6,
+        "meilleurScore": 0,
     },
     {
         "id": 47,
@@ -332,7 +332,7 @@ exports.UTILISATEURS = [
         "mail": "ut.ipsum.ac@anteNunc.com",
         "password": "ROW-37",
         "pays": "France",
-        "meilleurScore": 6,
+        "meilleurScore": 0,
     },
     {
         "id": 48,
@@ -341,7 +341,7 @@ exports.UTILISATEURS = [
         "mail": "Phasellus@luctusut.edu",
         "password": "ROW-38",
         "pays": "France",
-        "meilleurScore": 7,
+        "meilleurScore": 0,
     },
     {
         "id": 49,
@@ -350,7 +350,7 @@ exports.UTILISATEURS = [
         "mail": "hendrerit@dictumeu.co.uk",
         "password": "ROW-39",
         "pays": "France",
-        "meilleurScore": 15,
+        "meilleurScore": 0,
     },
     {
         "id": 50,
@@ -359,7 +359,7 @@ exports.UTILISATEURS = [
         "mail": "mauris@Sedpharetrafelis.edu",
         "password": "ROW-40",
         "pays": "France",
-        "meilleurScore": 16,
+        "meilleurScore": 0,
     },
     {
         "id": 51,
@@ -368,7 +368,7 @@ exports.UTILISATEURS = [
         "mail": "adipiscing@Suspendissedui.ca",
         "password": "ROW-41",
         "pays": "France",
-        "meilleurScore": 10,
+        "meilleurScore": 0,
     },
     {
         "id": 52,
@@ -377,7 +377,7 @@ exports.UTILISATEURS = [
         "mail": "Phasellus.dapibus@eteuismod.edu",
         "password": "ROW-42",
         "pays": "France",
-        "meilleurScore": 4,
+        "meilleurScore": 0,
     },
     {
         "id": 53,
@@ -386,7 +386,7 @@ exports.UTILISATEURS = [
         "mail": "eu.turpis@Vivamus.co.uk",
         "password": "ROW-43",
         "pays": "France",
-        "meilleurScore": 6,
+        "meilleurScore": 0,
     },
     {
         "id": 54,
@@ -395,7 +395,7 @@ exports.UTILISATEURS = [
         "mail": "varius@morbitristique.net",
         "password": "ROW-44",
         "pays": "France",
-        "meilleurScore": 7,
+        "meilleurScore": 0,
     },
     {
         "id": 55,
@@ -404,7 +404,7 @@ exports.UTILISATEURS = [
         "mail": "ornare.facilisis.eget@Cras.net",
         "password": "ROW-45",
         "pays": "France",
-        "meilleurScore": 4,
+        "meilleurScore": 0,
     },
     {
         "id": 56,
@@ -413,7 +413,7 @@ exports.UTILISATEURS = [
         "mail": "eu.dolor@loremutaliquam.com",
         "password": "ROW-46",
         "pays": "France",
-        "meilleurScore": 19,
+        "meilleurScore": 0,
     },
     {
         "id": 57,
@@ -422,7 +422,7 @@ exports.UTILISATEURS = [
         "mail": "nunc.ac@euismod.com",
         "password": "ROW-47",
         "pays": "France",
-        "meilleurScore": 23,
+        "meilleurScore": 0,
     },
     {
         "id": 58,
@@ -431,7 +431,7 @@ exports.UTILISATEURS = [
         "mail": "in@bibendumullamcorper.net",
         "password": "ROW-48",
         "pays": "France",
-        "meilleurScore": 5,
+        "meilleurScore": 0,
     },
     {
         "id": 59,
@@ -440,7 +440,7 @@ exports.UTILISATEURS = [
         "mail": "ut@netusetmalesuada.edu",
         "password": "ROW-49",
         "pays": "France",
-        "meilleurScore": 19,
+        "meilleurScore": 0,
     },
     {
         "id": 60,
@@ -449,7 +449,7 @@ exports.UTILISATEURS = [
         "mail": "auctor.quis.tristique@Nullaaliquet.co.uk",
         "password": "ROW-50",
         "pays": "France",
-        "meilleurScore": 10,
+        "meilleurScore": 0,
     },
     {
         "id": 61,
@@ -458,7 +458,7 @@ exports.UTILISATEURS = [
         "mail": "convallis.est@tellusSuspendissesed.ca",
         "password": "ROW-51",
         "pays": "France",
-        "meilleurScore": 12,
+        "meilleurScore": 0,
     },
     {
         "id": 62,
@@ -467,7 +467,7 @@ exports.UTILISATEURS = [
         "mail": "lacinia@anuncIn.ca",
         "password": "ROW-52",
         "pays": "France",
-        "meilleurScore": 9,
+        "meilleurScore": 0,
     },
     {
         "id": 63,
@@ -476,7 +476,7 @@ exports.UTILISATEURS = [
         "mail": "Etiam.bibendum@nuncsed.ca",
         "password": "ROW-53",
         "pays": "France",
-        "meilleurScore": 23,
+        "meilleurScore": 0,
     },
     {
         "id": 64,
@@ -485,7 +485,7 @@ exports.UTILISATEURS = [
         "mail": "Phasellus.at@nonummyultriciesornare.co.uk",
         "password": "ROW-54",
         "pays": "France",
-        "meilleurScore": 2,
+        "meilleurScore": 0,
     },
     {
         "id": 65,
@@ -494,7 +494,7 @@ exports.UTILISATEURS = [
         "mail": "lectus.quis@natoquepenatibus.org",
         "password": "ROW-55",
         "pays": "France",
-        "meilleurScore": 1,
+        "meilleurScore": 0,
     },
     {
         "id": 66,
@@ -503,7 +503,7 @@ exports.UTILISATEURS = [
         "mail": "eget.metus@telluseu.net",
         "password": "ROW-56",
         "pays": "France",
-        "meilleurScore": 17,
+        "meilleurScore": 0,
     },
     {
         "id": 67,
@@ -512,7 +512,7 @@ exports.UTILISATEURS = [
         "mail": "odio.Etiam@odio.co.uk",
         "password": "ROW-57",
         "pays": "France",
-        "meilleurScore": 5,
+        "meilleurScore": 0,
     },
     {
         "id": 68,
@@ -521,7 +521,7 @@ exports.UTILISATEURS = [
         "mail": "sit@sapien.edu",
         "password": "ROW-58",
         "pays": "France",
-        "meilleurScore": 16,
+        "meilleurScore": 0,
     },
     {
         "id": 69,
@@ -530,7 +530,7 @@ exports.UTILISATEURS = [
         "mail": "natoque.penatibus.et@ligulaconsectetuerrhoncus.edu",
         "password": "ROW-59",
         "pays": "France",
-        "meilleurScore": 11,
+        "meilleurScore": 0,
     },
     {
         "id": 70,
@@ -539,7 +539,7 @@ exports.UTILISATEURS = [
         "mail": "vel.turpis.Aliquam@eleifendvitae.org",
         "password": "ROW-60",
         "pays": "France",
-        "meilleurScore": 1,
+        "meilleurScore": 0,
     },
     {
         "id": 71,
@@ -548,7 +548,7 @@ exports.UTILISATEURS = [
         "mail": "urna@tristique.com",
         "password": "ROW-61",
         "pays": "France",
-        "meilleurScore": 25,
+        "meilleurScore": 0,
     },
     {
         "id": 72,
@@ -557,7 +557,7 @@ exports.UTILISATEURS = [
         "mail": "Donec.non@aauctor.org",
         "password": "ROW-62",
         "pays": "France",
-        "meilleurScore": 5,
+        "meilleurScore": 0,
     },
     {
         "id": 73,
@@ -566,7 +566,7 @@ exports.UTILISATEURS = [
         "mail": "neque@NullafacilisisSuspendisse.edu",
         "password": "ROW-63",
         "pays": "France",
-        "meilleurScore": 5,
+        "meilleurScore": 0,
     },
     {
         "id": 74,
@@ -575,7 +575,7 @@ exports.UTILISATEURS = [
         "mail": "semper.egestas.urna@Nullamlobortis.edu",
         "password": "ROW-64",
         "pays": "France",
-        "meilleurScore": 26,
+        "meilleurScore": 0,
     },
     {
         "id": 75,
@@ -584,7 +584,7 @@ exports.UTILISATEURS = [
         "mail": "enim@consectetueripsumnunc.net",
         "password": "ROW-65",
         "pays": "France",
-        "meilleurScore": 16,
+        "meilleurScore": 0,
     },
     {
         "id": 76,
@@ -593,7 +593,7 @@ exports.UTILISATEURS = [
         "mail": "Aliquam.tincidunt@sed.co.uk",
         "password": "ROW-66",
         "pays": "France",
-        "meilleurScore": 11,
+        "meilleurScore": 0,
     },
     {
         "id": 77,
@@ -602,7 +602,7 @@ exports.UTILISATEURS = [
         "mail": "augue.eu@uterosnon.org",
         "password": "ROW-67",
         "pays": "France",
-        "meilleurScore": 26,
+        "meilleurScore": 0,
     },
     {
         "id": 78,
@@ -611,7 +611,7 @@ exports.UTILISATEURS = [
         "mail": "ac.fermentum.vel@telluslorem.co.uk",
         "password": "ROW-68",
         "pays": "France",
-        "meilleurScore": 13,
+        "meilleurScore": 0,
     },
     {
         "id": 79,
@@ -620,7 +620,7 @@ exports.UTILISATEURS = [
         "mail": "sem.Pellentesque@habitant.org",
         "password": "ROW-69",
         "pays": "France",
-        "meilleurScore": 15,
+        "meilleurScore": 0,
     },
     {
         "id": 80,
@@ -629,7 +629,7 @@ exports.UTILISATEURS = [
         "mail": "Duis.elementum@tinciduntadipiscingMauris.co.uk",
         "password": "ROW-70",
         "pays": "France",
-        "meilleurScore": 14,
+        "meilleurScore": 0,
     },
     {
         "id": 81,
@@ -638,7 +638,7 @@ exports.UTILISATEURS = [
         "mail": "hendrerit@diamluctuslobortis.org",
         "password": "ROW-71",
         "pays": "France",
-        "meilleurScore": 8,
+        "meilleurScore": 0,
     },
     {
         "id": 82,
@@ -647,7 +647,7 @@ exports.UTILISATEURS = [
         "mail": "malesuada.id@vitae.co.uk",
         "password": "ROW-72",
         "pays": "France",
-        "meilleurScore": 13,
+        "meilleurScore": 0,
     },
     {
         "id": 83,
@@ -656,7 +656,7 @@ exports.UTILISATEURS = [
         "mail": "et.euismod.et@metus.edu",
         "password": "ROW-73",
         "pays": "France",
-        "meilleurScore": 16,
+        "meilleurScore": 0,
     },
     {
         "id": 84,
@@ -665,7 +665,7 @@ exports.UTILISATEURS = [
         "mail": "elementum@non.co.uk",
         "password": "ROW-74",
         "pays": "France",
-        "meilleurScore": 25,
+        "meilleurScore": 0,
     },
     {
         "id": 85,
@@ -674,7 +674,7 @@ exports.UTILISATEURS = [
         "mail": "hendrerit.consectetuer@atauctorullamcorper.ca",
         "password": "ROW-75",
         "pays": "France",
-        "meilleurScore": 27,
+        "meilleurScore": 0,
     },
     {
         "id": 86,
@@ -683,7 +683,7 @@ exports.UTILISATEURS = [
         "mail": "amet@at.net",
         "password": "ROW-76",
         "pays": "France",
-        "meilleurScore": 20,
+        "meilleurScore": 0,
     },
     {
         "id": 87,
@@ -692,7 +692,7 @@ exports.UTILISATEURS = [
         "mail": "nibh@ac.com",
         "password": "ROW-77",
         "pays": "France",
-        "meilleurScore": 27,
+        "meilleurScore": 0,
     },
     {
         "id": 88,
@@ -701,7 +701,7 @@ exports.UTILISATEURS = [
         "mail": "risus.In@nislQuisquefringilla.ca",
         "password": "ROW-78",
         "pays": "France",
-        "meilleurScore": 6,
+        "meilleurScore": 0,
     },
     {
         "id": 89,
@@ -710,7 +710,7 @@ exports.UTILISATEURS = [
         "mail": "accumsan.convallis@purusmauris.com",
         "password": "ROW-79",
         "pays": "France",
-        "meilleurScore": 1,
+        "meilleurScore": 0,
     },
     {
         "id": 90,
@@ -719,7 +719,7 @@ exports.UTILISATEURS = [
         "mail": "pede.Praesent@Aliquamauctor.co.uk",
         "password": "ROW-80",
         "pays": "France",
-        "meilleurScore": 1,
+        "meilleurScore": 0,
     },
     {
         "id": 91,
@@ -728,7 +728,7 @@ exports.UTILISATEURS = [
         "mail": "fermentum.risus.at@luctus.co.uk",
         "password": "ROW-81",
         "pays": "France",
-        "meilleurScore": 20,
+        "meilleurScore": 0,
     },
     {
         "id": 92,
@@ -737,7 +737,7 @@ exports.UTILISATEURS = [
         "mail": "Nunc.ut@laoreet.net",
         "password": "ROW-82",
         "pays": "France",
-        "meilleurScore": 18,
+        "meilleurScore": 0,
     },
     {
         "id": 93,
@@ -746,7 +746,7 @@ exports.UTILISATEURS = [
         "mail": "rhoncus.Nullam.velit@ac.org",
         "password": "ROW-83",
         "pays": "France",
-        "meilleurScore": 20,
+        "meilleurScore": 0,
     },
     {
         "id": 94,
@@ -755,7 +755,7 @@ exports.UTILISATEURS = [
         "mail": "magna@a.net",
         "password": "ROW-84",
         "pays": "France",
-        "meilleurScore": 3,
+        "meilleurScore": 0,
     },
     {
         "id": 95,
@@ -764,7 +764,7 @@ exports.UTILISATEURS = [
         "mail": "Proin.nisl@pretiumnequeMorbi.edu",
         "password": "ROW-85",
         "pays": "France",
-        "meilleurScore": 8,
+        "meilleurScore": 0,
     },
     {
         "id": 96,
@@ -773,7 +773,7 @@ exports.UTILISATEURS = [
         "mail": "Curae.Phasellus.ornare@Pellentesquehabitantmorbi.co.uk",
         "password": "ROW-86",
         "pays": "France",
-        "meilleurScore": 24,
+        "meilleurScore": 0,
     },
     {
         "id": 97,
@@ -782,7 +782,7 @@ exports.UTILISATEURS = [
         "mail": "egestas.lacinia.Sed@tincidunt.co.uk",
         "password": "ROW-87",
         "pays": "France",
-        "meilleurScore": 27,
+        "meilleurScore": 0,
     },
     {
         "id": 98,
@@ -791,7 +791,7 @@ exports.UTILISATEURS = [
         "mail": "arcu@faucibusorciluctus.co.uk",
         "password": "ROW-88",
         "pays": "France",
-        "meilleurScore": 15,
+        "meilleurScore": 0,
     },
     {
         "id": 99,
@@ -800,7 +800,7 @@ exports.UTILISATEURS = [
         "mail": "et@laoreetposuere.org",
         "password": "ROW-89",
         "pays": "France",
-        "meilleurScore": 30,
+        "meilleurScore": 0,
     },
     {
         "id": 100,
@@ -809,7 +809,7 @@ exports.UTILISATEURS = [
         "mail": "commodo@metus.net",
         "password": "ROW-90",
         "pays": "France",
-        "meilleurScore": 19,
+        "meilleurScore": 0,
     },
     {
         "id": 101,
@@ -818,7 +818,7 @@ exports.UTILISATEURS = [
         "mail": "dolor@neque.edu",
         "password": "ROW-91",
         "pays": "France",
-        "meilleurScore": 28,
+        "meilleurScore": 0,
     },
     {
         "id": 102,
@@ -827,7 +827,7 @@ exports.UTILISATEURS = [
         "mail": "Donec.est@euodio.com",
         "password": "ROW-92",
         "pays": "France",
-        "meilleurScore": 9,
+        "meilleurScore": 0,
     },
     {
         "id": 103,
@@ -836,7 +836,7 @@ exports.UTILISATEURS = [
         "mail": "ad@luctuset.com",
         "password": "ROW-93",
         "pays": "France",
-        "meilleurScore": 26,
+        "meilleurScore": 0,
     },
     {
         "id": 104,
@@ -845,7 +845,7 @@ exports.UTILISATEURS = [
         "mail": "nibh@Integeridmagna.ca",
         "password": "ROW-94",
         "pays": "France",
-        "meilleurScore": 21,
+        "meilleurScore": 0,
     },
     {
         "id": 105,
@@ -854,7 +854,7 @@ exports.UTILISATEURS = [
         "mail": "accumsan.convallis.ante@nequeIn.net",
         "password": "ROW-95",
         "pays": "France",
-        "meilleurScore": 4,
+        "meilleurScore": 0,
     },
     {
         "id": 106,
@@ -863,7 +863,7 @@ exports.UTILISATEURS = [
         "mail": "eget.varius@Sedmalesuadaaugue.net",
         "password": "ROW-96",
         "pays": "France",
-        "meilleurScore": 14,
+        "meilleurScore": 0,
     },
     {
         "id": 107,
@@ -872,7 +872,7 @@ exports.UTILISATEURS = [
         "mail": "a.enim@egestasAliquamfringilla.co.uk",
         "password": "ROW-97",
         "pays": "France",
-        "meilleurScore": 10,
+        "meilleurScore": 0,
     },
     {
         "id": 108,
@@ -881,7 +881,7 @@ exports.UTILISATEURS = [
         "mail": "Donec@interdumCurabitur.edu",
         "password": "ROW-98",
         "pays": "France",
-        "meilleurScore": 12,
+        "meilleurScore": 0,
     },
     {
         "id": 109,
@@ -890,7 +890,7 @@ exports.UTILISATEURS = [
         "mail": "Quisque.purus@disparturientmontes.ca",
         "password": "ROW-99",
         "pays": "France",
-        "meilleurScore": 6,
+        "meilleurScore": 0,
     },
     {
         "id": 110,
@@ -899,7 +899,7 @@ exports.UTILISATEURS = [
         "mail": "Morbi@malesuadaIntegerid.co.uk",
         "password": "ROW-100",
         "pays": "France",
-        "meilleurScore": 2,
+        "meilleurScore": 0,
     }
 ];
 /*

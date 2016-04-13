@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var mock_parti_1 = require('../data/mock-parti');
 var core_1 = require('angular2/core');
 var theme_service_1 = require('../service/theme.service');
+var mock_themes_1 = require('../data/mock-themes');
 var PartieService = (function () {
     function PartieService(_tService) {
         this._tService = _tService;
@@ -55,7 +56,7 @@ var PartieService = (function () {
         var nb = 0;
         for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
             if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us))
-                if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].s1 > mock_parti_1.PARTIES[i].s2) || (mock_parti_1.PARTIES[i].s1 < mock_parti_1.PARTIES[i].s2 && mock_parti_1.PARTIES[i].id_j2 == us))
+                if (((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].s1 > mock_parti_1.PARTIES[i].s2) || (mock_parti_1.PARTIES[i].s1 < mock_parti_1.PARTIES[i].s2 && mock_parti_1.PARTIES[i].id_j2 == us)) && mock_parti_1.PARTIES[i].player == null)
                     nb++;
         }
         return nb;
@@ -64,7 +65,7 @@ var PartieService = (function () {
         var nb = 0;
         for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
             if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us))
-                if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].s1 < mock_parti_1.PARTIES[i].s2) || (mock_parti_1.PARTIES[i].s1 > mock_parti_1.PARTIES[i].s2 && mock_parti_1.PARTIES[i].id_j2 == us))
+                if (((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].s1 < mock_parti_1.PARTIES[i].s2) || (mock_parti_1.PARTIES[i].s1 > mock_parti_1.PARTIES[i].s2 && mock_parti_1.PARTIES[i].id_j2 == us)) && mock_parti_1.PARTIES[i].player == null)
                     nb++;
         }
         return nb;
@@ -129,12 +130,53 @@ var PartieService = (function () {
         return nb;
     };
     PartieService.prototype.getThemeFavori = function (u) {
-        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
-            if (mock_parti_1.PARTIES[i].id_j1 == u || mock_parti_1.PARTIES[i].id_j2 == u) {
-                return "PSG";
+        var th = "acun pour le moment";
+        var c1 = 0, c2 = 0;
+        for (var i = 0; i < mock_themes_1.THEMES.length; i++) {
+            for (var j = 0; j < mock_parti_1.PARTIES.length; j++) {
+                if (mock_parti_1.PARTIES[j].id_j1 == u || mock_parti_1.PARTIES[j].id_j2 == u) {
+                    for (var h = 0; h < mock_parti_1.PARTIES[j].manche.length; h++) {
+                        if (th == "acun pour le moment") {
+                            if (mock_parti_1.PARTIES[j].manche[h].id_theme == mock_themes_1.THEMES[i].id)
+                                c1++;
+                        }
+                        else {
+                            if (mock_parti_1.PARTIES[j].manche[h].id_theme == mock_themes_1.THEMES[i].id) {
+                                c2++;
+                            }
+                        }
+                    }
+                }
             }
+            if (th == "acun pour le moment") {
+                th = mock_themes_1.THEMES[i].text;
+                c2 = 0;
+            }
+            if (c2 > c1) {
+                c1 = c2;
+                th = mock_themes_1.THEMES[i].text;
+            }
+            c2 = 0;
         }
-        return "acun pour le moment";
+        return th;
+    };
+    PartieService.prototype.getNbV = function (us) {
+        var nb = 0;
+        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+            if ((mock_parti_1.PARTIES[i].id_j1 == us || mock_parti_1.PARTIES[i].id_j2 == us) && mock_parti_1.PARTIES[i].player == null)
+                if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].s1 > mock_parti_1.PARTIES[i].s2) || (mock_parti_1.PARTIES[i].s1 < mock_parti_1.PARTIES[i].s2 && mock_parti_1.PARTIES[i].id_j2 == us))
+                    nb++;
+        }
+        return nb;
+    };
+    PartieService.prototype.getNbD = function (us) {
+        var nb = 0;
+        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
+            if ((mock_parti_1.PARTIES[i].id_j1 == us || mock_parti_1.PARTIES[i].id_j2 == us) && mock_parti_1.PARTIES[i].player == null)
+                if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].s1 < mock_parti_1.PARTIES[i].s2) || (mock_parti_1.PARTIES[i].s1 > mock_parti_1.PARTIES[i].s2 && mock_parti_1.PARTIES[i].id_j2 == us))
+                    nb++;
+        }
+        return nb;
     };
     PartieService = __decorate([
         core_1.Injectable(), 

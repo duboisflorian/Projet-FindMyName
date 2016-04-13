@@ -24,7 +24,8 @@ export class UserdetailComponent implements OnInit {
     nbparties: number;
     theme_favori: string;
     nbAmi: number;
-
+    nbv: number=0;
+    nbd: number=0;
     pays = ['France','Allemagne','Chine','Japon','Etats-Unis','Royaume-Uni','Canada'];
 
     constructor(
@@ -64,6 +65,8 @@ export class UserdetailComponent implements OnInit {
 
         this.nbAmi = this._cService.getNbContact(us);
         //alert("nombre de contact : " + this.nbAmi);
+        this.nbv = this._pService.getNbV(us);
+        this.nbd = this._pService.getNbD(us);
     }
 
     gotoDeco() {

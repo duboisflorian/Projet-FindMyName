@@ -4,6 +4,7 @@ import { PARTIES } from '../data/mock-parti';
 import { Injectable } from 'angular2/core';
 import { UtilisateurService } from '../service/utilisateur.service';
 import { ThemeService } from '../service/theme.service';
+import { THEMES } from '../data/mock-themes';
 
 @Injectable()
 export class PartieService {
@@ -54,7 +55,7 @@ export class PartieService {
         var nb = 0;
         for (var i = 0; i < PARTIES.length; i++) {
             if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
-                if ((PARTIES[i].id_j1 == us && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == us))
+                if (((PARTIES[i].id_j1 == us && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == us)) && PARTIES[i].player == null)
                     nb++;
         }
         return nb;
@@ -64,7 +65,7 @@ export class PartieService {
         var nb = 0;
         for (var i = 0; i < PARTIES.length; i++) {
             if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
-                if ((PARTIES[i].id_j1 == us && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == us))
+                if (((PARTIES[i].id_j1 == us && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == us)) && PARTIES[i].player==null)
                     nb++;
         }
         return nb;
@@ -132,12 +133,59 @@ export class PartieService {
         return nb;
     }
     getThemeFavori(u: number) {
-        for (var i = 0; i < PARTIES.length; i++) {
-            if (PARTIES[i].id_j1 == u || PARTIES[i].id_j2 == u) {
-                return "PSG";
+        var th = "acun pour le moment";
+        var c1=0, c2=0;
+        for (var i = 0; i < THEMES.length; i++) {
+            for (var j = 0; j < PARTIES.length; j++) {
+                if (PARTIES[j].id_j1 == u || PARTIES[j].id_j2 == u) {
+                    for (var h = 0; h < PARTIES[j].manche.length; h++) {
+                        if (th == "acun pour le moment") {
+                            if (PARTIES[j].manche[h].id_theme == THEMES[i].id)
+                                c1++;
+                        } else {
+                            if (PARTIES[j].manche[h].id_theme == THEMES[i].id) {
+                                c2++;
+                            }
+                        }
+                    }
+
+                }
             }
-        } return "acun pour le moment";
+            if (th == "acun pour le moment") {
+                th = THEMES[i].text;
+                c2 = 0;
+            }
+            if (c2 > c1) {
+                c1 = c2;
+                th = THEMES[i].text;
+            }
+            c2 = 0;
+        } return th;
     }
+
+
+
+    getNbV(us: number) {
+        var nb = 0;
+        for (var i = 0; i < PARTIES.length; i++) {
+            if ((PARTIES[i].id_j1 == us || PARTIES[i].id_j2 == us) && PARTIES[i].player == null)
+                if ((PARTIES[i].id_j1 == us && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == us))
+                    nb++;
+        }
+        return nb;
+    }
+
+    getNbD(us: number) {
+        var nb = 0;
+        for (var i = 0; i < PARTIES.length; i++) {
+            if ((PARTIES[i].id_j1 == us || PARTIES[i].id_j2 == us) && PARTIES[i].player == null)
+                if ((PARTIES[i].id_j1 == us && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == us))
+                    nb++;
+        }
+        return nb;
+    }
+
+
 }
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

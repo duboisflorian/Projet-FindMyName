@@ -1,17 +1,17 @@
 ﻿import { Utilisateur } from '../classe/utilisateur';
 
 export var UTILISATEURS: Utilisateur[] = [
-    { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg", "mail": "Florian@gmail.com", "password": "1234", "pays": "France",  "meilleurScore": 15},
-    { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg", "mail": "Yani@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15},
-    { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg", "mail": "maxime@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0},
-    { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg", "mail": "lionel@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 5, "name": "diego", "photo": "fichier/logo.jpg", "mail": "diego@gmail.com", "password": "1234", "pays": "France",  "meilleurScore": 15 },
-    { "id": 6, "name": "tingting", "photo": "fichier/psg.jpg", "mail": "tingting@gmail.com", "password": "1234", "pays": "Allemagne", "meilleurScore": 15},
-    { "id": 7, "name": "Marco", "photo": "fichier/logo.jpg", "mail": "Marco@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 8, "name": "Luffy", "photo": "fichier/psg.jpg", "mail": "Luffy@gmail.com", "password": "1234", "pays": "France",  "meilleurScore": 15 },
-    { "id": 9, "name": "Mingo", "photo": "fichier/logo.jpg", "mail": "Mingo@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 10, "name": "Zoro", "photo": "fichier/logo.jpg", "mail": "Zoro@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
-    { "id": 11, "name": "Papucue", "photo": "fichier/logo.jpg", "mail": "Papucue@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 15 },
+    { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg", "mail": "Florian@gmail.com", "password": "1234", "pays": "France",  "meilleurScore": 20},
+    { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg", "mail": "Yani@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 20},
+    { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg", "mail": "maxime@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 20},
+    { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg", "mail": "lionel@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 20 },
+    { "id": 5, "name": "diego", "photo": "fichier/logo.jpg", "mail": "diego@gmail.com", "password": "1234", "pays": "France",  "meilleurScore": 20 },
+    { "id": 6, "name": "tingting", "photo": "fichier/psg.jpg", "mail": "tingting@gmail.com", "password": "1234", "pays": "Allemagne", "meilleurScore": 25},
+    { "id": 7, "name": "Marco", "photo": "fichier/logo.jpg", "mail": "Marco@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0 },
+    { "id": 8, "name": "Luffy", "photo": "fichier/psg.jpg", "mail": "Luffy@gmail.com", "password": "1234", "pays": "France",  "meilleurScore": 0 },
+    { "id": 9, "name": "Mingo", "photo": "fichier/logo.jpg", "mail": "Mingo@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0 },
+    { "id": 10, "name": "Zoro", "photo": "fichier/logo.jpg", "mail": "Zoro@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0 },
+    { "id": 11, "name": "Papucue", "photo": "fichier/logo.jpg", "mail": "Papucue@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 0 },
     {
         "id": 12,
         "name": "Chandler",
@@ -19,7 +19,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "ante.Vivamus.non@arcu.co.uk",
         "password": "ROW-2",
         "pays": "France",
-        "meilleurScore": 23,
+        "meilleurScore": 0,
     },
     {
         "id": 13,
@@ -28,7 +28,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "Nunc.ullamcorper@luctusCurabituregestas.com",
         "password": "ROW-3",
         "pays": "France",
-        "meilleurScore": 4,
+        "meilleurScore": 0,
     },
     {
         "id": 14,
@@ -37,7 +37,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "est.ac.facilisis@Nullasemper.net",
         "password": "ROW-4",
         "pays": "France",
-        "meilleurScore": 23,
+        "meilleurScore": 0,
     },
     {
         "id": 15,
@@ -46,7 +46,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "accumsan.laoreet@gravida.edu",
         "password": "ROW-5",
         "pays": "France",
-        "meilleurScore": 10,
+        "meilleurScore": 0,
     },
     {
         "id": 16,
@@ -55,7 +55,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "nec.urna.et@ipsum.co.uk",
         "password": "ROW-6",
         "pays": "France",
-        "meilleurScore": 8,
+        "meilleurScore": 0,
     },
     {
         "id": 17,
@@ -64,7 +64,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "sagittis.placerat.Cras@mi.ca",
         "password": "ROW-7",
         "pays": "France",
-        "meilleurScore": 10,
+        "meilleurScore": 0,
     },
     {
         "id": 18,
@@ -73,7 +73,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "sit.amet.risus@rutrumjustoPraesent.org",
         "password": "ROW-8",
         "pays": "France",
-        "meilleurScore": 9,
+        "meilleurScore": 0,
     },
     {
         "id": 19,
@@ -82,7 +82,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "rhoncus@orci.com",
         "password": "ROW-9",
         "pays": "France",
-        "meilleurScore": 25,
+        "meilleurScore": 0,
     },
     {
         "id": 20,
@@ -91,7 +91,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "ut.molestie.in@Donec.net",
         "password": "ROW-10",
         "pays": "France",
-        "meilleurScore": 23,
+        "meilleurScore": 0,
     },
     {
         "id": 21,
@@ -100,7 +100,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "mail": "non.enim.Mauris@eleifendvitae.ca",
         "password": "ROW-11",
         "pays": "France",
-        "meilleurScore": 9,
+        "meilleurScore": 0,
     },
     {
         "id": 22,
@@ -110,7 +110,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-12",
         "pays": "France",
  
-        "meilleurScore": 13,
+        "meilleurScore": 0,
  
     },
     {
@@ -121,7 +121,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-13",
         "pays": "France",
  
-        "meilleurScore": 16,
+        "meilleurScore": 0,
  
     },
     {
@@ -132,7 +132,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-14",
         "pays": "France",
  
-        "meilleurScore": 27,
+        "meilleurScore": 0,
  
     },
     {
@@ -143,7 +143,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-15",
         "pays": "France",
  
-        "meilleurScore": 27,
+        "meilleurScore": 0,
  
     },
     {
@@ -154,7 +154,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-16",
         "pays": "France",
  
-        "meilleurScore": 1,
+        "meilleurScore": 0,
  
     },
     {
@@ -165,7 +165,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-17",
         "pays": "France",
  
-        "meilleurScore": 18,
+        "meilleurScore": 0,
  
     },
     {
@@ -176,7 +176,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-18",
         "pays": "France",
  
-        "meilleurScore": 5,
+        "meilleurScore": 0,
  
     },
     {
@@ -187,7 +187,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-19",
         "pays": "France",
  
-        "meilleurScore": 9,
+        "meilleurScore": 0,
  
     },
     {
@@ -198,7 +198,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-20",
         "pays": "France",
  
-        "meilleurScore": 8,
+        "meilleurScore": 0,
  
     },
     {
@@ -209,7 +209,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-21",
         "pays": "",
  
-        "meilleurScore": 5,
+        "meilleurScore": 0,
  
     },
     {
@@ -220,7 +220,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-22",
         "pays": "France",
  
-        "meilleurScore": 6,
+        "meilleurScore": 0,
  
     },
     {
@@ -231,7 +231,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-23",
         "pays": "France",
  
-        "meilleurScore": 19,
+        "meilleurScore": 0,
  
     },
     {
@@ -242,7 +242,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-24",
         "pays": "France",
  
-        "meilleurScore": 13,
+        "meilleurScore": 0,
  
     },
     {
@@ -253,7 +253,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-25",
         "pays": "France",
  
-        "meilleurScore": 10,
+        "meilleurScore": 0,
  
     },
     {
@@ -264,7 +264,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-26",
         "pays": "France",
  
-        "meilleurScore": 21,
+        "meilleurScore": 0,
  
     },
     {
@@ -275,7 +275,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-27",
         "pays": "France",
  
-        "meilleurScore": 2,
+        "meilleurScore": 0,
  
     },
     {
@@ -286,7 +286,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-28",
         "pays": "France",
  
-        "meilleurScore": 13,
+        "meilleurScore": 0,
  
     },
     {
@@ -297,7 +297,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-29",
         "pays": "France",
  
-        "meilleurScore": 14,
+        "meilleurScore": 0,
  
     },
     {
@@ -308,7 +308,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-30",
         "pays": "France",
  
-        "meilleurScore": 3,
+        "meilleurScore": 0,
  
     },
     {
@@ -319,7 +319,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-31",
         "pays": "France",
  
-        "meilleurScore": 15,
+        "meilleurScore": 0,
  
     },
     {
@@ -330,7 +330,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-32",
         "pays": "France",
  
-        "meilleurScore": 18,
+        "meilleurScore": 0,
  
     },
     {
@@ -341,7 +341,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-33",
         "pays": "France",
  
-        "meilleurScore": 4,
+        "meilleurScore": 0,
  
     },
     {
@@ -352,7 +352,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-34",
         "pays": "France",
  
-        "meilleurScore": 18,
+        "meilleurScore": 0,
  
     },
     {
@@ -363,7 +363,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-35",
         "pays": "France",
  
-        "meilleurScore": 7,
+        "meilleurScore": 0,
  
     },
     {
@@ -374,7 +374,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-36",
         "pays": "France",
  
-        "meilleurScore": 6,
+        "meilleurScore": 0,
  
     },
     {
@@ -385,7 +385,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-37",
         "pays": "France",
  
-        "meilleurScore": 6,
+        "meilleurScore": 0,
  
     },
     {
@@ -396,7 +396,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-38",
         "pays": "France",
  
-        "meilleurScore": 7,
+        "meilleurScore": 0,
  
     },
     {
@@ -407,7 +407,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-39",
         "pays": "France",
  
-        "meilleurScore": 15,
+        "meilleurScore": 0,
  
     },
     {
@@ -418,7 +418,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-40",
         "pays": "France",
  
-        "meilleurScore": 16,
+        "meilleurScore": 0,
  
     },
     {
@@ -429,7 +429,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-41",
         "pays": "France",
  
-        "meilleurScore": 10,
+        "meilleurScore": 0,
  
     },
     {
@@ -440,7 +440,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-42",
         "pays": "France",
  
-        "meilleurScore": 4,
+        "meilleurScore": 0,
  
     },
     {
@@ -451,7 +451,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-43",
         "pays": "France",
  
-        "meilleurScore": 6,
+        "meilleurScore": 0,
  
     },
     {
@@ -462,7 +462,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-44",
         "pays": "France",
  
-        "meilleurScore": 7,
+        "meilleurScore": 0,
  
     },
     {
@@ -473,7 +473,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-45",
         "pays": "France",
  
-        "meilleurScore": 4,
+        "meilleurScore": 0,
  
     },
     {
@@ -484,7 +484,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-46",
         "pays": "France",
  
-        "meilleurScore": 19,
+        "meilleurScore": 0,
  
     },
     {
@@ -495,7 +495,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-47",
         "pays": "France",
  
-        "meilleurScore": 23,
+        "meilleurScore": 0,
  
     },
     {
@@ -506,7 +506,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-48",
         "pays": "France",
  
-        "meilleurScore": 5,
+        "meilleurScore": 0,
  
     },
     {
@@ -517,7 +517,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-49",
         "pays": "France",
  
-        "meilleurScore": 19,
+        "meilleurScore": 0,
  
     },
     {
@@ -528,7 +528,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-50",
         "pays": "France",
  
-        "meilleurScore": 10,
+        "meilleurScore": 0,
  
     },
     {
@@ -539,7 +539,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-51",
         "pays": "France",
  
-        "meilleurScore": 12,
+        "meilleurScore": 0,
  
     },
     {
@@ -550,7 +550,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-52",
         "pays": "France",
  
-        "meilleurScore": 9,
+        "meilleurScore": 0,
  
     },
     {
@@ -561,7 +561,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-53",
         "pays": "France",
  
-        "meilleurScore": 23,
+        "meilleurScore": 0,
  
     },
     {
@@ -572,7 +572,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-54",
         "pays": "France",
  
-        "meilleurScore": 2,
+        "meilleurScore": 0,
  
     },
     {
@@ -583,7 +583,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-55",
         "pays": "France",
  
-        "meilleurScore": 1,
+        "meilleurScore": 0,
  
     },
     {
@@ -594,7 +594,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-56",
         "pays": "France",
  
-        "meilleurScore": 17,
+        "meilleurScore": 0,
  
     },
     {
@@ -605,7 +605,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-57",
         "pays": "France",
  
-        "meilleurScore": 5,
+        "meilleurScore": 0,
  
     },
     {
@@ -616,7 +616,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-58",
         "pays": "France",
  
-        "meilleurScore": 16,
+        "meilleurScore": 0,
  
     },
     {
@@ -627,7 +627,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-59",
         "pays": "France",
  
-        "meilleurScore": 11,
+        "meilleurScore": 0,
  
     },
     {
@@ -638,7 +638,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-60",
         "pays": "France",
  
-        "meilleurScore": 1,
+        "meilleurScore": 0,
  
     },
     {
@@ -649,7 +649,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-61",
         "pays": "France",
  
-        "meilleurScore": 25,
+        "meilleurScore": 0,
  
     },
     {
@@ -660,7 +660,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-62",
         "pays": "France",
  
-        "meilleurScore": 5,
+        "meilleurScore": 0,
  
     },
     {
@@ -671,7 +671,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-63",
         "pays": "France",
  
-        "meilleurScore": 5,
+        "meilleurScore": 0,
  
     },
     {
@@ -682,7 +682,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-64",
         "pays": "France",
  
-        "meilleurScore": 26,
+        "meilleurScore": 0,
  
     },
     {
@@ -693,7 +693,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-65",
         "pays": "France",
  
-        "meilleurScore": 16,
+        "meilleurScore": 0,
  
     },
     {
@@ -704,7 +704,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-66",
         "pays": "France",
  
-        "meilleurScore": 11,
+        "meilleurScore": 0,
  
     },
     {
@@ -715,7 +715,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-67",
         "pays": "France",
  
-        "meilleurScore": 26,
+        "meilleurScore": 0,
  
     },
     {
@@ -726,7 +726,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-68",
         "pays": "France",
  
-        "meilleurScore": 13,
+        "meilleurScore": 0,
  
     },
     {
@@ -737,7 +737,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-69",
         "pays": "France",
  
-        "meilleurScore": 15,
+        "meilleurScore": 0,
  
     },
     {
@@ -748,7 +748,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-70",
         "pays": "France",
  
-        "meilleurScore": 14,
+        "meilleurScore": 0,
  
     },
     {
@@ -759,7 +759,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-71",
         "pays": "France",
  
-        "meilleurScore": 8,
+        "meilleurScore": 0,
  
     },
     {
@@ -770,7 +770,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-72",
         "pays": "France",
  
-        "meilleurScore": 13,
+        "meilleurScore": 0,
  
     },
     {
@@ -781,7 +781,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-73",
         "pays": "France",
  
-        "meilleurScore": 16,
+        "meilleurScore": 0,
  
     },
     {
@@ -792,7 +792,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-74",
         "pays": "France",
  
-        "meilleurScore": 25,
+        "meilleurScore": 0,
  
     },
     {
@@ -803,7 +803,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-75",
         "pays": "France",
  
-        "meilleurScore": 27,
+        "meilleurScore": 0,
  
     },
     {
@@ -814,7 +814,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-76",
         "pays": "France",
  
-        "meilleurScore": 20,
+        "meilleurScore": 0,
  
     },
     {
@@ -825,7 +825,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-77",
         "pays": "France",
  
-        "meilleurScore": 27,
+        "meilleurScore": 0,
  
     },
     {
@@ -836,7 +836,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-78",
         "pays": "France",
  
-        "meilleurScore": 6,
+        "meilleurScore": 0,
  
     },
     {
@@ -847,7 +847,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-79",
         "pays": "France",
  
-        "meilleurScore": 1,
+        "meilleurScore": 0,
  
     },
     {
@@ -858,7 +858,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-80",
         "pays": "France",
  
-        "meilleurScore": 1,
+        "meilleurScore": 0,
  
     },
     {
@@ -869,7 +869,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-81",
         "pays": "France",
  
-        "meilleurScore": 20,
+        "meilleurScore": 0,
  
     },
     {
@@ -880,7 +880,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-82",
         "pays": "France",
  
-        "meilleurScore": 18,
+        "meilleurScore": 0,
  
     },
     {
@@ -891,7 +891,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-83",
         "pays": "France",
  
-        "meilleurScore": 20,
+        "meilleurScore": 0,
  
     },
     {
@@ -902,7 +902,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-84",
         "pays": "France",
  
-        "meilleurScore": 3,
+        "meilleurScore": 0,
  
     },
     {
@@ -913,7 +913,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-85",
         "pays": "France",
  
-        "meilleurScore": 8,
+        "meilleurScore": 0,
  
     },
     {
@@ -924,7 +924,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-86",
         "pays": "France",
  
-        "meilleurScore": 24,
+        "meilleurScore": 0,
  
     },
     {
@@ -935,7 +935,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-87",
         "pays": "France",
  
-        "meilleurScore": 27,
+        "meilleurScore": 0,
  
     },
     {
@@ -946,7 +946,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-88",
         "pays": "France",
  
-        "meilleurScore": 15,
+        "meilleurScore": 0,
  
     },
     {
@@ -957,7 +957,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-89",
         "pays": "France",
  
-        "meilleurScore": 30,
+        "meilleurScore": 0,
  
     },
     {
@@ -968,7 +968,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-90",
         "pays": "France",
  
-        "meilleurScore": 19,
+        "meilleurScore": 0,
  
     },
     {
@@ -979,7 +979,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-91",
         "pays": "France",
  
-        "meilleurScore": 28,
+        "meilleurScore": 0,
  
     },
     {
@@ -990,7 +990,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-92",
         "pays": "France",
  
-        "meilleurScore": 9,
+        "meilleurScore": 0,
  
     },
     {
@@ -1001,7 +1001,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-93",
         "pays": "France",
  
-        "meilleurScore": 26,
+        "meilleurScore": 0,
  
     },
     {
@@ -1012,7 +1012,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-94",
         "pays": "France",
  
-        "meilleurScore": 21,
+        "meilleurScore": 0,
  
     },
     {
@@ -1023,7 +1023,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-95",
         "pays": "France",
  
-        "meilleurScore": 4,
+        "meilleurScore": 0,
  
     },
     {
@@ -1034,7 +1034,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-96",
         "pays": "France",
  
-        "meilleurScore": 14,
+        "meilleurScore": 0,
  
     },
     {
@@ -1045,7 +1045,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-97",
         "pays": "France",
  
-        "meilleurScore": 10,
+        "meilleurScore": 0,
  
     },
     {
@@ -1056,7 +1056,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-98",
         "pays": "France",
  
-        "meilleurScore": 12,
+        "meilleurScore": 0,
  
     },
     {
@@ -1067,7 +1067,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-99",
         "pays": "France",
  
-        "meilleurScore": 6,
+        "meilleurScore": 0,
  
     },
     {
@@ -1078,7 +1078,7 @@ export var UTILISATEURS: Utilisateur[] = [
         "password": "ROW-100",
         "pays": "France",
  
-        "meilleurScore": 2,
+        "meilleurScore": 0,
  
     }
 ];

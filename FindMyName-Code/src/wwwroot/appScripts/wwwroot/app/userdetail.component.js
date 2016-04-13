@@ -22,6 +22,8 @@ var UserdetailComponent = (function () {
         this._cService = _cService;
         this._uService = _uService;
         this.selectPays = "";
+        this.nbv = 0;
+        this.nbd = 0;
         this.pays = ['France', 'Allemagne', 'Chine', 'Japon', 'Etats-Unis', 'Royaume-Uni', 'Canada'];
     }
     UserdetailComponent.prototype.ngOnInit = function () {
@@ -50,6 +52,8 @@ var UserdetailComponent = (function () {
         //alert("Pays :" + this.selectPays);
         this.nbAmi = this._cService.getNbContact(us);
         //alert("nombre de contact : " + this.nbAmi);
+        this.nbv = this._pService.getNbV(us);
+        this.nbd = this._pService.getNbD(us);
     };
     UserdetailComponent.prototype.gotoDeco = function () {
         alert("Vous avez été déconnecté");
