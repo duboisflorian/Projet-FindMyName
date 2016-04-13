@@ -11,7 +11,7 @@ export class RecherchePipe {
         // ES6 array destructuring
         let [nom] = args;
         return value.filter(contact => {
-            return contact.name.match(nom) ;
+            return contact.name.toLowerCase().match(nom.toLowerCase()) ;
         });
     }
 

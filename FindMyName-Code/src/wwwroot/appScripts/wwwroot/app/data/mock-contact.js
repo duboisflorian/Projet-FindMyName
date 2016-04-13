@@ -4,7 +4,7 @@ exports.CONTACTS = [{
             { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg", "type": "ami" },
             { "id": 3, "name": "maxime", "photo": "fichier/logo.jpg", "type": "ami" },
             { "id": 4, "name": "lionel", "photo": "fichier/logo.jpg", "type": "ami" },
-            { "id": 5, "name": "diego", "photo": "fichier/logo.jpg", "type": "ami" },
+            { "id": 5, "name": "diegO", "photo": "fichier/logo.jpg", "type": "ami" },
             { "id": 8, "name": "Luffy", "photo": "fichier/psg.jpg", "type": "online" }
         ]
     },

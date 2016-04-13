@@ -17,7 +17,7 @@ var RecherchePipe = (function () {
         // ES6 array destructuring
         var nom = args[0];
         return value.filter(function (contact) {
-            return contact.name.match(nom);
+            return contact.name.toLowerCase().match(nom.toLowerCase());
         });
     };
     RecherchePipe = __decorate([
