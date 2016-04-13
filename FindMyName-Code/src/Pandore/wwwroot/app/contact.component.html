@@ -50,32 +50,33 @@
 
 
 
-        <div class="col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedContact">
+        <div class="info-user col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedContact">
             <div *ngIf="en_cours==true">
-                ({{partie_en_cours.j1}}) {{partie_en_cours.s1}} - {{partie_en_cours.s2}} ({{partie_en_cours.j2}})
-                <br />
+                <h2>Partie en cours </h2>
+                <h3>({{partie_en_cours.j1}}) {{partie_en_cours.s1}} - {{partie_en_cours.s2}} ({{partie_en_cours.j2}}) </h3>
                 <ul class="nav">
                     <li *ngFor="#m of partie_en_cours.manche"><span>{{m.theme}}   {{m.s1}} - {{m.s2}}</span></li>
                 </ul>
                 <button *ngIf="partie_en_cours.player==u.id" (click)="gotoJouer(partie_en_cours)">Jouer</button>
-                <span *ngIf="partie_en_cours.player!=u.id">En attente</span>
+                <h2 *ngIf="partie_en_cours.player!=u.id">En attente</h2>
             </div>
             <div *ngIf="en_cours==false">
                 <h1>{{u.name | uppercase}} VS {{selectedContact.name | uppercase}}</h1>
                 <h3>Victoire = {{victoire}}</h3>
                 <h3>Defaite = {{defaite}}</h3>
+                <h2>Histoirque des dernière parties contre {{selectedContact.name | uppercase}} </h2>
                 <ul class="nav">
                     <li *ngFor="#h of historique">
                         <span>({{h.j1}}) {{h.s1}} - {{h.s2}} ({{h.j2}})</span> <button (click)="showDetails(h)">Détails</button>
                     </li>
                 </ul>
-                <button (click)="gotoJouer()">Jouer</button>
+                <button (click)="gotoJouer()"> <span>Jouer</span></button>
             </div>
         </div>
 
 
 
-        <div class="col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedContact && !selectedDetails" style="color:aquamarine;">
+        <div class="info-user col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedContact && !selectedDetails">
             <h2>Vos Parties</h2>
             <ul class="nav">
                 <li *ngFor="#p of parties_en_cours">
@@ -85,7 +86,7 @@
             </ul>
         </div>
 
-        <div class="col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedDetails" style="color:aquamarine;">
+        <div class="info-user col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="selectedDetails" >
             ({{selectedDetails.j1}}) {{selectedDetails.s1}} - {{selectedDetails.s2}} ({{selectedDetails.j2}})
             <br />
             <ul class="nav">
