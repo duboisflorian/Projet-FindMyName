@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -182,7 +183,7 @@ var ContactComponent = (function () {
         __metadata('design:paramtypes', [router_1.Router, contact_service_1.ContactService, partie_service_1.PartieService, router_2.RouteParams, utilisateur_service_1.UtilisateurService])
     ], ContactComponent);
     return ContactComponent;
-})();
+}());
 exports.ContactComponent = ContactComponent;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
