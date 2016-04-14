@@ -38,21 +38,15 @@
             </div>
         </div>
 
-        <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
-            <h1>Theme sélectionné : {{theme.text}}</h1>
-               
-
-            <div id="countdown" style="font-size:30px;"></div>
-            <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
-                <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="bon==true">
-                    <img src="./fichier/images/vert.png" />
-                </div>
-                <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="bon==false">
-                    <img src="./fichier/images/rouge.png" />
-                </div>
-            </div>
+        <div class="jouer col-xs-4 col-sm-5 col-lg-7 col-md-7">
+                <h1>Theme sélectionné : {{theme.text}}</h1>
+                <div id="countdown"></div>
+       
+                <img id="gauche" *ngIf="bon==true" src="./fichier/images/vert.png" />
+                <img id="droite" *ngIf="bon==false" src="./fichier/images/rouge.png" />
+         
             <form (ngSubmit)="addTodo()">
-                <input type="text" [(ngModel)]="task" size="30"
+                <input  id="form-recherche" class="form-control" type="text" [(ngModel)]="task" size="30"
                        placeholder="entre le nom d'un joueur" style="color: black;">
                 <input class="btn-primary" type="submit" value="ajouter">
             </form>

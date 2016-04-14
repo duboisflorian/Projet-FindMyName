@@ -22,83 +22,56 @@
     </div>
 </nav>
 
-<font color="white">
-    <div class="core">
-        <table width="100%">
-            <tr>
-                <center>
-                    <td colspan="2">
-                        <form (ngSubmit)="loadListPhoto()">
-                            <img class="portrait" src="{{u.photo}}" /><font color="black">
-                                <select [(ngModel)]="selectPhoto">
-                                    <option>logo</option>
-                                    <option>arsenal</option>
-                                    <option>barca</option>
-                                    <option>psg</option>
-                                    <option>ol</option>
-                                </select>
-                            </font>
-                            <input class="btn-primary" type="submit" value="Changer de photo" />
-                        </form>
-                    </td>
-                </center>
-            </tr>
-            <tr>
-                <center><td colspan="2">{{u.name}} - #{{u.id}}</td></center>
-                <br />
-                <br />
-            </tr>
-            <tr>
-                <th>
-                    <u>modifications personnelles :</u> <br /> <br />
-                </th>
-                <th>
-                    <u>Références :</u> <br /> <br />
-                </th>
-            </tr>
-            <tr>
-                <td><font color="black"><input type="text" placeholder="entrer votre email ici" value="{{u.mail}}" disabled="disabled"/></font><br /> <br /></td>
-                <td>Thème favoris : {{theme_favori}} </td>
-            </tr>
-            <tr>
-                <td><font color="black"><input type="hidden" [(ngModel)]="id" /><input type="password" [(ngModel)]="password" placeholder="entrer votre mot de passe ici"  value="{{u.password}}" /></font><input class="btn-primary" type="button" (click)="modifmdp()" value="Modifier"><br /> <br /></td>
-            <td>Meilleur Score : {{u.meilleurScore}}</td>
-            </tr>
-            <tr>
-                <td>Pays :<font color="black">
-                        <select [(ngModel)]="selectPays" (ngModelChange)="changePays()">
-                            <option *ngFor="#p of pays" [value]="p">{{p}}</option>                        
-                        </select>
-                    </font></td>
-                <td></td>
-            </tr>
-                    <br/>
-                    <br />
-                    <br />
-                    <br />
-            <tr>
-                <th><u>Statistiques</u></th>
-            </tr>
-            <tr>
-                <td>Nombre de parties jouées :{{nbparties}} </td>
-            </tr>
-            <tr>
-                <td>Nombre de victoires:{{nbv}} </td>
-            </tr>
-            <tr>
-                <td>Nombre de defaites: {{nbd}}</td>
-            </tr>
-            <tr>
-                <td>Nombre d'amis: {{nbAmi}}</td>
-            </tr>
+<div class="core">
+    <div class="row" style="margin-right:0px; margin-bottom:282px;">
+        <div class="profile col-xs-12 col-sm-12 col-lg-12 col-md-12">
+            <h1>Bienvenue sur votre profile {{u.name}}  - votre ID est {{u.id}}</h1>
 
-    </table>
+            <h2>Changez votre photo de profile</h2>
+            <form id="modif-photo" (ngSubmit)="loadListPhoto()">
+                <img class="portrait" src="{{u.photo}}" />
+                <select [(ngModel)]="selectPhoto">
+                    <option>logo</option>
+                    <option>arsenal</option>
+                    <option>barca</option>
+                    <option>psg</option>
+                    <option>ol</option>
+                </select>
+                <input class="btn-primary" type="submit" value="Changer de photo" />
+            </form>
+
+            <div class="modif-info col-xs-12 col-sm-8 col-lg-4 col-md-4">
+                <h2>Information personnelles</h2>
+                <h3>Votre adresse mail:</h3>
+                <input id="form-recherche" class="form-control" type="text" placeholder="entrer votre email ici" value="{{u.mail}}" disabled="disabled" />
+                <h3>Modifiez votre mot de passe:</h3>
+                <input type="hidden" [(ngModel)]="id" /><input id="form-recherche" class="form-control" type="password" [(ngModel)]="password" placeholder="entrer votre mot de passe ici" value="{{u.password}}" />
+                <h3>Changez votre pays:</h3>
+                <select [(ngModel)]="selectPays" (ngModelChange)="changePays()">
+                    <option *ngFor="#p of pays" [value]="p">{{p}}</option>
+                </select>
+            </div>
+            <div class="favori col-xs-12 col-sm-8 col-lg-4 col-md-4">
+                <h2>Préférences</h2> 
+                <p>Thème favoris : {{theme_favori}}</p>
+                <p>Meilleur Score : {{u.meilleurScore}}</p>
+            </div>
+            <div class="stat col-xs-12 col-sm-8 col-lg-4 col-md-4">
+                <h2>Statistiques</h2>
+
+                <p>Nombre de parties jouées :{{nbparties}}</p>
+                <p>Nombre de victoires:{{nbv}} </p> 
+                <p>Nombre de defaites: {{nbd}}</p> 
+                <p>Nombre d'amis: {{nbAmi}}</p> 
+           </div>
+        </div>
     </div>
-</font>
+ </div>
 
 
-<!--
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->
+
+        <!--
+        Copyright 2016 Google Inc. All Rights Reserved.
+        Use of this source code is governed by an MIT-style license that
+        can be found in the LICENSE file at http://angular.io/license
+        -->

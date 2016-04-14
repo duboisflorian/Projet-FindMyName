@@ -14,6 +14,7 @@ body {
     width:40px ;
     height: 50px;
 }
+
 .portrait {
     width:60px ;
     height: 60px;
@@ -60,14 +61,8 @@ body {
 
 .info-user{
     text-align: center;
-    h1{
-        color: @white;
-    }
-    h2{
-        color: @white;
-    }
-    h3{
-        color: @white;
+    h1,h2,h3{
+        color: beige;
     }
     ul{
         margin-top: 20px;
@@ -186,11 +181,60 @@ body {
 }
 
 .choix-theme{
-     text-align: center;
+    text-align: center;
     margin: 20px auto 20px auto;
     h1{
         color:beige;
     }
+}
+
+.jouer{
+    text-align: center;
+    h1{
+       color:beige;
+    }
+    #countdown{
+        font-size: 24px;
+        color:beige;
+        margin: 10px auto 10px auto;
+    }
+    #gauche{
+        float: left;
+        margin-left: 50px;
+    }
+    #droite{
+        float: right;
+        margin-right:50px;
+    }
+    form{
+        #form-recherche{
+            margin-top: 400px;
+            width: 200px;
+        }
+    }
+
+}
+
+.profile{
+    text-align:center;
+    padding-bottom: 20px;
+    h1,h2{
+        color: beige;
+    }
+    #modif-photo{
+         margin-top:20px;
+        margin-bottom:20px;
+    }
+    .modif-info, .favori, .stat{
+        background-color: @white;
+        height: 350px;
+        p{
+            margin: 10px auto 10px auto;
+            font-family: Onyx;
+            font-size: 34px;
+        }
+    }
+
 }
 
 .image-theme{
