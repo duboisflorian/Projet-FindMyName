@@ -12,9 +12,8 @@ import {Observable}     from 'rxjs/Observable';
 export class ContactService {
     c: Contact[];
     vide: Contact[] = [];
-    private _heroesUrl = 'http://localhost:54000/api/values/5';  // URL to web api
-    result: string;
-
+    private _cUrl = 'http://localhost:54000/api/values/5';  // URL to web api
+    t: string;
     constructor(
         private _uService: UtilisateurService,
         private http: Http) { }
@@ -34,8 +33,14 @@ export class ContactService {
     }
 
     getContacts(id: number, type: string) {
-        this.http.get(this._heroesUrl).map((res: Response) => res.json()).subscribe(res => this.result = res);
-        alert(this.result);
+        this.http.get(this._cUrl)
+            .map((res: Response) => res.json())
+            .subscribe(
+            data => { this.t = data },
+            err => console.error(err),
+            () => console.log('done')
+            );
+        alert(this.t);
         this.c = [];
         for (var i = 0; i < CONTACTS.length; i++) {
             if (CONTACTS[i].id == id) {

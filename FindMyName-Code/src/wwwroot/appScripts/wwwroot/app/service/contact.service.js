@@ -17,7 +17,7 @@ var ContactService = (function () {
         this._uService = _uService;
         this.http = http;
         this.vide = [];
-        this._heroesUrl = 'http://localhost:54000/api/values/5'; // URL to web api
+        this._cUrl = 'http://localhost:54000/api/values/5'; // URL to web api
     }
     ContactService.prototype.extractData = function (res) {
         if (res.status < 200 || res.status >= 300) {
@@ -34,8 +34,10 @@ var ContactService = (function () {
     };
     ContactService.prototype.getContacts = function (id, type) {
         var _this = this;
-        this.http.get(this._heroesUrl).map(function (res) { return res.json(); }).subscribe(function (res) { return _this.result = res; });
-        alert(this.result);
+        this.http.get(this._cUrl)
+            .map(function (res) { return res.json(); })
+            .subscribe(function (data) { _this.t = data; }, function (err) { return console.error(err); }, function () { return console.log('done'); });
+        alert(this.t);
         this.c = [];
         for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
             if (mock_contact_1.CONTACTS[i].id == id) {
