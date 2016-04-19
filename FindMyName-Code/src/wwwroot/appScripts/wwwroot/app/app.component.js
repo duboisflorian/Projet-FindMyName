@@ -21,6 +21,7 @@ var home_component_1 = require('./home.component');
 var userdetail_component_1 = require('./userdetail.component');
 var contact_component_1 = require('./contact.component');
 var partie_service_1 = require('./service/partie.service');
+var http_1 = require('angular2/http');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'florian';
@@ -32,6 +33,7 @@ var AppComponent = (function () {
             directives: [router_1.ROUTER_DIRECTIVES],
             providers: [
                 router_1.ROUTER_PROVIDERS,
+                http_1.HTTP_PROVIDERS,
                 contact_service_1.ContactService,
                 theme_service_1.ThemeService,
                 utilisateur_service_1.UtilisateurService,

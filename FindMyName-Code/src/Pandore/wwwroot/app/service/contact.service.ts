@@ -4,17 +4,38 @@ import { CONTACTS } from '../data/mock-contact';
 import { Injectable } from 'angular2/core';
 import { ListeContact } from '../classe/liste-contact';
 import { UtilisateurService } from '../service/utilisateur.service';
+import {Http, Response} from 'angular2/http';
+import {Observable}     from 'rxjs/Observable';
 
 
 @Injectable()
 export class ContactService {
     c: Contact[];
     vide: Contact[] = [];
+    private _heroesUrl = 'http://localhost:54000/api/values/5';  // URL to web api
+    result: string;
 
     constructor(
-        private _uService: UtilisateurService) { }
+        private _uService: UtilisateurService,
+        private http: Http) { }
+
+    private extractData(res: Response) {
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error('Bad response status: ' + res.status);
+        }
+        let body = res.json();
+        return body.data || {};
+    }
+    private handleError(error: any) {
+        // In a real world app, we might send the error to remote logging infrastructure
+        let errMsg = error.message || 'Server error';
+        console.error(errMsg); // log to console instead
+        return Observable.throw(errMsg);
+    }
 
     getContacts(id: number, type: string) {
+        this.http.get(this._heroesUrl).map((res: Response) => res.json()).subscribe(res => this.result = res);
+        alert(this.result);
         this.c = [];
         for (var i = 0; i < CONTACTS.length; i++) {
             if (CONTACTS[i].id == id) {

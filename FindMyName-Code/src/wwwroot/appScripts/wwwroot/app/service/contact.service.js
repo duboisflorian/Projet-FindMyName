@@ -10,12 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var mock_contact_1 = require('../data/mock-contact');
 var core_1 = require('angular2/core');
 var utilisateur_service_1 = require('../service/utilisateur.service');
+var http_1 = require('angular2/http');
+var Observable_1 = require('rxjs/Observable');
 var ContactService = (function () {
-    function ContactService(_uService) {
+    function ContactService(_uService, http) {
         this._uService = _uService;
+        this.http = http;
         this.vide = [];
+        this._heroesUrl = 'http://localhost:54000/api/values/5'; // URL to web api
     }
+    ContactService.prototype.extractData = function (res) {
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error('Bad response status: ' + res.status);
+        }
+        var body = res.json();
+        return body.data || {};
+    };
+    ContactService.prototype.handleError = function (error) {
+        // In a real world app, we might send the error to remote logging infrastructure
+        var errMsg = error.message || 'Server error';
+        console.error(errMsg); // log to console instead
+        return Observable_1.Observable.throw(errMsg);
+    };
     ContactService.prototype.getContacts = function (id, type) {
+        var _this = this;
+        this.http.get(this._heroesUrl).map(function (res) { return res.json(); }).subscribe(function (res) { return _this.result = res; });
+        alert(this.result);
         this.c = [];
         for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
             if (mock_contact_1.CONTACTS[i].id == id) {
@@ -100,7 +120,7 @@ var ContactService = (function () {
     };
     ContactService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [utilisateur_service_1.UtilisateurService])
+        __metadata('design:paramtypes', [utilisateur_service_1.UtilisateurService, http_1.Http])
     ], ContactService);
     return ContactService;
 })();
