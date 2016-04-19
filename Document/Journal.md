@@ -286,4 +286,37 @@ Project : Find My Name v_2
 - Maxime
 	- Correction d'un bug sur le prompt sur l'annulation
 	- Correction d'un bug sur le l'ajout d'un contact en ami alors qu'il était déjà un contact online
-	- Mise en forme du site (LESS)
+
+## Jeudi 14/04
+
+- Groupe
+	- Réadaction du dossier
+	- Réalisation du PowerPoint
+	- Préparation de l'oral
+
+## Vendredi 15/04
+
+- Groupe
+	- Passage à l'oral
+
+-----------------------------
+Project : Find My Name v_3
+-----------------------------
+
+## Lundi 18/04
+
+- Groupe
+	- Réunion avec AB pour le serveur
+	- Débrif de l'oral
+
+- Yani
+	- En vacances ^^
+	- Dossier
+
+## Mardi 19/04
+
+- Florian
+	- Début du serveur web API
+
+- Maxime
+	- Début du serveur web API
