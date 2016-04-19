@@ -1,1 +1,1 @@
-{"version":3,"file":"reponses.js","sourceRoot":"","sources":["../../../../../Pandore/wwwroot/app/classe/reponses.ts"],"names":[],"mappings":";AAAC;IAAA;IAGD,CAAC;IAAD,cAAC;AAAD,CAAC,AAHA,IAGA;AAHa,eAAO,UAGpB,CAAA"}
+{"version":3,"file":"reponses.js","sourceRoot":"","sources":["../../../../../Pandore/wwwroot/app/classe/reponses.ts"],"names":["Reponse","Reponse.constructor"],"mappings":"AAAA;IAAAA;IAGAC,CAACA;IAADD,cAACA;AAADA,CAACA,AAHD,IAGC;AAHY,eAAO,UAGnB,CAAA"}

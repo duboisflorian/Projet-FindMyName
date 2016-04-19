@@ -1,4 +1,3 @@
-"use strict";
 exports.UTILISATEURS = [
     { "id": 1, "name": "Florian", "photo": "fichier/logo.jpg", "mail": "Florian@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 20 },
     { "id": 2, "name": "Yani", "photo": "fichier/logo.jpg", "mail": "Yani@gmail.com", "password": "1234", "pays": "France", "meilleurScore": 20 },
