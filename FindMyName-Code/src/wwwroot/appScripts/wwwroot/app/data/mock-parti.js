@@ -1,4 +1,3 @@
-"use strict";
 exports.PARTIES = [
     {
         "id_partie": 1,
