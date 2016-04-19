@@ -5,7 +5,7 @@ import { HTTP_PROVIDERS } from 'angular2/http';
 // Add all operators to Observable
 import 'rxjs/Rx';
 
-bootstrap(AppComponent);
+bootstrap(AppComponent, [HTTP_PROVIDERS]);
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

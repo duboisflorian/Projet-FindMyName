@@ -11,6 +11,7 @@ import { Partie } from './classe/partie';
 import { Manche } from './classe//manche';
 import { PartieService } from './service/partie.service';
 import {RecherchePipe} from './recherche-pipe';
+import {Hero} from './classe/jouer';
 
 @Component({
     selector: 'my-contact',
@@ -34,7 +35,8 @@ export class ContactComponent implements OnInit {
     selectedDetails: Partie;
     searchFriend: string = '';
     type: string = '';
-
+    errorMessage: string;
+    heroes: Hero[];
 
     constructor(
         private _router: Router,
@@ -65,6 +67,10 @@ export class ContactComponent implements OnInit {
     }
 
     ngOnInit() {
+        this._contactService.getNom().subscribe(
+            heroes => this.heroes = heroes,
+            error => this.errorMessage = <any>error);
+
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.UserD(us);

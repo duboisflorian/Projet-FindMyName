@@ -45,6 +45,8 @@ var ContactComponent = (function () {
         }
     };
     ContactComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._contactService.getNom().subscribe(function (heroes) { return _this.heroes = heroes; }, function (error) { return _this.errorMessage = error; });
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.UserD(us);

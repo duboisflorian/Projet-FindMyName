@@ -12,12 +12,13 @@ var core_1 = require('angular2/core');
 var utilisateur_service_1 = require('../service/utilisateur.service');
 var http_1 = require('angular2/http');
 var Observable_1 = require('rxjs/Observable');
+require('rxjs/add/operator/map');
 var ContactService = (function () {
     function ContactService(_uService, http) {
         this._uService = _uService;
         this.http = http;
         this.vide = [];
-        this._cUrl = 'http://localhost:54000/api/values/5'; // URL to web api
+        this._cUrl = '../../fichier/connexion.json'; // URL to web api
     }
     ContactService.prototype.extractData = function (res) {
         if (res.status < 200 || res.status >= 300) {
@@ -32,12 +33,12 @@ var ContactService = (function () {
         console.error(errMsg); // log to console instead
         return Observable_1.Observable.throw(errMsg);
     };
+    ContactService.prototype.getNom = function () {
+        return this.http.get(this._cUrl)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
     ContactService.prototype.getContacts = function (id, type) {
-        var _this = this;
-        this.http.get(this._cUrl)
-            .map(function (res) { return res.json(); })
-            .subscribe(function (data) { _this.t = data; }, function (err) { return console.error(err); }, function () { return console.log('done'); });
-        alert(this.t);
         this.c = [];
         for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
             if (mock_contact_1.CONTACTS[i].id == id) {

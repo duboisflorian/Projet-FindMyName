@@ -4,19 +4,21 @@ import { CONTACTS } from '../data/mock-contact';
 import { Injectable } from 'angular2/core';
 import { ListeContact } from '../classe/liste-contact';
 import { UtilisateurService } from '../service/utilisateur.service';
-import {Http, Response} from 'angular2/http';
+import {Http, Response, Headers} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import {Hero} from '../classe/jouer';
 
 
 @Injectable()
 export class ContactService {
     c: Contact[];
     vide: Contact[] = [];
-    private _cUrl = 'http://localhost:54000/api/values/5';  // URL to web api
-    t: string;
+    public _cUrl = '../../fichier/connexion.json';  // URL to web api
+
     constructor(
         private _uService: UtilisateurService,
-        private http: Http) { }
+        public http: Http) { }
 
     private extractData(res: Response) {
         if (res.status < 200 || res.status >= 300) {
@@ -32,15 +34,13 @@ export class ContactService {
         return Observable.throw(errMsg);
     }
 
+    getNom(): Observable<Hero[]> {
+        return this.http.get(this._cUrl)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
     getContacts(id: number, type: string) {
-        this.http.get(this._cUrl)
-            .map((res: Response) => res.json())
-            .subscribe(
-            data => { this.t = data },
-            err => console.error(err),
-            () => console.log('done')
-            );
-        alert(this.t);
         this.c = [];
         for (var i = 0; i < CONTACTS.length; i++) {
             if (CONTACTS[i].id == id) {
