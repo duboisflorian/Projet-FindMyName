@@ -58,16 +58,6 @@
                     <li *ngFor="#m of partie_en_cours.manche"><span>{{m.theme}}   {{m.s1}} - {{m.s2}}</span></li>
                 </ul>
 
-
-                <h3>Heroes:</h3>
-                <ul>
-                    <li *ngFor="#hero of heroes">
-                        {{ hero.name }}
-                    </li>
-                </ul>
-                <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
-
-
                 <button *ngIf="partie_en_cours.player==u.id" (click)="gotoJouer(partie_en_cours)">Jouer</button>
                 <h2 *ngIf="partie_en_cours.player!=u.id">En attente</h2>
             </div>

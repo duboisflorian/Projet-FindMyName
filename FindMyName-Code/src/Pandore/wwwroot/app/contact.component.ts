@@ -11,7 +11,7 @@ import { Partie } from './classe/partie';
 import { Manche } from './classe//manche';
 import { PartieService } from './service/partie.service';
 import {RecherchePipe} from './recherche-pipe';
-import {Hero} from './classe/jouer';
+
 
 @Component({
     selector: 'my-contact',
@@ -36,7 +36,7 @@ export class ContactComponent implements OnInit {
     searchFriend: string = '';
     type: string = '';
     errorMessage: string;
-    heroes: Hero[];
+    tt: string;
 
     constructor(
         private _router: Router,
@@ -44,6 +44,7 @@ export class ContactComponent implements OnInit {
         private _pService: PartieService,
         private _routeParams: RouteParams,
         private _uService: UtilisateurService) { }
+
 
     getContacts() {
         this.contacts = this._contactService.getContacts(this.u.id, this.type);
@@ -68,9 +69,9 @@ export class ContactComponent implements OnInit {
 
     ngOnInit() {
         this._contactService.getNom().subscribe(
-            heroes => this.heroes = heroes,
+            t => this.tt = t,
             error => this.errorMessage = <any>error);
-
+        alert(this.tt);
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.UserD(us);

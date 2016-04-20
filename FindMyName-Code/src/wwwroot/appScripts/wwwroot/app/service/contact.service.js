@@ -18,7 +18,7 @@ var ContactService = (function () {
         this._uService = _uService;
         this.http = http;
         this.vide = [];
-        this._cUrl = '../../fichier/connexion.json'; // URL to web api
+        this._cUrl = 'http://localhost:54000/api/values/5';
     }
     ContactService.prototype.extractData = function (res) {
         if (res.status < 200 || res.status >= 300) {
@@ -28,9 +28,8 @@ var ContactService = (function () {
         return body.data || {};
     };
     ContactService.prototype.handleError = function (error) {
-        // In a real world app, we might send the error to remote logging infrastructure
         var errMsg = error.message || 'Server error';
-        console.error(errMsg); // log to console instead
+        console.error(errMsg);
         return Observable_1.Observable.throw(errMsg);
     };
     ContactService.prototype.getNom = function () {

@@ -4,18 +4,15 @@ import { CONTACTS } from '../data/mock-contact';
 import { Injectable } from 'angular2/core';
 import { ListeContact } from '../classe/liste-contact';
 import { UtilisateurService } from '../service/utilisateur.service';
-import {Http, Response, Headers} from 'angular2/http';
+import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Hero} from '../classe/jouer';
-
 
 @Injectable()
 export class ContactService {
     c: Contact[];
     vide: Contact[] = [];
-    public _cUrl = '../../fichier/connexion.json';  // URL to web api
-
+    private _cUrl = 'http://localhost:54000/api/values/5'; 
     constructor(
         private _uService: UtilisateurService,
         public http: Http) { }
@@ -28,13 +25,13 @@ export class ContactService {
         return body.data || {};
     }
     private handleError(error: any) {
-        // In a real world app, we might send the error to remote logging infrastructure
         let errMsg = error.message || 'Server error';
-        console.error(errMsg); // log to console instead
+        console.error(errMsg);
         return Observable.throw(errMsg);
     }
 
-    getNom(): Observable<Hero[]> {
+    getNom(): Observable<string> {
+
         return this.http.get(this._cUrl)
             .map(this.extractData)
             .catch(this.handleError);
