@@ -71,7 +71,6 @@ export class ContactComponent implements OnInit {
         this._contactService.getNom().subscribe(
             t => this.tt = t,
             error => this.errorMessage = <any>error);
-        alert(this.tt);
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.UserD(us);

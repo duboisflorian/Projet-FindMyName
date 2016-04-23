@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Cors;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Cors;
+using System.Web.Http;
 
 namespace FindMyName_Serveur
 {
@@ -21,23 +17,28 @@ namespace FindMyName_Serveur
                 .AddJsonFile("appsettings.json")
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
         }
 
         public IConfigurationRoot Configuration { get; set; }
+
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
             services.AddMvc();
+
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowFromAll",
+                options.AddPolicy("*",
                     builder => builder
-                    .WithMethods("GET", "POST")
                     .AllowAnyOrigin()
                     .AllowAnyHeader());
             });
+
+
 
         }
 
@@ -47,16 +48,22 @@ namespace FindMyName_Serveur
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseCors("*");
+
             app.UseIISPlatformHandler();
 
             app.UseStaticFiles();
 
-            app.UseCors("AllowFromAll");
+            app.UseMvc();
+
+        
+           
+
         }
 
-        // Entry point for the application.
-        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
-    }
+    // Entry point for the application.
+    public static void Main(string[] args) => WebApplication.Run<Startup>(args);
+}
 
 
 }

@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -97,7 +98,7 @@ var UtilisateurService = (function () {
         __metadata('design:paramtypes', [partie_service_1.PartieService, theme_service_1.ThemeService])
     ], UtilisateurService);
     return UtilisateurService;
-})();
+}());
 exports.UtilisateurService = UtilisateurService;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
