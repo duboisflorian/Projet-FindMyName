@@ -11,7 +11,7 @@ import { Partie } from './classe/partie';
 import { Manche } from './classe//manche';
 import { PartieService } from './service/partie.service';
 import {RecherchePipe} from './recherche-pipe';
-
+import {Observable}     from 'rxjs/Observable';
 
 @Component({
     selector: 'my-contact',
@@ -36,7 +36,7 @@ export class ContactComponent implements OnInit {
     searchFriend: string = '';
     type: string = '';
     errorMessage: string;
-    tt: string;
+    tt: Observable<string>;
 
     constructor(
         private _router: Router,
@@ -68,9 +68,11 @@ export class ContactComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._contactService.getNom().subscribe(
+        /*this._contactService.getNom().subscribe(
             t => this.tt = t,
-            error => this.errorMessage = <any>error);
+            error => this.errorMessage = <any>error);*/
+        this.tt = this._contactService.getNom();
+        alert(this.tt);
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.UserD(us);

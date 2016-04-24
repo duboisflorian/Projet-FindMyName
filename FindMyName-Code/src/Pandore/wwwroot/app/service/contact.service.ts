@@ -8,10 +8,12 @@ import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+
 @Injectable()
 export class ContactService {
     c: Contact[];
     vide: Contact[] = [];
+
     private _cUrl = 'http://localhost:54000/api/values/5'; 
     constructor(
         private _uService: UtilisateurService,
@@ -31,7 +33,6 @@ export class ContactService {
     }
 
     getNom(): Observable<string> {
-
         return this.http.get(this._cUrl)
             .map(this.extractData)
             .catch(this.handleError);
