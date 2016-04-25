@@ -28,6 +28,76 @@ namespace FindMyName_Serveur.Controllers
             //return "value";
         }
 
+        // GET api/verifMail/{mail}
+        [HttpGet("verifMail/{mail}")]
+        public Boolean verifMailExist(string mail)
+        {
+            return UtilisateurService.verificationMailExist(mail);
+        }
+
+        // GET api/verifConnexion/{mail}/{password}
+        [HttpGet("verifConnexion/{mail}/{password}")]
+        public Utilisateur verifConnexion(string mail, string password)
+        {
+            return UtilisateurService.verificationConnexion(mail, password);
+        }
+
+        // GET api/sameMDP/{id}/{password}
+        [HttpGet("sameMDP/{id}/{password}")]
+        public Boolean sameMDP(int id, string password)
+        {
+            return UtilisateurService.Same_mdp(id, password);
+        }
+
+        // GET api/getLastId
+        [HttpGet("getLastId")]
+        public int getLastId()
+        {
+            return UtilisateurService.getlastid();
+        }
+
+        // GET api/ajoutus/{name}/{mail}/{password}
+        [HttpGet("ajoutus/{name}/{mail}/{password}")]
+        public int ajouterUtilisateur(string name, string mail, string password)
+        {
+            return UtilisateurService.ajouterUtilisateur(name,mail,password);
+        }
+
+        // GET api/getOnlineUtilisateur
+        [HttpGet("getOnlineUtilisateur")]
+        public int getOnlineUtilisateur()
+        {
+            return UtilisateurService.getOnlineutilisateur();
+        }
+
+        // GET api/getName/{id}
+        [HttpGet("getName/{id}")]
+        public string getName(int id)
+        {
+            return UtilisateurService.getName(id);
+        }
+
+        // GET api/ChangerMeilleurScore/{u}/{score}
+        [HttpGet("ChangerMeilleurScore/{u}/{score}")]
+        public void ChangerMeilleurScore(int u,int score)
+        {
+            UtilisateurService.ChangerMeilleurScore(u, score);
+        }
+
+        // GET api/getPhoto/{u}
+        [HttpGet("getPhoto/{u}")]
+        public string getPhoto(int u)
+        {
+          return  UtilisateurService.getPhoto(u);
+        }
+
+        // GET api/getPays/{u}
+        [HttpGet("getPays/{u}")]
+        public string getPays(int u)
+        {
+            return UtilisateurService.getPays(u);
+        }
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)

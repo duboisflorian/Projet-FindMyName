@@ -50,7 +50,7 @@ namespace FindMyName_Serveur.Controllers
 
         // GET api/Contact/addAmi/x/y
         [HttpGet("addAmi/{user}/{u}")]
-        public void addAmi(int user, int u)
+        public void addAmi(Utilisateur user, int u)
         {
             ContactService.addAmi(user, u);
         }
@@ -64,7 +64,7 @@ namespace FindMyName_Serveur.Controllers
 
         // GET api/Contact/addOnline/x/y
         [HttpGet("addOnline/{user}/{u}")]
-        public void addOnline(int user, int u)
+        public void addOnline(Utilisateur user, int u)
         {
             ContactService.addOnline(user, u);
         }
