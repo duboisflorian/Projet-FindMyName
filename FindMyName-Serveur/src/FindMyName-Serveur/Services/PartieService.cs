@@ -200,6 +200,7 @@ namespace FindMyName_Serveur.Services
 
         public static string getThemeFavori(int id)
         {
+            //tous a faire
             return "PSG";
         }
 
