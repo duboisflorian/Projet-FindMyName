@@ -55,9 +55,200 @@ namespace FindMyName_Serveur.Services
             }
             )
         };
+
+        public static int getNbVictoire(int id, int id_ami)
+        {
+            int nb = 0;
+            for (var i = 0; i < PARTIES.Count; i++)
+            {
+                if ((PARTIES[i].id_j1 == id && PARTIES[i].id_j2 == id_ami) || (PARTIES[i].id_j1 == id_ami && PARTIES[i].id_j2 == id))
+                    if (((PARTIES[i].id_j1 == id && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == id)) && PARTIES[i].player == 0)
+                        nb++;
+            }
+            return nb;
+        }
+
+        public static int getNbDefaite(int id, int id_ami)
+        {
+            int nb = 0;
+            for (var i = 0; i < PARTIES.Count; i++)
+            {
+                if ((PARTIES[i].id_j1 == id && PARTIES[i].id_j2 == id_ami) || (PARTIES[i].id_j1 == id_ami && PARTIES[i].id_j2 == id))
+                    if (((PARTIES[i].id_j1 == id && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == id)) && PARTIES[i].player == 0)
+                        nb++;
+            }
+            return nb;
+        }
+
+        public static List<Partie> getHistorique(int id, int id_ami)
+        {
+            List<Partie> p = new List<Partie>();
+            for (var i = 0; i < PARTIES.Count; i++)
+            {
+                if ((PARTIES[i].id_j1 == id && PARTIES[i].id_j2 == id_ami) || (PARTIES[i].id_j1 == id_ami && PARTIES[i].id_j2 == id))
+                    p.Add(PARTIES[i]);
+            }
+            return p;
+        }
+
+        public static Partie getPartieExiste(int id, int id_ami)
+        {
+            for (var i = PARTIES.Count - 1; i >= 0; i--)
+            {
+                if (((PARTIES[i].id_j1 == id && PARTIES[i].id_j2 == id_ami) || (PARTIES[i].id_j1 == id_ami && PARTIES[i].id_j2 == id)) && (PARTIES[i].player == id || PARTIES[i].player == id_ami))
+                    return PARTIES[i];
+            }
+            return null;
+        }
+
+        public static Partie getPartieEnCours(int id, int id_ami)
+        {
+            for (var i = PARTIES.Count - 1; i >= 0; i--)
+            {
+                if ((PARTIES[i].id_j1 == id && PARTIES[i].id_j2 == id_ami) || (PARTIES[i].id_j1 == id_ami && PARTIES[i].id_j2 == id))
+                    return PARTIES[i];
+            }
+            return null;
+        }
+
+        public static void AjouterPartie(int id, int id_ami, int th, int score, string j1, string j2)
+        {
+            int taille = PARTIES.Count;
+            int id_partie = taille + 1;
+            //  var theme = this._tService.getName(th); Yani class
+            Partie p = new Partie(id_partie, id, id_ami, j1, j2, 0, 0, id_ami, new List<Manche> { new Manche(th, "PSG", score, 0) });
+            PARTIES.Add(p);
+        }
+
+        public static List<Partie> getPartieEnCours(int id)
+        {
+            List<Partie> p = new List<Partie>();
+            for (var i = 0; i < PARTIES.Count; i++)
+            {
+                if ((PARTIES[i].id_j1 == id || PARTIES[i].id_j2 == id) && PARTIES[i].s1 < 3 && PARTIES[i].s2 < 3)
+                    p.Add(PARTIES[i]);
+            }
+            return p;
+        }
+
+        public static int getnbParties(int id)
+        {
+            int nb = 0;
+            for (var i = 0; i < PARTIES.Count; i++)
+            {
+                if (PARTIES[i].id_j1 == id || PARTIES[i].id_j2 == id)
+                    nb++;
+            }
+            return nb;
+        }
+
+        public static void ModifierPartie(int id, int id_ami, int th, int score, int id_partie)
+        {
+            for (var i = 0; i < PARTIES.Count; i++)
+            {
+                if (PARTIES[i].id_partie == id_partie)
+                {
+                    var n = PARTIES[i].manche.Count - 1;
+                    if (PARTIES[i].manche[n].s1 == 0)
+                    {
+                        PARTIES[i].manche[n].s1 = score;
+                        if (PARTIES[i].manche[n].s1 > PARTIES[i].manche[n].s2)
+                        {
+                            PARTIES[i].s1 = PARTIES[i].s1 + 1;
+                        }
+                        if (PARTIES[i].manche[n].s1 < PARTIES[i].manche[n].s2)
+                        {
+                            PARTIES[i].s2 = PARTIES[i].s2 + 1;
+                        }
+                        if (PARTIES[i].s2 == 3 || PARTIES[i].s1 == 3)
+                        {
+                            PARTIES[i].player = 0;
+                        }
+                    }
+                    else if (PARTIES[i].manche[n].s2 == 0)
+                    {
+                        PARTIES[i].manche[n].s2 = score;
+                        if (PARTIES[i].manche[n].s1 > PARTIES[i].manche[n].s2)
+                        {
+                            PARTIES[i].s1 = PARTIES[i].s1 + 1;
+                        }
+                        if (PARTIES[i].manche[n].s1 < PARTIES[i].manche[n].s2)
+                        {
+                            PARTIES[i].s2 = PARTIES[i].s2 + 1;
+                        }
+                        if (PARTIES[i].s2 == 3 || PARTIES[i].s1 == 3)
+                        {
+                            PARTIES[i].player = 0;
+                        }
+                    }
+                    else
+                    {
+                        // var theme = this._tService.getName(th); Yani class
+                        if (id == PARTIES[i].id_j1)
+                        {
+                            PARTIES[i].manche.Add(new Manche( th, "PSG", score,0));
+                        }
+                        else {
+                            PARTIES[i].manche.Add(new Manche(th, "PSG",0, score));
+                        }
+
+                        PARTIES[i].player = id_ami;
+                    }
+                }
+            }
+        }
+
+        public static string getThemeFavori(int id)
+        {
+            //tous a faire
+            return "PSG";
+        }
+
+        public static int getNbD(int id)
+        {
+            int nb = 0;
+            for (var i = 0; i < PARTIES.Count; i++)
+            {
+                if ((PARTIES[i].id_j1 == id || PARTIES[i].id_j2 == id) && PARTIES[i].player == 0)
+                    if ((PARTIES[i].id_j1 == id && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == id))
+                        nb++;
+            }
+            return nb;
+        }
+
+        public static int getNbV(int id)
+        {
+            int nb = 0;
+            for (var i = 0; i < PARTIES.Count; i++)
+            {
+                if ((PARTIES[i].id_j1 == id || PARTIES[i].id_j2 == id) && PARTIES[i].player == 0)
+                    if ((PARTIES[i].id_j1 == id && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == id))
+                        nb++;
+            }
+            return nb;
+        }
+
+        public static Boolean getEn_Cours(int id, int id_ami)
+        {
+            for (var i = PARTIES.Count - 1; i >= 0; i--)
+            {
+                if ((PARTIES[i].id_j1 == id && PARTIES[i].id_j2 == id_ami) || (PARTIES[i].id_j1 == id_ami && PARTIES[i].id_j2 == id))
+                {
+                    if (PARTIES[i].player == 0)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+
     }
-
-
 
     public class Manche
     {
@@ -99,6 +290,10 @@ namespace FindMyName_Serveur.Services
             this.s2 = s2;
             this.player = player;
             this.manche = manche;
+        }
+
+        public Partie()
+        {
         }
     }
 
