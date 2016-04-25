@@ -320,3 +320,28 @@ Project : Find My Name v_3
 
 - Maxime
 	- Début du serveur web API
+
+## Mercredi 20/04
+
+- Florian
+	- Serveur
+
+## Jeudi 21/04
+
+- Florian
+	- Try for Cors
+
+## Vendredi 22/04
+
+- Groupe
+	- Réunion avec AB pour le serveur
+	- Mise en place Cors
+	- Photo telephone
+
+## Lundi 25/04
+
+- Florian
+	- Serveur marche
+	- Création des controlleurs
+	- Création des services
+	- Ralisation Contact (controlleur/service)

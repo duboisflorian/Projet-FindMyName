@@ -12,8 +12,7 @@ var mock_contact_1 = require('../data/mock-contact');
 var core_1 = require('angular2/core');
 var utilisateur_service_1 = require('../service/utilisateur.service');
 var http_1 = require('angular2/http');
-var Observable_1 = require('rxjs/Observable');
-require('rxjs/add/operator/map');
+require('rxjs/add/operator/map'); // we need to import this now
 var ContactService = (function () {
     function ContactService(_uService, http) {
         this._uService = _uService;
@@ -21,22 +20,27 @@ var ContactService = (function () {
         this.vide = [];
         this._cUrl = 'http://localhost:54000/api/values/5';
     }
-    ContactService.prototype.extractData = function (res) {
-        if (res.status < 200 || res.status >= 300) {
-            throw new Error('Bad response status: ' + res.status);
-        }
-        var body = res.json();
-        return body.data || {};
-    };
-    ContactService.prototype.handleError = function (error) {
-        var errMsg = error.message || 'Server error';
-        console.error(errMsg);
-        return Observable_1.Observable.throw(errMsg);
-    };
-    ContactService.prototype.getNom = function () {
-        return this.http.get(this._cUrl)
-            .map(this.extractData)
-            .catch(this.handleError);
+    /*  private extractData(res: Response) {
+          if (res.status < 200 || res.status >= 300) {
+              throw new Error('Bad response status: ' + res.status);
+          }
+          let body = res.json();
+          return body.data || {};
+      }
+      private handleError(error: any) {
+          let errMsg = error.message || 'Server error';
+          console.error(errMsg);
+          return Observable.throw(errMsg);
+      }
+  
+      getNom() {
+          return this.http.get(this._cUrl)
+              .map(this.extractData)
+              .catch(this.handleError);
+      }*/
+    ContactService.prototype.getObjectData = function () {
+        return this.http.get('http://localhost:54000/api/values/5')
+            .map(function (data) { return data.json(); });
     };
     ContactService.prototype.getContacts = function (id, type) {
         this.c = [];

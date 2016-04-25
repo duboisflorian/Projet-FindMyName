@@ -60,6 +60,7 @@
                 <h2 *ngIf="partie_en_cours.player!=u.id">En attente</h2>
             </div>
             <div *ngIf="en_cours==false">
+                <div *ngIf="objectData">object data using NgIf: {{objectData.text}}</div>
                 <h1>{{u.name | uppercase}} VS {{selectedContact.name | uppercase}}</h1>
                 <h3>Victoire = {{victoire}}</h3>
                 <h3>Defaite = {{defaite}}</h3>

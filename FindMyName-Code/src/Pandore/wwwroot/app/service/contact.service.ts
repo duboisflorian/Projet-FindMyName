@@ -6,7 +6,8 @@ import { ListeContact } from '../classe/liste-contact';
 import { UtilisateurService } from '../service/utilisateur.service';
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/map';  // we need to import this now
+import { Theme } from '../classe/theme';
 
 
 @Injectable()
@@ -17,9 +18,9 @@ export class ContactService {
     private _cUrl = 'http://localhost:54000/api/values/5'; 
     constructor(
         private _uService: UtilisateurService,
-        public http: Http) { }
+        private http: Http) { }
 
-    private extractData(res: Response) {
+  /*  private extractData(res: Response) {
         if (res.status < 200 || res.status >= 300) {
             throw new Error('Bad response status: ' + res.status);
         }
@@ -32,12 +33,15 @@ export class ContactService {
         return Observable.throw(errMsg);
     }
 
-    getNom(): Observable<string> {
+    getNom() {
         return this.http.get(this._cUrl)
             .map(this.extractData)
             .catch(this.handleError);
+    }*/
+    getObjectData() {
+        return this.http.get('http://localhost:54000/api/values/5')
+            .map(data => data.json());
     }
-
     getContacts(id: number, type: string) {
         this.c = [];
         for (var i = 0; i < CONTACTS.length; i++) {
