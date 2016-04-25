@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using FindMyName_Serveur.Services;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,9 +21,59 @@ namespace FindMyName_Serveur.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public List<ListeContact> Get(int id)
         {
-            return "value";
+            return ContactService.ALL();
+            //return "value";
+        }
+
+        // GET api/Contact/getContacts/x/y
+        [HttpGet("getContacts/{id}/{type}")]
+        public List<Contact> getContacts(int id,string type)
+        {
+            return ContactService.getContacts(id,type);
+        }
+
+        // GET api/Contact/getAmiExiste/x/y
+        [HttpGet("getAmiExiste/{id}/{u}")]
+        public Contact getAmiExiste(int id, int u)
+        {
+            return ContactService.getAmiExiste(id, u);
+        }
+
+        // GET api/Contact/getOnlineExiste/x/y
+        [HttpGet("getOnlineExiste/{id}/{u}")]
+        public Boolean getOnlineExiste(int id, int u)
+        {
+            return ContactService.getOnlineExiste(id, u);
+        }
+
+        // GET api/Contact/addAmi/x/y
+        [HttpGet("addAmi/{user}/{u}")]
+        public void addAmi(Utilisateur user, int u)
+        {
+            ContactService.addAmi(user, u);
+        }
+
+        // GET api/Contact/création/x/y
+        [HttpGet("création/{id}")]
+        public void création(int id)
+        {
+            ContactService.création(id);
+        }
+
+        // GET api/Contact/addOnline/x/y
+        [HttpGet("addOnline/{user}/{u}")]
+        public void addOnline(Utilisateur user, int u)
+        {
+            ContactService.addOnline(user, u);
+        }
+
+        // GET api/Contact/getNbContact/x/y
+        [HttpGet("getNbContact/{u}")]
+        public int getNbContact(int u)
+        {
+            return ContactService.getNbContact(u);
         }
 
         // POST api/values
