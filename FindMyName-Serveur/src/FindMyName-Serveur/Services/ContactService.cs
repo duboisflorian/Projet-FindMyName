@@ -147,7 +147,7 @@ namespace FindMyName_Serveur.Services
             for (var i = 0; i < CONTACTS.Count; i++)
             {
                 if (CONTACTS[i].id == u){
-                    CONTACTS[i].contact.Add(new Contact(user,UtilisateurService.getName(user),user.photo,"ami"));
+                    CONTACTS[i].contact.Add(new Contact(user,UtilisateurService.getName(user), UtilisateurService.getPhoto(user), "ami"));
                 }
             if (CONTACTS[i].id == user)
             {
@@ -161,7 +161,7 @@ namespace FindMyName_Serveur.Services
             for (var i = 0; i < CONTACTS.Count; i++)
             {
                 if (CONTACTS[i].id == u)
-                    CONTACTS[i].contact.Add(new Contact(user,UtilisateurService.getName(user), user.photo, "ami"));
+                    CONTACTS[i].contact.Add(new Contact(user,UtilisateurService.getName(user), UtilisateurService.getPhoto(user), "ami"));
                 if (CONTACTS[i].id == user)
                 {
                     CONTACTS[i].contact.Add(new Contact(u, UtilisateurService.getName(u), UtilisateurService.getPhoto(u), "online"));
