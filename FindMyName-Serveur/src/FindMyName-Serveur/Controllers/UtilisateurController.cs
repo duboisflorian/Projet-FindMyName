@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using FindMyName_Serveur.Services;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,16 +14,18 @@ namespace FindMyName_Serveur.Controllers
     {
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Utilisateur> Get()
         {
-            return new string[] { "value1", "value2" };
+            return UtilisateurService.UTILISATEURS;
+            //return new string[] { "value1", "value2" };
         }
 
-        // GET api/values/5
+        // GET api/Utilisateur/{id}
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Utilisateur Get(int id)
         {
-            return "value";
+            return UtilisateurService.getUser(id);
+            //return "value";
         }
 
         // POST api/values
