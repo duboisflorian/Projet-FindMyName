@@ -345,3 +345,9 @@ Project : Find My Name v_3
 	- Création des controlleurs
 	- Création des services
 	- Ralisation Contact (controlleur/service)
+- Maxime
+	- Ralisation Partie (controlleur/service)
+- Lionel
+	- Ralisation Utilisateur (controlleur/service)
+- Yani
+	- Ralisation Theme et Jouer (controlleur/service)
