@@ -12,6 +12,7 @@ import { HomeComponent } from './home.component';
 import { UserdetailComponent } from './userdetail.component';
 import { ContactComponent } from './contact.component';
 import { PartieService } from './service/partie.service';
+import {Http, HTTP_PROVIDERS} from 'angular2/http';
 
 @Component({
     selector: 'my-app',
@@ -24,6 +25,7 @@ import { PartieService } from './service/partie.service';
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
+        HTTP_PROVIDERS,
         ContactService,
         ThemeService,
         UtilisateurService,

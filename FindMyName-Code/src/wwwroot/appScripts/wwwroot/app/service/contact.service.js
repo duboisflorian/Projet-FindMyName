@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,11 +11,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var mock_contact_1 = require('../data/mock-contact');
 var core_1 = require('angular2/core');
 var utilisateur_service_1 = require('../service/utilisateur.service');
+var http_1 = require('angular2/http');
+require('rxjs/add/operator/map'); // we need to import this now
 var ContactService = (function () {
-    function ContactService(_uService) {
+    function ContactService(_uService, http) {
         this._uService = _uService;
+        this.http = http;
         this.vide = [];
+        this._cUrl = 'http://localhost:54000/api/values/5';
     }
+    /*  private extractData(res: Response) {
+          if (res.status < 200 || res.status >= 300) {
+              throw new Error('Bad response status: ' + res.status);
+          }
+          let body = res.json();
+          return body.data || {};
+      }
+      private handleError(error: any) {
+          let errMsg = error.message || 'Server error';
+          console.error(errMsg);
+          return Observable.throw(errMsg);
+      }
+  
+      getNom() {
+          return this.http.get(this._cUrl)
+              .map(this.extractData)
+              .catch(this.handleError);
+      }*/
+    ContactService.prototype.getObjectData = function () {
+        return this.http.get('http://localhost:54000/api/values/5')
+            .map(function (data) { return data.json(); });
+    };
     ContactService.prototype.getContacts = function (id, type) {
         this.c = [];
         for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
@@ -100,10 +127,10 @@ var ContactService = (function () {
     };
     ContactService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [utilisateur_service_1.UtilisateurService])
+        __metadata('design:paramtypes', [utilisateur_service_1.UtilisateurService, http_1.Http])
     ], ContactService);
     return ContactService;
-})();
+}());
 exports.ContactService = ContactService;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

@@ -11,10 +11,14 @@ import { Partie } from './classe/partie';
 import { Manche } from './classe//manche';
 import { PartieService } from './service/partie.service';
 import {RecherchePipe} from './recherche-pipe';
+import {Observable}     from 'rxjs/Observable';
+import { Theme } from './classe/theme';
+import {Http, HTTP_PROVIDERS} from 'angular2/http';
 
 @Component({
     selector: 'my-contact',
     pipes: [RecherchePipe],
+    providers: [HTTP_PROVIDERS],
     templateUrl: 'app/contact.component.html'
 })
 export class ContactComponent implements OnInit {
@@ -34,7 +38,9 @@ export class ContactComponent implements OnInit {
     selectedDetails: Partie;
     searchFriend: string = '';
     type: string = '';
-
+    errorMessage: string='rien';
+    tt: Theme;
+    objectData: any;
 
     constructor(
         private _router: Router,
@@ -42,6 +48,7 @@ export class ContactComponent implements OnInit {
         private _pService: PartieService,
         private _routeParams: RouteParams,
         private _uService: UtilisateurService) { }
+
 
     getContacts() {
         this.contacts = this._contactService.getContacts(this.u.id, this.type);
@@ -65,6 +72,13 @@ export class ContactComponent implements OnInit {
     }
 
     ngOnInit() {
+        /*this._contactService.getNom().subscribe(
+            t => this.tt = t,
+            error => this.errorMessage = <any>error);
+                alert(this.tt.text);
+        alert(this.tt.text);*/
+        this._contactService.getObjectData()
+            .subscribe(data => this.objectData = data);
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.UserD(us);

@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,6 +22,7 @@ var home_component_1 = require('./home.component');
 var userdetail_component_1 = require('./userdetail.component');
 var contact_component_1 = require('./contact.component');
 var partie_service_1 = require('./service/partie.service');
+var http_1 = require('angular2/http');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'florian';
@@ -32,6 +34,7 @@ var AppComponent = (function () {
             directives: [router_1.ROUTER_DIRECTIVES],
             providers: [
                 router_1.ROUTER_PROVIDERS,
+                http_1.HTTP_PROVIDERS,
                 contact_service_1.ContactService,
                 theme_service_1.ThemeService,
                 utilisateur_service_1.UtilisateurService,
@@ -80,7 +83,7 @@ var AppComponent = (function () {
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
-})();
+}());
 exports.AppComponent = AppComponent;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

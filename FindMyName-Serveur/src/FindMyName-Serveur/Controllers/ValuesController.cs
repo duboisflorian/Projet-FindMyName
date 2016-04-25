@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using Microsoft.AspNet.Cors;
 
 namespace FindMyName_Serveur.Controllers
 {
@@ -18,9 +19,9 @@ namespace FindMyName_Serveur.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Theme Get(int id)
         {
-            return "value";
+            return new Theme("PSG", "1", "./fichier/psg.jpg", false);
         }
 
         // POST api/values
@@ -41,4 +42,26 @@ namespace FindMyName_Serveur.Controllers
         {
         }
     }
+}
+
+public class Theme
+{
+    public string text { get; set; }
+    public string id { get; set; }
+    public string photo { get; set; }
+    public bool done { get; set; }
+
+    public Theme(string t,string i,string p , bool d)
+    {
+        this.text =t;
+        this.id =i;
+        this.photo =p;
+        this.done =d;
+    }
+
+}
+
+public class ListeTheme
+{
+    public List<Theme> themes { get; set; }
 }
