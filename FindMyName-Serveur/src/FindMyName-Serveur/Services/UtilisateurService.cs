@@ -93,7 +93,7 @@ namespace FindMyName_Serveur.Services
 
          public static int ajouterUtilisateur(string name, string mail, string password)
         {
-            UTILISATEURS.Add(new Utilisateur (UtilisateurService.getlastid()+1, "Sandra", "fichier/logo.jpg", "accumsan.laoreet@gravida.edu", "1234", "France", 0));
+           UTILISATEURS.Add(new Utilisateur (UtilisateurService.getlastid()+1, name, "fichier/logo.jpg", mail, password, "France", 0));
         return UtilisateurService.getlastid();
         }
 
