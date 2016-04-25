@@ -142,26 +142,27 @@ namespace FindMyName_Serveur.Services
             return c;
         }
         /////////////////////////////////////////////////////////////////////////////
-         public static void addAmi(Utilisateur user,int u )
+         public static void addAmi(int user,int u )
         {
             for (var i = 0; i < CONTACTS.Count; i++)
             {
-                if (CONTACTS[i].id == u)
-                    CONTACTS[i].contact.Add(new Contact(user.id,user.name,user.photo,"ami"));
-            if (CONTACTS[i].id == user.id)
+                if (CONTACTS[i].id == u){
+                    CONTACTS[i].contact.Add(new Contact(user,UtilisateurService.getName(user),user.photo,"ami"));
+                }
+            if (CONTACTS[i].id == user)
             {
                  CONTACTS[i].contact.Add(new Contact(u, UtilisateurService.getName(u), UtilisateurService.getPhoto(u), "ami"));
             }
         }
     }
         /////////////////////////////////////////////////////////////////////////////
-        public static void addOnline(Utilisateur user, int u)
+        public static void addOnline(int user, int u)
         {
             for (var i = 0; i < CONTACTS.Count; i++)
             {
                 if (CONTACTS[i].id == u)
-                    CONTACTS[i].contact.Add(new Contact(user.id, user.name, user.photo, "ami"));
-                if (CONTACTS[i].id == user.id)
+                    CONTACTS[i].contact.Add(new Contact(user,UtilisateurService.getName(user), user.photo, "ami"));
+                if (CONTACTS[i].id == user)
                 {
                     CONTACTS[i].contact.Add(new Contact(u, UtilisateurService.getName(u), UtilisateurService.getPhoto(u), "online"));
                 }
