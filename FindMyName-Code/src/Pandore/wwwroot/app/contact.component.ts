@@ -42,7 +42,8 @@ export class ContactComponent implements OnInit {
     errorMessage: string='rien';
     tt: Theme;
     objectData: any;
-    addmessage: Res;
+    addmessage: any;
+    sTimeout: number;
 
     constructor(
         private _router: Router,
@@ -73,7 +74,7 @@ export class ContactComponent implements OnInit {
         if (val != null) {
             this.addAmi();
             this.getContacts();
-            //alert(this.addmessage.text);
+            this.sTimeout = setTimeout(() => alert(this.addmessage.text), 500);
         }
     }
 
