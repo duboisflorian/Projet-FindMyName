@@ -351,3 +351,8 @@ Project : Find My Name v_3
 	- Ralisation Utilisateur (controlleur/service)
 - Yani
 	- Ralisation Theme et Jouer (controlleur/service)
+
+## Mardi 26/04
+
+- Lionel
+	- Début code user_detail partie cliente
