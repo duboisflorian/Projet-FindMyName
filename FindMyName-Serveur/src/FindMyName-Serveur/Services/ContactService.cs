@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FindMyName_Serveur.Controllers;
 
 namespace FindMyName_Serveur.Services
 {
@@ -89,6 +90,19 @@ namespace FindMyName_Serveur.Services
             new ListeContact(15,new List<Contact> { })
         };
 
+        internal static ResID Jouer(int u)
+        {
+         int r;
+         for (var i = 0; i < 500; i++) {
+             r = UtilisateurService.getOnlineutilisateur();
+             if (getOnlineExiste(r, u)==false && getAmiExiste(r,u).id==0 && r!=u) {
+                 addOnline(r,u);
+                    return new ResID("go", r);
+                }
+         }
+            return new ResID("Aucun joueur trouvé pour le moment. Nous sommes désolé.", 0);
+        }
+
         /////////////////////////////////////////////////////////////////////////////
         public static Contact getAmiExiste(int id, int u)
         {
@@ -161,7 +175,7 @@ namespace FindMyName_Serveur.Services
             for (var i = 0; i < CONTACTS.Count; i++)
             {
                 if (CONTACTS[i].id == u)
-                    CONTACTS[i].contact.Add(new Contact(user,UtilisateurService.getName(user), UtilisateurService.getPhoto(user), "ami"));
+                    CONTACTS[i].contact.Add(new Contact(user,UtilisateurService.getName(user), UtilisateurService.getPhoto(user), "online"));
                 if (CONTACTS[i].id == user)
                 {
                     CONTACTS[i].contact.Add(new Contact(u, UtilisateurService.getName(u), UtilisateurService.getPhoto(u), "online"));

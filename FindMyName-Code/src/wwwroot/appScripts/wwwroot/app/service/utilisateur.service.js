@@ -66,7 +66,8 @@ var UtilisateurService = (function () {
         return this.getlastid();
     };
     UtilisateurService.prototype.getOnlineutilisateur = function () {
-        return Math.floor(Math.random() * (mock_utilisateurs_1.UTILISATEURS.length - 1) + 1);
+        //  return Math.floor(Math.random() * (UTILISATEURS.length - 1) + 1);
+        return Math.floor(Math.random() * (15 - 1) + 1);
     };
     UtilisateurService.prototype.getName = function (u) {
         for (var i = 0; i < mock_utilisateurs_1.UTILISATEURS.length; i++) {

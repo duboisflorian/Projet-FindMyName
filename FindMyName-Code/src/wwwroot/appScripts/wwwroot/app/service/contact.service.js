@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var mock_contact_1 = require('../data/mock-contact');
 var core_1 = require('angular2/core');
 var utilisateur_service_1 = require('../service/utilisateur.service');
 var http_1 = require('angular2/http');
@@ -20,28 +19,24 @@ var ContactService = (function () {
         this.vide = [];
         this._cUrl = 'http://localhost:54000/api/values/5';
     }
-    /*  private extractData(res: Response) {
-          if (res.status < 200 || res.status >= 300) {
-              throw new Error('Bad response status: ' + res.status);
-          }
-          let body = res.json();
-          return body.data || {};
-      }
-      private handleError(error: any) {
-          let errMsg = error.message || 'Server error';
-          console.error(errMsg);
-          return Observable.throw(errMsg);
-      }
-  
-      getNom() {
-          return this.http.get(this._cUrl)
-              .map(this.extractData)
-              .catch(this.handleError);
-      }*/
-    ContactService.prototype.getObjectData = function () {
-        return this.http.get('http://localhost:54000/api/values/5')
-            .map(function (data) { return data.json(); });
+    ContactService.prototype.extractData = function (res) {
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error('Bad response status: ' + res.status);
+        }
+        var body = res.json();
+        return body.data || {};
     };
+    /*private handleError(error: any) {
+       let errMsg = error.message || 'Server error';
+       console.error(errMsg);
+       return Observable.throw(errMsg);
+   }
+
+   getNom() {
+       return this.http.get(this._cUrl)
+           .map(this.extractData)
+           .catch(this.handleError);
+   }*/
     ContactService.prototype.getContacts = function (id, type) {
         /*this.c = [];
         for (var i = 0; i < CONTACTS.length; i++) {
@@ -59,74 +54,100 @@ var ContactService = (function () {
             .map(function (data) { return data.json(); });
     };
     ContactService.prototype.getAmiExiste = function (id, u) {
-        for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
-            if (mock_contact_1.CONTACTS[i].id == u) {
-                for (var n = 0; n < mock_contact_1.CONTACTS[i].contact.length; n++) {
-                    if (mock_contact_1.CONTACTS[i].contact[n].id == id && mock_contact_1.CONTACTS[i].contact[n].type == "ami")
-                        return mock_contact_1.CONTACTS[i].contact[n];
-                }
-            }
-        }
+        /* for (var i = 0; i < CONTACTS.length; i++) {
+             if (CONTACTS[i].id == u) {
+                 for (var n = 0; n < CONTACTS[i].contact.length; n++) {
+                     if (CONTACTS[i].contact[n].id == id && CONTACTS[i].contact[n].type == "ami")
+                         return CONTACTS[i].contact[n];
+                 }
+             }
+         }*/
+        return this.http.get('http://localhost:54000/api/Contact/getAmiExiste/' + id + '/' + u)
+            .map(function (data) { return data.json(); });
     };
     ContactService.prototype.getOnlineExiste = function (id, u) {
-        for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
-            if (mock_contact_1.CONTACTS[i].id == u)
-                for (var n = 0; n < mock_contact_1.CONTACTS[i].contact.length; n++) {
-                    if (mock_contact_1.CONTACTS[i].contact[n].id == id && mock_contact_1.CONTACTS[i].contact[n].type == "online")
+        /*for (var i = 0; i < CONTACTS.length; i++) {
+            if (CONTACTS[i].id == u)
+                for (var n = 0; n < CONTACTS[i].contact.length; n++) {
+                    if (CONTACTS[i].contact[n].id == id && CONTACTS[i].contact[n].type == "online")
                         return true;
                 }
         }
-        return false;
+        return false;*/
+        return this.http.get('http://localhost:54000/api/Contact/getOnlineExiste/' + id + '/' + u)
+            .map(function (data) { return data.json(); });
     };
     ContactService.prototype.addAmi = function (user, u) {
-        for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
-            if (mock_contact_1.CONTACTS[i].id == u)
-                mock_contact_1.CONTACTS[i].contact.push({ "id": user.id, "name": user.name, "photo": user.photo, "type": "ami" });
-            if (mock_contact_1.CONTACTS[i].id == user.id) {
+        /*for (var i = 0; i < CONTACTS.length; i++) {
+            if (CONTACTS[i].id == u)
+                CONTACTS[i].contact.push({ "id": user.id, "name": user.name, "photo": user.photo, "type": "ami" })
+            if (CONTACTS[i].id == user.id) {
                 var N = this._uService.getName(u);
                 var P = this._uService.getPhoto(u);
-                mock_contact_1.CONTACTS[i].contact.push({ "id": u, "name": N, "photo": P, "type": "ami" });
+                CONTACTS[i].contact.push({ "id": u, "name": N, "photo": P, "type": "ami" })
             }
-        }
+        }*/
+        this.http.get('http://localhost:54000/api/Contact/addAmi/' + user.id + '/' + u)
+            .map(function (data) { return data.json(); });
     };
     ContactService.prototype.addAmiOnline = function (user, u) {
-        for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
-            if (mock_contact_1.CONTACTS[i].id == u) {
-                for (var n = 0; n < mock_contact_1.CONTACTS[i].contact.length; n++) {
-                    if (mock_contact_1.CONTACTS[i].contact[n].id == user.id)
-                        mock_contact_1.CONTACTS[i].contact[n].type = "ami";
-                }
-            }
-        }
+        /* for (var i = 0; i < CONTACTS.length; i++) {
+             if (CONTACTS[i].id == u) {
+                 for (var n = 0; n < CONTACTS[i].contact.length; n++) {
+                     if (CONTACTS[i].contact[n].id == user.id )
+                         CONTACTS[i].contact[n].type = "ami";
+                 }
+             }
+         }*/
+        this.http.get('http://localhost:54000/api/Contact/addAmiOnline/' + user.id + '/' + u)
+            .map(function (data) { return data.json(); });
     };
     ContactService.prototype.addOnline = function (user, u) {
-        for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
-            if (mock_contact_1.CONTACTS[i].id == u)
-                mock_contact_1.CONTACTS[i].contact.push({ "id": user.id, "name": user.name, "photo": user.photo, "type": "online" });
-            if (mock_contact_1.CONTACTS[i].id == user.id) {
-                var N = this._uService.getName(u);
-                var P = this._uService.getPhoto(u);
-                mock_contact_1.CONTACTS[i].contact.push({ "id": u, "name": N, "photo": P, "type": "online" });
-            }
-        }
+        /*  for (var i = 0; i < CONTACTS.length; i++) {
+              if (CONTACTS[i].id == u)
+                  CONTACTS[i].contact.push({ "id": user.id, "name": user.name, "photo": user.photo, "type": "online" })
+              if (CONTACTS[i].id == user.id) {
+                  var N = this._uService.getName(u);
+                  var P = this._uService.getPhoto(u);
+                  CONTACTS[i].contact.push({ "id": u, "name": N, "photo": P, "type": "online" })
+              }
+          }*/
+        this.http.get('http://localhost:54000/api/Contact/addOnline/' + user.id + '/' + u)
+            .map(function (data) { return data.json(); });
     };
     ContactService.prototype.création = function (id) {
-        mock_contact_1.CONTACTS.push({ "id": id, "contact": this.vide });
+        /*CONTACTS.push({ "id": id, "contact": this.vide });*/
+        this.http.get('http://localhost:54000/api/Contact/création/' + id)
+            .map(function (data) { return data.json(); });
     };
     ContactService.prototype.getNbContact = function (u) {
-        var nb = 0;
+        /*var nb=0;
         //alert(CONTACTS.length);
-        for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
-            if (mock_contact_1.CONTACTS[i].id == u) {
+        for (var i = 0; i < CONTACTS.length; i++) {
+            if (CONTACTS[i].id == u) {
                 //alert(CONTACTS[i].contact.length);
-                for (var g = 0; g < mock_contact_1.CONTACTS[i].contact.length; g++) {
-                    if (mock_contact_1.CONTACTS[i].contact[g].type == "ami") {
+                for (var g = 0; g < CONTACTS[i].contact.length; g++) {
+                    if (CONTACTS[i].contact[g].type == "ami") {
                         nb++;
                     }
                 }
             }
         }
-        return nb;
+        return nb;*/
+        return this.http.get('http://localhost:54000/api/Contact/getNbContact/' + u)
+            .map(function (data) { return data.json(); });
+    };
+    ContactService.prototype.Add = function (contactadd, user, u) {
+        return this.http.get('http://localhost:54000/api/Contact/Add/' + contactadd + '/' + user + '/' + u)
+            .map(function (data) { return data.json(); });
+    };
+    ContactService.prototype.getObjectData = function () {
+        return this.http.get('http://localhost:54000/api/values/5')
+            .map(this.extractData);
+    };
+    ContactService.prototype.Jouer = function (i) {
+        return this.http.get('http://localhost:54000/api/Contact/Jouer/' + i)
+            .map(this.extractData);
     };
     ContactService = __decorate([
         core_1.Injectable(), 

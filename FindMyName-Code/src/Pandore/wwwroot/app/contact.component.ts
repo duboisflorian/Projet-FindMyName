@@ -14,7 +14,7 @@ import {RecherchePipe} from './recherche-pipe';
 import {Observable}     from 'rxjs/Observable';
 import { Theme } from './classe/theme';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
-import {Res} from './classe/res';
+import {Res,ResID} from './classe/res';
 
 @Component({
     selector: 'my-contact',
@@ -44,6 +44,7 @@ export class ContactComponent implements OnInit {
     objectData: any;
     addmessage: any;
     sTimeout: number;
+    jouermessage: any;
 
     constructor(
         private _router: Router,
@@ -211,19 +212,11 @@ export class ContactComponent implements OnInit {
     }
 
     jouer() {//marche pas
-        var b = false;
-        var r;
-        for (var i = 0; i < 200; i++) {
-            r = this._uService.getOnlineutilisateur();
-            if (!this._contactService.getOnlineExiste(r, this.u.id)) {
-                this._contactService.addOnline(this._uService.getUtilisateur(r), this.u.id);
-                this._router.navigate(['JouerChoix', { us: this.u.id, id: r }]);
-                b = true;
-                break;
-            }
-        }
 
-        if (!b) { alert("Aucun joueur trouvé pour le moment. Nous sommes désolé."); }
+        this._contactService.Jouer(this.u.id)
+            .subscribe(data => this.jouermessage = data);
+
+        this.sTimeout = setTimeout(() => { if (this.jouermessage.text == "go") { this._router.navigate(['JouerChoix', { us: this.u.id, id: this.jouermessage.id }]); } else { alert(this.jouermessage.text); } }, 1000);
     }
 }
 

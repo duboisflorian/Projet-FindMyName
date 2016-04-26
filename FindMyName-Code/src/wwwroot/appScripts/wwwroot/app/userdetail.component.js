@@ -28,6 +28,7 @@ var UserdetailComponent = (function () {
         this.pays = ['France', 'Allemagne', 'Chine', 'Japon', 'Etats-Unis', 'Royaume-Uni', 'Canada'];
     }
     UserdetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.nbparties = this._pService.getnbParties(us);
@@ -51,7 +52,9 @@ var UserdetailComponent = (function () {
         //alert("Photo :" + this.selectPhoto);
         this.selectPays = this._uService.getPays(us);
         //alert("Pays :" + this.selectPays);
-        this.nbAmi = this._cService.getNbContact(us);
+        /*this.nbAmi = this._cService.getNbContact(us);*/
+        this._cService.getNbContact(us)
+            .subscribe(function (data) { return _this.nbAmi = data; });
         //alert("nombre de contact : " + this.nbAmi);
         this.nbv = this._pService.getNbV(us);
         this.nbd = this._pService.getNbD(us);

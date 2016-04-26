@@ -39,15 +39,18 @@ var ContactComponent = (function () {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
     };
     ContactComponent.prototype.UserD = function (id) {
+        //maxime a changer
         this.parties_en_cours = this._pService.getPartiesEnCours(id);
     };
     ContactComponent.prototype.prompt_add = function () {
+        var _this = this;
         var val;
         val = prompt('Entrer un id', '');
         this.contactadd = parseInt(val);
         if (val != null) {
             this.addAmi();
-            this.getContacts();
+            this.sTimeout = setTimeout(function () { return alert(_this.addmessage.text); }, 500);
+            this.sTimeout = setTimeout(function () { return _this.getContacts(); }, 600);
         }
     };
     ContactComponent.prototype.ngOnInit = function () {
@@ -150,42 +153,42 @@ var ContactComponent = (function () {
         this.getContacts();
     };
     ContactComponent.prototype.addAmi = function () {
-        if (this.utilisateurs = this._uService.getUtilisateur(this.contactadd)) {
-            if ((this.t = this._contactService.getAmiExiste(this.contactadd, this.u.id)) || this.contactadd == this.u.id) {
-                alert("cette personne est déjà dans tes amis");
-                this.contactadd = null;
-            }
-            else {
-                if ((this._contactService.getOnlineExiste(this.contactadd, this.u.id))) {
-                    this._contactService.addAmiOnline(this.utilisateurs, this.u.id);
-                    this.contactadd = null;
-                }
-                else {
-                    this._contactService.addAmi(this.utilisateurs, this.u.id);
-                    this.contactadd = null;
-                }
-            }
-        }
-        else {
-            alert("cette personne n'existe pas");
-            this.contactadd = null;
-        }
+        var _this = this;
+        /* if (this.utilisateurs = this._uService.getUtilisateur(this.contactadd)) {
+             //if ((this.t = this._contactService.getAmiExiste(this.contactadd, this.u.id)) || this.contactadd == this.u.id) {
+             this._contactService.getAmiExiste(this.contactadd, this.u.id).subscribe(data => this.t = data);
+             
+             alert(this.t.id);
+             if ((this.t.id!=0) || this.contactadd == this.u.id) {
+                 alert("cette personne est déjà dans tes amis");
+                 this.contactadd = null;
+             } else {
+                 if (( this._contactService.getOnlineExiste(this.contactadd, this.u.id))) {
+                     this._contactService.addAmiOnline(this.utilisateurs, this.u.id);
+                     this.contactadd = null;
+                 } else {
+                     this._contactService.addAmi(this.utilisateurs, this.u.id);
+                     this.contactadd = null;
+                 }
+             }
+         } else {
+             alert("cette personne n'existe pas");
+             this.contactadd = null;
+         }*/
+        this._contactService.Add(this.contactadd, this.contactadd, this.u.id)
+            .subscribe(function (data) { return _this.addmessage = data; });
+        this.contactadd = null;
     };
     ContactComponent.prototype.jouer = function () {
-        var b = false;
-        var r;
-        for (var i = 0; i < 200; i++) {
-            r = this._uService.getOnlineutilisateur();
-            if (!this._contactService.getOnlineExiste(r, this.u.id)) {
-                this._contactService.addOnline(this._uService.getUtilisateur(r), this.u.id);
-                this._router.navigate(['JouerChoix', { us: this.u.id, id: r }]);
-                b = true;
-                break;
-            }
+        var _this = this;
+        this._contactService.Jouer(this.u.id)
+            .subscribe(function (data) { return _this.jouermessage = data; });
+        this.sTimeout = setTimeout(function () { if (_this.jouermessage.text == "go") {
+            _this._router.navigate(['JouerChoix', { us: _this.u.id, id: _this.jouermessage.id }]);
         }
-        if (!b) {
-            alert("Aucun joueur trouvé pour le moment. Nous sommes désolé.");
-        }
+        else {
+            alert(_this.jouermessage.text);
+        } }, 1000);
     };
     ContactComponent = __decorate([
         core_1.Component({

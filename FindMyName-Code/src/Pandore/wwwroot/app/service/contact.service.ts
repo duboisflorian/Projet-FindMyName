@@ -159,6 +159,11 @@ export class ContactService {
         return this.http.get('http://localhost:54000/api/values/5')
             .map(this.extractData);
     }
+
+    Jouer(i:number) {
+        return this.http.get('http://localhost:54000/api/Contact/Jouer/' + i)
+            .map(this.extractData);
+    }
 }
 
 /*

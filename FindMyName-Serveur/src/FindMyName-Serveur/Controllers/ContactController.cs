@@ -90,6 +90,13 @@ namespace FindMyName_Serveur.Controllers
             ContactService.addAmiOnline(user, u);
         }
 
+        // GET api/Contact/Jouer/x
+        [HttpGet("Jouer/{u}")]
+        public ResID Jouer(int u)
+        {
+           return ContactService.Jouer(u);
+        }
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
@@ -116,6 +123,19 @@ namespace FindMyName_Serveur.Controllers
         {
             this.text = t;
 
+        }
+
+    }
+
+    public class ResID
+    {
+        public string text { get; set; }
+        public int id { get; set; }
+
+        public ResID(string t,int i)
+        {
+            this.text = t;
+            this.id = i;
         }
 
     }
