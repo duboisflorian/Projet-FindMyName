@@ -14,6 +14,7 @@ import {RecherchePipe} from './recherche-pipe';
 import {Observable}     from 'rxjs/Observable';
 import { Theme } from './classe/theme';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {Res} from './classe/res';
 
 @Component({
     selector: 'my-contact',
@@ -27,7 +28,7 @@ export class ContactComponent implements OnInit {
     selectedUser: Utilisateur;
     contactadd: number;
     utilisateurs: Utilisateur;
-    t: Contact;
+    t: any;
     u: Utilisateur;
     parties_en_cours: Partie[];
     en_cours: boolean;
@@ -41,6 +42,7 @@ export class ContactComponent implements OnInit {
     errorMessage: string='rien';
     tt: Theme;
     objectData: any;
+    addmessage: Res;
 
     constructor(
         private _router: Router,
@@ -60,6 +62,7 @@ export class ContactComponent implements OnInit {
     }
 
     UserD(id: number) {
+        //maxime a changer
         this.parties_en_cours = this._pService.getPartiesEnCours(id);
     }
 
@@ -70,6 +73,7 @@ export class ContactComponent implements OnInit {
         if (val != null) {
             this.addAmi();
             this.getContacts();
+            //alert(this.addmessage.text);
         }
     }
 
@@ -179,8 +183,12 @@ export class ContactComponent implements OnInit {
         this.getContacts();
     }
     addAmi() {
-        if (this.utilisateurs = this._uService.getUtilisateur(this.contactadd)) {
-            if ((this.t = this._contactService.getAmiExiste(this.contactadd, this.u.id)) || this.contactadd == this.u.id) {
+       /* if (this.utilisateurs = this._uService.getUtilisateur(this.contactadd)) {
+            //if ((this.t = this._contactService.getAmiExiste(this.contactadd, this.u.id)) || this.contactadd == this.u.id) {
+            this._contactService.getAmiExiste(this.contactadd, this.u.id).subscribe(data => this.t = data);
+            
+            alert(this.t.id);
+            if ((this.t.id!=0) || this.contactadd == this.u.id) {
                 alert("cette personne est déjà dans tes amis");
                 this.contactadd = null;
             } else {
@@ -195,10 +203,13 @@ export class ContactComponent implements OnInit {
         } else {
             alert("cette personne n'existe pas");
             this.contactadd = null;
-        }
+        }*/
+        this._contactService.Add(this.contactadd, this.contactadd, this.u.id)
+            .subscribe(data => this.addmessage = data);
+        this.contactadd = null;
     }
 
-    jouer() {
+    jouer() {//marche pas
         var b = false;
         var r;
         for (var i = 0; i < 200; i++) {
@@ -214,6 +225,7 @@ export class ContactComponent implements OnInit {
         if (!b) { alert("Aucun joueur trouvé pour le moment. Nous sommes désolé."); }
     }
 }
+
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

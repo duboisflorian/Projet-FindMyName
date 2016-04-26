@@ -36,7 +36,7 @@
                     <li>
                         <input id="form-recherche" class="form-control" placeholder="Rechercher un contact" type="text" [value]="searchFriend" (input)="searchFriend = $event.target.value">
                     </li>
-                    <li id="{{contact.id}}" *ngFor="#contact of contacts | RecherchePipe:searchFriend" [class.selected]="contact === selectedContact" (click)="onSelect(contact)"><img class="portrait" src="{{contact.photo}}" /><span>{{contact.name}}</span></li>
+                    <li id="{{contact.id}}" *ngFor="#contact of contacts" [class.selected]="contact === selectedContact" (click)="onSelect(contact)"><img class="portrait" src="{{contact.photo}}" /><span>{{contact.name}}</span></li>
                 </ul>
             </div>
 

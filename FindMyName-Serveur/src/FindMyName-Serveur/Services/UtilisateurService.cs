@@ -41,6 +41,22 @@ namespace FindMyName_Serveur.Services
             return u;
         }
 
+
+        public static Utilisateur Existe(int id)
+        {
+            for (var i = 0; i < UTILISATEURS.Count; i++)
+            {
+                if (UTILISATEURS[i].id == id)
+                {
+                   return UTILISATEURS[i];
+                }
+
+            }
+
+            return null;
+        }
+
+
         public static Utilisateur verificationConnexion(string mail, string password)
         {
             Utilisateur u = new Utilisateur();

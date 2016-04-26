@@ -103,7 +103,7 @@ namespace FindMyName_Serveur.Services
                     }
                 }
             }
-            return null;
+            return new Contact(0, "0", "0", "0"); ;
         }
         /////////////////////////////////////////////////////////////////////////////
         public static Boolean getOnlineExiste(int id, int u)
@@ -191,6 +191,37 @@ namespace FindMyName_Serveur.Services
                 }
             }
             return nb;
+        }
+        //////////////////////////////////////////////////////////////////////////////
+        public static void addAmiOnline(int user,int u)
+        {
+             for (var i = 0; i < CONTACTS.Count; i++) {
+                 if (CONTACTS[i].id == u) {
+                     for (var n = 0; n < CONTACTS[i].contact.Count; n++) {
+                         if (CONTACTS[i].contact[n].id == user )
+                             CONTACTS[i].contact[n].type = "ami";
+                     }
+                 }
+             }
+        }
+        ///////////////////////////////////////////////////////////////////////////////
+        public static String Add(int contactadd , int user, int u) {
+             if (UtilisateurService.Existe(contactadd) !=null){
+                Contact t = getAmiExiste(contactadd, u);
+               if ((t.id!=0) || contactadd == u) {
+                   return"cette personne est déjà dans tes amis";
+               } else {
+                   if ( getOnlineExiste(user, u)==true) {
+                       addAmiOnline(user, u);
+                        return "Ajout reussit";
+                    } else {
+                       addAmi(user, u);
+                        return "Ajout reussit";
+                    }
+               }
+           } else {
+               return "cette personne n'existe pas";
+           }
         }
     }
 

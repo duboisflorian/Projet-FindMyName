@@ -55,6 +55,13 @@ namespace FindMyName_Serveur.Controllers
             ContactService.addAmi(user, u);
         }
 
+        // GET api/Contact/Add/x/y
+        [HttpGet("Add/{c}/{user}/{u}")]
+        public Res Add(int c ,int user, int u)
+        {
+            return new Res(ContactService.Add(c,user, u));
+        }
+
         // GET api/Contact/création/x/y
         [HttpGet("création/{id}")]
         public void création(int id)
@@ -76,6 +83,13 @@ namespace FindMyName_Serveur.Controllers
             return ContactService.getNbContact(u);
         }
 
+        // GET api/Contact/addAmiOnline/x/y
+        [HttpGet("addAmiOnline/{user}/{u}")]
+        public void addAmiOnline(int user, int u)
+        {
+            ContactService.addAmiOnline(user, u);
+        }
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
@@ -93,5 +107,16 @@ namespace FindMyName_Serveur.Controllers
         public void Delete(int id)
         {
         }
+    }
+    public class Res
+    {
+        public string text { get; set; }
+
+        public Res(string t)
+        {
+            this.text = t;
+
+        }
+
     }
 }

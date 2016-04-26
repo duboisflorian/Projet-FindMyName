@@ -63,7 +63,9 @@ export class UserdetailComponent implements OnInit {
         this.selectPays = this._uService.getPays(us);
         //alert("Pays :" + this.selectPays);
 
-        this.nbAmi = this._cService.getNbContact(us);
+        /*this.nbAmi = this._cService.getNbContact(us);*/
+        this._cService.getNbContact(us)
+            .subscribe(data => this.nbAmi = data);
         //alert("nombre de contact : " + this.nbAmi);
         this.nbv = this._pService.getNbV(us);
         this.nbd = this._pService.getNbD(us);

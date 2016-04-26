@@ -71,7 +71,8 @@ export class UtilisateurService {
 
 
     getOnlineutilisateur() {
-        return Math.floor(Math.random() * (UTILISATEURS.length - 1) + 1);
+      //  return Math.floor(Math.random() * (UTILISATEURS.length - 1) + 1);
+        return Math.floor(Math.random() * (15 - 1) + 1);
     }
 
     getName(u: number) {
