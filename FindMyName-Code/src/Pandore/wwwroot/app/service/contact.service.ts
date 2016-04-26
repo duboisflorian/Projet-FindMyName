@@ -8,7 +8,7 @@ import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
 import 'rxjs/add/operator/map';  // we need to import this now
 import { Theme } from '../classe/theme';
-
+import {Res, ResID} from '../classe/res';
 
 @Injectable()
 export class ContactService {
@@ -162,7 +162,7 @@ export class ContactService {
 
     Jouer(i:number) {
         return this.http.get('http://localhost:54000/api/Contact/Jouer/' + i)
-            .map(this.extractData);
+            .map(data => data.json());
     }
 }
 

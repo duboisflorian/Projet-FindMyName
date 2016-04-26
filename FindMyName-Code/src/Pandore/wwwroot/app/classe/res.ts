@@ -3,5 +3,5 @@ export class Res {
 }
 export class ResID {
     text: string;
-    id: boolean;
+    id: number;
 }

@@ -185,37 +185,14 @@ export class ContactComponent implements OnInit {
         this.getContacts();
     }
     addAmi() {
-       /* if (this.utilisateurs = this._uService.getUtilisateur(this.contactadd)) {
-            //if ((this.t = this._contactService.getAmiExiste(this.contactadd, this.u.id)) || this.contactadd == this.u.id) {
-            this._contactService.getAmiExiste(this.contactadd, this.u.id).subscribe(data => this.t = data);
-            
-            alert(this.t.id);
-            if ((this.t.id!=0) || this.contactadd == this.u.id) {
-                alert("cette personne est déjà dans tes amis");
-                this.contactadd = null;
-            } else {
-                if (( this._contactService.getOnlineExiste(this.contactadd, this.u.id))) {
-                    this._contactService.addAmiOnline(this.utilisateurs, this.u.id);
-                    this.contactadd = null;
-                } else {
-                    this._contactService.addAmi(this.utilisateurs, this.u.id);
-                    this.contactadd = null;
-                }
-            }
-        } else {
-            alert("cette personne n'existe pas");
-            this.contactadd = null;
-        }*/
         this._contactService.Add(this.contactadd, this.contactadd, this.u.id)
             .subscribe(data => this.addmessage = data);
         this.contactadd = null;
     }
 
-    jouer() {//marche pas
-
+    jouer() {
         this._contactService.Jouer(this.u.id)
             .subscribe(data => this.jouermessage = data);
-
         this.sTimeout = setTimeout(() => { if (this.jouermessage.text == "go") { this._router.navigate(['JouerChoix', { us: this.u.id, id: this.jouermessage.id }]); } else { alert(this.jouermessage.text); } }, 1000);
     }
 }

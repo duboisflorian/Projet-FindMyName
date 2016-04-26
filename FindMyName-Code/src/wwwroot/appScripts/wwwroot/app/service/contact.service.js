@@ -147,7 +147,7 @@ var ContactService = (function () {
     };
     ContactService.prototype.Jouer = function (i) {
         return this.http.get('http://localhost:54000/api/Contact/Jouer/' + i)
-            .map(this.extractData);
+            .map(function (data) { return data.json(); });
     };
     ContactService = __decorate([
         core_1.Injectable(), 
