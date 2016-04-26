@@ -51,7 +51,9 @@ export class ContactComponent implements OnInit {
 
 
     getContacts() {
-        this.contacts = this._contactService.getContacts(this.u.id, this.type);
+        /*this.contacts = this._contactService.getContacts(this.u.id, this.type);*/
+        this._contactService.getContacts(this.u.id, this.type)
+            .subscribe(data => this.contacts = data);
     }
     gotoDetail() {
         this._router.navigate(['Userdetail', { us: this.u.id }]);

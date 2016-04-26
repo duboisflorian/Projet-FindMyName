@@ -43,17 +43,20 @@ var ContactService = (function () {
             .map(function (data) { return data.json(); });
     };
     ContactService.prototype.getContacts = function (id, type) {
-        this.c = [];
-        for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {
-            if (mock_contact_1.CONTACTS[i].id == id) {
-                for (var n = 0; n < mock_contact_1.CONTACTS[i].contact.length; n++) {
-                    if (mock_contact_1.CONTACTS[i].contact[n].type == type) {
-                        this.c.push(mock_contact_1.CONTACTS[i].contact[n]);
+        /*this.c = [];
+        for (var i = 0; i < CONTACTS.length; i++) {
+            if (CONTACTS[i].id == id) {
+                for (var n = 0; n < CONTACTS[i].contact.length; n++) {
+                    if (CONTACTS[i].contact[n].type == type) {
+                        this.c.push(CONTACTS[i].contact[n]);
                     }
                 }
             }
+
         }
-        return this.c;
+        return this.c;*/
+        return this.http.get('http://localhost:54000/api/Contact/getContacts/' + id + '/' + type)
+            .map(function (data) { return data.json(); });
     };
     ContactService.prototype.getAmiExiste = function (id, u) {
         for (var i = 0; i < mock_contact_1.CONTACTS.length; i++) {

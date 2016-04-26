@@ -43,7 +43,7 @@ export class ContactService {
             .map(data => data.json());
     }
     getContacts(id: number, type: string) {
-        this.c = [];
+        /*this.c = [];
         for (var i = 0; i < CONTACTS.length; i++) {
             if (CONTACTS[i].id == id) {
                 for (var n = 0; n < CONTACTS[i].contact.length; n++) {
@@ -54,7 +54,9 @@ export class ContactService {
             }
 
         }
-        return this.c;
+        return this.c;*/
+        return this.http.get('http://localhost:54000/api/Contact/getContacts/'+id+'/'+type)
+            .map(data => data.json());
     }
 
     getAmiExiste(id: number, u: number) {

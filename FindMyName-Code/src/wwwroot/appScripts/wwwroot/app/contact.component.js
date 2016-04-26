@@ -30,7 +30,10 @@ var ContactComponent = (function () {
         this.errorMessage = 'rien';
     }
     ContactComponent.prototype.getContacts = function () {
-        this.contacts = this._contactService.getContacts(this.u.id, this.type);
+        var _this = this;
+        /*this.contacts = this._contactService.getContacts(this.u.id, this.type);*/
+        this._contactService.getContacts(this.u.id, this.type)
+            .subscribe(function (data) { return _this.contacts = data; });
     };
     ContactComponent.prototype.gotoDetail = function () {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
