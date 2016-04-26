@@ -73,8 +73,8 @@ export class ContactComponent implements OnInit {
         this.contactadd = parseInt(val);
         if (val != null) {
             this.addAmi();
-            this.getContacts();
             this.sTimeout = setTimeout(() => alert(this.addmessage.text), 500);
+            this.sTimeout = setTimeout(() => this.getContacts(), 600);
         }
     }
 
