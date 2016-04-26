@@ -14,13 +14,45 @@ namespace FindMyName_Serveur.Controllers
     {
         // GET: api/Theme
         [HttpGet]
-        /*public IEnumerable<string> Get()
+        public List<Services.Theme> Get()
         {
-            return new string[] { "value1", "value2" };
-        }*/
-        public List<FindMyName_Serveur.Services.Theme> Get()
+            return ThemeService.ALL();
+        }
+
+        [HttpGet("getThemes")]
+        public List<Services.Theme> getThemes()
         {
-            return ThemeService.THEMES;
+            return ThemeService.getThemes();
+        }
+
+        [HttpGet("melanger")]
+        public void melanger()
+        {
+            ThemeService.melanger();
+        }
+
+        [HttpGet("melanger/{nombre}/{aleatoire}")]
+        public bool isvalid(int nombre, List<int> aleatoire)
+        {
+            return ThemeService.isvalid(nombre, aleatoire);
+        }
+
+        [HttpGet("getTheme/{id}")]
+        public static Services.Theme getTheme(int id)
+        {
+            return ThemeService.getTheme(id);
+        }
+
+        [HttpGet("getName/{u}")]
+        public static String getName(int u)
+        {
+            return ThemeService.getName(u);
+        }
+
+        [HttpGet("getId/{n}")]
+        public static int getId(String n)
+        {
+            return ThemeService.getId(n);
         }
 
         // GET api/values/5
