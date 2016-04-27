@@ -31,6 +31,19 @@ export class ThemeService {
         return this.http.get('http://localhost:54000/api/theme/isvalid/{nombre}/{aleatoire}/')
             .map(data => data.json());
     }
+    getTheme(id: number) {
+        return this.http.get('http://localhost:54000/api/theme/getTheme/{id}/')
+            .map(data => data.json());
+    }
+    getName(u: number) {
+        return this.http.get('http://localhost:54000/api/theme/getName/{u}/')
+            .map(data => data.json());
+    }
+
+    getId(n: string) {
+        return this.http.get('http://localhost:54000/api/theme/getId/{n}/')
+            .map(data => data.json());
+    }
 }
 
 /*
