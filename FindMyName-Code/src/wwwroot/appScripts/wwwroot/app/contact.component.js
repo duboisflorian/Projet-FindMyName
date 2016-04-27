@@ -23,12 +23,14 @@ var ContactComponent = (function () {
         this._pService = _pService;
         this._routeParams = _routeParams;
         this._uService = _uService;
+        this.partie_en_cours = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
         this.victoire = 0;
         this.defaite = 0;
         this.searchFriend = '';
         this.type = '';
         this.errorMessage = 'rien';
     }
+    ;
     ContactComponent.prototype.getContacts = function () {
         var _this = this;
         /*this.contacts = this._contactService.getContacts(this.u.id, this.type);*/
@@ -39,8 +41,9 @@ var ContactComponent = (function () {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
     };
     ContactComponent.prototype.UserD = function (id) {
-        //maxime a changer
-        this.parties_en_cours = this._pService.getPartiesEnCours(id);
+        var _this = this;
+        // this.parties_en_cours = this._pService.getPartiesEnCours(id);
+        this._pService.getPartiesEnCours(id).subscribe(function (data) { return _this.parties_en_cours = data; });
     };
     ContactComponent.prototype.prompt_add = function () {
         var _this = this;
@@ -74,6 +77,7 @@ var ContactComponent = (function () {
         this.selectedDetails = h;
     };
     ContactComponent.prototype.onSelect = function (contact) {
+        var _this = this;
         this.selectedContact = contact;
         this.selectedDetails = null;
         // JS: Modifie le HTML pour montrer quel contact est afficher à l'utilisateur
@@ -83,14 +87,14 @@ var ContactComponent = (function () {
         }
         document.getElementById(contact.id.toString()).className = "active";
         // Fin JS
-        this.en_cours = this._pService.getEn_Cours(this.u.id, contact.id);
+        this._pService.getEn_Cours(this.u.id, contact.id).subscribe(function (data) { return _this.en_cours = data; });
         if (this.en_cours == true) {
-            this.partie_en_cours = this._pService.getPartieEnCours(this.u.id, contact.id);
+            this._pService.getPartieEnCours(this.u.id, contact.id).subscribe(function (data) { return _this.partie_en_cours = data; });
         }
         else {
-            this.historique = this._pService.getHistorique(this.u.id, contact.id);
-            this.victoire = this._pService.getNbVictoire(this.u.id, contact.id);
-            this.defaite = this._pService.getNbDefaite(this.u.id, contact.id);
+            this._pService.getHistorique(this.u.id, contact.id).subscribe(function (data) { return _this.historique = data; });
+            this._pService.getNbVictoire(this.u.id, contact.id).subscribe(function (data) { return _this.victoire = data; });
+            this._pService.getNbDefaite(this.u.id, contact.id).subscribe(function (data) { return _this.defaite = data; });
         }
     };
     ContactComponent.prototype.onSelectU = function () {

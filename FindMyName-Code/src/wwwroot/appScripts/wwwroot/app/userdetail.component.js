@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var router_2 = require('angular2/router');
-var mock_utilisateurs_1 = require('./data/mock-utilisateurs');
 var utilisateur_service_1 = require('./service/utilisateur.service');
 var partie_service_1 = require('./service/partie.service');
 var contact_service_1 = require('./service/contact.service');
@@ -37,6 +36,7 @@ var UserdetailComponent = (function () {
         this._uService.getPhoto(us)
             .subscribe(function (data) { return _this.photo = data; });
         this.sTimeout = setTimeout(function () {
+            //alert(this.photo.text);
             _this.selectPhoto = _this.photo.text;
             if (_this.selectPhoto == "fichier/logo.jpg") {
                 _this.selectPhoto = "logo";
@@ -89,20 +89,28 @@ var UserdetailComponent = (function () {
         }
     };
     UserdetailComponent.prototype.loadListPhoto = function () {
+        var _this = this;
         //alert(this.u.photo);
-        for (this.i = 0; this.i < mock_utilisateurs_1.UTILISATEURS.length; this.i++) {
-            if (mock_utilisateurs_1.UTILISATEURS[this.i].id == this.u.id) {
-                mock_utilisateurs_1.UTILISATEURS[this.i].photo = 'fichier/' + this.selectPhoto + '.jpg';
+        /*for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].id == this.u.id) {
+                UTILISATEURS[this.i].photo = 'fichier/' + this.selectPhoto + '.jpg';
             }
         }
-        alert("Photo changée");
+        alert("Photo changée");*/
+        this._uService.changePhoto(this.u.id, this.selectPhoto)
+            .subscribe(function (data) { return _this.Message = data; });
+        this.sTimeout = setTimeout(function () { alert(_this.Message.text); }, 500);
     };
     UserdetailComponent.prototype.changePays = function () {
-        for (this.i = 0; this.i < mock_utilisateurs_1.UTILISATEURS.length; this.i++) {
-            if (mock_utilisateurs_1.UTILISATEURS[this.i].id == this.u.id) {
-                mock_utilisateurs_1.UTILISATEURS[this.i].pays = this.selectPays;
+        /*for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+            if (UTILISATEURS[this.i].id == this.u.id) {
+                UTILISATEURS[this.i].pays = this.selectPays;
             }
-        }
+        }*/
+        alert(this.u.id);
+        alert(this.selectPays);
+        this._uService.changePays(this.u.id, this.selectPays)
+            .subscribe(function (data) { return data; });
     };
     UserdetailComponent = __decorate([
         core_1.Component({

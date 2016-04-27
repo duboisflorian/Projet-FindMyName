@@ -8,32 +8,51 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var mock_reponses_1 = require('../data/mock-reponses');
 var core_1 = require('angular2/core');
+var http_1 = require('angular2/http');
 var JouerService = (function () {
-    function JouerService() {
+    function JouerService(http) {
+        this.http = http;
+        this._cUrl = 'http://localhost:54000/api/values/5';
     }
+    JouerService.prototype.extractData = function (res) {
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error('Bad response status: ' + res.status);
+        }
+        var body = res.json();
+        return body.data || {};
+    };
     JouerService.prototype.getReponse = function (i) {
-        return mock_reponses_1.Reponses[0].reponses[i].text;
+        return this.http.get('http://localhost:54000/api/Jouer/getReponse/' + i)
+            .map(function (data) { return data.json(); });
+        //return Reponses[0].reponses[i].text;
     };
     JouerService.prototype.getDone = function (i) {
-        return mock_reponses_1.Reponses[0].reponses[i].done;
+        return this.http.get('http://localhost:54000/api/Jouer/getDone/' + i)
+            .map(function (data) { return data.json(); });
+        //return Reponses[0].reponses[i].done;
     };
     JouerService.prototype.setDone = function (i, bool) {
-        mock_reponses_1.Reponses[0].reponses[i].done == bool;
+        return this.http.get('http://localhost:54000/api/Jouer/setDone/' + i + '/' + bool)
+            .map(function (data) { return data.json(); });
+        //Reponses[0].reponses[i].done == bool;
     };
     JouerService.prototype.getReponses = function (id) {
-        for (this.i = 0; this.i < mock_reponses_1.Reponses.length; this.i++) {
-            if (mock_reponses_1.Reponses[this.i].id == id)
-                return mock_reponses_1.Reponses[this.i];
-        }
+        return this.http.get('http://localhost:54000/api/Jouer/getReponses/' + id)
+            .map(function (data) { return data.json(); });
+        /*for (this.i = 0; this.i < Reponses.length; this.i++) {
+            if (Reponses[this.i].id == id)
+                return Reponses[this.i];
+        }*/
     };
     JouerService.prototype.getTaille = function (i) {
-        return mock_reponses_1.Reponses[i].reponses.length;
+        return this.http.get('http://localhost:54000/api/Jouer/getTaille/' + i)
+            .map(function (data) { return data.json(); });
+        //return Reponses[i].reponses.length;
     };
     JouerService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], JouerService);
     return JouerService;
 }());

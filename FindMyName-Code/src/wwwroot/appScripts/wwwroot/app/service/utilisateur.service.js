@@ -98,6 +98,14 @@ var UtilisateurService = (function () {
         return this.http.get('http://localhost:54000/api/Utilisateur/getPays/' + u)
             .map(function (data) { return data.json(); });
     };
+    UtilisateurService.prototype.changePays = function (id, selectPays) {
+        return this.http.get('http://localhost:54000/api/Utilisateur/changePays/' + id + '/' + selectPays)
+            .map(function (data) { return data.json(); });
+    };
+    UtilisateurService.prototype.changePhoto = function (id, selectPhoto) {
+        return this.http.get('http://localhost:54000/api/Utilisateur/changePhoto/' + id + '/' + selectPhoto)
+            .map(function (data) { return data.json(); });
+    };
     UtilisateurService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [partie_service_1.PartieService, theme_service_1.ThemeService, http_1.Http])

@@ -40,10 +40,13 @@ var JouerComponent = (function () {
     JouerComponent.prototype.ngOnInit = function () {
         var _this = this;
         var th = +this._routeParams.get('th');
-        this.tabreponses = this._jouerService.getReponses(th);
-        for (var i = 0; i < this.tabreponses.reponses.length; i++) {
-            this.tabreponses.reponses[i].done = false;
-        }
+        this.tabreponses = { "id": 1, "reponses": [] };
+        this._jouerService.getReponses(th).subscribe(function (data) { return _this.tabreponses = data; });
+        this.sTimeout = setTimeout(function () {
+            for (var i = 0; i < _this.tabreponses.reponses.length; i++) {
+                _this.tabreponses.reponses[i].done = false;
+            }
+        }, 600);
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
@@ -85,6 +88,7 @@ var JouerComponent = (function () {
         this.bon = null;
     };
     JouerComponent.prototype.ngOnDestroy = function () {
+        var _this = this;
         clearTimeout(this.sTimeout);
         var id = +this._routeParams.get('id');
         var us = +this._routeParams.get('us');
@@ -95,7 +99,7 @@ var JouerComponent = (function () {
             this._pService.AjouterPartie(us, id, th, this.remaining, this.j1, this.j2);
         }
         else {
-            this.p = this._pService.getPartieEnCours(id, us);
+            this._pService.getPartieEnCours(id, us).subscribe(function (data) { return _this.p = data; });
             this._pService.ModifierPartie(us, id, th, this.remaining, this.p);
         }
         this._uService.ChangerMeilleurScore(us, this.remaining);

@@ -5,25 +5,30 @@ import { Injectable } from 'angular2/core';
 import { UtilisateurService } from '../service/utilisateur.service';
 import { ThemeService } from '../service/theme.service';
 import { THEMES } from '../data/mock-themes';
+import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 
 @Injectable()
 export class PartieService {
     constructor(
-        private _tService: ThemeService) { }
+        private _tService: ThemeService,
+        private http: Http) { }
 
     //toutes les parties d'un utilisateur en cours
     getPartiesEnCours(us: number) {
-        var p: Partie[] = [];
+      /*  var p: Partie[] = [];
         for (var i = 0; i < PARTIES.length; i++) {
             if ((PARTIES[i].id_j1 == us || PARTIES[i].id_j2 == us) && PARTIES[i].s1 < 3 && PARTIES[i].s2 < 3)
                 p.push(PARTIES[i]);
         }
-        return p;
+        return p; */
+
+        return this.http.get('http://localhost:54000/api/Partie/getPartieEnCours/' + us)
+            .map(data => data.json());
     }
 
     //savoir si il y a une partie en cours entre deux personnes
     getEn_Cours(us: number, ami: number) {
-        for (var i = PARTIES.length - 1; i >= 0; i--) {
+       /* for (var i = PARTIES.length - 1; i >= 0; i--) {
             if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us)) {
                 if (PARTIES[i].player == null) {
                     return false;
@@ -33,42 +38,57 @@ export class PartieService {
             }
         }
         return false;
+        */
+        return this.http.get('http://localhost:54000/api/Partie/getEn_Cours/' + us + '/' + ami)
+            .map(data => data.json());
     }
 
     getPartieEnCours(us: number, ami: number) {
-        for (var i = PARTIES.length - 1; i >= 0; i--) {
+       /* for (var i = PARTIES.length - 1; i >= 0; i--) {
             if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
                 return PARTIES[i];
         }
+        */
+        return this.http.get('http://localhost:54000/api/Partie/getPartieEnCours/' + us + '/' + ami)
+            .map(data => data.json());
     }
 
     getHistorique(us: number, ami: number) {
-        var p: Partie[] = [];
+      /*  var p: Partie[] = [];
         for (var i = 0; i < PARTIES.length; i++) {
             if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
                 p.push(PARTIES[i]);
         }
         return p;
+        */
+        return this.http.get('http://localhost:54000/api/Partie/getHistorique/' + us + '/' + ami)
+            .map(data => data.json());
     }
 
     getNbVictoire(us: number, ami: number) {
-        var nb = 0;
+      /*   var nb = 0;
         for (var i = 0; i < PARTIES.length; i++) {
             if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
                 if (((PARTIES[i].id_j1 == us && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == us)) && PARTIES[i].player == null)
                     nb++;
         }
         return nb;
+    */
+        return this.http.get('http://localhost:54000/api/Partie/getNbVictoire/' + us + '/' + ami)
+            .map(data => data.json());
     }
 
     getNbDefaite(us: number, ami: number) {
-        var nb = 0;
+      /*  var nb = 0;
         for (var i = 0; i < PARTIES.length; i++) {
             if ((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us))
                 if (((PARTIES[i].id_j1 == us && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == us)) && PARTIES[i].player==null)
                     nb++;
         }
         return nb;
+     */
+        return this.http.get('http://localhost:54000/api/Partie/getNbDefaite/' + us + '/' + ami)
+            .map(data => data.json());
     }
 
     getPartieExiste(us: number, ami: number) {

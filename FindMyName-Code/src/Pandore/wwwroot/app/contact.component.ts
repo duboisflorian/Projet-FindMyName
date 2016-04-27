@@ -32,7 +32,7 @@ export class ContactComponent implements OnInit {
     u: Utilisateur;
     parties_en_cours: Partie[];
     en_cours: boolean;
-    partie_en_cours: Partie;
+    partie_en_cours: Partie = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "",  "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0,  "theme": "",  "s1": 0, "s2": 0 }] };;
     victoire: number = 0;
     defaite: number = 0;
     historique: Partie[];
@@ -64,8 +64,8 @@ export class ContactComponent implements OnInit {
     }
 
     UserD(id: number) {
-        //maxime a changer
-        this.parties_en_cours = this._pService.getPartiesEnCours(id);
+       // this.parties_en_cours = this._pService.getPartiesEnCours(id);
+        this._pService.getPartiesEnCours(id).subscribe(data => this.parties_en_cours = data);
     }
 
     prompt_add() {
@@ -111,14 +111,15 @@ export class ContactComponent implements OnInit {
         }
         document.getElementById(contact.id.toString()).className = "active";
         // Fin JS
+    
 
-        this.en_cours = this._pService.getEn_Cours(this.u.id, contact.id);
+        this._pService.getEn_Cours(this.u.id, contact.id).subscribe(data => this.en_cours = data);
         if (this.en_cours == true) {
-            this.partie_en_cours = this._pService.getPartieEnCours(this.u.id, contact.id);
+            this._pService.getPartieEnCours(this.u.id, contact.id).subscribe(data => this.partie_en_cours = data);
         } else {
-            this.historique = this._pService.getHistorique(this.u.id, contact.id);
-            this.victoire = this._pService.getNbVictoire(this.u.id, contact.id);
-            this.defaite = this._pService.getNbDefaite(this.u.id, contact.id);
+            this._pService.getHistorique(this.u.id, contact.id).subscribe(data => this.historique = data);
+            this._pService.getNbVictoire(this.u.id, contact.id).subscribe(data => this.victoire = data);
+            this._pService.getNbDefaite(this.u.id, contact.id).subscribe(data => this.defaite = data);
         }
     }
 

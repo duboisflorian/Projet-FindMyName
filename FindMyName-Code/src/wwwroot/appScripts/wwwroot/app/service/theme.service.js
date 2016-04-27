@@ -31,19 +31,19 @@ var ThemeService = (function () {
             .map(function (data) { return data.json(); });
     };
     ThemeService.prototype.isvalid = function (nombre, aleatoire) {
-        return this.http.get('http://localhost:54000/api/theme/isvalid/{nombre}/{aleatoire}/')
+        return this.http.get('http://localhost:54000/api/theme/isvalid/' + nombre + '/' + aleatoire)
             .map(function (data) { return data.json(); });
     };
     ThemeService.prototype.getTheme = function (id) {
-        return this.http.get('http://localhost:54000/api/theme/getTheme/{id}/')
+        return this.http.get('http://localhost:54000/api/theme/getTheme/' + id)
             .map(function (data) { return data.json(); });
     };
     ThemeService.prototype.getName = function (u) {
-        return this.http.get('http://localhost:54000/api/theme/getName/{u}/')
+        return this.http.get('http://localhost:54000/api/theme/getName/' + u)
             .map(function (data) { return data.json(); });
     };
     ThemeService.prototype.getId = function (n) {
-        return this.http.get('http://localhost:54000/api/theme/getId/{n}/')
+        return this.http.get('http://localhost:54000/api/theme/getId/' + n)
             .map(function (data) { return data.json(); });
     };
     ThemeService = __decorate([
