@@ -38,6 +38,7 @@ var JouerComponent = (function () {
         this._router.navigate(['Userdetail', { us: this.u.id }]);
     };
     JouerComponent.prototype.ngOnInit = function () {
+        var _this = this;
         var th = +this._routeParams.get('th');
         this.tabreponses = this._jouerService.getReponses(th);
         for (var i = 0; i < this.tabreponses.reponses.length; i++) {
@@ -45,7 +46,8 @@ var JouerComponent = (function () {
         }
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
-        this.theme = this._themeService.getTheme(th);
+        this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
+        this._themeService.getTheme(th).subscribe(function (data) { return _this.theme = data; });
         this.starttimer();
     };
     JouerComponent.prototype.getReponse = function () {

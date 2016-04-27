@@ -8,64 +8,47 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var mock_themes_1 = require('../data/mock-themes');
 var core_1 = require('angular2/core');
+var http_1 = require('angular2/http');
 var ThemeService = (function () {
-    function ThemeService() {
+    function ThemeService(http) {
+        this.http = http;
+        this._cUrl = 'http://localhost:54000/api/values/5';
     }
+    ThemeService.prototype.extractData = function (res) {
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error('Bad response status: ' + res.status);
+        }
+        var body = res.json();
+        return body.data || {};
+    };
     ThemeService.prototype.getThemes = function () {
-        this.t = [];
-        this.melanger();
-        return this.t;
+        return this.http.get('http://localhost:54000/api/theme/getThemes/')
+            .map(function (data) { return data.json(); });
     };
     ThemeService.prototype.melanger = function () {
-        var aleatoire = [];
-        var nb = Math.floor(Math.random() * mock_themes_1.THEMES.length);
-        this.t.push(mock_themes_1.THEMES[nb]);
-        aleatoire.push(nb);
-        for (var i = 0; i < 3; i++) {
-            do {
-                var nb = Math.floor(Math.random() * 6);
-            } while (this.isvalid(nb, aleatoire));
-            this.t.push(mock_themes_1.THEMES[nb]);
-            aleatoire.push(nb);
-        }
+        this.http.get('http://localhost:54000/api/theme/melanger/')
+            .map(function (data) { return data.json(); });
     };
     ThemeService.prototype.isvalid = function (nombre, aleatoire) {
-        for (var i = 0; i < aleatoire.length; i++)
-            if (aleatoire[i] == nombre)
-                return true;
-        return false;
-    };
-    // See the "Take it slow" appendix
-    ThemeService.prototype.getThemesSlowly = function () {
-        return new Promise(function (resolve) {
-            return setTimeout(function () { return resolve(mock_themes_1.THEMES); }, 2000);
-        } // 2 seconds
-         // 2 seconds
-        );
+        return this.http.get('http://localhost:54000/api/theme/isvalid/{nombre}/{aleatoire}/')
+            .map(function (data) { return data.json(); });
     };
     ThemeService.prototype.getTheme = function (id) {
-        for (var i = 0; i < mock_themes_1.THEMES.length; i++) {
-            if (mock_themes_1.THEMES[i].id == id)
-                return mock_themes_1.THEMES[i];
-        }
+        return this.http.get('http://localhost:54000/api/theme/getTheme/{id}/')
+            .map(function (data) { return data.json(); });
     };
     ThemeService.prototype.getName = function (u) {
-        for (var i = 0; i < mock_themes_1.THEMES.length; i++) {
-            if (mock_themes_1.THEMES[i].id == u)
-                return mock_themes_1.THEMES[i].text;
-        }
+        return this.http.get('http://localhost:54000/api/theme/getName/{u}/')
+            .map(function (data) { return data.json(); });
     };
     ThemeService.prototype.getId = function (n) {
-        for (var i = 0; i < mock_themes_1.THEMES.length; i++) {
-            if (mock_themes_1.THEMES[i].text == n)
-                return mock_themes_1.THEMES[i].id;
-        }
+        return this.http.get('http://localhost:54000/api/theme/getId/{n}/')
+            .map(function (data) { return data.json(); });
     };
     ThemeService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], ThemeService);
     return ThemeService;
 }());

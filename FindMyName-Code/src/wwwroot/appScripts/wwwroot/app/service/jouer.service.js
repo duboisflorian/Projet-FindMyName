@@ -13,13 +13,6 @@ var core_1 = require('angular2/core');
 var JouerService = (function () {
     function JouerService() {
     }
-    JouerService.prototype.getReponsesSlowly = function () {
-        return new Promise(function (resolve) {
-            return setTimeout(function () { return resolve(mock_reponses_1.Reponses); }, 2000);
-        } // 2 seconds
-         // 2 seconds
-        );
-    };
     JouerService.prototype.getReponse = function (i) {
         return mock_reponses_1.Reponses[0].reponses[i].text;
     };

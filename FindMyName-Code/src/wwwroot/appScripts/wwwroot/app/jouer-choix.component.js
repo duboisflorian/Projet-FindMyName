@@ -31,13 +31,11 @@ var JouerChoixComponent = (function () {
     JouerChoixComponent.prototype.ngOnInit = function () {
         var _this = this;
         var id = +this._routeParams.get('id');
-        this.themes = this._themeService.getThemes();
-        /*this._themeService.getThemes()
-            .then(themes => this.themes = themes.slice(0, 4));*/
+        this._themeService.getThemes().subscribe(function (data) { return _this.themes = data; });
+        ;
         var us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.sTimeout = setTimeout(function () { return _this.endTimer(); }, 6000);
-        //setTimeout(this.endTimer, 3000);
     };
     JouerChoixComponent.prototype.gotoContact = function () {
         this._router.navigate(['Contact', { us: this.u.id }]);
@@ -61,7 +59,6 @@ var JouerChoixComponent = (function () {
         var id = +this._routeParams.get('id');
         var link = ['Jouer', { us: this.u.id, id: id, th: this.selectedTheme.id }];
         this._router.navigate(link);
-        //this._router.navigate(['Jouer', { id: this.selectedTheme.id }]);
     };
     JouerChoixComponent = __decorate([
         core_1.Component({

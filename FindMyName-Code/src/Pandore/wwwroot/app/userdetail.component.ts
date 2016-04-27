@@ -28,6 +28,7 @@ export class UserdetailComponent implements OnInit {
     nbd: number=0;
     pays = ['France','Allemagne','Chine','Japon','Etats-Unis','Royaume-Uni','Canada'];
     photo: any;
+    pays2: any;
     sTimeout: number;
 
     constructor(
@@ -69,7 +70,10 @@ export class UserdetailComponent implements OnInit {
         
         //alert("Photo :" + this.selectPhoto);
 
-        this.selectPays = this._uService.getPays(us);
+        //this.selectPays = this._uService.getPays(us);
+        this._uService.getPays(us)
+            .subscribe(data => this.pays2 = data);
+        this.sTimeout = setTimeout(() => { this.selectPays = this.pays2.text },500);
         //alert("Pays :" + this.selectPays);
 
         /*this.nbAmi = this._cService.getNbContact(us);*/

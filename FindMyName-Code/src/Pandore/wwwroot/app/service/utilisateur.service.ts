@@ -102,10 +102,13 @@ export class UtilisateurService {
     }
 
         getPays(u: number) {
-            for (var i = 0; i < UTILISATEURS.length; i++) {
+            /*for (var i = 0; i < UTILISATEURS.length; i++) {
                 if (UTILISATEURS[i].id == u)
                     return UTILISATEURS[i].pays;
-            }
+            }*/
+
+            return this.http.get('http://localhost:54000/api/Utilisateur/getPays/' + u)
+                .map(data => data.json());
         }
 
 }

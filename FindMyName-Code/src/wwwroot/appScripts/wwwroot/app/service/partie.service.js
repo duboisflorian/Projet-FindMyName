@@ -80,8 +80,8 @@ var PartieService = (function () {
     };
     PartieService.prototype.AjouterPartie = function (us, ami, th, score, j1, j2) {
         var id_partie = mock_parti_1.PARTIES.length + 1;
-        var theme = this._tService.getName(th);
-        mock_parti_1.PARTIES.push({ "id_partie": id_partie, "id_j1": us, "id_j2": ami, "j1": j1, "j2": j2, "s1": 0, "s2": 0, "player": ami, "manche": [{ "id_theme": th, "theme": theme, "s1": score, "s2": null },] });
+        //var theme = this._tService.getName(th);
+        // PARTIES.push({ "id_partie": id_partie, "id_j1": us, "id_j2": ami, "j1": j1, "j2": j2, "s1": 0, "s2": 0, "player": ami, "manche": [{ "id_theme": th, "theme": theme, "s1": score, "s2": null }, ] })
     };
     PartieService.prototype.ModifierPartie = function (us, ami, th, score, partie) {
         for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
@@ -112,11 +112,12 @@ var PartieService = (function () {
                     }
                 }
                 else {
-                    var theme = this._tService.getName(th);
-                    if (us == mock_parti_1.PARTIES[i].id_j1)
-                        mock_parti_1.PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": score, "s2": null });
-                    else
-                        mock_parti_1.PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": null, "s2": score });
+                    /*  var theme = this._tService.getName(th);
+                      if (us == PARTIES[i].id_j1)
+                          PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": score, "s2": null });
+                      else
+                          PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": null, "s2": score });
+                      */
                     mock_parti_1.PARTIES[i].player = ami;
                 }
             }

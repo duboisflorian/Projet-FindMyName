@@ -27,13 +27,7 @@ var UtilisateurService = (function () {
         var body = res.json();
         return body.data || {};
     };
-    UtilisateurService.prototype.getUtilisateurs = function () {
-        return Promise.resolve(mock_utilisateurs_1.UTILISATEURS);
-    };
     UtilisateurService.prototype.getUtilisateur = function (id) {
-        /* return Promise.resolve(UTILISATEURS).then(
-             utilisateurs => utilisateurs.filter(utilisateur => utilisateur.id === id)[0]
-         );*/
         for (var i = 0; i < mock_utilisateurs_1.UTILISATEURS.length; i++) {
             if (mock_utilisateurs_1.UTILISATEURS[i].id == id)
                 return mock_utilisateurs_1.UTILISATEURS[i];
@@ -53,23 +47,20 @@ var UtilisateurService = (function () {
         return false;
     };
     UtilisateurService.prototype.Same_mdp = function (id, password) {
-        /*alert("id " + id);
-        for (var i = 0; i < UTILISATEURS.length; i++) {
-            if (UTILISATEURS[i].id == id) {
-                if (UTILISATEURS[i].password == password) {
+        alert("id " + id);
+        for (var i = 0; i < mock_utilisateurs_1.UTILISATEURS.length; i++) {
+            if (mock_utilisateurs_1.UTILISATEURS[i].id == id) {
+                if (mock_utilisateurs_1.UTILISATEURS[i].password == password) {
                     alert("password " + password);
                     return true;
                 }
                 else {
-                    UTILISATEURS[i].password = password;
+                    mock_utilisateurs_1.UTILISATEURS[i].password = password;
                     alert("password " + password);
                     return false;
                 }
-
             }
-        }*/
-        return this.http.get('http://localhost:54000/api/Utilisateur/sameMDP/' + id + '/' + password)
-            .map(function (data) { return data.json(); });
+        }
     };
     UtilisateurService.prototype.getlastid = function () {
         return mock_utilisateurs_1.UTILISATEURS[mock_utilisateurs_1.UTILISATEURS.length - 1].id;
@@ -96,18 +87,16 @@ var UtilisateurService = (function () {
         }
     };
     UtilisateurService.prototype.getPhoto = function (u) {
-        /*for (var i = 0; i < UTILISATEURS.length; i++) {
-            if (UTILISATEURS[i].id == u)
-                return UTILISATEURS[i].photo;
-            }*/
         return this.http.get('http://localhost:54000/api/Utilisateur/getPhoto/' + u)
             .map(function (data) { return data.json(); });
     };
     UtilisateurService.prototype.getPays = function (u) {
-        for (var i = 0; i < mock_utilisateurs_1.UTILISATEURS.length; i++) {
-            if (mock_utilisateurs_1.UTILISATEURS[i].id == u)
-                return mock_utilisateurs_1.UTILISATEURS[i].pays;
-        }
+        /*for (var i = 0; i < UTILISATEURS.length; i++) {
+            if (UTILISATEURS[i].id == u)
+                return UTILISATEURS[i].pays;
+        }*/
+        return this.http.get('http://localhost:54000/api/Utilisateur/getPays/' + u)
+            .map(function (data) { return data.json(); });
     };
     UtilisateurService = __decorate([
         core_1.Injectable(), 

@@ -162,7 +162,6 @@ var ContactComponent = (function () {
         var _this = this;
         this._contactService.Jouer(this.u.id)
             .subscribe(function (data) { return _this.jouermessage = data; });
-        this.sTimeout = setTimeout(function () { return alert(_this.jouermessage.id); }, 500);
         this.sTimeout = setTimeout(function () { if (_this.jouermessage.text == "go") {
             _this._router.navigate(['JouerChoix', { us: _this.u.id, id: _this.jouermessage.id }]);
         }

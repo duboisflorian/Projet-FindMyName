@@ -33,24 +33,32 @@ var UserdetailComponent = (function () {
         this.u = this._uService.getUtilisateur(us);
         this.nbparties = this._pService.getnbParties(us);
         this.theme_favori = this._pService.getThemeFavori(us);
-        this.selectPhoto = this._uService.getPhoto(us);
-        if (this.selectPhoto == "fichier/logo.jpg") {
-            this.selectPhoto = "logo";
-        }
-        else if (this.selectPhoto == "fichier/arsenal.jpg") {
-            this.selectPhoto = "arsenal";
-        }
-        else if (this.selectPhoto == "fichier/barca.jpg") {
-            this.selectPhoto = "barca";
-        }
-        else if (this.selectPhoto == "fichier/psg.jpg") {
-            this.selectPhoto = "psg";
-        }
-        else if (this.selectPhoto == "fichier/ol.jpg") {
-            this.selectPhoto = "ol";
-        }
+        this.selectPhoto = "fichier/logo.jpg";
+        this._uService.getPhoto(us)
+            .subscribe(function (data) { return _this.photo = data; });
+        this.sTimeout = setTimeout(function () {
+            _this.selectPhoto = _this.photo.text;
+            if (_this.selectPhoto == "fichier/logo.jpg") {
+                _this.selectPhoto = "logo";
+            }
+            else if (_this.selectPhoto == "fichier/arsenal.jpg") {
+                _this.selectPhoto = "arsenal";
+            }
+            else if (_this.selectPhoto == "fichier/barca.jpg") {
+                _this.selectPhoto = "barca";
+            }
+            else if (_this.selectPhoto == "fichier/psg.jpg") {
+                _this.selectPhoto = "psg";
+            }
+            else if (_this.selectPhoto == "fichier/ol.jpg") {
+                _this.selectPhoto = "ol";
+            }
+        }, 1000);
         //alert("Photo :" + this.selectPhoto);
-        this.selectPays = this._uService.getPays(us);
+        //this.selectPays = this._uService.getPays(us);
+        this._uService.getPays(us)
+            .subscribe(function (data) { return _this.pays2 = data; });
+        this.sTimeout = setTimeout(function () { _this.selectPays = _this.pays2.text; }, 500);
         //alert("Pays :" + this.selectPays);
         /*this.nbAmi = this._cService.getNbContact(us);*/
         this._cService.getNbContact(us)

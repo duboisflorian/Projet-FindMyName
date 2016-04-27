@@ -93,9 +93,9 @@ namespace FindMyName_Serveur.Controllers
 
         // GET api/getPays/{u}
         [HttpGet("getPays/{u}")]
-        public string getPays(int u)
+        public  Res getPays(int u)
         {
-            return UtilisateurService.getPays(u);
+            return new Res(UtilisateurService.getPays(u));
         }
 
         // POST api/values
