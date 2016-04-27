@@ -23,6 +23,7 @@ var ContactComponent = (function () {
         this._pService = _pService;
         this._routeParams = _routeParams;
         this._uService = _uService;
+        this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
         this.partie_en_cours = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
         this.victoire = 0;
         this.defaite = 0;
@@ -33,7 +34,6 @@ var ContactComponent = (function () {
     ;
     ContactComponent.prototype.getContacts = function () {
         var _this = this;
-        /*this.contacts = this._contactService.getContacts(this.u.id, this.type);*/
         this._contactService.getContacts(this.u.id, this.type)
             .subscribe(function (data) { return _this.contacts = data; });
     };
@@ -42,7 +42,6 @@ var ContactComponent = (function () {
     };
     ContactComponent.prototype.UserD = function (id) {
         var _this = this;
-        // this.parties_en_cours = this._pService.getPartiesEnCours(id);
         this._pService.getPartiesEnCours(id).subscribe(function (data) { return _this.parties_en_cours = data; });
     };
     ContactComponent.prototype.prompt_add = function () {
@@ -58,19 +57,13 @@ var ContactComponent = (function () {
     };
     ContactComponent.prototype.ngOnInit = function () {
         var _this = this;
-        /*this._contactService.getNom().subscribe(
-            t => this.tt = t,
-            error => this.errorMessage = <any>error);
-                alert(this.tt.text);
-        alert(this.tt.text);*/
-        this._contactService.getObjectData()
-            .subscribe(function (data) { return _this.objectData = data; });
         var us = +this._routeParams.get('us');
-        this.u = this._uService.getUtilisateur(us);
+        this._uService.getUser(us)
+            .subscribe(function (data) { return _this.u = data; });
         this.UserD(us);
         this.selectedContact = null;
         this.type = 'ami';
-        this.getContacts();
+        this.sTimeout = setTimeout(function () { return _this.getContacts(); }, 300);
     };
     ContactComponent.prototype.showDetails = function (h) {
         this.selectedContact = null;

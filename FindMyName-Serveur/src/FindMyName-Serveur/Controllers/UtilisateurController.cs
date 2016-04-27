@@ -100,9 +100,9 @@ namespace FindMyName_Serveur.Controllers
 
         // GET api/changePays/{id}/{selectPays}
         [HttpGet("changePays/{id}/{selectPays}")]
-        public void changePays(int id,string selectPays)
+        public Res changePays(int id,string selectPays)
         {
-            UtilisateurService.changePays(id,selectPays);
+           return new Res(UtilisateurService.changePays(id,selectPays));
         }
 
         // GET api/changePhoto/{id}/{selectPhoto}

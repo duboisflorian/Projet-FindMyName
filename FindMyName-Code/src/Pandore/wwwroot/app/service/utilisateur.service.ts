@@ -93,7 +93,8 @@ export class UtilisateurService {
         }
 
         changePays(id: number, selectPays: string) {
-            this.http.get('http://localhost:54000/api/Utilisateur/changePays/' + id + '/' + selectPays);
+            return this.http.get('http://localhost:54000/api/Utilisateur/changePays/' + id + '/' + selectPays)
+                .map(data => data.json());
         }
 
         changePhoto(id: number, selectPhoto: string) {

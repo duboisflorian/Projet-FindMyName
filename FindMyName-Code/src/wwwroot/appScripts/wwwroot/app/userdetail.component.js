@@ -25,18 +25,19 @@ var UserdetailComponent = (function () {
         this.nbv = 0;
         this.nbd = 0;
         this.pays = ['France', 'Allemagne', 'Chine', 'Japon', 'Etats-Unis', 'Royaume-Uni', 'Canada'];
+        this.u2 = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
     }
     UserdetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         var us = +this._routeParams.get('us');
-        this.u = this._uService.getUtilisateur(us);
+        this._uService.getUser(us)
+            .subscribe(function (data) { return _this.u2 = data; });
         this.nbparties = this._pService.getnbParties(us);
         this.theme_favori = this._pService.getThemeFavori(us);
         this.selectPhoto = "fichier/logo.jpg";
         this._uService.getPhoto(us)
             .subscribe(function (data) { return _this.photo = data; });
         this.sTimeout = setTimeout(function () {
-            //alert(this.photo.text);
             _this.selectPhoto = _this.photo.text;
             if (_this.selectPhoto == "fichier/logo.jpg") {
                 _this.selectPhoto = "logo";
@@ -53,17 +54,12 @@ var UserdetailComponent = (function () {
             else if (_this.selectPhoto == "fichier/ol.jpg") {
                 _this.selectPhoto = "ol";
             }
-        }, 1000);
-        //alert("Photo :" + this.selectPhoto);
-        //this.selectPays = this._uService.getPays(us);
+        }, 500);
         this._uService.getPays(us)
             .subscribe(function (data) { return _this.pays2 = data; });
         this.sTimeout = setTimeout(function () { _this.selectPays = _this.pays2.text; }, 500);
-        //alert("Pays :" + this.selectPays);
-        /*this.nbAmi = this._cService.getNbContact(us);*/
         this._cService.getNbContact(us)
             .subscribe(function (data) { return _this.nbAmi = data; });
-        //alert("nombre de contact : " + this.nbAmi);
         this.nbv = this._pService.getNbV(us);
         this.nbd = this._pService.getNbD(us);
     };
@@ -72,14 +68,14 @@ var UserdetailComponent = (function () {
         this._router.navigate(['Co']);
     };
     UserdetailComponent.prototype.gotoContact = function () {
-        this._router.navigate(['Contact', { us: this.u.id }]);
+        this._router.navigate(['Contact', { us: this.u2.id }]);
     };
     UserdetailComponent.prototype.gotoDetail = function () {
-        this._router.navigate(['Userdetail', { us: this.u.id }]);
+        this._router.navigate(['Userdetail', { us: this.u2.id }]);
     };
     UserdetailComponent.prototype.modifmdp = function (id) {
         if (id === undefined) {
-            id = this.u.id;
+            id = this.u2.id;
         }
         if (this._uService.Same_mdp(id, this.password)) {
             alert("le mot de passe est identique");
@@ -90,27 +86,17 @@ var UserdetailComponent = (function () {
     };
     UserdetailComponent.prototype.loadListPhoto = function () {
         var _this = this;
-        //alert(this.u.photo);
-        /*for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == this.u.id) {
-                UTILISATEURS[this.i].photo = 'fichier/' + this.selectPhoto + '.jpg';
-            }
-        }
-        alert("Photo changée");*/
-        this._uService.changePhoto(this.u.id, this.selectPhoto)
+        var us = +this._routeParams.get('us');
+        this._uService.changePhoto(this.u2.id, this.selectPhoto)
             .subscribe(function (data) { return _this.Message = data; });
-        this.sTimeout = setTimeout(function () { alert(_this.Message.text); }, 500);
+        this._uService.getUser(us)
+            .subscribe(function (data) { return _this.u2 = data; });
     };
     UserdetailComponent.prototype.changePays = function () {
-        /*for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == this.u.id) {
-                UTILISATEURS[this.i].pays = this.selectPays;
-            }
-        }*/
-        alert(this.u.id);
-        alert(this.selectPays);
-        this._uService.changePays(this.u.id, this.selectPays)
-            .subscribe(function (data) { return data; });
+        var _this = this;
+        this._uService.changePays(this.u2.id, this.selectPays)
+            .subscribe(function (data) { return _this.Message2 = data; });
+        this.sTimeout = setTimeout(function () { return alert(_this.Message2.text); }, 500);
     };
     UserdetailComponent = __decorate([
         core_1.Component({

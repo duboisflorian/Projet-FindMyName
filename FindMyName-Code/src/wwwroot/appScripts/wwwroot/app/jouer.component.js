@@ -26,6 +26,7 @@ var JouerComponent = (function () {
         this.task = '';
         this.reponse = [];
         this.remaining = 0;
+        this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
     }
     JouerComponent.prototype.gotoDeco = function () {
         alert("Vous avez été déconnecté");
@@ -48,7 +49,8 @@ var JouerComponent = (function () {
             }
         }, 600);
         var us = +this._routeParams.get('us');
-        this.u = this._uService.getUtilisateur(us);
+        this._uService.getUser(us)
+            .subscribe(function (data) { return _this.u = data; });
         this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
         this._themeService.getTheme(th).subscribe(function (data) { return _this.theme = data; });
         this.starttimer();

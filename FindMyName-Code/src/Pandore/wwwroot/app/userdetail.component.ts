@@ -30,6 +30,7 @@ export class UserdetailComponent implements OnInit {
     photo: any;
     pays2: any;
     Message: any;
+    Message2: any;
     sTimeout: number;
     u2: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore":0 };
 
@@ -118,8 +119,10 @@ export class UserdetailComponent implements OnInit {
     }
 
     changePays() {
-        alert("1");
-        this._uService.changePays(this.u2.id, this.selectPays);            
+
+        this._uService.changePays(this.u2.id, this.selectPays)
+            .subscribe(data => this.Message2 = data);
+        this.sTimeout = setTimeout(() => alert(this.Message2.text), 500);
     }
 }
 

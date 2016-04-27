@@ -178,7 +178,7 @@ namespace FindMyName_Serveur.Services
             return s;
         }
 
-        public static void changePays(int id, string selectPays)
+        public static string changePays(int id, string selectPays)
         {
             for (var i = 0; i < UTILISATEURS.Count; i++)
             {
@@ -187,6 +187,8 @@ namespace FindMyName_Serveur.Services
                     UTILISATEURS[i].pays = selectPays;
                 }
             }
+
+            return "Vous avez changé de pays";
         }
 
     }

@@ -20,6 +20,7 @@ var JouerChoixComponent = (function () {
         this._uService = _uService;
         this._routeParams = _routeParams;
         this.themes = [];
+        this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
     }
     JouerChoixComponent.prototype.gotoDeco = function () {
         alert("Vous avez été déconnecté");
@@ -34,7 +35,8 @@ var JouerChoixComponent = (function () {
         this._themeService.getThemes().subscribe(function (data) { return _this.themes = data; });
         ;
         var us = +this._routeParams.get('us');
-        this.u = this._uService.getUtilisateur(us);
+        this._uService.getUser(us)
+            .subscribe(function (data) { return _this.u = data; });
         this.sTimeout = setTimeout(function () { return _this.endTimer(); }, 6000);
     };
     JouerChoixComponent.prototype.gotoContact = function () {
