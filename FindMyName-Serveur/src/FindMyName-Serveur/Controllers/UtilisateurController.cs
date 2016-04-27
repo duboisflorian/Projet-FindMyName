@@ -98,6 +98,13 @@ namespace FindMyName_Serveur.Controllers
             return new Res(UtilisateurService.getPays(u));
         }
 
+        // GET api/changePays/{id}/{selectPays}
+        [HttpGet("changePays/{id}/{selectPays}")]
+        public void changePays(int id,string selectPays)
+        {
+            UtilisateurService.changePays(id,selectPays);
+        }
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)

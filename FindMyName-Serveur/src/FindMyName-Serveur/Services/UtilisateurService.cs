@@ -166,6 +166,17 @@ namespace FindMyName_Serveur.Services
             return s;
         }
 
+        public static void changePays(int id, string selectPays)
+        {
+            for (var i = 0; i < UTILISATEURS.Count; i++)
+            {
+                if (UTILISATEURS[i].id == id)
+                {
+                    UTILISATEURS[i].pays = selectPays;
+                }
+            }
+        }
+
     }
     public class Utilisateur
     {

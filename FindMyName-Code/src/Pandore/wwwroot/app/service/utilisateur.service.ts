@@ -111,6 +111,11 @@ export class UtilisateurService {
                 .map(data => data.json());
         }
 
+        changePays(id: number, selectPays: string) {
+            return this.http.get('http://localhost:54000/api/Utilisateur/changePays/' + id + '/' + selectPays)
+                .map(data => data.json());
+        }
+
 }
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

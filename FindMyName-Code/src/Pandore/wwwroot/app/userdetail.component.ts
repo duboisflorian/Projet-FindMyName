@@ -123,11 +123,15 @@ export class UserdetailComponent implements OnInit {
     }
 
     changePays() {
-        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+        /*for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
             if (UTILISATEURS[this.i].id == this.u.id) {
                 UTILISATEURS[this.i].pays = this.selectPays;
             }
-        }
+        }*/
+        alert(this.u.id);
+        alert(this.selectPays);
+        this._uService.changePays(this.u.id, this.selectPays)
+            .subscribe(data => data);            
     }
 }
 
