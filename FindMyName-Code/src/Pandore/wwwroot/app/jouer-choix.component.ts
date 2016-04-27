@@ -11,7 +11,7 @@ import { Utilisateur } from './classe/utilisateur';
     selector: 'my-jouer-choix',
     templateUrl: 'app/jouer-choix.component.html'
 })
-export class JouerChoixComponent implements OnInit{
+export class JouerChoixComponent implements OnInit {
 
     themes: Theme[] = [];
     selectedTheme: Theme;
@@ -34,7 +34,7 @@ export class JouerChoixComponent implements OnInit{
     }
     ngOnInit() {
         let id = +this._routeParams.get('id');
-        this.themes = this._themeService.getThemes();
+        this._themeService.getThemes().subscribe(data => this.themes = data);;
         /*this._themeService.getThemes()
             .then(themes => this.themes = themes.slice(0, 4));*/
         let us = +this._routeParams.get('us');
@@ -55,7 +55,7 @@ export class JouerChoixComponent implements OnInit{
     }
 
     onSelect(theme: Theme) {
-        this.selectedTheme = theme;  
+        this.selectedTheme = theme;
     }
 
     ngOnDestroy() {
@@ -64,9 +64,9 @@ export class JouerChoixComponent implements OnInit{
     }
 
     gotoJouer(theme: Theme) {
-        this.selectedTheme = theme;  
+        this.selectedTheme = theme;
         let id = +this._routeParams.get('id');
-        let link = ['Jouer', { us: this.u.id, id: id ,th: this.selectedTheme.id }];
+        let link = ['Jouer', { us: this.u.id, id: id, th: this.selectedTheme.id }];
         this._router.navigate(link);
         //this._router.navigate(['Jouer', { id: this.selectedTheme.id }]);
     }
