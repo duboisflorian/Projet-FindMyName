@@ -31,6 +31,7 @@ export class UserdetailComponent implements OnInit {
     pays2: any;
     Message: any;
     sTimeout: number;
+    u2: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore":0 };
 
     constructor(
         private _router: Router,
@@ -44,6 +45,10 @@ export class UserdetailComponent implements OnInit {
     ngOnInit() {
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        this._uService.getUser(us)
+            .subscribe(data => this.u2 = data);
+        //alert(this.u2.name);
+        //this.sTimeout = setTimeout(() => alert(this.u2.name) , 100);
         this.nbparties = this._pService.getnbParties(us);
         this.theme_favori = this._pService.getThemeFavori(us);
         this.selectPhoto = "fichier/logo.jpg";
@@ -67,7 +72,7 @@ export class UserdetailComponent implements OnInit {
             }
             else if (this.selectPhoto == "fichier/ol.jpg") {
                 this.selectPhoto = "ol";
-            } }, 1000);
+            } }, 500);
 
         
         //alert("Photo :" + this.selectPhoto);

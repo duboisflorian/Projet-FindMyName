@@ -13,7 +13,7 @@
                 </div>
                 <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li style="padding: 10px;"><img class="incone_menu" (click)="gotoDetail()" src="{{u.photo}}" /><span style="color:white;"> Bonjour, {{u.name}}</span> </li>
+                        <li style="padding: 10px;"><img class="incone_menu" (click)="gotoDetail()" src="{{u2.photo}}" /><span style="color:white;"> Bonjour, {{u2.name}}</span> </li>
 +                        <li><button (click)="gotoDeco()" style="margin-top: 8px;" type="button" class="btn btn-primary">Déconnexion</button></li>
                     </ul>
                 </div>
@@ -25,11 +25,11 @@
 <div class="core">
     <div class="row" style="margin-right:0px; margin-bottom:282px;">
         <div class="profile col-xs-12 col-sm-12 col-lg-12 col-md-12">
-            <h1>Bienvenue sur votre profile {{u.name}}  - votre ID est {{u.id}}</h1>
+            <h1>Bienvenue sur votre profile {{u2.name}}  - votre ID est {{u2.id}}</h1>
 
             <h2>Changez votre photo de profile</h2>
             <form id="modif-photo" (ngSubmit)="loadListPhoto()">
-                <img class="portrait" src="{{u.photo}}" />
+                <img class="portrait" src="{{u2.photo}}" />
                 <select [(ngModel)]="selectPhoto">
                     <option>logo</option>
                     <option>arsenal</option>
@@ -54,7 +54,7 @@
             <div class="favori col-xs-12 col-sm-8 col-lg-4 col-md-4">
                 <h2>Préférences</h2> 
                 <p>Thème favoris : {{theme_favori}}</p>
-                <p>Meilleur Score : {{u.meilleurScore}}</p>
+                <p>Meilleur Score : {{u2.meilleurScore}}</p>
             </div>
             <div class="stat col-xs-12 col-sm-8 col-lg-4 col-md-4">
                 <h2>Statistiques</h2>
