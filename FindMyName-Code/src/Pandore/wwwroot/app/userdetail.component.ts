@@ -29,6 +29,7 @@ export class UserdetailComponent implements OnInit {
     pays = ['France','Allemagne','Chine','Japon','Etats-Unis','Royaume-Uni','Canada'];
     photo: any;
     pays2: any;
+    Message: any;
     sTimeout: number;
 
     constructor(
@@ -50,6 +51,7 @@ export class UserdetailComponent implements OnInit {
             .subscribe(data => this.photo = data);
 
         this.sTimeout = setTimeout(() => {
+            //alert(this.photo.text);
         this.selectPhoto = this.photo.text;
             if (this.selectPhoto == "fichier/logo.jpg") {
                 this.selectPhoto = "logo";
@@ -113,13 +115,16 @@ export class UserdetailComponent implements OnInit {
 
     loadListPhoto() {
         //alert(this.u.photo);
-        for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
+        /*for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
             if (UTILISATEURS[this.i].id == this.u.id) {
                 UTILISATEURS[this.i].photo = 'fichier/' + this.selectPhoto + '.jpg';
             }
         }
-        alert("Photo changée");
+        alert("Photo changée");*/
+        this._uService.changePhoto(this.u.id, this.selectPhoto)
+            .subscribe(data => this.Message = data);
 
+        this.sTimeout = setTimeout(() => { alert(this.Message.text) }, 500);
     }
 
     changePays() {

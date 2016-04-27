@@ -105,6 +105,13 @@ namespace FindMyName_Serveur.Controllers
             UtilisateurService.changePays(id,selectPays);
         }
 
+        // GET api/changePhoto/{id}/{selectPhoto}
+        [HttpGet("changePhoto/{id}/{selectPhoto}")]
+        public Res changePhoto(int id, string selectPhoto)
+        {
+           return new Res (UtilisateurService.changePhoto(id, selectPhoto));
+        }
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)

@@ -154,6 +154,18 @@ namespace FindMyName_Serveur.Services
             return s;
         }
 
+        public static string changePhoto(int id,string selectPhoto)
+        {
+            for (var i = 0; i < UTILISATEURS.Count; i++)
+            {
+                if (UTILISATEURS[i].id == id)
+                {
+                    UTILISATEURS[i].photo = "fichier/" + selectPhoto + ".jpg";
+                }
+            }
+            return "Photo changée";
+        }
+
          public static string getPays(int u)
         {
             string s = "";

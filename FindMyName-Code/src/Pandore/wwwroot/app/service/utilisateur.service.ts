@@ -116,6 +116,11 @@ export class UtilisateurService {
                 .map(data => data.json());
         }
 
+        changePhoto(id: number, selectPhoto: string) {
+            return this.http.get('http://localhost:54000/api/Utilisateur/changePhoto/' + id + '/' + selectPhoto)
+                .map(data => data.json());
+        }
+
 }
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
