@@ -3,13 +3,27 @@ import { UTILISATEURS } from '../data/mock-utilisateurs';
 import { Injectable } from 'angular2/core';
 import { ThemeService } from '../service/theme.service';
 import { PartieService } from '../service/partie.service';
+import {Http, Response, Headers, RequestOptions} from 'angular2/http';
+import {Observable}     from 'rxjs/Observable';
+import 'rxjs/add/operator/map';  // we need to import this now
+import { Theme } from '../classe/theme';
 
 @Injectable()
 export class UtilisateurService {
 
+    
     constructor(
         private _pService: PartieService,
-        private _tService: ThemeService) { }
+        private _tService: ThemeService,
+        private http: Http) { }
+
+    private extractData(res: Response) {
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error('Bad response status: ' + res.status);
+        }
+        let body = res.json();
+        return body.data || {};
+    }
 
     getUtilisateurs() {
         return Promise.resolve(UTILISATEURS);
@@ -40,7 +54,7 @@ export class UtilisateurService {
     }
 
     Same_mdp(id: number, password: string) {
-        alert("id " + id);
+        /*alert("id " + id);
         for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].id == id) {
                 if (UTILISATEURS[i].password == password) {
@@ -54,7 +68,11 @@ export class UtilisateurService {
                 }
 
             }
-        }
+        }*/
+
+        return this.http.get('http://localhost:54000/api/Utilisateur/sameMDP/' + id + '/' + password)
+            .map(data => data.json());
+        
     }
 
     getlastid() {
@@ -88,10 +106,13 @@ export class UtilisateurService {
     }
 
         getPhoto(u:number){
-        for (var i = 0; i < UTILISATEURS.length; i++) {
+        /*for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].id == u)
                 return UTILISATEURS[i].photo;
-        }
+            }*/
+
+            return this.http.get('http://localhost:54000/api/Utilisateur/getPhoto/' +u)
+            .map(data => data.json());
     }
 
         getPays(u: number) {
