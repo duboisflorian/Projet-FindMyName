@@ -107,18 +107,12 @@ export class UtilisateurService {
     }
 
         getPays(u: number) {
-            /*for (var i = 0; i < UTILISATEURS.length; i++) {
-                if (UTILISATEURS[i].id == u)
-                    return UTILISATEURS[i].pays;
-            }*/
-
             return this.http.get('http://localhost:54000/api/Utilisateur/getPays/' + u)
                 .map(data => data.json());
         }
 
         changePays(id: number, selectPays: string) {
-            return this.http.get('http://localhost:54000/api/Utilisateur/changePays/' + id + '/' + selectPays)
-                .map(data => data.json());
+            return this.http.get('http://localhost:54000/api/Utilisateur/changePays/' + id + '/' + selectPays);
         }
 
         changePhoto(id: number, selectPhoto: string) {

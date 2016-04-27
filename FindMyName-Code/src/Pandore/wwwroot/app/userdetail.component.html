@@ -43,9 +43,9 @@
             <div class="modif-info col-xs-12 col-sm-8 col-lg-4 col-md-4">
                 <h2>Information personnelles</h2>
                 <h3>Votre adresse mail:</h3>
-                <input id="form-recherche" class="form-control" type="text" placeholder="entrer votre email ici" value="{{u.mail}}" disabled="disabled" />
+                <input id="form-recherche" class="form-control" type="text" placeholder="entrer votre email ici" value="{{u2.mail}}" disabled="disabled" />
                 <h3>Modifiez votre mot de passe:</h3>
-                <input type="hidden" [(ngModel)]="id" /><input id="form-recherche" class="form-control" type="password" [(ngModel)]="password" placeholder="entrer votre mot de passe ici" value="{{u.password}}" /><input class="btn-primary" type="button" (click)="modifmdp(id)" value="Modifier" />
+                <input type="hidden" [(ngModel)]="id" /><input id="form-recherche" class="form-control" type="password" [(ngModel)]="password" placeholder="entrer votre mot de passe ici" value="{{u2.password}}" /><input class="btn-primary" type="button" (click)="modifmdp(id)" value="Modifier" />
                 <h3>Changez votre pays:</h3>
                 <select [(ngModel)]="selectPays" (ngModelChange)="changePays()">
                     <option *ngFor="#p of pays" [value]="p">{{p}}</option>

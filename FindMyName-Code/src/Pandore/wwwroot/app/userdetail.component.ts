@@ -44,11 +44,9 @@ export class UserdetailComponent implements OnInit {
 
     ngOnInit() {
         let us = +this._routeParams.get('us');
-        this.u = this._uService.getUtilisateur(us);
         this._uService.getUser(us)
             .subscribe(data => this.u2 = data);
-        //alert(this.u2.name);
-        //this.sTimeout = setTimeout(() => alert(this.u2.name) , 100);
+
         this.nbparties = this._pService.getnbParties(us);
         this.theme_favori = this._pService.getThemeFavori(us);
         this.selectPhoto = "fichier/logo.jpg";
@@ -56,7 +54,7 @@ export class UserdetailComponent implements OnInit {
             .subscribe(data => this.photo = data);
 
         this.sTimeout = setTimeout(() => {
-            //alert(this.photo.text);
+
         this.selectPhoto = this.photo.text;
             if (this.selectPhoto == "fichier/logo.jpg") {
                 this.selectPhoto = "logo";
@@ -74,19 +72,13 @@ export class UserdetailComponent implements OnInit {
                 this.selectPhoto = "ol";
             } }, 500);
 
-        
-        //alert("Photo :" + this.selectPhoto);
-
-        //this.selectPays = this._uService.getPays(us);
         this._uService.getPays(us)
             .subscribe(data => this.pays2 = data);
         this.sTimeout = setTimeout(() => { this.selectPays = this.pays2.text },500);
-        //alert("Pays :" + this.selectPays);
 
-        /*this.nbAmi = this._cService.getNbContact(us);*/
         this._cService.getNbContact(us)
             .subscribe(data => this.nbAmi = data);
-        //alert("nombre de contact : " + this.nbAmi);
+
         this.nbv = this._pService.getNbV(us);
         this.nbd = this._pService.getNbD(us);
     }
@@ -96,21 +88,19 @@ export class UserdetailComponent implements OnInit {
         this._router.navigate(['Co']);
     }
     gotoContact() {
-        this._router.navigate(['Contact', { us: this.u.id }]);
+        this._router.navigate(['Contact', { us: this.u2.id }]);
     }
     gotoDetail() {
-        this._router.navigate(['Userdetail', { us: this.u.id }]);
+        this._router.navigate(['Userdetail', { us: this.u2.id }]);
     }
     modifmdp(id: number) {
 
         if (id === undefined) {
-            id = this.u.id;
+            id = this.u2.id;
         }
         
         if (this._uService.Same_mdp(id, this.password)) {
             alert("le mot de passe est identique");
-            //alert(id);
-
         }
         else {
             alert("Le mot de passe a bien été changé");
@@ -119,29 +109,37 @@ export class UserdetailComponent implements OnInit {
     }
 
     loadListPhoto() {
-        //alert(this.u.photo);
-        /*for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == this.u.id) {
-                UTILISATEURS[this.i].photo = 'fichier/' + this.selectPhoto + '.jpg';
-            }
-        }
-        alert("Photo changée");*/
-        this._uService.changePhoto(this.u.id, this.selectPhoto)
-            .subscribe(data => this.Message = data);
+        let us = +this._routeParams.get('us');
 
-        this.sTimeout = setTimeout(() => { alert(this.Message.text) }, 500);
+        this._uService.changePhoto(this.u2.id, this.selectPhoto)
+            .subscribe(data => this.Message = data);
+        this._uService.getUser(us)
+            .subscribe(data => this.u2 = data);
+        this._uService.getPhoto(us)
+            .subscribe(data => this.photo = data);
+
+        this.sTimeout = setTimeout(() => {
+            this.selectPhoto = this.photo.text;
+            if (this.selectPhoto == "fichier/logo.jpg") {
+                this.selectPhoto = "logo";
+            }
+            else if (this.selectPhoto == "fichier/arsenal.jpg") {
+                this.selectPhoto = "arsenal";
+            }
+            else if (this.selectPhoto == "fichier/barca.jpg") {
+                this.selectPhoto = "barca";
+            }
+            else if (this.selectPhoto == "fichier/psg.jpg") {
+                this.selectPhoto = "psg";
+            }
+            else if (this.selectPhoto == "fichier/ol.jpg") {
+                this.selectPhoto = "ol";
+            }
+        }, 500);
     }
 
     changePays() {
-        /*for (this.i = 0; this.i < UTILISATEURS.length; this.i++) {
-            if (UTILISATEURS[this.i].id == this.u.id) {
-                UTILISATEURS[this.i].pays = this.selectPays;
-            }
-        }*/
-        alert(this.u.id);
-        alert(this.selectPays);
-        this._uService.changePays(this.u.id, this.selectPays)
-            .subscribe(data => data);            
+        this._uService.changePays(this.u2.id, this.selectPays);            
     }
 }
 
