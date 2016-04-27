@@ -32,6 +32,11 @@ export class UtilisateurService {
         }
     }
 
+    getUser(id :number) {
+        return this.http.get('http://localhost:54000/api/Utilisateur/' + id)
+            .map(data => data.json());
+    }
+
     verificationConnexion(mail: string, password: string) {
         for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].mail == mail && UTILISATEURS[i].password == password)
