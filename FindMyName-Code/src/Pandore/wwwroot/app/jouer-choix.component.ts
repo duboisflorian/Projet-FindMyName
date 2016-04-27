@@ -16,7 +16,7 @@ export class JouerChoixComponent implements OnInit {
     themes: Theme[] = [];
     selectedTheme: Theme;
     directives: [JouerComponent];
-    u: Utilisateur;
+    u: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore":0 };
     sTimeout: number;
 
     constructor(
@@ -36,7 +36,8 @@ export class JouerChoixComponent implements OnInit {
         let id = +this._routeParams.get('id');
         this._themeService.getThemes().subscribe(data => this.themes = data);;
         let us = +this._routeParams.get('us');
-        this.u = this._uService.getUtilisateur(us);
+        this._uService.getUser(us)
+            .subscribe(data => this.u = data);
         this.sTimeout = setTimeout(() => this.endTimer(), 6000);
     }
     gotoContact() {
