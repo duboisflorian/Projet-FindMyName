@@ -78,15 +78,13 @@ export class ContactComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._contactService.getObjectData()
-            .subscribe(data => this.objectData = data);
         let us = +this._routeParams.get('us');
         this._uService.getUser(us)
             .subscribe(data => this.u = data);
         this.UserD(us);
         this.selectedContact = null;
         this.type = 'ami';
-        this.getContacts();
+        this.sTimeout = setTimeout(() => this.getContacts(), 300);
     }
 
     showDetails(h: Partie) {

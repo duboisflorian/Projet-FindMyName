@@ -115,30 +115,10 @@ export class UserdetailComponent implements OnInit {
             .subscribe(data => this.Message = data);
         this._uService.getUser(us)
             .subscribe(data => this.u2 = data);
-        this._uService.getPhoto(us)
-            .subscribe(data => this.photo = data);
-
-        this.sTimeout = setTimeout(() => {
-            this.selectPhoto = this.photo.text;
-            if (this.selectPhoto == "fichier/logo.jpg") {
-                this.selectPhoto = "logo";
-            }
-            else if (this.selectPhoto == "fichier/arsenal.jpg") {
-                this.selectPhoto = "arsenal";
-            }
-            else if (this.selectPhoto == "fichier/barca.jpg") {
-                this.selectPhoto = "barca";
-            }
-            else if (this.selectPhoto == "fichier/psg.jpg") {
-                this.selectPhoto = "psg";
-            }
-            else if (this.selectPhoto == "fichier/ol.jpg") {
-                this.selectPhoto = "ol";
-            }
-        }, 500);
     }
 
     changePays() {
+        alert("1");
         this._uService.changePays(this.u2.id, this.selectPays);            
     }
 }

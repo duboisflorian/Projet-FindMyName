@@ -14,7 +14,7 @@ namespace FindMyName_Serveur.Services
             new Utilisateur (3,"Maxime","fichier/logo.jpg","Maxime@gmail.com","1234","France",25),
             new Utilisateur (4,"Lionel","fichier/logo.jpg","Lionel@gmail.com","1234","France",25),
             new Utilisateur (5,"Diego","fichier/logo.jpg","Diego@gmail.com","1234","France",25),
-            new Utilisateur (6,"Tingting","fichier/ol.jpg","Tingting@gmail.com","1234","France",25),
+            new Utilisateur (6,"Tingting","fichier/ol.jpg","Tingting@gmail.com","1234","Etats-Unis",25),
             new Utilisateur (7,"Marco","fichier/logo.jpg","Marco@gmail.com","1234","France",25),
             new Utilisateur (8,"Luffy","fichier/logo.jpg","Luffy@gmail.com","1234","France",25),
             new Utilisateur (9,"Mingo","fichier/logo.jpg","Mingo@gmail.com","1234","France",25),
