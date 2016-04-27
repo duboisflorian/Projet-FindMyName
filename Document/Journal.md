@@ -345,10 +345,13 @@ Project : Find My Name v_3
 	- Création des controlleurs
 	- Création des services
 	- Ralisation Contact (controlleur/service)
+
 - Maxime
 	- Ralisation Partie (controlleur/service)
+
 - Lionel
 	- Ralisation Utilisateur (controlleur/service)
+
 - Yani
 	- Ralisation Theme et Jouer (controlleur/service)
 
@@ -356,3 +359,9 @@ Project : Find My Name v_3
 
 - Lionel
 	- Début code user_detail partie cliente
+
+- Yani
+	- Réalisation partie theme coté client
+
+- Florian
+	- Réalisation Contact (client) error sur le pipe
