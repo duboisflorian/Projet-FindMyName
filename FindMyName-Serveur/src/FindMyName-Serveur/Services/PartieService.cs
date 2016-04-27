@@ -115,8 +115,8 @@ namespace FindMyName_Serveur.Services
         {
             int taille = PARTIES.Count;
             int id_partie = taille + 1;
-            //  var theme = this._tService.getName(th); Yani class
-            Partie p = new Partie(id_partie, id, id_ami, j1, j2, 0, 0, id_ami, new List<Manche> { new Manche(th, "PSG", score, 0) });
+            string theme = ThemeService.getName(th);
+            Partie p = new Partie(id_partie, id, id_ami, j1, j2, 0, 0, id_ami, new List<Manche> { new Manche(th, theme, score, 0) });
             PARTIES.Add(p);
         }
 
@@ -183,13 +183,13 @@ namespace FindMyName_Serveur.Services
                     }
                     else
                     {
-                        // var theme = this._tService.getName(th); Yani class
+                        string theme = ThemeService.getName(th); 
                         if (id == PARTIES[i].id_j1)
                         {
-                            PARTIES[i].manche.Add(new Manche( th, "PSG", score,0));
+                            PARTIES[i].manche.Add(new Manche( th, theme, score,0));
                         }
                         else {
-                            PARTIES[i].manche.Add(new Manche(th, "PSG",0, score));
+                            PARTIES[i].manche.Add(new Manche(th, theme,0, score));
                         }
 
                         PARTIES[i].player = id_ami;
@@ -200,8 +200,45 @@ namespace FindMyName_Serveur.Services
 
         public static string getThemeFavori(int id)
         {
-            //tous a faire
-            return "PSG";
+            string th = "acun pour le moment";
+            int c1 = 0, c2 = 0;
+            for (var i = 0; i < ThemeService.THEMES.Count; i++)
+            {
+                for (var j = 0; j < PARTIES.Count; j++)
+                {
+                    if (PARTIES[j].id_j1 == id || PARTIES[j].id_j2 == id)
+                    {
+                        for (var h = 0; h < PARTIES[j].manche.Count; h++)
+                        {
+                            if (th == "acun pour le moment")
+                            {
+                                if (PARTIES[j].manche[h].id_theme == ThemeService.THEMES[i].id)
+                                    c1++;
+                            }
+                            else
+                            {
+                                if (PARTIES[j].manche[h].id_theme == ThemeService.THEMES[i].id)
+                                {
+                                    c2++;
+                                }
+                            }
+                        }
+
+                    }
+                }
+                if (th == "acun pour le moment")
+                {
+                    th = ThemeService.THEMES[i].text;
+                    c2 = 0;
+                }
+                if (c2 > c1)
+                {
+                    c1 = c2;
+                    th = ThemeService.THEMES[i].text;
+                }
+                c2 = 0;
+            }
+            return th;
         }
 
         public static int getNbD(int id)
