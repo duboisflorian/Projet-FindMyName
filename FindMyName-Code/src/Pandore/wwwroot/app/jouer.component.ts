@@ -23,7 +23,7 @@ export class JouerComponent implements OnInit {
     remaining: number = 0;
 
     tabreponses: Jouer;
-    u: Utilisateur;
+    u: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore":0 };
     bon: boolean;
     theme: Theme;
     p: Partie;
@@ -63,7 +63,8 @@ export class JouerComponent implements OnInit {
 
 
         let us = +this._routeParams.get('us');
-        this.u = this._uService.getUtilisateur(us);
+        this._uService.getUser(us)
+            .subscribe(data => this.u = data);
         this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
         this._themeService.getTheme(th).subscribe(data => this.theme = data);
         this.starttimer();
