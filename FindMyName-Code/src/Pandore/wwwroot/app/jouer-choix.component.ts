@@ -34,6 +34,7 @@ export class JouerChoixComponent implements OnInit {
     }
     ngOnInit() {
         let id = +this._routeParams.get('id');
+        this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
         this._themeService.getThemes().subscribe(data => this.themes = data);;
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
