@@ -358,10 +358,15 @@ Project : Find My Name v_3
 ## Mardi 26/04
 
 - Lionel
-	- Début code user_detail partie cliente
+	- Début code user_detail partie cliente (Difficulté avec la récupération des données sur le serveur)
 
 - Yani
 	- Réalisation partie theme coté client
 
 - Florian
 	- Réalisation Contact (client) error sur le pipe
+
+## Mercredi 27/04
+
+- Lionel
+	- Récupération et affichage des données sur la partie client
