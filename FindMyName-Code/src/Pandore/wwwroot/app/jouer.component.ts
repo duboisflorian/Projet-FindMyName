@@ -16,7 +16,7 @@ import {Observable} from 'rxjs/Rx';
     selector: 'my-jouer',
     templateUrl: 'app/jouer.component.html'
 })
-export class JouerComponent implements OnInit{
+export class JouerComponent implements OnInit {
     task: string = '';
     reponse: Reponse[] = [
     ];
@@ -53,10 +53,15 @@ export class JouerComponent implements OnInit{
     }
     ngOnInit() {
         let th = +this._routeParams.get('th');
-        this.tabreponses = this._jouerService.getReponses(th);
-        for (var i = 0; i < this.tabreponses.reponses.length; i++) {
-            this.tabreponses.reponses[i].done = false;
-        }
+        this.tabreponses = { "id": 1, "reponses": [] };
+        this._jouerService.getReponses(th).subscribe(data => this.tabreponses = data);
+        this.sTimeout = setTimeout(() => {
+            for (var i = 0; i < this.tabreponses.reponses.length; i++) {
+                this.tabreponses.reponses[i].done = false;
+            }
+        }, 600);
+
+
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
@@ -117,7 +122,7 @@ export class JouerComponent implements OnInit{
     }
 
     countdown(minutes, seconds, _router, id) {
-        var element, endTime, hours,msLeft, mins, time;
+        var element, endTime, hours, msLeft, mins, time;
         function twoDigits(n) {
             return (n <= 9 ? "0" + n : n);
         }

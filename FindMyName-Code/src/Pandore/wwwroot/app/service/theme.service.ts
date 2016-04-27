@@ -19,7 +19,7 @@ export class ThemeService {
     }
     getThemes() {
         return this.http.get('http://localhost:54000/api/theme/getThemes/')
-            .map(data => data.json()); 
+            .map(data => data.json());
     }
 
     melanger() {
@@ -28,20 +28,20 @@ export class ThemeService {
 
     }
     isvalid(nombre, aleatoire) {
-        return this.http.get('http://localhost:54000/api/theme/isvalid/'+nombre+'/'+aleatoire)
+        return this.http.get('http://localhost:54000/api/theme/isvalid/' + nombre + '/' + aleatoire)
             .map(data => data.json());
     }
     getTheme(id: number) {
-        return this.http.get('http://localhost:54000/api/theme/getTheme/' +  id )
+        return this.http.get('http://localhost:54000/api/theme/getTheme/' + id)
             .map(data => data.json());
     }
     getName(u: number) {
-        return this.http.get('http://localhost:54000/api/theme/getName/' + u )
+        return this.http.get('http://localhost:54000/api/theme/getName/' + u)
             .map(data => data.json());
     }
 
     getId(n: string) {
-        return this.http.get('http://localhost:54000/api/theme/getId/' +  n )
+        return this.http.get('http://localhost:54000/api/theme/getId/' + n)
             .map(data => data.json());
     }
 }
