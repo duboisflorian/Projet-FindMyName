@@ -35,12 +35,9 @@ export class JouerChoixComponent implements OnInit {
     ngOnInit() {
         let id = +this._routeParams.get('id');
         this._themeService.getThemes().subscribe(data => this.themes = data);;
-        /*this._themeService.getThemes()
-            .then(themes => this.themes = themes.slice(0, 4));*/
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
         this.sTimeout = setTimeout(() => this.endTimer(), 6000);
-        //setTimeout(this.endTimer, 3000);
     }
     gotoContact() {
         this._router.navigate(['Contact', { us: this.u.id }]);
@@ -60,7 +57,6 @@ export class JouerChoixComponent implements OnInit {
 
     ngOnDestroy() {
         clearTimeout(this.sTimeout);
-
     }
 
     gotoJouer(theme: Theme) {
@@ -68,7 +64,6 @@ export class JouerChoixComponent implements OnInit {
         let id = +this._routeParams.get('id');
         let link = ['Jouer', { us: this.u.id, id: id, th: this.selectedTheme.id }];
         this._router.navigate(link);
-        //this._router.navigate(['Jouer', { id: this.selectedTheme.id }]);
     }
 }
 

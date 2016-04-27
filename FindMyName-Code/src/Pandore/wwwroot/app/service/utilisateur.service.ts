@@ -17,9 +17,6 @@ export class UtilisateurService {
 
 
     getUtilisateur(id: number) {
-        /* return Promise.resolve(UTILISATEURS).then(
-             utilisateurs => utilisateurs.filter(utilisateur => utilisateur.id === id)[0]
-         );*/
         for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].id == id)
                 return UTILISATEURS[i];

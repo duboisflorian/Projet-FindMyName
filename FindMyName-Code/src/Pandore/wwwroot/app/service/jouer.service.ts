@@ -6,12 +6,6 @@ import { Injectable } from 'angular2/core';
 @Injectable()
 export class JouerService {
     i: number;
-    getReponsesSlowly() {
-        return new Promise<Jouer[]>(resolve =>
-            setTimeout(() => resolve(Reponses), 2000) // 2 seconds
-        );
-    }
-
     getReponse(i: number) {
         return Reponses[0].reponses[i].text;
     }
