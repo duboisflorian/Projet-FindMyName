@@ -54,7 +54,7 @@ export class UtilisateurService {
     }
 
     Same_mdp(id: number, password: string) {
-        alert("id " + id);
+        /*alert("id " + id);
         for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].id == id) {
                 if (UTILISATEURS[i].password == password) {
@@ -68,7 +68,11 @@ export class UtilisateurService {
                 }
 
             }
-        }
+        }*/
+
+        return this.http.get('http://localhost:54000/api/Utilisateur/sameMDP/' + id + '/' + password)
+            .map(data => data.json());
+
     }
 
     getlastid() {
