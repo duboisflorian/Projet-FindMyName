@@ -27,6 +27,8 @@ export class UserdetailComponent implements OnInit {
     nbv: number=0;
     nbd: number=0;
     pays = ['France','Allemagne','Chine','Japon','Etats-Unis','Royaume-Uni','Canada'];
+    photo: any;
+    sTimeout: number;
 
     constructor(
         private _router: Router,
@@ -42,22 +44,29 @@ export class UserdetailComponent implements OnInit {
         this.u = this._uService.getUtilisateur(us);
         this.nbparties = this._pService.getnbParties(us);
         this.theme_favori = this._pService.getThemeFavori(us);
-        this.selectPhoto = this._uService.getPhoto(us);
-        if (this.selectPhoto == "fichier/logo.jpg") {
-            this.selectPhoto = "logo";
-        }
-        else if (this.selectPhoto == "fichier/arsenal.jpg") {
-            this.selectPhoto = "arsenal";
-        }
-        else if (this.selectPhoto == "fichier/barca.jpg") {
-            this.selectPhoto = "barca";
-        }
-        else if (this.selectPhoto == "fichier/psg.jpg") {
-            this.selectPhoto = "psg";
-        }
-        else if (this.selectPhoto == "fichier/ol.jpg") {
-            this.selectPhoto = "ol";
-        }
+        this.selectPhoto = "fichier/logo.jpg";
+        this._uService.getPhoto(us)
+            .subscribe(data => this.photo = data);
+
+        this.sTimeout = setTimeout(() => {
+        this.selectPhoto = this.photo.text;
+            if (this.selectPhoto == "fichier/logo.jpg") {
+                this.selectPhoto = "logo";
+            }
+            else if (this.selectPhoto == "fichier/arsenal.jpg") {
+                this.selectPhoto = "arsenal";
+            }
+            else if (this.selectPhoto == "fichier/barca.jpg") {
+                this.selectPhoto = "barca";
+            }
+            else if (this.selectPhoto == "fichier/psg.jpg") {
+                this.selectPhoto = "psg";
+            }
+            else if (this.selectPhoto == "fichier/ol.jpg") {
+                this.selectPhoto = "ol";
+            } }, 1000);
+
+        
         //alert("Photo :" + this.selectPhoto);
 
         this.selectPays = this._uService.getPays(us);

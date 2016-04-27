@@ -86,9 +86,9 @@ namespace FindMyName_Serveur.Controllers
 
         // GET api/getPhoto/{u}
         [HttpGet("getPhoto/{u}")]
-        public string getPhoto(int u)
+        public Res getPhoto(int u)
         {
-          return  UtilisateurService.getPhoto(u);
+            return new Res(UtilisateurService.getPhoto(u));
         }
 
         // GET api/getPays/{u}

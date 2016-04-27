@@ -59,8 +59,8 @@ export class JouerComponent implements OnInit{
         }
         let us = +this._routeParams.get('us');
         this.u = this._uService.getUtilisateur(us);
+        this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
         this._themeService.getTheme(th).subscribe(data => this.theme = data);
-        //this.theme = this._themeService.getTheme(th);
         this.starttimer();
     }
     getReponse() {

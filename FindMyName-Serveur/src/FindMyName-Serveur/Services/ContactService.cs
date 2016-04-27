@@ -15,7 +15,7 @@ namespace FindMyName_Serveur.Services
             {
                     new Contact()
                     {
-                        id = 1,name="Florian",photo="fichier/logo.jpg",type="ami"
+                        id = 1,name="Florian",photo="fichier/psg.jpg",type="ami"
                     },
                     new Contact()
                     {
@@ -42,42 +42,42 @@ namespace FindMyName_Serveur.Services
             {
                     new Contact()
                     {
-                        id = 6,name="tingting",photo="fichier/psg.jpg",type="ami"
+                        id = 6,name="tingting",photo="fichier/ol.jpg",type="ami"
                     }
             }),
             new ListeContact(1,new List<Contact>
             {
                     new Contact()
                     {
-                        id = 6,name="tingting",photo="fichier/psg.jpg",type="ami"
+                        id = 6,name="tingting",photo="fichier/ol.jpg",type="ami"
                     }
             }),
             new ListeContact(2,new List<Contact>
             {
                     new Contact()
                     {
-                        id = 6,name="tingting",photo="fichier/psg.jpg",type="ami"
+                        id = 6,name="tingting",photo="fichier/ol.jpg",type="ami"
                     }
             }),
             new ListeContact(3,new List<Contact>
             {
                     new Contact()
                     {
-                        id = 6,name="tingting",photo="fichier/psg.jpg",type="ami"
+                        id = 6,name="tingting",photo="fichier/ol.jpg",type="ami"
                     }
             }),
             new ListeContact(5,new List<Contact>
             {
                     new Contact()
                     {
-                        id = 6,name="tingting",photo="fichier/psg.jpg",type="ami"
+                        id = 6,name="tingting",photo="fichier/ol.jpg",type="ami"
                     }
             }),
             new ListeContact(4,new List<Contact>
             {
                     new Contact()
                     {
-                        id = 6,name="tingting",photo="fichier/psg.jpg",type="online"
+                        id = 6,name="tingting",photo="fichier/ol.jpg",type="online"
                     }
             }),
             new ListeContact(7,new List<Contact> { }),

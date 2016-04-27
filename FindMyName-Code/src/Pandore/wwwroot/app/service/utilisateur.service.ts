@@ -25,11 +25,6 @@ export class UtilisateurService {
         return body.data || {};
     }
 
-    getUtilisateurs() {
-        return Promise.resolve(UTILISATEURS);
-    }
-
-
     getUtilisateur(id: number) {
         for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].id == id)
@@ -54,7 +49,7 @@ export class UtilisateurService {
     }
 
     Same_mdp(id: number, password: string) {
-        /*alert("id " + id);
+        alert("id " + id);
         for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].id == id) {
                 if (UTILISATEURS[i].password == password) {
@@ -68,11 +63,7 @@ export class UtilisateurService {
                 }
 
             }
-        }*/
-
-        return this.http.get('http://localhost:54000/api/Utilisateur/sameMDP/' + id + '/' + password)
-            .map(data => data.json());
-        
+        }
     }
 
     getlastid() {
@@ -106,12 +97,7 @@ export class UtilisateurService {
     }
 
         getPhoto(u:number){
-        /*for (var i = 0; i < UTILISATEURS.length; i++) {
-            if (UTILISATEURS[i].id == u)
-                return UTILISATEURS[i].photo;
-            }*/
-
-            return this.http.get('http://localhost:54000/api/Utilisateur/getPhoto/' +u)
+            return this.http.get('http://localhost:54000/api/Utilisateur/getPhoto/' + u)
             .map(data => data.json());
     }
 

@@ -81,8 +81,8 @@ export class PartieService {
 
     AjouterPartie(us: number, ami: number, th: number, score: number, j1: string, j2: string) {
         var id_partie = PARTIES.length + 1;
-        var theme = this._tService.getName(th);
-        PARTIES.push({ "id_partie": id_partie, "id_j1": us, "id_j2": ami, "j1": j1, "j2": j2, "s1": 0, "s2": 0, "player": ami, "manche": [{ "id_theme": th, "theme": theme, "s1": score, "s2": null }, ] })
+        //var theme = this._tService.getName(th);
+       // PARTIES.push({ "id_partie": id_partie, "id_j1": us, "id_j2": ami, "j1": j1, "j2": j2, "s1": 0, "s2": 0, "player": ami, "manche": [{ "id_theme": th, "theme": theme, "s1": score, "s2": null }, ] })
     }
 
     ModifierPartie(us: number, ami: number, th: number, score: number, partie: Partie) {
@@ -112,12 +112,12 @@ export class PartieService {
                         PARTIES[i].player = null;
                     }
                 } else {
-                    var theme = this._tService.getName(th);
+                  /*  var theme = this._tService.getName(th);
                     if (us == PARTIES[i].id_j1)
                         PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": score, "s2": null });
                     else
                         PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": null, "s2": score });
-
+                    */
                     PARTIES[i].player = ami;
                 }
             }
