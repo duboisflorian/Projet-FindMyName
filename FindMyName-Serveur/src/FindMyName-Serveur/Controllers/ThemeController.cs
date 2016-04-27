@@ -38,46 +38,21 @@ namespace FindMyName_Serveur.Controllers
         }
 
         [HttpGet("getTheme/{id}")]
-        public static Services.Theme getTheme(int id)
+        public Services.Theme getTheme(int id)
         {
             return ThemeService.getTheme(id);
         }
 
         [HttpGet("getName/{u}")]
-        public static String getName(int u)
+        public String getName(int u)
         {
             return ThemeService.getName(u);
         }
 
         [HttpGet("getId/{n}")]
-        public static int getId(String n)
+        public int getId(String n)
         {
             return ThemeService.getId(n);
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
