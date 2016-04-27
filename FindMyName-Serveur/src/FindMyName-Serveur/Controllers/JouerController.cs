@@ -12,7 +12,7 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class JouerController : Controller
     {
-        // GET: api/values
+        // GET: api/Jouer
         [HttpGet]
         public List<Services.ListeReponses> Get()
         {

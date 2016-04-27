@@ -1101,7 +1101,7 @@ namespace FindMyName_Serveur.Services
             return ReponsesService.REPONSES[0].reponses[i].done;
         }
 
-        public static List<ListeReponses> ALL() { return ReponsesService.REPONSES; }
+        public static List<ListeReponses> ALL() { return REPONSES; }
 
         public static ListeReponses getReponses(int id)
         {
@@ -1126,17 +1126,15 @@ namespace FindMyName_Serveur.Services
 
     public class ListeReponses
     {
-        private List<Reponse> list;
-        private int v;
-
-        public ListeReponses(int v, List<Reponse> list)
-        {
-            this.v = v;
-            this.list = list;
-        }
-
         public int id { get; set; }
         public List<Reponse> reponses { get; set; }
+        public ListeReponses(int v, List<Reponse> list)
+        {
+            this.id = v;
+            this.reponses = list;
+        }
+
+
     }
 
 }

@@ -31,7 +31,7 @@ namespace FindMyName_Serveur.Controllers
             ThemeService.melanger();
         }
 
-        [HttpGet("melanger/{nombre}/{aleatoire}")]
+        [HttpGet("isvalid/{nombre}/{aleatoire}")]
         public bool isvalid(int nombre, List<int> aleatoire)
         {
             return ThemeService.isvalid(nombre, aleatoire);

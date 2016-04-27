@@ -23,6 +23,7 @@ namespace FindMyName_Serveur.Services
         public static List<Theme> ALL() { return ThemeService.THEMES; }
         public static List<Theme> getThemes()
         {
+            ThemeService.t = new List<Theme> { };
             ThemeService.melanger();
             return ThemeService.t;
         }
