@@ -2,7 +2,7 @@
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 import { UTILISATEURS } from './data/mock-utilisateurs';
-import { Contact } from './classe/contact';
+import { Contact, ContactViewModel } from './classe/contact';
 import { ContactService } from './service/contact.service';
 import { UtilisateurService } from './service/utilisateur.service';
 import { JouerChoixComponent } from './jouer-choix.component';
@@ -23,8 +23,8 @@ import {Res,ResID} from './classe/res';
     templateUrl: 'app/contact.component.html'
 })
 export class ContactComponent implements OnInit {
-    contacts: Contact[] = new Array<Contact>();
-    selectedContact: Contact;
+    contacts: ContactViewModel[] = new Array<ContactViewModel>();
+    selectedContact: ContactViewModel;
     selectedUser: Utilisateur;
     contactadd: number;
     utilisateurs: Utilisateur;
@@ -92,7 +92,7 @@ export class ContactComponent implements OnInit {
         this.selectedDetails = h;
     }
 
-    onSelect(contact: Contact) {
+    onSelect(contact: ContactViewModel) {
         this.selectedContact = contact;
         this.selectedDetails = null;
         

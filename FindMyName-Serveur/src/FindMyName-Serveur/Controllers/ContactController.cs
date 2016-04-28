@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using FindMyName_Serveur.Services;
+using FindMyName_Serveur.ViewModels;
+using FindMyName_Serveur.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -29,9 +31,23 @@ namespace FindMyName_Serveur.Controllers
 
         // GET api/Contact/getContacts/x/y
         [HttpGet("getContacts/{id}/{type}")]
-        public List<Contact> getContacts(int id,string type)
+        public IEnumerable<ContactViewModel> getContacts(int id,string type)
         {
-            return ContactService.getContacts(id,type);
+            //Contrôle des accès
+
+            //Traitement
+            IEnumerable<Contact> contacts = ContactService.getContacts(id,type);
+
+            //Génération du ViewModel
+            var query = from c in contacts
+                        select new ContactViewModel()
+                        {
+                            id = c.id,
+                            name = c.name,
+                            photo = c.photo
+                        };
+
+            return query.ToList();
         }
 
         // GET api/Contact/getAmiExiste/x/y

@@ -1,4 +1,4 @@
-﻿import { Contact } from '../classe/contact';
+﻿import { Contact, ContactViewModel } from '../classe/contact';
 import { Utilisateur } from '../classe/utilisateur';
 import { CONTACTS } from '../data/mock-contact';
 import { Injectable } from 'angular2/core';

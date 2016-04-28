@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FindMyName_Serveur.Controllers;
+using FindMyName_Serveur.Models;
 
 namespace FindMyName_Serveur.Services
 {
@@ -239,25 +240,7 @@ namespace FindMyName_Serveur.Services
         }
     }
 
-    public class Contact 
-    {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string photo { get; set; }
-        public string type { get; set; }
-
-        public Contact(int id,string name,string photo,string type)
-        {
-            this.id = id;
-            this.name = name;
-            this.photo = photo;
-            this.type = type;
-        }
-
-        public Contact()
-        {
-        }
-    }
+   
 
     public class ListeContact
     {
