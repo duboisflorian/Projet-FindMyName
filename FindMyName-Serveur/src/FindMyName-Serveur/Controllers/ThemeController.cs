@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using FindMyName_Serveur.Services;
+using FindMyName_Serveur.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,13 +15,13 @@ namespace FindMyName_Serveur.Controllers
     {
         // GET: api/Theme
         [HttpGet]
-        public List<Services.Theme> Get()
+        public List<Theme> Get()
         {
             return ThemeService.ALL();
         }
 
         [HttpGet("getThemes")]
-        public List<Services.Theme> getThemes()
+        public List<Theme> getThemes()
         {
             return ThemeService.getThemes();
         }
@@ -38,7 +39,7 @@ namespace FindMyName_Serveur.Controllers
         }
 
         [HttpGet("getTheme/{id}")]
-        public Services.Theme getTheme(int id)
+        public Theme getTheme(int id)
         {
             return ThemeService.getTheme(id);
         }

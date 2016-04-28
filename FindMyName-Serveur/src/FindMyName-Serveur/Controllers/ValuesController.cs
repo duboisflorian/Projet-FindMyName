@@ -59,6 +59,9 @@ public class Theme
         this.done =d;
     }
 
+    public Theme()
+    {
+    }
 }
 
 public class ListeTheme

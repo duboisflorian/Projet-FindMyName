@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using FindMyName_Serveur.Services;
+using FindMyName_Serveur.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,7 +15,7 @@ namespace FindMyName_Serveur.Controllers
     {
         // GET: api/Jouer
         [HttpGet]
-        public List<Services.ListeReponses> Get()
+        public List<ListeReponses> Get()
         {
             return ReponsesService.ALL();
         }

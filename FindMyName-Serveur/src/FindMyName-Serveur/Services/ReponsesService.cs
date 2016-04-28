@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FindMyName_Serveur.Models;
 
 namespace FindMyName_Serveur.Services
 {
@@ -1116,25 +1117,6 @@ namespace FindMyName_Serveur.Services
         {
             return ReponsesService.REPONSES[i].reponses.Count;
         }
-    }
-
-    public class Reponse
-    {
-        public string text { get; set; }
-        public bool done { get; set; }
-    }
-
-    public class ListeReponses
-    {
-        public int id { get; set; }
-        public List<Reponse> reponses { get; set; }
-        public ListeReponses(int v, List<Reponse> list)
-        {
-            this.id = v;
-            this.reponses = list;
-        }
-
-
     }
 
 }

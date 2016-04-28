@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FindMyName_Serveur.Models;
 
 namespace FindMyName_Serveur.Services
 {
@@ -81,13 +82,5 @@ namespace FindMyName_Serveur.Services
             }
             return 0;
         }
-    }
-
-    public class Theme
-    {
-        public string text { get; set; }
-        public int id { get; set; }
-        public string photo { get; set; }
-        public bool done { get; set; }
     }
 }
