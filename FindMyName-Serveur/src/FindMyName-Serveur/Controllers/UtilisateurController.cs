@@ -46,9 +46,9 @@ namespace FindMyName_Serveur.Controllers
 
         // GET api/sameMDP/{id}/{password}
         [HttpGet("sameMDP/{id}/{password}")]
-        public Boolean sameMDP(int id, string password)
+        public Res sameMDP(int id, string password)
         {
-            return UtilisateurService.Same_mdp(id, password);
+            return new Res(UtilisateurService.Same_mdp(id, password));
         }
 
         // GET api/ajoutus/{name}/{mail}/{password}

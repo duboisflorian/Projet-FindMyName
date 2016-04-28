@@ -100,14 +100,9 @@ export class UserdetailComponent implements OnInit {
         if (id === undefined) {
             id = this.u2.id;
         }
-        
-        if (this._uService.Same_mdp(id, this.password)) {
-            alert("le mot de passe est identique");
-        }
-        else {
-            alert("Le mot de passe a bien été changé");
-            
-        }
+
+        this._uService.Same_mdp(id, this.password).subscribe(data => this.Message2 = data);
+        this.sTimeout = setTimeout(() => alert(this.Message2.text), 600);
     }
 
     loadListPhoto() {

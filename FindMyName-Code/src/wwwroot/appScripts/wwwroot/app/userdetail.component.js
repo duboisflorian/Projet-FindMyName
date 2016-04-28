@@ -76,15 +76,12 @@ var UserdetailComponent = (function () {
         this._router.navigate(['Userdetail', { us: this.u2.id }]);
     };
     UserdetailComponent.prototype.modifmdp = function (id) {
+        var _this = this;
         if (id === undefined) {
             id = this.u2.id;
         }
-        if (this._uService.Same_mdp(id, this.password)) {
-            alert("le mot de passe est identique");
-        }
-        else {
-            alert("Le mot de passe a bien été changé");
-        }
+        this._uService.Same_mdp(id, this.password).subscribe(function (data) { return _this.Message2 = data; });
+        this.sTimeout = setTimeout(function () { return alert(_this.Message2.text); }, 600);
     };
     UserdetailComponent.prototype.loadListPhoto = function () {
         var _this = this;

@@ -80,21 +80,21 @@ namespace FindMyName_Serveur.Services
             return false;
         }
 
-        public static Boolean Same_mdp(int id, string password)
+        public static string Same_mdp(int id, string password)
         {
-            Boolean r = true;
+            String r = "";
             for (var i = 0; i < UTILISATEURS.Count; i++)
             {
                 if (UTILISATEURS[i].id == id)
                 {
                     if (UTILISATEURS[i].password == password)
                     {
-                        r = true;
+                        r = "le mot de passe est identique !";
                     }
                     else
                     {
                         UTILISATEURS[i].password = password;
-                        r = false;
+                        r = "le mot de passe a bien ete change !";
                     }
 
                 }
