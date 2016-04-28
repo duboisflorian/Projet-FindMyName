@@ -22,7 +22,8 @@ export class UserdetailComponent implements OnInit {
     selectTheme: string;
     selectPays: string = "";
     nbparties: number;
-    theme_favori: string="";
+    theme_favori: string = "";
+    theme_favori2: any;
     nbAmi: number;
     nbv: number=0;
     nbd: number=0;
@@ -49,7 +50,9 @@ export class UserdetailComponent implements OnInit {
             .subscribe(data => this.u2 = data);
 
         this._pService.getnbParties(us).subscribe(data => this.nbparties = data);
-        this._pService.getThemeFavori(us).subscribe(data => this.theme_favori = data);
+        this._pService.getThemeFavori(us).subscribe(data => this.theme_favori2 = data);
+        this.sTimeout = setTimeout(() => this.theme_favori = this.theme_favori2.text, 900);
+        //this.sTimeout = setTimeout(() => alert(this.theme_favori), 900);
         this.selectPhoto = "fichier/logo.jpg";
         this._uService.getPhoto(us)
             .subscribe(data => this.photo = data);

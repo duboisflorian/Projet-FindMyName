@@ -35,7 +35,7 @@ var InComponent = (function () {
             }
         }
         else {
-            alert("Les mots de passe ne sont pas identique");
+            alert("Les mots de passe ne sont pas identiques");
         }
     };
     InComponent = __decorate([

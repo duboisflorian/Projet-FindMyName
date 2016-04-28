@@ -93,9 +93,9 @@ namespace FindMyName_Serveur.Controllers
 
         // GET: api/Partie/getThemeFavori/{ID}/
         [HttpGet("getThemeFavori/{id}")]
-        public string getThemeFavori(int id)
+        public Res getThemeFavori(int id)
         {
-            return PartieService.getThemeFavori(id);
+            return new Res (PartieService.getThemeFavori(id));
         }
 
         // GET: api/Partie/getNbD/{ID}/

@@ -15,6 +15,7 @@ export class InComponent {
     mail: string;
     password: string;
     confirmPasword: string;
+    booleen : any
 
     constructor(
         private _router: Router,
@@ -39,7 +40,7 @@ export class InComponent {
                 this._router.navigate(['Co']);
             }
         } else {
-            alert("Les mots de passe ne sont pas identique");
+            alert("Les mots de passe ne sont pas identiques");
         }
     }
 }
