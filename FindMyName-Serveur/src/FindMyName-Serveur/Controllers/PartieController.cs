@@ -15,14 +15,14 @@ namespace FindMyName_Serveur.Controllers
     {
         // GET: api/Partie
         [HttpGet]
-        public List<Partie> Get()
+        public IEnumerable<Partie> Get()
         {
             return PartieService.PARTIES;
         }
 
         // GET: api/Partie/getPartieEnCours/{ID}
         [HttpGet("getPartieEnCours/{id}")]
-        public List<Partie> getPartieEnCours(int id)
+        public IEnumerable<Partie> getPartieEnCours(int id)
         {
            return PartieService.getPartieEnCours(id);
         }
@@ -43,7 +43,7 @@ namespace FindMyName_Serveur.Controllers
 
         // GET: api/Partie/getHistorique/{ID}/{ID_AMI}
         [HttpGet("getHistorique/{id}/{id_ami}")]
-        public List<Partie> getHistorique(int id, int id_ami)
+        public IEnumerable<Partie> getHistorique(int id, int id_ami)
         {
             return PartieService.getHistorique(id, id_ami);
         }

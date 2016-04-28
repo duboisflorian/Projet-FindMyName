@@ -15,13 +15,13 @@ namespace FindMyName_Serveur.Controllers
     {
         // GET: api/Theme
         [HttpGet]
-        public List<Theme> Get()
+        public IEnumerable<Theme> Get()
         {
             return ThemeService.ALL();
         }
 
         [HttpGet("getThemes")]
-        public List<Theme> getThemes()
+        public IEnumerable<Theme> getThemes()
         {
             return ThemeService.getThemes();
         }

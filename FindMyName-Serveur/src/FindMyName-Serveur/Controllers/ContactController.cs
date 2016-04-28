@@ -23,7 +23,7 @@ namespace FindMyName_Serveur.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public List<ListeContact> Get(int id)
+        public IEnumerable<ListeContact> Get(int id)
         {
             return ContactService.ALL();
             //return "value";
@@ -130,29 +130,5 @@ namespace FindMyName_Serveur.Controllers
         public void Delete(int id)
         {
         }
-    }
-    public class Res
-    {
-        public string text { get; set; }
-
-        public Res(string t)
-        {
-            this.text = t;
-
-        }
-
-    }
-
-    public class ResID
-    {
-        public string text { get; set; }
-        public int id { get; set; }
-
-        public ResID(string t,int i)
-        {
-            this.text = t;
-            this.id = i;
-        }
-
     }
 }

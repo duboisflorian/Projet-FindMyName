@@ -15,7 +15,7 @@ namespace FindMyName_Serveur.Controllers
     {
         // GET: api/values
         [HttpGet]
-        public List<Utilisateur> Get()
+        public IEnumerable<Utilisateur> Get()
         {
             return UtilisateurService.UTILISATEURS;
             //return new string[] { "value1", "value2" };

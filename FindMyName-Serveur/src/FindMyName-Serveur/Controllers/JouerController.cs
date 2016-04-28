@@ -15,7 +15,7 @@ namespace FindMyName_Serveur.Controllers
     {
         // GET: api/Jouer
         [HttpGet]
-        public List<ListeReponses> Get()
+        public IEnumerable<ListeReponses> Get()
         {
             return ReponsesService.ALL();
         }
