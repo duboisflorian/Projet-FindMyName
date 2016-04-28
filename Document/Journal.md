@@ -370,3 +370,11 @@ Project : Find My Name v_3
 
 - Lionel
 	- Récupération et affichage des données sur la partie client
+	
+## Jeudi 28/04
+
+- Groupe 
+	- Cours avec le prof
+
+- Lionel
+	- Correction bug affichage thème favoris + update utilisateur service (.map)
