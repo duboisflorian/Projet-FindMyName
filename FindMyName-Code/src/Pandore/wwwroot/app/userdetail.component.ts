@@ -48,8 +48,8 @@ export class UserdetailComponent implements OnInit {
         this._uService.getUser(us)
             .subscribe(data => this.u2 = data);
 
-        this.nbparties = this._pService.getnbParties(us);
-        this.theme_favori = this._pService.getThemeFavori(us);
+        this._pService.getnbParties(us).subscribe(data => this.nbparties = data);
+        this._pService.getThemeFavori(us).subscribe(data => this.theme_favori = data);
         this.selectPhoto = "fichier/logo.jpg";
         this._uService.getPhoto(us)
             .subscribe(data => this.photo = data);
@@ -80,8 +80,8 @@ export class UserdetailComponent implements OnInit {
         this._cService.getNbContact(us)
             .subscribe(data => this.nbAmi = data);
 
-        this.nbv = this._pService.getNbV(us);
-        this.nbd = this._pService.getNbD(us);
+        this._pService.getNbV(us).subscribe(data => this.nbv = data);
+        this._pService.getNbD(us).subscribe(data => this.nbd = data);
     }
 
     gotoDeco() {

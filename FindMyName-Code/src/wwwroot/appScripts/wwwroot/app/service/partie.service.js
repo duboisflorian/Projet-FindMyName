@@ -8,10 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var mock_parti_1 = require('../data/mock-parti');
 var core_1 = require('angular2/core');
 var theme_service_1 = require('../service/theme.service');
-var mock_themes_1 = require('../data/mock-themes');
 var http_1 = require('angular2/http');
 var PartieService = (function () {
     function PartieService(_tService, http) {
@@ -90,113 +88,130 @@ var PartieService = (function () {
             .map(function (data) { return data.json(); });
     };
     PartieService.prototype.getPartieExiste = function (us, ami) {
-        for (var i = mock_parti_1.PARTIES.length - 1; i >= 0; i--) {
-            if (((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].id_j2 == ami) || (mock_parti_1.PARTIES[i].id_j1 == ami && mock_parti_1.PARTIES[i].id_j2 == us)) && (mock_parti_1.PARTIES[i].player == us || mock_parti_1.PARTIES[i].player == ami))
-                return mock_parti_1.PARTIES[i];
-        }
-        return null;
+        /*   for (var i = PARTIES.length - 1; i >= 0; i--) {
+               if (((PARTIES[i].id_j1 == us && PARTIES[i].id_j2 == ami) || (PARTIES[i].id_j1 == ami && PARTIES[i].id_j2 == us)) && (PARTIES[i].player == us || PARTIES[i].player == ami ))
+                   return PARTIES[i];
+           }
+           return null; */
+        return this.http.get('http://localhost:54000/api/Partie/getPartieExiste/' + us + '/' + ami)
+            .map(function (data) { return data.json(); });
     };
     PartieService.prototype.AjouterPartie = function (us, ami, th, score, j1, j2) {
-        var id_partie = mock_parti_1.PARTIES.length + 1;
-        //var theme = this._tService.getName(th);
-        // PARTIES.push({ "id_partie": id_partie, "id_j1": us, "id_j2": ami, "j1": j1, "j2": j2, "s1": 0, "s2": 0, "player": ami, "manche": [{ "id_theme": th, "theme": theme, "s1": score, "s2": null }, ] })
+        /*  var id_partie = PARTIES.length + 1;
+          var theme = this._tService.getName(th);
+         PARTIES.push({ "id_partie": id_partie, "id_j1": us, "id_j2": ami, "j1": j1, "j2": j2, "s1": 0, "s2": 0, "player": ami, "manche": [{ "id_theme": th, "theme": theme, "s1": score, "s2": null }, ] })
+          */
+        this.http.get('http://localhost:54000/api/Partie/AjouterPartie/' + us + '/' + ami + '/' + th + '/' + score + '/' + j1 + '/' + j2);
     };
-    PartieService.prototype.ModifierPartie = function (us, ami, th, score, partie) {
-        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
-            if (mock_parti_1.PARTIES[i].id_partie == partie.id_partie) {
-                var n = mock_parti_1.PARTIES[i].manche.length - 1;
-                if (mock_parti_1.PARTIES[i].manche[n].s1 == null) {
-                    mock_parti_1.PARTIES[i].manche[n].s1 = score;
-                    if (mock_parti_1.PARTIES[i].manche[n].s1 > mock_parti_1.PARTIES[i].manche[n].s2) {
-                        mock_parti_1.PARTIES[i].s1 = mock_parti_1.PARTIES[i].s1 + 1;
-                    }
-                    if (mock_parti_1.PARTIES[i].manche[n].s1 < mock_parti_1.PARTIES[i].manche[n].s2) {
-                        mock_parti_1.PARTIES[i].s2 = mock_parti_1.PARTIES[i].s2 + 1;
-                    }
-                    if (mock_parti_1.PARTIES[i].s2 == 3 || mock_parti_1.PARTIES[i].s1 == 3) {
-                        mock_parti_1.PARTIES[i].player = null;
-                    }
-                }
-                else if (mock_parti_1.PARTIES[i].manche[n].s2 == null) {
-                    mock_parti_1.PARTIES[i].manche[n].s2 = score;
-                    if (mock_parti_1.PARTIES[i].manche[n].s1 > mock_parti_1.PARTIES[i].manche[n].s2) {
-                        mock_parti_1.PARTIES[i].s1 = mock_parti_1.PARTIES[i].s1 + 1;
-                    }
-                    if (mock_parti_1.PARTIES[i].manche[n].s1 < mock_parti_1.PARTIES[i].manche[n].s2) {
-                        mock_parti_1.PARTIES[i].s2 = mock_parti_1.PARTIES[i].s2 + 1;
-                    }
-                    if (mock_parti_1.PARTIES[i].s2 == 3 || mock_parti_1.PARTIES[i].s1 == 3) {
-                        mock_parti_1.PARTIES[i].player = null;
-                    }
-                }
-                else {
-                    /*  var theme = this._tService.getName(th);
-                      if (us == PARTIES[i].id_j1)
-                          PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": score, "s2": null });
-                      else
-                          PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": null, "s2": score });
-                      */
-                    mock_parti_1.PARTIES[i].player = ami;
-                }
-            }
-        }
+    PartieService.prototype.ModifierPartie = function (us, ami, th, score, id_partie) {
+        /* for (var i = 0; i < PARTIES.length; i++) {
+             if (PARTIES[i].id_partie == partie.id_partie) {
+                 var n = PARTIES[i].manche.length - 1;
+                 if (PARTIES[i].manche[n].s1 == null) {
+                     PARTIES[i].manche[n].s1 = score;
+                     if (PARTIES[i].manche[n].s1 > PARTIES[i].manche[n].s2) {
+                         PARTIES[i].s1 = PARTIES[i].s1 + 1;
+                     }
+                     if (PARTIES[i].manche[n].s1 < PARTIES[i].manche[n].s2) {
+                         PARTIES[i].s2 = PARTIES[i].s2 + 1;
+                     }
+                     if (PARTIES[i].s2 == 3 || PARTIES[i].s1 == 3) {
+                         PARTIES[i].player = null;
+                     }
+                 } else if (PARTIES[i].manche[n].s2 == null) {
+                     PARTIES[i].manche[n].s2 = score;
+                     if (PARTIES[i].manche[n].s1 > PARTIES[i].manche[n].s2) {
+                         PARTIES[i].s1 = PARTIES[i].s1 + 1;
+                     }
+                     if (PARTIES[i].manche[n].s1 < PARTIES[i].manche[n].s2) {
+                         PARTIES[i].s2 = PARTIES[i].s2 + 1;
+                     }
+                     if (PARTIES[i].s2 == 3 || PARTIES[i].s1 == 3) {
+                         PARTIES[i].player = null;
+                     }
+                 } else {
+                    var theme = this._tService.getName(th);
+                     if (us == PARTIES[i].id_j1)
+                         PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": score, "s2": null });
+                     else
+                         PARTIES[i].manche.push({ "id_theme": th, "theme": theme, "s1": null, "s2": score });
+                     
+                     PARTIES[i].player = ami;
+                 }
+             }
+         }
+         */
+        this.http.get('http://localhost:54000/api/Partie/ModifierPartie/' + us + '/' + ami + '/' + th + '/' + score + '/' + id_partie);
     };
     PartieService.prototype.getnbParties = function (u) {
-        var nb = 0;
-        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
-            if (mock_parti_1.PARTIES[i].id_j1 == u || mock_parti_1.PARTIES[i].id_j2 == u)
-                nb++;
-        }
-        return nb;
+        /*  var nb = 0;
+          for (var i = 0; i < PARTIES.length; i++) {
+              if (PARTIES[i].id_j1 == u || PARTIES[i].id_j2 == u)
+                          nb++;
+          }
+          return nb;
+      */
+        return this.http.get('http://localhost:54000/api/Partie/getnbParties/' + u)
+            .map(function (data) { return data.json(); });
     };
     PartieService.prototype.getThemeFavori = function (u) {
+        /*
         var th = "acun pour le moment";
-        var c1 = 0, c2 = 0;
-        for (var i = 0; i < mock_themes_1.THEMES.length; i++) {
-            for (var j = 0; j < mock_parti_1.PARTIES.length; j++) {
-                if (mock_parti_1.PARTIES[j].id_j1 == u || mock_parti_1.PARTIES[j].id_j2 == u) {
-                    for (var h = 0; h < mock_parti_1.PARTIES[j].manche.length; h++) {
+        var c1=0, c2=0;
+        for (var i = 0; i < THEMES.length; i++) {
+            for (var j = 0; j < PARTIES.length; j++) {
+                if (PARTIES[j].id_j1 == u || PARTIES[j].id_j2 == u) {
+                    for (var h = 0; h < PARTIES[j].manche.length; h++) {
                         if (th == "acun pour le moment") {
-                            if (mock_parti_1.PARTIES[j].manche[h].id_theme == mock_themes_1.THEMES[i].id)
+                            if (PARTIES[j].manche[h].id_theme == THEMES[i].id)
                                 c1++;
-                        }
-                        else {
-                            if (mock_parti_1.PARTIES[j].manche[h].id_theme == mock_themes_1.THEMES[i].id) {
+                        } else {
+                            if (PARTIES[j].manche[h].id_theme == THEMES[i].id) {
                                 c2++;
                             }
                         }
                     }
+
                 }
             }
             if (th == "acun pour le moment") {
-                th = mock_themes_1.THEMES[i].text;
+                th = THEMES[i].text;
                 c2 = 0;
             }
             if (c2 > c1) {
                 c1 = c2;
-                th = mock_themes_1.THEMES[i].text;
+                th = THEMES[i].text;
             }
             c2 = 0;
-        }
-        return th;
+        } return th;
+        */
+        return this.http.get('http://localhost:54000/api/Partie/getThemeFavori/' + u)
+            .map(function (data) { return data.json(); });
     };
     PartieService.prototype.getNbV = function (us) {
-        var nb = 0;
-        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
-            if ((mock_parti_1.PARTIES[i].id_j1 == us || mock_parti_1.PARTIES[i].id_j2 == us) && mock_parti_1.PARTIES[i].player == null)
-                if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].s1 > mock_parti_1.PARTIES[i].s2) || (mock_parti_1.PARTIES[i].s1 < mock_parti_1.PARTIES[i].s2 && mock_parti_1.PARTIES[i].id_j2 == us))
-                    nb++;
-        }
-        return nb;
+        /*  var nb = 0;
+          for (var i = 0; i < PARTIES.length; i++) {
+              if ((PARTIES[i].id_j1 == us || PARTIES[i].id_j2 == us) && PARTIES[i].player == null)
+                  if ((PARTIES[i].id_j1 == us && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == us))
+                      nb++;
+          }
+          return nb;
+          */
+        return this.http.get('http://localhost:54000/api/Partie/getNbV/' + us)
+            .map(function (data) { return data.json(); });
     };
     PartieService.prototype.getNbD = function (us) {
+        /*
         var nb = 0;
-        for (var i = 0; i < mock_parti_1.PARTIES.length; i++) {
-            if ((mock_parti_1.PARTIES[i].id_j1 == us || mock_parti_1.PARTIES[i].id_j2 == us) && mock_parti_1.PARTIES[i].player == null)
-                if ((mock_parti_1.PARTIES[i].id_j1 == us && mock_parti_1.PARTIES[i].s1 < mock_parti_1.PARTIES[i].s2) || (mock_parti_1.PARTIES[i].s1 > mock_parti_1.PARTIES[i].s2 && mock_parti_1.PARTIES[i].id_j2 == us))
+        for (var i = 0; i < PARTIES.length; i++) {
+            if ((PARTIES[i].id_j1 == us || PARTIES[i].id_j2 == us) && PARTIES[i].player == null)
+                if ((PARTIES[i].id_j1 == us && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == us))
                     nb++;
         }
         return nb;
+        */
+        return this.http.get('http://localhost:54000/api/Partie/getNbD/' + us)
+            .map(function (data) { return data.json(); });
     };
     PartieService = __decorate([
         core_1.Injectable(), 

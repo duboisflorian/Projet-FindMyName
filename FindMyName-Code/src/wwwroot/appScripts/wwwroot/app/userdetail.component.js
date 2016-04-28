@@ -32,8 +32,8 @@ var UserdetailComponent = (function () {
         var us = +this._routeParams.get('us');
         this._uService.getUser(us)
             .subscribe(function (data) { return _this.u2 = data; });
-        this.nbparties = this._pService.getnbParties(us);
-        this.theme_favori = this._pService.getThemeFavori(us);
+        this._pService.getnbParties(us).subscribe(function (data) { return _this.nbparties = data; });
+        this._pService.getThemeFavori(us).subscribe(function (data) { return _this.theme_favori = data; });
         this.selectPhoto = "fichier/logo.jpg";
         this._uService.getPhoto(us)
             .subscribe(function (data) { return _this.photo = data; });
@@ -60,8 +60,8 @@ var UserdetailComponent = (function () {
         this.sTimeout = setTimeout(function () { _this.selectPays = _this.pays2.text; }, 500);
         this._cService.getNbContact(us)
             .subscribe(function (data) { return _this.nbAmi = data; });
-        this.nbv = this._pService.getNbV(us);
-        this.nbd = this._pService.getNbD(us);
+        this._pService.getNbV(us).subscribe(function (data) { return _this.nbv = data; });
+        this._pService.getNbD(us).subscribe(function (data) { return _this.nbd = data; });
     };
     UserdetailComponent.prototype.gotoDeco = function () {
         alert("Vous avez été déconnecté");

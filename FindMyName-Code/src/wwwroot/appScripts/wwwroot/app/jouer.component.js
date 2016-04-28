@@ -102,7 +102,7 @@ var JouerComponent = (function () {
         }
         else {
             this._pService.getPartieEnCours(id, us).subscribe(function (data) { return _this.p = data; });
-            this._pService.ModifierPartie(us, id, th, this.remaining, this.p);
+            this._pService.ModifierPartie(us, id, th, this.remaining, this.p.id_partie);
         }
         this._uService.ChangerMeilleurScore(us, this.remaining);
         clearTimeout(this.sTimeout);

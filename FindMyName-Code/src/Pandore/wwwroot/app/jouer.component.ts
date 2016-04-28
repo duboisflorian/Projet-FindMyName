@@ -115,7 +115,7 @@ export class JouerComponent implements OnInit {
         }
         else {
             this._pService.getPartieEnCours(id, us).subscribe(data => this.p = data);
-            this._pService.ModifierPartie(us, id, th, this.remaining, this.p);
+            this._pService.ModifierPartie(us, id, th, this.remaining, this.p.id_partie);
         }
         this._uService.ChangerMeilleurScore(us, this.remaining);
         clearTimeout(this.sTimeout);
