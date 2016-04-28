@@ -22,7 +22,7 @@ export class UserdetailComponent implements OnInit {
     selectTheme: string;
     selectPays: string = "";
     nbparties: number;
-    theme_favori: string;
+    theme_favori: string="";
     nbAmi: number;
     nbv: number=0;
     nbd: number=0;
