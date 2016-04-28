@@ -23,7 +23,7 @@ import {Res,ResID} from './classe/res';
     templateUrl: 'app/contact.component.html'
 })
 export class ContactComponent implements OnInit {
-    contacts: Contact[];
+    contacts: Contact[] = new Array<Contact>();
     selectedContact: Contact;
     selectedUser: Utilisateur;
     contactadd: number;
@@ -86,7 +86,7 @@ export class ContactComponent implements OnInit {
         this.type = 'ami';
         this.sTimeout = setTimeout(() => this.getContacts(), 300);
     }
-
+    0
     showDetails(h: Partie) {
         this.selectedContact = null;
         this.selectedDetails = h;
