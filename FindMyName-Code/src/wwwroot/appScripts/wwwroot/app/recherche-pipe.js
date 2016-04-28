@@ -15,9 +15,15 @@ var RecherchePipe = (function () {
     }
     // Transform is the new "return function(value, args)" in Angular 1.x
     RecherchePipe.prototype.transform = function (value, args) {
+        if (value == undefined)
+            return "";
         // ES6 array destructuring
         var nom = args[0];
+        if (nom == undefined)
+            throw new ReferenceError("Argument obligatoire");
         return value.filter(function (contact) {
+            if (contact == undefined || contact.name == undefined)
+                return "";
             return contact.name.toLowerCase().match(nom.toLowerCase());
         });
     };

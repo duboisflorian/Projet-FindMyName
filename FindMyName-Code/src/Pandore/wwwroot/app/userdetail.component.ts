@@ -71,11 +71,11 @@ export class UserdetailComponent implements OnInit {
             }
             else if (this.selectPhoto == "fichier/ol.jpg") {
                 this.selectPhoto = "ol";
-            } }, 500);
+            } }, 600);
 
         this._uService.getPays(us)
             .subscribe(data => this.pays2 = data);
-        this.sTimeout = setTimeout(() => { this.selectPays = this.pays2.text },500);
+        this.sTimeout = setTimeout(() => { this.selectPays = this.pays2.text },600);
 
         this._cService.getNbContact(us)
             .subscribe(data => this.nbAmi = data);
