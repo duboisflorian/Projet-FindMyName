@@ -31,19 +31,25 @@ export class UtilisateurService {
     }
 
     verificationConnexion(mail: string, password: string) {
-        for (var i = 0; i < UTILISATEURS.length; i++) {
+        /*for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].mail == mail && UTILISATEURS[i].password == password)
                 return UTILISATEURS[i];
-        }
+        }*/
+
+        return this.http.get('http://localhost:54000/api/Utilisateur/verifConnexion/' + mail + '/' + password)
+            .map(data => data.json());
     }
 
     verificationMailExist(mail: string) {
-        for (var i = 0; i < UTILISATEURS.length; i++) {
+        /*for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].mail == mail)
                 return true;
         }
 
-        return false;
+        return false;*/
+
+        return this.http.get('http://localhost:54000/api/Utilisateur/verifMailExist/' + mail)
+            .map(data => data.json());
     }
 
     Same_mdp(id: number, password: string) {
@@ -53,33 +59,47 @@ export class UtilisateurService {
     }
 
     getlastid() {
-        return UTILISATEURS[UTILISATEURS.length - 1].id;
+        /*return UTILISATEURS[UTILISATEURS.length - 1].id;*/
+
+        return this.http.get('http://localhost:54000/api/Utilisateur/getLastId')
+            .map(data => data.json());
     }
 
     ajouterUtilisateur(name: string, mail: string, password: string) {
-        UTILISATEURS.push({ "id": this.getlastid() + 1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password, "pays": "France","meilleurScore":0 })
-        return this.getlastid();
+        /*UTILISATEURS.push({ "id": this.getlastid() + 1, "name": name, "photo": "fichier/logo.jpg", "mail": mail, "password": password, "pays": "France","meilleurScore":0 })
+        return this.getlastid();*/
+
+        return this.http.get('http://localhost:54000/api/Utilisateur/ajoutus/'+ name +'/' + mail + '/' + password)
+            .map(data => data.json());
     }
 
 
     getOnlineutilisateur() {
       //  return Math.floor(Math.random() * (UTILISATEURS.length - 1) + 1);
-        return Math.floor(Math.random() * (15 - 1) + 1);
+       // return Math.floor(Math.random() * (15 - 1) + 1);
+
+        return this.http.get('http://localhost:54000/api/Utilisateur/getOnlineUtilisateur')
+            .map(data => data.json());
     }
 
     getName(u: number) {
-        for (var i = 0; i < UTILISATEURS.length; i++) {
+        /*for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].id == u)
                 return UTILISATEURS[i].name;
-        }
+        }*/
+
+        return this.http.get('http://localhost:54000/api/Utilisateur/getName/'+ u)
+            .map(data => data.json());
     }
 
     ChangerMeilleurScore(u: number, score: number) {
-        for (var i = 0; i < UTILISATEURS.length; i++) {
+        /*for (var i = 0; i < UTILISATEURS.length; i++) {
             if (UTILISATEURS[i].id == u)
                 if (UTILISATEURS[i].meilleurScore < score)
                     UTILISATEURS[i].meilleurScore = score;
-        }
+        }*/
+
+        this.http.get('http://localhost:54000/api/Utilisateur/ChangerMeilleurScore/' + u + '/' + score);
     }
 
         getPhoto(u:number){
