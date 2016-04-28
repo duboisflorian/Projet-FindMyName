@@ -111,10 +111,13 @@ namespace FindMyName_Serveur.Services
             {
                 if (CONTACTS[i].id == u)
                 {
-                    for (var n = 0; n < CONTACTS[i].contact.Count; n++)
+                    if (CONTACTS[i].contact != null)
                     {
-                        if (CONTACTS[i].contact[n].id == id && CONTACTS[i].contact[n].type == "ami")
-                            return CONTACTS[i].contact[n];
+                        for (var n = 0; n < CONTACTS[i].contact.Count; n++)
+                        {
+                            if (CONTACTS[i].contact[n].id == id && CONTACTS[i].contact[n].type == "ami")
+                                return CONTACTS[i].contact[n];
+                        }
                     }
                 }
             }
@@ -127,13 +130,31 @@ namespace FindMyName_Serveur.Services
             for (var i = 0; i < CONTACTS.Count; i++)
             {
                 if (CONTACTS[i].id == u)
-                    for (var n = 0; n < CONTACTS[i].contact.Count; n++)
+                {
+                    if (CONTACTS[i].contact != null)
                     {
-                        if (CONTACTS[i].contact[n].id == id && CONTACTS[i].contact[n].type == "online")
-                            return true;
+                        for (var n = 0; n < CONTACTS[i].contact.Count; n++)
+                        {
+                            if (CONTACTS[i].contact[n].id == id && CONTACTS[i].contact[n].type == "online")
+                                return true;
+                        }
                     }
+                }
             }
             return false;
+        }
+        /////////////////////////////////////////////////////////////////////////////
+        public static void changerPhoto(int id,string photo)
+        {
+            for (var i = 0; i < CONTACTS.Count; i++)
+            {
+                for (var h = 0; h < CONTACTS[i].contact.Count; h++)
+                {
+                    if (CONTACTS[i].contact[h].id == id)
+                        CONTACTS[i].contact[h].photo = photo;
+                }
+
+            }
         }
         /////////////////////////////////////////////////////////////////////////////
         public static List<ListeContact>  ALL() { return CONTACTS; }
@@ -144,11 +165,13 @@ namespace FindMyName_Serveur.Services
             {
                 if (CONTACTS[i].id == id)
                 {
-                    for (var n = 0; n < CONTACTS[i].contact.Count; n++)
-                    {
-                        if (CONTACTS[i].contact[n].type == type)
+                    if (CONTACTS[i].contact !=null) { 
+                        for (var n = 0; n < CONTACTS[i].contact.Count; n++)
                         {
-                            c.Add(CONTACTS[i].contact[n]);
+                            if (CONTACTS[i].contact[n].type == type)
+                            {
+                                c.Add(CONTACTS[i].contact[n]);
+                            }
                         }
                     }
                 }
@@ -184,9 +207,9 @@ namespace FindMyName_Serveur.Services
             }
         }
         /////////////////////////////////////////////////////////////////////////////
-         public static void création(int id)
+         public static void creation(int id)
         {
-            CONTACTS.Add(new ListeContact(id,null));
+            CONTACTS.Add(new ListeContact(id, new List<Contact> { }));
         }
         /////////////////////////////////////////////////////////////////////////////
         public static int getNbContact(int u)
@@ -196,11 +219,14 @@ namespace FindMyName_Serveur.Services
             {
                 if (CONTACTS[i].id == u)
                 {
-                    for (var g = 0; g < CONTACTS[i].contact.Count; g++)
+                    if (CONTACTS[i].contact != null)
                     {
-                        if (CONTACTS[i].contact[g].type == "ami")
+                        for (var g = 0; g < CONTACTS[i].contact.Count; g++)
                         {
-                            nb++;
+                            if (CONTACTS[i].contact[g].type == "ami")
+                            {
+                                nb++;
+                            }
                         }
                     }
                 }

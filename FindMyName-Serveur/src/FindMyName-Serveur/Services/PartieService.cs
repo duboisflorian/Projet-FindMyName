@@ -17,7 +17,7 @@ namespace FindMyName_Serveur.Services
                 new Manche(1,"PSG",10,15)
             }
             ),
-           new Partie(2,6,3,"tingting","maxime",1,2,0, new List<Manche>
+           new Partie(2,6,3,"tingting","maxime",1,2,-1, new List<Manche>
             {
                 new Manche(1,"PSG",10,20),
                 new Manche(2,"OL",15,7),
@@ -25,7 +25,7 @@ namespace FindMyName_Serveur.Services
                 new Manche(4,"Barca",10,15)
             }
             ),
-            new Partie(3,6,3,"tingting","maxime",3,2,0, new List<Manche>
+            new Partie(3,6,3,"tingting","maxime",3,2,-1, new List<Manche>
             {
                 new Manche(1,"PSG",10,20),
                 new Manche(2,"OL",15,7),
@@ -38,7 +38,7 @@ namespace FindMyName_Serveur.Services
             {
                 new Manche(1,"PSG",10,20),
                 new Manche(2,"OL",15,7),
-                new Manche(3,"REAL",0,10)
+                new Manche(3,"REAL",-1,10)
             }
             ),
              new Partie(5,6,1,"tingting","florian",1,2,1, new List<Manche>
@@ -63,7 +63,7 @@ namespace FindMyName_Serveur.Services
             for (var i = 0; i < PARTIES.Count; i++)
             {
                 if ((PARTIES[i].id_j1 == id && PARTIES[i].id_j2 == id_ami) || (PARTIES[i].id_j1 == id_ami && PARTIES[i].id_j2 == id))
-                    if (((PARTIES[i].id_j1 == id && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == id)) && PARTIES[i].player == 0)
+                    if (((PARTIES[i].id_j1 == id && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == id)) && PARTIES[i].player == -1)
                         nb++;
             }
             return nb;
@@ -75,7 +75,7 @@ namespace FindMyName_Serveur.Services
             for (var i = 0; i < PARTIES.Count; i++)
             {
                 if ((PARTIES[i].id_j1 == id && PARTIES[i].id_j2 == id_ami) || (PARTIES[i].id_j1 == id_ami && PARTIES[i].id_j2 == id))
-                    if (((PARTIES[i].id_j1 == id && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == id)) && PARTIES[i].player == 0)
+                    if (((PARTIES[i].id_j1 == id && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == id)) && PARTIES[i].player == -1)
                         nb++;
             }
             return nb;
@@ -163,7 +163,7 @@ namespace FindMyName_Serveur.Services
                         }
                         if (PARTIES[i].s2 == 3 || PARTIES[i].s1 == 3)
                         {
-                            PARTIES[i].player = 0;
+                            PARTIES[i].player = -1;
                         }
                     }
                     else if (PARTIES[i].manche[n].s2 == 0)
@@ -179,7 +179,7 @@ namespace FindMyName_Serveur.Services
                         }
                         if (PARTIES[i].s2 == 3 || PARTIES[i].s1 == 3)
                         {
-                            PARTIES[i].player = 0;
+                            PARTIES[i].player = -1;
                         }
                     }
                     else
@@ -247,7 +247,7 @@ namespace FindMyName_Serveur.Services
             int nb = 0;
             for (var i = 0; i < PARTIES.Count; i++)
             {
-                if ((PARTIES[i].id_j1 == id || PARTIES[i].id_j2 == id) && PARTIES[i].player == 0)
+                if ((PARTIES[i].id_j1 == id || PARTIES[i].id_j2 == id) && PARTIES[i].player == -1)
                     if ((PARTIES[i].id_j1 == id && PARTIES[i].s1 < PARTIES[i].s2) || (PARTIES[i].s1 > PARTIES[i].s2 && PARTIES[i].id_j2 == id))
                         nb++;
             }
@@ -259,7 +259,7 @@ namespace FindMyName_Serveur.Services
             int nb = 0;
             for (var i = 0; i < PARTIES.Count; i++)
             {
-                if ((PARTIES[i].id_j1 == id || PARTIES[i].id_j2 == id) && PARTIES[i].player == 0)
+                if ((PARTIES[i].id_j1 == id || PARTIES[i].id_j2 == id) && PARTIES[i].player == -1)
                     if ((PARTIES[i].id_j1 == id && PARTIES[i].s1 > PARTIES[i].s2) || (PARTIES[i].s1 < PARTIES[i].s2 && PARTIES[i].id_j2 == id))
                         nb++;
             }
@@ -272,7 +272,7 @@ namespace FindMyName_Serveur.Services
             {
                 if ((PARTIES[i].id_j1 == id && PARTIES[i].id_j2 == id_ami) || (PARTIES[i].id_j1 == id_ami && PARTIES[i].id_j2 == id))
                 {
-                    if (PARTIES[i].player == 0)
+                    if (PARTIES[i].player == -1)
                     {
                         return false;
                     }

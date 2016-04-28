@@ -53,7 +53,6 @@ export class PartieService {
     }
 
     ModifierPartie(us: number, ami: number, th: number, score: number, id_partie: number) {
-
         this.http.get('http://localhost:54000/api/Partie/ModifierPartie/' + us + '/' + ami + '/' + th + '/' + score + '/' + id_partie);
     }
 

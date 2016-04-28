@@ -82,7 +82,7 @@ namespace FindMyName_Serveur.Controllers
         [HttpGet("création/{id}")]
         public void création(int id)
         {
-            ContactService.création(id);
+            ContactService.creation(id);
         }
 
         // GET api/Contact/addOnline/x/y

@@ -60,7 +60,7 @@ namespace FindMyName_Serveur.Services
 
         public static Utilisateur verificationConnexion(string mail, string password)
         {
-            Utilisateur u = new Utilisateur();
+            Utilisateur u = new Utilisateur(0, "", "", "", "", "", 0);
             for (var i = 0; i < UTILISATEURS.Count; i++)
             {
                 if (UTILISATEURS[i].mail == mail && UTILISATEURS[i].password == password)
@@ -108,10 +108,11 @@ namespace FindMyName_Serveur.Services
             return UTILISATEURS[UTILISATEURS.Count - 1].id;
         }
 
-         public static int ajouterUtilisateur(string name, string mail, string password)
+         public static void ajouterUtilisateur(string name, string mail, string password)
         {
            UTILISATEURS.Add(new Utilisateur (UtilisateurService.getlastid()+1, name, "fichier/logo.jpg", mail, password, "France", 0));
-        return UtilisateurService.getlastid();
+            var i = UtilisateurService.getlastid();
+            ContactService.creation(i);
         }
 
         public static int getOnlineutilisateur()
@@ -162,6 +163,7 @@ namespace FindMyName_Serveur.Services
                 if (UTILISATEURS[i].id == id)
                 {
                     UTILISATEURS[i].photo = "fichier/" + selectPhoto + ".jpg";
+                    ContactService.changerPhoto(id, UTILISATEURS[i].photo);
                 }
             }
             return "Photo changée";

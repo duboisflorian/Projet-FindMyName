@@ -26,12 +26,16 @@ var CoComponent = (function () {
         this._router.navigate(['Contact', { us: 6 }]);
     };
     CoComponent.prototype.connexion = function () {
-        if (this.utilisateur = this._uService.verificationConnexion(this.mail, this.password)) {
-            this._router.navigate(['Contact', { us: this.utilisateur.id }]);
-        }
-        else {
-            alert("Le mot de passe ou l'e-mail n'existe pas.");
-        }
+        var _this = this;
+        this._uService.verificationConnexion(this.mail, this.password).subscribe(function (data) { return _this.utilisateur = data; });
+        this.sTimeout = setTimeout(function () {
+            if (_this.utilisateur.id != 0) {
+                _this._router.navigate(['Contact', { us: _this.utilisateur.id }]);
+            }
+            else {
+                alert("Le mot de passe ou l'e-mail n'existe pas.");
+            }
+        }, 600);
     };
     CoComponent = __decorate([
         core_1.Component({

@@ -14,6 +14,7 @@ export class CoComponent  {
     utilisateur: Utilisateur;
     mail: string;
     password: string;
+    sTimeout: number;
 
     constructor(
         private _router: Router,
@@ -32,11 +33,15 @@ export class CoComponent  {
     }
 
     connexion() {
-        if (this.utilisateur = this._uService.verificationConnexion(this.mail, this.password)) {
-            this._router.navigate(['Contact', { us: this.utilisateur.id }]);
-        } else {
-            alert("Le mot de passe ou l'e-mail n'existe pas.");
-        }
+        this._uService.verificationConnexion(this.mail, this.password).subscribe(data => this.utilisateur = data);
+            
+        this.sTimeout = setTimeout(() => {
+            if (this.utilisateur.id != 0) {
+                this._router.navigate(['Contact', { us: this.utilisateur.id }]);
+            } else {
+                alert("Le mot de passe ou l'e-mail n'existe pas.");
+            }
+        }, 600);
     }
 }
 

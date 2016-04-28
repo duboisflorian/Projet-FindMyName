@@ -110,21 +110,19 @@ export class JouerComponent implements OnInit {
         let us = +this._routeParams.get('us');
         let th = +this._routeParams.get('th');
 
-        if (!this._pService.getPartieExiste(id, us)) {
+        //go changer se code !!!
+        /*if (!this._pService.getPartieExiste(id, us)) {
             this._uService.getName(us).subscribe(data => this.j1temp = data);
             this._uService.getName(id).subscribe(data => this.j2temp = data);
             this.sTimeout = setTimeout(() => this.j1 = this.j1temp, 600);
             this.sTimeout = setTimeout(() => this.j2 = this.j2temp, 600);
-
-            //this.j1 = this._uService.getName(us);
-            //this.j2 = this._uService.getName(id);
             this._pService.AjouterPartie(us, id, th, this.remaining, this.j1, this.j2);
         }
         else {
             this._pService.getPartieEnCours(id, us).subscribe(data => this.p = data);
             this._pService.ModifierPartie(us, id, th, this.remaining, this.p.id_partie);
         }
-        this._uService.ChangerMeilleurScore(us, this.remaining);
+        this._uService.ChangerMeilleurScore(us, this.remaining);*/
         clearTimeout(this.sTimeout);
         this.gotoContact()
     }

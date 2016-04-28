@@ -15,7 +15,9 @@ export class InComponent {
     mail: string;
     password: string;
     confirmPasword: string;
-    booleen : any
+    booleen: any
+    message: any;
+    sTimeout: number;
 
     constructor(
         private _router: Router,
@@ -32,13 +34,16 @@ export class InComponent {
 
     inscription() {
         if (this.password == this.confirmPasword) {
-            if (this._uService.verificationMailExist(this.mail)) {
-                alert("L'adresse mail existe déjà");
-            }
-            else {
-                this._cService.création(this._uService.ajouterUtilisateur(this.name, this.mail, this.password));
-                this._router.navigate(['Co']);
-            }
+            this._uService.verificationMailExist(this.mail).subscribe(data => this.message = data);
+            this.sTimeout = setTimeout(() => {
+                if (this.message=="existe") {
+                    alert("L'adresse mail existe déjà");
+                }
+                else {
+                    this._uService.ajouterUtilisateur(this.name, this.mail, this.password).subscribe(data => this.message = data);
+                    this._router.navigate(['Co']);
+                }
+            }, 600);
         } else {
             alert("Les mots de passe ne sont pas identiques");
         }

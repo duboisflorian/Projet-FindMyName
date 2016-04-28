@@ -133,7 +133,7 @@ export class ContactComponent implements OnInit {
         if (this.selectedContact == null) {
             for (var i = 0; i < this.parties_en_cours.length; i++) {
                 if (this.parties_en_cours[i].id_partie == p.id_partie) {
-                    if (this.parties_en_cours[i].manche[this.parties_en_cours[i].manche.length - 1].s1 == null || this.parties_en_cours[i].manche[this.parties_en_cours[i].manche.length - 1].s2 == null) {
+                    if (this.parties_en_cours[i].manche[this.parties_en_cours[i].manche.length - 1].s1 == -1 || this.parties_en_cours[i].manche[this.parties_en_cours[i].manche.length - 1].s2 == -1) {
                         if (this.parties_en_cours[i].id_j1 == this.u.id)
                             this._router.navigate(['Jouer', { us: this.u.id, id: this.parties_en_cours[i].id_j2, th: this.parties_en_cours[i].manche[this.parties_en_cours[i].manche.length - 1].id_theme }]);
                         else
@@ -151,7 +151,7 @@ export class ContactComponent implements OnInit {
             this._router.navigate(['JouerChoix', { us: this.u.id, id: this.selectedContact.id }]);
 
         if (this.en_cours == true) {
-            if (p.manche[p.manche.length - 1].s1 == null || p.manche[p.manche.length - 1].s2 == null) {
+            if (p.manche[p.manche.length - 1].s1 == -1 || p.manche[p.manche.length - 1].s2 == -1) {
                 if (p.id_j1 == this.u.id)
                     this._router.navigate(['Jouer', { us: this.u.id, id: p.id_j2, th: p.manche[p.manche.length - 1].id_theme }]);
                 else

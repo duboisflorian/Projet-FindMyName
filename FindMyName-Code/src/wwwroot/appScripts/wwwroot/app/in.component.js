@@ -25,14 +25,18 @@ var InComponent = (function () {
         this._router.navigate(['Co']);
     };
     InComponent.prototype.inscription = function () {
+        var _this = this;
         if (this.password == this.confirmPasword) {
-            if (this._uService.verificationMailExist(this.mail)) {
-                alert("L'adresse mail existe déjà");
-            }
-            else {
-                this._cService.création(this._uService.ajouterUtilisateur(this.name, this.mail, this.password));
-                this._router.navigate(['Co']);
-            }
+            this._uService.verificationMailExist(this.mail).subscribe(function (data) { return _this.message = data; });
+            this.sTimeout = setTimeout(function () {
+                if (_this.message == "existe") {
+                    alert("L'adresse mail existe déjà");
+                }
+                else {
+                    _this._uService.ajouterUtilisateur(_this.name, _this.mail, _this.password).subscribe(function (data) { return _this.message = data; });
+                    _this._router.navigate(['Co']);
+                }
+            }, 600);
         }
         else {
             alert("Les mots de passe ne sont pas identiques");

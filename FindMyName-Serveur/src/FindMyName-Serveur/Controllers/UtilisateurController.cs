@@ -18,7 +18,6 @@ namespace FindMyName_Serveur.Controllers
         public IEnumerable<Utilisateur> Get()
         {
             return UtilisateurService.UTILISATEURS;
-            //return new string[] { "value1", "value2" };
         }
 
         // GET api/Utilisateur/{id}
@@ -26,14 +25,16 @@ namespace FindMyName_Serveur.Controllers
         public Utilisateur Get(int id)
         {
             return UtilisateurService.getUser(id);
-            //return "value";
         }
 
         // GET api/verifMail/{mail}
         [HttpGet("verifMail/{mail}")]
-        public Boolean verifMailExist(string mail)
+        public Res verifMailExist(string mail)
         {
-            return UtilisateurService.verificationMailExist(mail);
+            if (UtilisateurService.verificationMailExist(mail) == true)
+                return new Res("existe");
+            else
+                return new Res("go");
         }
 
         // GET api/verifConnexion/{mail}/{password}
@@ -50,18 +51,12 @@ namespace FindMyName_Serveur.Controllers
             return UtilisateurService.Same_mdp(id, password);
         }
 
-        // GET api/getLastId
-        [HttpGet("getLastId")]
-        public int getLastId()
-        {
-            return UtilisateurService.getlastid();
-        }
-
         // GET api/ajoutus/{name}/{mail}/{password}
         [HttpGet("ajoutus/{name}/{mail}/{password}")]
-        public int ajouterUtilisateur(string name, string mail, string password)
+        public Res ajoutus(string name, string mail, string password)
         {
-            return UtilisateurService.ajouterUtilisateur(name,mail,password);
+            UtilisateurService.ajouterUtilisateur(name,mail,password);
+            return new Res("bon");
         }
 
         // GET api/getOnlineUtilisateur

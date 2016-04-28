@@ -36,7 +36,6 @@ var UserdetailComponent = (function () {
         this._pService.getnbParties(us).subscribe(function (data) { return _this.nbparties = data; });
         this._pService.getThemeFavori(us).subscribe(function (data) { return _this.theme_favori2 = data; });
         this.sTimeout = setTimeout(function () { return _this.theme_favori = _this.theme_favori2.text; }, 900);
-        //this.sTimeout = setTimeout(() => alert(this.theme_favori), 900);
         this.selectPhoto = "fichier/logo.jpg";
         this._uService.getPhoto(us)
             .subscribe(function (data) { return _this.photo = data; });
