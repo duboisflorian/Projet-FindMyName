@@ -1,6 +1,5 @@
 ﻿import { Contact, ContactViewModel } from '../classe/contact';
 import { Utilisateur } from '../classe/utilisateur';
-import { CONTACTS } from '../data/mock-contact';
 import { Injectable } from 'angular2/core';
 import { ListeContact } from '../classe/liste-contact';
 import { UtilisateurService } from '../service/utilisateur.service';

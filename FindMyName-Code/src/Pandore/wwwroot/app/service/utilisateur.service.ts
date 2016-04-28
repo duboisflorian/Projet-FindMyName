@@ -1,5 +1,4 @@
 ﻿import { Utilisateur } from '../classe/utilisateur';
-import { UTILISATEURS } from '../data/mock-utilisateurs';
 import { Injectable } from 'angular2/core';
 import { ThemeService } from '../service/theme.service';
 import { PartieService } from '../service/partie.service';

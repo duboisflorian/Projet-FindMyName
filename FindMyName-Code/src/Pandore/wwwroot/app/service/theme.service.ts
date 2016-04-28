@@ -1,5 +1,4 @@
 ﻿import { Theme } from '../classe/theme';
-import { THEMES } from '../data/mock-themes';
 import { Injectable } from 'angular2/core';
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 

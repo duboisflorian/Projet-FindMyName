@@ -1,10 +1,8 @@
 ﻿import { Partie } from '../classe/partie';
 import { Manche } from '../classe/manche';
-import { PARTIES } from '../data/mock-parti';
 import { Injectable } from 'angular2/core';
 import { UtilisateurService } from '../service/utilisateur.service';
 import { ThemeService } from '../service/theme.service';
-import { THEMES } from '../data/mock-themes';
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 
 @Injectable()

@@ -25,30 +25,22 @@ var JouerService = (function () {
     JouerService.prototype.getReponse = function (i) {
         return this.http.get('http://localhost:54000/api/Jouer/getReponse/' + i)
             .map(function (data) { return data.json(); });
-        //return Reponses[0].reponses[i].text;
     };
     JouerService.prototype.getDone = function (i) {
         return this.http.get('http://localhost:54000/api/Jouer/getDone/' + i)
             .map(function (data) { return data.json(); });
-        //return Reponses[0].reponses[i].done;
     };
     JouerService.prototype.setDone = function (i, bool) {
         return this.http.get('http://localhost:54000/api/Jouer/setDone/' + i + '/' + bool)
             .map(function (data) { return data.json(); });
-        //Reponses[0].reponses[i].done == bool;
     };
     JouerService.prototype.getReponses = function (id) {
         return this.http.get('http://localhost:54000/api/Jouer/getReponses/' + id)
             .map(function (data) { return data.json(); });
-        /*for (this.i = 0; this.i < Reponses.length; this.i++) {
-            if (Reponses[this.i].id == id)
-                return Reponses[this.i];
-        }*/
     };
     JouerService.prototype.getTaille = function (i) {
         return this.http.get('http://localhost:54000/api/Jouer/getTaille/' + i)
             .map(function (data) { return data.json(); });
-        //return Reponses[i].reponses.length;
     };
     JouerService = __decorate([
         core_1.Injectable(), 

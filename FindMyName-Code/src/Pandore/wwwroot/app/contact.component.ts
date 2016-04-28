@@ -1,7 +1,6 @@
 ﻿import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
-import { UTILISATEURS } from './data/mock-utilisateurs';
 import { Contact, ContactViewModel } from './classe/contact';
 import { ContactService } from './service/contact.service';
 import { UtilisateurService } from './service/utilisateur.service';
