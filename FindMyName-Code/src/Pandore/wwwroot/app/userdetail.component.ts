@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from 'angular2/core';
+import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 import { UtilisateurService } from './service/utilisateur.service';
@@ -32,7 +32,8 @@ export class UserdetailComponent implements OnInit {
     Message: any;
     Message2: any;
     sTimeout: number;
-    u2: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore":0 };
+    u2: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
+    phototext: string = "";
 
     constructor(
         private _router: Router,
@@ -110,10 +111,15 @@ export class UserdetailComponent implements OnInit {
 
         this._uService.changePhoto(this.u2.id, this.selectPhoto)
             .subscribe(data => this.Message = data);
-        this._uService.getUser(us)
-            .subscribe(data => this.u2 = data);
+        this.sTimeout = setTimeout(() => this._uService.getUser(us)
+            .subscribe(data => this.u2 = data), 600);
+        this.phototext = "";
+        
     }
-
+    changePhoto() {
+        this.u2.photo = "fichier/" + this.selectPhoto +".jpg";
+            this.phototext = "achanger";
+    }
     changePays() {
 
         this._uService.changePays(this.u2.id, this.selectPays)
