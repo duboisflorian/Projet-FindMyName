@@ -1,4 +1,4 @@
 ﻿export class Reponse {
-    text: string;
+    rep: String[];
     done: boolean;
 }

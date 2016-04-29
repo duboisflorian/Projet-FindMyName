@@ -15,111 +15,111 @@ namespace FindMyName_Serveur.Services
             {
                 new Reponse()
                 {
-                    text = "Zlatan", done = false
+                    rep = new List<String> {"Zlatan", "Ibrahimovic" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Lucas", done = false
+                    rep = new List<String> {"Lucas", "Moura" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Douchez", done = false
+                    rep = new List<String> {"Douchez", "Nicolas" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Sirigu", done = false
+                    rep = new List<String> { "Sirigu", "Salvatore" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Trapp", done = false
+                    rep = new List<String> {"Trapp", "Kevin" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Aurier", done = false
+                    rep = new List<String> {"Aurier", "Serge" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Luiz", done = false
+                    rep = new List<String> {"Luiz", "David" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kimpembe", done = false
+                    rep = new List<String> {"Kimpembe", "Presnel" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Descamps", done = false
+                    rep = new List<String> {"Descamps", "Remy" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kurzawa", done = false
+                    rep = new List<String> { "Kurzawa", "Layvin" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Marquinhos", done = false
+                    rep = new List<String> { "Marquinhos" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Maxwell", done = false
+                    rep = new List<String> { "Maxwell" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rimane", done = false
+                    rep = new List<String> { "Rimane", "Kévin" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Silva", done = false
+                    rep = new List<String> { "Silva", "Thiago" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Van Der Wiel", done = false
+                    rep = new List<String> { "Van Der Wiel", "Gregory", "Wiel" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Matuidi", done = false
+                    rep = new List<String> { "Matuidi", "Blaise", "Blaisou", "Charou" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Meïte", done = false
+                    rep = new List<String> {"Meïte", "Yakou" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Motta", done = false
+                    rep = new List<String> { "Motta", "Thiago" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Nkunku", done = false
+                    rep = new List<String> { "Nkunku", "Christophe" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Pastore", done = false
+                    rep = new List<String> { "Pastore", "Javier" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rabiot", done = false
+                    rep = new List<String> { "Rabiot", "Adrien" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Stambouli", done = false
+                    rep = new List<String> { "Stambouli", "Benjamin" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Verratti", done = false
+                    rep = new List<String> {"Verratti", "Marco" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Augustin", done = false
+                    rep = new List<String> { "Augustin", "Jean-Kévi" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Cavani", done = false
+                    rep = new List<String> { "Cavani", "Edinson" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Di Maria", done = false
+                    rep = new List<String> { "Di Maria", "Angel" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ongenda", done = false
+                    rep = new List<String> { "Ongenda", "Hervin" }, done = false
                 }
 
             }),
@@ -127,974 +127,974 @@ namespace FindMyName_Serveur.Services
             {
                 new Reponse()
                 {
-                    text = "Lacazette", done = false
+                    rep = new List<String> {"Lacazette" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Gonalons", done = false
+                    rep = new List<String> {"Gonalons" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Lopes", done = false
+                    rep = new List<String> {"Lopes" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mocio", done = false
+                    rep = new List<String> {"Mocio" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Bedimo", done = false
+                    rep = new List<String> {"Bedimo" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Jallet", done = false
+                    rep = new List<String> {"Jallet" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Koné", done = false
+                    rep = new List<String> {"Koné" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Morel", done = false
+                    rep = new List<String> {"Morel" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rafael", done = false
+                    rep = new List<String> {"Rafael" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Umtiti", done = false
+                    rep = new List<String> {"Umtiti" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mapou", done = false
+                    rep = new List<String> {"Mapou" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Darder", done = false
+                    rep = new List<String> {"Darder" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Del Castillo", done = false
+                    rep = new List<String> {"Del Castillo" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Fekir", done = false
+                    rep = new List<String> {"Fekir" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ferri", done = false
+                    rep = new List<String> {"Ferri" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Fofana", done = false
+                    rep = new List<String> {"Fofana" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ghezzal", done = false
+                    rep = new List<String> {"Ghezzal" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Grenier", done = false
+                    rep = new List<String> {"Grenier" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kalulu", done = false
+                    rep = new List<String> {"Kalulu" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kemen", done = false
+                    rep = new List<String> {"Kemen" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Malbranque", done = false
+                    rep = new List<String> {"Malbranque" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mvuemba", done = false
+                    rep = new List<String> {"Mvuemba" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Tolisso", done = false
+                    rep = new List<String> {"Tolisso" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Tousart", done = false
+                    rep = new List<String> {"Tousart" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Valbuena", done = false
+                    rep = new List<String> {"Valbuena" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Cornet", done = false
+                    rep = new List<String> {"Cornet" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Labidi", done = false
+                    rep = new List<String> {"Labidi" }, done = false
                 }
             }),
             new ListeReponses(3, new List<Reponse>
             {
                 new Reponse()
                 {
-                    text = "Ronaldo", done = false
+                    rep = new List<String> {"Ronaldo" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Benzema", done = false
+                    rep = new List<String> {"Benzema" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Casilla", done = false
+                    rep = new List<String> {"Casilla" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Navas", done = false
+                    rep = new List<String> {"Navas" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Yanez", done = false
+                    rep = new List<String> {"Yanez" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Arbeloa", done = false
+                    rep = new List<String> {"Arbeloa" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Carvajal", done = false
+                    rep = new List<String> {"Carvajal" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Danilo", done = false
+                    rep = new List<String> {"Danilo" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Frenandez", done = false
+                    rep = new List<String> {"Frenandez" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Lienhart", done = false
+                    rep = new List<String> {"Lienhart" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Marcelo", done = false
+                    rep = new List<String> {"Marcelo" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Pepe", done = false
+                    rep = new List<String> {"Pepe" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ramos", done = false
+                    rep = new List<String> {"Ramos" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Tejero", done = false
+                    rep = new List<String> {"Tejero" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Varane", done = false
+                    rep = new List<String> {"Varane" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Bale", done = false
+                    rep = new List<String> {"Bale" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Casemiro", done = false
+                    rep = new List<String> {"Casemiro" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Isco", done = false
+                    rep = new List<String> {"Isco" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kovacic", done = false
+                    rep = new List<String> {"Kovacic" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kroos", done = false
+                    rep = new List<String> {"Kroos" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Lazo", done = false
+                    rep = new List<String> {"Lazo" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Llorente", done = false
+                    rep = new List<String> {"Llorente" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Modric", done = false
+                    rep = new List<String> {"Modric" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Odegaard", done = false
+                    rep = new List<String> {"Odegaard" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "James", done = false
+                    rep = new List<String> {"James" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Torro", done = false
+                    rep = new List<String> {"Torro" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Vasquez", done = false
+                    rep = new List<String> {"Vasquez" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Jesé", done = false
+                    rep = new List<String> {"Jesé" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mayoral", done = false
+                    rep = new List<String> {"Mayoral" }, done = false
                 }
             }),
             new ListeReponses(4, new List<Reponse>
             {
                 new Reponse()
                 {
-                    text = "Messi", done = false
+                    rep = new List<String> {"Messi" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Neymar", done = false
+                    rep = new List<String> {"Neymar" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Bravo", done = false
+                    rep = new List<String> {"Bravo" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Gumbau", done = false
+                    rep = new List<String> {"Gumbau" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Masip", done = false
+                    rep = new List<String> {"Masip" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ter-Stegen", done = false
+                    rep = new List<String> {"Ter-Stegen" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Adriano", done = false
+                    rep = new List<String> {"Adriano" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Alba", done = false
+                    rep = new List<String> {"Alba" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Alves", done = false
+                    rep = new List<String> {"Alves" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Bartra", done = false
+                    rep = new List<String> {"Bartra" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Douglas", done = false
+                    rep = new List<String> {"Douglas" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mathieu", done = false
+                    rep = new List<String> {"Mathieu" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Piqué", done = false
+                    rep = new List<String> {"Piqué" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Vermaelen", done = false
+                    rep = new List<String> {"Vermaelen" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Busquets", done = false
+                    rep = new List<String> {"Busquets" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Camara", done = false
+                    rep = new List<String> {"Camara" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Cantalapiedra", done = false
+                    rep = new List<String> {"Cantalapiedra" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Iniesta", done = false
+                    rep = new List<String> {"Iniesta" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kaptoum", done = false
+                    rep = new List<String> {"Kaptoum" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mascherano", done = false
+                    rep = new List<String> {"Mascherano" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rafinha", done = false
+                    rep = new List<String> {"Rafinha" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rakitic", done = false
+                    rep = new List<String> {"Rakitic" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Roberto", done = false
+                    rep = new List<String> {"Roberto" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Samper", done = false
+                    rep = new List<String> {"Samper" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Turan", done = false
+                    rep = new List<String> {"Turan" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "El Haddadi", done = false
+                    rep = new List<String> {"El Haddadi" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ramirez", done = false
+                    rep = new List<String> {"Ramirez" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Suarez", done = false
+                    rep = new List<String> {"Suarez" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Vidal", done = false
+                    rep = new List<String> {"Vidal" }, done = false
                 }
             }),
             new ListeReponses(5, new List<Reponse>
             {
-                                new Reponse()
+                new Reponse()
                 {
-                    text = "Ozil", done = false
+                    rep = new List<String> {"Ozil" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Alexis", done = false
+                    rep = new List<String> {"Alexis" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Cech", done = false
+                    rep = new List<String> {"Cech" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Macey", done = false
+                    rep = new List<String> {"Macey" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ospina", done = false
+                    rep = new List<String> {"Ospina" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Bellerin", done = false
+                    rep = new List<String> {"Bellerin" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Chambers", done = false
+                    rep = new List<String> {"Chambers" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Paulista", done = false
+                    rep = new List<String> {"Paulista" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Gibbs", done = false
+                    rep = new List<String> {"Gibbs" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Koscielny", done = false
+                    rep = new List<String> {"Koscielny" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mertesacker", done = false
+                    rep = new List<String> {"Mertesacker" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Monreal", done = false
+                    rep = new List<String> {"Monreal" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Arteta", done = false
+                    rep = new List<String> {"Arteta" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Bielik", done = false
+                    rep = new List<String> {"Bielik" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Cazorla", done = false
+                    rep = new List<String> {"Cazorla" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Coquelin", done = false
+                    rep = new List<String> {"Coquelin" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Elneny", done = false
+                    rep = new List<String> {"Elneny" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Flamini", done = false
+                    rep = new List<String> {"Flamini" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kamara", done = false
+                    rep = new List<String> {"Kamara" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ramsey", done = false
+                    rep = new List<String> {"Ramsey" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Reine-Adelaïde", done = false
+                    rep = new List<String> {"Reine-Adelaïde" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rosicky", done = false
+                    rep = new List<String> {"Rosicky" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Sheaf", done = false
+                    rep = new List<String> {"Sheaf" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Willock", done = false
+                    rep = new List<String> {"Willock" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Wilshere", done = false
+                    rep = new List<String> {"Wilshere" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Zelalem", done = false
+                    rep = new List<String> {"Zelalem" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Bennacer", done = false
+                    rep = new List<String> {"Bannacer" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Campbell", done = false
+                    rep = new List<String> {"Campbell" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Giroud", done = false
+                    rep = new List<String> {"Giroud" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Iwobi", done = false
+                    rep = new List<String> {"Iwobi" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Oxlade-Chamberlain", done = false
+                    rep = new List<String> {"Oxlade-Chamberlain" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Walcott", done = false
+                    rep = new List<String> {"Walcott" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Welbeck", done = false
+                    rep = new List<String> {"Welbeck" }, done = false
                 }
             }),
             new ListeReponses(6, new List<Reponse>
             {
-                                new Reponse()
+                new Reponse()
                 {
-                    text = "Nasri", done = false
+                    rep = new List<String> {"Nasri" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Aguero", done = false
+                    rep = new List<String> {"Aguero" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Caballero", done = false
+                    rep = new List<String> {"Caballero" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Hart", done = false
+                    rep = new List<String> {"Hart" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Wright", done = false
+                    rep = new List<String> {"Wright" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Adarabioyo", done = false
+                    rep = new List<String> {"Adarabioyo" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Angelino", done = false
+                    rep = new List<String> {"Angelino" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Clichy", done = false
+                    rep = new List<String> {"Clichy" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Demichelis", done = false
+                    rep = new List<String> {"Demichelis" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Humphreys", done = false
+                    rep = new List<String> {"Humphreys" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kolarov", done = false
+                    rep = new List<String> {"Kolarov" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kompany", done = false
+                    rep = new List<String> {"Kompany" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Becerra", done = false
+                    rep = new List<String> {"Becerra" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mangala", done = false
+                    rep = new List<String> {"Mangala" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Otamendi", done = false
+                    rep = new List<String> {"Otamendi" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Sagna", done = false
+                    rep = new List<String> {"Sagna" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Zabaleta", done = false
+                    rep = new List<String> {"Zabaleta" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Bytyqi", done = false
+                    rep = new List<String> {"Bytyqi" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Celina", done = false
+                    rep = new List<String> {"Celina" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "De Bruyne", done = false
+                    rep = new List<String> {"De Bruyne" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Delph", done = false
+                    rep = new List<String> {"Delph" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Evans", done = false
+                    rep = new List<String> {"Evans" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Fernandinho", done = false
+                    rep = new List<String> {"Fernandinho" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Fernando", done = false
+                    rep = new List<String> {"Fernando" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Garcia", done = false
+                    rep = new List<String> {"Garcia" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Serrano", done = false
+                    rep = new List<String> {"Serrano" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Glendon", done = false
+                    rep = new List<String> {"Glendon" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Horsfield", done = false
+                    rep = new List<String> {"Horsfield" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Navas", done = false
+                    rep = new List<String> {"Navas" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Silva", done = false
+                    rep = new List<String> {"Silva" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Sterling", done = false
+                    rep = new List<String> {"Sterling" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Touré", done = false
+                    rep = new List<String> {"Touré" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ambrose", done = false
+                    rep = new List<String> {"Ambrose" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Bony", done = false
+                    rep = new List<String> {"Bony" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Faupala", done = false
+                    rep = new List<String> {"Faupala" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Iheanacho", done = false
+                    rep = new List<String> {"Iheanacho" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ünal", done = false
+                    rep = new List<String> {"Ünal" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Barker", done = false
+                    rep = new List<String> {"Barker" }, done = false
                 }
             }),
             new ListeReponses(7, new List<Reponse>
             {
-                                new Reponse()
+                new Reponse()
                 {
-                    text = "Bosh", done = false
+                    rep = new List<String> {"Bosh" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Deng", done = false
+                    rep = new List<String> {"Deng" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Dragic", done = false
+                    rep = new List<String> {"Dragic" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Green", done = false
+                    rep = new List<String> {"Green" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Haslem", done = false
+                    rep = new List<String> {"Haslem" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Johnson", done = false
+                    rep = new List<String> {"Johnson" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "McRoberts", done = false
+                    rep = new List<String> {"McRoberts" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Richardson", done = false
+                    rep = new List<String> {"Richardson" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Stoudemire", done = false
+                    rep = new List<String> {"Stoudemire" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Udrih", done = false
+                    rep = new List<String> {"Udrih" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Wade", done = false
+                    rep = new List<String> {"Wade" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Whiteside", done = false
+                    rep = new List<String> {"Whiteside" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Winslow", done = false
+                    rep = new List<String> {"Winslow" }, done = false
                 }
             }),
             new ListeReponses(8, new List<Reponse>
             {
-                                new Reponse()
+                new Reponse()
                 {
-                    text = "Escales", done = false
+                    rep = new List<String> {"Escales" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mandanda", done = false
+                    rep = new List<String> {"Mandanda" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Pelé", done = false
+                    rep = new List<String> {"Pelé" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Dacosta", done = false
+                    rep = new List<String> {"Dacosta" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "De Ceglie", done = false
+                    rep = new List<String> {"De Ceglie" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Dja Djedje", done = false
+                    rep = new List<String> {"Dja Djedje" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Manquillo", done = false
+                    rep = new List<String> {"Manquillo" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mendy", done = false
+                    rep = new List<String> {"Mendy" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Nkoulou", done = false
+                    rep = new List<String> {"Nkoulou" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Nlaté", done = false
+                    rep = new List<String> {"Nlaté" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rekik", done = false
+                    rep = new List<String> {"Rekik" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rolando", done = false
+                    rep = new List<String> {"Rolando" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Sané", done = false
+                    rep = new List<String> {"Sané" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Sparagna", done = false
+                    rep = new List<String> {"Sparagna" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Zambo Anguissa", done = false
+                    rep = new List<String> {"Zambo Anguissa" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Alessandrini", done = false
+                    rep = new List<String> {"Alessandrini" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Barrada", done = false
+                    rep = new List<String> {"Barrada" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Cabella", done = false
+                    rep = new List<String> {"Cabella" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Diaby", done = false
+                    rep = new List<String> {"Diaby" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Diarra", done = false
+                    rep = new List<String> {"Diarra" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Isla", done = false
+                    rep = new List<String> {"Isla" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kraichi", done = false
+                    rep = new List<String> {"Kraichi" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Lopez", done = false
+                    rep = new List<String> {"Lopez" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Nkoudou", done = false
+                    rep = new List<String> {"Nkoudou" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ocampos", done = false
+                    rep = new List<String> {"Ocampos" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Romao", done = false
+                    rep = new List<String> {"Romao" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Sarr", done = false
+                    rep = new List<String> {"Sarr" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Silva", done = false
+                    rep = new List<String> {"Silva" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Batshuayi", done = false
+                    rep = new List<String> {"Batshuayi" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Fletcher", done = false
+                    rep = new List<String> {"Fletcher" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Mouhammadou", done = false
+                    rep = new List<String> {"Mouhammadou" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Omrani", done = false
+                    rep = new List<String> {"Omrani" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Porsan-Clemente", done = false
+                    rep = new List<String> {"Porsan-Clemente" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rabillard", done = false
+                    rep = new List<String> {"Rabillard" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Thauvin", done = false
+                    rep = new List<String> {"Thauvin" }, done = false
                 },
             }),
             new ListeReponses(9, new List<Reponse>
             {
                 new Reponse()
                 {
-                    text = "Lucic", done = false
+                    rep = new List<String> {"Lucic" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Neuer", done = false
+                    rep = new List<String> {"Neuer" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ulreich", done = false
+                    rep = new List<String> {"Ulreich" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Starke", done = false
+                    rep = new List<String> {"Starke" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Alaba", done = false
+                    rep = new List<String> {"Alaba" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Badstuber", done = false
+                    rep = new List<String> {"Badstuber" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Benatia", done = false
+                    rep = new List<String> {"Benatia" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Boateng", done = false
+                    rep = new List<String> {"Boateng" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Lahm", done = false
+                    rep = new List<String> {"Lahm" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rafinha", done = false
+                    rep = new List<String> {"Rafinha" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Steinhart", done = false
+                    rep = new List<String> {"Steinhart" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Tasci", done = false
+                    rep = new List<String> {"Tasci" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Alcantara", done = false
+                    rep = new List<String> {"Alcantara" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Alonso", done = false
+                    rep = new List<String> {"Alonso" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Benko", done = false
+                    rep = new List<String> {"Benko" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Bernat", done = false
+                    rep = new List<String> {"Bernat" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Coman", done = false
+                    rep = new List<String> {"Coman" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Costa", done = false
+                    rep = new List<String> {"Costa" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Gaudino", done = false
+                    rep = new List<String> {"Gaudino" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Götze", done = false
+                    rep = new List<String> {"Götze" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Kimmich", done = false
+                    rep = new List<String> {"Kimmich" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Martinez", done = false
+                    rep = new List<String> {"Martinez" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Müller", done = false
+                    rep = new List<String> {"Müller" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Pantovic", done = false
+                    rep = new List<String> {"Pantovic" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Ribéry", done = false
+                    rep = new List<String> {"Ribéry" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Rode", done = false
+                    rep = new List<String> {"Rode" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Scholl", done = false
+                    rep = new List<String> {"Scholl" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Vidal", done = false
+                    rep = new List<String> {"Vidal" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Green", done = false
+                    rep = new List<String> {"Green" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Lewandowski", done = false
+                    rep = new List<String> {"Lewandowski" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Robben", done = false
+                    rep = new List<String> {"Robben" }, done = false
                 },
                 new Reponse()
                 {
-                    text = "Weihrauch", done = false
+                    rep = new List<String> {"Weihrauch" }, done = false
                 }
             })
         };
         public static String getReponse(int i)
         {
-            return ReponsesService.REPONSES[0].reponses[i].text;
+            return ReponsesService.REPONSES[0].reponses[i].rep[0];
         }
 
         public static bool getDone(int i)

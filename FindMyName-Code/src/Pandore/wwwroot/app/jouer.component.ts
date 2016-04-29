@@ -1,13 +1,15 @@
 ﻿import { Component, Input, OnInit, Output, EventEmitter, OnDestroy } from 'angular2/core';
-import { RouteParams, Router } from 'angular2/router';
+import { RouteParams } from 'angular2/router';
+import { Router } from 'angular2/router';
 import { Reponse } from './classe/reponses';
+import { ReponsesTrouve } from './classe/reponsestrouve';
 import { Jouer } from './classe/jouer';
 import { Partie } from './classe/partie';
 import { JouerService } from './service/jouer.service';
 import { ThemeService } from './service/theme.service';
 import { PartieService } from './service/partie.service';
 import { UtilisateurService } from './service/utilisateur.service';
-import { Utilisateur, UtilisateurViewModel  } from './classe/utilisateur';
+import { Utilisateur } from './classe/utilisateur';
 import { Theme } from './classe/theme';
 import {Observable} from 'rxjs/Rx';
 
@@ -17,12 +19,11 @@ import {Observable} from 'rxjs/Rx';
 })
 export class JouerComponent implements OnInit {
     task: string = '';
-    reponse: Reponse[] = [
-    ];
+    reponse: ReponsesTrouve[] = [];
     remaining: number = 0;
 
     tabreponses: Jouer;
-    u: UtilisateurViewModel = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg"};
+    u: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
     bon: boolean;
     theme: Theme;
     p: Partie = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
@@ -66,7 +67,7 @@ export class JouerComponent implements OnInit {
 
 
         let us = +this._routeParams.get('us');
-        this._uService.getUserView(us)
+        this._uService.getUser(us)
             .subscribe(data => this.u = data);
         this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
         this._themeService.getTheme(th).subscribe(data => this.theme = data);
@@ -83,12 +84,14 @@ export class JouerComponent implements OnInit {
         this.bon = false;
         if (this.task) {
             for (var i = 0; i < this.tabreponses.reponses.length; i++) {
-                if (this.tabreponses.reponses[i].text.toLowerCase() == this.task.toLowerCase() && this.tabreponses.reponses[i].done == false) {
-                    this.reponse.push({ "text": this.task, "done": true });
-                    this.remaining++;
-                    this.tabreponses.reponses[i].done = true;
-                    this.bon = true;
-                    this.sTimeoutBon = setTimeout(() => this.setBon(), 2000);
+                for (var j = 0; j < this.tabreponses.reponses[i].rep.length; j++) {
+                    if (this.tabreponses.reponses[i].rep[j].toLowerCase() == this.task.toLowerCase() && this.tabreponses.reponses[i].done == false) {
+                        this.reponse.push({ "text": this.task, "done": true });
+                        this.remaining++;
+                        this.tabreponses.reponses[i].done = true;
+                        this.bon = true;
+                        this.sTimeoutBon = setTimeout(() => this.setBon(), 2000);
+                    }
                 }
             }
             if (this.bon != true) {
@@ -111,7 +114,7 @@ export class JouerComponent implements OnInit {
         let us = +this._routeParams.get('us');
         let th = +this._routeParams.get('th');
 
-        this._pService.savePartie(id, us, th, this.remaining).subscribe(data => this.Partieexiste = data) ;
+        this._pService.savePartie(id, us, th, this.remaining).subscribe(data => this.Partieexiste = data);
 
         clearTimeout(this.sTimeout);
         this.sTimeout = setTimeout(() => this.gotoContact(), 800);
