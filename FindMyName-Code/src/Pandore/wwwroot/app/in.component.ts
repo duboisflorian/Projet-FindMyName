@@ -34,7 +34,7 @@ export class InComponent {
 
     inscription() {
         if (this.password == this.confirmPasword) {
-            this._uService.verificationMailExist(this.mail).subscribe(data => this.message = data);
+            this._uService.verificationMailExist(this.mail).subscribe(data => this.message = data.text);
             this.sTimeout = setTimeout(() => {
                 if (this.message=="existe") {
                     alert("L'adresse mail existe déjà");
