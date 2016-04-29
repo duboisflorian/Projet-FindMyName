@@ -221,6 +221,7 @@ namespace FindMyName_Serveur.Services
         {
             string th = "acun pour le moment";
             int c1 = 0, c2 = 0;
+            if (getnbParties(id) != 0) { 
             for (var i = 0; i < ThemeService.THEMES.Count; i++)
             {
                 for (var j = 0; j < PARTIES.Count; j++)
@@ -256,6 +257,7 @@ namespace FindMyName_Serveur.Services
                     th = ThemeService.THEMES[i].text;
                 }
                 c2 = 0;
+            }
             }
             return th;
         }
