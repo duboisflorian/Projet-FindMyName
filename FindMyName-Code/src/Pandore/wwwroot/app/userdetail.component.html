@@ -28,16 +28,16 @@
             <h1>Bienvenue sur votre profile {{u2.name}}  - votre ID est {{u2.id}}</h1>
 
             <h2>Changez votre photo de profile</h2>
-            <form id="modif-photo" (ngSubmit)="loadListPhoto()">
+           <form id="modif-photo" (ngSubmit)="loadListPhoto()">
                 <img class="portrait" src="{{u2.photo}}" />
-                <select [(ngModel)]="selectPhoto">
+                <select [(ngModel)]="selectPhoto" (ngModelChange)="loadListPhoto()">
                     <option>logo</option>
                     <option>arsenal</option>
                     <option>barca</option>
                     <option>psg</option>
                     <option>ol</option>
                 </select>
-                <input class="btn-primary" type="submit" value="Changer de photo" />
+                <!--<input class="btn-primary" type="submit" value="Changer de photo" />-->
             </form>
 
             <div class="modif-info col-xs-12 col-sm-8 col-lg-4 col-md-4">
