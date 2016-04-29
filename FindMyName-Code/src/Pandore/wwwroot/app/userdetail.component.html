@@ -1,4 +1,4 @@
-﻿<nav class="menu navbar">
+<nav class="menu navbar">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -30,15 +30,15 @@
             <h2>Changez votre photo de profile</h2>
            <form id="modif-photo" (ngSubmit)="loadListPhoto()">
                 <img class="portrait" src="{{u2.photo}}" />
-                <select [(ngModel)]="selectPhoto" (ngModelChange)="loadListPhoto()">
+                <select [(ngModel)]="selectPhoto" (ngModelChange)="changePhoto()">
                     <option>logo</option>
                     <option>arsenal</option>
                     <option>barca</option>
                     <option>psg</option>
                     <option>ol</option>
                 </select>
-                <!--<input class="btn-primary" type="submit" value="Changer de photo" />-->
-            </form>
+               <div *ngIf="phototext=='achanger'"><input class="btn-primary" type="submit" value="Changer de photo" /></div>
+               </form>
 
             <div class="modif-info col-xs-12 col-sm-8 col-lg-4 col-md-4">
                 <h2>Information personnelles</h2>
