@@ -28,21 +28,22 @@ export class ContactComponent implements OnInit {
     contactadd: number;
     utilisateurs: Utilisateur;
     t: any;
-    u: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore":0 };
+    u: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
     parties_en_cours: Partie[];
-    en_cours: boolean;
-    partie_en_cours: Partie = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "",  "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0,  "theme": "",  "s1": 0, "s2": 0 }] };;
-    victoire: number = 0;
-    defaite: number = 0;
+    en_cours: any;
+    partie_en_cours: Partie = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
+    victoire: any;
+    defaite: any;
     historique: Partie[];
     selectedDetails: Partie;
     searchFriend: string = '';
     type: string = '';
-    errorMessage: string='rien';
+    errorMessage: string = 'rien';
     tt: Theme;
     objectData: any;
     addmessage: any;
     sTimeout: number;
+    sTimeout2: number;
     jouermessage: any;
 
     constructor(
@@ -94,7 +95,7 @@ export class ContactComponent implements OnInit {
     onSelect(contact: ContactViewModel) {
         this.selectedContact = contact;
         this.selectedDetails = null;
-        
+
         // JS: Modifie le HTML pour montrer quel contact est afficher à l'utilisateur
         var ListElem = document.getElementsByClassName("active");
         for (var z = 0; z < ListElem.length; z++) {
@@ -102,17 +103,19 @@ export class ContactComponent implements OnInit {
         }
         document.getElementById(contact.id.toString()).className = "active";
         // Fin JS
-    
 
-        this._pService.getEn_Cours(this.u.id, contact.id).subscribe(data => this.en_cours = data);
-        if (this.en_cours == true) {
-            this._pService.getPartieEnCours(this.u.id, contact.id).subscribe(data => this.partie_en_cours = data);
-        } else {
-            this._pService.getHistorique(this.u.id, contact.id).subscribe(data => this.historique = data);
-            this._pService.getNbVictoire(this.u.id, contact.id).subscribe(data => this.victoire = data);
-            this._pService.getNbDefaite(this.u.id, contact.id).subscribe(data => this.defaite = data);
-        }
+        this._pService.getEn_Cours(this.u.id, contact.id).subscribe(data => this.en_cours = data.text);
+        this.sTimeout = setTimeout(() => {
+            if (this.en_cours == "encours") {
+                this._pService.getPartieEnCours(this.u.id, contact.id).subscribe(data => this.partie_en_cours = data);
+            } else {
+                this._pService.getHistorique(this.u.id, contact.id).subscribe(data => this.historique = data);
+                this._pService.getNbVictoire(this.u.id, contact.id).subscribe(data => this.victoire = data);
+                this._pService.getNbDefaite(this.u.id, contact.id).subscribe(data => this.defaite = data);
+            }   
+        }, 300);
     }
+
 
     onSelectU() {
 
@@ -146,10 +149,10 @@ export class ContactComponent implements OnInit {
                 }
             }
         }
-        if (this.en_cours == false)
+        if (this.en_cours == "rien")
             this._router.navigate(['JouerChoix', { us: this.u.id, id: this.selectedContact.id }]);
 
-        if (this.en_cours == true) {
+        if (this.en_cours == "encours") {
             if (p.manche[p.manche.length - 1].s1 == -1 || p.manche[p.manche.length - 1].s2 == -1) {
                 if (p.id_j1 == this.u.id)
                     this._router.navigate(['Jouer', { us: this.u.id, id: p.id_j2, th: p.manche[p.manche.length - 1].id_theme }]);

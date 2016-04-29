@@ -38,7 +38,10 @@ namespace FindMyName_Serveur.Controllers
         [HttpGet("getPartieEnCours/{id}/{id_ami}")]
         public Partie getPartieEnCours(int id, int id_ami)
         {
-            return PartieService.getPartieEnCours(id, id_ami);
+            if (PartieService.getEn_Cours(id, id_ami) == true)
+                return new Res("encours");
+            else
+                return new Res("rien");
         }
 
         // GET: api/Partie/getHistorique/{ID}/{ID_AMI}
@@ -66,7 +69,10 @@ namespace FindMyName_Serveur.Controllers
         [HttpGet("getPartieExiste/{id}/{id_ami}")]
         public Partie getPartieExiste(int id, int id_ami)
         {
-            return PartieService.getPartieExiste(id, id_ami);
+            if (PartieService.getPartieExiste(id, id_ami) == true)
+                return new Res("existe");
+            else
+                return new Res("vide");
         }
 
         // GET: api/Partie/AjouterPartie/{ID}/{ID_AMI}/{th}/{score}/{j1}/{j2}

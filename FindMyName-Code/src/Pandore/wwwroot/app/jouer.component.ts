@@ -26,7 +26,7 @@ export class JouerComponent implements OnInit {
     u: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore":0 };
     bon: boolean;
     theme: Theme;
-    p: Partie;
+    p: Partie = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
     sTimeout: number;
     sTimeoutBon: number;
 
@@ -34,6 +34,8 @@ export class JouerComponent implements OnInit {
     j2: string;
     j1temp: any;
     j2temp: any;
+
+    Partieexiste: any;
 
     constructor(
         private _router: Router,
@@ -110,19 +112,28 @@ export class JouerComponent implements OnInit {
         let us = +this._routeParams.get('us');
         let th = +this._routeParams.get('th');
 
-        //go changer se code !!!
-        /*if (!this._pService.getPartieExiste(id, us)) {
-            this._uService.getName(us).subscribe(data => this.j1temp = data);
-            this._uService.getName(id).subscribe(data => this.j2temp = data);
-            this.sTimeout = setTimeout(() => this.j1 = this.j1temp, 600);
-            this.sTimeout = setTimeout(() => this.j2 = this.j2temp, 600);
-            this._pService.AjouterPartie(us, id, th, this.remaining, this.j1, this.j2);
-        }
-        else {
-            this._pService.getPartieEnCours(id, us).subscribe(data => this.p = data);
-            this._pService.ModifierPartie(us, id, th, this.remaining, this.p.id_partie);
-        }
-        this._uService.ChangerMeilleurScore(us, this.remaining);*/
+        this._pService.getPartieExiste(id, us).subscribe(data => this.Partieexiste = data.text);
+
+        this.sTimeout = setTimeout(() => {
+            alert(this.Partieexiste);
+            if (this.Partieexiste == "vide") {
+                this._uService.getName(us).subscribe(data => this.j1temp = data);
+                this._uService.getName(id).subscribe(data => this.j2temp = data);
+                this.sTimeout = setTimeout(() => this.j1 = this.j1temp, 300);
+                this.sTimeout = setTimeout(() => this.j2 = this.j2temp, 300);
+                this._pService.AjouterPartie(us, id, th, this.remaining, this.j1, this.j2);
+            }
+            else {
+                this._pService.getPartieEnCours(id,us).subscribe(data => this.p = data);
+                this.sTimeout = setTimeout(() => {
+                    this._pService.ModifierPartie(us, id, th, this.remaining, this.p.id_partie);
+                }, 300);
+            }
+        }, 300);
+
+       
+        this._uService.ChangerMeilleurScore(us, this.remaining);
+
         clearTimeout(this.sTimeout);
         this.gotoContact()
     }
