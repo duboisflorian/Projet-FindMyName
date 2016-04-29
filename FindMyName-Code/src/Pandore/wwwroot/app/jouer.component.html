@@ -45,7 +45,7 @@
                 <img id="gauche" *ngIf="bon==true" src="./fichier/images/vert.png" />
                 <img id="droite" *ngIf="bon==false" src="./fichier/images/rouge.png" />
          
-            <form (ngSubmit)="addTodo()">
+            <form (ngSubmit)="addTodo()" autocomplete="off">
                 <input  id="form-recherche" class="form-control" type="text" [(ngModel)]="task" size="30"
                        placeholder="entre le nom d'un joueur" style="color: black;">
                 <input class="btn-primary" type="submit" value="ajouter">

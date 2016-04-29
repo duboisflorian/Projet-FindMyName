@@ -57,10 +57,10 @@ var UserdetailComponent = (function () {
             else if (_this.selectPhoto == "fichier/ol.jpg") {
                 _this.selectPhoto = "ol";
             }
-        }, 600);
+        }, 800);
         this._uService.getPays(us)
             .subscribe(function (data) { return _this.pays2 = data; });
-        this.sTimeout = setTimeout(function () { _this.selectPays = _this.pays2.text; }, 600);
+        this.sTimeout = setTimeout(function () { _this.selectPays = _this.pays2.text; }, 800);
         this._cService.getNbContact(us)
             .subscribe(function (data) { return _this.nbAmi = data; });
         this._pService.getNbV(us).subscribe(function (data) { return _this.nbv = data; });

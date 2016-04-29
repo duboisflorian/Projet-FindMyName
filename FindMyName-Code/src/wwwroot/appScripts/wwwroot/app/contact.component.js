@@ -24,7 +24,7 @@ var ContactComponent = (function () {
         this._routeParams = _routeParams;
         this._uService = _uService;
         this.contacts = new Array();
-        this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
+        this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg" };
         this.partie_en_cours = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
         this.searchFriend = '';
         this.type = '';
@@ -56,7 +56,7 @@ var ContactComponent = (function () {
     ContactComponent.prototype.ngOnInit = function () {
         var _this = this;
         var us = +this._routeParams.get('us');
-        this._uService.getUser(us)
+        this._uService.getUserView(us)
             .subscribe(function (data) { return _this.u = data; });
         this.UserD(us);
         this.selectedContact = null;

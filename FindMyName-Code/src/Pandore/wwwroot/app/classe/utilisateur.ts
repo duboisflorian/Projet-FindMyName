@@ -7,3 +7,9 @@
     pays: string;
     meilleurScore: number;
 }
+
+export class UtilisateurViewModel {
+    id: number;
+    name: string;
+    photo: string;
+}

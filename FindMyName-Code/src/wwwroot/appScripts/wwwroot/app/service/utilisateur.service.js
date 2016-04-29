@@ -30,6 +30,10 @@ var UtilisateurService = (function () {
         return this.http.get('http://localhost:54000/api/Utilisateur/' + id)
             .map(function (data) { return data.json(); });
     };
+    UtilisateurService.prototype.getUserView = function (id) {
+        return this.http.get('http://localhost:54000/api/Utilisateur/GetUserView/' + id)
+            .map(function (data) { return data.json(); });
+    };
     UtilisateurService.prototype.verificationConnexion = function (mail, password) {
         return this.http.get('http://localhost:54000/api/Utilisateur/verifConnexion/' + mail + '/' + password)
             .map(function (data) { return data.json(); });

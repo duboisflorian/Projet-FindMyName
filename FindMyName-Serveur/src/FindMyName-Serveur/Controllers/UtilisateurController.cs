@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using FindMyName_Serveur.Services;
+using FindMyName_Serveur.ViewModels;
 using FindMyName_Serveur.Models;
+
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,6 +27,17 @@ namespace FindMyName_Serveur.Controllers
         public Utilisateur Get(int id)
         {
             return UtilisateurService.getUser(id);
+        }
+        // GET api/Utilisateur/GetUserView/{id}
+        [HttpGet("GetUserView/{id}")]
+        public UtilisateurViewModel GetUserView(int id)
+        { 
+            //Contrôle des accès
+
+            //Traitement
+            Utilisateur user = UtilisateurService.getUser(id);
+
+            return new UtilisateurViewModel(user.id,user.name,user.photo);
         }
 
         // GET api/verifMail/{mail}

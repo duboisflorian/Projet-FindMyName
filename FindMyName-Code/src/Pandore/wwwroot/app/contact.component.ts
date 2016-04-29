@@ -5,7 +5,7 @@ import { Contact, ContactViewModel } from './classe/contact';
 import { ContactService } from './service/contact.service';
 import { UtilisateurService } from './service/utilisateur.service';
 import { JouerChoixComponent } from './jouer-choix.component';
-import { Utilisateur } from './classe/utilisateur';
+import { Utilisateur, UtilisateurViewModel } from './classe/utilisateur';
 import { Partie } from './classe/partie';
 import { Manche } from './classe//manche';
 import { PartieService } from './service/partie.service';
@@ -24,11 +24,11 @@ import {Res,ResID} from './classe/res';
 export class ContactComponent implements OnInit {
     contacts: ContactViewModel[] = new Array<ContactViewModel>();
     selectedContact: ContactViewModel;
-    selectedUser: Utilisateur;
+    selectedUser: UtilisateurViewModel;
     contactadd: number;
-    utilisateurs: Utilisateur;
+    utilisateurs: UtilisateurViewModel;
     t: any;
-    u: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
+    u: UtilisateurViewModel = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg" };
     parties_en_cours: Partie[];
     en_cours: any;
     partie_en_cours: Partie = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
@@ -79,7 +79,7 @@ export class ContactComponent implements OnInit {
 
     ngOnInit() {
         let us = +this._routeParams.get('us');
-        this._uService.getUser(us)
+        this._uService.getUserView(us)
             .subscribe(data => this.u = data);
         this.UserD(us);
         this.selectedContact = null;

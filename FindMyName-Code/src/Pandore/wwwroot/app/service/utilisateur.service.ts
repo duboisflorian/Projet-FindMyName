@@ -29,6 +29,11 @@ export class UtilisateurService {
             .map(data => data.json());
     }
 
+    getUserView(id: number) {
+        return this.http.get('http://localhost:54000/api/Utilisateur/GetUserView/' + id)
+            .map(data => data.json());
+    }
+
     verificationConnexion(mail: string, password: string) {
         return this.http.get('http://localhost:54000/api/Utilisateur/verifConnexion/' + mail + '/' + password)
             .map(data => data.json());
