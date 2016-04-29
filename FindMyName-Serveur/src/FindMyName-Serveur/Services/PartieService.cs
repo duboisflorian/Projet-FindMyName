@@ -92,14 +92,14 @@ namespace FindMyName_Serveur.Services
             return p;
         }
 
-        public static Partie getPartieExiste(int id, int id_ami)
+        public static Boolean getPartieExiste(int id, int id_ami)
         {
             for (var i = PARTIES.Count - 1; i >= 0; i--)
             {
                 if (((PARTIES[i].id_j1 == id && PARTIES[i].id_j2 == id_ami) || (PARTIES[i].id_j1 == id_ami && PARTIES[i].id_j2 == id)) && (PARTIES[i].player == id || PARTIES[i].player == id_ami))
-                    return PARTIES[i];
+                    return true;
             }
-            return null;
+            return false;
         }
 
         public static Partie getPartieEnCours(int id, int id_ami)
