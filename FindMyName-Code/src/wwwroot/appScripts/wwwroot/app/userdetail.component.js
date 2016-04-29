@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
-var router_2 = require('angular2/router');
 var utilisateur_service_1 = require('./service/utilisateur.service');
 var partie_service_1 = require('./service/partie.service');
 var contact_service_1 = require('./service/contact.service');
@@ -108,7 +107,7 @@ var UserdetailComponent = (function () {
             selector: 'my-userdetail',
             templateUrl: 'app/userdetail.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.Router, router_2.RouteParams, partie_service_1.PartieService, contact_service_1.ContactService, utilisateur_service_1.UtilisateurService])
+        __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, partie_service_1.PartieService, contact_service_1.ContactService, utilisateur_service_1.UtilisateurService])
     ], UserdetailComponent);
     return UserdetailComponent;
 }());

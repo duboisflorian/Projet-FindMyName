@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
-var router_2 = require('angular2/router');
 var jouer_service_1 = require('./service/jouer.service');
 var theme_service_1 = require('./service/theme.service');
 var partie_service_1 = require('./service/partie.service');
@@ -126,7 +125,7 @@ var JouerComponent = (function () {
             selector: 'my-jouer',
             templateUrl: 'app/jouer.component.html'
         }), 
-        __metadata('design:paramtypes', [router_2.Router, jouer_service_1.JouerService, theme_service_1.ThemeService, partie_service_1.PartieService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
+        __metadata('design:paramtypes', [router_1.Router, jouer_service_1.JouerService, theme_service_1.ThemeService, partie_service_1.PartieService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
     ], JouerComponent);
     return JouerComponent;
 }());

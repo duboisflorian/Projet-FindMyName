@@ -1,6 +1,5 @@
 ﻿import { Component, Input, OnInit, Output, EventEmitter, OnDestroy } from 'angular2/core';
-import { RouteParams } from 'angular2/router';
-import { Router } from 'angular2/router';
+import { RouteParams, Router } from 'angular2/router';
 import { Reponse } from './classe/reponses';
 import { Jouer } from './classe/jouer';
 import { Partie } from './classe/partie';

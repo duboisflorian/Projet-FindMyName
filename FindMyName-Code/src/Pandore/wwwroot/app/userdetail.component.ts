@@ -1,6 +1,5 @@
 import { Component, OnInit } from 'angular2/core';
-import { Router } from 'angular2/router';
-import { RouteParams } from 'angular2/router';
+import { RouteParams, Router } from 'angular2/router';
 import { UtilisateurService } from './service/utilisateur.service';
 import { Utilisateur } from './classe/utilisateur';
 import { PartieService } from './service/partie.service';

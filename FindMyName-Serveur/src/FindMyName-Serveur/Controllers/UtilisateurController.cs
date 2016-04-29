@@ -72,27 +72,6 @@ namespace FindMyName_Serveur.Controllers
             return new Res("bon");
         }
 
-        // GET api/getOnlineUtilisateur
-        [HttpGet("getOnlineUtilisateur")]
-        public int getOnlineUtilisateur()
-        {
-            return UtilisateurService.getOnlineutilisateur();
-        }
-
-        // GET api/getName/{id}
-        [HttpGet("getName/{id}")]
-        public string getName(int id)
-        {
-            return UtilisateurService.getName(id);
-        }
-
-        // GET api/ChangerMeilleurScore/{u}/{score}
-        [HttpGet("ChangerMeilleurScore/{u}/{score}")]
-        public void ChangerMeilleurScore(int u,int score)
-        {
-            UtilisateurService.ChangerMeilleurScore(u, score);
-        }
-
         // GET api/getPhoto/{u}
         [HttpGet("getPhoto/{u}")]
         public Res getPhoto(int u)
@@ -121,22 +100,5 @@ namespace FindMyName_Serveur.Controllers
            return new Res (UtilisateurService.changePhoto(id, selectPhoto));
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

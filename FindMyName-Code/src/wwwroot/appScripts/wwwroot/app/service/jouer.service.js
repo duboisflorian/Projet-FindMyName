@@ -13,15 +13,7 @@ var http_1 = require('angular2/http');
 var JouerService = (function () {
     function JouerService(http) {
         this.http = http;
-        this._cUrl = 'http://localhost:54000/api/values/5';
     }
-    JouerService.prototype.extractData = function (res) {
-        if (res.status < 200 || res.status >= 300) {
-            throw new Error('Bad response status: ' + res.status);
-        }
-        var body = res.json();
-        return body.data || {};
-    };
     JouerService.prototype.getReponse = function (i) {
         return this.http.get('http://localhost:54000/api/Jouer/getReponse/' + i)
             .map(function (data) { return data.json(); });

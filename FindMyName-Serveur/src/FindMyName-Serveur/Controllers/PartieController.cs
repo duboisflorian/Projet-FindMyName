@@ -65,30 +65,6 @@ namespace FindMyName_Serveur.Controllers
             return PartieService.getNbDefaite(id, id_ami);
         }
 
-        // GET: api/Partie/getPartieExiste/{ID}/{ID_AMI}
-        [HttpGet("getPartieExiste/{id}/{id_ami}")]
-        public Res getPartieExiste(int id, int id_ami)
-        {
-            if (PartieService.getPartieExiste(id, id_ami) == true)
-                return new Res("existe");
-            else
-                return new Res("vide");
-        }
-
-        // GET: api/Partie/AjouterPartie/{ID}/{ID_AMI}/{th}/{score}/{j1}/{j2}
-        [HttpGet("AjouterPartie/{id}/{id_ami}/{th}/{score}/{j1}/{j2}")]
-        public void AjouterPartie(int id, int id_ami,int th, int score, string j1, string j2 )
-        {
-            PartieService.AjouterPartie(id, id_ami, th,score,j1,j2);
-        }
-
-        // GET: api/Partie/ModifierPartie/{ID}/{ID_AMI}/{th}/{score}/{id_partie}
-        [HttpGet("ModifierPartie/{id}/{id_ami}/{th}/{score}/{id_partie}")]
-        public void ModifierPartie(int id, int id_ami, int th, int score,int id_partie)
-        {
-            PartieService.ModifierPartie(id, id_ami,th,score,id_partie);
-        }
-
         [HttpGet("savePartie/{id}/{us}/{th}/{remaining}")]
         public Res savePartie(int id, int us, int th, int remaining)
         {

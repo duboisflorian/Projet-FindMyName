@@ -1,21 +1,11 @@
-﻿import { Theme } from '../classe/theme';
-import { Injectable } from 'angular2/core';
+﻿import { Injectable } from 'angular2/core';
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 
 @Injectable()
 export class ThemeService {
-    t: Theme[];
-    private _cUrl = 'http://localhost:54000/api/values/5';
     constructor(
         private http: Http) { }
 
-    private extractData(res: Response) {
-        if (res.status < 200 || res.status >= 300) {
-            throw new Error('Bad response status: ' + res.status);
-        }
-        let body = res.json();
-        return body.data || {};
-    }
     getThemes() {
         return this.http.get('http://localhost:54000/api/theme/getThemes/')
             .map(data => data.json());

@@ -13,15 +13,7 @@ var http_1 = require('angular2/http');
 var ThemeService = (function () {
     function ThemeService(http) {
         this.http = http;
-        this._cUrl = 'http://localhost:54000/api/values/5';
     }
-    ThemeService.prototype.extractData = function (res) {
-        if (res.status < 200 || res.status >= 300) {
-            throw new Error('Bad response status: ' + res.status);
-        }
-        var body = res.json();
-        return body.data || {};
-    };
     ThemeService.prototype.getThemes = function () {
         return this.http.get('http://localhost:54000/api/theme/getThemes/')
             .map(function (data) { return data.json(); });

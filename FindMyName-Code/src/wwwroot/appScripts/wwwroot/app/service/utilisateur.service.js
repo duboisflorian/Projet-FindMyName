@@ -9,23 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var theme_service_1 = require('../service/theme.service');
-var partie_service_1 = require('../service/partie.service');
 var http_1 = require('angular2/http');
 require('rxjs/add/operator/map'); // we need to import this now
 var UtilisateurService = (function () {
-    function UtilisateurService(_pService, _tService, http) {
-        this._pService = _pService;
-        this._tService = _tService;
+    function UtilisateurService(http) {
         this.http = http;
     }
-    UtilisateurService.prototype.extractData = function (res) {
-        if (res.status < 200 || res.status >= 300) {
-            throw new Error('Bad response status: ' + res.status);
-        }
-        var body = res.json();
-        return body.data || {};
-    };
     UtilisateurService.prototype.getUser = function (id) {
         return this.http.get('http://localhost:54000/api/Utilisateur/' + id)
             .map(function (data) { return data.json(); });
@@ -50,17 +39,6 @@ var UtilisateurService = (function () {
         return this.http.get('http://localhost:54000/api/Utilisateur/ajoutus/' + name + '/' + mail + '/' + password)
             .map(function (data) { return data.json(); });
     };
-    UtilisateurService.prototype.getOnlineutilisateur = function () {
-        return this.http.get('http://localhost:54000/api/Utilisateur/getOnlineUtilisateur')
-            .map(function (data) { return data.json(); });
-    };
-    UtilisateurService.prototype.getName = function (u) {
-        return this.http.get('http://localhost:54000/api/Utilisateur/getName/' + u)
-            .map(function (data) { return data.json(); });
-    };
-    UtilisateurService.prototype.ChangerMeilleurScore = function (u, score) {
-        this.http.get('http://localhost:54000/api/Utilisateur/ChangerMeilleurScore/' + u + '/' + score);
-    };
     UtilisateurService.prototype.getPhoto = function (u) {
         return this.http.get('http://localhost:54000/api/Utilisateur/getPhoto/' + u)
             .map(function (data) { return data.json(); });
@@ -78,8 +56,9 @@ var UtilisateurService = (function () {
             .map(function (data) { return data.json(); });
     };
     UtilisateurService = __decorate([
+        // we need to import this now
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [partie_service_1.PartieService, theme_service_1.ThemeService, http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http])
     ], UtilisateurService);
     return UtilisateurService;
 }());

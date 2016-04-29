@@ -9,11 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var theme_service_1 = require('../service/theme.service');
 var http_1 = require('angular2/http');
 var PartieService = (function () {
-    function PartieService(_tService, http) {
-        this._tService = _tService;
+    function PartieService(http) {
         this.http = http;
     }
     PartieService.prototype.getPartiesEnCours = function (us) {
@@ -40,16 +38,6 @@ var PartieService = (function () {
         return this.http.get('http://localhost:54000/api/Partie/getNbDefaite/' + us + '/' + ami)
             .map(function (data) { return data.json(); });
     };
-    PartieService.prototype.getPartieExiste = function (us, ami) {
-        return this.http.get('http://localhost:54000/api/Partie/getPartieExiste/' + us + '/' + ami)
-            .map(function (data) { return data.json(); });
-    };
-    PartieService.prototype.AjouterPartie = function (us, ami, th, score, j1, j2) {
-        this.http.get('http://localhost:54000/api/Partie/AjouterPartie/' + us + '/' + ami + '/' + th + '/' + score + '/' + j1 + '/' + j2);
-    };
-    PartieService.prototype.ModifierPartie = function (us, ami, th, score, id_partie) {
-        this.http.get('http://localhost:54000/api/Partie/ModifierPartie/' + us + '/' + ami + '/' + th + '/' + score + '/' + id_partie);
-    };
     PartieService.prototype.getnbParties = function (u) {
         return this.http.get('http://localhost:54000/api/Partie/getnbParties/' + u)
             .map(function (data) { return data.json(); });
@@ -72,7 +60,7 @@ var PartieService = (function () {
     };
     PartieService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [theme_service_1.ThemeService, http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http])
     ], PartieService);
     return PartieService;
 }());
