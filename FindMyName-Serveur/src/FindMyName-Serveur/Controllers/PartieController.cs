@@ -29,19 +29,19 @@ namespace FindMyName_Serveur.Controllers
 
         // GET: api/Partie/getEn_Cours/{ID}/{ID_AMI}
         [HttpGet("getEn_Cours/{id}/{id_ami}")]
-        public Boolean getEn_Cours(int id, int id_ami)
-        {
-            return PartieService.getEn_Cours(id,id_ami);
-        }
-
-        // GET: api/Partie/getPartieEnCours/{ID}/{ID_AMI}
-        [HttpGet("getPartieEnCours/{id}/{id_ami}")]
-        public Res getPartieEnCours(int id, int id_ami)
-        {
+        public Res getEn_Cours(int id, int id_ami)
+        { 
             if (PartieService.getEn_Cours(id, id_ami) == true)
                 return new Res("encours");
             else
                 return new Res("rien");
+        }
+
+        // GET: api/Partie/getPartieEnCours/{ID}/{ID_AMI}
+        [HttpGet("getPartieEnCours/{id}/{id_ami}")]
+        public Partie getPartieEnCours(int id, int id_ami)
+        {
+            return PartieService.getPartieEnCours(id, id_ami);
         }
 
         // GET: api/Partie/getHistorique/{ID}/{ID_AMI}

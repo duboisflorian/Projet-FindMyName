@@ -27,6 +27,7 @@ var JouerComponent = (function () {
         this.reponse = [];
         this.remaining = 0;
         this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
+        this.p = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
     }
     JouerComponent.prototype.gotoDeco = function () {
         alert("Vous avez été déconnecté");
@@ -90,23 +91,29 @@ var JouerComponent = (function () {
         this.bon = null;
     };
     JouerComponent.prototype.ngOnDestroy = function () {
+        var _this = this;
         clearTimeout(this.sTimeout);
         var id = +this._routeParams.get('id');
         var us = +this._routeParams.get('us');
         var th = +this._routeParams.get('th');
-        //go changer se code !!!
-        /*if (!this._pService.getPartieExiste(id, us)) {
-            this._uService.getName(us).subscribe(data => this.j1temp = data);
-            this._uService.getName(id).subscribe(data => this.j2temp = data);
-            this.sTimeout = setTimeout(() => this.j1 = this.j1temp, 600);
-            this.sTimeout = setTimeout(() => this.j2 = this.j2temp, 600);
-            this._pService.AjouterPartie(us, id, th, this.remaining, this.j1, this.j2);
-        }
-        else {
-            this._pService.getPartieEnCours(id, us).subscribe(data => this.p = data);
-            this._pService.ModifierPartie(us, id, th, this.remaining, this.p.id_partie);
-        }
-        this._uService.ChangerMeilleurScore(us, this.remaining);*/
+        this._pService.getPartieExiste(id, us).subscribe(function (data) { return _this.Partieexiste = data.text; });
+        this.sTimeout = setTimeout(function () {
+            alert(_this.Partieexiste);
+            if (_this.Partieexiste == "vide") {
+                _this._uService.getName(us).subscribe(function (data) { return _this.j1temp = data; });
+                _this._uService.getName(id).subscribe(function (data) { return _this.j2temp = data; });
+                _this.sTimeout = setTimeout(function () { return _this.j1 = _this.j1temp; }, 300);
+                _this.sTimeout = setTimeout(function () { return _this.j2 = _this.j2temp; }, 300);
+                _this._pService.AjouterPartie(us, id, th, _this.remaining, _this.j1, _this.j2);
+            }
+            else {
+                _this._pService.getPartieEnCours(id, us).subscribe(function (data) { return _this.p = data; });
+                _this.sTimeout = setTimeout(function () {
+                    _this._pService.ModifierPartie(us, id, th, _this.remaining, _this.p.id_partie);
+                }, 300);
+            }
+        }, 300);
+        this._uService.ChangerMeilleurScore(us, this.remaining);
         clearTimeout(this.sTimeout);
         this.gotoContact();
     };

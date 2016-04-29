@@ -27,7 +27,7 @@ var InComponent = (function () {
     InComponent.prototype.inscription = function () {
         var _this = this;
         if (this.password == this.confirmPasword) {
-            this._uService.verificationMailExist(this.mail).subscribe(function (data) { return _this.message = data; });
+            this._uService.verificationMailExist(this.mail).subscribe(function (data) { return _this.message = data.text; });
             this.sTimeout = setTimeout(function () {
                 if (_this.message == "existe") {
                     alert("L'adresse mail existe déjà");
