@@ -26,7 +26,7 @@ var JouerComponent = (function () {
         this.task = '';
         this.reponse = [];
         this.remaining = 0;
-        this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
+        this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg" };
         this.p = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
     }
     JouerComponent.prototype.gotoDeco = function () {
@@ -50,7 +50,7 @@ var JouerComponent = (function () {
             }
         }, 600);
         var us = +this._routeParams.get('us');
-        this._uService.getUser(us)
+        this._uService.getUserView(us)
             .subscribe(function (data) { return _this.u = data; });
         this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
         this._themeService.getTheme(th).subscribe(function (data) { return _this.theme = data; });

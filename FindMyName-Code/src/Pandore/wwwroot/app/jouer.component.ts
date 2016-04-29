@@ -8,7 +8,7 @@ import { JouerService } from './service/jouer.service';
 import { ThemeService } from './service/theme.service';
 import { PartieService } from './service/partie.service';
 import { UtilisateurService } from './service/utilisateur.service';
-import { Utilisateur } from './classe/utilisateur';
+import { Utilisateur, UtilisateurViewModel  } from './classe/utilisateur';
 import { Theme } from './classe/theme';
 import {Observable} from 'rxjs/Rx';
 
@@ -23,7 +23,7 @@ export class JouerComponent implements OnInit {
     remaining: number = 0;
 
     tabreponses: Jouer;
-    u: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore":0 };
+    u: UtilisateurViewModel = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg"};
     bon: boolean;
     theme: Theme;
     p: Partie = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
@@ -67,7 +67,7 @@ export class JouerComponent implements OnInit {
 
 
         let us = +this._routeParams.get('us');
-        this._uService.getUser(us)
+        this._uService.getUserView(us)
             .subscribe(data => this.u = data);
         this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
         this._themeService.getTheme(th).subscribe(data => this.theme = data);

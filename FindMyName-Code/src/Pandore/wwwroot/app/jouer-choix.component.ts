@@ -5,7 +5,7 @@ import { Theme } from './classe/theme';
 import { ThemeService } from './service/theme.service';
 import { JouerComponent } from './jouer.component';
 import { UtilisateurService } from './service/utilisateur.service';
-import { Utilisateur } from './classe/utilisateur';
+import { Utilisateur, UtilisateurViewModel } from './classe/utilisateur';
 
 @Component({
     selector: 'my-jouer-choix',
@@ -16,7 +16,7 @@ export class JouerChoixComponent implements OnInit {
     themes: Theme[] = [];
     selectedTheme: Theme;
     directives: [JouerComponent];
-    u: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore":0 };
+    u: UtilisateurViewModel = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg"};
     sTimeout: number;
 
     constructor(
@@ -36,7 +36,7 @@ export class JouerChoixComponent implements OnInit {
         let id = +this._routeParams.get('id');
         this._themeService.getThemes().subscribe(data => this.themes = data);;
         let us = +this._routeParams.get('us');
-        this._uService.getUser(us)
+        this._uService.getUserView(us)
             .subscribe(data => this.u = data);
         this.sTimeout = setTimeout(() => this.endTimer(), 6000);
     }
