@@ -378,3 +378,8 @@ Project : Find My Name v_3
 
 - Lionel
 	- Correction bug affichage thème favoris + update utilisateur service (.map)
+
+## Vendredi 29/04
+
+- Yani 
+	- Ajout de la fonction d'insertion de plusieurs joueurs
