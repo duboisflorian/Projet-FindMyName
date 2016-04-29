@@ -92,6 +92,24 @@ namespace FindMyName_Serveur.Services
             return p;
         }
 
+        internal static void savePartie(int id, int us, int th, int remaining)
+        {
+            var Partieexiste= PartieService.getPartieExiste(id, us);
+
+            if (Partieexiste == false) {
+              var j1=  UtilisateurService.getName(us);
+              var j2 = UtilisateurService.getName(id);
+            PartieService.AjouterPartie(us, id, th, remaining, j1, j2);
+            }
+            else {
+                var p = PartieService.getPartieEnCours(id, us);
+                ModifierPartie(us, id, th,remaining,p.id_partie);
+            }
+           
+
+            UtilisateurService.ChangerMeilleurScore(us,remaining);
+        }
+
         public static Boolean getPartieExiste(int id, int id_ami)
         {
             for (var i = PARTIES.Count - 1; i >= 0; i--)

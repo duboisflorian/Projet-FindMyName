@@ -89,6 +89,13 @@ namespace FindMyName_Serveur.Controllers
             PartieService.ModifierPartie(id, id_ami,th,score,id_partie);
         }
 
+        [HttpGet("savePartie/{id}/{us}/{th}/{remaining}")]
+        public Res savePartie(int id, int us, int th, int remaining)
+        {
+            PartieService.savePartie(id, us, th, remaining);
+            return new Res("gg");
+        }
+
         // GET: api/Partie/getnbParties/{ID}/
         [HttpGet("getnbParties/{id}")]
         public int getnbParties(int id)

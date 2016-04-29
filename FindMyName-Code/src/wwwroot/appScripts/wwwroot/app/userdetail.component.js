@@ -27,6 +27,7 @@ var UserdetailComponent = (function () {
         this.nbd = 0;
         this.pays = ['France', 'Allemagne', 'Chine', 'Japon', 'Etats-Unis', 'Royaume-Uni', 'Canada'];
         this.u2 = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
+        this.phototext = "";
     }
     UserdetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -88,8 +89,13 @@ var UserdetailComponent = (function () {
         var us = +this._routeParams.get('us');
         this._uService.changePhoto(this.u2.id, this.selectPhoto)
             .subscribe(function (data) { return _this.Message = data; });
-        this._uService.getUser(us)
-            .subscribe(function (data) { return _this.u2 = data; });
+        this.sTimeout = setTimeout(function () { return _this._uService.getUser(us)
+            .subscribe(function (data) { return _this.u2 = data; }); }, 600);
+        this.phototext = "";
+    };
+    UserdetailComponent.prototype.changePhoto = function () {
+        this.u2.photo = "fichier/" + this.selectPhoto + ".jpg";
+        this.phototext = "achanger";
     };
     UserdetailComponent.prototype.changePays = function () {
         var _this = this;
@@ -111,5 +117,5 @@ exports.UserdetailComponent = UserdetailComponent;
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/ 
+*/
 //# sourceMappingURL=userdetail.component.js.map

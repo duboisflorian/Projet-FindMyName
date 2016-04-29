@@ -76,6 +76,10 @@ export class PartieService {
             .map(data => data.json());
     }
 
+    savePartie(id: number, us: number, th: number, remaining: number){
+    return this.http.get('http://localhost:54000/api/Partie/savePartie/' + id + '/' + us + '/' + th + '/' + remaining)
+        .map(data => data.json());
+}
 
 }
 /*

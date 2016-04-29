@@ -66,6 +66,10 @@ var PartieService = (function () {
         return this.http.get('http://localhost:54000/api/Partie/getNbD/' + us)
             .map(function (data) { return data.json(); });
     };
+    PartieService.prototype.savePartie = function (id, us, th, remaining) {
+        return this.http.get('http://localhost:54000/api/Partie/savePartie/' + id + '/' + us + '/' + th + '/' + remaining)
+            .map(function (data) { return data.json(); });
+    };
     PartieService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [theme_service_1.ThemeService, http_1.Http])

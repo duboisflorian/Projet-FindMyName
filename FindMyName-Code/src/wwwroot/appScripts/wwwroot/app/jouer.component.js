@@ -96,26 +96,9 @@ var JouerComponent = (function () {
         var id = +this._routeParams.get('id');
         var us = +this._routeParams.get('us');
         var th = +this._routeParams.get('th');
-        this._pService.getPartieExiste(id, us).subscribe(function (data) { return _this.Partieexiste = data.text; });
-        this.sTimeout = setTimeout(function () {
-            alert(_this.Partieexiste);
-            if (_this.Partieexiste == "vide") {
-                _this._uService.getName(us).subscribe(function (data) { return _this.j1temp = data; });
-                _this._uService.getName(id).subscribe(function (data) { return _this.j2temp = data; });
-                _this.sTimeout = setTimeout(function () { return _this.j1 = _this.j1temp; }, 300);
-                _this.sTimeout = setTimeout(function () { return _this.j2 = _this.j2temp; }, 300);
-                _this._pService.AjouterPartie(us, id, th, _this.remaining, _this.j1, _this.j2);
-            }
-            else {
-                _this._pService.getPartieEnCours(id, us).subscribe(function (data) { return _this.p = data; });
-                _this.sTimeout = setTimeout(function () {
-                    _this._pService.ModifierPartie(us, id, th, _this.remaining, _this.p.id_partie);
-                }, 300);
-            }
-        }, 300);
-        this._uService.ChangerMeilleurScore(us, this.remaining);
+        this._pService.savePartie(id, us, th, this.remaining).subscribe(function (data) { return _this.Partieexiste = data; });
         clearTimeout(this.sTimeout);
-        this.gotoContact();
+        this.sTimeout = setTimeout(function () { return _this.gotoContact(); }, 800);
     };
     JouerComponent.prototype.countdown = function (minutes, seconds, _router, id) {
         var element, endTime, hours, msLeft, mins, time;

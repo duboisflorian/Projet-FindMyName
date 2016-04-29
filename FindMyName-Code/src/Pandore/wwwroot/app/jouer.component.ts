@@ -112,30 +112,10 @@ export class JouerComponent implements OnInit {
         let us = +this._routeParams.get('us');
         let th = +this._routeParams.get('th');
 
-        this._pService.getPartieExiste(id, us).subscribe(data => this.Partieexiste = data.text);
-
-        this.sTimeout = setTimeout(() => {
-            alert(this.Partieexiste);
-            if (this.Partieexiste == "vide") {
-                this._uService.getName(us).subscribe(data => this.j1temp = data);
-                this._uService.getName(id).subscribe(data => this.j2temp = data);
-                this.sTimeout = setTimeout(() => this.j1 = this.j1temp, 300);
-                this.sTimeout = setTimeout(() => this.j2 = this.j2temp, 300);
-                this._pService.AjouterPartie(us, id, th, this.remaining, this.j1, this.j2);
-            }
-            else {
-                this._pService.getPartieEnCours(id,us).subscribe(data => this.p = data);
-                this.sTimeout = setTimeout(() => {
-                    this._pService.ModifierPartie(us, id, th, this.remaining, this.p.id_partie);
-                }, 300);
-            }
-        }, 300);
-
-       
-        this._uService.ChangerMeilleurScore(us, this.remaining);
+        this._pService.savePartie(id, us, th, this.remaining).subscribe(data => this.Partieexiste = data) ;
 
         clearTimeout(this.sTimeout);
-        this.gotoContact()
+        this.sTimeout = setTimeout(() => this.gotoContact(), 800);
     }
 
     countdown(minutes, seconds, _router, id) {
