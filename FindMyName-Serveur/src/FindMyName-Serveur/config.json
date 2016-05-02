@@ -1,8 +1,10 @@
 {
   "AppSettings": {
-    "SiteTitle": "Contoso Contacts"
+    "SiteTitle": "Contosofmn"
   },
   "Data": {
-    "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=ContosoBooks;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "DefaultConnection": {
+      "ConnectionString": "Server=.;Master=Store;Trusted_Connection=True;"
+    }
   }
 }
