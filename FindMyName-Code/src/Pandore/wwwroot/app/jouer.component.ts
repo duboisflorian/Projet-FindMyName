@@ -80,12 +80,26 @@ export class JouerComponent implements OnInit {
         return this.remaining;
     }
 
+    RemoveAccents(str) {
+        var accents = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+        var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
+        str = str.split('');
+        var strLen = str.length;
+        var i, x;
+        for (i = 0; i < strLen; i++) {
+            if ((x = accents.indexOf(str[i])) != -1) {
+                str[i] = accentsOut[x];
+            }
+        }
+        return str.join('');
+    }
+
     addTodo() {
         this.bon = false;
         if (this.task) {
             for (var i = 0; i < this.tabreponses.reponses.length; i++) {
                 for (var j = 0; j < this.tabreponses.reponses[i].rep.length; j++) {
-                    if (this.tabreponses.reponses[i].rep[j].toLowerCase() == this.task.toLowerCase() && this.tabreponses.reponses[i].done == false) {
+                    if (this.RemoveAccents(this.tabreponses.reponses[i].rep[j].toLowerCase().trim()) == this.RemoveAccents(this.task.toLowerCase().trim()) && this.tabreponses.reponses[i].done == false) {
                         this.reponse.push({ "text": this.tabreponses.reponses[i].rep[0].toLowerCase(), "done": true });
                         this.remaining++;
                         this.tabreponses.reponses[i].done = true;
