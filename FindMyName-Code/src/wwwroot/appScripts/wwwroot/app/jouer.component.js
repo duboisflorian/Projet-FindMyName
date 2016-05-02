@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
+var router_2 = require('angular2/router');
 var jouer_service_1 = require('./service/jouer.service');
 var theme_service_1 = require('./service/theme.service');
 var partie_service_1 = require('./service/partie.service');
@@ -25,7 +26,7 @@ var JouerComponent = (function () {
         this.task = '';
         this.reponse = [];
         this.remaining = 0;
-        this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg" };
+        this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
         this.p = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
     }
     JouerComponent.prototype.gotoDeco = function () {
@@ -49,7 +50,7 @@ var JouerComponent = (function () {
             }
         }, 600);
         var us = +this._routeParams.get('us');
-        this._uService.getUserView(us)
+        this._uService.getUser(us)
             .subscribe(function (data) { return _this.u = data; });
         this.theme = { "text": "en attente", "id": 0, "photo": "", "done": false };
         this._themeService.getTheme(th).subscribe(function (data) { return _this.theme = data; });
@@ -61,17 +62,32 @@ var JouerComponent = (function () {
     JouerComponent.prototype.getRemaining = function () {
         return this.remaining;
     };
+    JouerComponent.prototype.RemoveAccents = function (str) {
+        var accents = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+        var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
+        str = str.split('');
+        var strLen = str.length;
+        var i, x;
+        for (i = 0; i < strLen; i++) {
+            if ((x = accents.indexOf(str[i])) != -1) {
+                str[i] = accentsOut[x];
+            }
+        }
+        return str.join('');
+    };
     JouerComponent.prototype.addTodo = function () {
         var _this = this;
         this.bon = false;
         if (this.task) {
             for (var i = 0; i < this.tabreponses.reponses.length; i++) {
-                if (this.tabreponses.reponses[i].text.toLowerCase() == this.task.toLowerCase() && this.tabreponses.reponses[i].done == false) {
-                    this.reponse.push({ "text": this.task, "done": true });
-                    this.remaining++;
-                    this.tabreponses.reponses[i].done = true;
-                    this.bon = true;
-                    this.sTimeoutBon = setTimeout(function () { return _this.setBon(); }, 2000);
+                for (var j = 0; j < this.tabreponses.reponses[i].rep.length; j++) {
+                    if (this.RemoveAccents(this.tabreponses.reponses[i].rep[j].toLowerCase().trim()) == this.RemoveAccents(this.task.toLowerCase().trim()) && this.tabreponses.reponses[i].done == false) {
+                        this.reponse.push({ "text": this.tabreponses.reponses[i].rep[0].toLowerCase(), "done": true });
+                        this.remaining++;
+                        this.tabreponses.reponses[i].done = true;
+                        this.bon = true;
+                        this.sTimeoutBon = setTimeout(function () { return _this.setBon(); }, 2000);
+                    }
                 }
             }
             if (this.bon != true) {
@@ -125,7 +141,7 @@ var JouerComponent = (function () {
             selector: 'my-jouer',
             templateUrl: 'app/jouer.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.Router, jouer_service_1.JouerService, theme_service_1.ThemeService, partie_service_1.PartieService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
+        __metadata('design:paramtypes', [router_2.Router, jouer_service_1.JouerService, theme_service_1.ThemeService, partie_service_1.PartieService, utilisateur_service_1.UtilisateurService, router_1.RouteParams])
     ], JouerComponent);
     return JouerComponent;
 }());
