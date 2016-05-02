@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Cors;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System.Web.Http;
+using Microsoft.Data.Entity;
+using FindMyName_Serveur.Models;
 
 namespace FindMyName_Serveur
 {
@@ -14,8 +14,9 @@ namespace FindMyName_Serveur
         {
             // Set up configuration sources.
             var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
-                .AddEnvironmentVariables();
+                            .AddJsonFile("appsettings.json")
+                            .AddJsonFile("config.json");
+            builder.AddEnvironmentVariables();
             Configuration = builder.Build();
 
         }
@@ -38,8 +39,12 @@ namespace FindMyName_Serveur
                     .AllowAnyHeader());
             });
 
+            services.AddEntityFramework()
+                                .AddSqlServer()
+                                .AddDbContext<fmnContext>(options =>
 
-
+                                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"])
+                                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,8 +61,7 @@ namespace FindMyName_Serveur
 
             app.UseMvc();
 
-        
-           
+            SampleData.Initialize(app.ApplicationServices);
 
         }
 
