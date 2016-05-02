@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.Entity;
 using Microsoft.Framework.DependencyInjection;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace FindMyName_Serveur.Models
@@ -45,6 +46,40 @@ namespace FindMyName_Serveur.Models
          new Theme() { text = "HEAT",photo = "./fichier/heat.jpg", done = false },
          new Theme() { text = "OM", photo = "./fichier/om.jpg", done = false },
          new Theme() { text = "BAYERN", photo = "./fichier/bayern.jpg", done = false }
+                    );
+
+                context.SaveChanges();
+            }
+            if (!context.Contacts.Any())
+            {
+                context.Contacts.AddRange(
+                    new ListeContact(6, new List<Contact>
+            {
+                    new Contact()
+                    {
+                        id = 1,name="Florian",photo="fichier/psg.jpg",type="ami"
+                    },
+                    new Contact()
+                    {
+                        id = 2,name="Yani",photo="fichier/logo.jpg",type="ami"
+                    },
+                    new Contact()
+                    {
+                        id = 3,name="maxime",photo="fichier/logo.jpg",type="ami"
+                    },
+                    new Contact()
+                    {
+                        id = 4,name="lionel",photo="fichier/logo.jpg",type="ami"
+                    },
+                    new Contact()
+                    {
+                        id = 5,name="diegO",photo="fichier/logo.jpg",type="ami"
+                    },
+                    new Contact()
+                    {
+                        id = 8,name="Luffy",photo="fichier/logo.jpg",type="online"
+                    }
+            })
                     );
 
                 context.SaveChanges();

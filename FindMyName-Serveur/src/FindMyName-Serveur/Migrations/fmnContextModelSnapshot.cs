@@ -16,6 +16,28 @@ namespace FindMyNameServeur.Migrations
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("FindMyName_Serveur.Models.Contact", b =>
+                {
+                    b.Property<int>("id");
+
+                    b.Property<int?>("ListeContactid");
+
+                    b.Property<string>("name");
+
+                    b.Property<string>("photo");
+
+                    b.Property<string>("type");
+
+                    b.HasKey("id");
+                });
+
+            modelBuilder.Entity("FindMyName_Serveur.Models.ListeContact", b =>
+                {
+                    b.Property<int>("id");
+
+                    b.HasKey("id");
+                });
+
             modelBuilder.Entity("FindMyName_Serveur.Models.Theme", b =>
                 {
                     b.Property<int>("id")
@@ -48,6 +70,13 @@ namespace FindMyNameServeur.Migrations
                     b.Property<string>("photo");
 
                     b.HasKey("id");
+                });
+
+            modelBuilder.Entity("FindMyName_Serveur.Models.Contact", b =>
+                {
+                    b.HasOne("FindMyName_Serveur.Models.ListeContact")
+                        .WithMany()
+                        .HasForeignKey("ListeContactid");
                 });
         }
     }
