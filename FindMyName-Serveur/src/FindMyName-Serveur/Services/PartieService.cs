@@ -168,7 +168,7 @@ namespace FindMyName_Serveur.Services
                 if (PARTIES[i].id_partie == id_partie)
                 {
                     var n = PARTIES[i].manche.Count - 1;
-                    if (PARTIES[i].manche[n].s1 == 0)
+                    if (PARTIES[i].manche[n].s1 == -1)
                     {
                         PARTIES[i].manche[n].s1 = score;
                         if (PARTIES[i].manche[n].s1 > PARTIES[i].manche[n].s2)
@@ -184,7 +184,7 @@ namespace FindMyName_Serveur.Services
                             PARTIES[i].player = -1;
                         }
                     }
-                    else if (PARTIES[i].manche[n].s2 == 0)
+                    else if (PARTIES[i].manche[n].s2 == -1)
                     {
                         PARTIES[i].manche[n].s2 = score;
                         if (PARTIES[i].manche[n].s1 > PARTIES[i].manche[n].s2)
@@ -205,10 +205,10 @@ namespace FindMyName_Serveur.Services
                         string theme = ThemeService.getName(th); 
                         if (id == PARTIES[i].id_j1)
                         {
-                            PARTIES[i].manche.Add(new Manche( th, theme, score,0));
+                            PARTIES[i].manche.Add(new Manche( th, theme, score,-1));
                         }
                         else {
-                            PARTIES[i].manche.Add(new Manche(th, theme,0, score));
+                            PARTIES[i].manche.Add(new Manche(th, theme,-1, score));
                         }
 
                         PARTIES[i].player = id_ami;

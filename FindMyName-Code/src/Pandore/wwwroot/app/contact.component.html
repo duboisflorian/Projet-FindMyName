@@ -53,7 +53,11 @@
                 <h2>Partie en cours </h2>
                 <h3>({{partie_en_cours.j1}}) {{partie_en_cours.s1}} - {{partie_en_cours.s2}} ({{partie_en_cours.j2}}) </h3>
                 <ul class="nav">
-                    <li *ngFor="#m of partie_en_cours.manche"><span>{{m.theme}}   {{m.s1}} - {{m.s2}}</span></li>
+                    <li *ngFor="#m of partie_en_cours.manche">
+                        <span *ngIf="m.s1==-1">{{m.theme}}    - {{m.s2}}</span>
+                        <span *ngIf="m.s2==-1">{{m.theme}}  {{m.s1}}  - </span>
+                        <span *ngIf="m.s2!=-1 && m.s1!=-1">{{m.theme}}  {{m.s1}}  -  {{m.s2}}</span>
+                    </li>
                 </ul>
 
                 <button *ngIf="partie_en_cours.player==u.id" (click)="gotoJouer(partie_en_cours)">Jouer</button>
@@ -89,7 +93,9 @@
             ({{selectedDetails.j1}}) {{selectedDetails.s1}} - {{selectedDetails.s2}} ({{selectedDetails.j2}})
             <br />
             <ul class="nav">
-                <li *ngFor="#m of selectedDetails.manche"><span>{{m.theme}}   {{m.s1}} - {{m.s2}}</span></li>
+                <li *ngFor="#m of selectedDetails.manche">
+                    <span>{{m.theme}} {{m.s1}} - {{m.s2}}</span>
+                </li>
             </ul>
         </div>
 
