@@ -16,6 +16,7 @@ namespace FindMyName_Serveur
             var builder = new ConfigurationBuilder()
                             .AddJsonFile("appsettings.json")
                             .AddJsonFile("config.json");
+            builder.AddEnvironmentVariables();
             Configuration = builder.Build();
 
         }

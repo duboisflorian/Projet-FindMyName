@@ -1,10 +1,11 @@
 {
   "AppSettings": {
-    "SiteTitle": "Contosofmn"
+    "SiteTitle": "FindMyName-Serveur"
   },
   "Data": {
     "DefaultConnection": {
-      "ConnectionString": "Server=.;Master=Store;Trusted_Connection=True;"
+      "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=fmndb;Trusted_Connection=True;"
     }
   }
+}
 }

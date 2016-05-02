@@ -9,6 +9,5 @@ namespace FindMyName_Serveur.Models
     public class fmnContext : DbContext
     {
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Utilisateur> Utilisateurs { get; set; }
     }
 }
