@@ -86,7 +86,7 @@ export class JouerComponent implements OnInit {
             for (var i = 0; i < this.tabreponses.reponses.length; i++) {
                 for (var j = 0; j < this.tabreponses.reponses[i].rep.length; j++) {
                     if (this.tabreponses.reponses[i].rep[j].toLowerCase() == this.task.toLowerCase() && this.tabreponses.reponses[i].done == false) {
-                        this.reponse.push({ "text": this.task, "done": true });
+                        this.reponse.push({ "text": this.tabreponses.reponses[i].rep[0].toLowerCase(), "done": true });
                         this.remaining++;
                         this.tabreponses.reponses[i].done = true;
                         this.bon = true;
