@@ -373,16 +373,32 @@ Project : Find My Name v_3
 
 - Lionel
 	- Récupération et affichage des données sur la partie client
+
+- Florian
+	- Correction bug
+	- Aide
 	
 ## Jeudi 28/04
 
 - Groupe 
 	- Cours avec le prof
-
+	
 - Lionel
 	- Correction bug affichage thème favoris + update utilisateur service (.map)
 
+- Florian
+	- Correction pipe
+	- Correction bug
+	- Restructuration du code
+
 ## Vendredi 29/04
+
+- Florian
+	- Supression des fonction / import ect qui ne sert plus
+	- Création deux deux ViewModels pour Contact et Utilisateur
+	- Restructuration du code
+	- Réalisation Changer photo (on affiche le boutton changé si on modifie)
+	- Correction bug
 
 - Yani 
 	- Ajout de la fonction d'insertion de plusieurs joueurs
@@ -394,3 +410,8 @@ Project : Find My Name v_3
 
 - Lionel
 	- Début paramétrage Cordova
+
+- Florian
+	- Entity paramétrage
+	- Entity Utilisateur et Theme
+	- Correction bug
