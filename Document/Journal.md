@@ -391,3 +391,6 @@ Project : Find My Name v_3
 
 - Maxime
 	- Amélioration du site (Less)
+
+- Lionel
+	- Début paramétrage Cordova
