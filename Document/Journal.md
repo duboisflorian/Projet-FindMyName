@@ -365,6 +365,9 @@ Project : Find My Name v_3
 
 - Florian
 	- Réalisation Contact (client) error sur le pipe
+	
+- Maxime
+	- Ralisation Partie sur le client
 
 ## Mercredi 27/04
 
@@ -383,3 +386,8 @@ Project : Find My Name v_3
 
 - Yani 
 	- Ajout de la fonction d'insertion de plusieurs joueurs
+
+## Lundi 02/05
+
+- Maxime
+	- Amélioration du site (Less)
