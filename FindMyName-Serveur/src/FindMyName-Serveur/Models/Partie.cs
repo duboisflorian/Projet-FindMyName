@@ -2,26 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FindMyName_Serveur.Models
 {
     public class Partie
     {
-        public int id_partie { get; set; }
-        public int id_j1 { get; set; }
-        public int id_j2 { get; set; }
-        public string j1 { get; set; }
-        public string j2 { get; set; }
+        public int id { get; set; }
+        public virtual  Utilisateur j1 { get; set; }
+        public virtual Utilisateur j2 { get; set; }
         public int s1 { get; set; }
         public int s2 { get; set; }
         public int player { get; set; }
-        public List<Manche> manche { get; set; }
+        public virtual IList<Manche> manche { get; set; }
 
-        public Partie(int id_partie, int id_j1, int id_j2, string j1, string j2, int s1, int s2, int player, List<Manche> manche)
+        public Partie(int id_partie,Utilisateur j1,Utilisateur j2, int s1, int s2, int player, List<Manche> manche)
         {
-            this.id_partie = id_partie;
-            this.id_j1 = id_j1;
-            this.id_j2 = id_j2;
+            this.id = id_partie;
             this.j1 = j1;
             this.j2 = j2;
             this.s1 = s1;

@@ -15,7 +15,7 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class UtilisateurController : Controller
     {
-        // GET: api/values
+     /*   // GET: api/values
         [HttpGet]
         public IEnumerable<Utilisateur> Get()
         {
@@ -99,6 +99,6 @@ namespace FindMyName_Serveur.Controllers
         {
            return new Res (UtilisateurService.changePhoto(id, selectPhoto));
         }
-
+        */
     }
 }

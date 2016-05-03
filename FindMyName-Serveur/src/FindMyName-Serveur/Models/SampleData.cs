@@ -11,79 +11,41 @@ namespace FindMyName_Serveur.Models
         public static void Initialize(IServiceProvider serviceProvider)
         {
             var context = serviceProvider.GetService<fmnContext>();
-            if (!context.Utilisateurs.Any())
+
+            var u1 = new Utilisateur("Florian", "fichier/psg.jpg", "Florian@gmail.com", "1234", "France", 25);
+            var u2 = new Utilisateur("Yani", "fichier/logo.jpg", "Yani@gmail.com", "1234", "France", 25);
+            var u3 = new Utilisateur("Maxime", "fichier/logo.jpg", "Maxime@gmail.com", "1234", "France", 25);
+            var u4 = new Utilisateur("Lionel", "fichier/logo.jpg", "Lionel@gmail.com", "1234", "France", 25);
+            var u5 = new Utilisateur("Diego","fichier / logo.jpg","Diego@gmail.com", "1234", "France", 25);
+            var u6 = new Utilisateur("Tingting", "fichier/ol.jpg", "Tingting@gmail.com", "1234", "France", 25);
+            var u7 = new Utilisateur("Marco", "fichier/logo.jpg", "Marco@gmail.com", "1234", "France", 25);
+            var u8 = new Utilisateur("Luffy", "fichier/logo.jpg", "Luffy@gmail.com", "1234", "France", 25);
+            var u9 = new Utilisateur("Mingo", "fichier/logo.jpg", "Mingo@gmail.com", "1234", "France", 25);
+            var u10 = new Utilisateur("Zoro","fichier/logo.jpg","Zoro@gmail.com", "1234", "France", 25);
+            var u11 = new Utilisateur("Papuce", "fichier/logo.jpg", "Papuce@gmail.com", "1234", "France", 25);
+            var u12 = new Utilisateur("Chandler", "fichier/logo.jpg", "ante.Vivamus.non@arcu.co.uk", "1234", "France", 25);
+            var u13 = new Utilisateur("Lacy", "fichier/logo.jpg", "ante.Vivamus.non@arcu.co.uk", "1234", "France", 25);
+            var u14 = new Utilisateur("Quamar", "fichier/logo.jpg", "est.ac.facilisis@Nullasemper.net", "1234", "France", 25);
+            var u15 = new Utilisateur("Sandra", "fichier/logo.jpg", "accumsan.laoreet@gravida.edu", "1234", "France", 25);
+
+            u1.contact = new List<Contact> { new Contact(u6,"ami") };
+            u2.contact = new List<Contact> { new Contact(u6, "ami") };
+            u3.contact = new List<Contact> { new Contact(u6, "ami") };
+            u4.contact = new List<Contact> { new Contact(u6, "ami") };
+            u5.contact = new List<Contact> { new Contact(u6, "ami") };
+            u8.contact = new List<Contact> { new Contact(u6, "online") };
+            u6.contact = new List<Contact> { new Contact(u1, "ami"), new Contact(u2, "ami"), new Contact(u3, "ami"), new Contact(u4, "ami"), new Contact(u5, "ami"), new Contact(u8, "online") };
+
+            if (!context.Users.Any())
             {
-                context.Utilisateurs.AddRange(
-                    new Utilisateur("Florian", "fichier/psg.jpg", "Florian@gmail.com", "1234", "France", 25),
-            new Utilisateur("Yani", "fichier/logo.jpg", "Yani@gmail.com", "1234", "France", 25),
-            new Utilisateur("Maxime", "fichier/logo.jpg", "Maxime@gmail.com", "1234", "France", 25),
-            new Utilisateur("Lionel", "fichier/logo.jpg", "Lionel@gmail.com", "1234", "France", 25),
-            new Utilisateur("Diego", "fichier/logo.jpg", "Diego@gmail.com", "1234", "France", 25),
-            new Utilisateur("Tingting", "fichier/ol.jpg", "Tingting@gmail.com", "1234", "Etats-Unis", 25),
-            new Utilisateur("Marco", "fichier/logo.jpg", "Marco@gmail.com", "1234", "France", 25),
-            new Utilisateur("Luffy", "fichier/logo.jpg", "Luffy@gmail.com", "1234", "France", 25),
-            new Utilisateur("Mingo", "fichier/logo.jpg", "Mingo@gmail.com", "1234", "France", 25),
-            new Utilisateur("Zoro", "fichier/logo.jpg", "Zoro@gmail.com", "1234", "France", 25),
-            new Utilisateur("Papuce", "fichier/logo.jpg", "Papuce@gmail.com", "1234", "France", 25),
-            new Utilisateur("Chandler", "fichier/logo.jpg", "ante.Vivamus.non@arcu.co.uk", "1234", "France", 25),
-            new Utilisateur("Lacy", "fichier/logo.jpg", "Nunc.ullamcorper@luctusCurabituregestas.com", "1234", "France", 25),
-            new Utilisateur("Quamar", "fichier/logo.jpg", "est.ac.facilisis@Nullasemper.net", "1234", "France", 25),
-            new Utilisateur("Sandra", "fichier/logo.jpg", "accumsan.laoreet@gravida.edu", "1234", "France", 25)
+                context.Users.AddRange(
+                    u1,u2,u3,u4,u5,u6,u7,u8,u9,u10,u11,u12,u13,u14,u15
                     );
 
                 context.SaveChanges();
             }
 
-            if (!context.Themes.Any())
-            {
-                context.Themes.AddRange(
-               new Theme() { text = "PSG", photo = "./fichier/psg.jpg", done = false },
-         new Theme() { text = "OL", photo = "./fichier/ol.jpg", done = false },
-         new Theme() { text = "REAL", photo = "./fichier/real.jpg", done = false },
-         new Theme() { text = "BARCA", photo = "./fichier/barca.jpg", done = false },
-         new Theme() { text = "ARSENAL",  photo = "./fichier/arsenal.jpg", done = false },
-         new Theme() { text = "CITY", photo = "./fichier/city.jpg", done = false },
-         new Theme() { text = "HEAT",photo = "./fichier/heat.jpg", done = false },
-         new Theme() { text = "OM", photo = "./fichier/om.jpg", done = false },
-         new Theme() { text = "BAYERN", photo = "./fichier/bayern.jpg", done = false }
-                    );
-
-                context.SaveChanges();
-            }
-            if (!context.Contacts.Any())
-            {
-                context.Contacts.AddRange(
-                    new ListeContact(6, new List<Contact>
-            {
-                    new Contact()
-                    {
-                        id = 1,name="Florian",photo="fichier/psg.jpg",type="ami"
-                    },
-                    new Contact()
-                    {
-                        id = 2,name="Yani",photo="fichier/logo.jpg",type="ami"
-                    },
-                    new Contact()
-                    {
-                        id = 3,name="maxime",photo="fichier/logo.jpg",type="ami"
-                    },
-                    new Contact()
-                    {
-                        id = 4,name="lionel",photo="fichier/logo.jpg",type="ami"
-                    },
-                    new Contact()
-                    {
-                        id = 5,name="diegO",photo="fichier/logo.jpg",type="ami"
-                    },
-                    new Contact()
-                    {
-                        id = 8,name="Luffy",photo="fichier/logo.jpg",type="online"
-                    }
-            })
-                    );
-
-                context.SaveChanges();
-            }
+          
         }
     }
 }

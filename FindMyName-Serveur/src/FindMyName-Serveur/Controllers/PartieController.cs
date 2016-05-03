@@ -13,7 +13,7 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class PartieController : Controller
     {
-        // GET: api/Partie
+       /* // GET: api/Partie
         [HttpGet]
         public IEnumerable<Partie> Get()
         {
@@ -100,6 +100,6 @@ namespace FindMyName_Serveur.Controllers
         {
             return PartieService.getNbV(id);
         }
-
+        */
     }
 }

@@ -13,7 +13,7 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class JouerController : Controller
     {
-        // GET: api/Jouer
+       /* // GET: api/Jouer
         [HttpGet]
         public IEnumerable<ListeReponses> Get()
         {
@@ -42,6 +42,6 @@ namespace FindMyName_Serveur.Controllers
         public int getTaille(int i)
         {
             return ReponsesService.getTaille(i);
-        }
+        }*/
     }
 }

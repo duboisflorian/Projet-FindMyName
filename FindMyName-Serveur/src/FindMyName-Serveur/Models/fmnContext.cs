@@ -8,8 +8,8 @@ namespace FindMyName_Serveur.Models
 {
     public class fmnContext : DbContext
     {
-        public DbSet<Utilisateur> Utilisateurs { get; set; }
+        public DbSet<Utilisateur> Users { get; set; }
         public DbSet<Theme> Themes { get; set; }
-        public DbSet<ListeContact> Contacts { get; set; }
+        public DbSet<Partie> parties { get; set; }
     }
 }

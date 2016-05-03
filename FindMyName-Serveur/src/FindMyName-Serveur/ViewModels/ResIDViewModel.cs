@@ -5,14 +5,15 @@ using System.Threading.Tasks;
 
 namespace FindMyName_Serveur.Models
 {
-    public class Res
+    public class ResIDViewModel
     {
         public string text { get; set; }
+        public int id { get; set; }
 
-        public Res(string t)
+        public ResIDViewModel(string t, int i)
         {
             this.text = t;
-
+            this.id = i;
         }
 
     }

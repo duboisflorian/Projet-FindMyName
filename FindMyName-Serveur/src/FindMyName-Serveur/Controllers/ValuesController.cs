@@ -11,7 +11,7 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        // GET: api/values
+      /*  // GET: api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -41,7 +41,7 @@ namespace FindMyName_Serveur.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
+        }*/
     }
 }
 

@@ -7,8 +7,20 @@ namespace FindMyName_Serveur.Models
 {
     public class Reponse
     {
-        //public string text { get; set; }
-        public List<String> rep { get; set; }
+        public int id { get; set; }
+        public virtual IList<Mot> appellation { get; set; }
         public bool done { get; set; }
+
+        public Reponse()
+        {
+
+        }
+
+        public Reponse(int id,bool done, List<Mot> appellation)
+        {
+            this.id = id;
+            this.appellation = appellation;
+                this.done = done;
+        }
     }
 }

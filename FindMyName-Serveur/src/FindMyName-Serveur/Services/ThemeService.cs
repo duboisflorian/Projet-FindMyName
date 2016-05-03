@@ -4,9 +4,9 @@ using FindMyName_Serveur.Models;
 
 namespace FindMyName_Serveur.Services
 {
-    public static class ThemeService
+    public class ThemeService
     {
-        public static List<Theme> THEMES { get; set; } = new List<Theme>
+      /*  public static List<Theme> THEMES { get; set; } = new List<Theme>
     {
         { new Theme() { text = "PSG", id = 1, photo = "./fichier/psg.jpg", done = false}},
         { new Theme() { text = "OL", id = 2, photo = "./fichier/ol.jpg", done = false}},
@@ -79,6 +79,6 @@ namespace FindMyName_Serveur.Services
                     return THEMES[i].id;
             }
             return 0;
-        }
+        }*/
     }
 }

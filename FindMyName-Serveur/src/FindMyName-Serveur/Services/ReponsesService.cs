@@ -6,9 +6,9 @@ using FindMyName_Serveur.Models;
 
 namespace FindMyName_Serveur.Services
 {
-    public static class ReponsesService
+    public class ReponsesService
     {
-        public static int i;
+       /* public static int i;
         public static List<ListeReponses> REPONSES { get; set; } = new List<ListeReponses>
         {
             new ListeReponses(1, new List<Reponse>
@@ -1116,7 +1116,7 @@ namespace FindMyName_Serveur.Services
         public static int getTaille(int i)
         {
             return ReponsesService.REPONSES[i].reponses.Count;
-        }
+        }*/
     }
 
 }

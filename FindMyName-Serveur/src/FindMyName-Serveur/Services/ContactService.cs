@@ -7,9 +7,9 @@ using FindMyName_Serveur.Models;
 
 namespace FindMyName_Serveur.Services
 {
-    public static class ContactService
+    public class ContactService
     {
-
+/*
         static List<ListeContact> CONTACTS = new List<ListeContact>
         {
             new ListeContact(6,new List<Contact>
@@ -263,6 +263,6 @@ namespace FindMyName_Serveur.Services
            } else {
                return "cette personne n'existe pas";
            }
-        }
+        }*/
     }
 }

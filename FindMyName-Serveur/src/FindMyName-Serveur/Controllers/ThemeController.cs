@@ -13,7 +13,7 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class ThemeController : Controller
     {
-        // GET: api/Theme
+      /*  // GET: api/Theme
         [HttpGet]
         public IEnumerable<Theme> Get()
         {
@@ -55,5 +55,6 @@ namespace FindMyName_Serveur.Controllers
         {
             return ThemeService.getId(n);
         }
+        */
     }
 }

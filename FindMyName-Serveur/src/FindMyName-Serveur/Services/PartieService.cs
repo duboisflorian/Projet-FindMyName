@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace FindMyName_Serveur.Services
 {
-    public static class PartieService
+    public class PartieService
     {
+        /*
         public static List<Partie> PARTIES { get; set; } = new List<Partie>
         {
             new Partie(1,2,6,"Yani","tingting",1,2,2, new List<Manche>
             {
-                new Manche(1,"PSG",10,20),
+                new Manche( new Theme() { text = "PSG", id = 1, photo = "./fichier/psg.jpg", done = false},10,20),
                 new Manche(2,"OL",15,7),
-                new Manche(1,"PSG",10,15)
+                new Manche(new Theme() { text = "PSG", id = 1, photo = "./fichier/psg.jpg", done = false},"PSG",10,15)
             }
             ),
            new Partie(2,6,3,"tingting","maxime",1,2,-1, new List<Manche>
             {
-                new Manche(1,"PSG",10,20),
+                new Manche(new Theme() { text = "PSG", id = 1, photo = "./fichier/psg.jpg", done = false},10,20),
                 new Manche(2,"OL",15,7),
                 new Manche(3,"REAL",10,15),
                 new Manche(4,"Barca",10,15)
@@ -27,7 +28,7 @@ namespace FindMyName_Serveur.Services
             ),
             new Partie(3,6,3,"tingting","maxime",3,2,-1, new List<Manche>
             {
-                new Manche(1,"PSG",10,20),
+                new Manche(new Theme() { text = "PSG", id = 1, photo = "./fichier/psg.jpg", done = false},10,20),
                 new Manche(2,"OL",15,7),
                 new Manche(3,"REAL",10,15),
                 new Manche(4,"Barca",20,15),
@@ -36,21 +37,21 @@ namespace FindMyName_Serveur.Services
             ),
             new Partie(4,6,4,"tingting","lionel",1,1,6, new List<Manche>
             {
-                new Manche(1,"PSG",10,20),
+                new Manche(new Theme() { text = "PSG", id = 1, photo = "./fichier/psg.jpg", done = false},10,20),
                 new Manche(2,"OL",15,7),
                 new Manche(3,"REAL",-1,10)
             }
             ),
              new Partie(5,6,1,"tingting","florian",1,2,1, new List<Manche>
             {
-                new Manche(1,"PSG",25,20),
+                new Manche(new Theme() { text = "PSG", id = 1, photo = "./fichier/psg.jpg", done = false},25,20),
                 new Manche(2,"OL",4,7),
                 new Manche(3,"REAL",10,11)
             }
             ),
             new Partie(6,6,5,"tingting","diego",1,2,6, new List<Manche>
             {
-                new Manche(1,"PSG",10,20),
+                new Manche(new Theme() { text = "PSG", id = 1, photo = "./fichier/psg.jpg", done = false},10,20),
                 new Manche(2,"OL",15,7),
                 new Manche(3,"REAL",7,10)
             }
@@ -305,7 +306,7 @@ namespace FindMyName_Serveur.Services
             return false;
         }
 
-
+ */
     }
-
+   
 }

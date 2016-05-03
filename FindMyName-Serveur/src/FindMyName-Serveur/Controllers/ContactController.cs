@@ -15,7 +15,7 @@ namespace FindMyName_Serveur.Controllers
     public class ContactController : Controller
     {
 
-        // GET api/values/5
+      /*  // GET api/values/5
         [HttpGet("{id}")]
         public IEnumerable<ListeContact> Get(int id)
         {
@@ -63,6 +63,6 @@ namespace FindMyName_Serveur.Controllers
         {
            return ContactService.Jouer(u);
         }
-
+        */
     }
 }

@@ -8,7 +8,7 @@ namespace FindMyName_Serveur.Services
 {
     public class UtilisateurService
     {
-        public static List<Utilisateur> UTILISATEURS { get; set; } = new List<Utilisateur>
+        /*public static List<Utilisateur> UTILISATEURS { get; set; } = new List<Utilisateur>
         {
             new Utilisateur (1,"Florian","fichier/psg.jpg","Florian@gmail.com","1234","France",25),
             new Utilisateur (2,"Yani","fichier/logo.jpg","Yani@gmail.com","1234","France",25),
@@ -193,7 +193,7 @@ namespace FindMyName_Serveur.Services
 
             return "Vous avez changé de pays";
         }
-
+        */
     }
 
 }
