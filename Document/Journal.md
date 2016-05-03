@@ -415,3 +415,8 @@ Project : Find My Name v_3
 	- Entity paramétrage
 	- Entity Utilisateur et Theme
 	- Correction bug
+
+## Mardi 05/05
+
+- Lionel
+	- Aucun émulateur n'est détecté dans Visual Studio (Recherche)
