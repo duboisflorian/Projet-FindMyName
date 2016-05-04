@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("ENI","Pseudo : "+ strpseudo);
                 Log.i("ENI","MDP : "+ strmdp);
 
+                boolean flag = false;
+
                 result.moveToFirst();
                 while (!result.isAfterLast())
                 {
@@ -51,17 +53,20 @@ public class MainActivity extends AppCompatActivity {
 
                     if (strpseudo.equals(pseudodb) && strmdp.equals(mdpdb))
                     {
-                        Log.i("ENI","Connexion résusi");
+                        flag = true;
                     }
-                    else
-                    {
-                        Log.i("ENI","Echec de connexion");
-
-                    }
-
                     result.moveToNext();
                 }
 
+                if (flag == true)
+                {
+                    Log.i("ENI","Connexion résusi");
+                }
+                else
+                {
+                    Log.i("ENI","Echec de connexion");
+
+                }
             }
         });
 
