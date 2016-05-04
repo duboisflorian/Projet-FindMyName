@@ -36,7 +36,50 @@ public class data extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO themeol(reponse) VALUES ('Malbranque')");
         db.execSQL("INSERT INTO themeol(reponse) VALUES ('Diakhaby')");
         db.execSQL("INSERT INTO themeol(reponse) VALUES ('Comet')");
+        db.execSQL("INSERT INTO themeol(reponse) VALUES ('Tousart')");
+        db.execSQL("INSERT INTO themeol(reponse) VALUES ('Gonalon')");
+        db.execSQL("INSERT INTO themeol(reponse) VALUES ('Morel')");
+        db.execSQL("INSERT INTO themeol(reponse) VALUES ('Ferri')");
+        db.execSQL("INSERT INTO themeol(reponse) VALUES ('Mocio')");
+        db.execSQL("INSERT INTO themeol(reponse) VALUES ('Perrin')");
 
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+        db.execSQL("CREATE TABLE themepsg (id INTEGER PRIMARY KEY AUTOINCREMENT, reponse TEXT);");
+
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Cavani')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Ongenda')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Ibrahimovic')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Augustin')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Lavezzi')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Di Maria')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Trapp')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Silva')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Motta')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Sieigu')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Thiago')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Lucas')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Matuidi')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Pastore')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Douchez')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Verratti')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Maxwell')");
+        db.execSQL("INSERT INTO themepsg(reponse) VALUES ('David')");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
 
         db.execSQL("CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, pseudo TEXT, mdp TEXT, image TEXT, mail TEXT, pays TEXT, meilleurscore INT);");
 

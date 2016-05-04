@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -42,6 +43,8 @@ public class game extends AppCompatActivity {
 
                 Log.i("ENI","Reponse proposée " +strreponse);
 
+                boolean flag = false;
+
                 result.moveToFirst();
                 while (!result.isAfterLast())
                 {
@@ -50,12 +53,28 @@ public class game extends AppCompatActivity {
 
                     if(strreponse.equals(text))
                     {
-                        Toast toast = Toast.makeText(getApplicationContext(),"Bien jouer !",Toast.LENGTH_SHORT);
-                        toast.show();
+                       flag = true;
                     }
 
                     result.moveToNext();
                 }
+
+
+                if(flag == true)
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Bien jouer !",Toast.LENGTH_SHORT);
+                    toast.show();
+                    ImageView imageview = (ImageView) findViewById(R.id.imagevraifaux);
+                    imageview.setImageResource(R.drawable.vert);
+                }
+                else
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Mauvaise reponse !",Toast.LENGTH_SHORT);
+                    toast.show();
+                    ImageView imageview = (ImageView) findViewById(R.id.imagevraifaux);
+                    imageview.setImageResource(R.drawable.rouge);
+                }
+
             }
         });
 

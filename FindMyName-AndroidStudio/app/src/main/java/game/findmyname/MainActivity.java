@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (flag == true)
                 {
-                    Intent intent = new Intent(MainActivity.this,game.class);
+                    Intent intent = new Intent(MainActivity.this,choix_theme.class);
                     startActivity(intent);
                     Log.i("ENI","Connexion résusi");
                 }
