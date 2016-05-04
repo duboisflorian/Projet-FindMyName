@@ -423,5 +423,10 @@ Project : Find My Name v_3
 	
 ## Mercredi 04/05
 
--Lionel
+- Lionel
 	- Création d'un projet Android studio (provisoire)
+	
+## Jeudi 04/04
+
+- Lionel
+	- Mise en place de la page de connexion,base de données et début du traitement de la page de jeu (Android Studio)
