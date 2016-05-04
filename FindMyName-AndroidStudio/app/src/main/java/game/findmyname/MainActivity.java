@@ -1,14 +1,19 @@
 package game.findmyname;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.StringDef;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import data.findmyname.data;
 import java.util.Locale;
 
@@ -60,10 +65,14 @@ public class MainActivity extends AppCompatActivity {
 
                 if (flag == true)
                 {
+                    Intent intent = new Intent(MainActivity.this,game.class);
+                    startActivity(intent);
                     Log.i("ENI","Connexion résusi");
                 }
                 else
                 {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Echec de connexion",Toast.LENGTH_SHORT);
+                    toast.show();
                     Log.i("ENI","Echec de connexion");
 
                 }
