@@ -28,13 +28,13 @@ namespace FindMyName_Serveur.Models
             var u14 = new Utilisateur("Quamar", "fichier/logo.jpg", "est.ac.facilisis@Nullasemper.net", "1234", "France", 25);
             var u15 = new Utilisateur("Sandra", "fichier/logo.jpg", "accumsan.laoreet@gravida.edu", "1234", "France", 25);
 
-            u1.contact = new List<Contact> { new Contact(u6,"ami") };
-            u2.contact = new List<Contact> { new Contact(u6, "ami") };
-            u3.contact = new List<Contact> { new Contact(u6, "ami") };
-            u4.contact = new List<Contact> { new Contact(u6, "ami") };
-            u5.contact = new List<Contact> { new Contact(u6, "ami") };
-            u8.contact = new List<Contact> { new Contact(u6, "online") };
-            u6.contact = new List<Contact> { new Contact(u1, "ami"), new Contact(u2, "ami"), new Contact(u3, "ami"), new Contact(u4, "ami"), new Contact(u5, "ami"), new Contact(u8, "online") };
+            u1.contact = new List<Contact> { new Contact(u6,6,"ami") };
+            u2.contact = new List<Contact> { new Contact(u6,6,"ami") };
+            u3.contact = new List<Contact> { new Contact(u6,6, "ami") };
+            u4.contact = new List<Contact> { new Contact(u6,6, "ami") };
+            u5.contact = new List<Contact> { new Contact(u6,6, "ami") };
+            u8.contact = new List<Contact> { new Contact(u6,6, "online") };
+            u6.contact = new List<Contact> { new Contact(u1,1, "ami"), new Contact(u2,2, "ami"), new Contact(u3,3, "ami"), new Contact(u4,4, "ami"), new Contact(u5,5, "ami"), new Contact(u8,8, "online") };
 
             if (!context.Users.Any())
             {

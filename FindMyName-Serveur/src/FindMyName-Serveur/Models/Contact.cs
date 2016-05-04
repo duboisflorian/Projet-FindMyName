@@ -10,13 +10,14 @@ namespace FindMyName_Serveur.Models
     {
         public int id { get; set; }
         public string type { get; set; }
-
-        public Utilisateur u { get; set; }
+        public int id_contact { get; set; }
+        public virtual Utilisateur user { get; set; }
 
         public Contact() { }
 
-        public Contact(Utilisateur u,string type) {
-            this.u = u;
+        public Contact(Utilisateur user, int id_contact, string type) {
+            this.user = user;
+            this.id_contact = id_contact;
             this.type = type;
         }
 
