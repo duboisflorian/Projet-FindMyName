@@ -420,3 +420,8 @@ Project : Find My Name v_3
 
 - Lionel
 	- Aucun émulateur n'est détecté dans Visual Studio (Recherche)
+	
+## Mercredi 04/05
+
+-Lionel
+	- Création d'un projet Android studio (provisoire)
