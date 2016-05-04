@@ -430,7 +430,12 @@ namespace FindMyName_Serveur.Models
             var t9 = new Theme("BAYERN", "./fichier/bayern.jpg", false, new List<Reponse> { r233, r234, r235, r236, r237, r238, r239, r240, r241, r242, r243, r244, r245, r246, r247, r248, r249, r250, r251, r252, r253, r254, r255, r256, r257, r258, r259, r260, r261, r262, r263, r264 });
 
 
-            var P1 = new Partie(u2,u6, 1, 2, 2, new List<Manche>{new Manche( t1,10,20)});
+            var P1 = new Partie(u2,u6, 1, 2, 2, new List<Manche>{new Manche( t1,10,20), new Manche(t2, 15, 7), new Manche(t1, 10, 15) });
+            var P2 = new Partie(u6, u3, 1, 2, -1, new List<Manche> { new Manche(t1, 10, 20), new Manche(t2, 15, 7), new Manche(t3, 10, 15), new Manche(t4, 10, 15) });
+            var P3 = new Partie(u6, u3, 3, 2, -1, new List<Manche> { new Manche(t1, 10, 20), new Manche(t2, 15, 7), new Manche(t3, 10, 15), new Manche(t4, 20, 15), new Manche(t5, 20, 15) });
+            var P4 = new Partie(u6, u4, 1, 1, 6, new List<Manche> { new Manche(t1, 10, 20), new Manche(t2, 15, 7), new Manche(t3, -1, 10) });
+            var P5 = new Partie(u6, u1, 1, 2, 1, new List<Manche> { new Manche(t1, 25, 20), new Manche(t2, 4, 7), new Manche(t3, 10, 11) });
+            var P6 = new Partie(u6, u5, 1, 2, 6, new List<Manche> { new Manche(t1, 10, 20), new Manche(t2, 15, 7), new Manche(t3, 7, 10) });
 
             if (!context.Users.Any())
             {
@@ -438,7 +443,7 @@ namespace FindMyName_Serveur.Models
                     u1,u2,u3,u4,u5,u6,u7,u8,u9,u10,u11,u12,u13,u14,u15
                     );
                 context.parties.AddRange(
-                    P1
+                    P1, P2, P3, P4, P5, P6
                     );
                 context.Themes.AddRange(
                     t1, t2, t3, t4, t5, t6, t7, t8, t9
