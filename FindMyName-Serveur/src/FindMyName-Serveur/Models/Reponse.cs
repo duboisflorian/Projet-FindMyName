@@ -16,11 +16,10 @@ namespace FindMyName_Serveur.Models
 
         }
 
-        public Reponse(int id,bool done, List<Mot> appellation)
+        public Reponse(bool done, List<Mot> appellation)
         {
-            this.id = id;
             this.appellation = appellation;
-                this.done = done;
+            this.done = done;
         }
     }
 }

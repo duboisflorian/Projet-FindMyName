@@ -13,10 +13,9 @@ namespace FindMyName_Serveur.Models
         public Theme() {
         }
 
-        public Theme(string text,int id,string photo,bool done, List<Reponse> rep)
+        public Theme(string text,string photo,bool done, List<Reponse> rep)
         {
             this.text = text;
-            this.id = id;
             this.photo = photo;
             this.done = done;
             this.reponses = rep;

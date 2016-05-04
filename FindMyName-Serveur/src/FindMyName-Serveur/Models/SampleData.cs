@@ -36,12 +36,25 @@ namespace FindMyName_Serveur.Models
             u8.contact = new List<Contact> { new Contact(u6,6, "online") };
             u6.contact = new List<Contact> { new Contact(u1,1, "ami"), new Contact(u2,2, "ami"), new Contact(u3,3, "ami"), new Contact(u4,4, "ami"), new Contact(u5,5, "ami"), new Contact(u8,8, "online") };
 
+      
+            var r1 = new Reponse(false,new List<Mot> { new Mot("Zlatan"), new Mot("Ibrahimovic") });
+
+            var t1 = new Theme("PSG", "./fichier/psg.jpg", false,new List<Reponse> { r1 });
+
+
+            var P1 = new Partie(u2,u6, 1, 2, 2, new List<Manche>{new Manche( t1,10,20)});
+
             if (!context.Users.Any())
             {
                 context.Users.AddRange(
                     u1,u2,u3,u4,u5,u6,u7,u8,u9,u10,u11,u12,u13,u14,u15
                     );
-
+                context.parties.AddRange(
+                    P1
+                    );
+                context.Themes.AddRange(
+                    t1
+                    );
                 context.SaveChanges();
             }
 

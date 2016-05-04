@@ -10,9 +10,8 @@
 
         }
 
-        public Mot(int id,string text)
+        public Mot(string text)
         {
-            this.id = id;
             this.text = text;
         }
     }

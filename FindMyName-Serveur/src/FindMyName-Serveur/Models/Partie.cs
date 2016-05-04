@@ -17,9 +17,8 @@ namespace FindMyName_Serveur.Models
         public int player { get; set; }
         public virtual IList<Manche> manche { get; set; }
 
-        public Partie(int id_partie,Utilisateur j1,Utilisateur j2, int s1, int s2, int player, List<Manche> manche)
+        public Partie(Utilisateur j1,Utilisateur j2, int s1, int s2, int player, List<Manche> manche)
         {
-            this.id = id_partie;
             this.j1 = j1;
             this.j2 = j2;
             this.s1 = s1;
