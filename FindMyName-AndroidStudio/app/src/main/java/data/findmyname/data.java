@@ -19,12 +19,16 @@ public class data extends SQLiteOpenHelper{
 
     public void onCreate(SQLiteDatabase db)
     {
-        db.execSQL("CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, pseudo TEXT, mdp TEXT, image TEXT, mail TEXT, pays TEXT, meilleurscore TEXT);");
+        db.execSQL("CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, pseudo TEXT, mdp TEXT, image TEXT, mail TEXT, pays TEXT, meilleurscore INT);");
 
         Cursor result = db.rawQuery("SELECT * FROM user", null);
         int nbcol = result.getColumnCount();
 
         Log.i("ENI","Nombre de colonnes " + nbcol);
+
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Florian','1234','fichier/psg.jpg','Florian@gmail.com','France',25)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Yani','1234','fichier/psg.jpg','Yani@gmail.com','France',20)");
+
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
