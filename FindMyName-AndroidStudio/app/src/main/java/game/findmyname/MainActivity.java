@@ -82,4 +82,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void inscription(View v)
+    {
+        Intent intent = new Intent(MainActivity.this,inscription.class);
+        startActivity(intent);
+    }
 }

@@ -59,4 +59,15 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="S&apos;incrire"
+        android:id="@+id/textView5"
+        android:layout_alignBottom="@+id/btnCo"
+        android:layout_toLeftOf="@+id/mdp"
+        android:layout_toStartOf="@+id/mdp"
+        android:onClick="inscription" />
+
 </RelativeLayout>

@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".game"></activity>
         <activity android:name=".choix_theme"></activity>
+        <activity android:name=".inscription"></activity>
     </application>
 
 </manifest>
