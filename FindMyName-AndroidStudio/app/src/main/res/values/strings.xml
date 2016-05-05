@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">FindMyName</string>
+
+    <string name="pays_prompt">Choisissez un Pays</string>
+
+    <string-array name="pays_arrays">
+        <item>France</item>
+        <item>Royaume-Uni</item>
+        <item>Chine</item>
+        <item>Japon</item>
+        <item>Etats-Unis</item>
+        <item>Canada</item>
+    </string-array>
 </resources>
