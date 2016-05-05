@@ -66,6 +66,42 @@ public class data extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO themepsg(reponse) VALUES ('Maxwell')");
         db.execSQL("INSERT INTO themepsg(reponse) VALUES ('David')");
 
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+        db.execSQL("CREATE TABLE themearsenal (id INTEGER PRIMARY KEY AUTOINCREMENT, reponse TEXT);");
+
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Giroud')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Debuchy')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Ospina')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Gnabry')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Chambers')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Paulista')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Coquelin')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Welback')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Mertesacker')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Walcott')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Crowley')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Monreal')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Gibbs')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Flamini')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Koscielny')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Cazorla')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Jenkinson')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Wilshere')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('El Neny')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Arteta')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Bielik')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Campbell')");
+        db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Kamara')");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -80,6 +116,8 @@ public class data extends SQLiteOpenHelper{
 
 
         ///////////////////////////////////////////////////////////////////////////////////////////
+
+        db.execSQL("CREATE TABLE themebarca (id INTEGER PRIMARY KEY AUTOINCREMENT, reponse TEXT);");
 
         db.execSQL("CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, pseudo TEXT, mdp TEXT, image TEXT, mail TEXT, pays TEXT, meilleurscore INT);");
 

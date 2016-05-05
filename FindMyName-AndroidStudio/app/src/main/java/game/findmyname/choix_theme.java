@@ -27,6 +27,7 @@ public class choix_theme extends AppCompatActivity {
     public void togameol(View v)
     {
         Intent intent = new Intent(choix_theme.this,game.class);
+        intent.putExtra("Theme","themeol");
         startActivity(intent);
         Log.i("ENI","Redirection !");
     }
@@ -34,6 +35,7 @@ public class choix_theme extends AppCompatActivity {
     public void togamepsg(View v){
 
         Intent intent = new Intent(choix_theme.this,game.class);
+        intent.putExtra("Theme","themepsg");
         startActivity(intent);
         Log.i("ENI","Redirection !");
     }

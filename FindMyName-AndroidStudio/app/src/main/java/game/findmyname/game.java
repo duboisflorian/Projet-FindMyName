@@ -1,5 +1,6 @@
 package game.findmyname;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -25,11 +26,17 @@ public class game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
 
+        // Récup du mot dans l'activité précédente
+        Intent intent = getIntent();
+        String theme = intent.getStringExtra("Theme");
+
+        Log.i("ENI","mot récupéré : "+ theme);
+
         data databaseFilm = new data (getBaseContext(), "dbuser.db", null, 1);
         SQLiteDatabase db = databaseFilm.getReadableDatabase();
         db.setLocale(Locale.FRENCH);
 
-        final Cursor result = db.rawQuery("SELECT * FROM themeol",null);
+        final Cursor result = db.rawQuery("SELECT * FROM " + theme,null);
 
 
 
