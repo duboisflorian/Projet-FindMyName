@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 import data.findmyname.data;
@@ -72,7 +73,8 @@ public class game extends AppCompatActivity {
 
         final Cursor result = db.rawQuery("SELECT * FROM " + theme,null);
 
-
+        final ArrayList bonnesrep = new ArrayList();
+        bonnesrep.add("");
 
         Button btnValider = (Button) findViewById(R.id.btValider);
         btnValider.setOnClickListener(new Button.OnClickListener()
@@ -92,6 +94,8 @@ public class game extends AppCompatActivity {
                     String text= result.getString(1);
                     Log.i("ENI","Text : "+ text);
 
+                    // Similitude au niveau de la base de donnée
+
                     if(strreponse.equals(text))
                     {
                        flag = true;
@@ -100,20 +104,43 @@ public class game extends AppCompatActivity {
                     result.moveToNext();
                 }
 
+                // Si réponse == à une entrée dans la BDD
 
                 if(flag == true)
                 {
-                    Toast toast = Toast.makeText(getApplicationContext(),"Bien jouer !",Toast.LENGTH_SHORT);
-                    toast.show();
-                    ImageView imageview = (ImageView) findViewById(R.id.imagevraifaux);
-                    imageview.setImageResource(R.drawable.vert);
-                    joueur j = new joueur();
+                    // Booleen qui vérifie si la réponse n'a pas deja été saisie
+                    boolean bool = true;
 
-                    j.setNom(strreponse);
+                    for (int i = 0; i< bonnesrep.size();i++)
+                    {
+                        if(strreponse.equals(bonnesrep.get(i)))
+                        {
+                            bool = false;
+                        }
+                    }
 
-                    jadapter.add(j);
+                    if(bool == true)
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),"Bien jouer !",Toast.LENGTH_SHORT);
+                        toast.show();
+                        ImageView imageview = (ImageView) findViewById(R.id.imagevraifaux);
+                        imageview.setImageResource(R.drawable.vert);
+                        joueur j = new joueur();
 
-                    listview.setAdapter(jadapter);
+                        j.setNom(strreponse);
+
+                        jadapter.add(j);
+
+                        listview.setAdapter(jadapter);
+                    }
+                    else
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),"Vous avez deja saisi ce joueur",Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
+                    bonnesrep.add(strreponse);
+
                 }
                 else
                 {
