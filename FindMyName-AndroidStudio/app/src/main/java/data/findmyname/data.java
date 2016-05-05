@@ -95,29 +95,25 @@ public class data extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO themearsenal(reponse) VALUES ('Kamara')");
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         ///////////////////////////////////////////////////////////////////////////////////////////
 
         db.execSQL("CREATE TABLE themebarca (id INTEGER PRIMARY KEY AUTOINCREMENT, reponse TEXT);");
+
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Neymar')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Messi')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('El Haddadi')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Tello')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Suarez')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Ramirez')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Turan')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Rakitic')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Da Silva')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Dos Santos')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Ter Stegen')");
+        db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Martinez')");
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////
 
         db.execSQL("CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, pseudo TEXT, mdp TEXT, image TEXT, mail TEXT, pays TEXT, meilleurscore INT);");
 

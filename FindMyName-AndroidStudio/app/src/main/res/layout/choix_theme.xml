@@ -35,13 +35,18 @@
         android:gravity="center_horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView" />
+            android:layout_width="103dp"
+            android:layout_height="169dp"
+            android:id="@+id/arsenal"
+            android:src="@drawable/arsenal"
+            android:onClick="togamearsenal" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView2" />
+            android:layout_width="103dp"
+            android:layout_height="169dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/barca"
+            android:src="@drawable/barca"
+            android:onClick="togamebarca" />
     </LinearLayout>
 </LinearLayout>
