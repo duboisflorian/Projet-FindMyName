@@ -421,10 +421,18 @@ Project : Find My Name v_3
 - Lionel
 	- Aucun émulateur n'est détecté dans Visual Studio (Recherche)
 	
+- Florian
+	- Entity paramétrage
+	- Restructuration server
+	- Début bd et sample data
+	
 ## Mercredi 04/05
 
 - Lionel
 	- Création d'un projet Android studio (provisoire)
+
+- Florian
+	- PowerPoint
 	
 ## Jeudi 04/04
 
