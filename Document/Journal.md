@@ -438,3 +438,4 @@ Project : Find My Name v_3
 
 - Lionel
 	- Mise en place de la page de connexion,base de données et début du traitement de la page de jeu (Android Studio)
+	- Interface inscription, ajouts de theme
