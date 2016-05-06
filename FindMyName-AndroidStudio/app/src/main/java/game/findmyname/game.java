@@ -35,7 +35,7 @@ public class game extends AppCompatActivity {
         setContentView(R.layout.game);
 
         timer();
-        
+
         // Récup du mot dans l'activité précédente
         Intent intent = getIntent();
         String theme = intent.getStringExtra("Theme");
@@ -77,12 +77,33 @@ public class game extends AppCompatActivity {
 
         final Cursor result = db.rawQuery("SELECT * FROM " + theme,null);
 
+        // Compte le nombre total de résultat dans la BDD
+        int compteur = 0;
+
+        result.moveToFirst();
+        while (!result.isAfterLast())
+        {
+            compteur++;
+            result.moveToNext();
+        }
+
+        Log.i("ENI","Compteur : "+ compteur);
+
+        // Répertorie toutes les bones réponses
+
         final ArrayList bonnesrep = new ArrayList();
         bonnesrep.add("");
 
+        // var qui compte le nombre de bonne réponses
+
+
+
         Button btnValider = (Button) findViewById(R.id.btValider);
+        final int finalCompteur = compteur;
         btnValider.setOnClickListener(new Button.OnClickListener()
         {
+            int bonnerep = finalCompteur;
+
             public void onClick(View arg0)
             {
                 EditText reponse = (EditText) findViewById(R.id.reponse);
@@ -125,8 +146,7 @@ public class game extends AppCompatActivity {
 
                     if(bool == true)
                     {
-                        Toast toast = Toast.makeText(getApplicationContext(),"Bien jouer !",Toast.LENGTH_SHORT);
-                        toast.show();
+
                         ImageView imageview = (ImageView) findViewById(R.id.imagevraifaux);
                         imageview.setImageResource(R.drawable.vert);
                         joueur j = new joueur();
@@ -136,6 +156,11 @@ public class game extends AppCompatActivity {
                         jadapter.add(j);
 
                         listview.setAdapter(jadapter);
+
+                        bonnerep--;
+
+                        Toast toast = Toast.makeText(getApplicationContext(),"Bien jouer ! \n il vous reste "+ bonnerep +" réponses à trouver",Toast.LENGTH_LONG);
+                        toast.show();
                     }
                     else
                     {
@@ -166,7 +191,7 @@ public class game extends AppCompatActivity {
         final TextView chrono = (TextView) findViewById(R.id.timer);
         final Handler h = new Handler();
         m_handlerTask = new Runnable() {
-            int time = 30;
+            int time = 60;
 
             @Override
             public void run() {
