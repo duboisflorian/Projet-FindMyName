@@ -94,9 +94,6 @@ public class game extends AppCompatActivity {
         final ArrayList bonnesrep = new ArrayList();
         bonnesrep.add("");
 
-        // var qui compte le nombre de bonne réponses
-
-
 
         Button btnValider = (Button) findViewById(R.id.btValider);
         final int finalCompteur = compteur;
@@ -143,7 +140,7 @@ public class game extends AppCompatActivity {
                             bool = false;
                         }
                     }
-
+                    // Si la réponse n'a pas déja été saisie
                     if(bool == true)
                     {
 
@@ -157,20 +154,33 @@ public class game extends AppCompatActivity {
 
                         listview.setAdapter(jadapter);
 
+                        // Décrémentation du nombre de bonnes à trouver
                         bonnerep--;
 
-                        Toast toast = Toast.makeText(getApplicationContext(),"Bien jouer ! \n il vous reste "+ bonnerep +" réponses à trouver",Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(getApplicationContext(),"Il vous reste "+ bonnerep +" réponses à trouver",Toast.LENGTH_LONG);
                         toast.show();
+
+                        // Si toutes les réponses ont été trouvé
+                        if(bonnerep == 0)
+                        {
+                            Intent intent1 = new Intent(game.this,choix_theme.class);
+                            startActivity(intent1);
+
+                            Toast toast1 = Toast.makeText(getApplicationContext(),"Bien jouer ! \n Vous avez trouvé tous les joueurs !",Toast.LENGTH_LONG);
+                            toast1.show();
+                        }
                     }
+                    // Le joueur a déjà été saisi
                     else
                     {
                         Toast toast = Toast.makeText(getApplicationContext(),"Vous avez deja saisi ce joueur",Toast.LENGTH_SHORT);
                         toast.show();
                     }
-
+                    // ajout de la réponse dans le tableau
                     bonnesrep.add(strreponse);
 
                 }
+                // La réponse n'est pas dans la BDD
                 else
                 {
                     Toast toast = Toast.makeText(getApplicationContext(),"Mauvaise reponse !",Toast.LENGTH_SHORT);
@@ -178,6 +188,8 @@ public class game extends AppCompatActivity {
                     ImageView imageview = (ImageView) findViewById(R.id.imagevraifaux);
                     imageview.setImageResource(R.drawable.rouge);
                 }
+
+                reponse.setText("");
 
             }
         });
@@ -191,7 +203,7 @@ public class game extends AppCompatActivity {
         final TextView chrono = (TextView) findViewById(R.id.timer);
         final Handler h = new Handler();
         m_handlerTask = new Runnable() {
-            int time = 60;
+            int time = 120;
 
             @Override
             public void run() {
