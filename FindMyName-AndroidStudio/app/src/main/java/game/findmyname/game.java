@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -32,6 +34,8 @@ public class game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
 
+        timer();
+        
         // Récup du mot dans l'activité précédente
         Intent intent = getIntent();
         String theme = intent.getStringExtra("Theme");
@@ -152,6 +156,40 @@ public class game extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    Runnable m_handlerTask = null;
+
+    public void timer()
+    {
+        final TextView chrono = (TextView) findViewById(R.id.timer);
+        final Handler h = new Handler();
+        m_handlerTask = new Runnable() {
+            int time = 30;
+
+            @Override
+            public void run() {
+                // do stuff then
+                // can call h again after work!
+                time -= 1;
+                String strTime = Double.toString(time);
+                chrono.setText(strTime);
+                Log.d("TimerExample", "Going for... " + time);
+                h.postDelayed(m_handlerTask, 1000);
+
+                if(time == 0)
+                {
+                    Intent intent = new Intent(game.this,choix_theme.class);
+                    startActivity(intent);
+                    h.removeCallbacks(m_handlerTask);
+                }
+
+            }
+
+
+        };
+        m_handlerTask.run();
 
     }
 
