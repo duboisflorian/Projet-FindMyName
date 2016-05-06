@@ -17,6 +17,7 @@ namespace FindMyName_Serveur.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
+            //Ligne à changer pour chacun en fonction de son IDUSER
             options.UseSqlServer(@"Server = (localdb)\MSSQLLocalDB; Database = fmndb; Trusted_Connection = True; User=DESKTOP-VCQ4UME\yanio; Password= ; MultipleActiveResultSets=true;");
         }
     }

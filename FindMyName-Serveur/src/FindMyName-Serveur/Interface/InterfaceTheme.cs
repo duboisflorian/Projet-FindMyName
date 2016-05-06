@@ -9,7 +9,8 @@ namespace FindMyName_Serveur.Interface
     interface InterfaceTheme
     {
         List<Theme> getThemes();
-        void melanger();
+        List<Theme> ALL();
+        void melanger(List<Theme> themes);
         bool isvalid(int nombre, List<int> aleatoire);
         Theme getTheme(int id);
         String getName(int u);
