@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (flag == true)
                 {
-                    Intent intent = new Intent(MainActivity.this,choix_theme.class);
+                    Intent intent = new Intent(MainActivity.this,acceuil.class);
+                    intent.putExtra("pseudo",strpseudo);
                     startActivity(intent);
                     Log.i("ENI","Connexion résusi");
                 }

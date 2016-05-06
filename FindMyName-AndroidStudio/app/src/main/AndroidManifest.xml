@@ -18,6 +18,7 @@
         <activity android:name=".game"></activity>
         <activity android:name=".choix_theme"></activity>
         <activity android:name=".inscription"></activity>
+        <activity android:name=".acceuil"></activity>
 
     </application>
 
