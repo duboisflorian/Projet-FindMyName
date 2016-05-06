@@ -22,8 +22,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Profil"
             android:layout_marginLeft="120dp"
-            android:id="@+id/textView8"
-            android:onClick="gotoprofil" />
+            android:id="@+id/profil" />
 
     </LinearLayout>
 

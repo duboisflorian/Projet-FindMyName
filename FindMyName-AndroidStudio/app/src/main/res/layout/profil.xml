@@ -19,7 +19,7 @@
         <EditText
             android:layout_width="194dp"
             android:layout_height="wrap_content"
-            android:id="@+id/ModiPseudo"
+            android:id="@+id/ModifPseudo"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.32" />
 
@@ -41,7 +41,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText2"
+            android:id="@+id/ModifMDP"
             android:layout_weight="0.75" />
 
         <Button
