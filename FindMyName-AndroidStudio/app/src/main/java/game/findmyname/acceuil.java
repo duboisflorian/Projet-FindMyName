@@ -37,7 +37,7 @@ public class acceuil extends AppCompatActivity {
 
     public void gotoprofil(View v)
     {
-        Intent intent = new Intent();
+        Intent intent = new Intent(acceuil.this,profil.class);
         startActivity(intent);
     }
 }

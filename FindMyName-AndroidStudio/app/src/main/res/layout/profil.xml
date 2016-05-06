@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="103dp"
+        android:layout_height="110dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/logo"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="194dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ModiPseudo"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.32" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modifier"
+            android:id="@+id/btmodifpseudo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:layout_weight="0.75" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modifier"
+            android:id="@+id/btmodifmdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="214dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ModifMail"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.10" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accceuil"
+        android:id="@+id/btAcceuil"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
