@@ -66,39 +66,48 @@ public class inscription extends AppCompatActivity {
 
                 Log.i("ENI","Pays : "+strPays);
 
-                db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES('"+strpseudo+"','"+strmdp+"','logo.jpg','"+strmail+"','"+strPays+"',0)");
-
-                Cursor result = db.rawQuery("SELECT * FROM user",null);
-
-                result.moveToFirst();
-                while (!result.isAfterLast())
+                if(strmdp.equals(strconfmdp))
                 {
-                    String p = result.getString(1);
-                    Log.i("ENI","pseudo : "+ p);
+                    db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES('"+strpseudo+"','"+strmdp+"','logo.jpg','"+strmail+"','"+strPays+"',0)");
 
-                    String m = result.getString(2);
-                    Log.i("ENI","mdp : "+ m);
+                    Cursor result = db.rawQuery("SELECT * FROM user",null);
 
-                    String i = result.getString(3);
-                    Log.i("ENI","image : "+ i);
+                    result.moveToFirst();
+                    while (!result.isAfterLast())
+                    {
+                        String p = result.getString(1);
+                        Log.i("ENI","pseudo : "+ p);
 
-                    String mail = result.getString(4);
-                    Log.i("ENI","mail : "+ mail);
+                        String m = result.getString(2);
+                        Log.i("ENI","mdp : "+ m);
 
-                    String pa = result.getString(5);
-                    Log.i("ENI","pays : "+ pa);
+                        String i = result.getString(3);
+                        Log.i("ENI","image : "+ i);
 
-                    String meilScore = result.getString(6);
-                    Log.i("ENI","Meilleur Score : "+ meilScore);
+                        String mail = result.getString(4);
+                        Log.i("ENI","mail : "+ mail);
 
-                    result.moveToNext();
+                        String pa = result.getString(5);
+                        Log.i("ENI","pays : "+ pa);
+
+                        String meilScore = result.getString(6);
+                        Log.i("ENI","Meilleur Score : "+ meilScore);
+
+                        result.moveToNext();
+                    }
+
+                    Toast toast = Toast.makeText(getApplicationContext(),"Inscription réussi ",Toast.LENGTH_SHORT);
+                    toast.show();
+
+                    Intent intent = new Intent(inscription.this,MainActivity.class);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Les mots de passe ne sont pas identiques",Toast.LENGTH_SHORT);
+                    toast.show();
                 }
 
-                Toast toast = Toast.makeText(getApplicationContext(),"Inscription réussi ",Toast.LENGTH_SHORT);
-                toast.show();
-
-                Intent intent = new Intent(inscription.this,MainActivity.class);
-                startActivity(intent);
 
             }
         });
