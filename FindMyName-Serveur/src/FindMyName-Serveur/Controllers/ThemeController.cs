@@ -14,54 +14,48 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class ThemeController : Controller
     {
-        private ThemeInMemory t;
+        private ThemeInMemory t = new ThemeInMemory();
 
-        ThemeController()
+        // GET: api/Theme
+        [HttpGet]
+        public List<Theme> Get()
         {
-            this.t = new ThemeInMemory();
+            return t.ALL();
         }
-        /*  // GET: api/Theme
-          [HttpGet]
-          public IEnumerable<Theme> Get()
-          {
-              return ThemeService.ALL();
-          }
+        [HttpGet("getThemes")]
+        public IEnumerable<Theme> getThemes()
+        {
+            return t.getThemes();
+        }
 
-          [HttpGet("getThemes")]
-          public IEnumerable<Theme> getThemes()
-          {
-              return ThemeService.getThemes();
-          }
+        [HttpGet("melanger/{themes}")]
+        public void melanger(List<Theme> themes)
+        {
+            t.melanger(themes);
+        }
 
-          [HttpGet("melanger")]
-          public void melanger()
-          {
-              ThemeService.melanger();
-          }
+        [HttpGet("isvalid/{nombre}/{aleatoire}")]
+        public bool isvalid(int nombre, List<int> aleatoire)
+        {
+            return t.isvalid(nombre, aleatoire);
+        }
 
-          [HttpGet("isvalid/{nombre}/{aleatoire}")]
-          public bool isvalid(int nombre, List<int> aleatoire)
-          {
-              return ThemeService.isvalid(nombre, aleatoire);
-          }
+        [HttpGet("getTheme/{id}")]
+        public Theme getTheme(int id)
+        {
+            return t.getTheme(id);
+        }
 
-          [HttpGet("getTheme/{id}")]
-          public Theme getTheme(int id)
-          {
-              return ThemeService.getTheme(id);
-          }
+        [HttpGet("getName/{u}")]
+        public String getName(int u)
+        {
+            return t.getName(u);
+        }
 
-          [HttpGet("getName/{u}")]
-          public String getName(int u)
-          {
-              return ThemeService.getName(u);
-          }
-
-          [HttpGet("getId/{n}")]
-          public int getId(String n)
-          {
-              return ThemeService.getId(n);
-          }
-          */
+        [HttpGet("getId/{n}")]
+        public int getId(String n)
+        {
+            return t.getId(n);
+        }
     }
 }
