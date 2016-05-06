@@ -11,5 +11,13 @@ namespace FindMyName_Serveur.Models
         public DbSet<Utilisateur> Users { get; set; }
         public DbSet<Theme> Themes { get; set; }
         public DbSet<Partie> parties { get; set; }
+
+        public fmnContext()
+        : base() { }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseSqlServer(@"Server = (localdb)\MSSQLLocalDB; Database = fmndb; Trusted_Connection = True; User=DESKTOP-VCQ4UME\yanio; Password= ; MultipleActiveResultSets=true;");
+        }
     }
 }
