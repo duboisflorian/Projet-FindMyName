@@ -6,7 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -29,11 +32,11 @@ public class profil extends AppCompatActivity {
 
         // Convertion de l'id en Int
 
-        int id = Integer.parseInt(strid);
+        final int id = Integer.parseInt(strid);
 
-        EditText ModifPseudo = (EditText) findViewById(R.id.ModifMail);
+        final EditText ModifPseudo = (EditText) findViewById(R.id.ModifPseudo);
 
-        EditText ModifMdp = (EditText) findViewById(R.id.ModifMDP);
+        final EditText ModifMdp = (EditText) findViewById(R.id.ModifMDP);
 
         EditText ModifMail = (EditText) findViewById(R.id.ModifMail);
 
@@ -46,20 +49,58 @@ public class profil extends AppCompatActivity {
 
         result.moveToFirst();
 
+        String pseudodb="";
+        String mdpdb="";
+        String maildb="";
+
         while (!result.isAfterLast())
         {
-            String pseudodb = result.getString(1);
+            pseudodb = result.getString(1);
             Log.i("Profil","pseudo : " +pseudodb);
+            ModifPseudo.setText(pseudodb);
 
-            String mdpdb = result.getString(2);
+            mdpdb = result.getString(2);
             Log.i("Profil","mdp : " +mdpdb);
+            ModifMdp.setText(mdpdb);
 
 
-            String maildb = result.getString(4);
+            maildb = result.getString(4);
             Log.i("Profil","mail : " +maildb);
+            ModifMail.setText(maildb);
 
             result.moveToNext();
         }
+
+        // Boutton qui modifie le pseudo
+
+        Button btModifpseudo = (Button) findViewById(R.id.btmodifpseudo);
+        btModifpseudo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String newpseudo = ModifPseudo.getText().toString();
+                db.execSQL("UPDATE user SET pseudo ='"+ newpseudo +"' WHERE id="+id);
+
+                Toast toast = Toast.makeText(getApplicationContext(),"Profil mis à jour ",Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        // Boutton qui modifie le mdp
+
+        Button btModifmdp = (Button) findViewById(R.id.btmodifmdp);
+        btModifmdp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String newmdp = ModifMdp.getText().toString();
+                db.execSQL("UPDATE user SET mdp ='"+ newmdp +"' WHERE id="+id);
+
+                Toast toast = Toast.makeText(getApplicationContext(),"Profil mis à jour ",Toast.LENGTH_SHORT);
+                toast.show();
+
+            }
+        });
 
     }
 }
