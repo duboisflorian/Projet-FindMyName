@@ -7,8 +7,8 @@
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".logo_demarrage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +20,7 @@
         <activity android:name=".inscription"></activity>
         <activity android:name=".acceuil"></activity>
         <activity android:name=".profil"></activity>
+        <activity android:name=".MainActivity"></activity>
 
     </application>
 
