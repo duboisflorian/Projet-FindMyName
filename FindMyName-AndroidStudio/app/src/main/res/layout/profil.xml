@@ -81,11 +81,31 @@
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Meilleur Score : "
+            android:id="@+id/textView8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="00"
+            android:id="@+id/BestScore" />
+    </LinearLayout>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Accceuil"
-        android:id="@+id/btAcceuil"
+        android:text="Jouer"
+        android:id="@+id/btgame"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

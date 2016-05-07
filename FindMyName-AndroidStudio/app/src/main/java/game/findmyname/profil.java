@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -38,8 +39,21 @@ public class profil extends AppCompatActivity {
 
         final EditText ModifMdp = (EditText) findViewById(R.id.ModifMDP);
 
-        EditText ModifMail = (EditText) findViewById(R.id.ModifMail);
+        TextView tvMeilleurScore = (TextView) findViewById(R.id.BestScore);
 
+        EditText ModifMail = (EditText) findViewById(R.id.ModifMail);
+        // EditText Non Editable
+        ModifMail.setKeyListener(null);
+
+        Button btgame = (Button) findViewById(R.id.btgame);
+        btgame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent1 = new Intent(profil.this,choix_theme.class);
+                startActivity(intent1);
+            }
+        });
 
         data profildb = new data(getBaseContext(), "dbuser.db", null, 1);
         final SQLiteDatabase db = profildb.getWritableDatabase();
@@ -67,6 +81,11 @@ public class profil extends AppCompatActivity {
             maildb = result.getString(4);
             Log.i("Profil","mail : " +maildb);
             ModifMail.setText(maildb);
+
+            int meilleurScoredb = result.getInt(6);
+            Log.i("Profil","Meilleur Score : " +meilleurScoredb);
+            String strMeilleurScore = Integer.toString(meilleurScoredb);
+            tvMeilleurScore.setText(strMeilleurScore);
 
             result.moveToNext();
         }
