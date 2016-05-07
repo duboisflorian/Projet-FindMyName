@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +35,7 @@ public class profil extends AppCompatActivity {
 
         // Convertion de l'id en Int
 
-        final int id = Integer.parseInt(strid);
+        final int iddb = Integer.parseInt(strid);
 
         final EditText ModifPseudo = (EditText) findViewById(R.id.ModifPseudo);
 
@@ -44,6 +46,8 @@ public class profil extends AppCompatActivity {
         EditText ModifMail = (EditText) findViewById(R.id.ModifMail);
         // EditText Non Editable
         ModifMail.setKeyListener(null);
+
+        final Spinner spinnerPays = (Spinner) findViewById(R.id.spinnerPays);
 
         Button btgame = (Button) findViewById(R.id.btgame);
         btgame.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +63,7 @@ public class profil extends AppCompatActivity {
         final SQLiteDatabase db = profildb.getWritableDatabase();
         db.setLocale(Locale.FRENCH);
 
-        Cursor result = db.rawQuery("SELECT * FROM user where id="+id ,null);
+        Cursor result = db.rawQuery("SELECT * FROM user where id="+iddb ,null);
 
         result.moveToFirst();
 
@@ -82,6 +86,32 @@ public class profil extends AppCompatActivity {
             Log.i("Profil","mail : " +maildb);
             ModifMail.setText(maildb);
 
+            String Paysdb = result.getString(5);
+            Log.i("Profil","Pays : " +Paysdb);
+            //Var pour positionner sur le bon pays
+            int pos = 0;
+            if(Paysdb.equals("Royaume-Uni"))
+            {
+                pos = 1;
+            }
+            else if(Paysdb.equals("Chine"))
+            {
+                pos = 2;
+            }
+            else if(Paysdb.equals("Japon"))
+            {
+                pos = 3;
+            }
+            else if(Paysdb.equals("Etats-Unis"))
+            {
+                pos = 4;
+            }
+            else if(Paysdb.equals("Canada"))
+            {
+                pos = 5;
+            }
+            spinnerPays.setSelection(pos);
+
             int meilleurScoredb = result.getInt(6);
             Log.i("Profil","Meilleur Score : " +meilleurScoredb);
             String strMeilleurScore = Integer.toString(meilleurScoredb);
@@ -98,7 +128,7 @@ public class profil extends AppCompatActivity {
             public void onClick(View v) {
 
                 String newpseudo = ModifPseudo.getText().toString();
-                db.execSQL("UPDATE user SET pseudo ='"+ newpseudo +"' WHERE id="+id);
+                db.execSQL("UPDATE user SET pseudo ='"+ newpseudo +"' WHERE id="+iddb);
 
                 Toast toast = Toast.makeText(getApplicationContext(),"Profil mis à jour ",Toast.LENGTH_SHORT);
                 toast.show();
@@ -113,10 +143,26 @@ public class profil extends AppCompatActivity {
             public void onClick(View v) {
 
                 String newmdp = ModifMdp.getText().toString();
-                db.execSQL("UPDATE user SET mdp ='"+ newmdp +"' WHERE id="+id);
+                db.execSQL("UPDATE user SET mdp ='"+ newmdp +"' WHERE id="+iddb);
 
                 Toast toast = Toast.makeText(getApplicationContext(),"Profil mis à jour ",Toast.LENGTH_SHORT);
                 toast.show();
+
+            }
+        });
+
+
+        spinnerPays.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String strPays= spinnerPays.getSelectedItem().toString();
+                Log.i("Profil","pays séléctionner "+strPays);
+
+                db.execSQL("UPDATE user SET pays ='"+ strPays +"' WHERE id="+iddb);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
