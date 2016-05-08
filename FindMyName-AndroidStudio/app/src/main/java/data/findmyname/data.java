@@ -129,6 +129,12 @@ public class data extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Diego','1234','fichier/psg.jpg','Diego@gmail.com','France',20)");
         db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Tingting','1234','fichier/psg.jpg','Tingting@gmail.com','France',20)");
 
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+        db.execSQL("CREATE TABLE temp (id INTEGER, nbpoint INTEGER );");
+
+        db.execSQL("INSERT INTO temp(id,nbpoint) VALUES(0,0);");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

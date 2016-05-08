@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,21 +29,23 @@ import data.findmyname.joueuradapter;
 public class game extends AppCompatActivity {
 
     private joueuradapter jadapter;
+    Runnable m_handlerTask = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
 
-        timer();
-
         // Récup du mot dans l'activité précédente
         Intent intent = getIntent();
-        String theme = intent.getStringExtra("Theme");
-        String strid = intent.getStringExtra("id");
+        final String theme = intent.getStringExtra("Theme");
+        final String strid = intent.getStringExtra("id");
+        final int id = Integer.parseInt(strid);
         Log.i("game","id reçu "+strid);
 
         Log.i("ENI","mot récupéré : "+ theme);
+
+        timer(strid);
 
         // ListView
 
@@ -74,7 +77,7 @@ public class game extends AppCompatActivity {
         }
 
         data databaseFilm = new data (getBaseContext(), "dbuser.db", null, 1);
-        SQLiteDatabase db = databaseFilm.getReadableDatabase();
+        final SQLiteDatabase db = databaseFilm.getReadableDatabase();
         db.setLocale(Locale.FRENCH);
 
         final Cursor result = db.rawQuery("SELECT * FROM " + theme,null);
@@ -166,13 +169,38 @@ public class game extends AppCompatActivity {
                         // Si toutes les réponses ont été trouvé
                         if(bonnerep == 0)
                         {
-                            nbpoint = finalCompteur - bonnerep;
+
+
+                            // On vérifie si le core effectué est supérieur au score de la BDD
+                            Cursor result = db.rawQuery("SELECT * FROM user where id="+id,null);
+                            result.moveToFirst();
+                            int meilleurScore = result.getInt(6);
+
+                            Log.i("Game","Meilleur Score "+meilleurScore);
+
                             Intent intent1 = new Intent(game.this,choix_theme.class);
+                            intent1.putExtra("id",strid);
                             startActivity(intent1);
 
                             Toast toast1 = Toast.makeText(getApplicationContext(),"Bien jouer ! \n Vous avez trouvé tous les joueurs !",Toast.LENGTH_LONG);
                             toast1.show();
                         }
+
+                        //Calcule le nombre de point effectué durant la partie
+                        nbpoint = finalCompteur - bonnerep;
+
+                        data inscriptiondb = new data(getBaseContext(), "dbuser.db", null, 1);
+                        final SQLiteDatabase db = inscriptiondb.getWritableDatabase();
+                        db.setLocale(Locale.FRENCH);
+
+                        // Met a jour l a table pour le traitement dans le timer
+                        db.execSQL("UPDATE temp set nbpoint="+nbpoint +" WHERE id=0");
+
+                        Cursor result = db.rawQuery("SELECT * FROM temp",null);
+                        result.moveToFirst();
+
+                        int nbpointdb = result.getInt(1);
+                        Log.i("game","nombre de point dans la base de donnée "+nbpointdb);
                     }
                     // Le joueur a déjà été saisi
                     else
@@ -197,17 +225,16 @@ public class game extends AppCompatActivity {
 
             }
         });
-
     }
 
-    Runnable m_handlerTask = null;
+    final Handler h = new Handler();
 
-    public void timer()
+    public void timer(final String strid)
     {
         final TextView chrono = (TextView) findViewById(R.id.timer);
-        final Handler h = new Handler();
+
         m_handlerTask = new Runnable() {
-            int time = 120;
+            int time = 15;
 
             @Override
             public void run() {
@@ -221,7 +248,19 @@ public class game extends AppCompatActivity {
 
                 if(time == 0)
                 {
-                    Intent intent = new Intent(game.this,choix_theme.class);
+                    data databaseFilm = new data (getBaseContext(), "dbuser.db", null, 1);
+                    SQLiteDatabase db = databaseFilm.getReadableDatabase();
+                    db.setLocale(Locale.FRENCH);
+
+                    Cursor result = db.rawQuery("SELECT * FROM temp",null);
+                    result.moveToFirst();
+
+                    int nbpointdb = result.getInt(1);
+                    Log.i("game","nombre de point dans la base de donnée Timer : "+nbpointdb);
+
+                                        Intent intent = new Intent(game.this,choix_theme.class);
+                    Log.i("game","id envoyé "+strid);
+                    intent.putExtra("id",strid);
                     startActivity(intent);
                     h.removeCallbacks(m_handlerTask);
                 }
@@ -233,5 +272,7 @@ public class game extends AppCompatActivity {
         m_handlerTask.run();
 
     }
+
+
 
 }
