@@ -12,10 +12,16 @@ import android.widget.ImageView;
  */
 public class choix_theme extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choix_theme);
+        // Récup id
+        Intent intent = getIntent();
+        String strid = intent.getStringExtra("id");
+        Log.i("Choix_thème","id reçu "+strid);
 
         //ImageView ivol = (ImageView) findViewById(R.id.ol);
 
@@ -24,34 +30,52 @@ public class choix_theme extends AppCompatActivity {
 
     }
 
+
     public void togameol(View v)
     {
+        // Récup id
+        Intent intent2 = getIntent();
+        String strid = intent2.getStringExtra("id");
         Intent intent = new Intent(choix_theme.this,game.class);
         intent.putExtra("Theme","themeol");
+        intent.putExtra("id",strid);
         startActivity(intent);
         Log.i("ENI","Redirection !");
     }
 
     public void togamepsg(View v){
 
+        // Récup id
+        Intent intent2 = getIntent();
+        String strid = intent2.getStringExtra("id");
         Intent intent = new Intent(choix_theme.this,game.class);
         intent.putExtra("Theme","themepsg");
+        intent.putExtra("id",strid);
         startActivity(intent);
         Log.i("ENI","Redirection !");
     }
 
     public void togamearsenal(View v){
 
+        // Récup id
+        Intent intent2 = getIntent();
+        String strid = intent2.getStringExtra("id");
+        //Log.i("Choix thème","id envoyé "+strid);
         Intent intent = new Intent(choix_theme.this,game.class);
         intent.putExtra("Theme","themearsenal");
+        intent.putExtra("id",strid);
         startActivity(intent);
         Log.i("ENI","Redirection !");
     }
 
     public void togamebarca(View v){
 
+        // Récup id
+        Intent intent2 = getIntent();
+        String strid = intent2.getStringExtra("id");
         Intent intent = new Intent(choix_theme.this,game.class);
         intent.putExtra("Theme","themebarca");
+        intent.putExtra("id",strid);
         startActivity(intent);
         Log.i("ENI","Redirection !");
     }

@@ -29,8 +29,8 @@ public class profil extends AppCompatActivity {
         setContentView(R.layout.profil);
 
         // Récup de l'id de la page d'accueil
-        Intent intent = getIntent();
-        String strid = intent.getStringExtra("id");
+        final Intent intent = getIntent();
+        final String strid = intent.getStringExtra("id");
         Log.i("Profil" ,"id reçu : "+strid);
 
         // Convertion de l'id en Int
@@ -55,6 +55,7 @@ public class profil extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent1 = new Intent(profil.this,choix_theme.class);
+                intent1.putExtra("id",strid);
                 startActivity(intent1);
             }
         });

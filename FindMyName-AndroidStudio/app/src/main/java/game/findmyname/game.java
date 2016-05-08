@@ -39,6 +39,8 @@ public class game extends AppCompatActivity {
         // Récup du mot dans l'activité précédente
         Intent intent = getIntent();
         String theme = intent.getStringExtra("Theme");
+        String strid = intent.getStringExtra("id");
+        Log.i("game","id reçu "+strid);
 
         Log.i("ENI","mot récupéré : "+ theme);
 
@@ -100,6 +102,7 @@ public class game extends AppCompatActivity {
         btnValider.setOnClickListener(new Button.OnClickListener()
         {
             int bonnerep = finalCompteur;
+            int nbpoint = 0;
 
             public void onClick(View arg0)
             {
@@ -163,6 +166,7 @@ public class game extends AppCompatActivity {
                         // Si toutes les réponses ont été trouvé
                         if(bonnerep == 0)
                         {
+                            nbpoint = finalCompteur - bonnerep;
                             Intent intent1 = new Intent(game.this,choix_theme.class);
                             startActivity(intent1);
 

@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                     String strid = Integer.toString(id);
 
                     Intent intent = new Intent(MainActivity.this,acceuil.class);
-                    intent.putExtra("pseudo",strpseudo);
                     intent.putExtra("id",strid);
                     startActivity(intent);
                     Log.i("ENI","Connexion résusi");
