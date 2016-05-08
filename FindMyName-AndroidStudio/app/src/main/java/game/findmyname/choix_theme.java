@@ -79,5 +79,17 @@ public class choix_theme extends AppCompatActivity {
         startActivity(intent);
         Log.i("ENI","Redirection !");
     }
+
+    public void togamevoiture(View v)
+    {
+        // Récup id
+        Intent intent2 = getIntent();
+        String strid = intent2.getStringExtra("id");
+        Intent intent = new Intent(choix_theme.this,game.class);
+        intent.putExtra("Theme","themevoiture");
+        intent.putExtra("id",strid);
+        startActivity(intent);
+        Log.i("ENI","Redirection !");
+    }
 }
 

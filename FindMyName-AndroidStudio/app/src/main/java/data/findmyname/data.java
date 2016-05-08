@@ -115,6 +115,32 @@ public class data extends SQLiteOpenHelper{
 
         ///////////////////////////////////////////////////////////////////////////////////////////
 
+        db.execSQL("CREATE TABLE themevoiture (id INTEGER PRIMARY KEY AUTOINCREMENT, reponse TEXT);");
+
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Citroen')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Renault')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Opel')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Dacia')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Audi')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Honda')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('BMW')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Mercedes')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Porshe')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Nissan')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Subaru')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Susuki')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Toyota')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Mazda')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Land Rover')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Hummer')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Acura')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Hyundai')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Ford')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Pontiac')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Mitsubishi')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Jeep')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Kia')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Volvo')");
 
         //////////////////////////////////////////////////////////////////////////////////////////
 
