@@ -113,6 +113,9 @@ public class data extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Martinez')");
 
 
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+
         //////////////////////////////////////////////////////////////////////////////////////////
 
         db.execSQL("CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, pseudo TEXT, mdp TEXT, image TEXT, mail TEXT, pays TEXT, meilleurscore INT);");

@@ -49,12 +49,12 @@ public class profil extends AppCompatActivity {
 
         final Spinner spinnerPays = (Spinner) findViewById(R.id.spinnerPays);
 
-        Button btgame = (Button) findViewById(R.id.btgame);
-        btgame.setOnClickListener(new View.OnClickListener() {
+        Button btacceuil = (Button) findViewById(R.id.btgame);
+        btacceuil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent1 = new Intent(profil.this,choix_theme.class);
+                Intent intent1 = new Intent(profil.this,acceuil.class);
                 intent1.putExtra("id",strid);
                 startActivity(intent1);
             }

@@ -104,7 +104,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jouer"
+        android:text="Acceuil"
         android:id="@+id/btgame"
         android:layout_gravity="center_horizontal" />
 
