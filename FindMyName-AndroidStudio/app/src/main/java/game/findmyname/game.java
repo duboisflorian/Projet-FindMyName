@@ -107,8 +107,13 @@ public class game extends AppCompatActivity {
             int bonnerep = finalCompteur;
             int nbpoint = 0;
 
+
             public void onClick(View arg0)
             {
+                data inscriptiondb = new data(getBaseContext(), "dbuser.db", null, 1);
+                final SQLiteDatabase db = inscriptiondb.getWritableDatabase();
+                db.setLocale(Locale.FRENCH);
+
                 EditText reponse = (EditText) findViewById(R.id.reponse);
                 String strreponse = reponse.getText().toString();
 
@@ -170,13 +175,19 @@ public class game extends AppCompatActivity {
                         if(bonnerep == 0)
                         {
 
-
                             // On vérifie si le core effectué est supérieur au score de la BDD
                             Cursor result = db.rawQuery("SELECT * FROM user where id="+id,null);
                             result.moveToFirst();
                             int meilleurScore = result.getInt(6);
 
                             Log.i("Game","Meilleur Score "+meilleurScore);
+
+                            // Si le score de la partie est meilleur on met à jour la BDD
+
+                            if(finalCompteur>meilleurScore)
+                            {
+                                db.execSQL("UPDATE user set meilleurscore="+finalCompteur +" WHERE id="+id);
+                            }
 
                             Intent intent1 = new Intent(game.this,choix_theme.class);
                             intent1.putExtra("id",strid);
@@ -189,9 +200,6 @@ public class game extends AppCompatActivity {
                         //Calcule le nombre de point effectué durant la partie
                         nbpoint = finalCompteur - bonnerep;
 
-                        data inscriptiondb = new data(getBaseContext(), "dbuser.db", null, 1);
-                        final SQLiteDatabase db = inscriptiondb.getWritableDatabase();
-                        db.setLocale(Locale.FRENCH);
 
                         // Met a jour l a table pour le traitement dans le timer
                         db.execSQL("UPDATE temp set nbpoint="+nbpoint +" WHERE id=0");
@@ -248,8 +256,8 @@ public class game extends AppCompatActivity {
 
                 if(time == 0)
                 {
-                    data databaseFilm = new data (getBaseContext(), "dbuser.db", null, 1);
-                    SQLiteDatabase db = databaseFilm.getReadableDatabase();
+                    data inscriptiondb = new data(getBaseContext(), "dbuser.db", null, 1);
+                    final SQLiteDatabase db = inscriptiondb.getWritableDatabase();
                     db.setLocale(Locale.FRENCH);
 
                     Cursor result = db.rawQuery("SELECT * FROM temp",null);
@@ -258,7 +266,20 @@ public class game extends AppCompatActivity {
                     int nbpointdb = result.getInt(1);
                     Log.i("game","nombre de point dans la base de donnée Timer : "+nbpointdb);
 
-                                        Intent intent = new Intent(game.this,choix_theme.class);
+                    int id = Integer.parseInt(strid);
+
+                    Cursor result2 = db.rawQuery("SELECT * FROM user WHERE id="+id,null);
+                    result2.moveToFirst();
+
+                    int meileurScore = result2.getInt(6);
+
+                    // Comparaison du score de la partie avec le meilleur score de la BDD (si le score de la partie est meilleur, on le met à jour dans la BDD )
+                    if(nbpointdb>meileurScore)
+                    {
+                        db.execSQL("UPDATE user set meilleurscore="+nbpointdb +" WHERE id="+id);
+                    }
+
+                    Intent intent = new Intent(game.this,choix_theme.class);
                     Log.i("game","id envoyé "+strid);
                     intent.putExtra("id",strid);
                     startActivity(intent);
