@@ -62,6 +62,7 @@ public class acceuil extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(acceuil.this,choix_theme.class);
+                intent.putExtra("id",id);
                 startActivity(intent);
             }
         });
