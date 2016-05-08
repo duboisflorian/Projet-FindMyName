@@ -440,6 +440,9 @@ Project : Find My Name v_3
 	- Mise en place de la page de connexion,base de données et début du traitement de la page de jeu (Android Studio)
 	- Interface inscription, ajouts de theme
 
+- Florian
+	- PowerPoint
+
 ## Vendredi 06/04
 
 - Lionel 
@@ -447,10 +450,14 @@ Project : Find My Name v_3
 	
 ## Samedi 07/04
 
-	- Lionel 
-		- Requête pour mettre a jour le pseudo, le mot de passe et le pays
+- Lionel 
+	- Requête pour mettre a jour le pseudo, le mot de passe et le pays
 
 ## Dimanche 08/04
 
-	- Lionel
-		- Ajout du logo au démarrage de l'application + arrnagement de quelques bugs dans la page de profil
+- Lionel
+	- Ajout du logo au démarrage de l'application + arrnagement de quelques bugs dans la page de profil
+
+- Florian
+	- PowerPoint
+	- Affichage client
