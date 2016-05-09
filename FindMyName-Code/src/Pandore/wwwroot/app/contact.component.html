@@ -60,31 +60,30 @@
                     </li>
                 </ul>
 
-                <button *ngIf="partie_en_cours.player==u.id" (click)="gotoJouer(partie_en_cours)">Jouer</button>
+                <button *ngIf="partie_en_cours.player==u.id" style="margin-top: 8px;" type="button" class="btn btn-primary" (click)="gotoJouer(partie_en_cours)">Jouer</button>
                 <h2 *ngIf="partie_en_cours.player!=u.id">En attente</h2>
             </div>
             <div *ngIf="en_cours=='rien'">
-                <h1>{{u.name | uppercase}} VS {{selectedContact.name | uppercase}}</h1>
-                <h3>Victoire = {{victoire}}</h3>
-                <h3>Defaite = {{defaite}}</h3>
-                <h2>Histoirque des dernière parties contre {{selectedContact.name | uppercase}} </h2>
+                <h1>{{u.name}} VS {{selectedContact.name}}</h1>
+                <h3>Victoire = {{victoire}}</h3><h3>Defaite = {{defaite}}</h3>
+                <h2>Histoirque des dernière parties contre {{selectedContact.name}} </h2>
                 <ul class="nav">
                     <li *ngFor="#h of historique">
-                        <span>({{h.j1}}) {{h.s1}} - {{h.s2}} ({{h.j2}})</span> <button (click)="showDetails(h)">Détails</button>
+                        <span>({{h.j1}}) {{h.s1}} - {{h.s2}} ({{h.j2}})</span> <button style="margin-top: 8px;" type="button" class="btn btn-primary" (click)="showDetails(h)">Détails</button>
                     </li>
                 </ul>
-                <button (click)="gotoJouer()"> <span>Jouer</span></button>
+                <button (click)="gotoJouer()" style="margin-top: 8px;" type="button" class="btn btn-primary"> Jouer</button>
             </div>
         </div>
 
 
 
         <div class="info-user col-xs-4 col-sm-5 col-lg-7 col-md-7" *ngIf="!selectedContact && !selectedDetails">
-            <h2>Vos Parties</h2>
+            <h1>Vos Parties</h1>
             <ul class="nav">
                 <li *ngFor="#p of parties_en_cours">
                     <span *ngIf="p.player!=u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) En attente</span>
-                    <span *ngIf="p.player==u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) <button (click)="gotoJouer(p)">Jouer</button></span>
+                    <span *ngIf="p.player==u.id">({{p.j1}}) {{p.s1}} - {{p.s2}} ({{p.j2}}) <button style="margin-top: 8px;" type="button" class="btn btn-primary" (click)="gotoJouer(p)">Jouer</button></span>
                 </li>
             </ul>
         </div>
