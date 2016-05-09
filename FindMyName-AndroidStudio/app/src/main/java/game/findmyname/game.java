@@ -131,9 +131,9 @@ public class game extends AppCompatActivity {
                     String text= result.getString(1);
                     Log.i("ENI","Text : "+ text);
 
-                    // Similitude au niveau de la base de donnée
+                    // Similitude au niveau de la base de donnée // Mis en majuscules pour la comparaison
 
-                    if(strreponse.equals(text))
+                    if(strreponse.toUpperCase().equals(text.toUpperCase()))
                     {
                        flag = true;
                     }
