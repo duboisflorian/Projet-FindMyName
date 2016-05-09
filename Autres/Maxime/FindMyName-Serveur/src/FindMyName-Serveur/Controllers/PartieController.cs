@@ -41,14 +41,15 @@ namespace FindMyName_Serveur.Controllers
              else
                  return new ResViewModel("rien");
          }
-/*
+
          // GET: api/Partie/getPartieEnCours/{ID}/{ID_AMI}
          [HttpGet("getPartieEnCours/{id}/{id_ami}")]
          public Partie getPartieEnCours(int id, int id_ami)
          {
-             return PartieService.getPartieEnCours(id, id_ami);
+             return _partieService.getPartieEnCours(id, id_ami);
          }
 
+/*
          // GET: api/Partie/getHistorique/{ID}/{ID_AMI}
          [HttpGet("getHistorique/{id}/{id_ami}")]
          public IEnumerable<Partie> getHistorique(int id, int id_ami)
