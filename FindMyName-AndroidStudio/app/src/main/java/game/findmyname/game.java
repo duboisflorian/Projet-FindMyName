@@ -75,6 +75,10 @@ public class game extends AppCompatActivity {
         {
             ivtheme.setImageResource(R.drawable.barca);
         }
+        else if (theme.equals("themevoiture"))
+        {
+            ivtheme.setImageResource(R.drawable.marquevoiture);
+        }
 
         data databaseFilm = new data (getBaseContext(), "dbuser.db", null, 1);
         final SQLiteDatabase db = databaseFilm.getReadableDatabase();
