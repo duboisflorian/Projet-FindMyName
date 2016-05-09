@@ -401,9 +401,9 @@ namespace FindMyName_Serveur.Models
 
                 //context.Themes.AddRange(t1, t2, t3, t4, t5, t6, t7, t8, t9);
 
-                //context.parties.AddRange(
-                //    P1, P2, P3, P4, P5, P6
-                //    );
+                context.parties.AddRange(
+                   P1, P2, P3, P4, P5, P6
+                 );
 
                 //context.Reponses.AddRange(
                 //    r233, r234, r235, r236, r237, r238

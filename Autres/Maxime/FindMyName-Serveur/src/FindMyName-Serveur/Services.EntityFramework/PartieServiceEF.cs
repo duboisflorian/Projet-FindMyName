@@ -4,11 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FindMyName_Serveur.Models;
+using Microsoft.AspNet.Mvc;
+using FindMyName_Serveur.Controllers;
+using Microsoft.Extensions.Logging;
+using Microsoft.Data.Entity;
 
 namespace FindMyName_Serveur.Services.EntityFramework
 {
     public class PartieServiceEF : IPartieService
     {
+        [FromServices]
+        public fmnContext context { get; set; }
+        [FromServices]
+        public ILogger<ValuesController> Logger { get; set; }
+
         public void AjouterPartie(int id, int id_ami, int th, int score, string j1, string j2)
         {
             throw new NotImplementedException();
@@ -49,9 +58,19 @@ namespace FindMyName_Serveur.Services.EntityFramework
             throw new NotImplementedException();
         }
 
-        public List<Partie> getPartieEnCours(int id)
+        public IEnumerable<Partie> getPartieEnCours(int id)
         {
-            throw new NotImplementedException();
+            context = new fmnContext();
+
+            IEnumerable <Partie> partie = context.parties
+                    .Include(p => p.Manches)
+                    .ThenInclude((Manche m) => m.theme)
+                    .Include(p => p.j1)
+                    .Include(p=> p.j2)
+                    .Where(p => (p.j1.id == id || p.j2.id == id))
+                    .ToList();
+
+            return partie;
         }
 
         public Partie getPartieEnCours(int id, int id_ami)

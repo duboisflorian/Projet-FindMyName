@@ -21,6 +21,6 @@ namespace FindMyName_Serveur.Interface
         int getNbV(int id);
         Boolean getEn_Cours(int id, int id_ami);
         int getnbParties(int id);
-        List<Partie> getPartieEnCours(int id);
+        IEnumerable<Partie> getPartieEnCours(int id);
     }
 }

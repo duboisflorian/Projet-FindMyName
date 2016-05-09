@@ -6,6 +6,7 @@ using Microsoft.AspNet.Mvc;
 using FindMyName_Serveur.Services;
 using FindMyName_Serveur.Models;
 using FindMyName_Serveur.Services.EntityFramework;
+using FindMyName_Serveur.Interface;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,26 +15,23 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class PartieController : Controller
     {
-        //private PartieInMemory p ;
+        private IPartieService _partieService = new PartieServiceEF();
 
-        PartieController()
+
+        public PartieController()
         {
-            //this.p = new PartieInMemory();
+            _partieService = new PartieServiceEF();
         }
-        /* // GET: api/Partie
-         [HttpGet]
-         public IEnumerable<Partie> Get()
-         {
-             return PartieService.PARTIES;
-         }
 
-         // GET: api/Partie/getPartieEnCours/{ID}
-         [HttpGet("getPartieEnCours/{id}")]
+
+        // GET: api/Partie/getPartieEnCours/{ID}
+        [HttpGet("getPartieEnCours/{id}")]
          public IEnumerable<Partie> getPartieEnCours(int id)
          {
-            return PartieService.getPartieEnCours(id);
+            return _partieService.getPartieEnCours(id);
          }
 
+        /*
          // GET: api/Partie/getEn_Cours/{ID}/{ID_AMI}
          [HttpGet("getEn_Cours/{id}/{id_ami}")]
          public Res getEn_Cours(int id, int id_ami)
