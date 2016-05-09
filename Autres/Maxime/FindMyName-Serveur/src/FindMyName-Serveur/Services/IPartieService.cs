@@ -8,8 +8,7 @@ namespace FindMyName_Serveur.Interface
 {
     interface IPartieService
     {
-        int getNbVictoire(int id, int id_ami);
-        int getNbDefaite(int id, int id_ami);
+        int getNbPartie(int id, int id_ami, string etat);
         IEnumerable<Partie> getHistorique(int id, int id_ami);
         void savePartie(int id, int us, int th, int remaining);
         Boolean getPartieExiste(int id, int id_ami);
@@ -20,7 +19,6 @@ namespace FindMyName_Serveur.Interface
         int getNbD(int id);
         int getNbV(int id);
         Boolean getEn_Cours(int id, int id_ami);
-        int getnbParties(int id);
         IEnumerable<Partie> getPartieEnCours(int id);
     }
 }

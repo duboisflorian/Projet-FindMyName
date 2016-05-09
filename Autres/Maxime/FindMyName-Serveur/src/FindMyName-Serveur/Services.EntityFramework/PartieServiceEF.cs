@@ -62,25 +62,49 @@ namespace FindMyName_Serveur.Services.EntityFramework
             throw new NotImplementedException();
         }
 
-        public int getNbDefaite(int id, int id_ami)
+        public int getNbPartie(int id, int id_ami , string etat )
         {
-            throw new NotImplementedException();
+            context = new fmnContext();
+            int nombrePartie = 0;
+            switch (etat)
+            {
+                default:
+                    nombrePartie = 0;
+                    break;
+                case "all":
+                    nombrePartie = context.parties
+                           .Include(p => p.j1)
+                           .Include(p => p.j2)
+                           .Where(p => (p.j1.id == id ||p.j2.id == id))
+                           .Count();
+                    break;
+                case "victoire":
+                    nombrePartie = context.parties
+                         .Include(p => p.j1)
+                         .Include(p => p.j2)
+                         .Where(p => (p.j1.id == id || p.j2.id == id) && (p.j1.id == id_ami || p.j2.id == id_ami)
+                         && (((p.j1.id == id && p.s1 < p.s2) || (p.s1 > p.s2 && p.j2.id == id)) && p.player == -1))
+                         .Count();
+                    break;
+                case "defaite":
+                    nombrePartie = context.parties
+                         .Include(p => p.j1)
+                         .Include(p => p.j2)
+                         .Where(p => (p.j1.id == id || p.j2.id == id) && (p.j1.id == id_ami || p.j2.id == id_ami)
+                         && (((p.j1.id == id && p.s1 > p.s2) || (p.s1 < p.s2 && p.j2.id == id)) && p.player == -1))
+                         .Count();
+                    break;
+            }
+
+            return nombrePartie;
         }
 
-        public int getnbParties(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         public int getNbV(int id)
         {
             throw new NotImplementedException();
         }
 
-        public int getNbVictoire(int id, int id_ami)
-        {
-            throw new NotImplementedException();
-        }
 
         public IEnumerable<Partie> getPartieEnCours(int id)
         {

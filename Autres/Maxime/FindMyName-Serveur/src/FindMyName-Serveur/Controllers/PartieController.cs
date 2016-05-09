@@ -56,56 +56,59 @@ namespace FindMyName_Serveur.Controllers
          {
              return _partieService.getHistorique(id, id_ami);
          }
-/*
+
          // GET: api/Partie/getNbVictoire/{ID}/{ID_AMI}
          [HttpGet("getNbVictoire/{id}/{id_ami}")]
          public int getNbVictoire(int id, int id_ami)
          {
-             return PartieService.getNbVictoire(id, id_ami);
+             return _partieService.getNbPartie(id, id_ami,"victoire");
          }
 
          // GET: api/Partie/getNbDefaite/{ID}/{ID_AMI}
          [HttpGet("getNbDefaite/{id}/{id_ami}")]
          public int getNbDefaite(int id, int id_ami)
          {
-             return PartieService.getNbDefaite(id, id_ami);
+             return _partieService.getNbPartie(id, id_ami,"defaite");
          }
 
-         [HttpGet("savePartie/{id}/{us}/{th}/{remaining}")]
-         public Res savePartie(int id, int us, int th, int remaining)
-         {
-             PartieService.savePartie(id, us, th, remaining);
-             return new Res("gg");
-         }
+        // GET: api/Partie/getnbParties/{ID}/
+        [HttpGet("getnbParties/{id}")]
+        public int getnbParties(int id)
+        {
+            return _partieService.getNbPartie(id,0,"all");
+        }
 
-         // GET: api/Partie/getnbParties/{ID}/
-         [HttpGet("getnbParties/{id}")]
-         public int getnbParties(int id)
-         {
-             return PartieService.getnbParties(id);
-         }
+        /*
+                 [HttpGet("savePartie/{id}/{us}/{th}/{remaining}")]
+                 public Res savePartie(int id, int us, int th, int remaining)
+                 {
+                     PartieService.savePartie(id, us, th, remaining);
+                     return new Res("gg");
+                 }
 
 
-         // GET: api/Partie/getThemeFavori/{ID}/
-         [HttpGet("getThemeFavori/{id}")]
-         public Res getThemeFavori(int id)
-         {
-             return new Res (PartieService.getThemeFavori(id));
-         }
 
-         // GET: api/Partie/getNbD/{ID}/
-         [HttpGet("getNbD/{id}")]
-         public int getNbD(int id)
-         {
-             return PartieService.getNbD(id);
-         }
 
-         // GET: api/Partie/getNbV/{ID}/
-         [HttpGet("getNbV/{id}")]
-         public int getNbV(int id)
-         {
-             return PartieService.getNbV(id);
-         }
-         */
+                 // GET: api/Partie/getThemeFavori/{ID}/
+                 [HttpGet("getThemeFavori/{id}")]
+                 public Res getThemeFavori(int id)
+                 {
+                     return new Res (PartieService.getThemeFavori(id));
+                 }
+
+                 // GET: api/Partie/getNbD/{ID}/
+                 [HttpGet("getNbD/{id}")]
+                 public int getNbD(int id)
+                 {
+                     return PartieService.getNbD(id);
+                 }
+
+                 // GET: api/Partie/getNbV/{ID}/
+                 [HttpGet("getNbV/{id}")]
+                 public int getNbV(int id)
+                 {
+                     return PartieService.getNbV(id);
+                 }
+                 */
     }
 }
