@@ -25,7 +25,20 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public bool getEn_Cours(int id, int id_ami)
         {
-            throw new NotImplementedException();
+            bool resultat = false;
+
+            context = new fmnContext();
+
+            int nombrePartieEnCours = context.parties
+                    .Include(p => p.j1)
+                    .Include(p => p.j2)
+                    .Where(p => (p.j1.id == id || p.j2.id == id) && (p.j1.id == id_ami || p.j2.id == id_ami) && p.player != -1)
+                    .Count();
+
+            if (nombrePartieEnCours > 0)
+                resultat = true;
+
+            return resultat;
         }
 
         public IList<Partie> getHistorique(int id, int id_ami)
