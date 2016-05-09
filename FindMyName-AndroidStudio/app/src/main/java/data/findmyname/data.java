@@ -113,6 +113,35 @@ public class data extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO themebarca(reponse) VALUES ('Martinez')");
 
 
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+        db.execSQL("CREATE TABLE themevoiture (id INTEGER PRIMARY KEY AUTOINCREMENT, reponse TEXT);");
+
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Citroen')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Renault')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Opel')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Dacia')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Audi')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Honda')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('BMW')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Mercedes')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Porshe')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Nissan')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Subaru')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Susuki')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Toyota')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Mazda')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Land Rover')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Hummer')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Acura')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Hyundai')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Ford')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Pontiac')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Mitsubishi')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Jeep')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Kia')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Volvo')");
+
         //////////////////////////////////////////////////////////////////////////////////////////
 
         db.execSQL("CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, pseudo TEXT, mdp TEXT, image TEXT, mail TEXT, pays TEXT, meilleurscore INT);");
@@ -122,13 +151,19 @@ public class data extends SQLiteOpenHelper{
 
         Log.i("ENI","Nombre de colonnes " + nbcol);
 
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Florian','1234','fichier/psg.jpg','Florian@gmail.com','France',25)");
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Yani','1234','fichier/psg.jpg','Yani@gmail.com','France',20)");
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Maxime','1234','fichier/psg.jpg','Maxime@gmail.com','France',20)");
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Lionel','1234','fichier/psg.jpg','Lionel@gmail.com','France',20)");
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Diego','1234','fichier/psg.jpg','Diego@gmail.com','France',20)");
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Tingting','1234','fichier/psg.jpg','Tingting@gmail.com','France',20)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Florian','1234','fichier/psg.jpg','Florian@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Yani','1234','fichier/psg.jpg','Yani@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Maxime','1234','fichier/psg.jpg','Maxime@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Lionel','1234','fichier/psg.jpg','Lionel@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Diego','1234','fichier/psg.jpg','Diego@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Tingting','1234','fichier/psg.jpg','Tingting@gmail.com','France',0)");
 
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+        db.execSQL("CREATE TABLE temp (id INTEGER, nbpoint INTEGER );");
+
+        db.execSQL("INSERT INTO temp(id,nbpoint) VALUES(0,0);");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

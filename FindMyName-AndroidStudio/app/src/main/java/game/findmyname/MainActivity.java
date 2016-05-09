@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         Button btNew = (Button) findViewById(R.id.btnCo);
         btNew.setOnClickListener(new Button.OnClickListener()
         {
+            int id = 0;
+
             public void onClick(View arg0)
             {
                 EditText pseudo = (EditText) findViewById(R.id.Pseudo);
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 result.moveToFirst();
                 while (!result.isAfterLast())
                 {
+
                     String pseudodb = result.getString(1);
                     Log.i("ENI","pseudodb : "+ pseudodb);
 
@@ -58,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
                     if (strpseudo.equals(pseudodb) && strmdp.equals(mdpdb))
                     {
+                        // Id qui va servir a mettre à jour les données dans le profil
+                        id = result.getInt(0);
+                        Log.i("ENI","id : "+ id);
                         flag = true;
                     }
                     result.moveToNext();
@@ -65,7 +71,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if (flag == true)
                 {
-                    Intent intent = new Intent(MainActivity.this,choix_theme.class);
+                    // Convertion de l'id en String pour l'envoyé à la page d'acceuil (getStringExtra)
+
+                    String strid = Integer.toString(id);
+
+                    Intent intent = new Intent(MainActivity.this,acceuil.class);
+                    intent.putExtra("id",strid);
                     startActivity(intent);
                     Log.i("ENI","Connexion résusi");
                 }

@@ -31,7 +31,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="363dp"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal">
 
         <ImageView
@@ -48,5 +48,19 @@
             android:id="@+id/barca"
             android:src="@drawable/barca"
             android:onClick="togamebarca" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="103dp"
+            android:layout_height="169dp"
+            android:src="@drawable/marquevoiture"
+            android:id="@+id/imageView3"
+            android:onClick="togamevoiture" />
     </LinearLayout>
 </LinearLayout>

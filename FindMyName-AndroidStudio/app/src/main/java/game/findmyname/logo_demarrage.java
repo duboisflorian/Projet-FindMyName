@@ -5,21 +5,19 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.TextView;
 
 /**
- * Created by lucar_000 on 06/05/2016.
+ * Created by lucar_000 on 07/05/2016.
  */
-public class chrono extends AppCompatActivity {
+public class logo_demarrage extends AppCompatActivity {
 
     Runnable m_handlerTask = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.chrono);
+        setContentView(R.layout.logo_demarrage);
 
-        final TextView chrono = (TextView) findViewById(R.id.Chrono);
         final Handler h = new Handler();
         m_handlerTask = new Runnable() {
             int time = 5;
@@ -36,7 +34,7 @@ public class chrono extends AppCompatActivity {
 
                 if(time == 0)
                 {
-                    Intent intent = new Intent(chrono.this,MainActivity.class);
+                    Intent intent = new Intent(logo_demarrage.this,MainActivity.class);
                     startActivity(intent);
                     h.removeCallbacks(m_handlerTask);
                 }
