@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,32 @@ public class profil extends AppCompatActivity {
 
         final int iddb = Integer.parseInt(strid);
 
+        data profildb = new data(getBaseContext(), "dbuser.db", null, 1);
+        final SQLiteDatabase db = profildb.getWritableDatabase();
+        db.setLocale(Locale.FRENCH);
+
+        // Image de profil
+        ImageView imageProfil = (ImageView) findViewById(R.id.imageProfil);
+
+        // Spinner pour changer la photo de profil
+        final Spinner spinnerimage = (Spinner) findViewById(R.id.imageprofilspinner);
+        spinnerimage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String strImage= spinnerimage.getSelectedItem().toString();
+                Log.i("Profil","Image séléctionner "+strImage);
+
+                db.execSQL("UPDATE user SET image ='"+ strImage +"' WHERE id="+iddb);
+
+                // Requête pour mettre à jour l'image directement au changement du Spinner
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         final EditText ModifPseudo = (EditText) findViewById(R.id.ModifPseudo);
 
         final EditText ModifMdp = (EditText) findViewById(R.id.ModifMDP);
@@ -47,7 +74,10 @@ public class profil extends AppCompatActivity {
         // EditText Non Editable
         ModifMail.setKeyListener(null);
 
+
+        // Spinner des pays
         final Spinner spinnerPays = (Spinner) findViewById(R.id.spinnerPays);
+
 
         Button btacceuil = (Button) findViewById(R.id.btgame);
         btacceuil.setOnClickListener(new View.OnClickListener() {
@@ -60,9 +90,7 @@ public class profil extends AppCompatActivity {
             }
         });
 
-        data profildb = new data(getBaseContext(), "dbuser.db", null, 1);
-        final SQLiteDatabase db = profildb.getWritableDatabase();
-        db.setLocale(Locale.FRENCH);
+
 
         Cursor result = db.rawQuery("SELECT * FROM user where id="+iddb ,null);
 
@@ -74,6 +102,8 @@ public class profil extends AppCompatActivity {
 
         while (!result.isAfterLast())
         {
+
+
             pseudodb = result.getString(1);
             Log.i("Profil","pseudo : " +pseudodb);
             ModifPseudo.setText(pseudodb);
@@ -82,6 +112,41 @@ public class profil extends AppCompatActivity {
             Log.i("Profil","mdp : " +mdpdb);
             ModifMdp.setText(mdpdb);
 
+            String imagedb = result.getString(3);
+            Log.i("Profil","image "+imagedb);
+            int posimg = 0;
+            imageProfil.setImageResource(R.drawable.logo);
+
+            if(imagedb.equals("arsenal"))
+            {
+                posimg = 1;
+                imageProfil.setImageResource(R.drawable.arsenal);
+            }
+            else if(imagedb.equals("barca"))
+            {
+                posimg = 2;
+                imageProfil.setImageResource(R.drawable.barca);
+
+            }
+            else if(imagedb.equals("ol"))
+            {
+                posimg = 3;
+                imageProfil.setImageResource(R.drawable.ol);
+
+            }
+            else if(imagedb.equals("psg"))
+            {
+                posimg = 4;
+                imageProfil.setImageResource(R.drawable.psg);
+
+            }
+            else if(imagedb.equals("voiture"))
+            {
+                posimg = 5;
+                imageProfil.setImageResource(R.drawable.marquevoiture);
+
+            }
+            spinnerimage.setSelection(posimg);
 
             maildb = result.getString(4);
             Log.i("Profil","mail : " +maildb);
