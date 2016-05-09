@@ -49,14 +49,14 @@ namespace FindMyName_Serveur.Controllers
              return _partieService.getPartieEnCours(id, id_ami);
          }
 
-/*
+
          // GET: api/Partie/getHistorique/{ID}/{ID_AMI}
          [HttpGet("getHistorique/{id}/{id_ami}")]
          public IEnumerable<Partie> getHistorique(int id, int id_ami)
          {
-             return PartieService.getHistorique(id, id_ami);
+             return _partieService.getHistorique(id, id_ami);
          }
-
+/*
          // GET: api/Partie/getNbVictoire/{ID}/{ID_AMI}
          [HttpGet("getNbVictoire/{id}/{id_ami}")]
          public int getNbVictoire(int id, int id_ami)

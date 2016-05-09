@@ -10,7 +10,7 @@ namespace FindMyName_Serveur.Interface
     {
         int getNbVictoire(int id, int id_ami);
         int getNbDefaite(int id, int id_ami);
-        IList<Partie> getHistorique(int id, int id_ami);
+        IEnumerable<Partie> getHistorique(int id, int id_ami);
         void savePartie(int id, int us, int th, int remaining);
         Boolean getPartieExiste(int id, int id_ami);
         Partie getPartieEnCours(int id, int id_ami);

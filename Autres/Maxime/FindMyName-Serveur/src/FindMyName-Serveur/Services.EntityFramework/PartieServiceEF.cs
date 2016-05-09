@@ -41,9 +41,20 @@ namespace FindMyName_Serveur.Services.EntityFramework
             return resultat;
         }
 
-        public IList<Partie> getHistorique(int id, int id_ami)
+        public IEnumerable<Partie> getHistorique(int id, int id_ami)
         {
-            throw new NotImplementedException();
+            context = new fmnContext();
+
+            IEnumerable<Partie> historique = context.parties
+                    .Include(p => p.Manches)
+                    .ThenInclude((Manche m) => m.theme)
+                    .Include(p => p.j1)
+                    .Include(p => p.j2)
+                    .Where(p => (p.j1.id == id || p.j2.id == id) && (p.j1.id == id_ami || p.j2.id == id_ami))
+                    .ToList();
+
+            return historique;
+
         }
 
         public int getNbD(int id)
@@ -80,7 +91,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
                     .ThenInclude((Manche m) => m.theme)
                     .Include(p => p.j1)
                     .Include(p=> p.j2)
-                    .Where(p => (p.j1.id == id || p.j2.id == id))
+                    .Where(p => (p.j1.id == id || p.j2.id == id)) // && p.s1 < 3 && p.s2 < 3  pas compris à revoir sur le client
                     .ToList();
 
             return partie;
