@@ -11,4 +11,16 @@
         <item>Etats-Unis</item>
         <item>Canada</item>
     </string-array>
+
+
+    <string name="image_prompt">Choisissez un Pays</string>
+
+    <string-array name="image_arrays">
+        <item>logo</item>
+        <item>arsenal</item>
+        <item>barca</item>
+        <item>ol</item>
+        <item>psg</item>
+        <item>voiture</item>
+    </string-array>
 </resources>
