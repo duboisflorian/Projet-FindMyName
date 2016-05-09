@@ -51,7 +51,7 @@ namespace FindMyName_Serveur
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            loggerFactory.AddDebug(LogLevel.Verbose);
 
             app.UseCors("*");
 
@@ -62,6 +62,8 @@ namespace FindMyName_Serveur
             app.UseMvc();
 
             SampleData.Initialize(app.ApplicationServices);
+
+            
 
         }
 

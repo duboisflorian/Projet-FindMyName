@@ -5,20 +5,19 @@ using System.Threading.Tasks;
 
 namespace FindMyName_Serveur.Models
 {
-    public class Reponse
+    public class Reponse : BaseObject
     {
-        public int id { get; set; }
-        public virtual IList<Mot> appellation { get; set; }
+        public virtual IList<Mot> Appellations { get; private set; }
         public bool done { get; set; }
 
-        public Reponse()
+        public Reponse() : this(false, new List<Mot>())
         {
-
+            
         }
 
-        public Reponse(bool done, List<Mot> appellation)
+        public Reponse(bool done, List<Mot> appellations)
         {
-            this.appellation = appellation;
+            Appellations = new List<Mot>(appellations);
             this.done = done;
         }
     }

@@ -1,8 +1,7 @@
 ﻿namespace FindMyName_Serveur.Models
 {
-    public class Mot
+    public class Mot : BaseObject
     {
-        public int id { get; set; }
         public string text { get; set; }
         
         public Mot()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FindMyName_Serveur.Interface
 {
-    interface InterfaceUtilisateur
+    public interface IUtilisateurService
     {
         Utilisateur getUser(int id);
         Utilisateur Existe(int id);

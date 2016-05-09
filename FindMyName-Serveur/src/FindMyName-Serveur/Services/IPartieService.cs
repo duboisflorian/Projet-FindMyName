@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FindMyName_Serveur.Interface
 {
-    interface InterfacePartie
+    interface IPartieService
     {
         int getNbVictoire(int id, int id_ami);
         int getNbDefaite(int id, int id_ami);

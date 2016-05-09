@@ -6,7 +6,6 @@ using Microsoft.AspNet.Mvc;
 using FindMyName_Serveur.Services;
 using FindMyName_Serveur.ViewModels;
 using FindMyName_Serveur.Models;
-using FindMyName_Serveur.ServicesInMemory;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,11 +14,11 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class ContactController : Controller
     {
-        private UtilisateurInMemory u;
+        //private UtilisateurInMemory u;
 
         ContactController()
         {
-            this.u = new UtilisateurInMemory();
+            //this.u = new UtilisateurInMemory();
         }
         /*  // GET api/values/5
           [HttpGet("{id}")]

@@ -14,5 +14,12 @@
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <DnxInvisibleCompile Include="Services\ContactService.cs" />
+    <DnxInvisibleCompile Include="Services\PartieService.cs" />
+    <DnxInvisibleCompile Include="Services\ReponsesService.cs" />
+    <DnxInvisibleCompile Include="Services\ThemeService.cs" />
+    <DnxInvisibleCompile Include="Services\UtilisateurService.cs" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>

@@ -1,26 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using FindMyName_Serveur.Models;
+using System.Linq;
 
 namespace FindMyName_Serveur.Services
 {
     public class ThemeService
     {
-      /*  public static List<Theme> THEMES { get; set; } = new List<Theme>
-    {
-        { new Theme() { text = "PSG", id = 1, photo = "./fichier/psg.jpg", done = false}},
-        { new Theme() { text = "OL", id = 2, photo = "./fichier/ol.jpg", done = false}},
-        { new Theme() { text = "REAL", id = 3, photo = "./fichier/real.jpg", done = false}},
-        { new Theme() { text = "BARCA", id = 4, photo = "./fichier/barca.jpg", done = false}},
-        { new Theme() { text = "ARSENAL", id = 5, photo = "./fichier/arsenal.jpg", done = false}},
-        { new Theme() { text = "CITY", id = 6, photo = "./fichier/city.jpg", done = false}},
-        { new Theme() { text = "HEAT", id = 7, photo = "./fichier/heat.jpg", done = false}},
-        { new Theme() { text = "OM", id = 8, photo = "./fichier/om.jpg", done = false}},
-        { new Theme() { text = "BAYERN", id = 9, photo = "./fichier/bayern.jpg", done = false}}
-    };
-        public static List<Theme> t;
-        public static List<Theme> ALL() { return ThemeService.THEMES; }
-        public static List<Theme> getThemes()
+        /*public static List<Theme> ALL() {
+            fmnContext context = new fmnContext();
+                var requete = from theme in context.Themes
+                              select theme ;
+
+                // Execution de la requête
+                return requete.ToList();
+        }*/
+        /* public static List<Theme> getThemes()
         {
             ThemeService.t = new List<Theme> { };
             ThemeService.melanger();

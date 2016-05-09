@@ -6,9 +6,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 namespace FindMyName_Serveur.Models
 {
-    public class Contact
+    public class Contact : BaseObject
     {
-        public int id { get; set; }
         public string type { get; set; }
         public int id_contact { get; set; }
         public virtual Utilisateur user { get; set; }

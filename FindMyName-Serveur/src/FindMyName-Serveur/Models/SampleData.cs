@@ -28,151 +28,43 @@ namespace FindMyName_Serveur.Models
             var u14 = new Utilisateur("Quamar", "fichier/logo.jpg", "est.ac.facilisis@Nullasemper.net", "1234", "France", 25);
             var u15 = new Utilisateur("Sandra", "fichier/logo.jpg", "accumsan.laoreet@gravida.edu", "1234", "France", 25);
 
-            u1.contact = new List<Contact> { new Contact(u6, 6, "ami") };
-            u2.contact = new List<Contact> { new Contact(u6, 6, "ami") };
-            u3.contact = new List<Contact> { new Contact(u6, 6, "ami") };
-            u4.contact = new List<Contact> { new Contact(u6, 6, "ami") };
-            u5.contact = new List<Contact> { new Contact(u6, 6, "ami") };
-            u8.contact = new List<Contact> { new Contact(u6, 6, "online") };
-            u6.contact = new List<Contact> { new Contact(u1, 1, "ami"), new Contact(u2, 2, "ami"), new Contact(u3, 3, "ami"), new Contact(u4, 4, "ami"), new Contact(u5, 5, "ami"), new Contact(u8, 8, "online") };
+            u1.contacts = new List<Contact> { new Contact(u6, 6, "ami") };
+            u2.contacts = new List<Contact> { new Contact(u6, 6, "ami") };
+            u3.contacts = new List<Contact> { new Contact(u6, 6, "ami") };
+            u4.contacts = new List<Contact> { new Contact(u6, 6, "ami") };
+            u5.contacts = new List<Contact> { new Contact(u6, 6, "ami") };
+            u8.contacts = new List<Contact> { new Contact(u6, 6, "online") };
+            u6.contacts = new List<Contact> { new Contact(u1, 1, "ami"), new Contact(u2, 2, "ami"), new Contact(u3, 3, "ami"), new Contact(u4, 4, "ami"), new Contact(u5, 5, "ami"), new Contact(u8, 8, "online") };
 
 
             var r1 = new Reponse(false, new List<Mot> { new Mot("Zlatan"), new Mot("Ibrahimovic") });
-            var r2 = new Reponse()
-            {
-                appellation = new List<Mot> { new Mot("Zlatan"), new Mot("Ibrahimovic") },
-                done = false
-            };
-            var r3 = new Reponse()
-            {
-                appellation = new List<Mot> { new Mot("Lucas"), new Mot("Moura") },
-                done = false
-            };
-            var r4 = new Reponse()
-            {
-                appellation = new List<Mot> { new Mot("Douchez"), new Mot("Nicolas") },
-                done = false
-            };
-            var r5 = new Reponse()
-            {
-                appellation = new List<Mot> { new Mot("Sirigu"), new Mot("Salvatore")},
-                done = false
-            };
-            var r6 = new Reponse()
-            {
-                appellation = new List<Mot> { new Mot("Trapp"), new Mot("Kevin") },
-                done = false
-            };
-            var r7 = new Reponse()
-            {
-                appellation = new List<Mot> { new Mot("Aurier"), new Mot("Serge") },
-                done = false
-            };
-            var r8 = new Reponse()
-            {
-                appellation = new List<Mot> { new Mot("Luiz"), new Mot("David") },
-                done = false
-            };
-            var r9 = new Reponse()
-            {
-                appellation = new List<Mot> { new Mot("Kimpembe"), new Mot("Presnel") },
-                done = false
-            };
-            var r10 = new Reponse()
-            {
-                appellation = new List<Mot> { new Mot("Descamps"), new Mot("Remy") },
-                done = false
-            };
-            var r11 = new Reponse()
-            {
-                appellation = new List<Mot> { new Mot("Kurzawa"), new Mot("Layvin") },
-                done = false
-            };
-                var r12 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Marquinhos") },
-                    done = false
-                };
-                var r13 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Maxwell") },
-                    done = false
-                };
-                var r14 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Rimane"), new Mot("Kévin") },
-                    done = false
-                };
-                var r15 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Silva"), new Mot("Thiago") },
-                    done = false
-                };
-                var r16 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Van Der Wiel"), new Mot("Gregory"), new Mot("Wiel") },
-                    done = false
-                };
-                var r17 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Matuidi"), new Mot("Blaise"), new Mot("Blaisou"), new Mot("Charou") },
-                    done = false
-                };
-                var r18 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Meïte"), new Mot("Yakou") },
-                    done = false
-                };
-                var r19 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Motta"), new Mot("Thiago") },
-                    done = false
-                };
-                var r20 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Nkunku"), new Mot("Christophe") },
-                    done = false
-                };
-                var r21 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Pastore"), new Mot("Javier") },
-                    done = false
-                };
-                var r22 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Rabiot"), new Mot("Adrien") },
-                    done = false
-                };
-                var r23 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Stambouli"), new Mot("Benjamin") },
-                    done = false
-                };
-                var r24 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Verratti"), new Mot("Marco") },
-                    done = false
-                };
-                var r25 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Augustin"), new Mot("Jean-Kévi") },
-                    done = false
-                };
-                var r26 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Cavani"), new Mot("Edinson") },
-                    done = false
-                };
-                var r27 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Di Maria"), new Mot("Angel") },
-                    done = false
-                };
-                var r28 = new Reponse()
-                {
-                    appellation = new List<Mot> { new Mot("Ongenda"), new Mot("Hervin") },
-                    done = false
-                };
+            var r2 = new Reponse(false, new List<Mot> { new Mot("Zlatan"), new Mot("Ibrahimovic") });
+            var r3 = new Reponse(false, new List<Mot> { new Mot("Lucas"), new Mot("Moura") });
+            var r4 = new Reponse(false, new List<Mot> { new Mot("Douchez"), new Mot("Nicolas") });
+            var r5 = new Reponse(false, new List<Mot> { new Mot("Sirigu"), new Mot("Salvatore") });
+            var r6 = new Reponse(false, new List<Mot> { new Mot("Trapp"), new Mot("Kevin") });
+            var r7 = new Reponse(false, new List<Mot> { new Mot("Aurier"), new Mot("Serge") });
+            var r8 = new Reponse(false, new List<Mot> { new Mot("Luiz"), new Mot("David") });
+            var r9 = new Reponse(false, new List<Mot> { new Mot("Kimpembe"), new Mot("Presnel") });
+            var r10 = new Reponse(false, new List<Mot> { new Mot("Descamps"), new Mot("Remy") });
+            var r11 = new Reponse(false, new List<Mot> { new Mot("Kurzawa"), new Mot("Layvin") });
+            var r12 = new Reponse(false, new List<Mot> { new Mot("Marquinhos") });
+            var r13 = new Reponse(false, new List<Mot> { new Mot("Maxwell") });
+            var r14 = new Reponse(false, new List<Mot> { new Mot("Rimane"), new Mot("Kévin") });
+            var r15 = new Reponse(false, new List<Mot> { new Mot("Silva"), new Mot("Thiago") });
+            var r16 = new Reponse(false, new List<Mot> { new Mot("Van Der Wiel"), new Mot("Gregory"), new Mot("Wiel") });
+            var r17 = new Reponse(false, new List<Mot> { new Mot("Matuidi"), new Mot("Blaise"), new Mot("Blaisou"), new Mot("Charou") });
+            var r18 = new Reponse(false, new List<Mot> { new Mot("Meïte"), new Mot("Yakou") });
+            var r19 = new Reponse(false, new List<Mot> { new Mot("Motta"), new Mot("Thiago") });
+            var r20 = new Reponse(false, new List<Mot> { new Mot("Nkunku"), new Mot("Christophe") });
+            var r21 = new Reponse(false, new List<Mot> { new Mot("Pastore"), new Mot("Javier") });
+            var r22 = new Reponse(false, new List<Mot> { new Mot("Rabiot"), new Mot("Adrien") });
+            var r23 = new Reponse(false, new List<Mot> { new Mot("Stambouli"), new Mot("Benjamin") });
+            var r24 = new Reponse(false, new List<Mot> { new Mot("Verratti"), new Mot("Marco") });
+            var r25 = new Reponse(false, new List<Mot> { new Mot("Augustin"), new Mot("Jean-Kévi") });
+            var r26 = new Reponse(false, new List<Mot> { new Mot("Cavani"), new Mot("Edinson") });
+            var r27 = new Reponse(false, new List<Mot> { new Mot("Di Maria"), new Mot("Angel") });
+            var r28 = new Reponse(false, new List<Mot> { new Mot("Ongenda"), new Mot("Hervin") });
 
             var r29 = new Reponse(false, new List<Mot> { new Mot("Lacazette") });
             var r30 = new Reponse(false, new List<Mot> { new Mot("Gonalons") });
@@ -420,7 +312,7 @@ namespace FindMyName_Serveur.Models
             var r264 = new Reponse(false, new List<Mot> { new Mot("Weihrauch") });
 
             var t1 = new Theme("PSG", "./fichier/psg.jpg", false, new List<Reponse> { r1,r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28 });
-            var t2 = new Theme("OL", "./fichier/ol.jpg", false, new List<Reponse> { r28, r29, r30, r31, r32, r33, r34, r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55 });
+            var t2 = new Theme("OL", "./fichier/ol.jpg", false, new List<Reponse> { r29, r30, r31, r32, r33, r34, r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55 });
             var t3 = new Theme("REAL", "./fichier/real.jpg", false, new List<Reponse> { r56, r57, r58, r59, r60, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70, r71, r72, r73, r74, r75, r76, r77, r78, r79, r80, r81, r82, r83, r84, r85 });
             var t4 = new Theme("BARCA", "./fichier/barca.jpg", false, new List<Reponse> { r86, r87, r88, r89, r90, r91, r92, r93, r94, r95, r96, r97, r98, r99, r100, r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r113, r114 });
             var t5 = new Theme("ARSENAL", "./fichier/arsenal.jpg", false, new List<Reponse> { r115, r116, r117, r118, r119, r120, r121, r122, r123, r124, r125, r126, r127, r128, r129, r130, r131, r132, r133, r134, r135, r136, r137, r138, r139, r140, r141, r142, r143, r144, r145, r146, r147 });
@@ -437,17 +329,85 @@ namespace FindMyName_Serveur.Models
             var P5 = new Partie(u6, u1, 1, 2, 1, new List<Manche> { new Manche(t1, 25, 20), new Manche(t2, 4, 7), new Manche(t3, 10, 11) });
             var P6 = new Partie(u6, u5, 1, 2, 6, new List<Manche> { new Manche(t1, 10, 20), new Manche(t2, 15, 7), new Manche(t3, 7, 10) });
 
+            /*var t1 = new Theme("PSG", "./fichier/psg.jpg", false);
+            var t2 = new Theme("OL", "./fichier/ol.jpg", false);
+            var t3 = new Theme("REAL", "./fichier/real.jpg", false);
+            var t4 = new Theme("BARCA", "./fichier/barca.jpg", false);
+            var t5 = new Theme("ARSENAL", "./fichier/arsenal.jpg", false);
+            var t6 = new Theme("CITY", "./fichier/city.jpg", false);
+            var t7 = new Theme("HEAT", "./fichier/heat.jpg", false);
+            var t8 = new Theme("OM", "./fichier/om.jpg", false);
+            var t9 = new Theme("BAYERN", "./fichier/bayern.jpg", false);
+
+            var P1 = new Partie(u2, u6, 1, 2, 2, new List<Manche> { new Manche(t1, 10, 20), new Manche(t2, 15, 7), new Manche(t1, 10, 15) });
+            var P2 = new Partie(u6, u3, 1, 2, -1, new List<Manche> { new Manche(t1, 10, 20), new Manche(t2, 15, 7), new Manche(t3, 10, 15), new Manche(t4, 10, 15) });
+            var P3 = new Partie(u6, u3, 3, 2, -1, new List<Manche> { new Manche(t1, 10, 20), new Manche(t2, 15, 7), new Manche(t3, 10, 15), new Manche(t4, 20, 15), new Manche(t5, 20, 15) });
+            var P4 = new Partie(u6, u4, 1, 1, 6, new List<Manche> { new Manche(t1, 10, 20), new Manche(t2, 15, 7), new Manche(t3, -1, 10) });
+            var P5 = new Partie(u6, u1, 1, 2, 1, new List<Manche> { new Manche(t1, 25, 20), new Manche(t2, 4, 7), new Manche(t3, 10, 11) });
+            var P6 = new Partie(u6, u5, 1, 2, 6, new List<Manche> { new Manche(t1, 10, 20), new Manche(t2, 15, 7), new Manche(t3, 7, 10) });
+
+            var r233 = new Reponse(false, t9);
+            var r234 = new Reponse(false, t9);
+            var r235 = new Reponse(false, t9);
+            var r236 = new Reponse(false, t9);
+            var r237 = new Reponse(false, t9);
+
+            var r238 = new Reponse(false, t1);
+
+
+
+            var r1234 = new Mot("Lucic", r233);
+            var r1235 = new Mot("Neuer", r234);
+            var r1236 = new Mot("Ulreich", r235);
+            var r1237 = new Mot("Starke", r236);
+            var r1238 = new Mot("Alaba", r237);
+
+
+            var r1239 = new Mot("Zlatan", r238);
+            var r1240 = new Mot("Ibra", r238);*/
+
             if (!context.Users.Any())
             {
                 context.Users.AddRange(
                     u1,u2,u3,u4,u5,u6,u7,u8,u9,u10,u11,u12,u13,u14,u15
                     );
-                context.parties.AddRange(
-                    P1, P2, P3, P4, P5, P6
-                    );
-                context.Themes.AddRange(
-                    t1, t2, t3, t4, t5, t6, t7, t8, t9
-                    );
+
+                context.Themes.Add(t1);
+                context.SaveChanges();
+
+                context.Themes.Add(t2);
+                context.SaveChanges();
+
+                context.Themes.Add(t3);
+                context.SaveChanges();
+
+                context.Themes.Add(t4);
+                context.SaveChanges();
+
+                context.Themes.Add(t5);
+                context.SaveChanges();
+
+                context.Themes.Add(t6);
+                context.SaveChanges();
+
+                context.Themes.Add(t7);
+                context.SaveChanges();
+
+                context.Themes.Add(t8);
+                context.SaveChanges();
+
+                context.Themes.Add(t9);
+                context.SaveChanges();
+
+                //context.Themes.AddRange(t1, t2, t3, t4, t5, t6, t7, t8, t9);
+
+                //context.parties.AddRange(
+                //    P1, P2, P3, P4, P5, P6
+                //    );
+
+                //context.Reponses.AddRange(
+                //    r233, r234, r235, r236, r237, r238
+                //    );
                 context.SaveChanges();
             }
 

@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using FindMyName_Serveur.Services;
 using FindMyName_Serveur.Models;
-using FindMyName_Serveur.ServicesInMemory;
+using FindMyName_Serveur.Interface;
+using FindMyName_Serveur.Services.EntityFramework;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,48 +15,63 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class ThemeController : Controller
     {
-        private ThemeInMemory t = new ThemeInMemory();
+        private IThemeService _themeService = new ThemeServiceEF();
+
+        public ThemeController()
+        {
+            _themeService = new ThemeServiceEF();
+        }
+
+        //public ThemeController(IThemeService service)
+        //{
+        //    _themeService = service;
+        //}
 
         // GET: api/Theme
         [HttpGet]
         public List<Theme> Get()
         {
-            return t.ALL();
+            return _themeService.ALL();
+        }
+        [HttpGet("ALLREPONSE/{id}")]
+        public IEnumerable<Reponse> ALLREPONSE(int id)
+        {
+                return _themeService.getReponses(id);
         }
         [HttpGet("getThemes")]
         public IEnumerable<Theme> getThemes()
         {
-            return t.getThemes();
+            return _themeService.getThemes();
         }
 
         [HttpGet("melanger/{themes}")]
         public void melanger(List<Theme> themes)
         {
-            t.melanger(themes);
+            _themeService.melanger(themes);
         }
 
         [HttpGet("isvalid/{nombre}/{aleatoire}")]
         public bool isvalid(int nombre, List<int> aleatoire)
         {
-            return t.isvalid(nombre, aleatoire);
+            return _themeService.isvalid(nombre, aleatoire);
         }
 
         [HttpGet("getTheme/{id}")]
         public Theme getTheme(int id)
         {
-            return t.getTheme(id);
+            return _themeService.getTheme(id);
         }
 
         [HttpGet("getName/{u}")]
         public String getName(int u)
         {
-            return t.getName(u);
+            return _themeService.getName(u);
         }
 
         [HttpGet("getId/{n}")]
         public int getId(String n)
         {
-            return t.getId(n);
+            return _themeService.getId(n);
         }
     }
 }

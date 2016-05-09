@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace FindMyName_Serveur.Models
 {
-    public class Manche
+    public class Manche : BaseObject
     {
-        public int id { get; set; }
         public virtual Theme theme { get; set; }
         public int s1 { get; set; }
         public int s2 { get; set; }

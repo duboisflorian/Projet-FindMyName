@@ -2,23 +2,22 @@
 
 namespace FindMyName_Serveur.Models
 {
-    public class Theme
+    public class Theme : BaseObject
     {
         public string text { get; set; }
-        public int id { get; set; }
         public string photo { get; set; }
         public bool done { get; set; }
-        public virtual IList<Reponse> reponses { get; set; }
+        public virtual IList<Reponse> reponses { get; private set; }
 
         public Theme() {
         }
 
-        public Theme(string text,string photo,bool done, List<Reponse> rep)
+        public Theme(string text,string photo,bool done, IEnumerable<Reponse> rep)
         {
             this.text = text;
             this.photo = photo;
             this.done = done;
-            this.reponses = rep;
+            this.reponses = new List<Reponse>(rep);
         }
     }
 }

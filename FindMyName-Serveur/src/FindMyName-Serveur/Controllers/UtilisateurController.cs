@@ -6,7 +6,8 @@ using Microsoft.AspNet.Mvc;
 using FindMyName_Serveur.Services;
 using FindMyName_Serveur.ViewModels;
 using FindMyName_Serveur.Models;
-using FindMyName_Serveur.ServicesInMemory;
+using FindMyName_Serveur.Services.EntityFramework;
+using FindMyName_Serveur.Interface;
 
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
@@ -17,13 +18,13 @@ namespace FindMyName_Serveur.Controllers
     public class UtilisateurController : Controller
     {
 
-        private UtilisateurInMemory u;
+        private IUtilisateurService u = new UtilisateurServiceEF();
 
-        UtilisateurController()
+        [HttpGet]
+        public List<Utilisateur> Get()
         {
-            this.u = new UtilisateurInMemory();
+            return null;
         }
-
         /*   // GET: api/values
            [HttpGet]
            public IEnumerable<Utilisateur> Get()
