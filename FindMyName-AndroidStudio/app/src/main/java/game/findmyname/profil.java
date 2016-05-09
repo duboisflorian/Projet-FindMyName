@@ -43,7 +43,7 @@ public class profil extends AppCompatActivity {
         db.setLocale(Locale.FRENCH);
 
         // Image de profil
-        ImageView imageProfil = (ImageView) findViewById(R.id.imageProfil);
+        final ImageView imageProfil = (ImageView) findViewById(R.id.imageProfil);
 
         // Spinner pour changer la photo de profil
         final Spinner spinnerimage = (Spinner) findViewById(R.id.imageprofilspinner);
@@ -56,6 +56,41 @@ public class profil extends AppCompatActivity {
                 db.execSQL("UPDATE user SET image ='"+ strImage +"' WHERE id="+iddb);
 
                 // Requête pour mettre à jour l'image directement au changement du Spinner
+
+                Cursor result = db.rawQuery("SELECT * FROM user where id="+iddb ,null);
+
+                result.moveToFirst();
+
+                String imagedb = result.getString(3);
+
+                int posimg = 0;
+                imageProfil.setImageResource(R.drawable.logo);
+
+                if(imagedb.equals("arsenal"))
+                {
+                    posimg = 1;
+                    imageProfil.setImageResource(R.drawable.arsenal);
+                }
+                else if(imagedb.equals("barca"))
+                {
+                    posimg = 2;
+                    imageProfil.setImageResource(R.drawable.barca);
+                }
+                else if(imagedb.equals("ol"))
+                {
+                    posimg = 3;
+                    imageProfil.setImageResource(R.drawable.ol);
+                }
+                else if(imagedb.equals("psg"))
+                {
+                    posimg = 4;
+                    imageProfil.setImageResource(R.drawable.psg);
+                }
+                else if(imagedb.equals("voiture"))
+                {
+                    posimg = 5;
+                    imageProfil.setImageResource(R.drawable.marquevoiture);
+                }
             }
 
             @Override
@@ -78,7 +113,7 @@ public class profil extends AppCompatActivity {
         // Spinner des pays
         final Spinner spinnerPays = (Spinner) findViewById(R.id.spinnerPays);
 
-
+        // Bouton qui renvoir vers l'acceuil
         Button btacceuil = (Button) findViewById(R.id.btgame);
         btacceuil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +126,7 @@ public class profil extends AppCompatActivity {
         });
 
 
-
+        // Récupération des données pour les afficher sur le profil
         Cursor result = db.rawQuery("SELECT * FROM user where id="+iddb ,null);
 
         result.moveToFirst();
@@ -217,7 +252,7 @@ public class profil extends AppCompatActivity {
             }
         });
 
-
+        // Spinner qui modifie le mot de passe
         spinnerPays.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
