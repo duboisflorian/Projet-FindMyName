@@ -2,39 +2,39 @@
 
 ======
 ##Sommaire
-======
-[Intro](#Intro) 
-[Find My Name](#FNM) 
-[Gestion de Projet](#G) 
-[Nouvelles Technologies](#N) 
-[Fonctionnalités](#FC) 
-[Conclusion](#C) 
-[Annexe](#A) 
+
+####1. [Intro](#Intro) 
+####2. [Find My Name](#FNM) 
+####3. [Gestion de Projet](#G) 
+####4. [Nouvelles Technologies](#N) 
+####5. [Fonctionnalités](#FC) 
+####6. [Conclusion](#C) 
+####7. [Annexe](#A) 
 
 ======
-##Intro <a id="Intro"></a>
-======
+##1. Intro <a id="Intro"></a>
+
 
 ======
-##Find My Name <a id="FMN"></a>
-======
+##2. Find My Name <a id="FMN"></a>
+
 
 ======
-##Gestion de Projet <a id="G"></a>
-======
+##3. Gestion de Projet <a id="G"></a>
+
 
 ======
-##Nouvelles Technologies <a id="N"></a>
-======
+##4. Nouvelles Technologies <a id="N"></a>
+
 
 ======
-##Fonctionnalités <a id="FC"></a>
-======
+##5. Fonctionnalités <a id="FC"></a>
+
 
 ======
-##Conclusion <a id="C"></a>
-======
+##6. Conclusion <a id="C"></a>
+
 
 ======
-##Annexe <a id="A"></a>
+##7. Annexe <a id="A"></a>
 ======
