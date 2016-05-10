@@ -38,7 +38,31 @@ namespace FindMyName_Serveur.Services.EntityFramework
         }
         public string Add(int contactadd, int user, int u)
         {
-            throw new NotImplementedException();
+            if (Existe(contactadd) != null)
+            {
+                Contact t = getAmiExiste(contactadd, u);
+                if ((t.id != 0) || contactadd == u)
+                {
+                    return "cette personne est déjà dans tes amis";
+                }
+                else
+                {
+                    if (getOnlineExiste(user, u) == true)
+                    {
+                        addAmiOnline(user, u);
+                        return "Ajout reussit";
+                    }
+                    else
+                    {
+                        addAmi(user, u);
+                        return "Ajout reussit";
+                    }
+                }
+            }
+            else
+            {
+                return "cette personne n'existe pas";
+            }
         }
 
         public void addAmi(int user, int u)
