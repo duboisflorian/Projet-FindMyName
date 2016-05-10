@@ -44,8 +44,8 @@ namespace FindMyName_Serveur.Controllers
                           select new ContactViewModel()
                           {
                               id = c.id,
-                              name = c.name,
-                              photo = c.photo
+                              name = c.user.name,
+                              photo = c.user.photo
                           };
 
               return query.ToList();
