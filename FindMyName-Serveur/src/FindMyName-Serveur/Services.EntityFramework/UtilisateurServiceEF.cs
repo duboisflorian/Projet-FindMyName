@@ -50,12 +50,12 @@ namespace FindMyName_Serveur.Services.EntityFramework
                     if (getOnlineExiste(user, u) == true)
                     {
                         addAmiOnline(user, u);
-                        return "Ajout reussit";
+                        return "Ajout online";
                     }
                     else
                     {
                         addAmi(user, u);
-                        return "Ajout reussit";
+                        return "Ajout ami";
                     }
                 }
             }
@@ -69,25 +69,16 @@ namespace FindMyName_Serveur.Services.EntityFramework
         {
             IList<Contact> AllContact = new List<Contact> { };
             AllContact = ALLContact();
-            for (var i = 0; i < AllContact.Count; i++)
-            {
-                if (AllContact[i].id == u)
-                {
-                    AllContact[i].user.contacts.Add(new Contact(getUser(user), user, "ami"));
-                    context = new fmnContext();
 
-                    context.Contact.Update(AllContact[i]);
-                    context.SaveChanges();
-                }
-                if (AllContact[i].id == user)
-                {
-                    AllContact[i].user.contacts.Add(new Contact(getUser(u), u, "ami"));
-                    context = new fmnContext();
+            context = new fmnContext();
+            AllContact.Add(new Contact(getUser(user), u, "ami"));
+            context.Contact.Update(AllContact.Last());
+            context.SaveChanges();
 
-                    context.Contact.Update(AllContact[i]);
+            AllContact.Add(new Contact(getUser(u), user, "ami"));
+
+                    context.Contact.Update(AllContact.Last());
                     context.SaveChanges();
-                }
-            }
         }
 
         public void addAmiOnline(int user, int u)
@@ -96,17 +87,13 @@ namespace FindMyName_Serveur.Services.EntityFramework
             AllContact = ALLContact();
             for (var i = 0; i < AllContact.Count; i++)
             {
-                if (AllContact[i].id == u)
+                if ((AllContact[i].user.id == u && AllContact[i].id_contact == user)|| (AllContact[i].user.id == user && AllContact[i].id_contact == u))
                 {
-                    for (var n = 0; n < AllContact[i].user.contacts.Count; n++)
-                    {
-                        if (AllContact[i].user.contacts[n].id == user)
-                            AllContact[i].user.contacts[n].type = "ami";
+                        AllContact[i].type = "ami";
                         context = new fmnContext();
 
-                        context.Contact.Update(AllContact[i].user.contacts[n]);
+                        context.Contact.Update(AllContact[i]);
                         context.SaveChanges();
-                    }
                 }
             }
         }
@@ -115,29 +102,22 @@ namespace FindMyName_Serveur.Services.EntityFramework
         {
             IList<Contact> AllContact = new List<Contact> { };
             AllContact = ALLContact();
-            for (var i = 0; i < AllContact.Count; i++)
-            {
-                if (AllContact[i].id == u)
-                    AllContact[i].user.contacts.Add(new Contact(getUser(user), user, "online"));
-                context = new fmnContext();
 
-                context.Contact.Update(AllContact[i]);
-                context.SaveChanges();
-                if (AllContact[i].id == user)
-                {
-                    AllContact[i].user.contacts.Add(new Contact(getUser(user), user, "online"));
-                    context = new fmnContext();
+            context = new fmnContext();
+            AllContact.Add(new Contact(getUser(user), u, "online"));
+            context.Contact.Update(AllContact.Last());
+            context.SaveChanges();
 
-                    context.Contact.Update(AllContact[i]);
-                    context.SaveChanges();
-                }
-            }
+            AllContact.Add(new Contact(getUser(u), user, "online"));
+
+            context.Contact.Update(AllContact.Last());
+            context.SaveChanges();
         }
 
         public void ajouterUtilisateur(string name, string mail, string password)
         {
             context = new fmnContext();
-            var u1 = new Utilisateur(name, "", mail, password, "", 0);
+            var u1 = new Utilisateur(name, "fichier/logo.jpg", mail, password, "France", 0);
             creation(u1);
         }
 
@@ -199,7 +179,6 @@ namespace FindMyName_Serveur.Services.EntityFramework
         public void creation(Utilisateur u1)
         {
             context = new fmnContext();
-            u1.contacts = new List<Contact> { new Contact() };
             context.Users.Add(u1);
             context.SaveChanges();
         }
@@ -227,45 +206,31 @@ namespace FindMyName_Serveur.Services.EntityFramework
             AllContact = ALLContact();
             for (var i = 0; i < AllContact.Count; i++)
             {
-                if (AllContact[i].id == u)
+                if (AllContact[i].user.id == u)
                 {
-                    if (AllContact[i].user.contacts != null)
-                    {
-                        for (var n = 0; n < AllContact[i].user.contacts.Count; n++)
-                        {
-                            if (AllContact[i].user.contacts[n].id == id && AllContact[i].user.contacts[n].type == "ami")
-                                return AllContact[i].user.contacts[n];
-                        }
-                    }
-                }
+                   if (AllContact[i].id_contact == id && AllContact[i].type == "ami")
+                      return AllContact[i];
+                 }
             }
             return new Contact(); ;
         }
 
         public List<Contact> getContacts(int id, string type)
         {
-            throw new NotImplementedException();
-            //    List<Contact> c = new List<Contact>();
-            //    IList<Contact> AllContact = new List<Contact>();
-            //    AllContact = ALLContact();
-            //    for (var i = 0; i < ALLContact.Count; i++)
-            //    {
-            //        if (ALLContact[i].id == id)
-            //        {
-            //            if (ALLContact[i].user.contacts != null)
-            //            {
-            //                for (var n = 0; n < ALLContact[i].contact.Count; n++)
-            //                {
-            //                    if (ALLContact[i].contact[n].type == type)
-            //                    {
-            //                        c.Add(ALLContact[i].contact[n]);
-            //                    }
-            //                }
-            //            }
-            //        }
+            List<Contact> c = new List<Contact>();
+            IList<Contact> AllContact = new List<Contact>();
+            AllContact = ALLContact();
+            for (var i = 0; i < AllContact.Count; i++)
+            {
+                if (AllContact[i].id_contact == id && AllContact[i].type == type)
+                {
 
-            //    }
-            //    return c;
+                   c.Add(AllContact[i]);
+
+                }
+
+            }
+            return c;
         }
 
         public int getlastid()
@@ -296,18 +261,9 @@ namespace FindMyName_Serveur.Services.EntityFramework
             var nb = 0;
             for (var i = 0; i < AllContact.Count; i++)
             {
-                if (AllContact[i].id == u)
+                if (AllContact[i].user.id == u && AllContact[i].type == "ami")
                 {
-                    if (AllContact[i].user.contacts != null)
-                    {
-                        for (var g = 0; g < AllContact[i].user.contacts.Count; g++)
-                        {
-                            if (AllContact[i].user.contacts[g].type == "ami")
-                            {
-                                nb++;
-                            }
-                        }
-                    }
+                    nb++;
                 }
             }
             return nb;
@@ -319,16 +275,10 @@ namespace FindMyName_Serveur.Services.EntityFramework
             AllContact = ALLContact();
             for (var i = 0; i < AllContact.Count; i++)
             {
-                if (AllContact[i].id == u)
+                if (AllContact[i].user.id == u)
                 {
-                    if (AllContact[i].user.contacts != null)
-                    {
-                        for (var n = 0; n < AllContact[i].user.contacts.Count; n++)
-                        {
-                            if (AllContact[i].user.contacts[n].id == id && AllContact[i].user.contacts[n].type == "online")
-                                return true;
-                        }
-                    }
+                  if (AllContact[i].id_contact == id && AllContact[i].type == "online")
+                     return true;
                 }
             }
             return false;
@@ -419,6 +369,9 @@ namespace FindMyName_Serveur.Services.EntityFramework
                     {
                         AllUtilisateurs[i].password = password;
                         r = "le mot de passe a bien ete change !";
+                        context = new fmnContext();
+                        context.Users.Update(AllUtilisateurs[i]);
+                        context.SaveChanges();
                     }
 
                 }

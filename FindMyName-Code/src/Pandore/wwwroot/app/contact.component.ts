@@ -84,7 +84,7 @@ export class ContactComponent implements OnInit {
         this.UserD(us);
         this.selectedContact = null;
         this.type = 'ami';
-        this.sTimeout = setTimeout(() => this.getContacts(), 300);
+        this.sTimeout = setTimeout(() => this.getContacts(), 800);
     }
     0
     showDetails(h: Partie) {

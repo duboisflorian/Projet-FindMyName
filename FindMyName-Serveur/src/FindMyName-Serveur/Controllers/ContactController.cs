@@ -18,13 +18,8 @@ namespace FindMyName_Serveur.Controllers
     {
         private IUtilisateurService _utilisateurService = new UtilisateurServiceEF();
 
-        public ContactController()
-        {
-            _utilisateurService = new UtilisateurServiceEF();
-        }
-
         // GET api/values/5
-        [HttpGet("{id}")]
+        [HttpGet]
         public IList<Contact> Get(int id)
         {
             return _utilisateurService.ALLContact();
@@ -43,7 +38,7 @@ namespace FindMyName_Serveur.Controllers
             var query = from c in contacts
                         select new ContactViewModel()
                         {
-                            id = c.id,
+                            id = c.user.id,
                             name = c.user.name,
                             photo = c.user.photo
                         };

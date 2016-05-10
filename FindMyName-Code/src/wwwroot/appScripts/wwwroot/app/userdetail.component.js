@@ -35,7 +35,7 @@ var UserdetailComponent = (function () {
             .subscribe(function (data) { return _this.u2 = data; });
         this._pService.getnbParties(us).subscribe(function (data) { return _this.nbparties = data; });
         this._pService.getThemeFavori(us).subscribe(function (data) { return _this.theme_favori2 = data; });
-        this.sTimeout = setTimeout(function () { return _this.theme_favori = _this.theme_favori2.text; }, 900);
+        this.sTimeout = setTimeout(function () { return _this.theme_favori = _this.theme_favori2.text; }, 1400);
         this.selectPhoto = "fichier/logo.jpg";
         this._uService.getPhoto(us)
             .subscribe(function (data) { return _this.photo = data; });
@@ -56,10 +56,10 @@ var UserdetailComponent = (function () {
             else if (_this.selectPhoto == "fichier/ol.jpg") {
                 _this.selectPhoto = "ol";
             }
-        }, 800);
+        }, 1400);
         this._uService.getPays(us)
             .subscribe(function (data) { return _this.pays2 = data; });
-        this.sTimeout = setTimeout(function () { _this.selectPays = _this.pays2.text; }, 800);
+        this.sTimeout = setTimeout(function () { _this.selectPays = _this.pays2.text; }, 1400);
         this._cService.getNbContact(us)
             .subscribe(function (data) { return _this.nbAmi = data; });
         this._pService.getNbV(us).subscribe(function (data) { return _this.nbv = data; });

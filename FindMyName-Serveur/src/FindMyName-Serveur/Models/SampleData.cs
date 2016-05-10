@@ -16,7 +16,7 @@ namespace FindMyName_Serveur.Models
             var u2 = new Utilisateur("Yani", "fichier/logo.jpg", "Yani@gmail.com", "1234", "France", 25);
             var u3 = new Utilisateur("Maxime", "fichier/logo.jpg", "Maxime@gmail.com", "1234", "France", 25);
             var u4 = new Utilisateur("Lionel", "fichier/logo.jpg", "Lionel@gmail.com", "1234", "France", 25);
-            var u5 = new Utilisateur("Diego", "fichier / logo.jpg", "Diego@gmail.com", "1234", "France", 25);
+            var u5 = new Utilisateur("Diego", "fichier/logo.jpg", "Diego@gmail.com", "1234", "France", 25);
             var u6 = new Utilisateur("Tingting", "fichier/ol.jpg", "Tingting@gmail.com", "1234", "France", 25);
             var u7 = new Utilisateur("Marco", "fichier/logo.jpg", "Marco@gmail.com", "1234", "France", 25);
             var u8 = new Utilisateur("Luffy", "fichier/logo.jpg", "Luffy@gmail.com", "1234", "France", 25);
@@ -401,13 +401,13 @@ namespace FindMyName_Serveur.Models
 
                 //context.Themes.AddRange(t1, t2, t3, t4, t5, t6, t7, t8, t9);
 
-                //context.parties.AddRange(
-                //    P1, P2, P3, P4, P5, P6
-                //    );
+                context.parties.AddRange(
+                    P1, P2, P3, P4, P5, P6
+                    );
 
                 //context.Reponses.AddRange(
-                //    r233, r234, r235, r236, r237, r238
-                //    );
+                   // r233, r234, r235, r236, r237, r238
+                   // );
                 context.SaveChanges();
             }
 

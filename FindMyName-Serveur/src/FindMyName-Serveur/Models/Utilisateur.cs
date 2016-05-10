@@ -28,12 +28,12 @@ namespace FindMyName_Serveur.Models
         }
 
         public Utilisateur( string name, string photo, string mail, string password, string pays, int meilleurScore, List<Contact> contacts)
-            : this(0, name, photo, mail, password, password, meilleurScore, contacts)
+            : this(0, name, photo, mail, password, pays, meilleurScore, contacts)
         {
          
         }
         public Utilisateur(string name, string photo, string mail, string password, string pays, int meilleurScore)
-            :this(0, name, photo, mail, password, password, meilleurScore, new List<Contact>())
+            :this(0, name, photo, mail, password, pays, meilleurScore, new List<Contact>())
         {
 
         }

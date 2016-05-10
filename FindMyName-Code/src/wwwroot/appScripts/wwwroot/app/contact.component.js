@@ -61,7 +61,7 @@ var ContactComponent = (function () {
         this.UserD(us);
         this.selectedContact = null;
         this.type = 'ami';
-        this.sTimeout = setTimeout(function () { return _this.getContacts(); }, 300);
+        this.sTimeout = setTimeout(function () { return _this.getContacts(); }, 800);
     };
     ContactComponent.prototype.showDetails = function (h) {
         this.selectedContact = null;

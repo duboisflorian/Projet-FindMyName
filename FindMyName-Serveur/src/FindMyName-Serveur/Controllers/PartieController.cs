@@ -73,15 +73,30 @@ namespace FindMyName_Serveur.Controllers
          }
 
 
-         // GET: api/Partie/getHistorique/{ID}/{ID_AMI}
-         [HttpGet("getHistorique/{id}/{id_ami}")]
-         public IEnumerable<Partie> getHistorique(int id, int id_ami)
-         {
-             return _partieService.getHistorique(id, id_ami);
-         }
+        // GET: api/Partie/getHistorique/{ID}/{ID_AMI}
+        [HttpGet("getHistorique/{id}/{id_ami}")]
+        public IEnumerable<PartieViewModel> getHistorique(int id, int id_ami)
+        {
+            List<PartieViewModel> monhistoriques = new List<PartieViewModel>();
 
-         // GET: api/Partie/getNbVictoire/{ID}/{ID_AMI}
-         [HttpGet("getNbVictoire/{id}/{id_ami}")]
+            IEnumerable<Partie> ListePartieEnCours = _partieService.getHistorique(id, id_ami);
+
+            foreach (Partie partie in ListePartieEnCours)
+            {
+                List<MancheViewModel> mesmanches = new List<MancheViewModel>();
+                foreach (Manche manche in partie.Manches)
+                {
+                    mesmanches.Add(new MancheViewModel(manche.theme.id, manche.theme.text, manche.s1, manche.s2));
+                }
+                monhistoriques.Add(new PartieViewModel(partie.id, partie.j1.id, partie.j2.id, partie.j1.name, partie.j2.name, partie.s1, partie.s2, partie.player, mesmanches));
+            }
+
+            return monhistoriques;
+
+        }
+
+        // GET: api/Partie/getNbVictoire/{ID}/{ID_AMI}
+        [HttpGet("getNbVictoire/{id}/{id_ami}")]
          public int getNbVictoire(int id, int id_ami)
          {
              return _partieService.getNbPartie(id, id_ami,"victoireAvecAmi");

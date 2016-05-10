@@ -4,6 +4,7 @@ import { UtilisateurService } from './service/utilisateur.service';
 import { Utilisateur } from './classe/utilisateur';
 import { PartieService } from './service/partie.service';
 import { ContactService } from './service/contact.service';
+import {Res, ResID} from './classe/res';
 
 @Component({
     selector: 'my-userdetail',
@@ -21,12 +22,12 @@ export class UserdetailComponent implements OnInit {
     selectPays: string = "";
     nbparties: number;
     theme_favori: string = "";
-    theme_favori2: any;
+    theme_favori2: Res;
     nbAmi: number;
     nbv: number=0;
     nbd: number=0;
     pays = ['France','Allemagne','Chine','Japon','Etats-Unis','Royaume-Uni','Canada'];
-    photo: any;
+    photo: Res;
     pays2: any;
     Message: any;
     Message2: any;
@@ -50,7 +51,7 @@ export class UserdetailComponent implements OnInit {
 
         this._pService.getnbParties(us).subscribe(data => this.nbparties = data);
         this._pService.getThemeFavori(us).subscribe(data => this.theme_favori2 = data);
-        this.sTimeout = setTimeout(() => this.theme_favori = this.theme_favori2.text, 900);
+        this.sTimeout = setTimeout(() => this.theme_favori = this.theme_favori2.text, 1400);
         this.selectPhoto = "fichier/logo.jpg";
         this._uService.getPhoto(us)
             .subscribe(data => this.photo = data);
@@ -72,11 +73,11 @@ export class UserdetailComponent implements OnInit {
             }
             else if (this.selectPhoto == "fichier/ol.jpg") {
                 this.selectPhoto = "ol";
-            } }, 800);
+            } }, 1400);
 
         this._uService.getPays(us)
             .subscribe(data => this.pays2 = data);
-        this.sTimeout = setTimeout(() => { this.selectPays = this.pays2.text },800);
+        this.sTimeout = setTimeout(() => { this.selectPays = this.pays2.text },1400);
 
         this._cService.getNbContact(us)
             .subscribe(data => this.nbAmi = data);
