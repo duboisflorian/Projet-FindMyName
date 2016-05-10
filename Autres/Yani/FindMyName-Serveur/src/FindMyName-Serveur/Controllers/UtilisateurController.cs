@@ -17,13 +17,17 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class UtilisateurController : Controller
     {
+        private IUtilisateurService _utilisateurService = new UtilisateurServiceEF();
 
-        private IUtilisateurService u = new UtilisateurServiceEF();
+        public UtilisateurController()
+        {
+            _utilisateurService = new UtilisateurServiceEF();
+        }
 
         [HttpGet]
-        public List<Utilisateur> Get()
+        public IList<Utilisateur> Get()
         {
-            return null;
+            return _utilisateurService.ALL();
         }
         /*   // GET: api/values
            [HttpGet]
