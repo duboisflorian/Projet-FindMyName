@@ -12,9 +12,10 @@ namespace FindMyName_Serveur.Interface
         IEnumerable<Partie> getHistorique(int id, int id_ami);
         void savePartie(int id, int us, int th, int remaining);
         Partie getPartieEnCours(int id, int id_ami);
-        void AjouterPartie(int id, int id_ami, int th, int score, string j1, string j2);
+        void AjouterPartie(int id, int id_ami, int th, int score);
         void ModifierPartie(int id, int id_ami, int th, int score, int id_partie);
         string getThemeFavori(int id);
+        Boolean getPartieExiste(int id, int id_ami);
         Boolean getEn_Cours(int id, int id_ami);
         IEnumerable<Partie> getPartieEnCours(int id);
     }

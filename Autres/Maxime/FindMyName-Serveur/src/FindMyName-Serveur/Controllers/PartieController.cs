@@ -100,15 +100,14 @@ namespace FindMyName_Serveur.Controllers
             return new ResViewModel(_partieService.getThemeFavori(id));
         }
 
-        /*
-                 [HttpGet("savePartie/{id}/{us}/{th}/{remaining}")]
-                 public Res savePartie(int id, int us, int th, int remaining)
-                 {
-                     PartieService.savePartie(id, us, th, remaining);
-                     return new Res("gg");
-                 }
+        // GET: api/Partie/savePartie//{id}/{us}/{th}/{remaining}
+        [HttpGet("savePartie/{id}/{us}/{th}/{remaining}")]
+        public ResViewModel savePartie(int id, int us, int th, int remaining)
+        {
+            _partieService.savePartie(id, us, th, remaining);
+            return new ResViewModel("gg");
+        }
 
-        */
 
     }
 }

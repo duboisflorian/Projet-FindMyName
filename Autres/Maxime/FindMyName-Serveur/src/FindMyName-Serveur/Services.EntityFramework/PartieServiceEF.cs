@@ -18,10 +18,8 @@ namespace FindMyName_Serveur.Services.EntityFramework
         [FromServices]
         public ILogger<ValuesController> Logger { get; set; }
 
-        public void AjouterPartie(int id, int id_ami, int th, int score, string j1, string j2)
-        {
-            throw new NotImplementedException();
-        }
+        private UtilisateurServiceEF _utilisateurService = new UtilisateurServiceEF();
+        private ThemeServiceEF _themeService = new ThemeServiceEF();
 
         public bool getEn_Cours(int id, int id_ami)
         {
@@ -175,14 +173,59 @@ namespace FindMyName_Serveur.Services.EntityFramework
             return th;
         }
 
+        public Boolean getPartieExiste(int id, int id_ami)
+        {
+            bool resultat = false;
+            context = new fmnContext();
+
+            int nombrePartieEnCours = context.parties
+                    .Include(p => p.j1)
+                    .Include(p => p.j2)
+                    .Where(p => ((p.j1.id == id && p.j2.id == id_ami) || (p.j1.id == id_ami && p.j2.id == id)) && (p.player == id || p.player == id_ami))
+                    .Count();
+
+            if (nombrePartieEnCours > 0)
+                resultat = true;
+
+            return resultat;
+        }
+
         public void ModifierPartie(int id, int id_ami, int th, int score, int id_partie)
         {
             throw new NotImplementedException();
         }
 
+        public void AjouterPartie(int id, int id_ami, int th, int score)
+        {
+            Utilisateur joueur1 = _utilisateurService.getUser(id);
+            Utilisateur joueur2 = _utilisateurService.getUser(id_ami);
+            Theme theme = _themeService.getTheme(th);
+            Partie p = new Partie(joueur1, joueur2, 0, 0, id_ami, new List<Manche> { new Manche(theme, score, 0) });
+
+            context = new fmnContext();
+
+            context.parties.Add(p);
+            context.SaveChanges();
+        }
+
         public void savePartie(int id, int us, int th, int remaining)
         {
-            throw new NotImplementedException();
+            var Partieexiste = this.getPartieExiste(id, us);
+
+            if (Partieexiste == false)
+            {
+                 this.AjouterPartie(us, id, th, remaining);
+            }
+            else
+            {
+            //    var p = PartieService.getPartieEnCours(id, us);
+            //    ModifierPartie(us, id, th, remaining, p.id_partie);
+            }
+
+
+            //UtilisateurService.ChangerMeilleurScore(us, remaining);
+
+
         }
     }
 }

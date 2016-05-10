@@ -131,15 +131,7 @@ namespace FindMyName_Serveur.Services
             return null;
         }
 
-        public static void AjouterPartie(int id, int id_ami, int th, int score, string j1, string j2)
-        {
-            int taille = PARTIES.Count;
-            int id_partie = taille + 1;
-            string theme = ThemeService.getName(th);
-            Partie p = new Partie(id_partie, id, id_ami, j1, j2, 0, 0, id_ami, new List<Manche> { new Manche(th, theme, score, 0) });
-            PARTIES.Add(p);
-        }
-
+    
         public static List<Partie> getPartieEnCours(int id)
         {
             List<Partie> p = new List<Partie>();
@@ -161,6 +153,17 @@ namespace FindMyName_Serveur.Services
             }
             return nb;
         }
+
+        
+        public static void AjouterPartie(int id, int id_ami, int th, int score, string j1, string j2)
+        {
+            int taille = PARTIES.Count;
+            int id_partie = taille + 1;
+            string theme = ThemeService.getName(th);
+            Partie p = new Partie(id_partie, id, id_ami, j1, j2, 0, 0, id_ami, new List<Manche> { new Manche(th, theme, score, 0) });
+            PARTIES.Add(p);
+        }
+
 
         public static void ModifierPartie(int id, int id_ami, int th, int score, int id_partie)
         {
@@ -308,5 +311,5 @@ namespace FindMyName_Serveur.Services
 
  */
     }
-   
+
 }
