@@ -132,7 +132,10 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public int getOnlineutilisateur()
         {
-            throw new NotImplementedException();
+            Random rnd = new Random();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            return (rnd.Next(1, AllUtilisateurs.Count));
         }
 
         public string getPays(int id)
