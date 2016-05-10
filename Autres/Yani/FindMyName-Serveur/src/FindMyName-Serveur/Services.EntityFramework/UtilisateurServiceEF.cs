@@ -21,7 +21,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
         public IList<Utilisateur> ALL()
         {
             context = new fmnContext();
-            var requete = from utilisateur in context.Users.Include(b => b.contacts)
+            var requete = from utilisateur in context.Users
                           select utilisateur;
 
             // Execution de la requête
@@ -145,18 +145,18 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public Contact getAmiExiste(int id, int u)
         {
-            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
-            AllUtilisateurs = ALL();
-            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            IList<Contact> AllContact = new List<Contact> { };
+            AllContact = ALLContact();
+            for (var i = 0; i < AllContact.Count; i++)
             {
-                if (AllUtilisateurs[i].id == u)
+                if (AllContact[i].id == u)
                 {
-                    if (AllUtilisateurs[i].contacts != null)
+                    if (AllContact[i].user.contacts != null)
                     {
-                        for (var n = 0; n < AllUtilisateurs[i].contacts.Count; n++)
+                        for (var n = 0; n < AllContact[i].user.contacts.Count; n++)
                         {
-                            if (AllUtilisateurs[i].contacts[n].id == id && AllUtilisateurs[i].contacts[n].type == "ami")
-                                return AllUtilisateurs[i].contacts[n];
+                            if (AllContact[i].user.contacts[n].id == id && AllContact[i].user.contacts[n].type == "ami")
+                                return AllContact[i].user.contacts[n];
                         }
                     }
                 }
