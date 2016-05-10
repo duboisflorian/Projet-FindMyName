@@ -132,7 +132,16 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public string getPhoto(int u)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            String s = "";
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].id == u)
+                    s = AllUtilisateurs[i].photo;
+            }
+
+            return s;
         }
 
         public Utilisateur getUser(int id)
