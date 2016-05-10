@@ -197,7 +197,23 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public bool getOnlineExiste(int id, int u)
         {
-            throw new NotImplementedException();
+            IList<Contact> AllContact = new List<Contact> { };
+            AllContact = ALLContact();
+            for (var i = 0; i < AllContact.Count; i++)
+            {
+                if (AllContact[i].id == u)
+                {
+                    if (AllContact[i].user.contacts != null)
+                    {
+                        for (var n = 0; n < AllContact[i].user.contacts.Count; n++)
+                        {
+                            if (AllContact[i].user.contacts[n].id == id && AllContact[i].user.contacts[n].type == "online")
+                                return true;
+                        }
+                    }
+                }
+            }
+            return false;
         }
 
         public int getOnlineutilisateur()
