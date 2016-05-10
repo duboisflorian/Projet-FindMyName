@@ -198,7 +198,16 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public bool verificationMailExist(string mail)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            bool verificationmail = false;
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].mail == mail)
+                    verificationmail = true;
+            }
+
+            return verificationmail;
         }
     }
 }
