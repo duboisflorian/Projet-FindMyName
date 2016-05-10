@@ -135,7 +135,23 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public Contact getAmiExiste(int id, int u)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].id == u)
+                {
+                    if (AllUtilisateurs[i].contacts != null)
+                    {
+                        for (var n = 0; n < AllUtilisateurs[i].contacts.Count; n++)
+                        {
+                            if (AllUtilisateurs[i].contacts[n].id == id && AllUtilisateurs[i].contacts[n].type == "ami")
+                                return AllUtilisateurs[i].contacts[n];
+                        }
+                    }
+                }
+            }
+            return new Contact(); ;
         }
 
         public List<Contact> getContacts(int id, string type)
