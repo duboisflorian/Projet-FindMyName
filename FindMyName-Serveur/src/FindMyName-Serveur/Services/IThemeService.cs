@@ -10,14 +10,15 @@ namespace FindMyName_Serveur.Interface
     {
         List<Theme> getThemes();
         List<Theme> ALL();
+        IList<Reponse> ALLREPONSE();
         void melanger(List<Theme> themes);
         bool isvalid(int nombre, List<int> aleatoire);
         Theme getTheme(int id);
         String getName(int u);
         int getId(String n);
-        Mot getReponse(int i);
+        string getReponse(int i);
         bool getDone(int i);
-        IEnumerable<Reponse> getReponses(int id);
-        int getTaille(int i);
+        IList<Reponse> getReponses(int id);
+        int getTaille();
     }
 }
