@@ -17,7 +17,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
         public fmnContext context { get; set; }
         [FromServices]
         public ILogger<UtilisateurController> Logger { get; set; }
-        public List<Utilisateur> ALL()
+        public IList<Utilisateur> ALL()
         {
             context = new fmnContext();
             var requete = from utilisateur in context.Users

@@ -8,6 +8,7 @@ namespace FindMyName_Serveur.Interface
 {
     public interface IUtilisateurService
     {
+        IList<Utilisateur> ALL();
         Utilisateur getUser(int id);
         Utilisateur Existe(int id);
         Utilisateur verificationConnexion(string mail, string password);
