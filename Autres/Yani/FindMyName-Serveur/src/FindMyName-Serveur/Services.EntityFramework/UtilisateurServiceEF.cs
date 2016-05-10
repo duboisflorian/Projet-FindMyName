@@ -73,7 +73,25 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public void addOnline(int user, int u)
         {
-            throw new NotImplementedException();
+            IList<Contact> AllContact = new List<Contact> { };
+            AllContact = ALLContact();
+            for (var i = 0; i < AllContact.Count; i++)
+            {
+                if (AllContact[i].id == u)
+                    AllContact[i].user.contacts.Add(new Contact(getUser(user), user, "online"));
+                context = new fmnContext();
+
+                context.Contact.Update(AllContact[i]);
+                context.SaveChanges();
+                if (AllContact[i].id == user)
+                {
+                    AllContact[i].user.contacts.Add(new Contact(getUser(user), user, "online"));
+                    context = new fmnContext();
+
+                    context.Contact.Update(AllContact[i]);
+                    context.SaveChanges();
+                }
+            }
         }
 
         public void ajouterUtilisateur(string name, string mail, string password)
