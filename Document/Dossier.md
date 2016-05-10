@@ -3,28 +3,32 @@
 ======
 ##Sommaire
 
-####1. [Intro](#Intro) 
-####2. [Find My Name](#FNM) 
-  #####a. [Un Quiz nouvelle génération](#Quiz)
-  #####b. [Inspiré de jeux à grand succès](#Inspiré)
-  #####c. [D’une simplicité déconcertante](#règles)
-####3. [Gestion de Projet](#G) 
-  #####a. [Un projet bien découpé](#général)
-  #####b. [Dessiner pour mieux réaliser](#dessiner)
-  #####c. [Le coeur du projet](#coeur)
-  #####d. [Plus il y en a mieux c’est](#plus)
-  #####e. [Mais ne pas oublier de tester](#test)
-  #####f. [Jours, semaines, mois](#metho)
-####4. [Nouvelles Technologies](#N) 
-  #####a. [Employabilité avant tout](#employable)
-  #####b. [Le web d’aujourd’hui](#angular)
-  #####c. [Serveur multiplateforme](#webapi)
-  #####d. [La simplicité avant tout](#orm)
-  #####e. [Cordova / Android](#archi)
-  #####f. [Une architecture structuré](#archi)
-####5. [Fonctionnalités](#FC) 
-####6. [Conclusion](#C) 
-####7. [Annexe](#A) 
+###1. [Intro](#Intro) 
+###2. [Find My Name](#FNM) 
+  ####a. [Un Quiz nouvelle génération](#Quiz)
+  ####b. [Inspiré de jeux à grand succès](#Inspiré)
+  ####c. [D’une simplicité déconcertante](#règles)
+###3. [Gestion de Projet](#G) 
+  ####a. [Un projet bien découpé](#général)
+  ####b. [Dessiner pour mieux réaliser](#dessiner)
+  ####c. [Le coeur du projet](#coeur)
+  ####d. [Plus il y en a mieux c’est](#plus)
+  ####e. [Mais ne pas oublier de tester](#test)
+  ####f. [Jours, semaines, mois](#metho)
+###4. [Nouvelles Technologies](#N) 
+  ####a. [Employabilité avant tout](#employable)
+  ####b. [Le web d’aujourd’hui](#angular)
+  ####c. [Serveur multiplateforme](#webapi)
+  ####d. [La simplicité avant tout](#orm)
+  ####e. [Cordova / Android](#archi)
+  ####f. [Une architecture structuré](#archi)
+###5. [Fonctionnalités](#FC) 
+  ####a. [En ajoutant vos contacts](#contact)
+  ####b. [Jouer avec toute simplicité](#jouer)
+  ####c. [Tout en regardant vos parties](#parties)
+  ####d. [En attendant de nouvelles améliorations](#autres)
+###6. [Conclusion](#C) 
+###7. [Annexe](#A) 
 
 ======
 ##1. Intro <a id="Intro"></a>
@@ -59,6 +63,10 @@
 ======
 ##5. Fonctionnalités <a id="FC"></a>
 
+  a. En ajoutant vos contacts <a id="contact"></a>
+  b. Jouer avec toute simplicité <a id="jouer"></a>
+  c. Tout en regardant vos parties <a id="parties"></a>
+  d. En attendant de nouvelles améliorations <a id="autres"></a>
 
 ======
 ##6. Conclusion <a id="C"></a>
