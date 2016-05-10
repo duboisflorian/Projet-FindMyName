@@ -185,7 +185,15 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public Utilisateur verificationConnexion(string mail, string password)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            Utilisateur user = new Utilisateur();
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].mail == mail && AllUtilisateurs[i].password == password)
+                    user = AllUtilisateurs[i];
+            }
+            return user;
         }
 
         public bool verificationMailExist(string mail)
