@@ -26,8 +26,9 @@ namespace FindMyName_Serveur.Interface
         string changePays(int id, string selectPays);
         ResIDViewModel Jouer(int id);
         Contact getAmiExiste(int id, int u);
-        IList<Contact> ALLContact();
         Boolean getOnlineExiste(int id, int u);
+        IList<Contact> ALLContact();
+        void changerPhoto(int id, string photo);
         List<Contact> getContacts(int id, string type);
         void addAmi(int user, int id);
         void addOnline(int user, int id);
