@@ -13,7 +13,7 @@ namespace FindMyName_Serveur.Interface
         void savePartie(int id, int us, int th, int remaining);
         Partie getPartieEnCours(int id, int id_ami);
         void AjouterPartie(int id, int id_ami, int th, int score);
-        void ModifierPartie(int id, int id_ami, int th, int score, int id_partie);
+        void ModifierPartie(int id, int id_ami, int th, int score);
         string getThemeFavori(int id);
         Boolean getPartieExiste(int id, int id_ami);
         Boolean getEn_Cours(int id, int id_ami);
