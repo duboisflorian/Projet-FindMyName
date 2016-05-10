@@ -23,7 +23,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
         public List<Theme> ALL()
         {
             context = new fmnContext();
-            var requete = from theme in context.Themes
+            var requete = from theme in context.Themes.Include(b => b.reponses).ThenInclude((Reponse r) => r.Appellations)
                           select theme;
 
             // Execution de la requête
@@ -89,9 +89,11 @@ namespace FindMyName_Serveur.Services.EntityFramework
             return 0;
         }
 
-        public Mot getReponse(int i)
+        public string getReponse(int i)
         {
-            throw new NotImplementedException();
+            IList<Reponse> AllReponses = new List<Reponse> { };
+            AllReponses = ALLREPONSE();
+            return AllReponses[0].Appellations[i].text;
             /*List<Theme> AllThemes = new List<Theme> { };
             AllThemes = ALL();
             return AllThemes[0].reponses[i].appellation[0];*/
@@ -99,22 +101,28 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public bool getDone(int i)
         {
-            throw new NotImplementedException();
+            IList<Reponse> AllReponses = new List<Reponse> { };
+            AllReponses = ALLREPONSE();
+            return AllReponses[0].done;
             /*List<Theme> AllThemes = new List<Theme> { };
             AllThemes = ALL();
             return AllThemes[0].reponses[i].done;*/
         }
 
-        public IEnumerable<Reponse> ALLREPONSE(int id) {
+        public IList<Reponse> ALLREPONSE()
+        {
             context = new fmnContext();
+            var requete = from reponse in context.Reponses.Include(b => b.Appellations)
+                          select reponse;
 
-            Theme theme = context.Themes
-                .Where(p => p.id == id)
+            // Execution de la requête
+            return requete.ToList();
+            /*Theme theme = context.Themes
                 .Include(b => b.reponses)
                 .ThenInclude((Reponse r)=>r.Appellations)
                 .FirstOrDefault();
 
-            return theme?.reponses;
+            return theme.reponses;*/
 
             //.SingleOrDefault(p => p.text == "PSG");
             /*var reponses = context.Reponses
@@ -137,9 +145,11 @@ namespace FindMyName_Serveur.Services.EntityFramework
             //return reposnes;
         }
 
-        public int getTaille(int i)
+        public int getTaille()
         {
-            throw new NotImplementedException();
+            IList<Reponse> AllReponses = new List<Reponse> { };
+            AllReponses = ALLREPONSE();
+            return AllReponses.Count();
         }
 
         public string getName(int u)
@@ -154,24 +164,21 @@ namespace FindMyName_Serveur.Services.EntityFramework
             return "";
         }
 
-        public IEnumerable<Reponse> getReponses(int id)
+        public IList<Reponse> getReponses(int id)
         {
 
-            return ALLREPONSE(id);
-    //        context = new fmnContext();
-    //        Theme theme = context.Themes.Include(p => p.reponses)
-    //.SingleOrDefault(p => p.id == id);
-    //        List<Reponse> reposnes = theme.reponses;
-    //        /*
-    //        var requete = from reponse in context.Reponses
-    //                      where reponse.theme.id == id
-    //                      select reponse;*/
+            context = new fmnContext();
 
-            //        // Execution de la requête
-            //        return reposnes;
+            Theme theme = context.Themes
+                .Where(p => p.id == id)
+                .Include(b => b.reponses)
+                .ThenInclude((Reponse r) => r.Appellations)
+                .FirstOrDefault();
+
+            return theme?.reponses;
         }
 
-      
+
 
         //public List<Reponse> getReponses(int id)
         //{
