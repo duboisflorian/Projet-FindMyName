@@ -68,7 +68,23 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public void addAmiOnline(int user, int u)
         {
-            throw new NotImplementedException();
+            IList<Contact> AllContact = new List<Contact> { };
+            AllContact = ALLContact();
+            for (var i = 0; i < AllContact.Count; i++)
+            {
+                if (AllContact[i].id == u)
+                {
+                    for (var n = 0; n < AllContact[i].user.contacts.Count; n++)
+                    {
+                        if (AllContact[i].user.contacts[n].id == user)
+                            AllContact[i].user.contacts[n].type = "ami";
+                        context = new fmnContext();
+
+                        context.Contact.Update(AllContact[i].user.contacts[n]);
+                        context.SaveChanges();
+                    }
+                }
+            }
         }
 
         public void addOnline(int user, int u)
