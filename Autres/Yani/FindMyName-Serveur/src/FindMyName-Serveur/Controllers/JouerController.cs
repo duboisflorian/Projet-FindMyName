@@ -15,47 +15,41 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class JouerController : Controller
     {
-        private IThemeService t;
-
-
-        public JouerController(IThemeService service)
-        {
-            this.t = service;
-        }
+        private IThemeService _themeService = new ThemeServiceEF();
 
         public JouerController()
         {
-            this.t = new ThemeServiceEF();
+            _themeService = new ThemeServiceEF();
         }
-        /* // GET: api/Jouer
+         // GET: api/Jouer
          [HttpGet]
-         public IEnumerable<ListeReponses> Get()
+         public IList<Theme> Get()
          {
-             return ReponsesService.ALL();
+             return _themeService.ALL();
          }
 
          [HttpGet("getReponse/{i}")]
          public String getReponse(int i)
          {
-             return ReponsesService.getReponse(i);
+             return _themeService.getReponse(i);
          }
 
          [HttpGet("getDone/{i}")]
          public bool getDone(int i)
          {
-             return ReponsesService.getDone(i);
+             return _themeService.getDone(i);
          }
 
          [HttpGet("getReponses/{id}")]
-         public ListeReponses getReponses(int id)
+         public IList<Reponse> getReponses(int id)
          {
-             return ReponsesService.getReponses(id);
+             return _themeService.getReponses(id);
          }
 
          [HttpGet("getTaille/{i}")]
-         public int getTaille(int i)
+         public int getTaille()
          {
-             return ReponsesService.getTaille(i);
-         }*/
+             return _themeService.getTaille();
+         }
     }
 }
