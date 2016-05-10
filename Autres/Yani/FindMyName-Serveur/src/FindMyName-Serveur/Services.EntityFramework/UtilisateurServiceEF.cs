@@ -60,7 +60,20 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public string changePhoto(int id, string selectPhoto)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].id == id)
+                {
+                    AllUtilisateurs[i].photo = "fichier/" + selectPhoto + ".jpg";
+                    context = new fmnContext();
+
+                    context.Users.Update(AllUtilisateurs[i]);
+                    context.SaveChanges();
+                }
+            }
+            return "Photo changée";
         }
 
         public void ChangerMeilleurScore(int u, int score)
@@ -79,11 +92,6 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
             context.Users.Update(user);
             context.SaveChanges();
-        }
-
-        public void changerPhoto(int id, string photo)
-        {
-            throw new NotImplementedException();
         }
 
         public void creation(Utilisateur u1)
