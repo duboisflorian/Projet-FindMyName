@@ -146,7 +146,19 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public Utilisateur getUser(int id)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            Utilisateur user = new Utilisateur();
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].id == id)
+                {
+                    user = AllUtilisateurs[i];
+                }
+
+            }
+
+            return user;
         }
 
         public ResID Jouer(int u)
