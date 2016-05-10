@@ -27,6 +27,15 @@ namespace FindMyName_Serveur.Services.EntityFramework
             // Execution de la requête
             return requete.ToList();
         }
+        public IList<Contact> ALLContact()
+        {
+            context = new fmnContext();
+            var requete = from contact in context.Contact.Include(b => b.user)
+                          select contact;
+
+            // Execution de la requête
+            return requete.ToList();
+        }
         public string Add(int contactadd, int user, int u)
         {
             throw new NotImplementedException();
