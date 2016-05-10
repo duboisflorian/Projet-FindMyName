@@ -65,7 +65,20 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public void ChangerMeilleurScore(int u, int score)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            Utilisateur user = new Utilisateur();
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].id == u)
+                    if (AllUtilisateurs[i].meilleurScore < score)
+                        user = AllUtilisateurs[i];
+                        user.meilleurScore = score;
+            }
+            context = new fmnContext();
+
+            context.Users.Update(user);
+            context.SaveChanges();
         }
 
         public void changerPhoto(int id, string photo)
