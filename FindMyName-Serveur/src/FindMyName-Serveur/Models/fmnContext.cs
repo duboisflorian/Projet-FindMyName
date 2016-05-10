@@ -13,6 +13,7 @@ namespace FindMyName_Serveur.Models
         public DbSet<Utilisateur> Users { get; set; }
         public DbSet<Theme> Themes { get; set; }
         public DbSet<Reponse> Reponses { get; set; }
+        public DbSet<Contact> Contact { get; set; }
         public DbSet<Partie> parties { get; set; }
         public DbSet<Mot> mots { get; set; }
 
