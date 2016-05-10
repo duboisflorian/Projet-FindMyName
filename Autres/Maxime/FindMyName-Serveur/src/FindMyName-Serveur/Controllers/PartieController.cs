@@ -7,6 +7,7 @@ using FindMyName_Serveur.Services;
 using FindMyName_Serveur.Models;
 using FindMyName_Serveur.Services.EntityFramework;
 using FindMyName_Serveur.Interface;
+using FindMyName_Serveur.ViewModels;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,9 +27,23 @@ namespace FindMyName_Serveur.Controllers
 
         // GET: api/Partie/getPartieEnCours/{ID}
         [HttpGet("getPartieEnCours/{id}")]
-         public IEnumerable<Partie> getPartieEnCours(int id)
+         public IEnumerable<PartieViewModel> getPartieEnCours(int id)
          {
-            return _partieService.getPartieEnCours(id);
+            List<PartieViewModel> mesparties = new List<PartieViewModel>();
+
+            IEnumerable<Partie> ListePartieEnCours = _partieService.getPartieEnCours(id);
+
+            foreach(Partie partie in ListePartieEnCours)
+            {
+                List<MancheViewModel> mesmanches = new List<MancheViewModel>();
+                foreach (Manche manche in partie.Manches)
+                {
+                    mesmanches.Add(new MancheViewModel(manche.theme.id, manche.theme.text, manche.s1,manche.s2));
+                }
+                mesparties.Add(new PartieViewModel(partie.id, partie.j1.id, partie.j2.id, partie.j1.name, partie.j2.name, partie.s1, partie.s2, partie.player, mesmanches));
+            }
+
+            return mesparties;
          }
 
         
@@ -44,9 +59,17 @@ namespace FindMyName_Serveur.Controllers
 
          // GET: api/Partie/getPartieEnCours/{ID}/{ID_AMI}
          [HttpGet("getPartieEnCours/{id}/{id_ami}")]
-         public Partie getPartieEnCours(int id, int id_ami)
+         public PartieViewModel getPartieEnCours(int id, int id_ami)
          {
-             return _partieService.getPartieEnCours(id, id_ami);
+            Partie partieEnCours = _partieService.getPartieEnCours(id, id_ami);
+            List<MancheViewModel> mesmanches = new List<MancheViewModel>();
+            foreach (Manche m in partieEnCours.Manches)
+            {
+                mesmanches.Add(new MancheViewModel(m.theme.id, m.theme.text, m.s1, m.s2));
+            }
+
+            PartieViewModel mapartie = new PartieViewModel(partieEnCours.id, partieEnCours.j1.id, partieEnCours.j2.id, partieEnCours.j1.name, partieEnCours.j2.name, partieEnCours.s1, partieEnCours.s2, partieEnCours.player, mesmanches);
+             return mapartie;
          }
 
 

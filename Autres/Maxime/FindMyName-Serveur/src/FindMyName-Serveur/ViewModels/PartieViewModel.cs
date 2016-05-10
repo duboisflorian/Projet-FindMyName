@@ -16,9 +16,9 @@ namespace FindMyName_Serveur.ViewModels
         public int s1 { get; set; }
         public int s2 { get; set; }
         public int player { get; set; }
-        public virtual IList<Manche> manche { get; set; }
+        public virtual IList<MancheViewModel> manche { get; set; }
 
-        public PartieViewModel(int id_partie, int id_j1, int id_j2, string j1, string j2, int s1, int s2, int player, List<Manche> manche)
+        public PartieViewModel(int id_partie, int id_j1, int id_j2, string j1, string j2, int s1, int s2, int player, List<MancheViewModel> manche)
         {
             this.id_partie = id_partie;
             this.id_j1 = id_j1;
