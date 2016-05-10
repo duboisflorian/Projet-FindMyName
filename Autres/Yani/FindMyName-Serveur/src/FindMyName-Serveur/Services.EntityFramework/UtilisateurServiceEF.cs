@@ -105,7 +105,9 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public int getlastid()
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            return AllUtilisateurs[AllUtilisateurs.Count - 1].id;
         }
 
         public string getName(int u)
