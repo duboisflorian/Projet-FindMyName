@@ -78,7 +78,19 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public Utilisateur Existe(int id)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            Utilisateur user = new Utilisateur();
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].id == id)
+                {
+                    return AllUtilisateurs[i];
+                }
+
+            }
+
+            return null;
         }
 
         public Contact getAmiExiste(int id, int u)
