@@ -6,6 +6,8 @@ using Microsoft.AspNet.Mvc;
 using FindMyName_Serveur.Services;
 using FindMyName_Serveur.ViewModels;
 using FindMyName_Serveur.Models;
+using FindMyName_Serveur.Interface;
+using FindMyName_Serveur.Services.EntityFramework;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,60 +16,60 @@ namespace FindMyName_Serveur.Controllers
     [Route("api/[controller]")]
     public class ContactController : Controller
     {
-        //private UtilisateurInMemory u;
+        private IUtilisateurService _utilisateurService = new UtilisateurServiceEF();
 
-        ContactController()
+        public ContactController()
         {
-            //this.u = new UtilisateurInMemory();
+            _utilisateurService = new UtilisateurServiceEF();
         }
-        /*  // GET api/values/5
-          [HttpGet("{id}")]
-          public IEnumerable<ListeContact> Get(int id)
-          {
-              return ContactService.ALL();
-          }
 
-          // GET api/Contact/getContacts/x/y
-          [HttpGet("getContacts/{id}/{type}")]
-          public IEnumerable<ContactViewModel> getContacts(int id,string type)
-          {
-              //Contrôle des accès
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public IList<Contact> Get(int id)
+        {
+            return _utilisateurService.ALLContact();
+        }
 
-              //Traitement
-              IEnumerable<Contact> contacts = ContactService.getContacts(id,type);
+        // GET api/Contact/getContacts/x/y
+        [HttpGet("getContacts/{id}/{type}")]
+        public IEnumerable<ContactViewModel> getContacts(int id, string type)
+        {
+            //Contrôle des accès
 
-              //Génération du ViewModel
-              var query = from c in contacts
-                          select new ContactViewModel()
-                          {
-                              id = c.id,
-                              name = c.name,
-                              photo = c.photo
-                          };
+            //Traitement
+            IEnumerable<Contact> contacts = _utilisateurService.getContacts(id, type);
 
-              return query.ToList();
-          }
+            //Génération du ViewModel
+            var query = from c in contacts
+                        select new ContactViewModel()
+                        {
+                            id = c.id,
+                            name = c.user.name,
+                            photo = c.user.photo
+                        };
 
-          // GET api/Contact/Add/x/y
-          [HttpGet("Add/{c}/{user}/{u}")]
-          public Res Add(int c ,int user, int u)
-          {
-              return new Res(ContactService.Add(c,user, u));
-          }
+            return query.ToList();
+        }
 
-          // GET api/Contact/getNbContact/x/y
-          [HttpGet("getNbContact/{u}")]
-          public int getNbContact(int u)
-          {
-              return ContactService.getNbContact(u);
-          }
+        // GET api/Contact/Add/x/y
+        [HttpGet("Add/{c}/{user}/{u}")]
+        public ResViewModel Add(int c, int user, int u)
+        {
+            return new ResViewModel(_utilisateurService.Add(c, user, u));
+        }
 
-          // GET api/Contact/Jouer/x
-          [HttpGet("Jouer/{u}")]
-          public ResID Jouer(int u)
-          {
-             return ContactService.Jouer(u);
-          }
-          */
+        // GET api/Contact/getNbContact/x/y
+        [HttpGet("getNbContact/{u}")]
+        public int getNbContact(int u)
+        {
+            return _utilisateurService.getNbContact(u);
+        }
+
+        // GET api/Contact/Jouer/x
+        [HttpGet("Jouer/{u}")]
+        public ResIDViewModel Jouer(int u)
+        {
+            return _utilisateurService.Jouer(u);
+        }
     }
 }
