@@ -24,7 +24,6 @@ namespace FindMyName_Serveur.Controllers
             _utilisateurService = new UtilisateurServiceEF();
         }
 
-        // GET: api/values
         [HttpGet]
         public IList<Utilisateur> Get()
         {
@@ -51,12 +50,12 @@ namespace FindMyName_Serveur.Controllers
 
            // GET api/verifMail/{mail}
            [HttpGet("verifMail/{mail}")]
-           public string verifMailExist(string mail)
+           public ResViewModel verifMailExist(string mail)
            {
                if (_utilisateurService.verificationMailExist(mail) == true)
-                   return "existe";
+                   return new ResViewModel("existe");
                else
-                   return "go";
+                   return new ResViewModel("go");
            }
 
            // GET api/verifConnexion/{mail}/{password}
@@ -68,45 +67,45 @@ namespace FindMyName_Serveur.Controllers
 
            // GET api/sameMDP/{id}/{password}
            [HttpGet("sameMDP/{id}/{password}")]
-           public string sameMDP(int id, string password)
+           public ResViewModel sameMDP(int id, string password)
            {
-               return _utilisateurService.Same_mdp(id, password);
+               return new ResViewModel(_utilisateurService.Same_mdp(id, password));
            }
 
            // GET api/ajoutus/{name}/{mail}/{password}
            [HttpGet("ajoutus/{name}/{mail}/{password}")]
-           public string ajoutus(string name, string mail, string password)
+           public ResViewModel ajoutus(string name, string mail, string password)
            {
             _utilisateurService.ajouterUtilisateur(name,mail,password);
-               return "bon";
+               return new ResViewModel("bon");
            }
 
            // GET api/getPhoto/{u}
            [HttpGet("getPhoto/{u}")]
-           public string getPhoto(int u)
+           public ResViewModel getPhoto(int u)
            {
-               return _utilisateurService.getPhoto(u);
+               return new ResViewModel(_utilisateurService.getPhoto(u));
            }
 
            // GET api/getPays/{u}
            [HttpGet("getPays/{u}")]
-           public string getPays(int u)
+           public ResViewModel getPays(int u)
            {
-               return _utilisateurService.getPays(u);
+               return new ResViewModel(_utilisateurService.getPays(u));
            }
 
            // GET api/changePays/{id}/{selectPays}
            [HttpGet("changePays/{id}/{selectPays}")]
-           public string changePays(int id,string selectPays)
+           public ResViewModel changePays(int id,string selectPays)
            {
-              return _utilisateurService.changePays(id,selectPays);
+              return new ResViewModel(_utilisateurService.changePays(id,selectPays));
            }
 
            // GET api/changePhoto/{id}/{selectPhoto}
            [HttpGet("changePhoto/{id}/{selectPhoto}")]
-           public string changePhoto(int id, string selectPhoto)
+           public ResViewModel changePhoto(int id, string selectPhoto)
            {
-              return _utilisateurService.changePhoto(id, selectPhoto);
+              return new ResViewModel(_utilisateurService.changePhoto(id, selectPhoto));
            }
            
     }
