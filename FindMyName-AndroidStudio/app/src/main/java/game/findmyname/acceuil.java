@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -30,16 +31,49 @@ public class acceuil extends AppCompatActivity {
 
         Log.i("ENI","id reçu : " +id);
 
+        // Image de profil sur la page d'acceuil
+        ImageView imageProfil = (ImageView) findViewById(R.id.imageProfilAcceuil);
+        //imageProfil.setImageResource(R.drawable.logo);
+
         data databaseFilm = new data (getBaseContext(), "dbuser.db", null, 1);
         SQLiteDatabase db = databaseFilm.getReadableDatabase();
         db.setLocale(Locale.FRENCH);
 
         Cursor result = db.rawQuery("SELECT * FROM user WHERE id="+id ,null);
 
-        // Récupération du pseudo à partir de l'id
+        // Récupération du pseudo et de l'image à partir de l'id
         result.moveToFirst();
         String pseudo = result.getString(1);
-        Log.i("ENI","pseudo : " +pseudo);
+        Log.i("Acceuil","pseudo : " +pseudo);
+
+        String image = result.getString(3);
+        Log.i("Acceuil","image : " +image);
+        if(image.equals("logo"))
+        {
+            imageProfil.setImageResource(R.drawable.logo);
+        }
+        else if(image.equals("arsenal"))
+        {
+            imageProfil.setImageResource(R.drawable.arsenal);
+        }
+        else if(image.equals("barca"))
+        {
+            imageProfil.setImageResource(R.drawable.barca);
+        }
+        else if(image.equals("ol"))
+        {
+            imageProfil.setImageResource(R.drawable.ol);
+        }
+        else if(image.equals("psg"))
+        {
+            imageProfil.setImageResource(R.drawable.psg);
+        }
+        else if(image.equals("voiture"))
+        {
+            imageProfil.setImageResource(R.drawable.marquevoiture);
+        }
+
+
 
 
         TextView tvprofil = (TextView) findViewById(R.id.profil);

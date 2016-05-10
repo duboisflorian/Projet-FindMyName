@@ -151,12 +151,12 @@ public class data extends SQLiteOpenHelper{
 
         Log.i("ENI","Nombre de colonnes " + nbcol);
 
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Florian','1234','fichier/psg.jpg','Florian@gmail.com','France',0)");
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Yani','1234','fichier/psg.jpg','Yani@gmail.com','France',0)");
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Maxime','1234','fichier/psg.jpg','Maxime@gmail.com','France',0)");
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Lionel','1234','fichier/psg.jpg','Lionel@gmail.com','France',0)");
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Diego','1234','fichier/psg.jpg','Diego@gmail.com','France',0)");
-        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Tingting','1234','fichier/psg.jpg','Tingting@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Florian','1234','logo','Florian@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Yani','1234','logo','Yani@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Maxime','1234','logo','Maxime@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Lionel','1234','logo','Lionel@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Diego','1234','logo','Diego@gmail.com','France',0)");
+        db.execSQL("INSERT INTO user(pseudo,mdp,image,mail,pays,meilleurscore) VALUES ('Tingting','1234','logo','Tingting@gmail.com','France',0)");
 
 
         ///////////////////////////////////////////////////////////////////////////////////////////
