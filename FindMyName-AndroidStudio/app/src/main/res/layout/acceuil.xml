@@ -9,6 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/arsenal"
+            android:id="@+id/imageView" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,7 +27,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Profil"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="100dp"
             android:id="@+id/profil" />
 
     </LinearLayout>
