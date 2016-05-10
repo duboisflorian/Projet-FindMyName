@@ -55,7 +55,21 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public string changePays(int id, string selectPays)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].id == id)
+                {
+                    AllUtilisateurs[i].pays = selectPays;
+                    context = new fmnContext();
+
+                    context.Users.Update(AllUtilisateurs[i]);
+                    context.SaveChanges();
+                }
+            }
+
+            return "Vous avez changé de pays";
         }
 
         public string changePhoto(int id, string selectPhoto)
@@ -213,9 +227,19 @@ namespace FindMyName_Serveur.Services.EntityFramework
             return user;
         }
 
-        public ResID Jouer(int u)
+        public ResIDViewModel Jouer(int u)
         {
-            throw new NotImplementedException();
+            int r;
+            for (var i = 0; i < 500; i++)
+            {
+                r = getOnlineutilisateur();
+                if (getOnlineExiste(r, u) == false && getAmiExiste(r, u).id == 0 && r != u)
+                {
+                    addOnline(r, u);
+                    return new ResIDViewModel("go", r);
+                }
+            }
+            return new ResIDViewModel("Aucun joueur trouvé pour le moment. Nous sommes désolé.", 0);
         }
 
         public string Same_mdp(int id, string password)

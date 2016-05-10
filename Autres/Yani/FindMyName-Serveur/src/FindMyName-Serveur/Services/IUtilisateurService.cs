@@ -10,6 +10,7 @@ namespace FindMyName_Serveur.Interface
     {
         IList<Utilisateur> ALL();
         Utilisateur getUser(string name);
+        Utilisateur getUser(int id);
         Utilisateur Existe(int id);
         Utilisateur verificationConnexion(string mail, string password);
         Boolean verificationMailExist(String mail);
@@ -23,7 +24,7 @@ namespace FindMyName_Serveur.Interface
         string changePhoto(int id, string selectPhoto);
         string getPays(int id);
         string changePays(int id, string selectPays);
-        ResID Jouer(int id);
+        ResIDViewModel Jouer(int id);
         Contact getAmiExiste(int id, int u);
         Boolean getOnlineExiste(int id, int u);
         void changerPhoto(int id, string photo);

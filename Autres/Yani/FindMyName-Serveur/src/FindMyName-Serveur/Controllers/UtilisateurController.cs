@@ -24,23 +24,18 @@ namespace FindMyName_Serveur.Controllers
             _utilisateurService = new UtilisateurServiceEF();
         }
 
+        // GET: api/values
         [HttpGet]
         public IList<Utilisateur> Get()
         {
             return _utilisateurService.ALL();
         }
-        /*   // GET: api/values
-           [HttpGet]
-           public IEnumerable<Utilisateur> Get()
-           {
-               return UtilisateurService.UTILISATEURS;
-           }
 
            // GET api/Utilisateur/{id}
            [HttpGet("{id}")]
            public Utilisateur Get(int id)
            {
-               return UtilisateurService.getUser(id);
+               return _utilisateurService.getUser(id);
            }
            // GET api/Utilisateur/GetUserView/{id}
            [HttpGet("GetUserView/{id}")]
@@ -49,70 +44,70 @@ namespace FindMyName_Serveur.Controllers
                //Contrôle des accès
 
                //Traitement
-               Utilisateur user = UtilisateurService.getUser(id);
+               Utilisateur user = _utilisateurService.getUser(id);
 
                return new UtilisateurViewModel(user.id,user.name,user.photo);
            }
 
            // GET api/verifMail/{mail}
            [HttpGet("verifMail/{mail}")]
-           public Res verifMailExist(string mail)
+           public string verifMailExist(string mail)
            {
-               if (UtilisateurService.verificationMailExist(mail) == true)
-                   return new Res("existe");
+               if (_utilisateurService.verificationMailExist(mail) == true)
+                   return "existe";
                else
-                   return new Res("go");
+                   return "go";
            }
 
            // GET api/verifConnexion/{mail}/{password}
            [HttpGet("verifConnexion/{mail}/{password}")]
            public Utilisateur verifConnexion(string mail, string password)
            {
-               return UtilisateurService.verificationConnexion(mail, password);
+               return _utilisateurService.verificationConnexion(mail, password);
            }
 
            // GET api/sameMDP/{id}/{password}
            [HttpGet("sameMDP/{id}/{password}")]
-           public Res sameMDP(int id, string password)
+           public string sameMDP(int id, string password)
            {
-               return new Res(UtilisateurService.Same_mdp(id, password));
+               return _utilisateurService.Same_mdp(id, password);
            }
 
            // GET api/ajoutus/{name}/{mail}/{password}
            [HttpGet("ajoutus/{name}/{mail}/{password}")]
-           public Res ajoutus(string name, string mail, string password)
+           public string ajoutus(string name, string mail, string password)
            {
-               UtilisateurService.ajouterUtilisateur(name,mail,password);
-               return new Res("bon");
+            _utilisateurService.ajouterUtilisateur(name,mail,password);
+               return "bon";
            }
 
            // GET api/getPhoto/{u}
            [HttpGet("getPhoto/{u}")]
-           public Res getPhoto(int u)
+           public string getPhoto(int u)
            {
-               return new Res(UtilisateurService.getPhoto(u));
+               return _utilisateurService.getPhoto(u);
            }
 
            // GET api/getPays/{u}
            [HttpGet("getPays/{u}")]
-           public  Res getPays(int u)
+           public string getPays(int u)
            {
-               return new Res(UtilisateurService.getPays(u));
+               return _utilisateurService.getPays(u);
            }
 
            // GET api/changePays/{id}/{selectPays}
            [HttpGet("changePays/{id}/{selectPays}")]
-           public Res changePays(int id,string selectPays)
+           public string changePays(int id,string selectPays)
            {
-              return new Res(UtilisateurService.changePays(id,selectPays));
+              return _utilisateurService.changePays(id,selectPays);
            }
 
            // GET api/changePhoto/{id}/{selectPhoto}
            [HttpGet("changePhoto/{id}/{selectPhoto}")]
-           public Res changePhoto(int id, string selectPhoto)
+           public string changePhoto(int id, string selectPhoto)
            {
-              return new Res (UtilisateurService.changePhoto(id, selectPhoto));
+              return _utilisateurService.changePhoto(id, selectPhoto);
            }
-           */
+           
     }
 }
