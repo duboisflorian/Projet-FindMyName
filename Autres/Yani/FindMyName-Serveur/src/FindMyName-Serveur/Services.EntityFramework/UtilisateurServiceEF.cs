@@ -116,9 +116,18 @@ namespace FindMyName_Serveur.Services.EntityFramework
             throw new NotImplementedException();
         }
 
-        public string getPays(int u)
+        public string getPays(int id)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            string s = "";
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].id == id)
+                    s = AllUtilisateurs[i].pays;
+            }
+
+            return s;
         }
 
         public string getPhoto(int u)
