@@ -115,9 +115,18 @@ namespace FindMyName_Serveur.Services.EntityFramework
             return AllUtilisateurs[AllUtilisateurs.Count - 1].id;
         }
 
-        public string getName(int u)
+        public string getName(int id)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            String s = "";
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].id == id)
+                    s = AllUtilisateurs[i].name;
+            }
+
+            return s;
         }
 
         public int getNbContact(int u)
