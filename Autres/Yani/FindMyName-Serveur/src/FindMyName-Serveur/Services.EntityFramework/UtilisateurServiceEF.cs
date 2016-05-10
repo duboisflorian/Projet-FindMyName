@@ -48,7 +48,9 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public void ajouterUtilisateur(string name, string mail, string password)
         {
-            throw new NotImplementedException();
+            context = new fmnContext();
+            var u1 = new Utilisateur(name, "", mail, password, "", 0);
+            creation(u1);
         }
 
         public string changePays(int id, string selectPays)
@@ -71,9 +73,12 @@ namespace FindMyName_Serveur.Services.EntityFramework
             throw new NotImplementedException();
         }
 
-        public void creation(int id)
+        public void creation(Utilisateur u1)
         {
-            throw new NotImplementedException();
+            context = new fmnContext();
+            u1.contacts = new List<Contact> { new Contact() };
+            context.Users.Add(u1);
+            context.SaveChanges();
         }
 
         public Utilisateur Existe(int id)
@@ -230,6 +235,23 @@ namespace FindMyName_Serveur.Services.EntityFramework
             }
 
             return verificationmail;
+        }
+
+        public Utilisateur getUser(string name)
+        {
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            Utilisateur user = new Utilisateur();
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].name == name)
+                {
+                    user = AllUtilisateurs[i];
+                }
+
+            }
+
+            return user;
         }
     }
 }

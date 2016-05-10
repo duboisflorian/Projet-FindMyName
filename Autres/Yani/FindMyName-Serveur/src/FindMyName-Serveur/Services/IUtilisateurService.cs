@@ -9,7 +9,7 @@ namespace FindMyName_Serveur.Interface
     public interface IUtilisateurService
     {
         IList<Utilisateur> ALL();
-        Utilisateur getUser(int id);
+        Utilisateur getUser(string name);
         Utilisateur Existe(int id);
         Utilisateur verificationConnexion(string mail, string password);
         Boolean verificationMailExist(String mail);
@@ -30,7 +30,7 @@ namespace FindMyName_Serveur.Interface
         List<Contact> getContacts(int id, string type);
         void addAmi(int user, int id);
         void addOnline(int user, int id);
-        void creation(int id);
+        void creation(Utilisateur u1);
         int getNbContact(int id);
         void addAmiOnline(int user, int id);
         String Add(int contactadd, int user, int id);
