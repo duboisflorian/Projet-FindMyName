@@ -8,7 +8,7 @@ using FindMyName_Serveur.Models;
 namespace FindMyNameServeur.Migrations
 {
     [DbContext(typeof(fmnContext))]
-    [Migration("20160509163735_Initial")]
+    [Migration("20160510132856_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

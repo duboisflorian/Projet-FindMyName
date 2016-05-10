@@ -27,7 +27,6 @@ namespace FindMyName_Serveur.Interface
         ResIDViewModel Jouer(int id);
         Contact getAmiExiste(int id, int u);
         Boolean getOnlineExiste(int id, int u);
-        void changerPhoto(int id, string photo);
         List<Contact> getContacts(int id, string type);
         void addAmi(int user, int id);
         void addOnline(int user, int id);

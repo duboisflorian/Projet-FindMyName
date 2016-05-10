@@ -15,7 +15,7 @@ namespace FindMyName_Serveur.Models
         public int meilleurScore { get; set; }
         public virtual IList<Contact> contacts { get; set; }
 
-        public Utilisateur(int id, string name, string photo, string mail, string password, string pays, int meilleurScore, IEnumerable<Contact> contacts)
+        public Utilisateur(int id, string name, string photo, string mail, string password, string pays, int meilleurScore, List<Contact> contacts)
         {
             this.id = id;
             this.name = name;

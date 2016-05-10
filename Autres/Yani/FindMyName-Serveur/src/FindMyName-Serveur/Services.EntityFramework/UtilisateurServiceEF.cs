@@ -8,6 +8,7 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.Logging;
 using FindMyName_Serveur.Controllers;
 using Microsoft.Data.Entity.Infrastructure;
+using Microsoft.Data.Entity;
 
 namespace FindMyName_Serveur.Services.EntityFramework
 {
@@ -20,7 +21,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
         public IList<Utilisateur> ALL()
         {
             context = new fmnContext();
-            var requete = from utilisateur in context.Users
+            var requete = from utilisateur in context.Users.Include(b => b.contacts)
                           select utilisateur;
 
             // Execution de la requête
