@@ -434,7 +434,7 @@ Project : Find My Name v_3
 - Florian
 	- PowerPoint
 	
-## Jeudi 05/04
+## Jeudi 05/05
 
 - Lionel
 	- Mise en place de la page de connexion,base de données et début du traitement de la page de jeu (Android Studio)
@@ -443,17 +443,17 @@ Project : Find My Name v_3
 - Florian
 	- PowerPoint
 
-## Vendredi 06/04
+## Vendredi 06/05
 
 - Lionel 
 	- Mise en place du timer, début ajout page de profil 
 	
-## Samedi 07/04
+## Samedi 07/05
 
 - Lionel 
 	- Requête pour mettre a jour le pseudo, le mot de passe et le pays
 
-## Dimanche 08/04
+## Dimanche 08/05
 
 - Lionel
 	- Ajout du logo au démarrage de l'application + arrnagement de quelques bugs dans la page de profil
@@ -461,3 +461,12 @@ Project : Find My Name v_3
 - Florian
 	- PowerPoint
 	- Affichage client
+
+## Lundi 09/05
+
+-Groupe 
+	- Réunion avec le prof
+
+- Lionel
+	- Correction affichage sur la page de jeu
+	- MAJ photo de profil fonctionnel
