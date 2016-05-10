@@ -33,10 +33,15 @@ namespace FindMyName_Serveur.Controllers
         {
             return _themeService.ALL();
         }
-        [HttpGet("ALLREPONSE/{id}")]
-        public IEnumerable<Reponse> ALLREPONSE(int id)
+        [HttpGet("ALLREPONSE")]
+        public IList<Reponse> ALLREPONSE()
         {
-                return _themeService.getReponses(id);
+            return _themeService.ALLREPONSE();
+        }
+        [HttpGet("getReponses/{id}")]
+        public IEnumerable<Reponse> getReponses(int id)
+        {
+            return _themeService.getReponses(id);
         }
         [HttpGet("getThemes")]
         public IEnumerable<Theme> getThemes()
@@ -73,5 +78,23 @@ namespace FindMyName_Serveur.Controllers
         {
             return _themeService.getId(n);
         }
+        [HttpGet("getReponse/{i}")]
+        public string getReponse(int i)
+        {
+            return _themeService.getReponse(i);
+
+        }
+        [HttpGet("getDone/{i}")]
+        public bool getDone(int i)
+        {
+            return _themeService.getDone(i);
+        }
+        [HttpGet("getTaille")]
+        public int getTaille()
+        {
+            return _themeService.getTaille();
+        }
+
+
     }
 }
