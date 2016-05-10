@@ -180,7 +180,27 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public string Same_mdp(int id, string password)
         {
-            throw new NotImplementedException();
+            IList<Utilisateur> AllUtilisateurs = new List<Utilisateur> { };
+            AllUtilisateurs = ALL();
+            String r = "";
+            for (var i = 0; i < AllUtilisateurs.Count; i++)
+            {
+                if (AllUtilisateurs[i].id == id)
+                {
+                    if (AllUtilisateurs[i].password == password)
+                    {
+                        r = "le mot de passe est identique !";
+                    }
+                    else
+                    {
+                        AllUtilisateurs[i].password = password;
+                        r = "le mot de passe a bien ete change !";
+                    }
+
+                }
+            }
+
+            return r;
         }
 
         public Utilisateur verificationConnexion(string mail, string password)
