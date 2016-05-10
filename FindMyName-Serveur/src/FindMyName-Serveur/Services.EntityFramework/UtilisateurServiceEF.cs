@@ -165,15 +165,17 @@ namespace FindMyName_Serveur.Services.EntityFramework
             Utilisateur user = new Utilisateur();
             for (var i = 0; i < AllUtilisateurs.Count; i++)
             {
-                if (AllUtilisateurs[i].id == u)
-                    if (AllUtilisateurs[i].meilleurScore < score)
-                        user = AllUtilisateurs[i];
-                user.meilleurScore = score;
-            }
-            context = new fmnContext();
+                if (AllUtilisateurs[i].id == u && AllUtilisateurs[i].meilleurScore < score)
+                {
+                    user = AllUtilisateurs[i];
+                    user.meilleurScore = score;
 
-            context.Users.Update(user);
-            context.SaveChanges();
+                    context = new fmnContext();
+
+                    context.Users.Update(user);
+                    context.SaveChanges();
+                }
+            }
         }
 
         public void creation(Utilisateur u1)

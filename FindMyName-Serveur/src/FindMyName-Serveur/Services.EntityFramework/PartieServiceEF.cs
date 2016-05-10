@@ -196,15 +196,14 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
             if (partieEnCours != null)
             {
-                var n = partieEnCours.Manches.Count - 1;
-                if (partieEnCours.Manches[n].s1 == -1)
+                if (partieEnCours.Manches.Last().s1 == -1)
                 {
-                    partieEnCours.Manches[n].s1 = score;
-                    if (partieEnCours.Manches[n].s1 > partieEnCours.Manches[n].s2)
+                    partieEnCours.Manches.Last().s1 = score;
+                    if (partieEnCours.Manches.Last().s1 > partieEnCours.Manches.Last().s2)
                     {
                         partieEnCours.s1 = partieEnCours.s1 + 1;
                     }
-                    if (partieEnCours.Manches[n].s1 < partieEnCours.Manches[n].s2)
+                    if (partieEnCours.Manches.Last().s1 < partieEnCours.Manches.Last().s2)
                     {
                         partieEnCours.s2 = partieEnCours.s2 + 1;
                     }
@@ -213,14 +212,14 @@ namespace FindMyName_Serveur.Services.EntityFramework
                         partieEnCours.player = -1;
                     }
                 }
-                else if (partieEnCours.Manches[n].s2 == -1)
+                else if (partieEnCours.Manches.Last().s2 == -1)
                 {
-                    partieEnCours.Manches[n].s2 = score;
-                    if (partieEnCours.Manches[n].s1 > partieEnCours.Manches[n].s2)
+                    partieEnCours.Manches.Last().s2 = score;
+                    if (partieEnCours.Manches.Last().s1 > partieEnCours.Manches.Last().s2)
                     {
                         partieEnCours.s1 = partieEnCours.s1 + 1;
                     }
-                    if (partieEnCours.Manches[n].s1 < partieEnCours.Manches[n].s2)
+                    if (partieEnCours.Manches.Last().s1 < partieEnCours.Manches.Last().s2)
                     {
                         partieEnCours.s2 = partieEnCours.s2 + 1;
                     }
@@ -229,25 +228,26 @@ namespace FindMyName_Serveur.Services.EntityFramework
                         partieEnCours.player = -1;
                     }
                 }
-            }
-            else
-            {
-                Theme theme = _themeService.getTheme(th);
-                if (id == partieEnCours.j1.id)
-                {
-                    partieEnCours.Manches.Add(new Manche(theme, score, -1));
-                }
+           
                 else
                 {
-                    partieEnCours.Manches.Add(new Manche( theme, -1, score));
+                    Theme theme = _themeService.getTheme(th);
+                    if (id == partieEnCours.j1.id)
+                    {
+                        partieEnCours.Manches.Add(new Manche(theme, score, -1));
+                    }
+                    else
+                    {
+                        partieEnCours.Manches.Add(new Manche( theme, -1, score));
+                    }
+
+                    partieEnCours.player = id_ami;
                 }
+                context = new fmnContext();
 
-                partieEnCours.player = id_ami;
+                context.parties.Update(partieEnCours);
+                context.SaveChanges();
             }
-            context = new fmnContext();
-
-            context.parties.Update(partieEnCours);
-            context.SaveChanges();
         }
 
         public void AjouterPartie(int id, int id_ami, int th, int score)
@@ -255,7 +255,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
             Utilisateur joueur1 = _utilisateurService.getUser(id);
             Utilisateur joueur2 = _utilisateurService.getUser(id_ami);
             Theme theme = _themeService.getTheme(th);
-            Partie p = new Partie(joueur1, joueur2, 0, 0, id_ami, new List<Manche> { new Manche(theme, score, 0) });
+            Partie p = new Partie(joueur1, joueur2, 0, 0, id_ami, new List<Manche> { new Manche(theme, score, -1) });
 
             context = new fmnContext();
 
