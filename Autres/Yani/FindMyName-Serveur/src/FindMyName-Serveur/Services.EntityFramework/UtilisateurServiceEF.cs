@@ -43,7 +43,27 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         public void addAmi(int user, int u)
         {
-            throw new NotImplementedException();
+            IList<Contact> AllContact = new List<Contact> { };
+            AllContact = ALLContact();
+            for (var i = 0; i < AllContact.Count; i++)
+            {
+                if (AllContact[i].id == u)
+                {
+                    AllContact[i].user.contacts.Add(new Contact(getUser(user), user, "ami"));
+                    context = new fmnContext();
+
+                    context.Contact.Update(AllContact[i]);
+                    context.SaveChanges();
+                }
+                if (AllContact[i].id == user)
+                {
+                    AllContact[i].user.contacts.Add(new Contact(getUser(u), u, "ami"));
+                    context = new fmnContext();
+
+                    context.Contact.Update(AllContact[i]);
+                    context.SaveChanges();
+                }
+            }
         }
 
         public void addAmiOnline(int user, int u)
@@ -167,6 +187,27 @@ namespace FindMyName_Serveur.Services.EntityFramework
         public List<Contact> getContacts(int id, string type)
         {
             throw new NotImplementedException();
+            //    List<Contact> c = new List<Contact>();
+            //    IList<Contact> AllContact = new List<Contact>();
+            //    AllContact = ALLContact();
+            //    for (var i = 0; i < ALLContact.Count; i++)
+            //    {
+            //        if (ALLContact[i].id == id)
+            //        {
+            //            if (ALLContact[i].user.contacts != null)
+            //            {
+            //                for (var n = 0; n < ALLContact[i].contact.Count; n++)
+            //                {
+            //                    if (ALLContact[i].contact[n].type == type)
+            //                    {
+            //                        c.Add(ALLContact[i].contact[n]);
+            //                    }
+            //                }
+            //            }
+            //        }
+
+            //    }
+            //    return c;
         }
 
         public int getlastid()
@@ -351,6 +392,21 @@ namespace FindMyName_Serveur.Services.EntityFramework
             }
 
             return user;
+        }
+
+        public void changerPhoto(int id, string photo)
+        {
+            IList<Contact> AllContact = new List<Contact> { };
+            AllContact = ALLContact();
+            for (var i = 0; i < AllContact.Count; i++)
+            {
+                for (var h = 0; h < AllContact[i].user.contacts.Count; h++)
+                {
+                    if (AllContact[i].user.contacts[h].id == id)
+                        AllContact[i].user.contacts[h].user.photo = photo;
+                }
+
+            }
         }
     }
 }
