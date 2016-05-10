@@ -61,21 +61,43 @@ namespace FindMyName_Serveur.Controllers
          [HttpGet("getNbVictoire/{id}/{id_ami}")]
          public int getNbVictoire(int id, int id_ami)
          {
-             return _partieService.getNbPartie(id, id_ami,"victoire");
+             return _partieService.getNbPartie(id, id_ami,"victoireAvecAmi");
          }
 
          // GET: api/Partie/getNbDefaite/{ID}/{ID_AMI}
          [HttpGet("getNbDefaite/{id}/{id_ami}")]
          public int getNbDefaite(int id, int id_ami)
          {
-             return _partieService.getNbPartie(id, id_ami,"defaite");
+             return _partieService.getNbPartie(id, id_ami,"defaiteAvecAmi");
          }
+
+        // GET: api/Partie/getNbD/{ID}/
+        [HttpGet("getNbD/{id}")]
+        public int getNbD(int id)
+        {
+            return _partieService.getNbPartie(id, 0, "defaite");
+        }
+
+        // GET: api/Partie/getNbV/{ID}/
+        [HttpGet("getNbV/{id}")]
+        public int getNbV(int id)
+        {
+            return _partieService.getNbPartie(id, 0, "victoire");
+        }
 
         // GET: api/Partie/getnbParties/{ID}/
         [HttpGet("getnbParties/{id}")]
         public int getnbParties(int id)
         {
             return _partieService.getNbPartie(id,0,"all");
+
+        }
+
+        // GET: api/Partie/getThemeFavori/{ID}/
+        [HttpGet("getThemeFavori/{id}")]
+        public ResViewModel getThemeFavori(int id)
+        {
+            return new ResViewModel(_partieService.getThemeFavori(id));
         }
 
         /*
@@ -86,29 +108,7 @@ namespace FindMyName_Serveur.Controllers
                      return new Res("gg");
                  }
 
+        */
 
-
-
-                 // GET: api/Partie/getThemeFavori/{ID}/
-                 [HttpGet("getThemeFavori/{id}")]
-                 public Res getThemeFavori(int id)
-                 {
-                     return new Res (PartieService.getThemeFavori(id));
-                 }
-
-                 // GET: api/Partie/getNbD/{ID}/
-                 [HttpGet("getNbD/{id}")]
-                 public int getNbD(int id)
-                 {
-                     return PartieService.getNbD(id);
-                 }
-
-                 // GET: api/Partie/getNbV/{ID}/
-                 [HttpGet("getNbV/{id}")]
-                 public int getNbV(int id)
-                 {
-                     return PartieService.getNbV(id);
-                 }
-                 */
     }
 }

@@ -57,11 +57,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
 
         }
 
-        public int getNbD(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+      
         public int getNbPartie(int id, int id_ami , string etat )
         {
             context = new fmnContext();
@@ -78,7 +74,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
                            .Where(p => (p.j1.id == id ||p.j2.id == id))
                            .Count();
                     break;
-                case "victoire":
+                case "victoireAvecAmi":
                     nombrePartie = context.parties
                          .Include(p => p.j1)
                          .Include(p => p.j2)
@@ -86,7 +82,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
                          && (((p.j1.id == id && p.s1 < p.s2) || (p.s1 > p.s2 && p.j2.id == id)) && p.player == -1))
                          .Count();
                     break;
-                case "defaite":
+                case "defaiteAvecAmi":
                     nombrePartie = context.parties
                          .Include(p => p.j1)
                          .Include(p => p.j2)
@@ -94,17 +90,26 @@ namespace FindMyName_Serveur.Services.EntityFramework
                          && (((p.j1.id == id && p.s1 > p.s2) || (p.s1 < p.s2 && p.j2.id == id)) && p.player == -1))
                          .Count();
                     break;
+                case "victoire":
+                    nombrePartie = context.parties
+                         .Include(p => p.j1)
+                         .Include(p => p.j2)
+                         .Where(p => (p.j1.id == id || p.j2.id == id)
+                         && (((p.j1.id == id && p.s1 < p.s2) || (p.s1 > p.s2 && p.j2.id == id)) && p.player == -1))
+                         .Count();
+                    break;
+                case "defaite":
+                    nombrePartie = context.parties
+                         .Include(p => p.j1)
+                         .Include(p => p.j2)
+                         .Where(p => (p.j1.id == id || p.j2.id == id)
+                         && (((p.j1.id == id && p.s1 > p.s2) || (p.s1 < p.s2 && p.j2.id == id)) && p.player == -1))
+                         .Count();
+                    break;
             }
 
             return nombrePartie;
         }
-
-
-        public int getNbV(int id)
-        {
-            throw new NotImplementedException();
-        }
-
 
         public IEnumerable<Partie> getPartieEnCours(int id)
         {
@@ -115,7 +120,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
                     .ThenInclude((Manche m) => m.theme)
                     .Include(p => p.j1)
                     .Include(p=> p.j2)
-                    .Where(p => (p.j1.id == id || p.j2.id == id)) // && p.s1 < 3 && p.s2 < 3  pas compris à revoir sur le client
+                    .Where(p => (p.j1.id == id || p.j2.id == id) && p.s1 < 3 && p.s2 < 3) 
                     .ToList();
 
             return partie;
@@ -136,14 +141,38 @@ namespace FindMyName_Serveur.Services.EntityFramework
             return partie;
         }
 
-        public bool getPartieExiste(int id, int id_ami)
-        {
-            throw new NotImplementedException();
-        }
-
         public string getThemeFavori(int id)
         {
-            throw new NotImplementedException();
+            context = new fmnContext();
+            string th = "aucun pour le moment";
+            List<string> themes = new List<string>();
+
+            IEnumerable<Partie> parties = context.parties
+                     .Include(p => p.Manches)
+                    .ThenInclude((Manche m) => m.theme)
+                    .Include(p => p.j1)
+                    .Include(p => p.j2)
+                    .Where(p => (p.j1.id == id || p.j2.id == id) )
+                    .ToList();
+
+            foreach( var partie in parties)
+            {
+                foreach(var manche in partie.Manches)
+                {
+                    themes.Add(manche.theme.text);
+                }
+            } 
+
+
+            if (themes.Count() != 0)
+            {
+                var resultat = themes
+                    .GroupBy(val => val)
+                    .OrderByDescending(grp => grp.Count())
+                    .ThenBy(grp => grp.Key);
+                th = resultat.First().Key;
+            }
+            return th;
         }
 
         public void ModifierPartie(int id, int id_ami, int th, int score, int id_partie)
