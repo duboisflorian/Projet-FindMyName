@@ -26,8 +26,8 @@ var JouerComponent = (function () {
         this.task = '';
         this.reponse = [];
         this.remaining = 0;
+        this.tabreponses = { "id": 1, "reponses": [{ "Appellations": [], "done": false }] };
         this.u = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
-        this.p = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
     }
     JouerComponent.prototype.gotoDeco = function () {
         alert("Vous avez été déconnecté");
@@ -42,13 +42,12 @@ var JouerComponent = (function () {
     JouerComponent.prototype.ngOnInit = function () {
         var _this = this;
         var th = +this._routeParams.get('th');
-        this.tabreponses = { "id": 1, "reponses": [] };
-        this._jouerService.getReponses(th).subscribe(function (data) { return _this.tabreponses = data; });
+        this._jouerService.getReponses(th).subscribe(function (data) { return _this.tabreponses.reponses = data; });
         this.sTimeout = setTimeout(function () {
             for (var i = 0; i < _this.tabreponses.reponses.length; i++) {
                 _this.tabreponses.reponses[i].done = false;
             }
-        }, 600);
+        }, 1000);
         var us = +this._routeParams.get('us');
         this._uService.getUser(us)
             .subscribe(function (data) { return _this.u = data; });
@@ -80,9 +79,9 @@ var JouerComponent = (function () {
         this.bon = false;
         if (this.task) {
             for (var i = 0; i < this.tabreponses.reponses.length; i++) {
-                for (var j = 0; j < this.tabreponses.reponses[i].rep.length; j++) {
-                    if (this.RemoveAccents(this.tabreponses.reponses[i].rep[j].toLowerCase().trim()) == this.RemoveAccents(this.task.toLowerCase().trim()) && this.tabreponses.reponses[i].done == false) {
-                        this.reponse.push({ "text": this.tabreponses.reponses[i].rep[0].toLowerCase(), "done": true });
+                for (var j = 0; j < this.tabreponses.reponses[i].Appellations.length; j++) {
+                    if (this.RemoveAccents(this.tabreponses.reponses[i].Appellations[j].text.toLowerCase().trim()) == this.RemoveAccents(this.task.toLowerCase().trim()) && this.tabreponses.reponses[i].done == false) {
+                        this.reponse.push({ "text": this.tabreponses.reponses[i].Appellations[0].text.toLowerCase(), "done": true });
                         this.remaining++;
                         this.tabreponses.reponses[i].done = true;
                         this.bon = true;

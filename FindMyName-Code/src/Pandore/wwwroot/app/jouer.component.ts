@@ -1,10 +1,8 @@
 ﻿import { Component, Input, OnInit, Output, EventEmitter, OnDestroy } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import { Router } from 'angular2/router';
-import { Reponse } from './classe/reponses';
 import { ReponsesTrouve } from './classe/reponsestrouve';
-import { Jouer } from './classe/jouer';
-import { Partie } from './classe/partie';
+import { Reponses, Mot,Jouer} from './classe/reponses';
 import { JouerService } from './service/jouer.service';
 import { ThemeService } from './service/theme.service';
 import { PartieService } from './service/partie.service';
@@ -21,21 +19,14 @@ export class JouerComponent implements OnInit {
     task: string = '';
     reponse: ReponsesTrouve[] = [];
     remaining: number = 0;
+    Partieexiste: any;
 
-    tabreponses: Jouer;
+    tabreponses: Jouer = { "id": 1, "reponses": [{ "Appellations" : [],"done":false}] };
     u: Utilisateur = { "id": 1, "name": "en attente", "photo": "fichier/logo.jpg", "mail": "en atttente", "password": "", "pays": "", "meilleurScore": 0 };
     bon: boolean;
     theme: Theme;
-    p: Partie = { "id_partie": 0, "id_j1": 0, "id_j2": 0, "j1": "", "j2": "", "s1": 0, "s2": 0, "player": 0, "manche": [{ "id_theme": 0, "theme": "", "s1": 0, "s2": 0 }] };
     sTimeout: number;
     sTimeoutBon: number;
-
-    j1: string;
-    j2: string;
-    j1temp: any;
-    j2temp: any;
-
-    Partieexiste: any;
 
     constructor(
         private _router: Router,
@@ -57,13 +48,12 @@ export class JouerComponent implements OnInit {
     }
     ngOnInit() {
         let th = +this._routeParams.get('th');
-        this.tabreponses = { "id": 1, "reponses": [] };
-        this._jouerService.getReponses(th).subscribe(data => this.tabreponses = data);
+        this._jouerService.getReponses(th).subscribe(data => this.tabreponses.reponses = data);
         this.sTimeout = setTimeout(() => {
             for (var i = 0; i < this.tabreponses.reponses.length; i++) {
                 this.tabreponses.reponses[i].done = false;
             }
-        }, 600);
+        }, 1000);
 
 
         let us = +this._routeParams.get('us');
@@ -98,9 +88,9 @@ export class JouerComponent implements OnInit {
         this.bon = false;
         if (this.task) {
             for (var i = 0; i < this.tabreponses.reponses.length; i++) {
-                for (var j = 0; j < this.tabreponses.reponses[i].rep.length; j++) {
-                    if (this.RemoveAccents(this.tabreponses.reponses[i].rep[j].toLowerCase().trim()) == this.RemoveAccents(this.task.toLowerCase().trim()) && this.tabreponses.reponses[i].done == false) {
-                        this.reponse.push({ "text": this.tabreponses.reponses[i].rep[0].toLowerCase(), "done": true });
+                for (var j = 0; j < this.tabreponses.reponses[i].Appellations.length; j++) {
+                    if (this.RemoveAccents(this.tabreponses.reponses[i].Appellations[j].text.toLowerCase().trim()) == this.RemoveAccents(this.task.toLowerCase().trim()) && this.tabreponses.reponses[i].done == false) {
+                        this.reponse.push({ "text": this.tabreponses.reponses[i].Appellations[0].text.toLowerCase(), "done": true });
                         this.remaining++;
                         this.tabreponses.reponses[i].done = true;
                         this.bon = true;

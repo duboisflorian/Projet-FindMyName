@@ -1,8 +1,20 @@
 "use strict";
-var Reponse = (function () {
-    function Reponse() {
+var Reponses = (function () {
+    function Reponses() {
     }
-    return Reponse;
+    return Reponses;
 }());
-exports.Reponse = Reponse;
+exports.Reponses = Reponses;
+var Mot = (function () {
+    function Mot() {
+    }
+    return Mot;
+}());
+exports.Mot = Mot;
+var Jouer = (function () {
+    function Jouer() {
+    }
+    return Jouer;
+}());
+exports.Jouer = Jouer;
 //# sourceMappingURL=reponses.js.map
