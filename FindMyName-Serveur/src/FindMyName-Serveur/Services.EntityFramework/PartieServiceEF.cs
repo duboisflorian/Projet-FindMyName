@@ -118,7 +118,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
                     .ThenInclude((Manche m) => m.theme)
                     .Include(p => p.j1)
                     .Include(p=> p.j2)
-                    .Where(p => (p.j1.id == id || p.j2.id == id) && p.s1 < 3 && p.s2 < 3) 
+                    .Where(p => (p.j1.id == id || p.j2.id == id) && p.s1 < 3 && p.s2 < 3 && p.player != -1) 
                     .ToList();
 
             return partie;
