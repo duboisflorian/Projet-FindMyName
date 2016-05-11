@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -90,6 +91,20 @@ public class choix_theme extends AppCompatActivity {
         intent.putExtra("id",strid);
         startActivity(intent);
         Log.i("ENI","Redirection !");
+    }
+
+    // Bouton back Android
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+            Log.i("MainActivity","Bouton retour désactivé");
+        }
+
+        return false;
     }
 }
 

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -108,4 +109,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this,inscription.class);
         startActivity(intent);
     }
+
+    // Bouton back Android
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+           Log.i("MainActivity","Bouton retour désactivé");
+        }
+
+        return false;
+    }
+
 }
