@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import data.findmyname.data;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         data databaseFilm = new data (getBaseContext(), "dbuser.db", null, 1);
         SQLiteDatabase db = databaseFilm.getReadableDatabase();
         db.setLocale(Locale.FRENCH);
+
+        //Souligne le TextView Inscription
+        TextView tv_inscritpion = findViewById(R.id.)
 
         final Cursor result = db.rawQuery("SELECT * FROM user",null);
 

@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="S&apos;incrire"
-        android:id="@+id/textView5"
+        android:id="@+id/tv_inscription"
         android:layout_alignBottom="@+id/btnCo"
         android:layout_toLeftOf="@+id/mdp"
         android:layout_toStartOf="@+id/mdp"
