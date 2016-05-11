@@ -12,21 +12,21 @@ namespace FindMyName_Serveur.Models
         {
             var context = serviceProvider.GetService<fmnContext>();
 
-            var u1 = new Utilisateur("Florian", "fichier/psg.jpg", "Florian@gmail.com", "1234", "France", 25);
-            var u2 = new Utilisateur("Yani", "fichier/logo.jpg", "Yani@gmail.com", "1234", "France", 25);
-            var u3 = new Utilisateur("Maxime", "fichier/logo.jpg", "Maxime@gmail.com", "1234", "France", 25);
-            var u4 = new Utilisateur("Lionel", "fichier/logo.jpg", "Lionel@gmail.com", "1234", "France", 25);
-            var u5 = new Utilisateur("Diego", "fichier/logo.jpg", "Diego@gmail.com", "1234", "France", 25);
-            var u6 = new Utilisateur("Tingting", "fichier/ol.jpg", "Tingting@gmail.com", "1234", "France", 25);
-            var u7 = new Utilisateur("Marco", "fichier/logo.jpg", "Marco@gmail.com", "1234", "France", 25);
-            var u8 = new Utilisateur("Luffy", "fichier/logo.jpg", "Luffy@gmail.com", "1234", "France", 25);
-            var u9 = new Utilisateur("Mingo", "fichier/logo.jpg", "Mingo@gmail.com", "1234", "France", 25);
-            var u10 = new Utilisateur("Zoro", "fichier/logo.jpg", "Zoro@gmail.com", "1234", "France", 25);
-            var u11 = new Utilisateur("Papuce", "fichier/logo.jpg", "Papuce@gmail.com", "1234", "France", 25);
-            var u12 = new Utilisateur("Chandler", "fichier/logo.jpg", "ante.Vivamus.non@arcu.co.uk", "1234", "France", 25);
-            var u13 = new Utilisateur("Lacy", "fichier/logo.jpg", "ante.Vivamus.non@arcu.co.uk", "1234", "France", 25);
-            var u14 = new Utilisateur("Quamar", "fichier/logo.jpg", "est.ac.facilisis@Nullasemper.net", "1234", "France", 25);
-            var u15 = new Utilisateur("Sandra", "fichier/logo.jpg", "accumsan.laoreet@gravida.edu", "1234", "France", 25);
+            var u1 = new Utilisateur("Florian", "fichier/psg.jpg", "Florian@gmail.com", "1234", "France", 20);
+            var u2 = new Utilisateur("Yani", "fichier/logo.jpg", "Yani@gmail.com", "1234", "France", 10);
+            var u3 = new Utilisateur("Maxime", "fichier/logo.jpg", "Maxime@gmail.com", "1234", "France", 20);
+            var u4 = new Utilisateur("Lionel", "fichier/logo.jpg", "Lionel@gmail.com", "1234", "France", 20);
+            var u5 = new Utilisateur("Diego", "fichier/logo.jpg", "Diego@gmail.com", "1234", "France", 20);
+            var u6 = new Utilisateur("Tingting", "fichier/ol.jpg", "Tingting@gmail.com", "1234", "France", 20);
+            var u7 = new Utilisateur("Marco", "fichier/logo.jpg", "Marco@gmail.com", "1234", "France", 0);
+            var u8 = new Utilisateur("Luffy", "fichier/logo.jpg", "Luffy@gmail.com", "1234", "France", 0);
+            var u9 = new Utilisateur("Mingo", "fichier/logo.jpg", "Mingo@gmail.com", "1234", "France", 0);
+            var u10 = new Utilisateur("Zoro", "fichier/logo.jpg", "Zoro@gmail.com", "1234", "France", 0);
+            var u11 = new Utilisateur("Papuce", "fichier/logo.jpg", "Papuce@gmail.com", "1234", "France", 0);
+            var u12 = new Utilisateur("Chandler", "fichier/logo.jpg", "ante.Vivamus.non@arcu.co.uk", "1234", "France", 0);
+            var u13 = new Utilisateur("Lacy", "fichier/logo.jpg", "ante.Vivamus.non@arcu.co.uk", "1234", "France", 0);
+            var u14 = new Utilisateur("Quamar", "fichier/logo.jpg", "est.ac.facilisis@Nullasemper.net", "1234", "France", 0);
+            var u15 = new Utilisateur("Sandra", "fichier/logo.jpg", "accumsan.laoreet@gravida.edu", "1234", "France", 0);
 
             u1.contacts = new List<Contact> { new Contact(u6, 6, "ami") };
             u2.contacts = new List<Contact> { new Contact(u6, 6, "ami") };
