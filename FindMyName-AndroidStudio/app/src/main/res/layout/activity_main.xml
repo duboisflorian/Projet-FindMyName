@@ -53,11 +53,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Connexion"
+        android:background="@drawable/btnshape"
         android:id="@+id/btnCo"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="73dp"
         android:layout_below="@+id/mdp"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
