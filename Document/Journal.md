@@ -415,6 +415,8 @@ Project : Find My Name v_3
 	- Entity paramétrage
 	- Entity Utilisateur et Theme
 	- Correction bug
+- Yani 
+	- paramètrage requete linq serveur
 
 ## Mardi 05/05
 
@@ -425,6 +427,9 @@ Project : Find My Name v_3
 	- Entity paramétrage
 	- Restructuration server
 	- Début bd et sample data
+
+- Yani 
+	- paramètrage requete linq serveur
 	
 ## Mercredi 04/05
 
@@ -433,6 +438,9 @@ Project : Find My Name v_3
 
 - Florian
 	- PowerPoint
+
+- Yani 
+	- resolution de bug coté serveur
 	
 ## Jeudi 05/05
 
@@ -442,6 +450,10 @@ Project : Find My Name v_3
 
 - Florian
 	- PowerPoint
+
+- Yani 
+	- insertion données
+	- service thème
 
 ## Vendredi 06/05
 
@@ -470,3 +482,9 @@ Project : Find My Name v_3
 - Lionel
 	- Correction affichage sur la page de jeu
 	- MAJ photo de profil fonctionnel
+
+- Yani 
+	- Renommage des services, interfaces et variable
+	- Resolution du bug d'insertion de données de reponses
+	- 
+	
