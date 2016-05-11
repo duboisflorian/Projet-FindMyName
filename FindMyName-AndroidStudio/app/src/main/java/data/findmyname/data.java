@@ -141,6 +141,19 @@ public class data extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Jeep')");
         db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Kia')");
         db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Volvo')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Skoda')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Bugatti')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Datsun')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Dodge')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Chrysler')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Chevrolet')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Jaguar')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Lamborghini')");
+        db.execSQL("INSERT INTO themevoiture(reponse) VALUES ('Maserati')");
+
+
+
+
 
         //////////////////////////////////////////////////////////////////////////////////////////
 
