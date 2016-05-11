@@ -36,8 +36,6 @@ namespace FindMyName_Serveur.Models
             u8.contacts = new List<Contact> { new Contact(u6, 6, "online") };
             u6.contacts = new List<Contact> { new Contact(u1, 1, "ami"), new Contact(u2, 2, "ami"), new Contact(u3, 3, "ami"), new Contact(u4, 4, "ami"), new Contact(u5, 5, "ami"), new Contact(u8, 8, "online") };
 
-
-            var r1 = new Reponse(false, new List<Mot> { new Mot("Zlatan"), new Mot("Ibrahimovic") });
             var r2 = new Reponse(false, new List<Mot> { new Mot("Zlatan"), new Mot("Ibrahimovic") });
             var r3 = new Reponse(false, new List<Mot> { new Mot("Lucas"), new Mot("Moura") });
             var r4 = new Reponse(false, new List<Mot> { new Mot("Douchez"), new Mot("Nicolas") });
@@ -311,7 +309,7 @@ namespace FindMyName_Serveur.Models
             var r263 = new Reponse(false, new List<Mot> { new Mot("Robben") });
             var r264 = new Reponse(false, new List<Mot> { new Mot("Weihrauch") });
 
-            var t1 = new Theme("PSG", "./fichier/psg.jpg", false, new List<Reponse> { r1,r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28 });
+            var t1 = new Theme("PSG", "./fichier/psg.jpg", false, new List<Reponse> { r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28 });
             var t2 = new Theme("OL", "./fichier/ol.jpg", false, new List<Reponse> { r29, r30, r31, r32, r33, r34, r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55 });
             var t3 = new Theme("REAL", "./fichier/real.jpg", false, new List<Reponse> { r56, r57, r58, r59, r60, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70, r71, r72, r73, r74, r75, r76, r77, r78, r79, r80, r81, r82, r83, r84, r85 });
             var t4 = new Theme("BARCA", "./fichier/barca.jpg", false, new List<Reponse> { r86, r87, r88, r89, r90, r91, r92, r93, r94, r95, r96, r97, r98, r99, r100, r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r113, r114 });
