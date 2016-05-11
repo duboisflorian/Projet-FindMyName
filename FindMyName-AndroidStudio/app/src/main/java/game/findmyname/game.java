@@ -193,7 +193,7 @@ public class game extends AppCompatActivity {
                                 db.execSQL("UPDATE user set meilleurscore="+finalCompteur +" WHERE id="+id);
                             }
 
-                            Intent intent1 = new Intent(game.this,choix_theme.class);
+                            Intent intent1 = new Intent(game.this,acceuil.class);
                             intent1.putExtra("id",strid);
                             startActivity(intent1);
 
@@ -283,7 +283,7 @@ public class game extends AppCompatActivity {
                         db.execSQL("UPDATE user set meilleurscore="+nbpointdb +" WHERE id="+id);
                     }
 
-                    Intent intent = new Intent(game.this,choix_theme.class);
+                    Intent intent = new Intent(game.this,acceuil.class);
                     Log.i("game","id envoyé "+strid);
                     intent.putExtra("id",strid);
                     startActivity(intent);
