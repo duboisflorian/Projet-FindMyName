@@ -246,7 +246,7 @@ public class game extends AppCompatActivity {
         final TextView chrono = (TextView) findViewById(R.id.timer);
 
         m_handlerTask = new Runnable() {
-            int time = 15;
+            int time = 120;
 
             @Override
             public void run() {
