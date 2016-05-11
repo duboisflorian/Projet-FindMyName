@@ -494,5 +494,9 @@ Project : Find My Name v_3
 	- Service Jouer
 	- Service Utilisateur
 	- Controller jouer, utilisateur, thème
+
+- Maxime 
+	- Service Partie effectué au complet
+	- Controller partie	
 	
 	
