@@ -77,7 +77,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
                          .Include(p => p.j1)
                          .Include(p => p.j2)
                          .Where(p => (p.j1.id == id || p.j2.id == id) && (p.j1.id == id_ami || p.j2.id == id_ami)
-                         && (((p.j1.id == id && p.s1 < p.s2) || (p.s1 > p.s2 && p.j2.id == id)) && p.player == -1))
+                         && (((p.j1.id == id && p.s1 > p.s2) || (p.s1 < p.s2 && p.j2.id == id)) && p.player == -1))
                          .Count();
                     break;
                 case "defaiteAvecAmi":
@@ -85,7 +85,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
                          .Include(p => p.j1)
                          .Include(p => p.j2)
                          .Where(p => (p.j1.id == id || p.j2.id == id) && (p.j1.id == id_ami || p.j2.id == id_ami)
-                         && (((p.j1.id == id && p.s1 > p.s2) || (p.s1 < p.s2 && p.j2.id == id)) && p.player == -1))
+                         && (((p.j1.id == id && p.s1 < p.s2) || (p.s1 > p.s2 && p.j2.id == id)) && p.player == -1))
                          .Count();
                     break;
                 case "victoire":
@@ -93,7 +93,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
                          .Include(p => p.j1)
                          .Include(p => p.j2)
                          .Where(p => (p.j1.id == id || p.j2.id == id)
-                         && (((p.j1.id == id && p.s1 < p.s2) || (p.s1 > p.s2 && p.j2.id == id)) && p.player == -1))
+                         && (((p.j1.id == id && p.s1 > p.s2) || (p.s1 < p.s2 && p.j2.id == id)) && p.player == -1))
                          .Count();
                     break;
                 case "defaite":
@@ -101,7 +101,7 @@ namespace FindMyName_Serveur.Services.EntityFramework
                          .Include(p => p.j1)
                          .Include(p => p.j2)
                          .Where(p => (p.j1.id == id || p.j2.id == id)
-                         && (((p.j1.id == id && p.s1 > p.s2) || (p.s1 < p.s2 && p.j2.id == id)) && p.player == -1))
+                         && (((p.j1.id == id && p.s1 < p.s2) || (p.s1 > p.s2 && p.j2.id == id)) && p.player == -1))
                          .Count();
                     break;
             }

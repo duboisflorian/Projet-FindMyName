@@ -58,7 +58,7 @@ var ContactComponent = (function () {
         var us = +this._routeParams.get('us');
         this._uService.getUserView(us)
             .subscribe(function (data) { return _this.u = data; });
-        this.UserD(us);
+        this.sTimeout = setTimeout(function () { return _this.UserD(us); }, 600);
         this.selectedContact = null;
         this.type = 'ami';
         this.sTimeout = setTimeout(function () { return _this.getContacts(); }, 800);

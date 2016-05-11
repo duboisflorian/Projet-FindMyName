@@ -81,7 +81,7 @@ export class ContactComponent implements OnInit {
         let us = +this._routeParams.get('us');
         this._uService.getUserView(us)
             .subscribe(data => this.u = data);
-        this.UserD(us);
+        this.sTimeout = setTimeout(() => this.UserD(us), 600);
         this.selectedContact = null;
         this.type = 'ami';
         this.sTimeout = setTimeout(() => this.getContacts(), 800);
