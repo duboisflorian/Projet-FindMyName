@@ -104,4 +104,10 @@ public class acceuil extends AppCompatActivity {
 
     }
 
+    public void toMainActivity(View v)
+    {
+        Intent intent = new Intent(acceuil.this,MainActivity.class);
+        startActivity(intent);
+    }
+
 }

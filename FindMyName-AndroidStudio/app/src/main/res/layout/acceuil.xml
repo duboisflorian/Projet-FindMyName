@@ -27,8 +27,15 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Profil"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="50dp"
             android:id="@+id/profil" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:src="@drawable/deco"
+            android:id="@+id/imageView"
+            android:onClick="toMainActivity" />
 
     </LinearLayout>
 
