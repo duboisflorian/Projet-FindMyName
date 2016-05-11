@@ -8,6 +8,8 @@ import android.support.annotation.StringDef;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +32,10 @@ public class MainActivity extends AppCompatActivity {
         db.setLocale(Locale.FRENCH);
 
         //Souligne le TextView Inscription
-        TextView tv_inscritpion = findViewById(R.id.)
+        TextView tv_inscritpion = (TextView) findViewById(R.id.tv_inscription);
+        SpannableString content = new SpannableString("S'inscrire");
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        tv_inscritpion.setText(content);
 
         final Cursor result = db.rawQuery("SELECT * FROM user",null);
 
