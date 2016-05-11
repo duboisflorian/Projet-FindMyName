@@ -486,5 +486,13 @@ Project : Find My Name v_3
 - Yani 
 	- Renommage des services, interfaces et variable
 	- Resolution du bug d'insertion de données de reponses
-	- 
+
+## Mardi 11/05
+
+- Yani 
+	- Service thème effectué au complet
+	- Service Jouer
+	- Service Utilisateur
+	- Controller jouer, utilisateur, thème
+	
 	
