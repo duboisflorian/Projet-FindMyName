@@ -26,6 +26,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:id="@+id/motdepasse"
         android:layout_gravity="center_horizontal" />
 
@@ -39,6 +40,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:id="@+id/confirmationmdp" />
 
     <TextView
@@ -69,5 +71,6 @@
         android:text="S&apos;inscrire"
         android:id="@+id/btinscription"
         android:layout_gravity="center_horizontal" />
+
 
 </LinearLayout>
