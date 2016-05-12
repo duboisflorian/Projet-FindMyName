@@ -25,9 +25,9 @@
 <div class="core">
     <div class="row" style="margin-right:0px; margin-bottom:282px;">
         <div class="profile col-xs-12 col-sm-12 col-lg-12 col-md-12">
-            <h1>Bienvenue sur votre profile {{u2.name}}  - votre ID est {{u2.id}}</h1>
+            <h1>Bienvenue sur votre profil {{u2.name}}  - votre ID est {{u2.id}}</h1>
 
-            <h2>Changez votre photo de profile</h2>
+            <h2>Changez votre photo de profil</h2>
            <form id="modif-photo" (ngSubmit)="loadListPhoto()">
                 <img class="portrait" src="{{u2.photo}}" />
                 <select [(ngModel)]="selectPhoto" (ngModelChange)="changePhoto()">
@@ -41,7 +41,7 @@
                </form>
 
             <div class="modif-info col-xs-12 col-sm-8 col-lg-4 col-md-4">
-                <h2>Information personnelles</h2>
+                <h2>Informations personnelles</h2>
                 <h3>Votre adresse mail:</h3>
                 <input id="form-recherche" class="form-control" type="text" placeholder="entrer votre email ici" value="{{u2.mail}}" disabled="disabled" />
                 <h3>Modifiez votre mot de passe:</h3>
@@ -53,7 +53,7 @@
             </div>
             <div class="favori col-xs-12 col-sm-8 col-lg-4 col-md-4">
                 <h2>Préférences</h2> 
-                <p>Thème favoris : {{theme_favori}}</p>
+                <p>Thème favori : {{theme_favori}}</p>
                 <p>Meilleur Score : {{u2.meilleurScore}}</p>
             </div>
             <div class="stat col-xs-12 col-sm-8 col-lg-4 col-md-4">

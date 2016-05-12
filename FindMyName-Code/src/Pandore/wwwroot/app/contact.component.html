@@ -66,7 +66,7 @@
             <div *ngIf="en_cours=='rien'">
                 <h1>{{u.name}} VS {{selectedContact.name}}</h1>
                 <h3>Victoire = {{victoire}}</h3><h3>Defaite = {{defaite}}</h3>
-                <h2>Histoirque des dernière parties contre {{selectedContact.name}} </h2>
+                <h2>Historique des dernières parties contre {{selectedContact.name}} </h2>
                 <ul class="nav">
                     <li *ngFor="#h of historique">
                         <span>({{h.j1}}) {{h.s1}} - {{h.s2}} ({{h.j2}})</span> <button style="margin-top: 8px;" type="button" class="btn btn-primary" (click)="showDetails(h)">Détails</button>

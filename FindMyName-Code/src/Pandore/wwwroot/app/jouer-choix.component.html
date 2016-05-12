@@ -23,7 +23,7 @@
 <div class="core">
     <div class="row" style="margin-right:0px;">
         <div class="list-ami col-xs-6 col-sm-4 col-lg-3 col-md-3">
-            <h1>Liste des noms trouvé</h1>
+            <h1>Liste des noms trouvés</h1>
             <div class="sidebar">
                 <ul class="nav nav-sidebar nav-list-nom"></ul>
             </div>
@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="choix-theme col-xs-4 col-sm-5 col-lg-7 col-md-7">
-            <h1>Choisez un thème :</h1>
+            <h1>Choisissez un thème :</h1>
             <ul class="list-unstyled">
                 <li class="theme" *ngFor="#theme of themes" [class.selected]="theme === selectedTheme" (click)="gotoJouer(theme)"><img class="image-theme" src="{{theme.photo}}" /></li>
             </ul>
